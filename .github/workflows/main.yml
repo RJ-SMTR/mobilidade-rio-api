@@ -90,6 +90,7 @@ jobs:
         run: |-
           docker build \
             --tag "gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA" \
+            --file "mobilidade_rio/Dockerfile" \
             .
 
       - name: Publish Docker image
