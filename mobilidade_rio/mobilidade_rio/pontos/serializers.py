@@ -1,16 +1,64 @@
-from .models import Ponto, QrCode
+from .models import Mode, Stop, QrCode, Linha, Agency, Route, Trip, Sequence
 from rest_framework import serializers
 
 
-class PontoSerializer (serializers.HyperlinkedModelSerializer):
+class ModeSerializer (serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = Ponto
-        fields = ["url", "identifier", "address", "latitude", "longitude"]
+        model = Mode
+        fields = ('url', 'id', 'name')
+
+
+class StopSerializer (serializers.HyperlinkedModelSerializer):
+    mode = ModeSerializer()
+
+    class Meta:
+        model = Stop
+        fields = ('url', 'id', 'name', 'address',
+                  'latitude', 'longitude', 'mode')
 
 
 class QrCodeSerializer (serializers.HyperlinkedModelSerializer):
-    ponto = PontoSerializer()
+    stop = StopSerializer()
 
     class Meta:
         model = QrCode
-        fields = ["url", "identifier", "ponto"]
+        fields = ('url', 'code', 'stop')
+
+
+class LinhaSerializer (serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Linha
+        fields = ('url', 'id', 'initials')
+
+
+class AgencySerializer (serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Agency
+        fields = ('url', 'id', 'name')
+
+
+class RouteSerializer (serializers.HyperlinkedModelSerializer):
+    linha = LinhaSerializer()
+    agency = AgencySerializer()
+    mode = ModeSerializer()
+
+    class Meta:
+        model = Route
+        fields = ('url', 'id', 'linha', 'agency', 'mode', 'short_name')
+
+
+class TripSerializer (serializers.HyperlinkedModelSerializer):
+    route = RouteSerializer()
+
+    class Meta:
+        model = Trip
+        fields = ('url', 'id', 'route', 'headsign', 'via', 'version')
+
+
+class SequenceSerializer (serializers.HyperlinkedModelSerializer):
+    trip = TripSerializer()
+    stop = StopSerializer()
+
+    class Meta:
+        model = Sequence
+        fields = ('url', 'id', 'trip', 'stop', 'order')
