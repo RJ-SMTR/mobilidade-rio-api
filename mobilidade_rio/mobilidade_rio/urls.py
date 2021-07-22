@@ -14,7 +14,7 @@ router.register(r'linha', views.LinhaViewSet)
 router.register(r'agency', views.AgencyViewSet)
 router.register(r'route', views.RouteViewSet)
 router.register(r'trip', views.TripViewSet, basename='trip')
-router.register(r'sequence', views.SequenceViewSet)
+router.register(r'sequence', views.SequenceViewSet, basename='sequence')
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.

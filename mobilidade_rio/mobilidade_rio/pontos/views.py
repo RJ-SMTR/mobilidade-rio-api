@@ -80,6 +80,12 @@ class TripViewSet(viewsets.ModelViewSet):
 
 
 class SequenceViewSet(viewsets.ModelViewSet):
-    queryset = Sequence.objects.all().order_by("id")
     serializer_class = SequenceSerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
+
+    def get_queryset(self):
+        queryset = Sequence.objects.all().order_by("id")
+        trip_id = self.request.query_params.get('trip_id')
+        if trip_id is not None:
+            queryset = queryset.filter(trip=trip_id).order_by("order")
+        return queryset
