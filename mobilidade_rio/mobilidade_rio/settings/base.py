@@ -108,9 +108,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # CORS
 CORS_ALLOW_ALL_ORIGINS = True
-CORS_ALLOWED_ORIGINS = [
-    "*",
-]
+CORS_ALLOWED_ORIGINS = []
 
 # REST Framework
 # https://www.django-rest-framework.org/

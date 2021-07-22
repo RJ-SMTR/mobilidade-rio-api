@@ -13,9 +13,7 @@ ALLOWED_HOSTS = ["*"]
 
 # CORS
 CORS_ALLOW_ALL_ORIGINS = True
-CORS_ALLOWED_ORIGINS = [
-    "*",
-]
+CORS_ALLOWED_ORIGINS = []
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
