@@ -93,9 +93,20 @@ spec:
   tls:
     - hosts:
         - api-mobilidade-beta.34.71.77.125.nip.io
+        - api.mobilidade.rio
       secretName: api-mobilidade-tls
   rules:
     - host: api-mobilidade-beta.34.71.77.125.nip.io
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: mobilidade-api
+                port:
+                  number: 80
+    - host: api.mobilidade.rio
       http:
         paths:
           - path: /
