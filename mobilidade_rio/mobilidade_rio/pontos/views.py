@@ -73,7 +73,11 @@ class TripViewSet(viewsets.ModelViewSet):
         queryset = Trip.objects.all().order_by("id")
         code = self.request.query_params.get('code')
         if code is not None:
-            qrcode: QrCode = QrCode.objects.get(code=code)
+            qrcode: QrCode = None
+            try:
+                qrcode: QrCode = QrCode.objects.get(code=code)
+            except QrCode.DoesNotExist:
+                return Trip.objects.none()
             sequence: BaseManager = Sequence.objects.filter(stop=qrcode.stop)
             queryset = queryset.filter(id__in=sequence.values_list('trip'))
         return queryset
