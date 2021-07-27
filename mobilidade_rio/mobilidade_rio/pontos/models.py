@@ -11,9 +11,9 @@ class Mode (models.Model):
 class Stop (models.Model):
     mode = models.ForeignKey(Mode, on_delete=models.CASCADE, null=True)
     name = models.CharField(max_length=150)
-    address = models.CharField(max_length=150)
-    latitude = models.FloatField()
-    longitude = models.FloatField()
+    address = models.CharField(max_length=150, null=True)
+    latitude = models.FloatField(null=True)
+    longitude = models.FloatField(null=True)
 
     def __str__(self):
         return f"Ponto {self.name}: {self.address}"
@@ -28,13 +28,6 @@ class QrCode (models.Model):
         return f"QrCode {self.code}: {self.stop}"
 
 
-class Linha (models.Model):
-    initials = models.CharField(max_length=10)
-
-    def __str__(self):
-        return f"Linha {self.initials}"
-
-
 class Agency (models.Model):
     name = models.CharField(max_length=150)
 
@@ -42,21 +35,35 @@ class Agency (models.Model):
         return f"Agência {self.name}"
 
 
+class Linha (models.Model):
+    agency = models.ForeignKey(Agency, on_delete=models.CASCADE, null=True)
+    mode = models.ForeignKey(Mode, on_delete=models.CASCADE, null=True)
+    initials = models.CharField(max_length=10)
+    name = models.CharField(max_length=150, default="")
+
+    def __str__(self):
+        return f"Linha {self.initials}"
+
+
 class Route (models.Model):
+    id = models.BigAutoField(primary_key=True)
     linha = models.ForeignKey(Linha, on_delete=models.CASCADE)
     agency = models.ForeignKey(Agency, on_delete=models.CASCADE)
     mode = models.ForeignKey(Mode, on_delete=models.CASCADE)
     short_name = models.CharField(max_length=50)
+    vista = models.CharField(max_length=150, default="")
 
     def __str__(self):
         return f"Rota {self.linha} - {self.short_name}"
 
 
 class Trip (models.Model):
+    id = models.BigAutoField(primary_key=True)
     route = models.ForeignKey(Route, on_delete=models.CASCADE)
     headsign = models.CharField(max_length=50)
-    via = models.CharField(max_length=50, blank=True)
-    version = models.CharField(max_length=50)
+    via = models.CharField(max_length=50, blank=True, null=True)
+    version = models.CharField(max_length=50, blank=True, null=True)
+    direction = models.IntegerField(default=0)
 
     def __str__(self):
         return f"Viagem {self.route} - {self.headsign}"

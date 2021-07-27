@@ -25,16 +25,19 @@ class QrCodeSerializer (serializers.HyperlinkedModelSerializer):
         fields = ('url', 'code', 'stop')
 
 
-class LinhaSerializer (serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = Linha
-        fields = ('url', 'id', 'initials')
-
-
 class AgencySerializer (serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Agency
         fields = ('url', 'id', 'name')
+
+
+class LinhaSerializer (serializers.HyperlinkedModelSerializer):
+    mode = ModeSerializer()
+    agency = AgencySerializer()
+
+    class Meta:
+        model = Linha
+        fields = ('url', 'id', 'initials', 'mode', 'agency')
 
 
 class RouteSerializer (serializers.HyperlinkedModelSerializer):
@@ -44,7 +47,8 @@ class RouteSerializer (serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Route
-        fields = ('url', 'id', 'linha', 'agency', 'mode', 'short_name')
+        fields = ('url', 'id', 'linha', 'agency',
+                  'mode', 'short_name', 'vista')
 
 
 class TripSerializer (serializers.HyperlinkedModelSerializer):
@@ -52,7 +56,8 @@ class TripSerializer (serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Trip
-        fields = ('url', 'id', 'route', 'headsign', 'via', 'version')
+        fields = ('url', 'id', 'route', 'headsign',
+                  'via', 'version', 'direction')
 
 
 class SequenceSerializer (serializers.HyperlinkedModelSerializer):
