@@ -72,6 +72,7 @@ class TripViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         queryset = Trip.objects.all().order_by("id")
         code = self.request.query_params.get('code')
+        route_id = self.request.query_params.get('route_id')
         if code is not None:
             qrcode: QrCode = None
             try:
@@ -80,6 +81,8 @@ class TripViewSet(viewsets.ModelViewSet):
                 return Trip.objects.none()
             sequence: BaseManager = Sequence.objects.filter(stop=qrcode.stop)
             queryset = queryset.filter(id__in=sequence.values_list('trip'))
+        if route_id is not None:
+            queryset = queryset.filter(route=route_id)
         return queryset
 
 
