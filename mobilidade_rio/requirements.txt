@@ -1,4 +1,4 @@
-Django<=3.1.99
+Django<3.2.7
 djangorestframework<=3.11.99
 djoser<=5.0.99
 geopy<=2.2.99
