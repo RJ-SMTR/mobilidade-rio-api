@@ -116,3 +116,15 @@ spec:
                 name: mobilidade-api
                 port:
                   number: 80
+
+---
+# DB service
+kind: Service
+apiVersion: v1
+metadata:
+  name: db
+spec:
+  type: ExternalName
+  externalName: citus-master.dagster.svc.cluster.local
+  ports:
+  - port: 5432
