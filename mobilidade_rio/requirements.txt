@@ -4,4 +4,4 @@ djoser<=5.0.99
 geopy<=2.2.99
 gunicorn<=20.1.99
 psycopg2-binary<=2.9.99
-django-cors-headers<=3.7.99
+django-cors-headers<3.9.1
