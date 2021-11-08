@@ -9,9 +9,10 @@ class Mode (models.Model):
 
 
 class Stop (models.Model):
+    id = models.CharField(max_length=50, primary_key=True)
     mode = models.ForeignKey(Mode, on_delete=models.CASCADE, null=True)
-    name = models.CharField(max_length=150)
-    address = models.CharField(max_length=150, null=True)
+    name = models.CharField(max_length=250)
+    address = models.CharField(max_length=250, null=True)
     latitude = models.FloatField(null=True)
     longitude = models.FloatField(null=True)
 
@@ -29,6 +30,7 @@ class QrCode (models.Model):
 
 
 class Agency (models.Model):
+    id = models.CharField(max_length=50, primary_key=True)
     name = models.CharField(max_length=150)
 
     def __str__(self):
@@ -36,6 +38,7 @@ class Agency (models.Model):
 
 
 class Linha (models.Model):
+    id = models.CharField(max_length=50, primary_key=True)
     agency = models.ForeignKey(Agency, on_delete=models.CASCADE, null=True)
     mode = models.ForeignKey(Mode, on_delete=models.CASCADE, null=True)
     initials = models.CharField(max_length=10)
@@ -46,7 +49,7 @@ class Linha (models.Model):
 
 
 class Route (models.Model):
-    id = models.BigAutoField(primary_key=True)
+    id = models.CharField(max_length=50, primary_key=True)
     linha = models.ForeignKey(Linha, on_delete=models.CASCADE)
     agency = models.ForeignKey(Agency, on_delete=models.CASCADE)
     mode = models.ForeignKey(Mode, on_delete=models.CASCADE)
@@ -58,7 +61,7 @@ class Route (models.Model):
 
 
 class Trip (models.Model):
-    id = models.BigAutoField(primary_key=True)
+    id = models.CharField(max_length=50, primary_key=True)
     route = models.ForeignKey(Route, on_delete=models.CASCADE)
     headsign = models.CharField(max_length=50)
     via = models.CharField(max_length=50, blank=True, null=True)
@@ -70,6 +73,7 @@ class Trip (models.Model):
 
 
 class Sequence (models.Model):
+    id = models.CharField(max_length=50, primary_key=True)
     trip = models.ForeignKey(Trip, on_delete=models.CASCADE)
     stop = models.ForeignKey(Stop, on_delete=models.CASCADE)
     order = models.IntegerField()

@@ -1,16 +1,48 @@
 import json
 import random
+from typing import List
 import requests
 
 import pandas as pd
 
+DEFAULT_TIMEOUT = 60
 SIGMOB_AGENCY_URL = "http://jeap.rio.rj.gov.br/MOB/get_agency.rule?sys=MOB"
 SIGMOB_LINHAS_URL = "http://jeap.rio.rj.gov.br/MOB/get_linhas.rule?sys=MOB"
 SIGMOB_ROUTES_URL = "http://jeap.rio.rj.gov.br/MOB/get_routes.rule?sys=MOB"
+SIGMOB_STOPS_URL = "http://jeap.rio.rj.gov.br/MOB/get_stops.rule?sys=MOB&INDICE=0"
 SIGMOB_TRIPS_URL = "http://jeap.rio.rj.gov.br/MOB/get_trips.rule?sys=MOB"
-SIGMOB_STOP_FILENAME = "helpers/stops.csv"
 STOP_FIXTURE_FILENAME = "fixtures/stop.json"
 SIGMOB_SEQUENCE_URL = "http://jeap.rio.rj.gov.br/MOB/get_stop_times.rule?sys=MOB"
+
+###
+# Utils
+###
+
+
+def fetch_sigmob_api(url: str) -> List[dict]:
+    """
+    Fetches SIGMOB endpoints, whether they have pagination or not.
+    """
+    results: list = []
+    next: str = url
+    while next:
+        try:
+            print("Fetching %s" % next)
+            data = requests.get(next, timeout=DEFAULT_TIMEOUT)
+            data.raise_for_status()
+            data = data.json()
+            if "result" in data:
+                results.extend(data["result"])
+            elif "data" in data:
+                results.extend(data["data"])
+            if "next" in data and data["next"] != "EOF" and data["next"] != "":
+                next = data["next"]
+            else:
+                next = None
+        except Exception as e:
+            raise e
+    return results
+
 
 ###
 # Agency
@@ -28,8 +60,7 @@ def parse_sigmob_agency_to_fixture_json(agency: dict):
 
 
 def generate_fixtures_for_agency(fname: str) -> None:
-    response = requests.get(SIGMOB_AGENCY_URL)
-    agencies = response.json()["result"]
+    agencies = fetch_sigmob_api(SIGMOB_AGENCY_URL)
     fixture = [parse_sigmob_agency_to_fixture_json(
         agency) for agency in agencies]
     with open(fname, "w") as f:
@@ -54,8 +85,7 @@ def parse_sigmob_linha_to_fixture_json(linha: dict):
 
 
 def generate_fixtures_for_linha(fname: str) -> None:
-    response = requests.get(SIGMOB_LINHAS_URL)
-    linhas = response.json()["result"]
+    linhas = fetch_sigmob_api(SIGMOB_LINHAS_URL)
     fixture = [parse_sigmob_linha_to_fixture_json(
         linha) for linha in linhas]
     with open(fname, "w") as f:
@@ -81,8 +111,7 @@ def parse_sigmob_route_to_fixture_json(route: dict):
 
 
 def generate_fixtures_for_route(fname: str) -> None:
-    response = requests.get(SIGMOB_ROUTES_URL)
-    routes = response.json()["result"]
+    routes = fetch_sigmob_api(SIGMOB_ROUTES_URL)
     fixture = [parse_sigmob_route_to_fixture_json(
         route) for route in routes]
     with open(fname, "w") as f:
@@ -108,8 +137,7 @@ def parse_sigmob_trip_to_fixture_json(trip: dict):
 
 
 def generate_fixtures_for_trip(fname: str) -> None:
-    response = requests.get(SIGMOB_TRIPS_URL)
-    trips = response.json()["result"]
+    trips = fetch_sigmob_api(SIGMOB_TRIPS_URL)
     fixture = [parse_sigmob_trip_to_fixture_json(
         trip) for trip in trips]
     with open(fname, "w") as f:
@@ -135,10 +163,9 @@ def parse_sigmob_stop_to_fixture_json(stop: dict):
 
 
 def generate_fixtures_for_stop(fname: str) -> None:
-    df = pd.read_csv(SIGMOB_STOP_FILENAME)
-    fixture = []
-    for _, stop in df.iterrows():
-        fixture.append(parse_sigmob_stop_to_fixture_json(stop))
+    stops = fetch_sigmob_api(SIGMOB_STOPS_URL)
+    fixture = [parse_sigmob_stop_to_fixture_json(
+        stop) for stop in stops]
     with open(fname, "w") as f:
         json.dump(fixture, f, indent=4)
 
@@ -160,8 +187,7 @@ def parse_sigmob_sequence_to_fixture_json(sequence: dict, i: int):
 
 
 def generate_fixtures_for_sequence(fname: str) -> None:
-    response = requests.get(SIGMOB_SEQUENCE_URL)
-    sequences = response.json()["result"]
+    sequences = fetch_sigmob_api(SIGMOB_SEQUENCE_URL)
     fixture = [parse_sigmob_sequence_to_fixture_json(
         sequence, i) for i, sequence in enumerate(sequences)]
     with open(fname, "w") as f:

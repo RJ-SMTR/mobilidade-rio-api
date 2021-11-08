@@ -1,5 +1,4 @@
-[
-    {
+[{
         "model": "pontos.route",
         "pk": "23021011010",
         "fields": {
@@ -694,39 +693,6 @@
     },
     {
         "model": "pontos.route",
-        "pk": "22003351010",
-        "fields": {
-            "linha": "22003351",
-            "agency": "22003",
-            "mode": 22,
-            "short_name": "335",
-            "vista": "Cordovil - Tiradentes"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "22003351010",
-        "fields": {
-            "linha": "22003351",
-            "agency": "22003",
-            "mode": 22,
-            "short_name": "335",
-            "vista": "Cordovil - Tiradentes"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "22003351010",
-        "fields": {
-            "linha": "22003351",
-            "agency": "22003",
-            "mode": 22,
-            "short_name": "335",
-            "vista": "Br\u00e1s de Pina - Pra\u00e7a Tiradentes"
-        }
-    },
-    {
-        "model": "pontos.route",
         "pk": "22003421010",
         "fields": {
             "linha": "22003421",
@@ -1118,18 +1084,7 @@
             "agency": "22003",
             "mode": 22,
             "short_name": "386",
-            "vista": "Anchieta - Passeio"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "22003861010",
-        "fields": {
-            "linha": "22003861",
-            "agency": "22003",
-            "mode": 22,
-            "short_name": "386",
-            "vista": "Anchieta - Passeio"
+            "vista": "Anchieta - Passeio (via Mari\u00f3polis)"
         }
     },
     {
@@ -1266,35 +1221,13 @@
     },
     {
         "model": "pontos.route",
-        "pk": "22004851010",
+        "pk": "22004851040",
         "fields": {
             "linha": "22004851",
             "agency": "22003",
             "mode": 22,
-            "short_name": "485",
-            "vista": "Penha - General Os\u00f3rio"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "22004851010",
-        "fields": {
-            "linha": "22004851",
-            "agency": "22003",
-            "mode": 22,
-            "short_name": "485",
+            "short_name": "485 SP",
             "vista": "Pra\u00e7a XI - Fund\u00e3o"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "22004861010",
-        "fields": {
-            "linha": "22004861",
-            "agency": "22003",
-            "mode": 22,
-            "short_name": "486",
-            "vista": "Fund\u00e3o - General Os\u00f3rio"
         }
     },
     {
@@ -1328,39 +1261,6 @@
             "mode": 22,
             "short_name": "497",
             "vista": "Penha - Cosme Velho"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "22004981010",
-        "fields": {
-            "linha": "22004981",
-            "agency": "22003",
-            "mode": 22,
-            "short_name": "498",
-            "vista": "Circular da Penha - Largo do Machado"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "22004981010",
-        "fields": {
-            "linha": "22004981",
-            "agency": "22003",
-            "mode": 22,
-            "short_name": "498",
-            "vista": "Circular da Penha - Largo do Machado"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "22004981010",
-        "fields": {
-            "linha": "22004981",
-            "agency": "22003",
-            "mode": 22,
-            "short_name": "498",
-            "vista": "Penha (IAPI), - Largo do Machado"
         }
     },
     {
@@ -1536,7 +1436,7 @@
             "agency": "22003",
             "mode": 22,
             "short_name": "630",
-            "vista": "Penha (IAPI), - Saens Pe\u00f1a"
+            "vista": "Penha (IAPI) - Saens Pe\u00f1a"
         }
     },
     {
@@ -3813,7 +3713,7 @@
             "agency": "22004",
             "mode": 22,
             "short_name": "881",
-            "vista": "Alvorada - Taquara (via Camorim)"
+            "vista": "Jardim Oce\u00e2nico - Curicica"
         }
     },
     {
@@ -3890,18 +3790,7 @@
             "agency": "22004",
             "mode": 22,
             "short_name": "932",
-            "vista": "Gard\u00eania Azul - Tanque"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "22009321010",
-        "fields": {
-            "linha": "22009321",
-            "agency": "22004",
-            "mode": 22,
-            "short_name": "932",
-            "vista": "Gard\u00eania Azul - Tanque"
+            "vista": "Gard\u00eania Azul - Tanque (via Estrada do Pau-Ferro)"
         }
     },
     {
@@ -4142,7 +4031,7 @@
             "linha": "23023101",
             "agency": "22005",
             "mode": 23,
-            "short_name": "2310\r\n BRS 5",
+            "short_name": "2310",
             "vista": "Bangu - Candel\u00e1ria"
         }
     },
@@ -4584,17 +4473,6 @@
             "mode": 22,
             "short_name": "393 SR",
             "vista": "Bangu - Candel\u00e1ria"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "22003941010",
-        "fields": {
-            "linha": "22003941",
-            "agency": "22005",
-            "mode": 22,
-            "short_name": "394",
-            "vista": "Vila Kennedy - Tiradentes"
         }
     },
     {
@@ -5122,7 +5000,7 @@
             "agency": "22005",
             "mode": 22,
             "short_name": "803 SP",
-            "vista": "Senador Camar\u00e1 - Taquara"
+            "vista": "Senador Camar\u00e1 - Sulacap"
         }
     },
     {
@@ -5298,7 +5176,7 @@
             "agency": "22005",
             "mode": 22,
             "short_name": "824",
-            "vista": "Santa Maria (Vila Nova) - Campo Grande (via Rua Aricuri)"
+            "vista": "Santa Maria (Vila Nova) - Campo Grande"
         }
     },
     {
@@ -6403,17 +6281,6 @@
     },
     {
         "model": "pontos.route",
-        "pk": "22001071010",
-        "fields": {
-            "linha": "22001071",
-            "agency": "22002",
-            "mode": 22,
-            "short_name": "107",
-            "vista": "Central - Urca"
-        }
-    },
-    {
-        "model": "pontos.route",
         "pk": "22001081010",
         "fields": {
             "linha": "22001081",
@@ -6618,7 +6485,7 @@
             "agency": "22002",
             "mode": 23,
             "short_name": "2017",
-            "vista": "Praia de Botafogo;T\u00fanel Prefeito Marcello Alencar - Leblon"
+            "vista": "Rodovi\u00e1ria - Leblon (Circular)"
         }
     },
     {
@@ -6816,7 +6683,7 @@
             "agency": "22002",
             "mode": 22,
             "short_name": "412",
-            "vista": "Saens Pe\u00f1a - G\u00e1vea"
+            "vista": "Saens Pe\u00f1a - G\u00e1vea (via Lapa)"
         }
     },
     {
@@ -6839,17 +6706,6 @@
             "mode": 22,
             "short_name": "415 SN",
             "vista": "Usina - Leblon"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "22004161010",
-        "fields": {
-            "linha": "22004161",
-            "agency": "22002",
-            "mode": 22,
-            "short_name": "416",
-            "vista": "Saens Pe\u00f1a - Jardim Bot\u00e2nico"
         }
     },
     {
@@ -6925,7 +6781,7 @@
             "linha": "22004331",
             "agency": "22002",
             "mode": 22,
-            "short_name": "433\r\n BRS 02",
+            "short_name": "433",
             "vista": "Vila Isabel - Prado J\u00fanior"
         }
     },
@@ -6947,7 +6803,7 @@
             "linha": "22004351",
             "agency": "22002",
             "mode": 22,
-            "short_name": "435\r\n BRS 2",
+            "short_name": "435",
             "vista": "Graja\u00fa - G\u00e1vea"
         }
     },
@@ -7530,7 +7386,7 @@
             "linha": "22006081",
             "agency": "22002",
             "mode": 22,
-            "short_name": "608\r\n BRS 06",
+            "short_name": "608",
             "vista": "Graja\u00fa - Saens Pe\u00f1a"
         }
     },
@@ -7541,7 +7397,7 @@
             "linha": "22006261",
             "agency": "22002",
             "mode": 22,
-            "short_name": "626\r\n BRS 06",
+            "short_name": "626",
             "vista": "Saens Pe\u00f1a - Muda"
         }
     },
@@ -7554,6 +7410,765 @@
             "mode": 22,
             "short_name": "SE002",
             "vista": "Vidigal - Jardim de Alah"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "300703D1010",
+        "fields": {
+            "linha": "300703D1",
+            "agency": "30001",
+            "mode": 30,
+            "short_name": "703D",
+            "vista": "Santa Rosa - Vila Isabel (via Ponte Rio-Niter\u00f3i)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "300423A1010",
+        "fields": {
+            "linha": "300423A1",
+            "agency": "30001",
+            "mode": 30,
+            "short_name": "423A",
+            "vista": "S\u00e3o Gon\u00e7alo - Vila Isabel (via Ponte Rio-Niter\u00f3i)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "300428A1010",
+        "fields": {
+            "linha": "300428A1",
+            "agency": "30001",
+            "mode": 30,
+            "short_name": "428A",
+            "vista": "S\u00e3o Gon\u00e7alo - Vila Isabel (via Ponte Rio-Niter\u00f3i)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "300134B1010",
+        "fields": {
+            "linha": "300134B1",
+            "agency": "30001",
+            "mode": 30,
+            "short_name": "134B",
+            "vista": "Nova Igua\u00e7u - Vila Isabel"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "300488L1010",
+        "fields": {
+            "linha": "300488L1",
+            "agency": "30001",
+            "mode": 30,
+            "short_name": "488L",
+            "vista": "Duque de Caxias - Usina"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "22004981010",
+        "fields": {
+            "linha": "22004981",
+            "agency": "22003",
+            "mode": 22,
+            "short_name": "498",
+            "vista": "Circular da Penha - Largo do Machado"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "22004981040",
+        "fields": {
+            "linha": "22004981",
+            "agency": "22003",
+            "mode": 22,
+            "short_name": "498 SP",
+            "vista": "Penha (IAPI) - Largo do Machado"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "22004981030",
+        "fields": {
+            "linha": "22004981",
+            "agency": "22003",
+            "mode": 22,
+            "short_name": "498 SV",
+            "vista": "Circular da Penha - Largo do Machado"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "20000101130",
+        "fields": {
+            "linha": "20000101",
+            "agency": "20001",
+            "mode": 20,
+            "short_name": "10 ",
+            "vista": "Santa Cruz - Terminal Alvorada"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "20000111110",
+        "fields": {
+            "linha": "20000111",
+            "agency": "20001",
+            "mode": 20,
+            "short_name": "11 ",
+            "vista": "Santa Cruz - Terminal Alvorada"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "20000121130",
+        "fields": {
+            "linha": "20000121",
+            "agency": "20001",
+            "mode": 20,
+            "short_name": "12 ",
+            "vista": "Pingo d'\u00c1gua - Terminal Alvorada"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "20000131130",
+        "fields": {
+            "linha": "20000131",
+            "agency": "20001",
+            "mode": 20,
+            "short_name": "13 ",
+            "vista": "Mato Alto - Terminal Alvorada"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "20000141140",
+        "fields": {
+            "linha": "20000141",
+            "agency": "20001",
+            "mode": 20,
+            "short_name": "14 ",
+            "vista": "Campo Grande - Salvador Allende"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "20000181130",
+        "fields": {
+            "linha": "20000181",
+            "agency": "20001",
+            "mode": 20,
+            "short_name": "18 ",
+            "vista": "Recreio Shopping - Jardim Oce\u00e2nico"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "20000191130",
+        "fields": {
+            "linha": "20000191",
+            "agency": "20001",
+            "mode": 20,
+            "short_name": "19 ",
+            "vista": "Pingo d'\u00c1gua - Salvador Allende"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "20000201130",
+        "fields": {
+            "linha": "20000201",
+            "agency": "20001",
+            "mode": 20,
+            "short_name": "20 ",
+            "vista": "Santa Cruz - Salvador Allende"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "20000221110",
+        "fields": {
+            "linha": "20000221",
+            "agency": "20001",
+            "mode": 20,
+            "short_name": "22 ",
+            "vista": "Terminal Alvorada - Jardim Oce\u00e2nico"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "20000251111",
+        "fields": {
+            "linha": "20000251",
+            "agency": "20001",
+            "mode": 20,
+            "short_name": "25 A",
+            "vista": "Mato Alto - Terminal Alvorada"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "20000339110",
+        "fields": {
+            "linha": "20000339",
+            "agency": "20001",
+            "mode": 20,
+            "short_name": "33",
+            "vista": "Campo Grande - Santa Cruz"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "20000501110",
+        "fields": {
+            "linha": "20000501",
+            "agency": "20001",
+            "mode": 20,
+            "short_name": "50 ",
+            "vista": "Jardim Oce\u00e2nico - Terminal Centro Ol\u00edmpico"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "20000511110",
+        "fields": {
+            "linha": "20000511",
+            "agency": "20001",
+            "mode": 20,
+            "short_name": "51 ",
+            "vista": "Vila Militar - Terminal Recreio"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "20000511111",
+        "fields": {
+            "linha": "20000511",
+            "agency": "20001",
+            "mode": 20,
+            "short_name": "51 A",
+            "vista": "Vila Militar - Terminal Alvorada"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "20000531131",
+        "fields": {
+            "linha": "20000531",
+            "agency": "20001",
+            "mode": 20,
+            "short_name": "53 A",
+            "vista": "Terminal Sulacap - Terminal Alvorada"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "20000381110",
+        "fields": {
+            "linha": "20000381",
+            "agency": "20001",
+            "mode": 20,
+            "short_name": "38 ",
+            "vista": "Gale\u00e3o - Terminal Alvorada"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "20000311140",
+        "fields": {
+            "linha": "20000311",
+            "agency": "20001",
+            "mode": 20,
+            "short_name": "31 ",
+            "vista": "Vicente de Carvalho - Terminal Alvorada"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "20000411130",
+        "fields": {
+            "linha": "20000411",
+            "agency": "20001",
+            "mode": 20,
+            "short_name": "41 ",
+            "vista": "Terminal Madureira - Terminal Recreio"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "20000461130",
+        "fields": {
+            "linha": "20000461",
+            "agency": "20001",
+            "mode": 20,
+            "short_name": "46 ",
+            "vista": "Penha - Terminal Alvorada"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "20000351111",
+        "fields": {
+            "linha": "20000351",
+            "agency": "20001",
+            "mode": 20,
+            "short_name": "35 A",
+            "vista": "Terminal Madureira - Jardim Oce\u00e2nico"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "20000401131",
+        "fields": {
+            "linha": "20000401",
+            "agency": "20001",
+            "mode": 20,
+            "short_name": "40 A",
+            "vista": "Terminal Madureira - Terminal Alvorada"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "20000421111",
+        "fields": {
+            "linha": "20000421",
+            "agency": "20001",
+            "mode": 20,
+            "short_name": "42 A",
+            "vista": "Gale\u00e3o - Madureira Manaceia"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "23000011010",
+        "fields": {
+            "linha": "23000011",
+            "agency": "22002",
+            "mode": 23,
+            "short_name": "01",
+            "vista": "Pra\u00e7a General Os\u00f3rio - Pra\u00e7a Mau\u00e1"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "22003351010",
+        "fields": {
+            "linha": "22003351",
+            "agency": "22003",
+            "mode": 22,
+            "short_name": "335",
+            "vista": "Cordovil - Tiradentes (via Br\u00e1s de Pina) (R\u00e1pido - Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "22003351030",
+        "fields": {
+            "linha": "22003351",
+            "agency": "22003",
+            "mode": 22,
+            "short_name": "335 SV",
+            "vista": "Cordovil - Tiradentes (R\u00e1pido - Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "22003351040",
+        "fields": {
+            "linha": "22003351",
+            "agency": "22003",
+            "mode": 22,
+            "short_name": "335 SP",
+            "vista": "Br\u00e1s de Pina - Pra\u00e7a Tiradentes (R\u00e1pido)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "22004851010",
+        "fields": {
+            "linha": "22004851",
+            "agency": "22003",
+            "mode": 22,
+            "short_name": "485",
+            "vista": "Penha - General Os\u00f3rio (via Cidade Universit\u00e1ria)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "22003861020",
+        "fields": {
+            "linha": "22003861",
+            "agency": "22003",
+            "mode": 22,
+            "short_name": "386 SN",
+            "vista": "Anchieta - Passeio (via Mari\u00f3polis)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "22004861020",
+        "fields": {
+            "linha": "22004861",
+            "agency": "22003",
+            "mode": 22,
+            "short_name": "486 SN",
+            "vista": "Fund\u00e3o - General Os\u00f3rio (via T\u00fanel Santa B\u00e1rbara)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "22009321020",
+        "fields": {
+            "linha": "22009321",
+            "agency": "22004",
+            "mode": 22,
+            "short_name": "932 SN",
+            "vista": "Gard\u00eania Azul - Tanque (via Estrada do Pau-Ferro)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "22001071020",
+        "fields": {
+            "linha": "22001071",
+            "agency": "22002",
+            "mode": 22,
+            "short_name": "107 SN",
+            "vista": "Central - Urca (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "5000NIT1010",
+        "fields": {
+            "linha": "5000NIT1",
+            "agency": "50001",
+            "mode": 50,
+            "short_name": "NIT",
+            "vista": "Arariboia - Pra\u00e7a XV"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "5000COC1010",
+        "fields": {
+            "linha": "5000COC1",
+            "agency": "50001",
+            "mode": 50,
+            "short_name": "COC",
+            "vista": "Cocot\u00e1 - Pra\u00e7a XV"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "5000PAQ1010",
+        "fields": {
+            "linha": "5000PAQ1",
+            "agency": "50001",
+            "mode": 50,
+            "short_name": "PAQ",
+            "vista": "Paquet\u00e1 - Pra\u00e7a XV"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "20000151110",
+        "fields": {
+            "linha": "20000151",
+            "agency": "20001",
+            "mode": 20,
+            "short_name": "15",
+            "vista": "Pingo d'\u00c1gua - Recreio Shopping (Parador)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "20000351110",
+        "fields": {
+            "linha": "20000351",
+            "agency": "20001",
+            "mode": 20,
+            "short_name": "35",
+            "vista": "Madureira - Alvorada"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "20000531112",
+        "fields": {
+            "linha": "20000531",
+            "agency": "20001",
+            "mode": 20,
+            "short_name": "53 B",
+            "vista": "Sulacap - Jardim Oce\u00e2nico (Parador)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "22003941010",
+        "fields": {
+            "linha": "22003941",
+            "agency": "22005",
+            "mode": 22,
+            "short_name": "394",
+            "vista": "Vila Kennedy - Tiradentes"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "20000141130",
+        "fields": {
+            "linha": "20000141",
+            "agency": "20001",
+            "mode": 20,
+            "short_name": "14",
+            "vista": "Santa Eug\u00eania (Paci\u00eancia) - Salvador Allende (Expresso)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "20000171110",
+        "fields": {
+            "linha": "20000171",
+            "agency": "20001",
+            "mode": 20,
+            "short_name": "17",
+            "vista": "Santa Cruz - Campo Grande"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "22000016010",
+        "fields": {
+            "linha": "22000016",
+            "agency": "20001",
+            "mode": 22,
+            "short_name": "SE01",
+            "vista": "Santa Cruz - Terminal Alvorada"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "20CGPdA1010",
+        "fields": {
+            "linha": "20CGPdA1",
+            "agency": "20001",
+            "mode": 20,
+            "short_name": "CGPdA",
+            "vista": "Campo Grande - Pingo d'\u00c1gua (via Sepetiba)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "20000211110",
+        "fields": {
+            "linha": "20000211",
+            "agency": "20001",
+            "mode": 20,
+            "short_name": "21",
+            "vista": "Notre Dame - Jardim Oce\u00e2nico"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "20000271130",
+        "fields": {
+            "linha": "20000271",
+            "agency": "20001",
+            "mode": 20,
+            "short_name": "27",
+            "vista": "Mato Alto - Terminal Recreio"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "20000471130",
+        "fields": {
+            "linha": "20000471",
+            "agency": "20001",
+            "mode": 20,
+            "short_name": "47",
+            "vista": "Tanque - Jardim Oce\u00e2nico"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "20000361130",
+        "fields": {
+            "linha": "20000361",
+            "agency": "20001",
+            "mode": 20,
+            "short_name": "BRT 36",
+            "vista": "Fund\u00e3o \u0097 Alvorada"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "20000301140",
+        "fields": {
+            "linha": "20000301",
+            "agency": "20001",
+            "mode": 20,
+            "short_name": "BRT 30",
+            "vista": "Gale\u00e3o \u0097 Alvorada"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "20000601110",
+        "fields": {
+            "linha": "20000601",
+            "agency": "20001",
+            "mode": 20,
+            "short_name": "60",
+            "vista": "Deodoro - Gentileza"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "20000611130",
+        "fields": {
+            "linha": "20000611",
+            "agency": "20001",
+            "mode": 20,
+            "short_name": "BRT 61",
+            "vista": "Deodoro \u0097 Gentileza"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "20000701110",
+        "fields": {
+            "linha": "20000701",
+            "agency": "20001",
+            "mode": 20,
+            "short_name": "BRT 70",
+            "vista": "Parada de Lucas \u0097 Gentileza"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "20000711130",
+        "fields": {
+            "linha": "20000711",
+            "agency": "20001",
+            "mode": 20,
+            "short_name": "BRT 71",
+            "vista": "Parada de Lucas \u0097 Gentileza"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "20000801110",
+        "fields": {
+            "linha": "20000801",
+            "agency": "20001",
+            "mode": 20,
+            "short_name": "BRT 80",
+            "vista": "Penha \u0097 Gentileza"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "20000901110",
+        "fields": {
+            "linha": "20000901",
+            "agency": "20001",
+            "mode": 20,
+            "short_name": "BRT 90",
+            "vista": "Fund\u00e3o \u0097 Gentileza"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "20000911130",
+        "fields": {
+            "linha": "20000911",
+            "agency": "20001",
+            "mode": 20,
+            "short_name": "BRT 91",
+            "vista": "Fund\u00e3o \u0097 Gentileza"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "20000421110",
+        "fields": {
+            "linha": "20000421",
+            "agency": "20001",
+            "mode": 20,
+            "short_name": "42",
+            "vista": "Gale\u00e3o - Madureira Manaceia"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "20000531130",
+        "fields": {
+            "linha": "20000531",
+            "agency": "20001",
+            "mode": 20,
+            "short_name": "53",
+            "vista": "Terminal Deodoro - Terminal Alvorada"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "20000401130",
+        "fields": {
+            "linha": "20000401",
+            "agency": "20001",
+            "mode": 20,
+            "short_name": "40",
+            "vista": "Madureira - Terminal Alvorada"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "20000551110",
+        "fields": {
+            "linha": "20000551",
+            "agency": "20001",
+            "mode": 20,
+            "short_name": "55",
+            "vista": "Terminal Deodoro - Terminal Recreio"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "20000621130",
+        "fields": {
+            "linha": "20000621",
+            "agency": "20001",
+            "mode": 20,
+            "short_name": "62",
+            "vista": "Deodoro - Gentileza"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "22004161010",
+        "fields": {
+            "linha": "22004161",
+            "agency": "22002",
+            "mode": 22,
+            "short_name": "416",
+            "vista": "Saens Pe\u00f1a - Jardim Bot\u00e2nico (via T\u00fanel Rebou\u00e7as)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "22009171030",
+        "fields": {
+            "linha": "22009171",
+            "agency": "22003",
+            "mode": 22,
+            "short_name": "917 SV",
+            "vista": "Realengo - Bonsucesso (via Rua Marina)"
         }
     }
 ]
