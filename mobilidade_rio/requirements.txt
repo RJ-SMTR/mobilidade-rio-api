@@ -1,6 +1,6 @@
 Django<=3.1.99
 django-extensions<=3.1.99
-djangorestframework<=3.11.99
+djangorestframework<3.13.2
 djoser<=5.0.99
 geopy<=2.2.99
 gunicorn<=20.1.99
