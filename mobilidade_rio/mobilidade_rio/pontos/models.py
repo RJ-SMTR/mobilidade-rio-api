@@ -63,7 +63,7 @@ class Route (models.Model):
 class Trip (models.Model):
     id = models.CharField(max_length=50, primary_key=True)
     route = models.ForeignKey(Route, on_delete=models.CASCADE)
-    headsign = models.CharField(max_length=50)
+    headsign = models.CharField(max_length=250)
     via = models.CharField(max_length=50, blank=True, null=True)
     version = models.CharField(max_length=50, blank=True, null=True)
     direction = models.IntegerField(default=0)
