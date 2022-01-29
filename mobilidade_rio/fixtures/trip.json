@@ -1,14 +1,4 @@
-[{
-        "model": "pontos.trip",
-        "pk": "2200002601010101",
-        "fields": {
-            "route": "22000026010",
-            "headsign": "Jardim de Alah",
-            "via": null,
-            "version": "01",
-            "direction": 1
-        }
-    },
+[
     {
         "model": "pontos.trip",
         "pk": "2200002601020101",
@@ -40,17 +30,6 @@
             "via": null,
             "version": "01",
             "direction": 2
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "2200006102010101",
-        "fields": {
-            "route": "22000061020",
-            "headsign": "Castelo",
-            "via": null,
-            "version": "01",
-            "direction": 1
         }
     },
     {
@@ -347,28 +326,6 @@
             "headsign": "Jardim de Alah",
             "via": null,
             "version": "01",
-            "direction": 2
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "2200104101010102",
-        "fields": {
-            "route": "22001041010",
-            "headsign": "Rodovi\u00e1ria",
-            "via": null,
-            "version": "02",
-            "direction": 1
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "2200104101020102",
-        "fields": {
-            "route": "22001041010",
-            "headsign": "S\u00e3o Conrado",
-            "via": null,
-            "version": "02",
             "direction": 2
         }
     },
@@ -5668,7 +5625,7 @@
         "pk": "2200517101020101",
         "fields": {
             "route": "22005171010",
-            "headsign": "G\u00e1vea (PUC),",
+            "headsign": "G\u00e1vea (PUC)",
             "via": null,
             "version": "01",
             "direction": 2
@@ -6094,24 +6051,24 @@
     },
     {
         "model": "pontos.trip",
-        "pk": "2200558101010101",
+        "pk": "2200558101020101",
         "fields": {
             "route": "22005581010",
-            "headsign": "General Os\u00f3rio",
+            "headsign": "Copacabana",
             "via": null,
             "version": "01",
-            "direction": 1
+            "direction": 2
         }
     },
     {
         "model": "pontos.trip",
-        "pk": "2200558101020101",
+        "pk": "2200558101010101",
         "fields": {
             "route": "22005581010",
             "headsign": "Cidade de Deus",
             "via": null,
             "version": "01",
-            "direction": 2
+            "direction": 1
         }
     },
     {
@@ -10681,28 +10638,6 @@
     },
     {
         "model": "pontos.trip",
-        "pk": "2200861101010102",
-        "fields": {
-            "route": "22008611010",
-            "headsign": "Curicica",
-            "via": null,
-            "version": "02",
-            "direction": 1
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "2200861101020102",
-        "fields": {
-            "route": "22008611010",
-            "headsign": "Rio das Pedras",
-            "via": null,
-            "version": "02",
-            "direction": 2
-        }
-    },
-    {
-        "model": "pontos.trip",
         "pk": "2200862101030101",
         "fields": {
             "route": "22008621010",
@@ -12166,28 +12101,6 @@
     },
     {
         "model": "pontos.trip",
-        "pk": "2200917102010101",
-        "fields": {
-            "route": "22009171020",
-            "headsign": "Bonsucesso",
-            "via": null,
-            "version": "01",
-            "direction": 1
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "2200917102020101",
-        "fields": {
-            "route": "22009171020",
-            "headsign": "Realengo",
-            "via": null,
-            "version": "01",
-            "direction": 2
-        }
-    },
-    {
-        "model": "pontos.trip",
         "pk": "2200918101010101",
         "fields": {
             "route": "22009181010",
@@ -13137,7 +13050,7 @@
         "pk": "2302017101020101",
         "fields": {
             "route": "23020171010",
-            "headsign": "Praia de Botafogo;T\u00fanel Prefeito Marcello Alencar",
+            "headsign": "Rodovi\u00e1ria",
             "via": null,
             "version": "01",
             "direction": 2
@@ -15092,28 +15005,6 @@
     },
     {
         "model": "pontos.trip",
-        "pk": "2200104102010102",
-        "fields": {
-            "route": "22001041020",
-            "headsign": "Rodovi\u00e1ria",
-            "via": null,
-            "version": "02",
-            "direction": 1
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "2200104102020102",
-        "fields": {
-            "route": "22001041020",
-            "headsign": "S\u00e3o Conrado",
-            "via": null,
-            "version": "02",
-            "direction": 2
-        }
-    },
-    {
-        "model": "pontos.trip",
         "pk": "2200388101010101",
         "fields": {
             "route": "22003881010",
@@ -15369,7 +15260,7 @@
         "model": "pontos.trip",
         "pk": "20CGPdA101010101",
         "fields": {
-            "route": "20CGPdA1010",
+            "route": "20CGPdA1990",
             "headsign": "Pingo d'\u00c1gua",
             "via": null,
             "version": "01",
@@ -15380,7 +15271,7 @@
         "model": "pontos.trip",
         "pk": "20CGPdA101020101",
         "fields": {
-            "route": "20CGPdA1010",
+            "route": "20CGPdA1990",
             "headsign": "Campo Grande",
             "via": null,
             "version": "01",
@@ -16320,6 +16211,1898 @@
             "via": null,
             "version": "01",
             "direction": 2
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4004018101030101",
+        "fields": {
+            "route": "40040181010",
+            "headsign": "Estrada do Sacarr\u00e3o \u0097 Recreio dos Bandeirantes (Circular)",
+            "via": "Estrada Vereador Alceu de Carvalho",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4004017101030101",
+        "fields": {
+            "route": "40040171010",
+            "headsign": "Estrada do Pacu\u00ed \u0097 Recreio dos Bandeirantes (Circular)",
+            "via": "Estrada Vereador Alceu de Carvalho",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005115101030101",
+        "fields": {
+            "route": "40051151010",
+            "headsign": "Jardim Novo \u0097 Bangu (Circular)",
+            "via": "Estrada da \u00c1gua Branca",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005119101030101",
+        "fields": {
+            "route": "40051191010",
+            "headsign": "Sulacap \u0097 Bangu (Circular)",
+            "via": "Estrada da \u00c1gua Branca",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4003209101030101",
+        "fields": {
+            "route": "40032091010",
+            "headsign": "Vila dos Pinheiros \u0097 Bonsucesso (Circular)",
+            "via": "Hospital Geral de Bonsucesso",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4004002101030101",
+        "fields": {
+            "route": "40040021010",
+            "headsign": "Taquara (Merck) \u0097 Center Shopping (Circular)",
+            "via": "Rua Retiro dos Artistas",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4003108101030101",
+        "fields": {
+            "route": "40031081010",
+            "headsign": "Fazenda da Bica \u0097 Engenho de Dentro (Circular)",
+            "via": "Rua Nerval de Gouv\u00eaa",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4004003101030101",
+        "fields": {
+            "route": "40040031010",
+            "headsign": "Taquara (Merck) \u0097 Center Shopping (Circular)",
+            "via": "Avenida Nelson Cardoso",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005216101030101",
+        "fields": {
+            "route": "40052161010",
+            "headsign": "Jo\u00e3o Gualberto Braga \u0097 Campo Grande (Circular)",
+            "via": "Estrada do Monteiro",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4003206101030101",
+        "fields": {
+            "route": "40032061010",
+            "headsign": "Estrada Coronel Vieira \u0097 Pra\u00e7a Nossa Senhora da Apresenta\u00e7\u00e3o (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4003210101030101",
+        "fields": {
+            "route": "40032101010",
+            "headsign": "Vila do Jo\u00e3o \u0097 Bonsucesso (Circular)",
+            "via": "Hospital Geral de Bonsucesso",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005214101030101",
+        "fields": {
+            "route": "40052141010",
+            "headsign": "Guandu do Sena \u0097 Campo Grande (Circular)",
+            "via": "Estrada dos Sete Riachos",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4003224101030101",
+        "fields": {
+            "route": "40032241010",
+            "headsign": "Jardim Am\u00e9rica \u0097 Vig\u00e1rio Geral (Circular)",
+            "via": "Rua Fernandes da Cunha",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4004014101030101",
+        "fields": {
+            "route": "40040141010",
+            "headsign": "Cidade de Deus \u0097 Largo da Taquara (Circular)",
+            "via": "Rua Edgard Werneck",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4003309101030101",
+        "fields": {
+            "route": "40033091010",
+            "headsign": "Marechal Hermes \u0097 Guadalupe (Circular)",
+            "via": "Rua Leoc\u00e1dio Figueiredo",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005114101030101",
+        "fields": {
+            "route": "40051141010",
+            "headsign": "Jardim Novo \u0097 Bangu (Circular)",
+            "via": "Rua Piraquara",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005217101030101",
+        "fields": {
+            "route": "40052171010",
+            "headsign": "S\u00e3o Pedro \u0097 Campo Grande (Circular)",
+            "via": "Rua Augusto de Vasconcelos",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4003305101030101",
+        "fields": {
+            "route": "40033051010",
+            "headsign": "Village Pavuna \u0097 Largo da Pavuna (Circular)",
+            "via": "Rua Ant\u00f4nio Alves",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005211101030101",
+        "fields": {
+            "route": "40052111010",
+            "headsign": "S\u00e3o Bas\u00edlio \u0097 Campo Grande (Circular)",
+            "via": "Avenida Ces\u00e1rio de Melo",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005215101030101",
+        "fields": {
+            "route": "40052151010",
+            "headsign": "S\u00e3o Geraldo \u0097 Campo Grande (Circular)",
+            "via": "Avenida Ces\u00e1rio de Melo",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4003225101030101",
+        "fields": {
+            "route": "40032251010",
+            "headsign": "Jardim Am\u00e9rica \u0097 Vig\u00e1rio Geral (Circular)",
+            "via": "Rua Furquim Mendes",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4003304101030101",
+        "fields": {
+            "route": "40033041010",
+            "headsign": "Mari\u00f3polis \u0097 Anchieta (Circular)",
+            "via": "Rua Lenir Liberato da Silva",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005322101030101",
+        "fields": {
+            "route": "40053221010",
+            "headsign": "Manguariba \u0097 Santa Cruz (Circular)",
+            "via": "Estrada Aterrado do Leme",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4003220101030101",
+        "fields": {
+            "route": "40032201010",
+            "headsign": "Portuguesa \u0097 Jardim Guanabara (Circular)",
+            "via": "Rua Gr\u00e3o de Areia",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005218101030101",
+        "fields": {
+            "route": "40052181010",
+            "headsign": "Guandu Mirim \u0097 Campo Grande (Circular)",
+            "via": "Estrada do Lameir\u00e3o",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4003208101030101",
+        "fields": {
+            "route": "40032081010",
+            "headsign": "Mar\u00e9 \u0097 Bonsucesso (Circular)",
+            "via": "Hospital Geral de Bonsucesso",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4004004101030101",
+        "fields": {
+            "route": "40040041010",
+            "headsign": "Taquara (Merck) \u0097 Center Shopping (Circular)",
+            "via": "Rua Mirataia",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005212101030101",
+        "fields": {
+            "route": "40052121010",
+            "headsign": "Vila Santa Maria \u0097 Campo Grande (Circular)",
+            "via": "Rua Guaraciaba",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4002101101030101",
+        "fields": {
+            "route": "40021011010",
+            "headsign": "S\u00e3o Conrado \u0097 Jardim de Alah (Circular)",
+            "via": "Avenida Niemeyer",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4003213101030101",
+        "fields": {
+            "route": "40032131010",
+            "headsign": "Ramos \u0097 Largo do Itarar\u00e9 (Circular)",
+            "via": "Rua Felizardo Fortes",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4003219101030101",
+        "fields": {
+            "route": "40032191010",
+            "headsign": "Portuguesa \u0097 Jardim Guanabara (Circular)",
+            "via": "Rua Lu\u00eds Belart",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005104101030101",
+        "fields": {
+            "route": "40051041010",
+            "headsign": "Jabour \u0097 Realengo (Circular)",
+            "via": "SASE",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4003101101030101",
+        "fields": {
+            "route": "40031011010",
+            "headsign": "Tom\u00e1s Coelho \u0097 Aboli\u00e7\u00e3o (Circular)",
+            "via": "Viaduto Jo\u00e3o Ribeiro",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005208101030101",
+        "fields": {
+            "route": "40052081010",
+            "headsign": "Jardim Campo Belo \u0097 Campo Grande (Circular)",
+            "via": "Rua Vergel",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005219101030101",
+        "fields": {
+            "route": "40052191010",
+            "headsign": "Pedra de Guaratiba \u0097 Am\u00e9ricas (Circular)",
+            "via": "BRT Mato Alto",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4003216101030101",
+        "fields": {
+            "route": "40032161010",
+            "headsign": "Tubiacanga \u0097 Portuguesa (Circular)",
+            "via": "Rua Eduardo Nadruz",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4003308101030101",
+        "fields": {
+            "route": "40033081010",
+            "headsign": "Pavuna \u0097 Metr\u00f4 Pavuna (Circular)",
+            "via": "Rua Barcelos do Sul",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005105101030101",
+        "fields": {
+            "route": "40051051010",
+            "headsign": "Jardim Violeta \u0097 Deodoro (Circular)",
+            "via": "Magalh\u00e3es Bastos",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005209101030101",
+        "fields": {
+            "route": "40052091010",
+            "headsign": "Jardim Campo Belo \u0097 Campo Grande (Circular)",
+            "via": "Rua Jape",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005220101030101",
+        "fields": {
+            "route": "40052201010",
+            "headsign": "Pedra de Guaratiba \u0097 Am\u00e9ricas (Circular)",
+            "via": "BRT Magar\u00e7a",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005103101030101",
+        "fields": {
+            "route": "40051031010",
+            "headsign": "Jabour \u0097 Realengo (Circular)",
+            "via": "SASE",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005305101030101",
+        "fields": {
+            "route": "40053051010",
+            "headsign": "Sepetiba \u0097 Santa Cruz (Circular)",
+            "via": "Rua \u00c1lvaro Alberto",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4003103101030101",
+        "fields": {
+            "route": "40031031010",
+            "headsign": "Engenho da Rainha \u0097 Inha\u00fama (Circular)",
+            "via": "Rua Edmundo",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4003302101030101",
+        "fields": {
+            "route": "40033021010",
+            "headsign": "Beberibe \u0097 Anchieta (Circular)",
+            "via": "Rua Edgard Barbosa",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005210101030101",
+        "fields": {
+            "route": "40052101010",
+            "headsign": "Tingui \u0097 Mendanha (Circular)",
+            "via": "Estrada do Pedregoso",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4003310101030101",
+        "fields": {
+            "route": "40033101010",
+            "headsign": "Coelho Neto \u0097 Rocha Miranda (Circular)",
+            "via": "Rua Itaim",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4002102101030101",
+        "fields": {
+            "route": "40021021010",
+            "headsign": "S\u00e3o Conrado \u0097 Jardim de Alah (Circular)",
+            "via": "Rocinha",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005118101030101",
+        "fields": {
+            "route": "40051181010",
+            "headsign": "Sulacap \u0097 Bangu (Circular)",
+            "via": "77",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4003306101030101",
+        "fields": {
+            "route": "40033061010",
+            "headsign": "Alcoba\u00e7a \u0097 Guadalupe (Circular)",
+            "via": "Rua Pedra Rasa",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005130101030101",
+        "fields": {
+            "route": "40051301010",
+            "headsign": "Jardim Bangu \u0097 Bangu (Circular)",
+            "via": "Bangu Shopping",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005321101030101",
+        "fields": {
+            "route": "40053211010",
+            "headsign": "Vila Paci\u00eancia \u0097 Santa Cruz (Circular)",
+            "via": "Antares",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4003307101030101",
+        "fields": {
+            "route": "40033071010",
+            "headsign": "Ricardo de Albuquerque \u0097 Parque Anchieta (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005109101030101",
+        "fields": {
+            "route": "40051091010",
+            "headsign": "Viegas \u0097 Realengo (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4003202101030101",
+        "fields": {
+            "route": "40032021010",
+            "headsign": "Cordovil \u0097 Br\u00e1s de Pina (Circular)",
+            "via": "Rua Suru\u00ed",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4003211101030101",
+        "fields": {
+            "route": "40032111010",
+            "headsign": "Grota \u0097 Uranos (Circular)",
+            "via": "Rua Doutor Noguchi",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4003311101030101",
+        "fields": {
+            "route": "40033111010",
+            "headsign": "Turia\u00e7u \u0097 Col\u00e9gio (Circular)",
+            "via": "Estrada do Sap\u00ea",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005106101030101",
+        "fields": {
+            "route": "40051061010",
+            "headsign": "Jardim Violeta \u0097 Deodoro (Circular)",
+            "via": "Realengo",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005129101030101",
+        "fields": {
+            "route": "40051291010",
+            "headsign": "Jardim Bangu \u0097 Bangu (Circular)",
+            "via": "Padre Miguel",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4003204101030101",
+        "fields": {
+            "route": "40032041010",
+            "headsign": "Mercado S\u00e3o Sebasti\u00e3o \u0097 Penha Circular (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4003303101030101",
+        "fields": {
+            "route": "40033031010",
+            "headsign": "Mari\u00f3polis \u0097 Anchieta (Circular)",
+            "via": "Rua Javat\u00e1",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4003107101030101",
+        "fields": {
+            "route": "40031071010",
+            "headsign": "Triagem \u0097 Largo do Jacar\u00e9 (Circular)",
+            "via": "Rocha",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4003221101030101",
+        "fields": {
+            "route": "40032211010",
+            "headsign": "Ribeira \u0097 Cacuia (Circular)",
+            "via": "Rua do Monjolo",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4003222101030101",
+        "fields": {
+            "route": "40032221010",
+            "headsign": "Ribeira \u0097 Cocota (Circular)",
+            "via": "Rua do Monjolo",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005102101030101",
+        "fields": {
+            "route": "40051021010",
+            "headsign": "Boiobi \u0097 Bangu (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005112101030101",
+        "fields": {
+            "route": "40051121010",
+            "headsign": "Barata \u0097 Bangu (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005301101030101",
+        "fields": {
+            "route": "40053011010",
+            "headsign": "Conjunto Habitacional 61 \u0097 Santa Cruz (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005309101030101",
+        "fields": {
+            "route": "40053091010",
+            "headsign": "Base A\u00e9rea de Santa Cruz \u0097 Santa Cruz (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4003217101030101",
+        "fields": {
+            "route": "40032171010",
+            "headsign": "Tubiacanga \u0097 Portuguesa (Circular)",
+            "via": "Moner\u00f3",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005126101030101",
+        "fields": {
+            "route": "40051261010",
+            "headsign": "Batan \u0097 Bangu (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005315101030101",
+        "fields": {
+            "route": "40053151010",
+            "headsign": "Capoeira Grande \u0097 Pedra de Guaratiba (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4003214101030101",
+        "fields": {
+            "route": "40032141010",
+            "headsign": "Banc\u00e1rios \u0097 Portuguesa (Circular)",
+            "via": "Moner\u00f3",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4004007101030101",
+        "fields": {
+            "route": "40040071010",
+            "headsign": "Jord\u00e3o \u0097 Taquara (Circular)",
+            "via": "Rua Atininga",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005108101030101",
+        "fields": {
+            "route": "40051081010",
+            "headsign": "Viegas \u0097 Realengo (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005124101030101",
+        "fields": {
+            "route": "40051241010",
+            "headsign": "Sant\u00edssimo \u0097 Ricardo de Albuquerque (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4003226101030101",
+        "fields": {
+            "route": "40032261010",
+            "headsign": "Vig\u00e1rio Geral \u0097 Pavuna (Circular)",
+            "via": "FICAP",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4004006101030101",
+        "fields": {
+            "route": "40040061010",
+            "headsign": "Jord\u00e3o \u0097 Taquara (Circular)",
+            "via": "Pra\u00e7a Jauru",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005323101030101",
+        "fields": {
+            "route": "40053231010",
+            "headsign": "Cosmos \u0097 Santa Cruz (Circular)",
+            "via": "Uruc\u00e2nia",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4004012101030101",
+        "fields": {
+            "route": "40040121010",
+            "headsign": "Largo da Taquara \u0097 Santa Efig\u00eania (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4004013101030101",
+        "fields": {
+            "route": "40040131010",
+            "headsign": "Cidade de Deus \u0097 Largo da Taquara (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005314101030101",
+        "fields": {
+            "route": "40053141010",
+            "headsign": "Jardim Cinco Marias \u0097 Pingo d\u00c1gua (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4003312101030101",
+        "fields": {
+            "route": "40033121010",
+            "headsign": "Marechal Hermes \u0097 Vila Valqueire (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005101101030101",
+        "fields": {
+            "route": "40051011010",
+            "headsign": "Boiobi \u0097 Bangu (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005111101030101",
+        "fields": {
+            "route": "40051111010",
+            "headsign": "Barata \u0097 Bangu (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005206101030101",
+        "fields": {
+            "route": "40052061010",
+            "headsign": "Conjunto Campinho \u0097 Campo Grande (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005302101030101",
+        "fields": {
+            "route": "40053021010",
+            "headsign": "Conjunto Jo\u00e3o XXIII \u0097 Santa Cruz (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005127101030101",
+        "fields": {
+            "route": "40051271010",
+            "headsign": "Batan \u0097 Bangu (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4003205101030101",
+        "fields": {
+            "route": "40032051010",
+            "headsign": "Cordovil \u0097 Vicente de Carvalho (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4003301101030101",
+        "fields": {
+            "route": "40033011010",
+            "headsign": "Chico Mendes \u0097 Largo da Pavuna (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4004008101030101",
+        "fields": {
+            "route": "40040081010",
+            "headsign": "Hospital Santa Maria \u0097 Taquara (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005202101030101",
+        "fields": {
+            "route": "40052021010",
+            "headsign": "Morro do Cavado \u0097 Campo Grande (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005303101030101",
+        "fields": {
+            "route": "40053031010",
+            "headsign": "Conjunto Alvorada \u0097 Santa Cruz (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005312101030101",
+        "fields": {
+            "route": "40053121010",
+            "headsign": "Estrada do Furado \u0097 Santa Cruz (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4003106101030101",
+        "fields": {
+            "route": "40031061010",
+            "headsign": "Higien\u00f3polis \u0097 Maria da Gra\u00e7a (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4003313101030101",
+        "fields": {
+            "route": "40033131010",
+            "headsign": "Osvaldo Cruz \u0097 Vila Valqueire (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005116101030101",
+        "fields": {
+            "route": "40051161010",
+            "headsign": "Mallet \u0097 Bangu (Circular)",
+            "via": "Realengo",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005123101030101",
+        "fields": {
+            "route": "40051231010",
+            "headsign": "Sant\u00edssimo \u0097 Magalh\u00e3es Bastos (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005205101030101",
+        "fields": {
+            "route": "40052051010",
+            "headsign": "Caminho do C\u00e9u \u0097 Campo Grande (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005320101030101",
+        "fields": {
+            "route": "40053201010",
+            "headsign": "Vendas de Varanda \u0097 Paci\u00eancia (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4003223101030101",
+        "fields": {
+            "route": "40032231010",
+            "headsign": "Freguesia \u0097 Jardim Guanabara (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4004009101030101",
+        "fields": {
+            "route": "40040091010",
+            "headsign": "Estrada da Liga\u00e7\u00e3o \u0097 Taquara (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005318101030101",
+        "fields": {
+            "route": "40053181010",
+            "headsign": "Horto Florestal \u0097 Santa Cruz (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4003201101030101",
+        "fields": {
+            "route": "40032011010",
+            "headsign": "Vicente de Carvalho \u0097 IPASE (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005201101030101",
+        "fields": {
+            "route": "40052011010",
+            "headsign": "Largo do ABC \u0097 Campo Grande (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005307101030101",
+        "fields": {
+            "route": "40053071010",
+            "headsign": "Praia da Brisa \u0097 Santa Cruz (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005319101030101",
+        "fields": {
+            "route": "40053191010",
+            "headsign": "Cesarinho \u0097 Zona Industrial (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4003203101030101",
+        "fields": {
+            "route": "40032031010",
+            "headsign": "Cidade Alta \u0097 Br\u00e1s de Pina (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005122101030101",
+        "fields": {
+            "route": "40051221010",
+            "headsign": "Pres\u00eddio \u0097 Marechal Hermes (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005207101030101",
+        "fields": {
+            "route": "40052071010",
+            "headsign": "Nova Cidade \u0097 Campo Grande (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005306101030101",
+        "fields": {
+            "route": "40053061010",
+            "headsign": "Nova Sepetiba \u0097 Santa Cruz (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005317101030101",
+        "fields": {
+            "route": "40053171010",
+            "headsign": "Jesu\u00edtas \u0097 Santa Veridiana (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4003104101030101",
+        "fields": {
+            "route": "40031041010",
+            "headsign": "Piedade \u0097 Engenheiro Leal (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4004015101030101",
+        "fields": {
+            "route": "40040151010",
+            "headsign": "Gard\u00eania Azul \u0097 Freguesia (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4004016101030101",
+        "fields": {
+            "route": "40040161010",
+            "headsign": "Gard\u00eania Azul \u0097 Pechincha (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005310101030101",
+        "fields": {
+            "route": "40053101010",
+            "headsign": "Santa Cruz \u0097 S\u00e3o Benedito (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005213101030101",
+        "fields": {
+            "route": "40052131010",
+            "headsign": "Carobinha \u0097 Campo Grande (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005204101030101",
+        "fields": {
+            "route": "40052041010",
+            "headsign": "Buranhem \u0097 Campo Grande (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4003215101030101",
+        "fields": {
+            "route": "40032151010",
+            "headsign": "Itacolomi \u0097 Portuguesa (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005107101030101",
+        "fields": {
+            "route": "40051071010",
+            "headsign": "Morada do Vale \u0097 Bangu (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005110101030101",
+        "fields": {
+            "route": "40051101010",
+            "headsign": "Senador Camar\u00e1 \u0097 Bangu (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4003102101030101",
+        "fields": {
+            "route": "40031021010",
+            "headsign": "\u00c1gua Santa \u0097 Engenh\u00e3o (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4003105101030101",
+        "fields": {
+            "route": "40031051010",
+            "headsign": "Lins \u0097 Norte Shopping (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4004011101030101",
+        "fields": {
+            "route": "40040111010",
+            "headsign": "Pau da Fome \u0097 Taquara (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005308101030101",
+        "fields": {
+            "route": "40053081010",
+            "headsign": "Sepetiba \u0097 Santa Cruz (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005311101030101",
+        "fields": {
+            "route": "40053111010",
+            "headsign": "Uruc\u00e2nia \u0097 Santa Cruz (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4003212101030101",
+        "fields": {
+            "route": "40032121010",
+            "headsign": "Darcy Vargas \u0097 Ramos (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005132101030101",
+        "fields": {
+            "route": "40051321010",
+            "headsign": "Vila Alian\u00e7a \u0097 Bangu (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005203101030101",
+        "fields": {
+            "route": "40052031010",
+            "headsign": "Areal \u0097 Campo Grande (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005304101030101",
+        "fields": {
+            "route": "40053041010",
+            "headsign": "Mi\u00e9cimo \u0097 Santa Cruz (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005313101030101",
+        "fields": {
+            "route": "40053131010",
+            "headsign": "Pa\u00e7uar\u00e9 \u0097 Santa Cruz (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005324101030101",
+        "fields": {
+            "route": "40053241010",
+            "headsign": "Antares \u0097 Santa Cruz (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4004001101030101",
+        "fields": {
+            "route": "40040011010",
+            "headsign": "Sert\u00e3o \u0097 Freguesia (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4004010101030101",
+        "fields": {
+            "route": "40040101010",
+            "headsign": "Teixeira \u0097 Taquara (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005120101030101",
+        "fields": {
+            "route": "40051201010",
+            "headsign": "Coqueiros \u0097 Bangu (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4004005101030101",
+        "fields": {
+            "route": "40040051010",
+            "headsign": "Boi\u00fana \u0097 Taquara (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005121101030101",
+        "fields": {
+            "route": "40051211010",
+            "headsign": "Pres\u00eddio \u0097 Bangu (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005131101030101",
+        "fields": {
+            "route": "40051311010",
+            "headsign": "Malvinas \u0097 Bangu (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005316101030101",
+        "fields": {
+            "route": "40053161010",
+            "headsign": "Macap\u00e1 \u0097 Lote 14 (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005117101030101",
+        "fields": {
+            "route": "40051171010",
+            "headsign": "Sand\u00e1 \u0097 Sulacap (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4003218101030101",
+        "fields": {
+            "route": "40032181010",
+            "headsign": "Bananal \u0097 Tau\u00e1 (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005113101030101",
+        "fields": {
+            "route": "40051131010",
+            "headsign": "Bo\u00e1ria \u0097 Bangu (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005125101030101",
+        "fields": {
+            "route": "40051251010",
+            "headsign": "Bangu \u0097 Mallet (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4005128101030101",
+        "fields": {
+            "route": "40051281010",
+            "headsign": "Catiri \u0097 Bangu (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "4003207101030101",
+        "fields": {
+            "route": "40032071010",
+            "headsign": "IAPI \u0097 Penha (Circular)",
+            "via": "",
+            "version": "01",
+            "direction": 3
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "2200100101012001",
+        "fields": {
+            "route": "22001001010",
+            "headsign": "Central",
+            "via": null,
+            "version": "1",
+            "direction": 1
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "2200100101022001",
+        "fields": {
+            "route": "22001001010",
+            "headsign": "General Os\u00f3rio",
+            "via": null,
+            "version": "1",
+            "direction": 2
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "2200104101012001",
+        "fields": {
+            "route": "22001041010",
+            "headsign": "Rodovi\u00e1ria",
+            "via": null,
+            "version": "1",
+            "direction": 1
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "2200104101021001",
+        "fields": {
+            "route": "22001041010",
+            "headsign": "S\u00e3o Conrado",
+            "via": null,
+            "version": "1",
+            "direction": 2
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "2200104101022001",
+        "fields": {
+            "route": "22001041010",
+            "headsign": "S\u00e3o Conrado",
+            "via": null,
+            "version": "1",
+            "direction": 2
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "2200106101012001",
+        "fields": {
+            "route": "22001061010",
+            "headsign": "Leblon",
+            "via": null,
+            "version": "1",
+            "direction": 1
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "2200106101022001",
+        "fields": {
+            "route": "22001061010",
+            "headsign": "Central",
+            "via": null,
+            "version": "1",
+            "direction": 2
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "2200108101011001",
+        "fields": {
+            "route": "22001081010",
+            "headsign": "Rodovi\u00e1ria",
+            "via": null,
+            "version": "1",
+            "direction": 1
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "2200108101012001",
+        "fields": {
+            "route": "22001081010",
+            "headsign": "Rodovi\u00e1ria",
+            "via": null,
+            "version": "1",
+            "direction": 1
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "2200109101011001",
+        "fields": {
+            "route": "22001091010",
+            "headsign": "Central",
+            "via": null,
+            "version": "1",
+            "direction": 1
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "2200109101012001",
+        "fields": {
+            "route": "22001091010",
+            "headsign": "Central",
+            "via": null,
+            "version": "1",
+            "direction": 1
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "2200109101021001",
+        "fields": {
+            "route": "22001091010",
+            "headsign": "S\u00e3o Conrado",
+            "via": null,
+            "version": "1",
+            "direction": 2
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "2200201101012101",
+        "fields": {
+            "route": "22002011010",
+            "headsign": "Castelo",
+            "via": null,
+            "version": "1",
+            "direction": 1
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "2200201101012001",
+        "fields": {
+            "route": "22002011010",
+            "headsign": "Castelo",
+            "via": null,
+            "version": "01",
+            "direction": 1
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "2200217101021001",
+        "fields": {
+            "route": "22002171010",
+            "headsign": "Andara\u00ed",
+            "via": null,
+            "version": "1",
+            "direction": 2
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "2200218101021001",
+        "fields": {
+            "route": "22002181010",
+            "headsign": "Vila Isabel",
+            "via": null,
+            "version": "1",
+            "direction": 2
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "2200222101021001",
+        "fields": {
+            "route": "22002221010",
+            "headsign": "Vila Isabel",
+            "via": null,
+            "version": "1",
+            "direction": 2
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "2200226101021001",
+        "fields": {
+            "route": "22002261010",
+            "headsign": "Graja\u00fa",
+            "via": null,
+            "version": "1",
+            "direction": 2
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "2200229101012101",
+        "fields": {
+            "route": "22002291010",
+            "headsign": "Castelo",
+            "via": null,
+            "version": "1",
+            "direction": 1
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "2200229101010301",
+        "fields": {
+            "route": "22002291010",
+            "headsign": "Castelo",
+            "via": null,
+            "version": "1",
+            "direction": 1
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "2200553101012001",
+        "fields": {
+            "route": "22005531010",
+            "headsign": "Recreio",
+            "via": null,
+            "version": "1",
+            "direction": 1
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "2200553101022001",
+        "fields": {
+            "route": "22005531010",
+            "headsign": "Rio Sul",
+            "via": null,
+            "version": "1",
+            "direction": 2
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "2302016101012001",
+        "fields": {
+            "route": "23020161010",
+            "headsign": "RIOgale\u00e3o",
+            "via": null,
+            "version": "1",
+            "direction": 1
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "2302016101021001",
+        "fields": {
+            "route": "23020161010",
+            "headsign": "General Os\u00f3rio",
+            "via": null,
+            "version": "1",
+            "direction": 2
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "2302016101022001",
+        "fields": {
+            "route": "23020161010",
+            "headsign": "General Os\u00f3rio",
+            "via": null,
+            "version": "1",
+            "direction": 2
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "2302017101012001",
+        "fields": {
+            "route": "23020171010",
+            "headsign": "Leblon",
+            "via": null,
+            "version": "1",
+            "direction": 1
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "2302017101022001",
+        "fields": {
+            "route": "23020171010",
+            "headsign": "Rodovi\u00e1ria",
+            "via": null,
+            "version": "1",
+            "direction": 2
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "2200002601010101",
+        "fields": {
+            "route": "22000026010",
+            "headsign": "Jardim de Alah",
+            "via": null,
+            "version": "1",
+            "direction": 1
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "2200006102010101",
+        "fields": {
+            "route": "22000061020",
+            "headsign": "Castelo",
+            "via": null,
+            "version": "01",
+            "direction": 1
         }
     }
 ]

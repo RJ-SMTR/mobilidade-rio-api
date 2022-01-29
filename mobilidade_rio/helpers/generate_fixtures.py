@@ -162,7 +162,7 @@ def parse_sigmob_stop_to_fixture_json(stop: dict):
     }
 
 
-def generate_fixtures_for_stop(fname: str) -> None:
+def generate_fixtures_for_stop(fname: str="stop.json") -> None:
     stops = fetch_sigmob_api(SIGMOB_STOPS_URL)
     fixture = [parse_sigmob_stop_to_fixture_json(
         stop) for stop in stops]
