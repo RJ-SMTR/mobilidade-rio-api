@@ -29,7 +29,7 @@ No seu local, copie o novo `fixture` para o Kubernetes (veja
    `<pod-em-prod>` [aqui](todo-add-link-library)) rodando:
 
 ```sh
-$ kubectl cp <seu>/<caminho>/<local> mobilidade-v2/<pod-em-prod>:/app/fixtures/<seu-fixture>.json
+$ kubectl cp mobilidade_rio/fixtures/<seu-fixture>.json mobilidade-v2/<pod-em-prod>:/app/fixtures/<seu-fixture>.json
 ```
 
 > Você pode também copiar um `fixture` do Kubernetes para seu local trocando a
