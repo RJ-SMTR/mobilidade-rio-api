@@ -1,4 +1,5 @@
-[{
+[
+    {
         "model": "pontos.route",
         "pk": "23021011010",
         "fields": {
@@ -2057,17 +2058,6 @@
     },
     {
         "model": "pontos.route",
-        "pk": "22009171020",
-        "fields": {
-            "linha": "22009171",
-            "agency": "22003",
-            "mode": 22,
-            "short_name": "917 SN",
-            "vista": "Realengo - Bonsucesso"
-        }
-    },
-    {
-        "model": "pontos.route",
         "pk": "22009191010",
         "fields": {
             "linha": "22009191",
@@ -2305,7 +2295,7 @@
             "agency": "22004",
             "mode": 23,
             "short_name": "2111",
-            "vista": "Pra\u00e7a Seca - Castelo"
+            "vista": "Pra\u00e7a Seca - Castelo (via Avenida Menezes C\u00f4rtes)"
         }
     },
     {
@@ -2415,7 +2405,7 @@
             "agency": "22004",
             "mode": 23,
             "short_name": "2345",
-            "vista": "Vila Valqueire - Castelo"
+            "vista": "Vila Valqueire - Castelo (via Norte Shopping)"
         }
     },
     {
@@ -2426,7 +2416,7 @@
             "agency": "22004",
             "mode": 23,
             "short_name": "2345 SVA",
-            "vista": "Vila Valqueire - Castelo"
+            "vista": "Vila Valqueire - Castelo (via Norte Shopping)"
         }
     },
     {
@@ -2437,7 +2427,7 @@
             "agency": "22004",
             "mode": 23,
             "short_name": "2345 SVB",
-            "vista": "Vila Valqueire - Castelo"
+            "vista": "Vila Valqueire - Castelo (via Pra\u00e7a da Bandeira)"
         }
     },
     {
@@ -2547,17 +2537,6 @@
             "agency": "22004",
             "mode": 22,
             "short_name": "309 SN",
-            "vista": "Alvorada - Central"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "22003091030",
-        "fields": {
-            "linha": "22003091",
-            "agency": "22004",
-            "mode": 22,
-            "short_name": "309 SV",
             "vista": "Alvorada - Central"
         }
     },
@@ -5335,17 +5314,6 @@
     },
     {
         "model": "pontos.route",
-        "pk": "22008401020",
-        "fields": {
-            "linha": "22008401",
-            "agency": "22005",
-            "mode": 22,
-            "short_name": "840 SN",
-            "vista": "S\u00e3o Fernando - Campo Grande"
-        }
-    },
-    {
-        "model": "pontos.route",
         "pk": "22008411010",
         "fields": {
             "linha": "22008411",
@@ -6067,7 +6035,7 @@
             "agency": "22005",
             "mode": 22,
             "short_name": "933",
-            "vista": "Catiri - Cidade Unviersit\u00e1ria"
+            "vista": "Catiri - Cidade Universit\u00e1ria"
         }
     },
     {
@@ -6078,7 +6046,7 @@
             "agency": "22005",
             "mode": 22,
             "short_name": "936",
-            "vista": "Campo Grande - Cidade Unviersit\u00e1ria"
+            "vista": "Campo Grande - Cidade Universit\u00e1ria"
         }
     },
     {
@@ -6144,7 +6112,7 @@
             "agency": "22002",
             "mode": 22,
             "short_name": "011",
-            "vista": "Rodovi\u00e1ria - Castelo"
+            "vista": "Rodovi\u00e1ria - Castelo (Circular)"
         }
     },
     {
@@ -6155,7 +6123,7 @@
             "agency": "22002",
             "mode": 22,
             "short_name": "011 SN",
-            "vista": "Rodovi\u00e1ria - Castelo"
+            "vista": "Rodovi\u00e1ria - Castelo (Circular)"
         }
     },
     {
@@ -6178,28 +6146,6 @@
             "mode": 22,
             "short_name": "100",
             "vista": "General Os\u00f3rio - Central"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "22001011010",
-        "fields": {
-            "linha": "22001011",
-            "agency": "22002",
-            "mode": 22,
-            "short_name": "101",
-            "vista": "Jardim de Alah - Cruz Vermelha"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "22001011020",
-        "fields": {
-            "linha": "22001011",
-            "agency": "22002",
-            "mode": 22,
-            "short_name": "101 SN",
-            "vista": "Jardim de Alah - Cruz Vermelha"
         }
     },
     {
@@ -6299,17 +6245,6 @@
             "mode": 22,
             "short_name": "108 SN",
             "vista": "Jardim de Alah - Rodovi\u00e1ria"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "22001091010",
-        "fields": {
-            "linha": "22001091",
-            "agency": "22002",
-            "mode": 22,
-            "short_name": "109",
-            "vista": "S\u00e3o Conrado - Central"
         }
     },
     {
@@ -6442,17 +6377,6 @@
             "mode": 22,
             "short_name": "201 SN",
             "vista": "Santa Alexandrina - Castelo"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "23020121010",
-        "fields": {
-            "linha": "23020121",
-            "agency": "22002",
-            "mode": 23,
-            "short_name": "2012",
-            "vista": "G\u00e1vea - RIOgale\u00e3o"
         }
     },
     {
@@ -6666,17 +6590,6 @@
     },
     {
         "model": "pontos.route",
-        "pk": "22004101010",
-        "fields": {
-            "linha": "22004101",
-            "agency": "22002",
-            "mode": 22,
-            "short_name": "410",
-            "vista": "Saens Pe\u00f1a - G\u00e1vea"
-        }
-    },
-    {
-        "model": "pontos.route",
         "pk": "22004121010",
         "fields": {
             "linha": "22004121",
@@ -6816,17 +6729,6 @@
             "mode": 22,
             "short_name": "436",
             "vista": "Graja\u00fa - Leblon"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "22004391010",
-        "fields": {
-            "linha": "22004391",
-            "agency": "22002",
-            "mode": 22,
-            "short_name": "439",
-            "vista": "Vila Isabel - Leblon"
         }
     },
     {
@@ -7101,7 +7003,7 @@
             "agency": "22002",
             "mode": 22,
             "short_name": "517",
-            "vista": "G\u00e1vea (PUC), - Passeio"
+            "vista": "G\u00e1vea (PUC) - Passeio (via Rua Fonte da Saudade) (Circular)"
         }
     },
     {
@@ -7112,7 +7014,7 @@
             "agency": "22002",
             "mode": 22,
             "short_name": "517 SN",
-            "vista": "G\u00e1vea (PUC), - Passeio"
+            "vista": "G\u00e1vea (PUC) - Passeio (via Rua Fonte da Saudade) (Circular)"
         }
     },
     {
@@ -7134,7 +7036,7 @@
             "agency": "22002",
             "mode": 22,
             "short_name": "538",
-            "vista": "Rocinha - Leme"
+            "vista": "Rocinha - Leme (via Rua Jardim Bot\u00e2nico) (Circular)"
         }
     },
     {
@@ -7178,7 +7080,7 @@
             "agency": "22002",
             "mode": 22,
             "short_name": "548",
-            "vista": "Metr\u00f4 Botafogo - Alvorada"
+            "vista": "Metr\u00f4 Botafogo - Alvorada (via Avenida das Am\u00e9ricas) (Circular)"
         }
     },
     {
@@ -7222,7 +7124,7 @@
             "agency": "22002",
             "mode": 22,
             "short_name": "553",
-            "vista": "Rio Sul - Recreio"
+            "vista": "Rio Sul - Recreio (via Autoestrada Lagoa-Barra e Avenida das Am\u00e9ricas)"
         }
     },
     {
@@ -7266,7 +7168,7 @@
             "agency": "22002",
             "mode": 22,
             "short_name": "558",
-            "vista": "Cidade de Deus - General Os\u00f3rio"
+            "vista": "Copacabana - Cidade de Deus"
         }
     },
     {
@@ -7289,28 +7191,6 @@
             "mode": 22,
             "short_name": "580 SP",
             "vista": "Laranjeiras - Largo do Machado"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "22005811010",
-        "fields": {
-            "linha": "22005811",
-            "agency": "22002",
-            "mode": 22,
-            "short_name": "581",
-            "vista": "Leblon - Cosme Velho"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "22005821010",
-        "fields": {
-            "linha": "22005821",
-            "agency": "22002",
-            "mode": 22,
-            "short_name": "582",
-            "vista": "Leblon - Urca"
         }
     },
     {
@@ -7810,28 +7690,6 @@
     },
     {
         "model": "pontos.route",
-        "pk": "22004861020",
-        "fields": {
-            "linha": "22004861",
-            "agency": "22003",
-            "mode": 22,
-            "short_name": "486 SN",
-            "vista": "Fund\u00e3o - General Os\u00f3rio (via T\u00fanel Santa B\u00e1rbara)"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "22009321020",
-        "fields": {
-            "linha": "22009321",
-            "agency": "22004",
-            "mode": 22,
-            "short_name": "932 SN",
-            "vista": "Gard\u00eania Azul - Tanque (via Estrada do Pau-Ferro)"
-        }
-    },
-    {
-        "model": "pontos.route",
         "pk": "22001071020",
         "fields": {
             "linha": "22001071",
@@ -7850,28 +7708,6 @@
             "mode": 50,
             "short_name": "NIT",
             "vista": "Arariboia - Pra\u00e7a XV"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "5000COC1010",
-        "fields": {
-            "linha": "5000COC1",
-            "agency": "50001",
-            "mode": 50,
-            "short_name": "COC",
-            "vista": "Cocot\u00e1 - Pra\u00e7a XV"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "5000PAQ1010",
-        "fields": {
-            "linha": "5000PAQ1",
-            "agency": "50001",
-            "mode": 50,
-            "short_name": "PAQ",
-            "vista": "Paquet\u00e1 - Pra\u00e7a XV"
         }
     },
     {
@@ -7953,7 +7789,7 @@
     },
     {
         "model": "pontos.route",
-        "pk": "20CGPdA1010",
+        "pk": "20CGPdA1990",
         "fields": {
             "linha": "20CGPdA1",
             "agency": "20001",
@@ -8169,6 +8005,1579 @@
             "mode": 22,
             "short_name": "917 SV",
             "vista": "Realengo - Bonsucesso (via Rua Marina)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40051311010",
+        "fields": {
+            "linha": "40051311",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5131",
+            "vista": "Malvinas \u0097 Bangu (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40051321010",
+        "fields": {
+            "linha": "40051321",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5132",
+            "vista": "Vila Alian\u00e7a \u0097 Bangu (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40052011010",
+        "fields": {
+            "linha": "40052011",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5201",
+            "vista": "Largo do ABC \u0097 Campo Grande (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40052021010",
+        "fields": {
+            "linha": "40052021",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5202",
+            "vista": "Morro do Cavado \u0097 Campo Grande (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40052031010",
+        "fields": {
+            "linha": "40052031",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5203",
+            "vista": "Areal \u0097 Campo Grande (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40052041010",
+        "fields": {
+            "linha": "40052041",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5204",
+            "vista": "Buranhem \u0097 Campo Grande (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40052051010",
+        "fields": {
+            "linha": "40052051",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5205",
+            "vista": "Caminho do C\u00e9u \u0097 Campo Grande (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40052061010",
+        "fields": {
+            "linha": "40052061",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5206",
+            "vista": "Conjunto Campinho \u0097 Campo Grande (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40052071010",
+        "fields": {
+            "linha": "40052071",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5207",
+            "vista": "Nova Cidade \u0097 Campo Grande (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40052131010",
+        "fields": {
+            "linha": "40052131",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5213",
+            "vista": "Carobinha \u0097 Campo Grande (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40053011010",
+        "fields": {
+            "linha": "40053011",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5301",
+            "vista": "Conjunto Habitacional 61 \u0097 Santa Cruz (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40053021010",
+        "fields": {
+            "linha": "40053021",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5302",
+            "vista": "Conjunto Jo\u00e3o XXIII \u0097 Santa Cruz (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40053031010",
+        "fields": {
+            "linha": "40053031",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5303",
+            "vista": "Conjunto Alvorada \u0097 Santa Cruz (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40053041010",
+        "fields": {
+            "linha": "40053041",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5304",
+            "vista": "Mi\u00e9cimo \u0097 Santa Cruz (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40053061010",
+        "fields": {
+            "linha": "40053061",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5306",
+            "vista": "Nova Sepetiba \u0097 Santa Cruz (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40053071010",
+        "fields": {
+            "linha": "40053071",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5307",
+            "vista": "Praia da Brisa \u0097 Santa Cruz (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40053081010",
+        "fields": {
+            "linha": "40053081",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5308",
+            "vista": "Sepetiba \u0097 Santa Cruz (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40053091010",
+        "fields": {
+            "linha": "40053091",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5309",
+            "vista": "Base A\u00e9rea de Santa Cruz \u0097 Santa Cruz (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40053101010",
+        "fields": {
+            "linha": "40053101",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5310",
+            "vista": "Santa Cruz \u0097 S\u00e3o Benedito (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40053111010",
+        "fields": {
+            "linha": "40053111",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5311",
+            "vista": "Uruc\u00e2nia \u0097 Santa Cruz (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40053121010",
+        "fields": {
+            "linha": "40053121",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5312",
+            "vista": "Estrada do Furado \u0097 Santa Cruz (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40053131010",
+        "fields": {
+            "linha": "40053131",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5313",
+            "vista": "Pa\u00e7uar\u00e9 \u0097 Santa Cruz (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40053141010",
+        "fields": {
+            "linha": "40053141",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5314",
+            "vista": "Jardim Cinco Marias \u0097 Pingo d\u00c1gua (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40053151010",
+        "fields": {
+            "linha": "40053151",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5315",
+            "vista": "Capoeira Grande \u0097 Pedra de Guaratiba (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40053161010",
+        "fields": {
+            "linha": "40053161",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5316",
+            "vista": "Macap\u00e1 \u0097 Lote 14 (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40053171010",
+        "fields": {
+            "linha": "40053171",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5317",
+            "vista": "Jesu\u00edtas \u0097 Santa Veridiana (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40053181010",
+        "fields": {
+            "linha": "40053181",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5318",
+            "vista": "Horto Florestal \u0097 Santa Cruz (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40053191010",
+        "fields": {
+            "linha": "40053191",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5319",
+            "vista": "Cesarinho \u0097 Zona Industrial (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40053201010",
+        "fields": {
+            "linha": "40053201",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5320",
+            "vista": "Vendas de Varanda \u0097 Paci\u00eancia (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40053231010",
+        "fields": {
+            "linha": "40053231",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5323",
+            "vista": "Cosmos \u0097 Santa Cruz (via Uruc\u00e2nia) (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40053241010",
+        "fields": {
+            "linha": "40053241",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5324",
+            "vista": "Antares \u0097 Santa Cruz (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40031021010",
+        "fields": {
+            "linha": "40031021",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 3102",
+            "vista": "\u00c1gua Santa \u0097 Engenh\u00e3o (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40031041010",
+        "fields": {
+            "linha": "40031041",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 3104",
+            "vista": "Piedade \u0097 Engenheiro Leal (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40031051010",
+        "fields": {
+            "linha": "40031051",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 3105",
+            "vista": "Lins \u0097 Norte Shopping (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40031061010",
+        "fields": {
+            "linha": "40031061",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 3106",
+            "vista": "Higien\u00f3polis \u0097 Maria da Gra\u00e7a (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40031071010",
+        "fields": {
+            "linha": "40031071",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 3107",
+            "vista": "Triagem \u0097 Largo do Jacar\u00e9 (via Rocha) (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40032011010",
+        "fields": {
+            "linha": "40032011",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 3201",
+            "vista": "Vicente de Carvalho \u0097 IPASE (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40032021010",
+        "fields": {
+            "linha": "40032021",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 3202",
+            "vista": "Cordovil \u0097 Br\u00e1s de Pina (via Rua Suru\u00ed) (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40032031010",
+        "fields": {
+            "linha": "40032031",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 3203",
+            "vista": "Cidade Alta \u0097 Br\u00e1s de Pina (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40032041010",
+        "fields": {
+            "linha": "40032041",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 3204",
+            "vista": "Mercado S\u00e3o Sebasti\u00e3o \u0097 Penha Circular (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40032051010",
+        "fields": {
+            "linha": "40032051",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 3205",
+            "vista": "Cordovil \u0097 Vicente de Carvalho (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40032071010",
+        "fields": {
+            "linha": "40032071",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 3207",
+            "vista": "IAPI \u0097 Penha (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40032111010",
+        "fields": {
+            "linha": "40032111",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 3211",
+            "vista": "Grota \u0097 Uranos (via Rua Doutor Noguchi) (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40032121010",
+        "fields": {
+            "linha": "40032121",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 3212",
+            "vista": "Darcy Vargas \u0097 Ramos (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40032141010",
+        "fields": {
+            "linha": "40032141",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 3214",
+            "vista": "Banc\u00e1rios \u0097 Portuguesa (via Moner\u00f3) (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40032151010",
+        "fields": {
+            "linha": "40032151",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 3215",
+            "vista": "Itacolomi \u0097 Portuguesa (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40032171010",
+        "fields": {
+            "linha": "40032171",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 3217",
+            "vista": "Tubiacanga \u0097 Portuguesa (via Moner\u00f3) (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40032181010",
+        "fields": {
+            "linha": "40032181",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 3218",
+            "vista": "Bananal \u0097 Tau\u00e1 (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40032211010",
+        "fields": {
+            "linha": "40032211",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 3221",
+            "vista": "Ribeira \u0097 Cacuia (via Rua do Monjolo) (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40032221010",
+        "fields": {
+            "linha": "40032221",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 3222",
+            "vista": "Ribeira \u0097 Cocota (via Rua do Monjolo) (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40032231010",
+        "fields": {
+            "linha": "40032231",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 3223",
+            "vista": "Freguesia \u0097 Jardim Guanabara (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40032261010",
+        "fields": {
+            "linha": "40032261",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 3226",
+            "vista": "Vig\u00e1rio Geral \u0097 Pavuna (via FICAP) (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40033011010",
+        "fields": {
+            "linha": "40033011",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 3301",
+            "vista": "Chico Mendes \u0097 Largo da Pavuna (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40033031010",
+        "fields": {
+            "linha": "40033031",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 3303",
+            "vista": "Mari\u00f3polis \u0097 Anchieta (via Rua Javat\u00e1) (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40033111010",
+        "fields": {
+            "linha": "40033111",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 3311",
+            "vista": "Turia\u00e7u \u0097 Col\u00e9gio (via Estrada do Sap\u00ea) (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40033121010",
+        "fields": {
+            "linha": "40033121",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 3312",
+            "vista": "Marechal Hermes \u0097 Vila Valqueire (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40033131010",
+        "fields": {
+            "linha": "40033131",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 3313",
+            "vista": "Osvaldo Cruz \u0097 Vila Valqueire (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40040011010",
+        "fields": {
+            "linha": "40040011",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 4001",
+            "vista": "Sert\u00e3o \u0097 Freguesia (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40040051010",
+        "fields": {
+            "linha": "40040051",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 4005",
+            "vista": "Boi\u00fana \u0097 Taquara (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40040061010",
+        "fields": {
+            "linha": "40040061",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 4006",
+            "vista": "Jord\u00e3o \u0097 Taquara (via Pra\u00e7a Jauru) (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40040071010",
+        "fields": {
+            "linha": "40040071",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 4007",
+            "vista": "Jord\u00e3o \u0097 Taquara (via Rua Atininga) (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40040081010",
+        "fields": {
+            "linha": "40040081",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 4008",
+            "vista": "Hospital Santa Maria \u0097 Taquara (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40040091010",
+        "fields": {
+            "linha": "40040091",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 4009",
+            "vista": "Estrada da Liga\u00e7\u00e3o \u0097 Taquara (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40040101010",
+        "fields": {
+            "linha": "40040101",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 4010",
+            "vista": "Teixeira \u0097 Taquara (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40040111010",
+        "fields": {
+            "linha": "40040111",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 4011",
+            "vista": "Pau da Fome \u0097 Taquara (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40040121010",
+        "fields": {
+            "linha": "40040121",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 4012",
+            "vista": "Largo da Taquara \u0097 Santa Efig\u00eania (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40040131010",
+        "fields": {
+            "linha": "40040131",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 4013",
+            "vista": "Cidade de Deus \u0097 Largo da Taquara (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40040151010",
+        "fields": {
+            "linha": "40040151",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 4015",
+            "vista": "Gard\u00eania Azul \u0097 Freguesia (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40040161010",
+        "fields": {
+            "linha": "40040161",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 4016",
+            "vista": "Gard\u00eania Azul \u0097 Pechincha (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40051011010",
+        "fields": {
+            "linha": "40051011",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5101",
+            "vista": "Boiobi \u0097 Bangu (Sentido Hor\u00e1rio \u0097 Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40051021010",
+        "fields": {
+            "linha": "40051021",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5102",
+            "vista": "Boiobi \u0097 Bangu (Sentido Anti-Hor\u00e1rio \u0097 Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40051061010",
+        "fields": {
+            "linha": "40051061",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5106",
+            "vista": "Jardim Violeta \u0097 Deodoro (via Realengo) (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40051071010",
+        "fields": {
+            "linha": "40051071",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5107",
+            "vista": "Morada do Vale \u0097 Bangu (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40051081010",
+        "fields": {
+            "linha": "40051081",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5108",
+            "vista": "Viegas \u0097 Realengo (Sentido Hor\u00e1rio \u0097 Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40051101010",
+        "fields": {
+            "linha": "40051101",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5110",
+            "vista": "Senador Camar\u00e1 \u0097 Bangu (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40051111010",
+        "fields": {
+            "linha": "40051111",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5111",
+            "vista": "Barata \u0097 Bangu (Sentido Hor\u00e1rio \u0097 Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40051121010",
+        "fields": {
+            "linha": "40051121",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5112",
+            "vista": "Barata \u0097 Bangu (Sentido Anti-Hor\u00e1rio \u0097 Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40051131010",
+        "fields": {
+            "linha": "40051131",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5113",
+            "vista": "Bo\u00e1ria \u0097 Bangu (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40051161010",
+        "fields": {
+            "linha": "40051161",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5116",
+            "vista": "Mallet \u0097 Bangu (via Realengo) (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40051171010",
+        "fields": {
+            "linha": "40051171",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5117",
+            "vista": "Sand\u00e1 \u0097 Sulacap (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40051201010",
+        "fields": {
+            "linha": "40051201",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5120",
+            "vista": "Coqueiros \u0097 Bangu (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40051211010",
+        "fields": {
+            "linha": "40051211",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5121",
+            "vista": "Pres\u00eddio \u0097 Bangu (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40051221010",
+        "fields": {
+            "linha": "40051221",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5122",
+            "vista": "Pres\u00eddio \u0097 Marechal Hermes (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40051231010",
+        "fields": {
+            "linha": "40051231",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5123",
+            "vista": "Sant\u00edssimo \u0097 Magalh\u00e3es Bastos (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40051241010",
+        "fields": {
+            "linha": "40051241",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5124",
+            "vista": "Sant\u00edssimo \u0097 Ricardo de Albuquerque (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40051251010",
+        "fields": {
+            "linha": "40051251",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5125",
+            "vista": "Bangu \u0097 Mallet (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40051261010",
+        "fields": {
+            "linha": "40051261",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5126",
+            "vista": "Batan \u0097 Bangu (Sentido Anti-Hor\u00e1rio \u0097 Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40051271010",
+        "fields": {
+            "linha": "40051271",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5127",
+            "vista": "Batan \u0097 Bangu (Sentido Hor\u00e1rio \u0097 Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40051281010",
+        "fields": {
+            "linha": "40051281",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5128",
+            "vista": "Catiri \u0097 Bangu (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40051291010",
+        "fields": {
+            "linha": "40051291",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5129",
+            "vista": "Jardim Bangu \u0097 Bangu (via Padre Miguel) (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40040181010",
+        "fields": {
+            "linha": "40040181",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 4018",
+            "vista": "Estrada do Sacarr\u00e3o \u0097 Recreio dos Bandeirantes (via Estrada Vereador Alceu de Carvalho) (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40040171010",
+        "fields": {
+            "linha": "40040171",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 4017",
+            "vista": "Estrada do Pacu\u00ed \u0097 Recreio dos Bandeirantes (via Estrada Vereador Alceu de Carvalho) (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40051151010",
+        "fields": {
+            "linha": "40051151",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5115",
+            "vista": "Jardim Novo \u0097 Bangu (via Estrada da \u00c1gua Branca) (Sentido Anti-Hor\u00e1rio \u0097 Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40051191010",
+        "fields": {
+            "linha": "40051191",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5119",
+            "vista": "Sulacap \u0097 Bangu (via Estrada da \u00c1gua Branca) (Sentido Anti-Hor\u00e1rio \u0097 Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40032091010",
+        "fields": {
+            "linha": "40032091",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 3209",
+            "vista": "Vila dos Pinheiros \u0097 Bonsucesso (via Hospital Geral de Bonsucesso) (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40040021010",
+        "fields": {
+            "linha": "40040021",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 4002",
+            "vista": "Taquara (Merck) \u0097 Center Shopping (via Rua Retiro dos Artistas) (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40031081010",
+        "fields": {
+            "linha": "40031081",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 3108",
+            "vista": "Fazenda da Bica \u0097 Engenho de Dentro (via Rua Nerval de Gouv\u00eaa) (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40040031010",
+        "fields": {
+            "linha": "40040031",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 4003",
+            "vista": "Taquara (Merck) \u0097 Center Shopping (via Avenida Nelson Cardoso) (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40052161010",
+        "fields": {
+            "linha": "40052161",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5216",
+            "vista": "Jo\u00e3o Gualberto Braga \u0097 Campo Grande (via Estrada do Monteiro) (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40032061010",
+        "fields": {
+            "linha": "40032061",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 3206",
+            "vista": "Estrada Coronel Vieira \u0097 Pra\u00e7a Nossa Senhora da Apresenta\u00e7\u00e3o (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40032101010",
+        "fields": {
+            "linha": "40032101",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 3210",
+            "vista": "Vila do Jo\u00e3o \u0097 Bonsucesso (via Hospital Geral de Bonsucesso) (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40052141010",
+        "fields": {
+            "linha": "40052141",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5214",
+            "vista": "Guandu do Sena \u0097 Campo Grande (via Estrada dos Sete Riachos) (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40032241010",
+        "fields": {
+            "linha": "40032241",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 3224",
+            "vista": "Jardim Am\u00e9rica \u0097 Vig\u00e1rio Geral (via Rua Fernandes da Cunha) (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40040141010",
+        "fields": {
+            "linha": "40040141",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 4014",
+            "vista": "Cidade de Deus \u0097 Largo da Taquara (via Rua Edgard Werneck) (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40033091010",
+        "fields": {
+            "linha": "40033091",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 3309",
+            "vista": "Marechal Hermes \u0097 Guadalupe (via Rua Leoc\u00e1dio Figueiredo) (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40051141010",
+        "fields": {
+            "linha": "40051141",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5114",
+            "vista": "Jardim Novo \u0097 Bangu (via Rua Piraquara) (Sentido Hor\u00e1rio \u0097 Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40052171010",
+        "fields": {
+            "linha": "40052171",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5217",
+            "vista": "S\u00e3o Pedro \u0097 Campo Grande (via Rua Augusto de Vasconcelos) (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40033051010",
+        "fields": {
+            "linha": "40033051",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 3305",
+            "vista": "Village Pavuna \u0097 Largo da Pavuna (via Rua Ant\u00f4nio Alves) (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40052111010",
+        "fields": {
+            "linha": "40052111",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5211",
+            "vista": "S\u00e3o Bas\u00edlio \u0097 Campo Grande (via Avenida Ces\u00e1rio de Melo) (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40052151010",
+        "fields": {
+            "linha": "40052151",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5215",
+            "vista": "S\u00e3o Geraldo \u0097 Campo Grande (via Avenida Ces\u00e1rio de Melo) (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40032251010",
+        "fields": {
+            "linha": "40032251",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 3225",
+            "vista": "Jardim Am\u00e9rica \u0097 Vig\u00e1rio Geral (via Rua Furquim Mendes) (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40033041010",
+        "fields": {
+            "linha": "40033041",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 3304",
+            "vista": "Mari\u00f3polis \u0097 Anchieta (via Rua Lenir Liberato da Silva) (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40053221010",
+        "fields": {
+            "linha": "40053221",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5322",
+            "vista": "Manguariba \u0097 Santa Cruz (via Estrada Aterrado do Leme) (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40032201010",
+        "fields": {
+            "linha": "40032201",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 3220",
+            "vista": "Portuguesa \u0097 Jardim Guanabara (via Rua Gr\u00e3o de Areia) (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40052181010",
+        "fields": {
+            "linha": "40052181",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5218",
+            "vista": "Guandu Mirim \u0097 Campo Grande (via Estrada do Lameir\u00e3o) (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40032081010",
+        "fields": {
+            "linha": "40032081",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 3208",
+            "vista": "Mar\u00e9 \u0097 Bonsucesso (via Hospital Geral de Bonsucesso) (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40040041010",
+        "fields": {
+            "linha": "40040041",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 4004",
+            "vista": "Taquara (Merck) \u0097 Center Shopping (via Rua Mirataia) (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40052121010",
+        "fields": {
+            "linha": "40052121",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5212",
+            "vista": "Vila Santa Maria \u0097 Campo Grande (via Rua Guaraciaba) (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40021011010",
+        "fields": {
+            "linha": "40021011",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 2101",
+            "vista": "S\u00e3o Conrado \u0097 Jardim de Alah (via Avenida Niemeyer) (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40032131010",
+        "fields": {
+            "linha": "40032131",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 3213",
+            "vista": "Ramos \u0097 Largo do Itarar\u00e9 (via Rua Felizardo Fortes) (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40032191010",
+        "fields": {
+            "linha": "40032191",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 3219",
+            "vista": "Portuguesa \u0097 Jardim Guanabara (via Rua Lu\u00eds Belart) (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40051041010",
+        "fields": {
+            "linha": "40051041",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5104",
+            "vista": "Jabour \u0097 Realengo (via SASE) (Sentido Anti-Hor\u00e1rio \u0097 Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40031011010",
+        "fields": {
+            "linha": "40031011",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 3101",
+            "vista": "Tom\u00e1s Coelho \u0097 Aboli\u00e7\u00e3o (via Viaduto Jo\u00e3o Ribeiro) (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40052081010",
+        "fields": {
+            "linha": "40052081",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5208",
+            "vista": "Jardim Campo Belo \u0097 Campo Grande (via Rua Vergel) (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40052191010",
+        "fields": {
+            "linha": "40052191",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5219",
+            "vista": "Pedra de Guaratiba \u0097 Am\u00e9ricas (via BRT Mato Alto) (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40032161010",
+        "fields": {
+            "linha": "40032161",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 3216",
+            "vista": "Tubiacanga \u0097 Portuguesa (via Rua Eduardo Nadruz) (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40033081010",
+        "fields": {
+            "linha": "40033081",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 3308",
+            "vista": "Pavuna \u0097 Metr\u00f4 Pavuna (via Rua Barcelos do Sul) (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40051051010",
+        "fields": {
+            "linha": "40051051",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5105",
+            "vista": "Jardim Violeta \u0097 Deodoro (via Magalh\u00e3es Bastos) (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40052091010",
+        "fields": {
+            "linha": "40052091",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5209",
+            "vista": "Jardim Campo Belo \u0097 Campo Grande (via Rua Jape) (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40052201010",
+        "fields": {
+            "linha": "40052201",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5220",
+            "vista": "Pedra de Guaratiba \u0097 Am\u00e9ricas (via BRT Magar\u00e7a) (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40051031010",
+        "fields": {
+            "linha": "40051031",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5103",
+            "vista": "Jabour \u0097 Realengo (via SASE) (Sentido Hor\u00e1rio \u0097 Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40053051010",
+        "fields": {
+            "linha": "40053051",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5305",
+            "vista": "Sepetiba \u0097 Santa Cruz (via Rua \u00c1lvaro Alberto) (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40031031010",
+        "fields": {
+            "linha": "40031031",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 3103",
+            "vista": "Engenho da Rainha \u0097 Inha\u00fama (via Rua Edmundo) (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40033021010",
+        "fields": {
+            "linha": "40033021",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 3302",
+            "vista": "Beberibe \u0097 Anchieta (via Rua Edgard Barbosa) (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40052101010",
+        "fields": {
+            "linha": "40052101",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5210",
+            "vista": "Tingui \u0097 Mendanha (via Estrada do Pedregoso) (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40033101010",
+        "fields": {
+            "linha": "40033101",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 3310",
+            "vista": "Coelho Neto \u0097 Rocha Miranda (via Rua Itaim) (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40021021010",
+        "fields": {
+            "linha": "40021021",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 2102",
+            "vista": "S\u00e3o Conrado \u0097 Jardim de Alah (via Rocinha) (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40051181010",
+        "fields": {
+            "linha": "40051181",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5118",
+            "vista": "Sulacap \u0097 Bangu (via 77) (Sentido Hor\u00e1rio \u0097 Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40033061010",
+        "fields": {
+            "linha": "40033061",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 3306",
+            "vista": "Alcoba\u00e7a \u0097 Guadalupe (via Rua Pedra Rasa) (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40051301010",
+        "fields": {
+            "linha": "40051301",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5130",
+            "vista": "Jardim Bangu \u0097 Bangu (via Bangu Shopping) (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40053211010",
+        "fields": {
+            "linha": "40053211",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5321",
+            "vista": "Vila Paci\u00eancia \u0097 Santa Cruz (via Antares) (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40033071010",
+        "fields": {
+            "linha": "40033071",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 3307",
+            "vista": "Ricardo de Albuquerque \u0097 Parque Anchieta (Circular)"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "40051091010",
+        "fields": {
+            "linha": "40051091",
+            "agency": "40001",
+            "mode": 40,
+            "short_name": "STPL 5109",
+            "vista": "Viegas \u0097 Realengo (Sentido Anti-Hor\u00e1rio \u0097 Circular)"
         }
     }
 ]

@@ -31,7 +31,7 @@
         "model": "pontos.agency",
         "pk": "10001",
         "fields": {
-            "name": "Metr\u00f4Rio"
+            "name": "MetrôRio"
         }
     },
     {
