@@ -10066,10 +10066,10 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "2021O00007S0",
+        "pk": "2021O00007C0",
         "fields": {
             "mode": 22,
-            "name": "BRS 1,2: CIEP Agostinho Neto",
+            "name": "CIEP Agostinho Neto",
             "address": "BRS 1",
             "latitude": "-22.958985973693487",
             "longitude": "-43.19994983426807"
@@ -12981,10 +12981,10 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "2027O00067S0",
+        "pk": "2027O00067C0",
         "fields": {
             "mode": 22,
-            "name": "BRS 1,2,3,I: Engenheiro Marques Porto",
+            "name": "Engenheiro Marques Porto",
             "address": "BRS 1",
             "latitude": "-22.959719294158134",
             "longitude": "-43.20137369160007"
@@ -82655,6 +82655,17 @@
     },
     {
         "model": "pontos.stop",
+        "pk": "5145O00055C0",
+        "fields": {
+            "mode": 22,
+            "name": "Estação Senador Vasconcelos",
+            "address": "Av. de Santa Cruz",
+            "latitude": "-22.89365340698634",
+            "longitude": "-43.537038704007685"
+        }
+    },
+    {
+        "model": "pontos.stop",
         "pk": "5145TZ0050P2",
         "fields": {
             "mode": 11,
@@ -83432,6 +83443,17 @@
             "address": "R. Moranga",
             "latitude": "-22.91580373679854",
             "longitude": "-43.583940223478784"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "5146O00332C0",
+        "fields": {
+            "mode": 22,
+            "name": "Vilar Carioca :: Linha 841",
+            "address": "R. Cento e Quatorze Vila Carioca",
+            "latitude": "-22.928639555392223",
+            "longitude": "-43.602643052631215"
         }
     },
     {
@@ -85914,7 +85936,7 @@
         "pk": "5148O00112C9",
         "fields": {
             "mode": 22,
-            "name": "Rua Cilon Cunha Brum, 146.",
+            "name": "Devanir José de Carvalho",
             "address": "R. Cilon Cunha Brum",
             "latitude": "-22.913943750606762",
             "longitude": "-43.65474706160331"
@@ -87179,7 +87201,7 @@
         "pk": "5149O00056C9",
         "fields": {
             "mode": 22,
-            "name": "Avenida Areia Branca próximo ao 1627-1737",
+            "name": "Sítio Duros na Queda",
             "address": "Avenida Areia Branca próximo ao 1627-1737",
             "latitude": "-22.94082",
             "longitude": "-43.68486"
@@ -89838,6 +89860,39 @@
     },
     {
         "model": "pontos.stop",
+        "pk": "5149O00320C1",
+        "fields": {
+            "mode": 22,
+            "name": "Teresa Cristina",
+            "address": "R. Barão da Laguna",
+            "latitude": "-22.91818734982316",
+            "longitude": "-43.68463621043394"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "5149O00321C1",
+        "fields": {
+            "mode": 22,
+            "name": "Morro do Cruzeiro",
+            "address": "R. do Cruzeiro",
+            "latitude": "-22.920090378799127",
+            "longitude": "-43.687438171415664"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "5149O00322C1",
+        "fields": {
+            "mode": 22,
+            "name": "Arnaldo Bastos",
+            "address": "R. do Cruzeiro",
+            "latitude": "-22.92110284798906",
+            "longitude": "-43.689028926104996"
+        }
+    },
+    {
+        "model": "pontos.stop",
         "pk": "5149TZ0313P3",
         "fields": {
             "mode": 11,
@@ -90069,10 +90124,10 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "5150O00017C0",
+        "pk": "5150O00017C9",
         "fields": {
             "mode": 22,
-            "name": "Serigy",
+            "name": "Santo Antônio",
             "address": "Estrada São Tarcísio próximo ao 789",
             "latitude": "-22.97969",
             "longitude": "-43.68921"
@@ -90080,24 +90135,24 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "5150O00018C0",
+        "pk": "5150O00018C9",
         "fields": {
             "mode": 22,
-            "name": "Oliveira Alves",
-            "address": "Estrada São Tarcísio próximo ao 1015-1017",
-            "latitude": "-22.98051",
-            "longitude": "-43.68748"
+            "name": "Doutor José Waltze",
+            "address": "Estr. São Tarcísio",
+            "latitude": "-22.980485306570017",
+            "longitude": "-43.68753900859832"
         }
     },
     {
         "model": "pontos.stop",
-        "pk": "5150O00019C0",
+        "pk": "5150O00019C9",
         "fields": {
             "mode": 22,
             "name": "Antônio Gomes de Oliveira",
-            "address": "Estrada São Tarcísio próximo ao 1147",
-            "latitude": "-22.98106",
-            "longitude": "-43.68623"
+            "address": "Estrada São Tarcísio próximo ao 1147 - Sepetiba",
+            "latitude": "-22.981104443556184",
+            "longitude": "-43.68618299951389"
         }
     },
     {
@@ -90113,32 +90168,32 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "5150O00021C0",
+        "pk": "5150O00021C9",
         "fields": {
             "mode": 22,
             "name": "Antônio Gomes de Oliveira",
-            "address": "Estrada São Tarcísio próximo ao 1159-1199",
-            "latitude": "-22.98120",
-            "longitude": "-43.68573"
+            "address": "Estrada São Tarcísio próximo ao 1159-1199 - Sepetiba",
+            "latitude": "-22.981152543876412",
+            "longitude": "-43.685752072485286"
         }
     },
     {
         "model": "pontos.stop",
-        "pk": "5150O00022C0",
+        "pk": "5150O00022C9",
         "fields": {
             "mode": 22,
-            "name": "Oliveira Alves",
-            "address": "Estrada São Tarcísio próximo ao 1019-1049",
-            "latitude": "-22.98043",
-            "longitude": "-43.68738"
+            "name": "Doutor José Waltze",
+            "address": "Estr. São Tarcísio",
+            "latitude": "-22.98040036786593",
+            "longitude": "-43.68734244907379"
         }
     },
     {
         "model": "pontos.stop",
-        "pk": "5150O00023C0",
+        "pk": "5150O00023C9",
         "fields": {
             "mode": 22,
-            "name": "Serigy",
+            "name": "Santo Antônio",
             "address": "Estrada São Tarcísio próximo ao 797",
             "latitude": "-22.97963",
             "longitude": "-43.68906"
@@ -90447,9 +90502,9 @@
         "fields": {
             "mode": 22,
             "name": "Antonio Braga Filho",
-            "address": "Estrada São Tarcísio próximo ao 223",
-            "latitude": "-22.98351",
-            "longitude": "-43.69306"
+            "address": "Estr. São Tarcísio",
+            "latitude": "-22.983509885932023",
+            "longitude": "-43.693040220765866"
         }
     },
     {
@@ -90976,8 +91031,8 @@
             "mode": 22,
             "name": "Doutor Rafael Jambeiro",
             "address": "Rua Aristides Gouvéa",
-            "latitude": "-22.98158",
-            "longitude": "-43.69447"
+            "latitude": "-22.981588642630975",
+            "longitude": "-43.694455247850414"
         }
     },
     {
@@ -90987,8 +91042,8 @@
             "mode": 22,
             "name": "Camargo Rieger",
             "address": "Rua Aristides Gouvéa",
-            "latitude": "-22.98194",
-            "longitude": "-43.69712"
+            "latitude": "-22.98191283751428",
+            "longitude": "-43.697111953372946"
         }
     },
     {
@@ -90998,8 +91053,8 @@
             "mode": 22,
             "name": "Doutor Rafael Jambeiro",
             "address": "Rua Aristides Gouvéa",
-            "latitude": "-22.98159",
-            "longitude": "-43.69491"
+            "latitude": "-22.981585061353858",
+            "longitude": "-43.69491536441802"
         }
     },
     {
@@ -91009,8 +91064,8 @@
             "mode": 22,
             "name": "STPL :: Linha 5333",
             "address": "Rua Aristides Gouvéa",
-            "latitude": "-22.98057",
-            "longitude": "-43.69298"
+            "latitude": "-22.980569999999997",
+            "longitude": "-43.692973294477454"
         }
     },
     {
@@ -91040,10 +91095,10 @@
         "pk": "5150O00105C9",
         "fields": {
             "mode": 22,
-            "name": "R. da Floresta, 21",
+            "name": "Pescadores",
             "address": "R. da Floresta",
-            "latitude": "-22.971240168106767",
-            "longitude": "-43.70854535345123"
+            "latitude": "-22.97124",
+            "longitude": "-43.70853"
         }
     },
     {
@@ -91051,10 +91106,10 @@
         "pk": "5150O00106C9",
         "fields": {
             "mode": 22,
-            "name": "R. da Floresta, próx. ao 260",
+            "name": "Pedro Leitão",
             "address": "R. da Floresta",
-            "latitude": "-22.97234228832275",
-            "longitude": "-43.70731956865206"
+            "latitude": "-22.97233",
+            "longitude": "-43.70731"
         }
     },
     {
@@ -91062,10 +91117,10 @@
         "pk": "5150O00107C9",
         "fields": {
             "mode": 22,
-            "name": "R. da Floresta, 554",
+            "name": "Doutor Ari Chagas",
             "address": "R. da Floresta",
-            "latitude": "-22.974259679800017",
-            "longitude": "-43.70564692314332"
+            "latitude": "-22.97432",
+            "longitude": "-43.70559"
         }
     },
     {
@@ -91073,10 +91128,10 @@
         "pk": "5150O00108C9",
         "fields": {
             "mode": 22,
-            "name": "R. da Floresta, L.O. 849",
+            "name": "Oscar Rossim",
             "address": "R. da Floresta",
-            "latitude": "-22.976206249145704",
-            "longitude": "-43.70329417489444"
+            "latitude": "-22.97617",
+            "longitude": "-43.70329"
         }
     },
     {
@@ -91084,10 +91139,10 @@
         "pk": "5150O00109C9",
         "fields": {
             "mode": 22,
-            "name": "R. da Floresta, L.O. 1.113",
+            "name": "Júlio Nicolau",
             "address": "R. da Floresta",
-            "latitude": "-22.978736304792182",
-            "longitude": "-43.70266701372204"
+            "latitude": "-22.97878",
+            "longitude": "-43.70264"
         }
     },
     {
@@ -91095,10 +91150,87 @@
         "pk": "5150O00110C9",
         "fields": {
             "mode": 22,
-            "name": "Rua Aristides Gouvéa, Próx. ao 330",
+            "name": "Antônio Aparecido",
             "address": "Rua Aristides Gouvéa",
-            "latitude": "-22.98099029583921",
-            "longitude": "-43.701386052676526"
+            "latitude": "-22.98099",
+            "longitude": "-43.70139"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "5150O00111C9",
+        "fields": {
+            "mode": 22,
+            "name": "Ernani de Brito",
+            "address": "Rua Aristides Gouvéa",
+            "latitude": "-22.98221",
+            "longitude": "-43.69932"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "5150O00112C9",
+        "fields": {
+            "mode": 22,
+            "name": "Camargo Rieger",
+            "address": "Rua Aristides Gouvéa",
+            "latitude": "-22.98201",
+            "longitude": "-43.69680"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "5150O00113C9",
+        "fields": {
+            "mode": 22,
+            "name": "Doutor Camarasano",
+            "address": "R. Bom Nome",
+            "latitude": "-22.98304",
+            "longitude": "-43.69497"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "5150O00114C9",
+        "fields": {
+            "mode": 22,
+            "name": "Paranabi",
+            "address": "Rua Aristides Gouvéa",
+            "latitude": "-22.980586050719943",
+            "longitude": "-43.69299344839119"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "5150O00115C9",
+        "fields": {
+            "mode": 22,
+            "name": "Paranabi",
+            "address": "R. Paranabi",
+            "latitude": "-22.980645932235237",
+            "longitude": "-43.69292844216871"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "5150O00116C9",
+        "fields": {
+            "mode": 22,
+            "name": "Leila Guimarães",
+            "address": "Estr. São Tarcísio",
+            "latitude": "-22.979658662987838",
+            "longitude": "-43.68182380037784"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "5150O00117C9",
+        "fields": {
+            "mode": 22,
+            "name": "Leila Guimarães",
+            "address": "Estr. São Tarcísio",
+            "latitude": "-22.97950597275775",
+            "longitude": "-43.681886093863554"
         }
     },
     {
@@ -91348,10 +91480,10 @@
         "pk": "5151O00004C9",
         "fields": {
             "mode": 22,
-            "name": "Estrada da Pedra, lado oposto ao número 4065.",
+            "name": "Brisas",
             "address": "Estrada Da Pedra",
-            "latitude": "-22.990983939136783",
-            "longitude": "-43.65142787797129"
+            "latitude": "-22.99098",
+            "longitude": "-43.65141"
         }
     },
     {
@@ -92415,10 +92547,10 @@
         "pk": "5151O00119C0",
         "fields": {
             "mode": 22,
-            "name": "Estrada da Matriz 1436",
+            "name": "Luiz Brunini",
             "address": "Estrada da Matriz próximo ao 1014-1100",
-            "latitude": "-22.9964",
-            "longitude": "-43.62512"
+            "latitude": "-22.99574",
+            "longitude": "-43.62201"
         }
     },
     {
@@ -92426,10 +92558,10 @@
         "pk": "5151O00120C0",
         "fields": {
             "mode": 22,
-            "name": "Estrada da Matriz 1752",
+            "name": "Mário Lago",
             "address": "Estrada da Matriz próximo ao 1372-1384",
-            "latitude": "-22.99586",
-            "longitude": "-43.62212"
+            "latitude": "-22.99513",
+            "longitude": "-43.61857"
         }
     },
     {
@@ -92437,10 +92569,10 @@
         "pk": "5151O00121C0",
         "fields": {
             "mode": 22,
-            "name": "Estrada da Matriz L/O 2011",
+            "name": "Jece Valadão",
             "address": "Estrada da Matriz próximo ao 1906-1992",
-            "latitude": "-22.99494",
-            "longitude": "-43.6167"
+            "latitude": "-22.99485",
+            "longitude": "-43.61677"
         }
     },
     {
@@ -92448,10 +92580,10 @@
         "pk": "5151O00122C0",
         "fields": {
             "mode": 22,
-            "name": "Estrada da Matriz, e/f ao 2358 - sentido Mato Alto",
+            "name": "Deodoro Pereira Pinto",
             "address": "Estrada da Matriz próximo ao 9063-9159 - Guaratiba",
-            "latitude": "-22.994036578038294",
-            "longitude": "-43.61216193842541"
+            "latitude": "-22.99404",
+            "longitude": "-43.61223"
         }
     },
     {
@@ -92461,8 +92593,8 @@
             "mode": 22,
             "name": "Piraquê",
             "address": "Estrada da Matriz próximo ao 2995B - Guaratiba",
-            "latitude": "-22.99330",
-            "longitude": "-43.60785"
+            "latitude": "-22.99329",
+            "longitude": "-43.60786"
         }
     },
     {
@@ -92470,10 +92602,10 @@
         "pk": "5151O00124C0",
         "fields": {
             "mode": 22,
-            "name": "Estrada da Matriz próximo Embratel",
+            "name": "Embratel",
             "address": "Estrada da Matriz próximo ao 3101-3999",
-            "latitude": "-22.99414",
-            "longitude": "-43.60257"
+            "latitude": "-22.99410",
+            "longitude": "-43.60280"
         }
     },
     {
@@ -92657,10 +92789,10 @@
         "pk": "5151O00141C0",
         "fields": {
             "mode": 22,
-            "name": "Estrada da Matriz s/n",
+            "name": "Embratel",
             "address": "Estrada da Matriz próximo ao 4001-4099",
-            "latitude": "-22.99394",
-            "longitude": "-43.60006"
+            "latitude": "-22.99405",
+            "longitude": "-43.60219"
         }
     },
     {
@@ -92679,10 +92811,10 @@
         "pk": "5151O00143C0",
         "fields": {
             "mode": 22,
-            "name": "Estrada da Matriz 2555",
+            "name": "Triunfo",
             "address": "Estrada da Matriz próximo ao 2565-2619",
-            "latitude": "-22.99349",
-            "longitude": "-43.60983"
+            "latitude": "-22.99357",
+            "longitude": "-43.61007"
         }
     },
     {
@@ -92690,10 +92822,10 @@
         "pk": "5151O00144C0",
         "fields": {
             "mode": 22,
-            "name": "Estrada da Matriz 2137",
+            "name": "Deodoro Pereira Pinto",
             "address": "Estrada da Matriz próximo ao 2533",
-            "latitude": "-22.9938",
-            "longitude": "-43.61164"
+            "latitude": "-22.99387",
+            "longitude": "-43.61178"
         }
     },
     {
@@ -92701,10 +92833,10 @@
         "pk": "5151O00145C0",
         "fields": {
             "mode": 22,
-            "name": "Estrada da Matriz 2239",
+            "name": "Nove de Abril",
             "address": "Estrada da Matriz próximo ao 2155",
-            "latitude": "-22.99446",
-            "longitude": "-43.61556"
+            "latitude": "-22.99440",
+            "longitude": "-43.61485"
         }
     },
     {
@@ -92712,10 +92844,10 @@
         "pk": "5151O00146C0",
         "fields": {
             "mode": 22,
-            "name": "Estrada da Matriz 2011",
+            "name": "Jece Valadão",
             "address": "Estrada da Matriz próximo ao 1761",
-            "latitude": "-22.99485",
-            "longitude": "-43.6178"
+            "latitude": "-22.99473",
+            "longitude": "-43.61677"
         }
     },
     {
@@ -92723,10 +92855,10 @@
         "pk": "5151O00147C0",
         "fields": {
             "mode": 22,
-            "name": "Estrada da Matriz 1753",
+            "name": "Mário Lago",
             "address": "Estrada da Matriz próximo ao 1621-1669",
-            "latitude": "-22.99514",
-            "longitude": "-43.61946"
+            "latitude": "-22.99496",
+            "longitude": "-43.61813"
         }
     },
     {
@@ -92745,10 +92877,10 @@
         "pk": "5151O00149C0",
         "fields": {
             "mode": 22,
-            "name": "Estrada da Matriz 1471",
+            "name": "Trinta e Seis",
             "address": "Estrada da Matriz próximo ao 1385",
-            "latitude": "-22.99561",
-            "longitude": "-43.62223"
+            "latitude": "-22.99596",
+            "longitude": "-43.62393"
         }
     },
     {
@@ -92756,10 +92888,10 @@
         "pk": "5151O00150C0",
         "fields": {
             "mode": 22,
-            "name": "Estrada da Matriz 1355",
+            "name": "Luiz Brunini",
             "address": "Estrada da Matriz próximo ao 1355",
-            "latitude": "-22.99579",
-            "longitude": "-43.62318"
+            "latitude": "-22.99574",
+            "longitude": "-43.62265"
         }
     },
     {
@@ -93504,7 +93636,7 @@
         "pk": "5151O00236C0",
         "fields": {
             "mode": 22,
-            "name": "Ponto Final: BRT Mato Alto :: Linhas Alimentadoras",
+            "name": "BRT Mato Alto :: Linhas Alimentadoras",
             "address": "Estrada da Matriz próximo ao 106",
             "latitude": "-22.99389",
             "longitude": "-43.59766"
@@ -93515,10 +93647,10 @@
         "pk": "5151O00237C9",
         "fields": {
             "mode": 22,
-            "name": "Estrada da Pedra, próximo ao número 4075.",
+            "name": "Brisas",
             "address": "ESTRADA DA PEDRA 7654",
             "latitude": "-22.99095",
-            "longitude": "-43.65129"
+            "longitude": "-43.65132"
         }
     },
     {
@@ -93702,10 +93834,10 @@
         "pk": "5151O00255C9",
         "fields": {
             "mode": 22,
-            "name": "Estrada da Pedra, 4241.",
+            "name": "Catruz",
             "address": "Estrada da Pedra próximo ao 7419-7889 - Guaratiba",
-            "latitude": "-22.993357111336547",
-            "longitude": "-43.65048652158541"
+            "latitude": "-22.99337",
+            "longitude": "-43.65048"
         }
     },
     {
@@ -94153,10 +94285,10 @@
         "pk": "5151O00314C0",
         "fields": {
             "mode": 22,
-            "name": "Estrada da Matriz 1555",
+            "name": "Stella Goulart Marinho",
             "address": "Rua Quarenta e Dois próximo ao 272-290 - Guaratiba",
-            "latitude": "-22.995444096467832",
-            "longitude": "-43.62097656313117"
+            "latitude": "-22.99546",
+            "longitude": "-43.62101"
         }
     },
     {
@@ -94164,10 +94296,10 @@
         "pk": "5151O00315C0",
         "fields": {
             "mode": 22,
-            "name": "Estrada da Matriz 2500",
+            "name": "Triunfo",
             "address": "Estr. da Matriz",
-            "latitude": "-22.993601854965778",
-            "longitude": "-43.60957038886978"
+            "latitude": "-22.99366",
+            "longitude": "-43.60995"
         }
     },
     {
@@ -94175,10 +94307,10 @@
         "pk": "5151O00316C0",
         "fields": {
             "mode": 22,
-            "name": "Estrada da Matriz 2900",
+            "name": "Piraquê",
             "address": "Estrada da Matriz próximo ao 2995B - Guaratiba",
-            "latitude": "-22.993419308232724",
-            "longitude": "-43.607935335228774"
+            "latitude": "-22.99339",
+            "longitude": "-43.60798"
         }
     },
     {
@@ -94780,10 +94912,10 @@
         "pk": "5153O00001C0",
         "fields": {
             "mode": 22,
-            "name": "Rua Belchior da Fonseca,301",
+            "name": "Professor Antônio Reis",
             "address": "Rua Belchior da Fonseca próximo ao 315-319",
-            "latitude": "-23.00091",
-            "longitude": "-43.64159"
+            "latitude": "-23.00081",
+            "longitude": "-43.64162"
         }
     },
     {
@@ -94802,10 +94934,10 @@
         "pk": "5153O00005C0",
         "fields": {
             "mode": 22,
-            "name": "Estrada da Pedra, 8024.",
+            "name": "Catruz",
             "address": "Estrada da Pedra próximo ao 7419-7889 - Guaratiba",
-            "latitude": "-22.993606985378122",
-            "longitude": "-43.650616514193004"
+            "latitude": "-22.99365",
+            "longitude": "-43.65058"
         }
     },
     {
@@ -94813,10 +94945,10 @@
         "pk": "5153O00006C0",
         "fields": {
             "mode": 22,
-            "name": "Estrada da Pedra, 8600.",
+            "name": "Escola Municipal Nestor Victor",
             "address": "Estr. da Pedra",
-            "latitude": "-22.99646810870146",
-            "longitude": "-43.650186374334794"
+            "latitude": "-22.99653",
+            "longitude": "-43.65021"
         }
     },
     {
@@ -94824,10 +94956,10 @@
         "pk": "5153O00007C9",
         "fields": {
             "mode": 22,
-            "name": "Estrada da Pedra, lado oposto ao número 8855.",
+            "name": "Paraíso",
             "address": "Estr. da Pedra",
-            "latitude": "-22.998822015896188",
-            "longitude": "-43.64910529638999"
+            "latitude": "-22.99880",
+            "longitude": "-43.64906"
         }
     },
     {
@@ -94835,10 +94967,10 @@
         "pk": "5153O00008C9",
         "fields": {
             "mode": 22,
-            "name": "Estrada da Pedra, próximo lado oposto ao número 9071.",
+            "name": "Venda Grande",
             "address": "Estr. da Pedra",
-            "latitude": "-23.000226926060833",
-            "longitude": "-43.64717059015477"
+            "latitude": "-23.00020",
+            "longitude": "-43.64718"
         }
     },
     {
@@ -94846,10 +94978,10 @@
         "pk": "5153O00009C0",
         "fields": {
             "mode": 22,
-            "name": "Estrada da Pedra próximo ao 9342",
+            "name": "Santa Maria Mãe de Deus",
             "address": "Estrada da Pedra próximo ao 9342",
-            "latitude": "-23.00059",
-            "longitude": "-43.64489"
+            "latitude": "-23.00045",
+            "longitude": "-43.64493"
         }
     },
     {
@@ -94857,10 +94989,10 @@
         "pk": "5153O00010C0",
         "fields": {
             "mode": 22,
-            "name": "Rua Belchior da Fonseca,284",
+            "name": "Professor Antônio Reis",
             "address": "Rua Belchior da Fonseca próximo ao 305-313",
-            "latitude": "-23.00089",
-            "longitude": "-43.64178"
+            "latitude": "-23.00087",
+            "longitude": "-43.64176"
         }
     },
     {
@@ -94868,10 +95000,10 @@
         "pk": "5153O00011C0",
         "fields": {
             "mode": 22,
-            "name": "Rua Belchior da Fonseca,790",
+            "name": "Saião Lobato",
             "address": "Rua Belchior da Fonseca próximo ao 839-841",
-            "latitude": "-23.00232",
-            "longitude": "-43.63691"
+            "latitude": "-23.00225",
+            "longitude": "-43.63721"
         }
     },
     {
@@ -94890,10 +95022,10 @@
         "pk": "5153O00014C0",
         "fields": {
             "mode": 22,
-            "name": "Estrada da Matriz 314",
+            "name": "Soldado Estanislau Wojcik",
             "address": "Estrada da Matriz próximo ao 326",
-            "latitude": "-22.99962",
-            "longitude": "-43.63211"
+            "latitude": "-22.99952",
+            "longitude": "-43.63206"
         }
     },
     {
@@ -94901,10 +95033,10 @@
         "pk": "5153O00015C0",
         "fields": {
             "mode": 22,
-            "name": "Estrada da Matriz 450",
+            "name": "Nova Teotonia",
             "address": "Estr. da Matriz",
-            "latitude": "-22.99871033331967",
-            "longitude": "-43.63063168849944"
+            "latitude": "-22.99906",
+            "longitude": "-43.63138"
         }
     },
     {
@@ -94912,10 +95044,10 @@
         "pk": "5153O00016C0",
         "fields": {
             "mode": 22,
-            "name": "Estrada da Matriz em frente XVI Adm. Regional",
+            "name": "Carlos da Silva Rocha",
             "address": "Estrada da Matriz próximo ao 848-908",
-            "latitude": "-22.99674",
-            "longitude": "-43.62717"
+            "latitude": "-22.99682",
+            "longitude": "-43.62734"
         }
     },
     {
@@ -94923,10 +95055,10 @@
         "pk": "5153O00017C0",
         "fields": {
             "mode": 22,
-            "name": "Estrada da Matriz 789",
+            "name": "Carlos da Silva Rocha",
             "address": "Estrada da Matriz próximo ao 723-791",
-            "latitude": "-22.99698",
-            "longitude": "-43.62885"
+            "latitude": "-22.99666",
+            "longitude": "-43.62792"
         }
     },
     {
@@ -94934,10 +95066,10 @@
         "pk": "5153O00018C0",
         "fields": {
             "mode": 22,
-            "name": "Estrada da Matriz próximo ao CIEP",
+            "name": "CIEP Heitor dos Prazeres",
             "address": "Av. Litorânea",
-            "latitude": "-22.997463982386524",
-            "longitude": "-43.629603938484195"
+            "latitude": "-22.99743",
+            "longitude": "-43.62950"
         }
     },
     {
@@ -94956,10 +95088,10 @@
         "pk": "5153O00020C0",
         "fields": {
             "mode": 22,
-            "name": "Rua Belchior da Fonseca,759",
+            "name": "Saião Lobato",
             "address": "Rua Belchior da Fonseca próximo ao 759",
-            "latitude": "-23.00188",
-            "longitude": "-43.63694"
+            "latitude": "-23.00194",
+            "longitude": "-43.63695"
         }
     },
     {
@@ -94967,10 +95099,10 @@
         "pk": "5153O00021C0",
         "fields": {
             "mode": 22,
-            "name": "Rua Belchior da Fonseca,643",
+            "name": "Escola Municipal Deborah Mendes de Moraes",
             "address": "Rua Belchior da Fonseca próximo ao 657-681",
-            "latitude": "-23.00178",
-            "longitude": "-43.63882"
+            "latitude": "-23.00183",
+            "longitude": "-43.63900"
         }
     },
     {
@@ -94978,10 +95110,10 @@
         "pk": "5153O00023C0",
         "fields": {
             "mode": 22,
-            "name": "Rua Belchior da Fonseca,499",
+            "name": "Velloso Espinha",
             "address": "Rua Belchior da Fonseca próximo ao 499",
-            "latitude": "-23.00173",
-            "longitude": "-43.64004"
+            "latitude": "-23.00178",
+            "longitude": "-43.64010"
         }
     },
     {
@@ -94989,10 +95121,10 @@
         "pk": "5153O00025C0",
         "fields": {
             "mode": 22,
-            "name": "Rua Barros de Alarcão próximo ao 29-01",
+            "name": "Santa Maria Mãe de Deus",
             "address": "R. Prof. Bastos",
-            "latitude": "-23.000531067163145",
-            "longitude": "-43.644787052917465"
+            "latitude": "-23.00042",
+            "longitude": "-43.64478"
         }
     },
     {
@@ -95000,10 +95132,10 @@
         "pk": "5153O00026C0",
         "fields": {
             "mode": 22,
-            "name": "Rua Belchior da Fonseca,33",
+            "name": "Barros de Alarcão",
             "address": "Rua Belchior da Fonseca",
-            "latitude": "-22.999571116235867",
-            "longitude": "-43.64349860118866"
+            "latitude": "-22.99969",
+            "longitude": "-43.64377"
         }
     },
     {
@@ -95011,10 +95143,10 @@
         "pk": "5153O00027C0",
         "fields": {
             "mode": 22,
-            "name": "Estrada da Matriz 329",
-            "address": "Estrada da Matriz próximo ao 525 - Pedra de Guaratiba",
-            "latitude": "-22.998163759570165",
-            "longitude": "-43.630620149459844"
+            "name": "Soldado Estanislau Wojcik",
+            "address": "Estrada Da Matriz - Pedra de Guaratiba",
+            "latitude": "-22.99924",
+            "longitude": "-43.63211"
         }
     },
     {
@@ -95033,10 +95165,10 @@
         "pk": "5153O00029C0",
         "fields": {
             "mode": 22,
-            "name": "Ponto Final Linha(s):",
+            "name": "Ponto Final: Ponto Final Linha(s):",
             "address": "Ponto final - Estr. da Matriz",
-            "latitude": "-23.000186170668172",
-            "longitude": "-43.63299090902736"
+            "latitude": "-23.00019",
+            "longitude": "-43.63299"
         }
     },
     {
@@ -95044,10 +95176,10 @@
         "pk": "5153O00030C9",
         "fields": {
             "mode": 22,
-            "name": "Estrada da Pedra, próximo ao número 9071.",
+            "name": "Venda Grande",
             "address": "Estrada da Pedra próximo ao 9233-9451 - Pedra de Guaratiba",
-            "latitude": "-23.00023582464116",
-            "longitude": "-43.646861152470535"
+            "latitude": "-23.00025",
+            "longitude": "-43.64693"
         }
     },
     {
@@ -95055,10 +95187,10 @@
         "pk": "5153O00031C9",
         "fields": {
             "mode": 22,
-            "name": "Estrada da Pedra, 8684.",
+            "name": "Escola Municipal Nestor Victor",
             "address": "Rio - Pedra de Guaratiba",
-            "latitude": "-22.996066468515334",
-            "longitude": "-43.64999506116435"
+            "latitude": "-22.99617",
+            "longitude": "-43.65000"
         }
     },
     {
@@ -95066,10 +95198,10 @@
         "pk": "5153O00032C0",
         "fields": {
             "mode": 22,
-            "name": "Estrada da Matriz 726",
+            "name": "CIEP Heitor dos Prazeres",
             "address": "Estr. da Matriz",
-            "latitude": "-22.998019008747924",
-            "longitude": "-43.629677073547235"
+            "latitude": "-22.99734",
+            "longitude": "-43.62885"
         }
     },
     {
@@ -95077,10 +95209,10 @@
         "pk": "5153O00033C0",
         "fields": {
             "mode": 22,
-            "name": "Rua Belchior da Fonseca,333",
+            "name": "Velloso Espinha",
             "address": "Rua Belchior da Fonseca próximo ao 499 - Pedra de Guaratiba",
-            "latitude": "-23.00189",
-            "longitude": "-43.64021"
+            "latitude": "-23.00187",
+            "longitude": "-43.64009"
         }
     },
     {
@@ -95088,10 +95220,10 @@
         "pk": "5153O00034C0",
         "fields": {
             "mode": 22,
-            "name": "Rua Belchior da Fonseca,646",
+            "name": "Escola Municipal Deborah Mendes de Moraes",
             "address": "Rua Belchior da Fonseca",
-            "latitude": "-23.00200",
-            "longitude": "-43.63869"
+            "latitude": "-23.00193",
+            "longitude": "-43.63893"
         }
     },
     {
@@ -95099,10 +95231,10 @@
         "pk": "5153O00035C0",
         "fields": {
             "mode": 22,
-            "name": "R. Altin de Carvalho",
+            "name": "Catruz",
             "address": "R. Altin de Carvalho",
-            "latitude": "-22.99967060336195",
-            "longitude": "-43.633950518922184"
+            "latitude": "-22.99978",
+            "longitude": "-43.63410"
         }
     },
     {

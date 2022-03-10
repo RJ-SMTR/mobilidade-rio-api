@@ -203,7 +203,7 @@
         "model": "pontos.qrcode",
         "pk": 26,
         "fields": {
-            "stop": "2021O00007S0",
+            "stop": "2021O00007C0",
             "code": "YXB9"
         }
     },
@@ -243,7 +243,7 @@
         "model": "pontos.qrcode",
         "pk": 31,
         "fields": {
-            "stop": "2027O00067S0",
+            "stop": "2027O00067C0",
             "code": "VIN5"
         }
     },

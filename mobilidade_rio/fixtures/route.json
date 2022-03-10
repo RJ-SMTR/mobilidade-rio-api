@@ -56,17 +56,6 @@
     },
     {
         "model": "pontos.route",
-        "pk": "O0232AAN0A",
-        "fields": {
-            "linha": "O0232AA",
-            "agency": "22003",
-            "mode": 22,
-            "short_name": "232 SN",
-            "vista": "Lins - Castelo (via Rua Aquidaba) (Circular)"
-        }
-    },
-    {
-        "model": "pontos.route",
         "pk": "E2342AAA0A",
         "fields": {
             "linha": "E2342AA",
@@ -689,7 +678,7 @@
             "agency": "22003",
             "mode": 22,
             "short_name": "349",
-            "vista": "Rocha Miranda - Castelo"
+            "vista": "Rocha Miranda - Castelo (Circular)"
         }
     },
     {
@@ -700,7 +689,7 @@
             "agency": "22003",
             "mode": 22,
             "short_name": "349 SR",
-            "vista": "Rocha Miranda - Castelo"
+            "vista": "Rocha Miranda - Castelo (Rápido - Circular)"
         }
     },
     {
@@ -711,7 +700,7 @@
             "agency": "22003",
             "mode": 22,
             "short_name": "349 SN",
-            "vista": "Rocha Miranda - Castelo"
+            "vista": "Rocha Miranda - Castelo (Circular)"
         }
     },
     {
@@ -722,7 +711,7 @@
             "agency": "22003",
             "mode": 22,
             "short_name": "349 SPA",
-            "vista": "Parque Jardim Vista Alegre - Castelo"
+            "vista": "Parque Jardim Vista Alegre - Castelo (Circular)"
         }
     },
     {
@@ -733,7 +722,7 @@
             "agency": "22003",
             "mode": 22,
             "short_name": "349 SPB",
-            "vista": "Praça Honório Gurgel - Castelo"
+            "vista": "Praça Honório Gurgel - Castelo (Circular)"
         }
     },
     {
@@ -755,7 +744,7 @@
             "agency": "22003",
             "mode": 22,
             "short_name": "350 SR",
-            "vista": "Irajá - Passeio"
+            "vista": "Irajá - Passeio (Rápido)"
         }
     },
     {
@@ -777,7 +766,7 @@
             "agency": "22003",
             "mode": 22,
             "short_name": "350 SPA",
-            "vista": "Irajá - Passeio"
+            "vista": "Irajá - Passeio (Rápido)"
         }
     },
     {
@@ -788,7 +777,7 @@
             "agency": "22003",
             "mode": 22,
             "short_name": "350 SPB",
-            "vista": "Irajá - Candelária"
+            "vista": "Irajá - Candelária (Circular)"
         }
     },
     {
@@ -799,7 +788,7 @@
             "agency": "22003",
             "mode": 22,
             "short_name": "351",
-            "vista": "Irajá - Candelária"
+            "vista": "Irajá - Candelária (Rápido)"
         }
     },
     {
@@ -810,7 +799,7 @@
             "agency": "22003",
             "mode": 22,
             "short_name": "355",
-            "vista": "Madureira - Praça Tiradentes"
+            "vista": "Madureira - Praça Tiradentes (Circular)"
         }
     },
     {
@@ -821,7 +810,7 @@
             "agency": "22003",
             "mode": 22,
             "short_name": "355 SR",
-            "vista": "Madureira - Praça Tiradentes"
+            "vista": "Madureira - Praça Tiradentes (Circular)"
         }
     },
     {
@@ -832,7 +821,7 @@
             "agency": "22003",
             "mode": 22,
             "short_name": "355 SN",
-            "vista": "Madureira - Praça Tiradentes"
+            "vista": "Madureira - Praça Tiradentes (Circular)"
         }
     },
     {
@@ -843,7 +832,7 @@
             "agency": "22003",
             "mode": 22,
             "short_name": "355 SPA",
-            "vista": "Vaz Lobo - Praça Tiradentes"
+            "vista": "Vaz Lobo - Praça Tiradentes (Circular)"
         }
     },
     {
@@ -854,7 +843,7 @@
             "agency": "22003",
             "mode": 22,
             "short_name": "355 SPB",
-            "vista": "Vicente de Carvalho - Praça Tiradentes"
+            "vista": "Vicente de Carvalho - Praça Tiradentes (Circular)"
         }
     },
     {
@@ -865,7 +854,7 @@
             "agency": "22003",
             "mode": 22,
             "short_name": "355 SPC",
-            "vista": "Vila Kosmos - Praça Tiradentes"
+            "vista": "Vila Kosmos - Praça Tiradentes (Circular)"
         }
     },
     {
@@ -876,7 +865,7 @@
             "agency": "22003",
             "mode": 22,
             "short_name": "362",
-            "vista": "Honório Gurgel - Castelo"
+            "vista": "Honório Gurgel - Castelo (Circular)"
         }
     },
     {
@@ -887,7 +876,7 @@
             "agency": "22003",
             "mode": 22,
             "short_name": "362 SR",
-            "vista": "Honório Gurgel - Castelo"
+            "vista": "Honório Gurgel - Castelo (Rápido - Circular)"
         }
     },
     {
@@ -898,7 +887,7 @@
             "agency": "22003",
             "mode": 22,
             "short_name": "362 SN",
-            "vista": "Honório Gurgel - Castelo"
+            "vista": "Honório Gurgel - Castelo (Circular)"
         }
     },
     {
@@ -909,7 +898,7 @@
             "agency": "22003",
             "mode": 22,
             "short_name": "362 SPA",
-            "vista": "Bairro União - Castelo"
+            "vista": "Bairro União - Castelo (Circular)"
         }
     },
     {
@@ -920,7 +909,7 @@
             "agency": "22003",
             "mode": 22,
             "short_name": "362 SPB",
-            "vista": "Coelho Neto - Castelo"
+            "vista": "Coelho Neto - Castelo (Circular)"
         }
     },
     {
@@ -931,7 +920,7 @@
             "agency": "22003",
             "mode": 22,
             "short_name": "362 SPC",
-            "vista": "Vila Santa Tereza - Castelo"
+            "vista": "Vila Santa Tereza - Castelo (Circular)"
         }
     },
     {
@@ -942,7 +931,7 @@
             "agency": "22003",
             "mode": 22,
             "short_name": "376",
-            "vista": "Pavuna - Candelária"
+            "vista": "Pavuna - Candelária (via Rua Mercúrio)"
         }
     },
     {
@@ -953,7 +942,7 @@
             "agency": "22003",
             "mode": 22,
             "short_name": "378",
-            "vista": "Marechal Hermes - Castelo"
+            "vista": "Marechal Hermes - Castelo (Circular)"
         }
     },
     {
@@ -964,7 +953,7 @@
             "agency": "22003",
             "mode": 22,
             "short_name": "378 SR",
-            "vista": "Marechal Hermes - Castelo"
+            "vista": "Marechal Hermes - Castelo (Circular)"
         }
     },
     {
@@ -1008,7 +997,7 @@
             "agency": "22003",
             "mode": 22,
             "short_name": "385",
-            "vista": "Village Pavuna - Passeio"
+            "vista": "Village Pavuna - Passeio (via Camboatá)"
         }
     },
     {
@@ -1019,7 +1008,7 @@
             "agency": "22003",
             "mode": 22,
             "short_name": "385 SR",
-            "vista": "Village Pavuna - Passeio"
+            "vista": "Village Pavuna - Passeio (via Camboatá) (Rápido)"
         }
     },
     {
@@ -1030,7 +1019,7 @@
             "agency": "22003",
             "mode": 22,
             "short_name": "385 SN",
-            "vista": "Village Pavuna - Passeio"
+            "vista": "Village Pavuna - Passeio (via Camboatá)"
         }
     },
     {
@@ -1426,17 +1415,6 @@
             "agency": "22003",
             "mode": 22,
             "short_name": "639",
-            "vista": "Jardim América - Saens Peña"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0639AAN0A",
-        "fields": {
-            "linha": "O0639AA",
-            "agency": "22003",
-            "mode": 22,
-            "short_name": "639 SN",
             "vista": "Jardim América - Saens Peña"
         }
     },
@@ -2476,17 +2454,6 @@
     },
     {
         "model": "pontos.route",
-        "pk": "O0309AAN0A",
-        "fields": {
-            "linha": "O0309AA",
-            "agency": "22004",
-            "mode": 22,
-            "short_name": "309 SN",
-            "vista": "Alvorada - Central (via Avenida Lúcio Costa e Praia do Flamengo)"
-        }
-    },
-    {
-        "model": "pontos.route",
         "pk": "O0315AAA0A",
         "fields": {
             "linha": "O0315AA",
@@ -2592,7 +2559,7 @@
             "agency": "22004",
             "mode": 22,
             "short_name": "352",
-            "vista": "Riocentro - Candelária"
+            "vista": "Riocentro - Candelária (via Linha Amarela)"
         }
     },
     {
@@ -2608,24 +2575,13 @@
     },
     {
         "model": "pontos.route",
-        "pk": "O0353AAN0A",
-        "fields": {
-            "linha": "O0353AA",
-            "agency": "22004",
-            "mode": 22,
-            "short_name": "353 SN",
-            "vista": "Praça Seca - Rodoviária"
-        }
-    },
-    {
-        "model": "pontos.route",
         "pk": "O0361AAA0A",
         "fields": {
             "linha": "O0361AA",
             "agency": "22004",
             "mode": 22,
             "short_name": "361",
-            "vista": "Recreio - Castelo"
+            "vista": "Recreio - Castelo (via Linha Amarela)"
         }
     },
     {
@@ -2658,7 +2614,7 @@
             "agency": "22004",
             "mode": 22,
             "short_name": "363 SV",
-            "vista": "Vila Valqueire - Candelária"
+            "vista": "Vila Valqueire - Candelária (via Rua Dias da Cruz)"
         }
     },
     {
@@ -2674,24 +2630,13 @@
     },
     {
         "model": "pontos.route",
-        "pk": "O0368AAN0A",
-        "fields": {
-            "linha": "O0368AA",
-            "agency": "22004",
-            "mode": 22,
-            "short_name": "368 SN",
-            "vista": "Riocentro - Candelária"
-        }
-    },
-    {
-        "model": "pontos.route",
         "pk": "O0371AAA0A",
         "fields": {
             "linha": "O0371AA",
             "agency": "22004",
             "mode": 22,
             "short_name": "371",
-            "vista": "Praça Seca - Tiradentes"
+            "vista": "Praça Seca - Tiradentes (Circular)"
         }
     },
     {
@@ -2702,7 +2647,7 @@
             "agency": "22004",
             "mode": 22,
             "short_name": "380",
-            "vista": "Curicica - Candelária"
+            "vista": "Curicica - Candelária (via Linha Amarela)"
         }
     },
     {
@@ -2713,18 +2658,7 @@
             "agency": "22004",
             "mode": 22,
             "short_name": "390",
-            "vista": "Curicica - Candelária"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0390AAN0A",
-        "fields": {
-            "linha": "O0390AA",
-            "agency": "22004",
-            "mode": 22,
-            "short_name": "390 SN",
-            "vista": "Curicica - Candelária"
+            "vista": "Curicica - Candelária (via Estrada do Guerenguê)"
         }
     },
     {
@@ -4165,7 +4099,7 @@
             "agency": "22005",
             "mode": 22,
             "short_name": "365",
-            "vista": "Mendanha - Tiradentes"
+            "vista": "Mendanha - Tiradentes (Expresso)"
         }
     },
     {
@@ -4198,7 +4132,7 @@
             "agency": "22005",
             "mode": 22,
             "short_name": "367",
-            "vista": "Realengo - Camerino"
+            "vista": "Realengo - Camerino (via Avenida Brasil) (Expresso)"
         }
     },
     {
@@ -4231,7 +4165,7 @@
             "agency": "22005",
             "mode": 22,
             "short_name": "379",
-            "vista": "Catiri - Tiradentes"
+            "vista": "Catiri - Tiradentes (Rápido)"
         }
     },
     {
@@ -4242,7 +4176,7 @@
             "agency": "22005",
             "mode": 22,
             "short_name": "383",
-            "vista": "Realengo - Praça da República"
+            "vista": "Realengo - Praça da República (via Sulacap)"
         }
     },
     {
@@ -4264,7 +4198,7 @@
             "agency": "22005",
             "mode": 22,
             "short_name": "388",
-            "vista": "Santa Cruz - Candelária"
+            "vista": "Santa Cruz - Candelária (via Avenida Brasil) (Expresso)"
         }
     },
     {
@@ -4275,7 +4209,7 @@
             "agency": "22005",
             "mode": 22,
             "short_name": "389",
-            "vista": "Vila Aliança - Candelária"
+            "vista": "Vila Aliança - Candelária (via Senandor Camará) (Expresso)"
         }
     },
     {
@@ -4297,7 +4231,7 @@
             "agency": "22005",
             "mode": 22,
             "short_name": "392",
-            "vista": "Bangu - Candelária"
+            "vista": "Bangu - Candelária (via Padre Miguel)"
         }
     },
     {
@@ -4308,7 +4242,7 @@
             "agency": "22005",
             "mode": 22,
             "short_name": "392 SN",
-            "vista": "Bangu - Candelária"
+            "vista": "Bangu - Candelária (via Padre Miguel)"
         }
     },
     {
@@ -4352,7 +4286,7 @@
             "agency": "22005",
             "mode": 22,
             "short_name": "393 SR",
-            "vista": "Bangu - Candelária"
+            "vista": "Bangu - Candelária (Rápido)"
         }
     },
     {
@@ -5848,7 +5782,7 @@
             "agency": "22005",
             "mode": 22,
             "short_name": "897",
-            "vista": "Paciência - Pingo dágua"
+            "vista": "Paciência - Pingo d'Água (via Estação 31 de Outubro) (Circular)"
         }
     },
     {
@@ -5859,7 +5793,7 @@
             "agency": "22005",
             "mode": 22,
             "short_name": "897 SN",
-            "vista": "Paciência - Pingo dágua"
+            "vista": "Paciência - Pingo dágua (via Estação 31 de Outubro) (Circular)"
         }
     },
     {
@@ -6469,17 +6403,6 @@
     },
     {
         "model": "pontos.route",
-        "pk": "O0409AAN0A",
-        "fields": {
-            "linha": "O0409AA",
-            "agency": "22002",
-            "mode": 22,
-            "short_name": "409 SN",
-            "vista": "Saens Peña - Horto"
-        }
-    },
-    {
-        "model": "pontos.route",
         "pk": "O0412AAA0A",
         "fields": {
             "linha": "O0412AA",
@@ -6563,17 +6486,6 @@
             "agency": "22002",
             "mode": 22,
             "short_name": "432",
-            "vista": "Vila Isabel - Gávea"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0432AAN0A",
-        "fields": {
-            "linha": "O0432AA",
-            "agency": "22002",
-            "mode": 22,
-            "short_name": "432 SN",
             "vista": "Vila Isabel - Gávea"
         }
     },
@@ -6894,17 +6806,6 @@
             "mode": 22,
             "short_name": "538",
             "vista": "Rocinha - Leme (via Rua Jardim Botânico) (Circular)"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0538AAN0A",
-        "fields": {
-            "linha": "O0538AA",
-            "agency": "22002",
-            "mode": 22,
-            "short_name": "538 SN",
-            "vista": "Rocinha - Leme"
         }
     },
     {
@@ -9598,7 +9499,7 @@
             "linha": "O0037CA",
             "agency": "22005",
             "mode": 22,
-            "short_name": "37",
+            "short_name": "LECD 37",
             "vista": "Salim - Campo Grande (via Rua Aricuri)"
         }
     },
@@ -9609,7 +9510,7 @@
             "linha": "O0038CA",
             "agency": "22005",
             "mode": 22,
-            "short_name": "38",
+            "short_name": "LECD 38",
             "vista": "Campo Grande - Sulacap (via Avenida Santa Cruz)"
         }
     },
@@ -9620,7 +9521,7 @@
             "linha": "O0039CA",
             "agency": "22005",
             "mode": 22,
-            "short_name": "39",
+            "short_name": "LECD 39",
             "vista": "Campo Grande - Sulacap (via Estrada da Posse)"
         }
     },

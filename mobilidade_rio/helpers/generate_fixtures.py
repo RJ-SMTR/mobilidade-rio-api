@@ -4,6 +4,7 @@ from typing import List
 import requests
 import os
 import yaml
+import time
 
 from dotenv import load_dotenv
 load_dotenv()
@@ -49,6 +50,7 @@ def _fetch_sigmob_api(url: str) -> List[dict]:
     results: list = []
     next: str = url
     while next:
+        time.sleep(2)
         try:
             print("Fetching %s" % next)
             data = requests.get(next, timeout=DEFAULT_TIMEOUT)
