@@ -72,9 +72,10 @@ def _fetch_sigmob_api(url: str) -> List[dict]:
 def _parse_data_to_fixture(data: dict, config: dict, i: int) -> dict:
     _fix_null = lambda x: x if x else ""
 
+    pk = data[config["pk"]]
     result = {
         "model": "pontos."+config["model"],
-        "pk": data[config["pk"]] if config["pk"] else i,
+        "pk": pk+"_"+str(i) if config["model"] == "sequence" else pk,
         "fields": dict()
         # "fields": {k: _fix_null(data[v]) for k,v in config["fields"].items()}
     }
@@ -94,6 +95,11 @@ if __name__ == "__main__":
         description="Gera fixtures de a partir do SIGMOB."
     )
     parser.add_argument(
+        "--all", "-a",
+        help="Roda para todos os modelos.",
+        action='store_true'
+    )
+    parser.add_argument(
         "--model", "-m",
         type=str,
         help="Modelo de fixture a ser gerado."
@@ -105,27 +111,31 @@ if __name__ == "__main__":
         help="Indica se deseja subir os dados no cluster k8s."
     )
     args = parser.parse_args()
-    model = args.model
-    upload = args.upload
 
     config = yaml.load(
         open(CONFIG_FILENAME, "r"), 
         Loader=yaml.FullLoader
-    )["models"][model]
+    )
 
-    result = _fetch_sigmob_api(config["source"])
+    if args.model:
+        models = {args.model: config["models"][args.model]}
+    elif args.all:
+        models = config["models"]
 
-    fixture = []
-    for i, record in enumerate(result):
-        record = _parse_data_to_fixture(record, config["json"], i)
-        if _is_active(record, model):
-            fixture.append(record)
-    
-    fname = OUTPUT_JSON.format(model=model)
-    with open(fname, "w", encoding='utf8') as f:
-        json.dump(fixture, f, indent=4, ensure_ascii=False)
-        print("Fixture saved on "+fname)
-    if upload:
-        os.system(f"kubectl cp {fname} mobilidade-v2/{os.getenv('K8S_POD')}:/app/{fname}")
-        print("Uploaded to production db")
+    # upload = args.upload
+    for model, config in models.items():
+        result = _fetch_sigmob_api(config["source"])
+        fixture = []
+        for i, record in enumerate(result):
+            record = _parse_data_to_fixture(record, config["json"], i)
+            if _is_active(record, model):
+                fixture.append(record)
+        
+        fname = OUTPUT_JSON.format(model=model)
+        with open(fname, "w", encoding='utf8') as f:
+            json.dump(fixture, f, indent=4, ensure_ascii=False)
+            print("Fixture saved on "+fname)
+        if args.upload:
+            os.system(f"kubectl cp {fname} mobilidade-v2/{os.getenv('K8S_POD')}:/app/{fname}")
+            print("Uploaded to production db")
 

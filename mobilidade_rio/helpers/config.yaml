@@ -55,7 +55,7 @@ models:
     source: http://jeap.rio.rj.gov.br/MOB/get_stop_times.rule?sys=MOB
     json:
       model: sequence
-      pk: ""
+      pk: trip_id
       fields: 
         trip: trip_id
         stop: stop_id
