@@ -25,39 +25,39 @@ jobs:
       - name: Install dependencies
         run: pip install wheel && pip install --prefer-binary -r mobilidade_rio/requirements.txt
 
-  tests:
-    needs: before
-    name: ${{ matrix.os }}${{ matrix.arch }} - Python ${{ matrix.python-version }} - tests
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
-        arch: [x64]
-        python-version: ["3.8.x"]
-    steps:
-      - uses: actions/checkout@v2
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: ${{ matrix.python-version }}
-          architecture: ${{ matrix.arch }}
-      - name: Install dependencies
-        run: pip install wheel && pip install --prefer-binary -r mobilidade_rio/requirements.txt
-      - name: Run tests
-        run: |
-          cd mobilidade_rio/ && python3 manage.py test --settings=mobilidade_rio.settings.base
-  lint:
-    needs: before
-    name: Dockerfiles linting
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
+  # tests:
+  #   needs: before
+  #   name: ${{ matrix.os }}${{ matrix.arch }} - Python ${{ matrix.python-version }} - tests
+  #   runs-on: ${{ matrix.os }}
+  #   strategy:
+  #     matrix:
+  #       os: [ubuntu-latest]
+  #       arch: [x64]
+  #       python-version: ["3.8.x"]
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - name: Set up Python
+  #       uses: actions/setup-python@v2
+  #       with:
+  #         python-version: ${{ matrix.python-version }}
+  #         architecture: ${{ matrix.arch }}
+  #     - name: Install dependencies
+  #       run: pip install wheel && pip install --prefer-binary -r mobilidade_rio/requirements.txt
+  #     - name: Run tests
+  #       run: |
+  #         cd mobilidade_rio/ && python3 manage.py test --settings=mobilidade_rio.settings.base
+  # lint:
+  #   needs: before
+  #   name: Dockerfiles linting
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v2
 
-      - name: Run hadolint
-        uses: reviewdog/action-hadolint@v1
-        with:
-          hadolint_ignore: DL3008
-          reporter: github-pr-review
+  #     - name: Run hadolint
+  #       uses: reviewdog/action-hadolint@v1
+  #       with:
+  #         hadolint_ignore: DL3008
+  #         reporter: github-pr-review
 
   build:
     needs: [lint, tests]
