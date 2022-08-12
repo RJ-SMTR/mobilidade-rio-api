@@ -5,7 +5,7 @@ kind: Deployment
 metadata:
   name: mobilidade-api
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: mobilidade-api
@@ -60,6 +60,13 @@ spec:
                 secretKeyRef:
                   name: envs
                   key: DJANGO_SETTINGS_MODULE
+          resources:
+            requests:
+              memory: 64Mi
+              cpu: 30m
+            limits:
+              memory: 256Mi
+              cpu: 100m
       restartPolicy: Always
 
 ---
@@ -74,7 +81,7 @@ spec:
   ports:
     - name: "80"
       port: 80
-      targetPort: 80
+      targetPort: 8000
   selector:
     app: mobilidade-api
 
