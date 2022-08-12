@@ -323,16 +323,16 @@
         "model": "pontos.qrcode",
         "pk": 40,
         "fields": {
-            "stop": "1K84",
-            "code": "1005O00198C0"
+            "stop": "1005O00198C0",
+            "code": "1K84"
         }
     },
     {
         "model": "pontos.qrcode",
         "pk": 41,
         "fields": {
-            "stop": "7KKY",
-            "code": "1005O00197C0"
+            "stop": "1005O00197C0",
+            "code": "7KKY"
         }
     }
 ]
