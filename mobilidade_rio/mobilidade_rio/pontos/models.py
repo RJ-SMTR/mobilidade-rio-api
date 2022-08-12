@@ -22,7 +22,7 @@ class Stop (models.Model):
 
 
 class QrCode (models.Model):
-    code = models.CharField(max_length=4)
+    code = models.CharField(max_length=10)
     stop = models.OneToOneField(
         Stop, on_delete=models.CASCADE, primary_key=True)
 
