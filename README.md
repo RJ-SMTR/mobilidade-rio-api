@@ -14,6 +14,15 @@ cidade do Rio de Janeiro.
 
 [Adicionar instruções]
 
+## Staging
+### Acessando o ambiente
+
+Para acessar o ambiente de Staging localmente, rode:
+
+```sh
+kubectl exec -it -n mobilidade-v2-staging deploy/smtr-stag-mobilidade-api -- /bin/bash
+```
+
 ## Produção
 ### Acessando o ambiente
 

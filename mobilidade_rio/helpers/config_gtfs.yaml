@@ -1,0 +1,62 @@
+models:
+  agency:
+      source: ~/code/SMTR/gtfs/agency.txt
+      json:
+        model: agency
+        pk: agency_id
+        fields: 
+          name: agency_name
+  linha:
+    source: ~/code/SMTR/gtfs/routes.txt
+    json:
+      model: linha
+      pk: mode(1).name(4).tipo(1).versao(1)
+      fields: 
+        agency: agency_id
+        mode: route_id[0:1]
+        initials: route_short_name
+        name: route_long_name
+  route:
+    source: ~/code/SMTR/gtfs/routes.txt
+    json:
+      model: route
+      pk: route_id
+      fields: 
+        linha: mode(1).name(4).tipo(1).versao(1)
+        agency: agency_id
+        mode: route_id[0:1]
+        short_name: route_short_name
+        vista: route_long_name
+  trip:
+    source: ~/code/SMTR/gtfs/trips.txt
+    json:
+      model: trip
+      pk: trip_id
+      fields: 
+        route: route_id
+        headsign: trip_headsign
+        via: ""
+        version: trip_id[-3:]
+        direction: direction_id
+      fix_lenght:
+        headsign: 50
+  stop:
+    source: ~/code/SMTR/gtfs/stops.txt
+    json:
+      model: stop
+      pk: stop_id
+      fields: 
+        mode: stop_id[4:5]
+        name: stop_name
+        address: stop_name
+        latitude: stop_lat
+        longitude: stop_lon
+  sequence:
+    source: ~/code/SMTR/gtfs/stop_times.txt
+    json:
+      model: sequence
+      pk: i
+      fields: 
+        trip: trip_id
+        stop: stop_id
+        order: stop_sequence
