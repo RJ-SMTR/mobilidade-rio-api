@@ -324,7 +324,7 @@
         "pk": 40,
         "fields": {
             "stop": "1005O00198C0",
-            "code": "1K84"
+            "code": "7M9B"
         }
     },
     {
@@ -333,6 +333,118 @@
         "fields": {
             "stop": "1005O00197C0",
             "code": "7KKY"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 42,
+        "fields": {
+            "stop": "2035O00028S9",
+            "code": "1BJG"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 43,
+        "fields": {
+            "stop": "2035O00039S9",
+            "code": "1EBQ"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 44,
+        "fields": {
+            "stop": "2036O00012S9",
+            "code": "1G30"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 45,
+        "fields": {
+            "stop": "2036O00050S9",
+            "code": "1LBP"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 46,
+        "fields": {
+            "stop": "2036O00045S9",
+            "code": "1LVC"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 47,
+        "fields": {
+            "stop": "2036O00013S9",
+            "code": "1T1W"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 48,
+        "fields": {
+            "stop": "2036O00051S9",
+            "code": "1VYH"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 49,
+        "fields": {
+            "stop": "2036O00052S9",
+            "code": "2DAX"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 50,
+        "fields": {
+            "stop": "2036O00014S9",
+            "code": "2HSG"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 51,
+        "fields": {
+            "stop": "2036O00015S9",
+            "code": "2L8R"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 52,
+        "fields": {
+            "stop": "2036O00053S9",
+            "code": "2L88"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 53,
+        "fields": {
+            "stop": "2036O00054S9",
+            "code": "2PVS"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 54,
+        "fields": {
+            "stop": "2036O00016S9",
+            "code": "2TDL"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 55,
+        "fields": {
+            "stop": "2036O00055S0",
+            "code": "Q3VX"
         }
     }
 ]
