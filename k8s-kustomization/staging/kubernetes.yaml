@@ -81,7 +81,7 @@ spec:
   ports:
     - name: "80"
       port: 80
-      targetPort: 8000
+      targetPort: 80
   selector:
     app: mobilidade-api
 
@@ -109,7 +109,7 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: mobilidade-api
+                name: smtr-stag-mobilidade-api
                 port:
                   number: 80
 
