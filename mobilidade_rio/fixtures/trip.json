@@ -78,17 +78,6 @@
     },
     {
         "model": "pontos.trip",
-        "pk": "O0821AAN0ACDU01",
-        "fields": {
-            "route": "O0821AAN0A",
-            "headsign": "",
-            "via": "",
-            "version": "U01",
-            "direction": 0
-        }
-    },
-    {
-        "model": "pontos.trip",
         "pk": "O0822AAA0ACDU01",
         "fields": {
             "route": "O0822AAA0A",
@@ -276,17 +265,6 @@
     },
     {
         "model": "pontos.trip",
-        "pk": "O0006AAN0AVDU01",
-        "fields": {
-            "route": "O0006AAN0A",
-            "headsign": "Silvestre",
-            "via": "",
-            "version": "U01",
-            "direction": 1
-        }
-    },
-    {
-        "model": "pontos.trip",
         "pk": "O0007AAA0AIDU01",
         "fields": {
             "route": "O0007AAA0A",
@@ -463,28 +441,6 @@
     },
     {
         "model": "pontos.trip",
-        "pk": "O0201AAN0AIDU01",
-        "fields": {
-            "route": "O0201AAN0A",
-            "headsign": "Castelo",
-            "via": "",
-            "version": "U01",
-            "direction": 0
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0201AAN0AVDU01",
-        "fields": {
-            "route": "O0201AAN0A",
-            "headsign": "Santa Alexandrina",
-            "via": "",
-            "version": "U01",
-            "direction": 1
-        }
-    },
-    {
-        "model": "pontos.trip",
         "pk": "O0217AAA0AIDU01",
         "fields": {
             "route": "O0217AAA0A",
@@ -573,28 +529,6 @@
     },
     {
         "model": "pontos.trip",
-        "pk": "O0238AAN0AIDU01",
-        "fields": {
-            "route": "O0238AAN0A",
-            "headsign": "Castelo",
-            "via": "",
-            "version": "U01",
-            "direction": 0
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0238AAN0AVDU01",
-        "fields": {
-            "route": "O0238AAN0A",
-            "headsign": "\u00c1gua Santa",
-            "via": "",
-            "version": "U01",
-            "direction": 1
-        }
-    },
-    {
-        "model": "pontos.trip",
         "pk": "O0239AAA0AIDU01",
         "fields": {
             "route": "O0239AAA0A",
@@ -675,28 +609,6 @@
         "pk": "O0265AAA0AVDU01",
         "fields": {
             "route": "O0265AAA0A",
-            "headsign": "Marechal Hermes",
-            "via": "",
-            "version": "U01",
-            "direction": 1
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0265AAN0AIDU01",
-        "fields": {
-            "route": "O0265AAN0A",
-            "headsign": "Castelo",
-            "via": "",
-            "version": "U01",
-            "direction": 0
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0265AAN0AVDU01",
-        "fields": {
-            "route": "O0265AAN0A",
             "headsign": "Marechal Hermes",
             "via": "",
             "version": "U01",
@@ -859,28 +771,6 @@
     },
     {
         "model": "pontos.trip",
-        "pk": "O0309AAN0AIDU01",
-        "fields": {
-            "route": "O0309AAN0A",
-            "headsign": "Central",
-            "via": "",
-            "version": "U01",
-            "direction": 0
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0309AAN0AVDU01",
-        "fields": {
-            "route": "O0309AAN0A",
-            "headsign": "Alvorada",
-            "via": "",
-            "version": "U01",
-            "direction": 1
-        }
-    },
-    {
-        "model": "pontos.trip",
         "pk": "O0312AAA0AIDU01",
         "fields": {
             "route": "O0312AAA0A",
@@ -895,28 +785,6 @@
         "pk": "O0312AAA0AVDU01",
         "fields": {
             "route": "O0312AAA0A",
-            "headsign": "Olaria",
-            "via": "",
-            "version": "U01",
-            "direction": 1
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0312AAN0AIDU01",
-        "fields": {
-            "route": "O0312AAN0A",
-            "headsign": "Candel\u00e1ria",
-            "via": "",
-            "version": "U01",
-            "direction": 0
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0312AAN0AVDU01",
-        "fields": {
-            "route": "O0312AAN0A",
             "headsign": "Olaria",
             "via": "",
             "version": "U01",
@@ -983,28 +851,6 @@
         "pk": "O0324AAA0AVDU01",
         "fields": {
             "route": "O0324AAA0A",
-            "headsign": "Ribeira",
-            "via": "",
-            "version": "U01",
-            "direction": 1
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0324AAN0AIDU01",
-        "fields": {
-            "route": "O0324AAN0A",
-            "headsign": "Candel\u00e1ria",
-            "via": "",
-            "version": "U01",
-            "direction": 0
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0324AAN0AVDU01",
-        "fields": {
-            "route": "O0324AAN0A",
             "headsign": "Ribeira",
             "via": "",
             "version": "U01",
@@ -1148,28 +994,6 @@
         "pk": "O0342AAA0AVDU01",
         "fields": {
             "route": "O0342AAA0A",
-            "headsign": "Jardim Am\u00e9rica",
-            "via": "",
-            "version": "U01",
-            "direction": 1
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0342AAN0AIDU01",
-        "fields": {
-            "route": "O0342AAN0A",
-            "headsign": "Castelo",
-            "via": "",
-            "version": "U01",
-            "direction": 0
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0342AAN0AVDU01",
-        "fields": {
-            "route": "O0342AAN0A",
             "headsign": "Jardim Am\u00e9rica",
             "via": "",
             "version": "U01",
@@ -1354,28 +1178,6 @@
     },
     {
         "model": "pontos.trip",
-        "pk": "O0383AAN0AIDU01",
-        "fields": {
-            "route": "O0383AAN0A",
-            "headsign": "Pra\u00e7a da Rep\u00fablica",
-            "via": "",
-            "version": "U01",
-            "direction": 0
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0383AAN0AVDU01",
-        "fields": {
-            "route": "O0383AAN0A",
-            "headsign": "Realengo",
-            "via": "",
-            "version": "U01",
-            "direction": 1
-        }
-    },
-    {
-        "model": "pontos.trip",
         "pk": "O0384AAA0AIDU01",
         "fields": {
             "route": "O0384AAA0A",
@@ -1445,28 +1247,6 @@
         "pk": "O0393AAA0AVDU01",
         "fields": {
             "route": "O0393AAA0A",
-            "headsign": "Bangu",
-            "via": "",
-            "version": "U01",
-            "direction": 1
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0393AAN0AIDU01",
-        "fields": {
-            "route": "O0393AAN0A",
-            "headsign": "Candel\u00e1ria",
-            "via": "",
-            "version": "U01",
-            "direction": 0
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0393AAN0AVDU01",
-        "fields": {
-            "route": "O0393AAN0A",
             "headsign": "Bangu",
             "via": "",
             "version": "U01",
@@ -1618,28 +1398,6 @@
     },
     {
         "model": "pontos.trip",
-        "pk": "O0422AAN0AIDU01",
-        "fields": {
-            "route": "O0422AAN0A",
-            "headsign": "Cosme Velho",
-            "via": "",
-            "version": "U01",
-            "direction": 0
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0422AAN0AVDU01",
-        "fields": {
-            "route": "O0422AAN0A",
-            "headsign": "Graja\u00fa",
-            "via": "",
-            "version": "U01",
-            "direction": 1
-        }
-    },
-    {
-        "model": "pontos.trip",
         "pk": "O0426AAA0AIDU01",
         "fields": {
             "route": "O0426AAA0A",
@@ -1742,28 +1500,6 @@
         "pk": "O0457AAA0AVDU01",
         "fields": {
             "route": "O0457AAA0A",
-            "headsign": "Aboli\u00e7\u00e3o",
-            "via": "",
-            "version": "U01",
-            "direction": 1
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0457AAN0AIDU01",
-        "fields": {
-            "route": "O0457AAN0A",
-            "headsign": "Copacabana",
-            "via": "",
-            "version": "U01",
-            "direction": 0
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0457AAN0AVDU01",
-        "fields": {
-            "route": "O0457AAN0A",
             "headsign": "Aboli\u00e7\u00e3o",
             "via": "",
             "version": "U01",
@@ -1981,28 +1717,6 @@
     },
     {
         "model": "pontos.trip",
-        "pk": "O0538AAN0AIDU01",
-        "fields": {
-            "route": "O0538AAN0A",
-            "headsign": "Leme",
-            "via": "",
-            "version": "U01",
-            "direction": 0
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0538AAN0AVDU01",
-        "fields": {
-            "route": "O0538AAN0A",
-            "headsign": "Rocinha",
-            "via": "",
-            "version": "U01",
-            "direction": 1
-        }
-    },
-    {
-        "model": "pontos.trip",
         "pk": "O0539AAA0AIDU01",
         "fields": {
             "route": "O0539AAA0A",
@@ -2017,28 +1731,6 @@
         "pk": "O0539AAA0AVDU01",
         "fields": {
             "route": "O0539AAA0A",
-            "headsign": "Rocinha",
-            "via": "",
-            "version": "U01",
-            "direction": 1
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0539AAN0AIDU01",
-        "fields": {
-            "route": "O0539AAN0A",
-            "headsign": "Leme",
-            "via": "",
-            "version": "U01",
-            "direction": 0
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0539AAN0AVDU01",
-        "fields": {
-            "route": "O0539AAN0A",
             "headsign": "Rocinha",
             "via": "",
             "version": "U01",
@@ -2091,28 +1783,6 @@
     },
     {
         "model": "pontos.trip",
-        "pk": "O0550AAN0AIDU01",
-        "fields": {
-            "route": "O0550AAN0A",
-            "headsign": "G\u00e1vea",
-            "via": "",
-            "version": "U01",
-            "direction": 0
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0550AAN0AVDU01",
-        "fields": {
-            "route": "O0550AAN0A",
-            "headsign": "Cidade de Deus",
-            "via": "",
-            "version": "U01",
-            "direction": 1
-        }
-    },
-    {
-        "model": "pontos.trip",
         "pk": "O0552AAA0AIDU01",
         "fields": {
             "route": "O0552AAA0A",
@@ -2149,28 +1819,6 @@
         "pk": "O0553AAA0AVDU01",
         "fields": {
             "route": "O0553AAA0A",
-            "headsign": "Rio Sul",
-            "via": "",
-            "version": "U01",
-            "direction": 1
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0553AAN0AIDU01",
-        "fields": {
-            "route": "O0553AAN0A",
-            "headsign": "Recreio",
-            "via": "",
-            "version": "U01",
-            "direction": 0
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0553AAN0AVDU01",
-        "fields": {
-            "route": "O0553AAN0A",
             "headsign": "Rio Sul",
             "via": "",
             "version": "U01",
@@ -2303,28 +1951,6 @@
         "pk": "O0601AAA0AVDU01",
         "fields": {
             "route": "O0601AAA0A",
-            "headsign": "Saens Pe\u00f1a",
-            "via": "",
-            "version": "U01",
-            "direction": 1
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0601AAN0AIDU01",
-        "fields": {
-            "route": "O0601AAN0A",
-            "headsign": "Santa Maria",
-            "via": "",
-            "version": "U01",
-            "direction": 0
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0601AAN0AVDU01",
-        "fields": {
-            "route": "O0601AAN0A",
             "headsign": "Saens Pe\u00f1a",
             "via": "",
             "version": "U01",
@@ -2523,28 +2149,6 @@
         "pk": "O0624AAA0AVDU01",
         "fields": {
             "route": "O0624AAA0A",
-            "headsign": "Mari\u00f3polis",
-            "via": "",
-            "version": "U01",
-            "direction": 1
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0624AAN0AIDU01",
-        "fields": {
-            "route": "O0624AAN0A",
-            "headsign": "Pra\u00e7a da Bandeira",
-            "via": "",
-            "version": "U01",
-            "direction": 0
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0624AAN0AVDU01",
-        "fields": {
-            "route": "O0624AAN0A",
             "headsign": "Mari\u00f3polis",
             "via": "",
             "version": "U01",
@@ -3081,28 +2685,6 @@
     },
     {
         "model": "pontos.trip",
-        "pk": "O0731AAN0AIDU01",
-        "fields": {
-            "route": "O0731AAN0A",
-            "headsign": "Marechal Hermes",
-            "via": "",
-            "version": "U01",
-            "direction": 0
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0731AAN0AVDU01",
-        "fields": {
-            "route": "O0731AAN0A",
-            "headsign": "Campo Grande",
-            "via": "",
-            "version": "U01",
-            "direction": 1
-        }
-    },
-    {
-        "model": "pontos.trip",
         "pk": "O0745AAA0AIDU01",
         "fields": {
             "route": "O0745AAA0A",
@@ -3367,28 +2949,6 @@
     },
     {
         "model": "pontos.trip",
-        "pk": "O0778AAN0AIDU01",
-        "fields": {
-            "route": "O0778AAN0A",
-            "headsign": "Pavuna",
-            "via": "",
-            "version": "U01",
-            "direction": 0
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0778AAN0AVDU01",
-        "fields": {
-            "route": "O0778AAN0A",
-            "headsign": "Cascadura",
-            "via": "",
-            "version": "U01",
-            "direction": 1
-        }
-    },
-    {
-        "model": "pontos.trip",
         "pk": "O0779AAA0AIDU01",
         "fields": {
             "route": "O0779AAA0A",
@@ -3579,28 +3139,6 @@
         "pk": "O0803AAA0AVDU01",
         "fields": {
             "route": "O0803AAA0A",
-            "headsign": "Senador Camar\u00e1",
-            "via": "",
-            "version": "U01",
-            "direction": 1
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0803AAN0AIDU01",
-        "fields": {
-            "route": "O0803AAN0A",
-            "headsign": "Taquara",
-            "via": "",
-            "version": "U01",
-            "direction": 0
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0803AAN0AVDU01",
-        "fields": {
-            "route": "O0803AAN0A",
             "headsign": "Senador Camar\u00e1",
             "via": "",
             "version": "U01",
@@ -4082,28 +3620,6 @@
     },
     {
         "model": "pontos.trip",
-        "pk": "O0867AAN0AIDU01",
-        "fields": {
-            "route": "O0867AAN0A",
-            "headsign": "Campo Grande",
-            "via": "",
-            "version": "U01",
-            "direction": 0
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0867AAN0AVDU01",
-        "fields": {
-            "route": "O0867AAN0A",
-            "headsign": "Barra de Guaratiba",
-            "via": "",
-            "version": "U01",
-            "direction": 1
-        }
-    },
-    {
-        "model": "pontos.trip",
         "pk": "O0869AAA0AIDU01",
         "fields": {
             "route": "O0869AAA0A",
@@ -4170,28 +3686,6 @@
     },
     {
         "model": "pontos.trip",
-        "pk": "O0878AAN0AIDU01",
-        "fields": {
-            "route": "O0878AAN0A",
-            "headsign": "Barra da Tijuca",
-            "via": "",
-            "version": "U01",
-            "direction": 0
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0878AAN0AVDU01",
-        "fields": {
-            "route": "O0878AAN0A",
-            "headsign": "Tanque",
-            "via": "",
-            "version": "U01",
-            "direction": 1
-        }
-    },
-    {
-        "model": "pontos.trip",
         "pk": "O0880AAA0AIDU01",
         "fields": {
             "route": "O0880AAA0A",
@@ -4250,28 +3744,6 @@
         "pk": "O0884AAA0AVDU01",
         "fields": {
             "route": "O0884AAA0A",
-            "headsign": "Sepetiba",
-            "via": "",
-            "version": "U01",
-            "direction": 1
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0884AAN0AIDU01",
-        "fields": {
-            "route": "O0884AAN0A",
-            "headsign": "Campo Grande",
-            "via": "",
-            "version": "U01",
-            "direction": 0
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0884AAN0AVDU01",
-        "fields": {
-            "route": "O0884AAN0A",
             "headsign": "Sepetiba",
             "via": "",
             "version": "U01",
@@ -4445,28 +3917,6 @@
     },
     {
         "model": "pontos.trip",
-        "pk": "O0918AAN0AIDU01",
-        "fields": {
-            "route": "O0918AAN0A",
-            "headsign": "Iraj\u00e1",
-            "via": "",
-            "version": "U01",
-            "direction": 0
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0918AAN0AVDU01",
-        "fields": {
-            "route": "O0918AAN0A",
-            "headsign": "Bangu",
-            "via": "",
-            "version": "U01",
-            "direction": 1
-        }
-    },
-    {
-        "model": "pontos.trip",
         "pk": "O0920AAA0AIDU01",
         "fields": {
             "route": "O0920AAA0A",
@@ -4613,28 +4063,6 @@
         "pk": "O0954AAA0AVDU01",
         "fields": {
             "route": "O0954AAA0A",
-            "headsign": "Taquara",
-            "via": "",
-            "version": "U01",
-            "direction": 1
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0954AAN0AIDU01",
-        "fields": {
-            "route": "O0954AAN0A",
-            "headsign": "Recreio",
-            "via": "",
-            "version": "U01",
-            "direction": 0
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0954AAN0AVDU01",
-        "fields": {
-            "route": "O0954AAN0A",
             "headsign": "Taquara",
             "via": "",
             "version": "U01",
@@ -5479,17 +4907,6 @@
     },
     {
         "model": "pontos.trip",
-        "pk": "O0006AAN0AIDU01",
-        "fields": {
-            "route": "O0006AAN0A",
-            "headsign": "Castelo",
-            "via": "",
-            "version": "U01",
-            "direction": 0
-        }
-    },
-    {
-        "model": "pontos.trip",
         "pk": "O0871AAA0AIDU02",
         "fields": {
             "route": "O0871AAA0A",
@@ -5545,28 +4962,6 @@
     },
     {
         "model": "pontos.trip",
-        "pk": "O0794AAN0AIDU01",
-        "fields": {
-            "route": "O0794AAN0A",
-            "headsign": "Cascadura",
-            "via": "",
-            "version": "U01",
-            "direction": 0
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0794AAN0AVDU01",
-        "fields": {
-            "route": "O0794AAN0A",
-            "headsign": "Bangu",
-            "via": "",
-            "version": "U01",
-            "direction": 1
-        }
-    },
-    {
-        "model": "pontos.trip",
         "pk": "O0870AAA0AIDU02",
         "fields": {
             "route": "O0870AAA0A",
@@ -5614,17 +5009,6 @@
         "pk": "O0862AAA0AVDU01",
         "fields": {
             "route": "O0862AAA0A",
-            "headsign": "Rio das Pedras",
-            "via": "",
-            "version": "U01",
-            "direction": 1
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0862AAN0AVDU01",
-        "fields": {
-            "route": "O0862AAN0A",
             "headsign": "Rio das Pedras",
             "via": "",
             "version": "U01",
@@ -5727,72 +5111,6 @@
             "headsign": "Candel\u00e1ria",
             "via": "",
             "version": "U02",
-            "direction": 1
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0415AAN0AIDU02",
-        "fields": {
-            "route": "O0415AAN0A",
-            "headsign": "Leblon",
-            "via": "",
-            "version": "U02",
-            "direction": 0
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0415AAN0AVDU02",
-        "fields": {
-            "route": "O0415AAN0A",
-            "headsign": "Usina",
-            "via": "",
-            "version": "U02",
-            "direction": 1
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0483AAN0AIDU01",
-        "fields": {
-            "route": "O0483AAN0A",
-            "headsign": "General Os\u00f3rio",
-            "via": "",
-            "version": "U01",
-            "direction": 0
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0483AAN0AVDU01",
-        "fields": {
-            "route": "O0483AAN0A",
-            "headsign": "Penha",
-            "via": "",
-            "version": "U01",
-            "direction": 1
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0840AAN0AIDU01",
-        "fields": {
-            "route": "O0840AAN0A",
-            "headsign": "Campo Grande",
-            "via": "",
-            "version": "U01",
-            "direction": 0
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0840AAN0AVDU01",
-        "fields": {
-            "route": "O0840AAN0A",
-            "headsign": "S\u00e3o Fernando",
-            "via": "",
-            "version": "U01",
             "direction": 1
         }
     },
@@ -6040,28 +5358,6 @@
     },
     {
         "model": "pontos.trip",
-        "pk": "O0326AAN0AIDU02",
-        "fields": {
-            "route": "O0326AAN0A",
-            "headsign": "Candel\u00e1ria",
-            "via": "",
-            "version": "U02",
-            "direction": 0
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0326AAN0AVDU02",
-        "fields": {
-            "route": "O0326AAN0A",
-            "headsign": "Banc\u00e1rios",
-            "via": "",
-            "version": "U02",
-            "direction": 1
-        }
-    },
-    {
-        "model": "pontos.trip",
         "pk": "O0362AAA0AIDU02",
         "fields": {
             "route": "O0362AAA0A",
@@ -6124,28 +5420,6 @@
             "via": "",
             "version": "U02",
             "direction": 1
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0636AAN0AVDU02",
-        "fields": {
-            "route": "O0636AAN0A",
-            "headsign": "Merck",
-            "via": "",
-            "version": "U02",
-            "direction": 1
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0636AAN0AIDU02",
-        "fields": {
-            "route": "O0636AAN0A",
-            "headsign": "Saens Pe\u00f1a",
-            "via": "",
-            "version": "U02",
-            "direction": 0
         }
     },
     {
@@ -6447,28 +5721,6 @@
     },
     {
         "model": "pontos.trip",
-        "pk": "O0355AAN0AIDU02",
-        "fields": {
-            "route": "O0355AAN0A",
-            "headsign": "Pra\u00e7a Tiradentes",
-            "via": "",
-            "version": "U02",
-            "direction": 0
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0355AAN0AVDU02",
-        "fields": {
-            "route": "O0355AAN0A",
-            "headsign": "Madureira",
-            "via": "",
-            "version": "U02",
-            "direction": 1
-        }
-    },
-    {
-        "model": "pontos.trip",
         "pk": "O0350AAA0AIDU02",
         "fields": {
             "route": "O0350AAA0A",
@@ -6557,28 +5809,6 @@
     },
     {
         "model": "pontos.trip",
-        "pk": "O0565AAN0AIDU02",
-        "fields": {
-            "route": "O0565AAN0A",
-            "headsign": "G\u00e1vea",
-            "via": "",
-            "version": "U02",
-            "direction": 0
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0565AAN0AVDU02",
-        "fields": {
-            "route": "O0565AAN0A",
-            "headsign": "Tanque",
-            "via": "",
-            "version": "U02",
-            "direction": 1
-        }
-    },
-    {
-        "model": "pontos.trip",
         "pk": "O0348AAA0AVDU01",
         "fields": {
             "route": "O0348AAA0A",
@@ -6612,42 +5842,9 @@
     },
     {
         "model": "pontos.trip",
-        "pk": "O0232AAN0AIDU02",
-        "fields": {
-            "route": "O0232AAN0A",
-            "headsign": "Castelo",
-            "via": "",
-            "version": "U02",
-            "direction": 0
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0232AAN0AVDU02",
-        "fields": {
-            "route": "O0232AAN0A",
-            "headsign": "Lins",
-            "via": "",
-            "version": "U02",
-            "direction": 1
-        }
-    },
-    {
-        "model": "pontos.trip",
         "pk": "O0862AAA0AIDU01",
         "fields": {
             "route": "O0862AAA0A",
-            "headsign": "Barra",
-            "via": "",
-            "version": "U01",
-            "direction": 0
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0862AAN0AIDU01",
-        "fields": {
-            "route": "O0862AAN0A",
             "headsign": "Barra",
             "via": "",
             "version": "U01",
@@ -6696,28 +5893,6 @@
             "via": "",
             "version": "U02",
             "direction": 1
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0474AAN0AVDU02",
-        "fields": {
-            "route": "O0474AAN0A",
-            "headsign": "M\u00e9ier",
-            "via": "",
-            "version": "U02",
-            "direction": 1
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0474AAN0AIDU02",
-        "fields": {
-            "route": "O0474AAN0A",
-            "headsign": "Copacabana",
-            "via": "",
-            "version": "U02",
-            "direction": 0
         }
     },
     {
@@ -7221,28 +6396,6 @@
         "fields": {
             "route": "O0805AAP0A",
             "headsign": "Alvorada",
-            "via": "",
-            "version": "U01",
-            "direction": 1
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0746AAN0AIDU01",
-        "fields": {
-            "route": "O0746AAN0A",
-            "headsign": "Cascadura",
-            "via": "",
-            "version": "U01",
-            "direction": 0
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0746AAN0AVDU01",
-        "fields": {
-            "route": "O0746AAN0A",
-            "headsign": "Jabour",
             "via": "",
             "version": "U01",
             "direction": 1
@@ -7965,28 +7118,6 @@
     },
     {
         "model": "pontos.trip",
-        "pk": "O0386AAN0AIDU02",
-        "fields": {
-            "route": "O0386AAN0A",
-            "headsign": "Candel\u00e1ria",
-            "via": "",
-            "version": "U02",
-            "direction": 0
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0386AAN0AVDU02",
-        "fields": {
-            "route": "O0386AAN0A",
-            "headsign": "Anchieta",
-            "via": "",
-            "version": "U02",
-            "direction": 1
-        }
-    },
-    {
-        "model": "pontos.trip",
         "pk": "O0951AAA0AIDU02",
         "fields": {
             "route": "O0951AAA0A",
@@ -8090,72 +7221,6 @@
         "fields": {
             "route": "O0181AAA0A",
             "headsign": "Rodovi\u00e1ria",
-            "via": "",
-            "version": "U02",
-            "direction": 1
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0790AAN0AIDU02",
-        "fields": {
-            "route": "O0790AAN0A",
-            "headsign": "Cascadura",
-            "via": "",
-            "version": "U02",
-            "direction": 0
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0790AAN0AVDU02",
-        "fields": {
-            "route": "O0790AAN0A",
-            "headsign": "Campo Grande",
-            "via": "",
-            "version": "U02",
-            "direction": 1
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0810AAN0AIDU02",
-        "fields": {
-            "route": "O0810AAN0A",
-            "headsign": "Pontal",
-            "via": "",
-            "version": "U02",
-            "direction": 0
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0810AAN0AVDU02",
-        "fields": {
-            "route": "O0810AAN0A",
-            "headsign": "Taquara",
-            "via": "",
-            "version": "U02",
-            "direction": 1
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0209AAN0AIDU02",
-        "fields": {
-            "route": "O0209AAN0A",
-            "headsign": "Caju",
-            "via": "",
-            "version": "U02",
-            "direction": 0
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0209AAN0AVDU02",
-        "fields": {
-            "route": "O0209AAN0A",
-            "headsign": "Candel\u00e1ria",
             "via": "",
             "version": "U02",
             "direction": 1
