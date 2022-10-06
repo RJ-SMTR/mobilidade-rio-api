@@ -3,48 +3,24 @@
         "model": "pontos.qrcode",
         "pk": 0,
         "fields": {
-            "stop": "3061O00018C0",
-            "code": "DQ2D"
+            "stop": "1005O00180C0",
+            "code": "JG2L"
         }
     },
     {
         "model": "pontos.qrcode",
         "pk": 1,
         "fields": {
-            "stop": "3061O00019C0",
-            "code": "T5TT"
+            "stop": "1005O00181C0",
+            "code": "JUCL"
         }
     },
     {
         "model": "pontos.qrcode",
         "pk": 2,
         "fields": {
-            "stop": "3061O00020C0",
-            "code": "HFGL"
-        }
-    },
-    {
-        "model": "pontos.qrcode",
-        "pk": 3,
-        "fields": {
-            "stop": "3061O00021C0",
-            "code": "DRVV"
-        }
-    },
-    {
-        "model": "pontos.qrcode",
-        "pk": 4,
-        "fields": {
-            "stop": "3061O00022C0",
-            "code": "TDBA"
-        }
-    },
-    {
-        "model": "pontos.qrcode",
-        "pk": 5,
-        "fields": {
-            "stop": "3061O00023C0",
-            "code": "DQ3X"
+            "stop": "1005O00378C0",
+            "code": "CZ9H"
         }
     }
 ]
