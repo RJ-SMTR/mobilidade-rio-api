@@ -4,7 +4,7 @@
         "pk": "80833e",
         "fields": {
             "agency": 22005,
-            "mode": "8",
+            "mode": "O",
             "initials": "833",
             "name": "Manguariba - Campo Grande"
         }
@@ -14,7 +14,7 @@
         "pk": "u09285",
         "fields": {
             "agency": 22003,
-            "mode": "u",
+            "mode": "O",
             "initials": "928",
             "name": "Marechal Hermes - Bonsucesso"
         }
@@ -54,7 +54,7 @@
         "pk": "b0052w",
         "fields": {
             "agency": 22003,
-            "mode": "b",
+            "mode": "O",
             "initials": "LECD52",
             "name": "Cascadura - Coelho Neto"
         }
@@ -64,7 +64,7 @@
         "pk": "i0053w",
         "fields": {
             "agency": 22002,
-            "mode": "i",
+            "mode": "O",
             "initials": "LECD53",
             "name": "Rodovi\u00e1ria - Castelo"
         }
@@ -74,7 +74,7 @@
         "pk": "j0809d",
         "fields": {
             "agency": 22005,
-            "mode": "j",
+            "mode": "O",
             "initials": "809",
             "name": "Sagrado Cora\u00e7\u00e3o - Santa Cruz"
         }
@@ -84,7 +84,7 @@
         "pk": "j0254t",
         "fields": {
             "agency": 22003,
-            "mode": "j",
+            "mode": "O",
             "initials": "254",
             "name": "Madureira - Candel\u00e1ria"
         }
@@ -94,7 +94,7 @@
         "pk": "h0678k",
         "fields": {
             "agency": 22003,
-            "mode": "h",
+            "mode": "O",
             "initials": "678",
             "name": "M\u00e9ier - Vila Valqueire"
         }
@@ -104,7 +104,7 @@
         "pk": "l0051n",
         "fields": {
             "agency": 22004,
-            "mode": "l",
+            "mode": "O",
             "initials": "LECD51",
             "name": "Terminal Recreio - Barra de Guaratiba"
         }

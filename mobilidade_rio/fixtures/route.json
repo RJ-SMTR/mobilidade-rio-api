@@ -5,7 +5,7 @@
         "fields": {
             "linha": "80833e",
             "agency": "22005",
-            "mode": "8",
+            "mode": "O",
             "short_name": "833",
             "vista": "Manguariba - Campo Grande"
         }
@@ -16,7 +16,7 @@
         "fields": {
             "linha": "80833e",
             "agency": "22005",
-            "mode": "8",
+            "mode": "O",
             "short_name": "833",
             "vista": "Manguariba - Campo Grande"
         }
@@ -27,7 +27,7 @@
         "fields": {
             "linha": "u09285",
             "agency": "22003",
-            "mode": "u",
+            "mode": "O",
             "short_name": "928",
             "vista": "Marechal Hermes - Bonsucesso"
         }
@@ -38,7 +38,7 @@
         "fields": {
             "linha": "u09285",
             "agency": "22003",
-            "mode": "u",
+            "mode": "O",
             "short_name": "928",
             "vista": "Marechal Hermes - Bonsucesso"
         }
@@ -82,7 +82,7 @@
         "fields": {
             "linha": "b0052w",
             "agency": "22003",
-            "mode": "b",
+            "mode": "O",
             "short_name": "LECD52",
             "vista": "Cascadura - Coelho Neto"
         }
@@ -93,7 +93,7 @@
         "fields": {
             "linha": "b0052w",
             "agency": "22003",
-            "mode": "b",
+            "mode": "O",
             "short_name": "LECD52",
             "vista": "Cascadura - Coelho Neto"
         }
@@ -104,7 +104,7 @@
         "fields": {
             "linha": "i0053w",
             "agency": "22002",
-            "mode": "i",
+            "mode": "O",
             "short_name": "LECD53",
             "vista": "Rodovi\u00e1ria - Castelo"
         }
@@ -115,7 +115,7 @@
         "fields": {
             "linha": "i0053w",
             "agency": "22002",
-            "mode": "i",
+            "mode": "O",
             "short_name": "LECD53",
             "vista": "Rodovi\u00e1ria - Castelo"
         }
@@ -126,7 +126,7 @@
         "fields": {
             "linha": "j0809d",
             "agency": "22005",
-            "mode": "j",
+            "mode": "O",
             "short_name": "809",
             "vista": "Sagrado Cora\u00e7\u00e3o - Santa Cruz"
         }
@@ -137,7 +137,7 @@
         "fields": {
             "linha": "j0809d",
             "agency": "22005",
-            "mode": "j",
+            "mode": "O",
             "short_name": "809",
             "vista": "Sagrado Cora\u00e7\u00e3o - Santa Cruz"
         }
@@ -148,7 +148,7 @@
         "fields": {
             "linha": "j0254t",
             "agency": "22003",
-            "mode": "j",
+            "mode": "O",
             "short_name": "254",
             "vista": "Madureira - Candel\u00e1ria"
         }
@@ -159,7 +159,7 @@
         "fields": {
             "linha": "j0254t",
             "agency": "22003",
-            "mode": "j",
+            "mode": "O",
             "short_name": "254",
             "vista": "Madureira - Candel\u00e1ria"
         }
@@ -170,7 +170,7 @@
         "fields": {
             "linha": "h0678k",
             "agency": "22003",
-            "mode": "h",
+            "mode": "O",
             "short_name": "678",
             "vista": "M\u00e9ier - Vila Valqueire"
         }
@@ -181,7 +181,7 @@
         "fields": {
             "linha": "h0678k",
             "agency": "22003",
-            "mode": "h",
+            "mode": "O",
             "short_name": "678",
             "vista": "M\u00e9ier - Vila Valqueire"
         }
@@ -192,7 +192,7 @@
         "fields": {
             "linha": "l0051n",
             "agency": "22004",
-            "mode": "l",
+            "mode": "O",
             "short_name": "LECD51",
             "vista": "Terminal Recreio - Barra de Guaratiba"
         }
@@ -203,7 +203,7 @@
         "fields": {
             "linha": "l0051n",
             "agency": "22004",
-            "mode": "l",
+            "mode": "O",
             "short_name": "LECD51",
             "vista": "Terminal Recreio - Barra de Guaratiba"
         }
