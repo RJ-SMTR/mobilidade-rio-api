@@ -73109,7 +73109,7 @@
         "model": "pontos.stop",
         "pk": "0c7g",
         "fields": {
-            "mode": "",
+            "mode": "O",
             "name": "Terminal Paulo da Portela - \u00d4nibus Convencionais",
             "address": "Terminal Paulo da Portela - \u00d4nibus Convencionais",
             "latitude": "-22.878399",
@@ -73131,7 +73131,7 @@
         "model": "pontos.stop",
         "pk": "gayh",
         "fields": {
-            "mode": "",
+            "mode": "O",
             "name": "Ponto Final: Linha 928",
             "address": "Ponto Final: Linha 928",
             "latitude": "-22.8598",
@@ -73175,7 +73175,7 @@
         "model": "pontos.stop",
         "pk": "9mtm",
         "fields": {
-            "mode": "",
+            "mode": "O",
             "name": "Ponto Final :: Linha 833",
             "address": "Ponto Final :: Linha 833",
             "latitude": "-22.872014",
@@ -73186,7 +73186,7 @@
         "model": "pontos.stop",
         "pk": "lcy3",
         "fields": {
-            "mode": "",
+            "mode": "O",
             "name": "Rua Geni de Souza",
             "address": "Rua Geni de Souza",
             "latitude": "-22.872137",
@@ -73197,7 +73197,7 @@
         "model": "pontos.stop",
         "pk": "1lag",
         "fields": {
-            "mode": "",
+            "mode": "O",
             "name": "Rua Jos\u00e9 Edimilson Prazeres",
             "address": "Rua Jos\u00e9 Edimilson Prazeres",
             "latitude": "-22.872404",
@@ -73208,7 +73208,7 @@
         "model": "pontos.stop",
         "pk": "xq6y",
         "fields": {
-            "mode": "",
+            "mode": "O",
             "name": "Rua 11",
             "address": "Rua 11",
             "latitude": "-22.872967",
@@ -73219,7 +73219,7 @@
         "model": "pontos.stop",
         "pk": "1849",
         "fields": {
-            "mode": "",
+            "mode": "O",
             "name": "Rua Ant\u00f4nio da Silva",
             "address": "Rua Ant\u00f4nio da Silva",
             "latitude": "-22.873482",
@@ -73230,7 +73230,7 @@
         "model": "pontos.stop",
         "pk": "xlzs",
         "fields": {
-            "mode": "",
+            "mode": "O",
             "name": "Rua Maur\u00edcio de Andrade",
             "address": "Rua Maur\u00edcio de Andrade",
             "latitude": "-22.874178",
@@ -73241,7 +73241,7 @@
         "model": "pontos.stop",
         "pk": "82k0",
         "fields": {
-            "mode": "",
+            "mode": "O",
             "name": "Rua Maria Ferreira da Silva",
             "address": "Rua Maria Ferreira da Silva",
             "latitude": "-22.874712",
@@ -73252,7 +73252,7 @@
         "model": "pontos.stop",
         "pk": "8095",
         "fields": {
-            "mode": "",
+            "mode": "O",
             "name": "EM Prof. Raquel Kelly Laneira",
             "address": "EM Prof. Raquel Kelly Laneira",
             "latitude": "-22.875617",
@@ -73263,7 +73263,7 @@
         "model": "pontos.stop",
         "pk": "fl9j",
         "fields": {
-            "mode": "",
+            "mode": "O",
             "name": "BR-101",
             "address": "BR-101",
             "latitude": "-22.880238",
@@ -73274,7 +73274,7 @@
         "model": "pontos.stop",
         "pk": "gl5x",
         "fields": {
-            "mode": "",
+            "mode": "O",
             "name": "BR-101",
             "address": "BR-101",
             "latitude": "-22.88005",
@@ -73285,7 +73285,7 @@
         "model": "pontos.stop",
         "pk": "se5g",
         "fields": {
-            "mode": "",
+            "mode": "O",
             "name": "Rua Calandra",
             "address": "Rua Calandra",
             "latitude": "-22.877203",
@@ -73296,7 +73296,7 @@
         "model": "pontos.stop",
         "pk": "3uon",
         "fields": {
-            "mode": "",
+            "mode": "O",
             "name": "EM Prof. Raquel Kelly Laneira",
             "address": "EM Prof. Raquel Kelly Laneira",
             "latitude": "-22.875468",
@@ -73307,7 +73307,7 @@
         "model": "pontos.stop",
         "pk": "os23",
         "fields": {
-            "mode": "",
+            "mode": "O",
             "name": "Rua Maria Ferreira da Silva",
             "address": "Rua Maria Ferreira da Silva",
             "latitude": "-22.874831",
@@ -73318,7 +73318,7 @@
         "model": "pontos.stop",
         "pk": "r42y",
         "fields": {
-            "mode": "",
+            "mode": "O",
             "name": "Rua Maur\u00edcio de Andrade",
             "address": "Rua Maur\u00edcio de Andrade",
             "latitude": "-22.874267",
@@ -73329,7 +73329,7 @@
         "model": "pontos.stop",
         "pk": "qxd5",
         "fields": {
-            "mode": "",
+            "mode": "O",
             "name": "Rua Ant\u00f4nio da Silva",
             "address": "Rua Ant\u00f4nio da Silva",
             "latitude": "-22.873566",
@@ -73340,7 +73340,7 @@
         "model": "pontos.stop",
         "pk": "lceb",
         "fields": {
-            "mode": "",
+            "mode": "O",
             "name": "Rua 11",
             "address": "Rua 11",
             "latitude": "-22.873061",
@@ -73351,7 +73351,7 @@
         "model": "pontos.stop",
         "pk": "m3ta",
         "fields": {
-            "mode": "",
+            "mode": "O",
             "name": "Rua Jorge dos Santos",
             "address": "Rua Jorge dos Santos",
             "latitude": "-22.872537",
@@ -73362,7 +73362,7 @@
         "model": "pontos.stop",
         "pk": "5mdv",
         "fields": {
-            "mode": "",
+            "mode": "O",
             "name": "Rua Calandra",
             "address": "Rua Calandra",
             "latitude": "-22.877732",
@@ -73373,7 +73373,7 @@
         "model": "pontos.stop",
         "pk": "xcbl",
         "fields": {
-            "mode": "",
+            "mode": "O",
             "name": "Ponto Final :: Linha 809",
             "address": "Ponto Final :: Linha 809",
             "latitude": "-22.884167",
@@ -73384,7 +73384,7 @@
         "model": "pontos.stop",
         "pk": "h1ku",
         "fields": {
-            "mode": "",
+            "mode": "O",
             "name": "Estrada dos Palmares",
             "address": "Estrada dos Palmares",
             "latitude": "-22.882739",
@@ -73395,7 +73395,7 @@
         "model": "pontos.stop",
         "pk": "l54z",
         "fields": {
-            "mode": "",
+            "mode": "O",
             "name": "Estrada dos Palmares",
             "address": "Estrada dos Palmares",
             "latitude": "-22.882867",
@@ -73406,7 +73406,7 @@
         "model": "pontos.stop",
         "pk": "kzcd",
         "fields": {
-            "mode": "",
+            "mode": "O",
             "name": "Beco do Ribeiro",
             "address": "Beco do Ribeiro",
             "latitude": "-22.882709",
@@ -73417,7 +73417,7 @@
         "model": "pontos.stop",
         "pk": "zgpk",
         "fields": {
-            "mode": "",
+            "mode": "O",
             "name": "Beco do Ribeiro",
             "address": "Beco do Ribeiro",
             "latitude": "-22.882763",
@@ -73428,7 +73428,7 @@
         "model": "pontos.stop",
         "pk": "qs7w",
         "fields": {
-            "mode": "",
+            "mode": "O",
             "name": "Rua da Paz",
             "address": "Rua da Paz",
             "latitude": "-22.884538",
@@ -73439,7 +73439,7 @@
         "model": "pontos.stop",
         "pk": "gg91",
         "fields": {
-            "mode": "",
+            "mode": "O",
             "name": "Estrada do Cortume",
             "address": "Estrada do Cortume",
             "latitude": "-22.884552",
@@ -73450,7 +73450,7 @@
         "model": "pontos.stop",
         "pk": "0nk7",
         "fields": {
-            "mode": "",
+            "mode": "O",
             "name": "Estrada Aterrado do Leme",
             "address": "Estrada Aterrado do Leme",
             "latitude": "-22.885719",
@@ -73461,7 +73461,7 @@
         "model": "pontos.stop",
         "pk": "gf30",
         "fields": {
-            "mode": "",
+            "mode": "O",
             "name": "Estrada Aterrado do Leme",
             "address": "Estrada Aterrado do Leme",
             "latitude": "-22.885739",
@@ -73472,7 +73472,7 @@
         "model": "pontos.stop",
         "pk": "kfcl",
         "fields": {
-            "mode": "",
+            "mode": "O",
             "name": "Rua Bandeirantes",
             "address": "Rua Bandeirantes",
             "latitude": "-22.887735",
@@ -73483,7 +73483,7 @@
         "model": "pontos.stop",
         "pk": "zkx6",
         "fields": {
-            "mode": "",
+            "mode": "O",
             "name": "Rua Bandeirantes",
             "address": "Rua Bandeirantes",
             "latitude": "-22.888066",
@@ -73494,7 +73494,7 @@
         "model": "pontos.stop",
         "pk": "59pp",
         "fields": {
-            "mode": "",
+            "mode": "O",
             "name": "Rua Joana D'Arc",
             "address": "Rua Joana D'Arc",
             "latitude": "-22.889445",
@@ -73505,7 +73505,7 @@
         "model": "pontos.stop",
         "pk": "yaof",
         "fields": {
-            "mode": "",
+            "mode": "O",
             "name": "Rua Joana D'Arc",
             "address": "Rua Joana D'Arc",
             "latitude": "-22.889415",
@@ -73516,7 +73516,7 @@
         "model": "pontos.stop",
         "pk": "b0q6",
         "fields": {
-            "mode": "",
+            "mode": "O",
             "name": "Rua Jos\u00e9 Pedro Alves",
             "address": "Rua Jos\u00e9 Pedro Alves",
             "latitude": "-22.891195",
@@ -73527,7 +73527,7 @@
         "model": "pontos.stop",
         "pk": "zqdp",
         "fields": {
-            "mode": "",
+            "mode": "O",
             "name": "Avenida Brasil",
             "address": "Avenida Brasil",
             "latitude": "-22.892272",
@@ -73538,7 +73538,7 @@
         "model": "pontos.stop",
         "pk": "bn2d",
         "fields": {
-            "mode": "",
+            "mode": "O",
             "name": "Avenida Brasil",
             "address": "Avenida Brasil",
             "latitude": "-22.892722",
@@ -73582,7 +73582,7 @@
         "model": "pontos.stop",
         "pk": "t2u9",
         "fields": {
-            "mode": "",
+            "mode": "O",
             "name": "BRS 1, 2, 3, 4, 5, I: Gra\u00e7a Aranha",
             "address": "BRS 1, 2, 3, 4, 5, I: Gra\u00e7a Aranha",
             "latitude": "-22.906484",
