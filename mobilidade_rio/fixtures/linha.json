@@ -1,6 +1,126 @@
 [
     {
         "model": "pontos.linha",
+        "pk": "80833e",
+        "fields": {
+            "agency": 22005,
+            "mode": "O",
+            "initials": "833",
+            "name": "Manguariba - Campo Grande"
+        }
+    },
+    {
+        "model": "pontos.linha",
+        "pk": "u09285",
+        "fields": {
+            "agency": 22003,
+            "mode": "O",
+            "initials": "928",
+            "name": "Marechal Hermes - Bonsucesso"
+        }
+    },
+    {
+        "model": "pontos.linha",
+        "pk": "O0901A",
+        "fields": {
+            "agency": 22003,
+            "mode": "O",
+            "initials": "901",
+            "name": "Bonsucesso - Bananal"
+        }
+    },
+    {
+        "model": "pontos.linha",
+        "pk": "O0054A",
+        "fields": {
+            "agency": 22002,
+            "mode": "O",
+            "initials": "LECD54",
+            "name": "Urca - Copacabana"
+        }
+    },
+    {
+        "model": "pontos.linha",
+        "pk": "O0055A",
+        "fields": {
+            "agency": 22002,
+            "mode": "O",
+            "initials": "LECD55",
+            "name": "Urca - Botafogo"
+        }
+    },
+    {
+        "model": "pontos.linha",
+        "pk": "b0052w",
+        "fields": {
+            "agency": 22003,
+            "mode": "O",
+            "initials": "LECD52",
+            "name": "Cascadura - Coelho Neto"
+        }
+    },
+    {
+        "model": "pontos.linha",
+        "pk": "i0053w",
+        "fields": {
+            "agency": 22002,
+            "mode": "O",
+            "initials": "LECD53",
+            "name": "Rodovi\u00e1ria - Castelo"
+        }
+    },
+    {
+        "model": "pontos.linha",
+        "pk": "j0809d",
+        "fields": {
+            "agency": 22005,
+            "mode": "O",
+            "initials": "809",
+            "name": "Sagrado Cora\u00e7\u00e3o - Santa Cruz"
+        }
+    },
+    {
+        "model": "pontos.linha",
+        "pk": "j0254t",
+        "fields": {
+            "agency": 22003,
+            "mode": "O",
+            "initials": "254",
+            "name": "Madureira - Candel\u00e1ria"
+        }
+    },
+    {
+        "model": "pontos.linha",
+        "pk": "h0678k",
+        "fields": {
+            "agency": 22003,
+            "mode": "O",
+            "initials": "678",
+            "name": "M\u00e9ier - Vila Valqueire"
+        }
+    },
+    {
+        "model": "pontos.linha",
+        "pk": "l0051n",
+        "fields": {
+            "agency": 22004,
+            "mode": "O",
+            "initials": "LECD51",
+            "name": "Terminal Recreio - Barra de Guaratiba"
+        }
+    },
+    {
+        "model": "pontos.linha",
+        "pk": "O0409A",
+        "fields": {
+            "agency": 22002,
+            "mode": "O",
+            "initials": "409",
+            "name": "Saens Pe\u00f1a - Horto"
+        }
+    },
+    {
+        "model": "pontos.linha",
         "pk": "E2145A",
         "fields": {
             "agency": 22003,
@@ -3097,16 +3217,6 @@
             "mode": "O",
             "initials": "275",
             "name": "M\u00e9ier - Candel\u00e1ria"
-        }
-    },
-    {
-        "model": "pontos.linha",
-        "pk": "O0409A",
-        "fields": {
-            "agency": 22002,
-            "mode": "O",
-            "initials": "409",
-            "name": "Saens Pe\u00f1a - Horto"
         }
     },
     {

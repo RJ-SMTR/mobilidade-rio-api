@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   # - ./../base
   - kubernetes.yaml
+  - issuer.yaml
 namePrefix: stag-
 namespace: mobilidade-v2-staging
 

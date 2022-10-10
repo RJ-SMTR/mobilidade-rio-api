@@ -27,6 +27,7 @@
         "model": "pontos.qrcode",
         "pk": 3,
         "fields": {
+
             "stop": "2036O00043S9",
             "code": "50R5"
         }
@@ -333,6 +334,118 @@
         "fields": {
             "stop": "1005O00181C0",
             "code": "JUCL"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 36,
+        "fields": {
+            "stop": "2036O00003S9",
+            "code": "LISI"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 37,
+        "fields": {
+            "stop": "2036O00004S9",
+            "code": "MKCY"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 38,
+        "fields": {
+            "stop": "2036O00056S9",
+            "code": "MMR7"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 39,
+        "fields": {
+            "stop": "2036O00057S9",
+            "code": "N2KY"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 40,
+        "fields": {
+            "stop": "2036O00055S0",
+            "code": "Q3VX"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 41,
+        "fields": {
+            "stop": "2036O00044S9",
+            "code": "QQEG"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 42,
+        "fields": {
+            "stop": "2027O00060C0",
+            "code": "RE3Z"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 43,
+        "fields": {
+            "stop": "2036O00058S9",
+            "code": "RXW1"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 44,
+        "fields": {
+            "stop": "3061O00019C0",
+            "code": "T5TT"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 45,
+        "fields": {
+            "stop": "2036O00005S9",
+            "code": "TA9Z"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 46,
+        "fields": {
+            "stop": "3061O00022C0",
+            "code": "TDBA"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 47,
+        "fields": {
+            "stop": "2027O00067C0",
+            "code": "VIN5"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 48,
+        "fields": {
+            "stop": "2036O00006S9",
+            "code": "XGVX"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 49,
+        "fields": {
+            "stop": "2021O00007C0",
+            "code": "YXB9"
         }
     }
 ]
