@@ -334,5 +334,21 @@
             "stop": "1005O00181C0",
             "code": "JUCL"
         }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 42,
+        "fields": {
+            "stop": "1005O00198C0",
+            "code": "7M9B"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 43,
+        "fields": {
+            "stop": "1005O00197C0",
+            "code": "7KKY"
+        }
     }
 ]
