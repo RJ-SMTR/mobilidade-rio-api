@@ -1,1 +1,93 @@
-[]
+[
+    {
+        "model": "pontos.agency",
+        "pk": "22002",
+        "fields": {
+            "name": "Intersul"
+        }
+    },
+    {
+        "model": "pontos.agency",
+        "pk": "22003",
+        "fields": {
+            "name": "Internorte"
+        }
+    },
+    {
+        "model": "pontos.agency",
+        "pk": "22004",
+        "fields": {
+            "name": "Transcarioca"
+        }
+    },
+    {
+        "model": "pontos.agency",
+        "pk": "22005",
+        "fields": {
+            "name": "Santa Cruz"
+        }
+    },
+    {
+        "model": "pontos.agency",
+        "pk": "10001",
+        "fields": {
+            "name": "MetrôRio"
+        }
+    },
+    {
+        "model": "pontos.agency",
+        "pk": "11001",
+        "fields": {
+            "name": "SuperVia"
+        }
+    },
+    {
+        "model": "pontos.agency",
+        "pk": "12001",
+        "fields": {
+            "name": "VLT Carioca"
+        }
+    },
+    {
+        "model": "pontos.agency",
+        "pk": "20001",
+        "fields": {
+            "name": "BRT Rio"
+        }
+    },
+    {
+        "model": "pontos.agency",
+        "pk": "30001",
+        "fields": {
+            "name": "DETRO"
+        }
+    },
+    {
+        "model": "pontos.agency",
+        "pk": "40001",
+        "fields": {
+            "name": "STPL"
+        }
+    },
+    {
+        "model": "pontos.agency",
+        "pk": "41001",
+        "fields": {
+            "name": "STPC"
+        }
+    },
+    {
+        "model": "pontos.agency",
+        "pk": "50001",
+        "fields": {
+            "name": "CCR Barcas"
+        }
+    },
+    {
+        "model": "pontos.agency",
+        "pk": "13001",
+        "fields": {
+            "name": "CENTRAL"
+        }
+    }
+]
