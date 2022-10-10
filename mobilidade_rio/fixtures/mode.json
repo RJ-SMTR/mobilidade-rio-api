@@ -1,79 +1,79 @@
 [
-    {
-        "model": "pontos.mode",
-        "pk": "M",
-        "fields": {
-            "name": "Metr\u00f4"
-        }
-    },
-    {
-        "model": "pontos.mode",
-        "pk": "T",
-        "fields": {
-            "name": "Trem"
-        }
-    },
-    {
-        "model": "pontos.mode",
-        "pk": "V",
-        "fields": {
-            "name": "VLT"
-        }
-    },
-    {
-        "model": "pontos.mode",
-        "pk": "S",
-        "fields": {
-            "name": "Central"
-        }
-    },
-    {
-        "model": "pontos.mode",
-        "pk": "B",
-        "fields": {
-            "name": "BRT"
-        }
-    },
-    {
-        "model": "pontos.mode",
-        "pk": "O",
-        "fields": {
-            "name": "\u00d4nibus"
-        }
-    },
-    {
-        "model": "pontos.mode",
-        "pk": "E",
-        "fields": {
-            "name": "\u00d4nibus"
-        }
-    },
-    {
-        "model": "pontos.mode",
-        "pk": "I",
-        "fields": {
-            "name": "DETRO"
-        }
-    },
-    {
-        "model": "pontos.mode",
-        "pk": "L",
-        "fields": {
-            "name": "STPL"
-        }
-    },
-    {
-        "model": "pontos.mode",
-        "pk": "C",
-        "fields": {
-            "name": "STPC"
-        }
-    },
-    {
-        "model": "pontos.mode",
-        "pk": "F",
-        "fields": {
-            "name": "Barca"
-        }
+  {
+    "model": "pontos.mode",
+    "pk": "10",
+    "fields": {
+      "name": "Metrô"
     }
+  },
+  {
+    "model": "pontos.mode",
+    "pk": "11",
+    "fields": {
+      "name": "Trem"
+    }
+  },
+  {
+    "model": "pontos.mode",
+    "pk": "12",
+    "fields": {
+      "name": "VLT"
+    }
+  },
+  {
+    "model": "pontos.mode",
+    "pk": "13",
+    "fields": {
+      "name": "Central"
+    }
+  },
+  {
+    "model": "pontos.mode",
+    "pk": "20",
+    "fields": {
+      "name": "BRT"
+    }
+  },
+  {
+    "model": "pontos.mode",
+    "pk": "22",
+    "fields": {
+      "name": "Ônibus"
+    }
+  },
+  {
+    "model": "pontos.mode",
+    "pk": "23",
+    "fields": {
+      "name": "Ônibus"
+    }
+  },
+  {
+    "model": "pontos.mode",
+    "pk": "30",
+    "fields": {
+      "name": "DETRO"
+    }
+  },
+  {
+    "model": "pontos.mode",
+    "pk": "40",
+    "fields": {
+      "name": "STPL"
+    }
+  },
+  {
+    "model": "pontos.mode",
+    "pk": "41",
+    "fields": {
+      "name": "STPC"
+    }
+  },
+  {
+    "model": "pontos.mode",
+    "pk": "50",
+    "fields": {
+      "name": "Barca"
+    }
+  }
 ]
