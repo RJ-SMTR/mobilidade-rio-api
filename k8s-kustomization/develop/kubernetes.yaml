@@ -99,17 +99,17 @@ metadata:
 spec:
   tls:
     - hosts:
-        - api.staging.mobilidade.rio
+        - api.dev.mobilidade.rio
       secretName: api-mobilidade-tls
   rules:
-    - host: api.staging.mobilidade.rio
+    - host: api.dev.mobilidade.rio
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: smtr-stag-mobilidade-api
+                name: smtr-dev-mobilidade-api
                 port:
                   number: 80
 ---
