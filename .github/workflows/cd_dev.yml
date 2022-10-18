@@ -1,15 +1,16 @@
-name: Deploy to staging
+name: Deploy to develop
 
 on:
   push:
     branches:
-      - "release/*"
+      - "dev"
 
 env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }}
   GKE_CLUSTER: ${{ secrets.GKE_CLUSTER_NAME }}
   GKE_ZONE: us-central1-c
   IMAGE: mobilidade-rio-api
+  MY_ENV: develop
 
 jobs:
   before:
@@ -104,5 +105,5 @@ jobs:
       - name: Deploy
         run: |-
           ./kustomize edit set image gcr.io/PROJECT_ID/IMAGE_API:TAG=gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA
-          ./kustomize build . | kubectl apply -n mobilidade-v2-staging -f -
-          kubectl get services -n mobilidade-v2-staging -o wide
+          ./kustomize build . | kubectl apply -n mobilidade-v2-develop -f -
+          kubectl get services -n mobilidade-v2-develop -o wide
