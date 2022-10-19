@@ -12,7 +12,9 @@ cidade do Rio de Janeiro.
 
 ## Desenvolvimento
 
-[Adicionar instruções]
+```sh
+kubectl exec -it -n mobilidade-v2-develop deploy/smtr-dev-mobilidade-api -- /bin/bash
+```
 
 ## Staging
 ### Acessando o ambiente

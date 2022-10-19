@@ -3,7 +3,7 @@
         "model": "pontos.route",
         "pk": "84be",
         "fields": {
-            "linha": "80833e",
+            "linha": "84be",
             "agency": "22005",
             "mode": "O",
             "short_name": "833",
@@ -12,31 +12,64 @@
     },
     {
         "model": "pontos.route",
-        "pk": "84be",
+        "pk": "bosw",
         "fields": {
-            "linha": "80833e",
-            "agency": "22005",
-            "mode": "O",
-            "short_name": "833",
-            "vista": "Manguariba - Campo Grande"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "ukw5",
-        "fields": {
-            "linha": "u09285",
+            "linha": "bosw",
             "agency": "22003",
             "mode": "O",
-            "short_name": "928",
-            "vista": "Marechal Hermes - Bonsucesso"
+            "short_name": "LECD52",
+            "vista": "Cascadura - Coelho Neto"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "hvak",
+        "fields": {
+            "linha": "hvak",
+            "agency": "22003",
+            "mode": "O",
+            "short_name": "678",
+            "vista": "M\u00e9ier - Vila Valqueire"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "lbvn",
+        "fields": {
+            "linha": "lbvn",
+            "agency": "22004",
+            "mode": "O",
+            "short_name": "LECD51",
+            "vista": "Terminal Recreio - Barra de Guaratiba"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "qro7",
+        "fields": {
+            "linha": "qro7",
+            "agency": "22002",
+            "mode": "O",
+            "short_name": "229",
+            "vista": "Usina - Castelo"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "bxu3",
+        "fields": {
+            "linha": "bxu3",
+            "agency": "22003",
+            "mode": "O",
+            "short_name": "277",
+            "vista": "Rocha Miranda - Candel\u00e1ria"
         }
     },
     {
         "model": "pontos.route",
         "pk": "ukw5",
         "fields": {
-            "linha": "u09285",
+            "linha": "ukw5",
             "agency": "22003",
             "mode": "O",
             "short_name": "928",
@@ -47,7 +80,7 @@
         "model": "pontos.route",
         "pk": "O0901AAA0A",
         "fields": {
-            "linha": "O0901A",
+            "linha": "O0901AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "901",
@@ -56,9 +89,20 @@
     },
     {
         "model": "pontos.route",
+        "pk": "c2tb",
+        "fields": {
+            "linha": "c2tb",
+            "agency": "22003",
+            "mode": "O",
+            "short_name": "335 SR",
+            "vista": "Cordovil - Tiradentes"
+        }
+    },
+    {
+        "model": "pontos.route",
         "pk": "O0054CAA0A",
         "fields": {
-            "linha": "O0054A",
+            "linha": "O0054CAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "LECD54",
@@ -69,7 +113,7 @@
         "model": "pontos.route",
         "pk": "O0055CAA0A",
         "fields": {
-            "linha": "O0055A",
+            "linha": "O0055CAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "LECD55",
@@ -78,31 +122,20 @@
     },
     {
         "model": "pontos.route",
-        "pk": "bosw",
+        "pk": "O0056CAA0A",
         "fields": {
-            "linha": "b0052w",
-            "agency": "22003",
+            "linha": "O0056CAA0A",
+            "agency": "22004",
             "mode": "O",
-            "short_name": "LECD52",
-            "vista": "Cascadura - Coelho Neto"
+            "short_name": "LECD56",
+            "vista": "Pra\u00e7a Seca - Madureira"
         }
     },
     {
         "model": "pontos.route",
-        "pk": "bosw",
+        "pk": "O0051CAA0A",
         "fields": {
-            "linha": "b0052w",
-            "agency": "22003",
-            "mode": "O",
-            "short_name": "LECD52",
-            "vista": "Cascadura - Coelho Neto"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "ipyw",
-        "fields": {
-            "linha": "i0053w",
+            "linha": "O0051CAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "LECD53",
@@ -111,42 +144,9 @@
     },
     {
         "model": "pontos.route",
-        "pk": "ipyw",
+        "pk": "O0254AAA0A",
         "fields": {
-            "linha": "i0053w",
-            "agency": "22002",
-            "mode": "O",
-            "short_name": "LECD53",
-            "vista": "Rodovi\u00e1ria - Castelo"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "jsjd",
-        "fields": {
-            "linha": "j0809d",
-            "agency": "22005",
-            "mode": "O",
-            "short_name": "809",
-            "vista": "Sagrado Cora\u00e7\u00e3o - Santa Cruz"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "jsjd",
-        "fields": {
-            "linha": "j0809d",
-            "agency": "22005",
-            "mode": "O",
-            "short_name": "809",
-            "vista": "Sagrado Cora\u00e7\u00e3o - Santa Cruz"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "j4yt",
-        "fields": {
-            "linha": "j0254t",
+            "linha": "O0254AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "254",
@@ -155,64 +155,20 @@
     },
     {
         "model": "pontos.route",
-        "pk": "j4yt",
+        "pk": "O0809AAA0A",
         "fields": {
-            "linha": "j0254t",
-            "agency": "22003",
+            "linha": "O0809AAA0A",
+            "agency": "22005",
             "mode": "O",
-            "short_name": "254",
-            "vista": "Madureira - Candel\u00e1ria"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "hvak",
-        "fields": {
-            "linha": "h0678k",
-            "agency": "22003",
-            "mode": "O",
-            "short_name": "678",
-            "vista": "M\u00e9ier - Vila Valqueire"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "hvak",
-        "fields": {
-            "linha": "h0678k",
-            "agency": "22003",
-            "mode": "O",
-            "short_name": "678",
-            "vista": "M\u00e9ier - Vila Valqueire"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "lbvn",
-        "fields": {
-            "linha": "l0051n",
-            "agency": "22004",
-            "mode": "O",
-            "short_name": "LECD51",
-            "vista": "Terminal Recreio - Barra de Guaratiba"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "lbvn",
-        "fields": {
-            "linha": "l0051n",
-            "agency": "22004",
-            "mode": "O",
-            "short_name": "LECD51",
-            "vista": "Terminal Recreio - Barra de Guaratiba"
+            "short_name": "809",
+            "vista": "Sagrado Cora\u00e7\u00e3o - Santa Cruz"
         }
     },
     {
         "model": "pontos.route",
         "pk": "O0409AAA0A",
         "fields": {
-            "linha": "O0409A",
+            "linha": "O0409AAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "409",
@@ -223,9 +179,9 @@
         "model": "pontos.route",
         "pk": "E2145AAA0A",
         "fields": {
-            "linha": "E2145A",
+            "linha": "E2145AAA0A",
             "agency": "22003",
-            "mode": "E",
+            "mode": "O",
             "short_name": "2145",
             "vista": "RIOgale\u00e3o - Aeroporto Santos Dumont"
         }
@@ -234,9 +190,9 @@
         "model": "pontos.route",
         "pk": "E2305AAA0A",
         "fields": {
-            "linha": "E2305A",
+            "linha": "E2305AAA0A",
             "agency": "22003",
-            "mode": "E",
+            "mode": "O",
             "short_name": "2305",
             "vista": "Jardim Am\u00e9rica - Castelo"
         }
@@ -245,7 +201,7 @@
         "model": "pontos.route",
         "pk": "O0232AAA0A",
         "fields": {
-            "linha": "O0232A",
+            "linha": "O0232AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "232",
@@ -256,18 +212,7 @@
         "model": "pontos.route",
         "pk": "O0232AAN0A",
         "fields": {
-            "linha": "O0232A",
-            "agency": "22003",
-            "mode": "O",
-            "short_name": "SN232",
-            "vista": "Lins - Castelo"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0232AAN0A",
-        "fields": {
-            "linha": "O0232A",
+            "linha": "O0232AAN0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "SN232",
@@ -278,7 +223,7 @@
         "model": "pontos.route",
         "pk": "O0232AAV0A",
         "fields": {
-            "linha": "O0232A",
+            "linha": "O0232AAV0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "SV232",
@@ -289,9 +234,9 @@
         "model": "pontos.route",
         "pk": "E2342AAA0A",
         "fields": {
-            "linha": "E2342A",
+            "linha": "E2342AAA0A",
             "agency": "22003",
-            "mode": "E",
+            "mode": "O",
             "short_name": "2342",
             "vista": "Bananal - Castelo"
         }
@@ -300,9 +245,9 @@
         "model": "pontos.route",
         "pk": "E2343AAA0A",
         "fields": {
-            "linha": "E2343A",
+            "linha": "E2343AAA0A",
             "agency": "22003",
-            "mode": "E",
+            "mode": "O",
             "short_name": "2343",
             "vista": "Ribeira - Castelo"
         }
@@ -311,9 +256,9 @@
         "model": "pontos.route",
         "pk": "E2344AAA0A",
         "fields": {
-            "linha": "E2344A",
+            "linha": "E2344AAA0A",
             "agency": "22003",
-            "mode": "E",
+            "mode": "O",
             "short_name": "2344",
             "vista": "Banc\u00e1rios - Castelo"
         }
@@ -322,7 +267,7 @@
         "model": "pontos.route",
         "pk": "O0238AAA0A",
         "fields": {
-            "linha": "O0238A",
+            "linha": "O0238AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "238",
@@ -333,18 +278,7 @@
         "model": "pontos.route",
         "pk": "O0238AAN0A",
         "fields": {
-            "linha": "O0238A",
-            "agency": "22003",
-            "mode": "O",
-            "short_name": "SN238",
-            "vista": "\u00c1gua Santa - Castelo"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0238AAN0A",
-        "fields": {
-            "linha": "O0238A",
+            "linha": "O0238AAN0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "SN238",
@@ -355,7 +289,7 @@
         "model": "pontos.route",
         "pk": "O0239AAA0A",
         "fields": {
-            "linha": "O0239A",
+            "linha": "O0239AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "239",
@@ -366,7 +300,7 @@
         "model": "pontos.route",
         "pk": "O0247AAA0A",
         "fields": {
-            "linha": "O0247A",
+            "linha": "O0247AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "247",
@@ -377,7 +311,7 @@
         "model": "pontos.route",
         "pk": "O0249AAA0A",
         "fields": {
-            "linha": "O0249A",
+            "linha": "O0249AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "249",
@@ -388,7 +322,7 @@
         "model": "pontos.route",
         "pk": "O0265AAA0A",
         "fields": {
-            "linha": "O0265A",
+            "linha": "O0265AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "265",
@@ -399,18 +333,7 @@
         "model": "pontos.route",
         "pk": "O0265AAN0A",
         "fields": {
-            "linha": "O0265A",
-            "agency": "22003",
-            "mode": "O",
-            "short_name": "SN265",
-            "vista": "Marechal Hermes - Castelo"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0265AAN0A",
-        "fields": {
-            "linha": "O0265A",
+            "linha": "O0265AAN0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "SN265",
@@ -421,7 +344,7 @@
         "model": "pontos.route",
         "pk": "O0265AAP0A",
         "fields": {
-            "linha": "O0265A",
+            "linha": "O0265AAP0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "SP265",
@@ -432,7 +355,7 @@
         "model": "pontos.route",
         "pk": "O0292AAA0A",
         "fields": {
-            "linha": "O0292A",
+            "linha": "O0292AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "292",
@@ -443,7 +366,7 @@
         "model": "pontos.route",
         "pk": "O0296AAA0A",
         "fields": {
-            "linha": "O0296A",
+            "linha": "O0296AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "296",
@@ -454,7 +377,7 @@
         "model": "pontos.route",
         "pk": "O0298AAA0A",
         "fields": {
-            "linha": "O0298A",
+            "linha": "O0298AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "298",
@@ -465,7 +388,7 @@
         "model": "pontos.route",
         "pk": "O0311AAA0A",
         "fields": {
-            "linha": "O0311A",
+            "linha": "O0311AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "311",
@@ -476,7 +399,7 @@
         "model": "pontos.route",
         "pk": "O0312AAA0A",
         "fields": {
-            "linha": "O0312A",
+            "linha": "O0312AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "312",
@@ -487,18 +410,7 @@
         "model": "pontos.route",
         "pk": "O0312AAN0A",
         "fields": {
-            "linha": "O0312A",
-            "agency": "22003",
-            "mode": "O",
-            "short_name": "SN312",
-            "vista": "Olaria - Candel\u00e1ria"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0312AAN0A",
-        "fields": {
-            "linha": "O0312A",
+            "linha": "O0312AAN0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "SN312",
@@ -509,7 +421,7 @@
         "model": "pontos.route",
         "pk": "O0313AAA0A",
         "fields": {
-            "linha": "O0313A",
+            "linha": "O0313AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "313",
@@ -520,7 +432,7 @@
         "model": "pontos.route",
         "pk": "O0321AAA0A",
         "fields": {
-            "linha": "O0321A",
+            "linha": "O0321AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "321",
@@ -531,7 +443,7 @@
         "model": "pontos.route",
         "pk": "O0323AAA0A",
         "fields": {
-            "linha": "O0323A",
+            "linha": "O0323AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "323",
@@ -542,7 +454,7 @@
         "model": "pontos.route",
         "pk": "O0324AAA0A",
         "fields": {
-            "linha": "O0324A",
+            "linha": "O0324AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "324",
@@ -553,18 +465,7 @@
         "model": "pontos.route",
         "pk": "O0324AAN0A",
         "fields": {
-            "linha": "O0324A",
-            "agency": "22003",
-            "mode": "O",
-            "short_name": "SN324",
-            "vista": "Ribeira - Candel\u00e1ria"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0324AAN0A",
-        "fields": {
-            "linha": "O0324A",
+            "linha": "O0324AAN0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "SN324",
@@ -575,7 +476,7 @@
         "model": "pontos.route",
         "pk": "O0325AAA0A",
         "fields": {
-            "linha": "O0325A",
+            "linha": "O0325AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "325",
@@ -586,7 +487,7 @@
         "model": "pontos.route",
         "pk": "O0326AAA0A",
         "fields": {
-            "linha": "O0326A",
+            "linha": "O0326AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "326",
@@ -597,18 +498,7 @@
         "model": "pontos.route",
         "pk": "O0326AAN0A",
         "fields": {
-            "linha": "O0326A",
-            "agency": "22003",
-            "mode": "O",
-            "short_name": "SN326",
-            "vista": "Banc\u00e1rios - Candel\u00e1ria"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0326AAN0A",
-        "fields": {
-            "linha": "O0326A",
+            "linha": "O0326AAN0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "SN326",
@@ -619,7 +509,7 @@
         "model": "pontos.route",
         "pk": "O0327AAA0A",
         "fields": {
-            "linha": "O0327A",
+            "linha": "O0327AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "327",
@@ -630,7 +520,7 @@
         "model": "pontos.route",
         "pk": "O0328AAA0A",
         "fields": {
-            "linha": "O0328A",
+            "linha": "O0328AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "328",
@@ -641,7 +531,7 @@
         "model": "pontos.route",
         "pk": "O0329AAA0A",
         "fields": {
-            "linha": "O0329A",
+            "linha": "O0329AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "329",
@@ -652,7 +542,7 @@
         "model": "pontos.route",
         "pk": "O0342AAA0A",
         "fields": {
-            "linha": "O0342A",
+            "linha": "O0342AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "342",
@@ -663,18 +553,7 @@
         "model": "pontos.route",
         "pk": "O0342AAN0A",
         "fields": {
-            "linha": "O0342A",
-            "agency": "22003",
-            "mode": "O",
-            "short_name": "SN342",
-            "vista": "Jardim Am\u00e9rica - Castelo"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0342AAN0A",
-        "fields": {
-            "linha": "O0342A",
+            "linha": "O0342AAN0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "SN342",
@@ -685,7 +564,7 @@
         "model": "pontos.route",
         "pk": "O0349AAA0A",
         "fields": {
-            "linha": "O0349A",
+            "linha": "O0349AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "349",
@@ -696,7 +575,7 @@
         "model": "pontos.route",
         "pk": "O0350AAA0A",
         "fields": {
-            "linha": "O0350A",
+            "linha": "O0350AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "350",
@@ -707,7 +586,7 @@
         "model": "pontos.route",
         "pk": "O0355AAA0A",
         "fields": {
-            "linha": "O0355A",
+            "linha": "O0355AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "355",
@@ -718,18 +597,7 @@
         "model": "pontos.route",
         "pk": "O0355AAN0A",
         "fields": {
-            "linha": "O0355A",
-            "agency": "22003",
-            "mode": "O",
-            "short_name": "SN355",
-            "vista": "Madureira - Pra\u00e7a Tiradentes"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0355AAN0A",
-        "fields": {
-            "linha": "O0355A",
+            "linha": "O0355AAN0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "SN355",
@@ -740,7 +608,7 @@
         "model": "pontos.route",
         "pk": "O0362AAA0A",
         "fields": {
-            "linha": "O0362A",
+            "linha": "O0362AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "362",
@@ -751,7 +619,7 @@
         "model": "pontos.route",
         "pk": "O0378AAA0A",
         "fields": {
-            "linha": "O0378A",
+            "linha": "O0378AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "378",
@@ -762,7 +630,7 @@
         "model": "pontos.route",
         "pk": "O0384AAA0A",
         "fields": {
-            "linha": "O0384A",
+            "linha": "O0384AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "384",
@@ -773,7 +641,7 @@
         "model": "pontos.route",
         "pk": "O0385AAA0A",
         "fields": {
-            "linha": "O0385A",
+            "linha": "O0385AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "385",
@@ -784,7 +652,7 @@
         "model": "pontos.route",
         "pk": "O0386AAA0A",
         "fields": {
-            "linha": "O0386A",
+            "linha": "O0386AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "386",
@@ -795,7 +663,7 @@
         "model": "pontos.route",
         "pk": "O0399AAA0A",
         "fields": {
-            "linha": "O0399A",
+            "linha": "O0399AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "399",
@@ -806,7 +674,7 @@
         "model": "pontos.route",
         "pk": "O0404AAP0A",
         "fields": {
-            "linha": "O0404A",
+            "linha": "O0404AAP0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "SP404",
@@ -817,7 +685,7 @@
         "model": "pontos.route",
         "pk": "O0455AAA0A",
         "fields": {
-            "linha": "O0455A",
+            "linha": "O0455AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "455",
@@ -828,7 +696,7 @@
         "model": "pontos.route",
         "pk": "O0457AAA0A",
         "fields": {
-            "linha": "O0457A",
+            "linha": "O0457AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "457",
@@ -839,18 +707,7 @@
         "model": "pontos.route",
         "pk": "O0457AAN0A",
         "fields": {
-            "linha": "O0457A",
-            "agency": "22003",
-            "mode": "O",
-            "short_name": "SN457",
-            "vista": "Aboli\u00e7\u00e3o - Copacabana"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0457AAN0A",
-        "fields": {
-            "linha": "O0457A",
+            "linha": "O0457AAN0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "SN457",
@@ -861,7 +718,7 @@
         "model": "pontos.route",
         "pk": "O0483AAA0A",
         "fields": {
-            "linha": "O0483A",
+            "linha": "O0483AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "483",
@@ -872,7 +729,7 @@
         "model": "pontos.route",
         "pk": "O0484AAA0A",
         "fields": {
-            "linha": "O0484A",
+            "linha": "O0484AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "484",
@@ -883,7 +740,7 @@
         "model": "pontos.route",
         "pk": "O0485AAP0A",
         "fields": {
-            "linha": "O0485A",
+            "linha": "O0485AAP0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "SP485",
@@ -894,7 +751,7 @@
         "model": "pontos.route",
         "pk": "O0486AAA0A",
         "fields": {
-            "linha": "O0486A",
+            "linha": "O0486AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "486",
@@ -905,7 +762,7 @@
         "model": "pontos.route",
         "pk": "O0492AAA0A",
         "fields": {
-            "linha": "O0492A",
+            "linha": "O0492AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "492",
@@ -916,7 +773,7 @@
         "model": "pontos.route",
         "pk": "O0497AAA0A",
         "fields": {
-            "linha": "O0497A",
+            "linha": "O0497AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "497",
@@ -927,7 +784,7 @@
         "model": "pontos.route",
         "pk": "O0606AAA0A",
         "fields": {
-            "linha": "O0606A",
+            "linha": "O0606AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "606",
@@ -938,7 +795,7 @@
         "model": "pontos.route",
         "pk": "O0606AAV0A",
         "fields": {
-            "linha": "O0606A",
+            "linha": "O0606AAV0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "SV606",
@@ -949,7 +806,7 @@
         "model": "pontos.route",
         "pk": "O0616AAA0A",
         "fields": {
-            "linha": "O0616A",
+            "linha": "O0616AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "616",
@@ -960,7 +817,7 @@
         "model": "pontos.route",
         "pk": "O0621AAA0A",
         "fields": {
-            "linha": "O0621A",
+            "linha": "O0621AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "621",
@@ -971,7 +828,7 @@
         "model": "pontos.route",
         "pk": "O0622AAA0A",
         "fields": {
-            "linha": "O0622A",
+            "linha": "O0622AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "622",
@@ -982,7 +839,7 @@
         "model": "pontos.route",
         "pk": "O0623AAA0A",
         "fields": {
-            "linha": "O0623A",
+            "linha": "O0623AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "623",
@@ -993,7 +850,7 @@
         "model": "pontos.route",
         "pk": "O0624AAA0A",
         "fields": {
-            "linha": "O0624A",
+            "linha": "O0624AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "624",
@@ -1004,18 +861,7 @@
         "model": "pontos.route",
         "pk": "O0624AAN0A",
         "fields": {
-            "linha": "O0624A",
-            "agency": "22003",
-            "mode": "O",
-            "short_name": "SN624",
-            "vista": "Mari\u00f3polis - Pra\u00e7a da Bandeira"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0624AAN0A",
-        "fields": {
-            "linha": "O0624A",
+            "linha": "O0624AAN0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "SN624",
@@ -1026,7 +872,7 @@
         "model": "pontos.route",
         "pk": "O0625AAA0A",
         "fields": {
-            "linha": "O0625A",
+            "linha": "O0625AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "625",
@@ -1037,7 +883,7 @@
         "model": "pontos.route",
         "pk": "O0627AAA0A",
         "fields": {
-            "linha": "O0627A",
+            "linha": "O0627AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "627",
@@ -1048,7 +894,7 @@
         "model": "pontos.route",
         "pk": "O0628AAA0A",
         "fields": {
-            "linha": "O0628A",
+            "linha": "O0628AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "628",
@@ -1059,7 +905,7 @@
         "model": "pontos.route",
         "pk": "O0629AAA0A",
         "fields": {
-            "linha": "O0629A",
+            "linha": "O0629AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "629",
@@ -1070,7 +916,7 @@
         "model": "pontos.route",
         "pk": "O0630AAA0A",
         "fields": {
-            "linha": "O0630A",
+            "linha": "O0630AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "630",
@@ -1081,7 +927,7 @@
         "model": "pontos.route",
         "pk": "O0634AAA0A",
         "fields": {
-            "linha": "O0634A",
+            "linha": "O0634AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "634",
@@ -1092,7 +938,7 @@
         "model": "pontos.route",
         "pk": "O0638AAA0A",
         "fields": {
-            "linha": "O0638A",
+            "linha": "O0638AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "638",
@@ -1103,7 +949,7 @@
         "model": "pontos.route",
         "pk": "O0639AAA0A",
         "fields": {
-            "linha": "O0639A",
+            "linha": "O0639AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "639",
@@ -1114,7 +960,7 @@
         "model": "pontos.route",
         "pk": "O0650AAA0A",
         "fields": {
-            "linha": "O0650A",
+            "linha": "O0650AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "650",
@@ -1125,7 +971,7 @@
         "model": "pontos.route",
         "pk": "O0663AAA0A",
         "fields": {
-            "linha": "O0663A",
+            "linha": "O0663AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "663",
@@ -1136,7 +982,7 @@
         "model": "pontos.route",
         "pk": "O0665AAA0A",
         "fields": {
-            "linha": "O0665A",
+            "linha": "O0665AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "665",
@@ -1147,7 +993,7 @@
         "model": "pontos.route",
         "pk": "O0665AAVAA",
         "fields": {
-            "linha": "O0665A",
+            "linha": "O0665AAVAA",
             "agency": "22003",
             "mode": "O",
             "short_name": "SVA665",
@@ -1158,7 +1004,7 @@
         "model": "pontos.route",
         "pk": "O0669AAA0A",
         "fields": {
-            "linha": "O0669A",
+            "linha": "O0669AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "669",
@@ -1169,7 +1015,7 @@
         "model": "pontos.route",
         "pk": "O0679AAA0A",
         "fields": {
-            "linha": "O0679A",
+            "linha": "O0679AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "679",
@@ -1180,7 +1026,7 @@
         "model": "pontos.route",
         "pk": "O0680AAA0A",
         "fields": {
-            "linha": "O0680A",
+            "linha": "O0680AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "680",
@@ -1191,7 +1037,7 @@
         "model": "pontos.route",
         "pk": "O0685AAA0A",
         "fields": {
-            "linha": "O0685A",
+            "linha": "O0685AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "685",
@@ -1202,7 +1048,7 @@
         "model": "pontos.route",
         "pk": "O0685AAVAA",
         "fields": {
-            "linha": "O0685A",
+            "linha": "O0685AAVAA",
             "agency": "22003",
             "mode": "O",
             "short_name": "SVA685",
@@ -1213,7 +1059,7 @@
         "model": "pontos.route",
         "pk": "O0685AAVBA",
         "fields": {
-            "linha": "O0685A",
+            "linha": "O0685AAVBA",
             "agency": "22003",
             "mode": "O",
             "short_name": "SVB685",
@@ -1224,7 +1070,7 @@
         "model": "pontos.route",
         "pk": "O0687AAA0A",
         "fields": {
-            "linha": "O0687A",
+            "linha": "O0687AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "687",
@@ -1235,7 +1081,7 @@
         "model": "pontos.route",
         "pk": "O0688AAA0A",
         "fields": {
-            "linha": "O0688A",
+            "linha": "O0688AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "688",
@@ -1246,7 +1092,7 @@
         "model": "pontos.route",
         "pk": "O0696AAA0A",
         "fields": {
-            "linha": "O0696A",
+            "linha": "O0696AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "696",
@@ -1257,7 +1103,7 @@
         "model": "pontos.route",
         "pk": "O0711AAA0A",
         "fields": {
-            "linha": "O0711A",
+            "linha": "O0711AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "711",
@@ -1268,7 +1114,7 @@
         "model": "pontos.route",
         "pk": "O0721AAA0A",
         "fields": {
-            "linha": "O0721A",
+            "linha": "O0721AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "721",
@@ -1279,7 +1125,7 @@
         "model": "pontos.route",
         "pk": "O0778AAA0A",
         "fields": {
-            "linha": "O0778A",
+            "linha": "O0778AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "778",
@@ -1290,18 +1136,7 @@
         "model": "pontos.route",
         "pk": "O0778AAN0A",
         "fields": {
-            "linha": "O0778A",
-            "agency": "22003",
-            "mode": "O",
-            "short_name": "SN778",
-            "vista": "Cascadura - Pavuna"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0778AAN0A",
-        "fields": {
-            "linha": "O0778A",
+            "linha": "O0778AAN0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "SN778",
@@ -1312,7 +1147,7 @@
         "model": "pontos.route",
         "pk": "O0779AAA0A",
         "fields": {
-            "linha": "O0779A",
+            "linha": "O0779AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "779",
@@ -1323,7 +1158,7 @@
         "model": "pontos.route",
         "pk": "O0779AAV0A",
         "fields": {
-            "linha": "O0779A",
+            "linha": "O0779AAV0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "SV779",
@@ -1334,7 +1169,7 @@
         "model": "pontos.route",
         "pk": "O0793AAA0A",
         "fields": {
-            "linha": "O0793A",
+            "linha": "O0793AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "793",
@@ -1345,7 +1180,7 @@
         "model": "pontos.route",
         "pk": "O0795AAA0A",
         "fields": {
-            "linha": "O0795A",
+            "linha": "O0795AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "795",
@@ -1356,7 +1191,7 @@
         "model": "pontos.route",
         "pk": "O0905AAA0A",
         "fields": {
-            "linha": "O0905A",
+            "linha": "O0905AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "905",
@@ -1367,7 +1202,7 @@
         "model": "pontos.route",
         "pk": "O0906AAA0A",
         "fields": {
-            "linha": "O0906A",
+            "linha": "O0906AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "906",
@@ -1378,7 +1213,7 @@
         "model": "pontos.route",
         "pk": "O0908AAA0A",
         "fields": {
-            "linha": "O0908A",
+            "linha": "O0908AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "908",
@@ -1389,7 +1224,7 @@
         "model": "pontos.route",
         "pk": "O0908AAV0A",
         "fields": {
-            "linha": "O0908A",
+            "linha": "O0908AAV0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "SV908",
@@ -1400,7 +1235,7 @@
         "model": "pontos.route",
         "pk": "O0910AAA0A",
         "fields": {
-            "linha": "O0910A",
+            "linha": "O0910AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "910",
@@ -1411,7 +1246,7 @@
         "model": "pontos.route",
         "pk": "O0913AAA0A",
         "fields": {
-            "linha": "O0913A",
+            "linha": "O0913AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "913",
@@ -1422,7 +1257,7 @@
         "model": "pontos.route",
         "pk": "O0915AAA0A",
         "fields": {
-            "linha": "O0915A",
+            "linha": "O0915AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "915",
@@ -1433,7 +1268,7 @@
         "model": "pontos.route",
         "pk": "O0917AAA0A",
         "fields": {
-            "linha": "O0917A",
+            "linha": "O0917AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "917",
@@ -1444,7 +1279,7 @@
         "model": "pontos.route",
         "pk": "O0919AAA0A",
         "fields": {
-            "linha": "O0919A",
+            "linha": "O0919AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "919",
@@ -1455,7 +1290,7 @@
         "model": "pontos.route",
         "pk": "O0920AAA0A",
         "fields": {
-            "linha": "O0920A",
+            "linha": "O0920AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "920",
@@ -1466,7 +1301,7 @@
         "model": "pontos.route",
         "pk": "O0922AAA0A",
         "fields": {
-            "linha": "O0922A",
+            "linha": "O0922AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "922",
@@ -1477,7 +1312,7 @@
         "model": "pontos.route",
         "pk": "O0925AAA0A",
         "fields": {
-            "linha": "O0925A",
+            "linha": "O0925AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "925",
@@ -1488,7 +1323,7 @@
         "model": "pontos.route",
         "pk": "O0944AAA0A",
         "fields": {
-            "linha": "O0944A",
+            "linha": "O0944AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "944",
@@ -1499,7 +1334,7 @@
         "model": "pontos.route",
         "pk": "O0945AAA0A",
         "fields": {
-            "linha": "O0945A",
+            "linha": "O0945AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "945",
@@ -1510,7 +1345,7 @@
         "model": "pontos.route",
         "pk": "O0946AAA0A",
         "fields": {
-            "linha": "O0946A",
+            "linha": "O0946AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "946",
@@ -1521,7 +1356,7 @@
         "model": "pontos.route",
         "pk": "O0950AAA0A",
         "fields": {
-            "linha": "O0950A",
+            "linha": "O0950AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "950",
@@ -1532,7 +1367,7 @@
         "model": "pontos.route",
         "pk": "O0951AAA0A",
         "fields": {
-            "linha": "O0951A",
+            "linha": "O0951AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "951",
@@ -1543,9 +1378,9 @@
         "model": "pontos.route",
         "pk": "E2018AAA0A",
         "fields": {
-            "linha": "E2018A",
+            "linha": "E2018AAA0A",
             "agency": "22004",
-            "mode": "E",
+            "mode": "O",
             "short_name": "2018",
             "vista": "RIOgale\u00e3o - Alvorada"
         }
@@ -1554,9 +1389,9 @@
         "model": "pontos.route",
         "pk": "E2111AAA0A",
         "fields": {
-            "linha": "E2111A",
+            "linha": "E2111AAA0A",
             "agency": "22004",
-            "mode": "E",
+            "mode": "O",
             "short_name": "2111",
             "vista": "Pra\u00e7a Seca - Castelo"
         }
@@ -1565,9 +1400,9 @@
         "model": "pontos.route",
         "pk": "E2112AAA0A",
         "fields": {
-            "linha": "E2112A",
+            "linha": "E2112AAA0A",
             "agency": "22004",
-            "mode": "E",
+            "mode": "O",
             "short_name": "2112",
             "vista": "Taquara - Castelo"
         }
@@ -1576,9 +1411,9 @@
         "model": "pontos.route",
         "pk": "E2114AAA0A",
         "fields": {
-            "linha": "E2114A",
+            "linha": "E2114AAA0A",
             "agency": "22004",
-            "mode": "E",
+            "mode": "O",
             "short_name": "2114",
             "vista": "Freguesia - Castelo"
         }
@@ -1587,9 +1422,9 @@
         "model": "pontos.route",
         "pk": "E2345AAA0A",
         "fields": {
-            "linha": "E2345A",
+            "linha": "E2345AAA0A",
             "agency": "22004",
-            "mode": "E",
+            "mode": "O",
             "short_name": "2345",
             "vista": "Vila Valqueire - Castelo"
         }
@@ -1598,9 +1433,9 @@
         "model": "pontos.route",
         "pk": "E2345AAVBA",
         "fields": {
-            "linha": "E2345A",
+            "linha": "E2345AAVBA",
             "agency": "22004",
-            "mode": "E",
+            "mode": "O",
             "short_name": "SVB2345",
             "vista": "Vila Valqueire - Castelo"
         }
@@ -1609,7 +1444,7 @@
         "model": "pontos.route",
         "pk": "O0302AAA0A",
         "fields": {
-            "linha": "O0302A",
+            "linha": "O0302AAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "302",
@@ -1620,7 +1455,7 @@
         "model": "pontos.route",
         "pk": "O0306AAA0A",
         "fields": {
-            "linha": "O0306A",
+            "linha": "O0306AAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "306",
@@ -1631,7 +1466,7 @@
         "model": "pontos.route",
         "pk": "O0309AAA0A",
         "fields": {
-            "linha": "O0309A",
+            "linha": "O0309AAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "309",
@@ -1642,18 +1477,7 @@
         "model": "pontos.route",
         "pk": "O0309AAN0A",
         "fields": {
-            "linha": "O0309A",
-            "agency": "22004",
-            "mode": "O",
-            "short_name": "SN309",
-            "vista": "Alvorada - Central"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0309AAN0A",
-        "fields": {
-            "linha": "O0309A",
+            "linha": "O0309AAN0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "SN309",
@@ -1664,7 +1488,7 @@
         "model": "pontos.route",
         "pk": "O0315AAA0A",
         "fields": {
-            "linha": "O0315A",
+            "linha": "O0315AAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "315",
@@ -1675,7 +1499,7 @@
         "model": "pontos.route",
         "pk": "O0338AAA0A",
         "fields": {
-            "linha": "O0338A",
+            "linha": "O0338AAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "338",
@@ -1686,7 +1510,7 @@
         "model": "pontos.route",
         "pk": "O0341AAA0A",
         "fields": {
-            "linha": "O0341A",
+            "linha": "O0341AAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "341",
@@ -1697,7 +1521,7 @@
         "model": "pontos.route",
         "pk": "O0341AAP0A",
         "fields": {
-            "linha": "O0341A",
+            "linha": "O0341AAP0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "SP341",
@@ -1708,7 +1532,7 @@
         "model": "pontos.route",
         "pk": "O0343AAA0A",
         "fields": {
-            "linha": "O0343A",
+            "linha": "O0343AAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "343",
@@ -1719,7 +1543,7 @@
         "model": "pontos.route",
         "pk": "O0343AAP0A",
         "fields": {
-            "linha": "O0343A",
+            "linha": "O0343AAP0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "SP343",
@@ -1730,7 +1554,7 @@
         "model": "pontos.route",
         "pk": "O0348AAA0A",
         "fields": {
-            "linha": "O0348A",
+            "linha": "O0348AAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "348",
@@ -1741,7 +1565,7 @@
         "model": "pontos.route",
         "pk": "O0353AAA0A",
         "fields": {
-            "linha": "O0353A",
+            "linha": "O0353AAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "353",
@@ -1752,7 +1576,7 @@
         "model": "pontos.route",
         "pk": "O0361AAA0A",
         "fields": {
-            "linha": "O0361A",
+            "linha": "O0361AAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "361",
@@ -1763,7 +1587,7 @@
         "model": "pontos.route",
         "pk": "O0363AAA0A",
         "fields": {
-            "linha": "O0363A",
+            "linha": "O0363AAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "363",
@@ -1774,7 +1598,7 @@
         "model": "pontos.route",
         "pk": "O0363AAV0A",
         "fields": {
-            "linha": "O0363A",
+            "linha": "O0363AAV0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "SV363",
@@ -1785,7 +1609,7 @@
         "model": "pontos.route",
         "pk": "O0368AAA0A",
         "fields": {
-            "linha": "O0368A",
+            "linha": "O0368AAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "368",
@@ -1796,7 +1620,7 @@
         "model": "pontos.route",
         "pk": "O0371AAA0A",
         "fields": {
-            "linha": "O0371A",
+            "linha": "O0371AAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "371",
@@ -1807,7 +1631,7 @@
         "model": "pontos.route",
         "pk": "O0380AAA0A",
         "fields": {
-            "linha": "O0380A",
+            "linha": "O0380AAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "380",
@@ -1818,7 +1642,7 @@
         "model": "pontos.route",
         "pk": "O0390AAA0A",
         "fields": {
-            "linha": "O0390A",
+            "linha": "O0390AAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "390",
@@ -1829,7 +1653,7 @@
         "model": "pontos.route",
         "pk": "O0550AAA0A",
         "fields": {
-            "linha": "O0550A",
+            "linha": "O0550AAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "550",
@@ -1840,18 +1664,7 @@
         "model": "pontos.route",
         "pk": "O0550AAN0A",
         "fields": {
-            "linha": "O0550A",
-            "agency": "22004",
-            "mode": "O",
-            "short_name": "SN550",
-            "vista": "Cidade de Deus - G\u00e1vea"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0550AAN0A",
-        "fields": {
-            "linha": "O0550A",
+            "linha": "O0550AAN0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "SN550",
@@ -1862,7 +1675,7 @@
         "model": "pontos.route",
         "pk": "O0555AAA0A",
         "fields": {
-            "linha": "O0555A",
+            "linha": "O0555AAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "555",
@@ -1873,7 +1686,7 @@
         "model": "pontos.route",
         "pk": "O0557AAA0A",
         "fields": {
-            "linha": "O0557A",
+            "linha": "O0557AAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "557",
@@ -1884,7 +1697,7 @@
         "model": "pontos.route",
         "pk": "O0565AAA0A",
         "fields": {
-            "linha": "O0565A",
+            "linha": "O0565AAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "565",
@@ -1895,18 +1708,7 @@
         "model": "pontos.route",
         "pk": "O0565AAN0A",
         "fields": {
-            "linha": "O0565A",
-            "agency": "22004",
-            "mode": "O",
-            "short_name": "SN565",
-            "vista": "Tanque - G\u00e1vea"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0565AAN0A",
-        "fields": {
-            "linha": "O0565A",
+            "linha": "O0565AAN0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "SN565",
@@ -1917,7 +1719,7 @@
         "model": "pontos.route",
         "pk": "O0600AAA0A",
         "fields": {
-            "linha": "O0600A",
+            "linha": "O0600AAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "600",
@@ -1928,7 +1730,7 @@
         "model": "pontos.route",
         "pk": "O0601AAA0A",
         "fields": {
-            "linha": "O0601A",
+            "linha": "O0601AAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "601",
@@ -1939,18 +1741,7 @@
         "model": "pontos.route",
         "pk": "O0601AAN0A",
         "fields": {
-            "linha": "O0601A",
-            "agency": "22004",
-            "mode": "O",
-            "short_name": "SN601",
-            "vista": "Saens Pe\u00f1a - Santa Maria"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0601AAN0A",
-        "fields": {
-            "linha": "O0601A",
+            "linha": "O0601AAN0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "SN601",
@@ -1961,7 +1752,7 @@
         "model": "pontos.route",
         "pk": "O0607AAA0A",
         "fields": {
-            "linha": "O0607A",
+            "linha": "O0607AAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "607",
@@ -1972,7 +1763,7 @@
         "model": "pontos.route",
         "pk": "O0610AAA0A",
         "fields": {
-            "linha": "O0610A",
+            "linha": "O0610AAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "610",
@@ -1983,7 +1774,7 @@
         "model": "pontos.route",
         "pk": "O0611AAA0A",
         "fields": {
-            "linha": "O0611A",
+            "linha": "O0611AAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "611",
@@ -1994,7 +1785,7 @@
         "model": "pontos.route",
         "pk": "O0613AAA0A",
         "fields": {
-            "linha": "O0613A",
+            "linha": "O0613AAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "613",
@@ -2005,7 +1796,7 @@
         "model": "pontos.route",
         "pk": "O0613AAPAA",
         "fields": {
-            "linha": "O0613A",
+            "linha": "O0613AAPAA",
             "agency": "22004",
             "mode": "O",
             "short_name": "SPA613",
@@ -2016,7 +1807,7 @@
         "model": "pontos.route",
         "pk": "O0614AAA0A",
         "fields": {
-            "linha": "O0614A",
+            "linha": "O0614AAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "614",
@@ -2027,7 +1818,7 @@
         "model": "pontos.route",
         "pk": "O0636AAA0A",
         "fields": {
-            "linha": "O0636A",
+            "linha": "O0636AAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "636",
@@ -2038,18 +1829,7 @@
         "model": "pontos.route",
         "pk": "O0636AAN0A",
         "fields": {
-            "linha": "O0636A",
-            "agency": "22004",
-            "mode": "O",
-            "short_name": "SN636",
-            "vista": "Pra\u00e7a Seca - Saens Pe\u00f1a"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0636AAN0A",
-        "fields": {
-            "linha": "O0636A",
+            "linha": "O0636AAN0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "SN636",
@@ -2060,7 +1840,7 @@
         "model": "pontos.route",
         "pk": "O0651AAA0A",
         "fields": {
-            "linha": "O0651A",
+            "linha": "O0651AAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "651",
@@ -2071,7 +1851,7 @@
         "model": "pontos.route",
         "pk": "O0652AAA0A",
         "fields": {
-            "linha": "O0652A",
+            "linha": "O0652AAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "652",
@@ -2082,7 +1862,7 @@
         "model": "pontos.route",
         "pk": "O0691AAA0A",
         "fields": {
-            "linha": "O0691A",
+            "linha": "O0691AAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "691",
@@ -2093,7 +1873,7 @@
         "model": "pontos.route",
         "pk": "O0692AAA0A",
         "fields": {
-            "linha": "O0692A",
+            "linha": "O0692AAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "692",
@@ -2104,7 +1884,7 @@
         "model": "pontos.route",
         "pk": "O0693AAA0A",
         "fields": {
-            "linha": "O0693A",
+            "linha": "O0693AAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "693",
@@ -2113,20 +1893,9 @@
     },
     {
         "model": "pontos.route",
-        "pk": "O0702AAA0A",
-        "fields": {
-            "linha": "O0702A",
-            "agency": "22004",
-            "mode": "O",
-            "short_name": "702",
-            "vista": "Pra\u00e7a Seca - Madureira"
-        }
-    },
-    {
-        "model": "pontos.route",
         "pk": "O0709AAA0A",
         "fields": {
-            "linha": "O0709A",
+            "linha": "O0709AAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "709",
@@ -2137,7 +1906,7 @@
         "model": "pontos.route",
         "pk": "O0712AAA0A",
         "fields": {
-            "linha": "O0712A",
+            "linha": "O0712AAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "712",
@@ -2148,7 +1917,7 @@
         "model": "pontos.route",
         "pk": "O0766AAA0A",
         "fields": {
-            "linha": "O0766A",
+            "linha": "O0766AAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "766",
@@ -2159,7 +1928,7 @@
         "model": "pontos.route",
         "pk": "O0774AAA0A",
         "fields": {
-            "linha": "O0774A",
+            "linha": "O0774AAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "774",
@@ -2170,7 +1939,7 @@
         "model": "pontos.route",
         "pk": "O0774AAV0A",
         "fields": {
-            "linha": "O0774A",
+            "linha": "O0774AAV0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "SV774",
@@ -2181,7 +1950,7 @@
         "model": "pontos.route",
         "pk": "O0775AAA0A",
         "fields": {
-            "linha": "O0775A",
+            "linha": "O0775AAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "775",
@@ -2192,7 +1961,7 @@
         "model": "pontos.route",
         "pk": "O0783AAA0A",
         "fields": {
-            "linha": "O0783A",
+            "linha": "O0783AAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "783",
@@ -2203,7 +1972,7 @@
         "model": "pontos.route",
         "pk": "O0805AAA0A",
         "fields": {
-            "linha": "O0805A",
+            "linha": "O0805AAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "805",
@@ -2214,7 +1983,7 @@
         "model": "pontos.route",
         "pk": "O0810AAA0A",
         "fields": {
-            "linha": "O0810A",
+            "linha": "O0810AAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "810",
@@ -2225,18 +1994,7 @@
         "model": "pontos.route",
         "pk": "O0810AAN0A",
         "fields": {
-            "linha": "O0810A",
-            "agency": "22004",
-            "mode": "O",
-            "short_name": "SN810",
-            "vista": "Taquara - Pontal"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0810AAN0A",
-        "fields": {
-            "linha": "O0810A",
+            "linha": "O0810AAN0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "SN810",
@@ -2247,7 +2005,7 @@
         "model": "pontos.route",
         "pk": "O0829AAA0A",
         "fields": {
-            "linha": "O0829A",
+            "linha": "O0829AAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "829",
@@ -2258,7 +2016,7 @@
         "model": "pontos.route",
         "pk": "O0831AAA0A",
         "fields": {
-            "linha": "O0831A",
+            "linha": "O0831AAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "831",
@@ -2269,7 +2027,7 @@
         "model": "pontos.route",
         "pk": "O0844AAA0A",
         "fields": {
-            "linha": "O0844A",
+            "linha": "O0844AAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "844",
@@ -2280,7 +2038,7 @@
         "model": "pontos.route",
         "pk": "O0859AAA0A",
         "fields": {
-            "linha": "O0859A",
+            "linha": "O0859AAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "859",
@@ -2291,7 +2049,7 @@
         "model": "pontos.route",
         "pk": "O0861AAA0A",
         "fields": {
-            "linha": "O0861A",
+            "linha": "O0861AAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "861",
@@ -2302,7 +2060,7 @@
         "model": "pontos.route",
         "pk": "O0862AAA0A",
         "fields": {
-            "linha": "O0862A",
+            "linha": "O0862AAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "862",
@@ -2313,18 +2071,7 @@
         "model": "pontos.route",
         "pk": "O0862AAN0A",
         "fields": {
-            "linha": "O0862A",
-            "agency": "22004",
-            "mode": "O",
-            "short_name": "SN862",
-            "vista": "Rio das Pedras - Barra"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0862AAN0A",
-        "fields": {
-            "linha": "O0862A",
+            "linha": "O0862AAN0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "SN862",
@@ -2335,7 +2082,7 @@
         "model": "pontos.route",
         "pk": "O0863AAA0A",
         "fields": {
-            "linha": "O0863A",
+            "linha": "O0863AAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "863",
@@ -2346,7 +2093,7 @@
         "model": "pontos.route",
         "pk": "O0865AAA0A",
         "fields": {
-            "linha": "O0865A",
+            "linha": "O0865AAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "865",
@@ -2357,7 +2104,7 @@
         "model": "pontos.route",
         "pk": "O0875AAA0A",
         "fields": {
-            "linha": "O0875A",
+            "linha": "O0875AAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "875",
@@ -2368,7 +2115,7 @@
         "model": "pontos.route",
         "pk": "O0878AAA0A",
         "fields": {
-            "linha": "O0878A",
+            "linha": "O0878AAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "878",
@@ -2379,18 +2126,7 @@
         "model": "pontos.route",
         "pk": "O0878AAN0A",
         "fields": {
-            "linha": "O0878A",
-            "agency": "22004",
-            "mode": "O",
-            "short_name": "SN878",
-            "vista": "Tanque - Barra da Tijuca"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0878AAN0A",
-        "fields": {
-            "linha": "O0878A",
+            "linha": "O0878AAN0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "SN878",
@@ -2401,7 +2137,7 @@
         "model": "pontos.route",
         "pk": "O0880AAA0A",
         "fields": {
-            "linha": "O0880A",
+            "linha": "O0880AAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "880",
@@ -2412,7 +2148,7 @@
         "model": "pontos.route",
         "pk": "O0900AAA0A",
         "fields": {
-            "linha": "O0900A",
+            "linha": "O0900AAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "900",
@@ -2423,7 +2159,7 @@
         "model": "pontos.route",
         "pk": "O0932AAA0A",
         "fields": {
-            "linha": "O0932A",
+            "linha": "O0932AAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "932",
@@ -2434,7 +2170,7 @@
         "model": "pontos.route",
         "pk": "O0940AAA0A",
         "fields": {
-            "linha": "O0940A",
+            "linha": "O0940AAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "940",
@@ -2445,7 +2181,7 @@
         "model": "pontos.route",
         "pk": "O0953AAA0A",
         "fields": {
-            "linha": "O0953A",
+            "linha": "O0953AAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "953",
@@ -2456,7 +2192,7 @@
         "model": "pontos.route",
         "pk": "O0954AAA0A",
         "fields": {
-            "linha": "O0954A",
+            "linha": "O0954AAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "954",
@@ -2467,18 +2203,7 @@
         "model": "pontos.route",
         "pk": "O0954AAN0A",
         "fields": {
-            "linha": "O0954A",
-            "agency": "22004",
-            "mode": "O",
-            "short_name": "SN954",
-            "vista": "Taquara - Recreio"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0954AAN0A",
-        "fields": {
-            "linha": "O0954A",
+            "linha": "O0954AAN0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "SN954",
@@ -2489,7 +2214,7 @@
         "model": "pontos.route",
         "pk": "O0955AAA0A",
         "fields": {
-            "linha": "O0955A",
+            "linha": "O0955AAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "955",
@@ -2500,9 +2225,9 @@
         "model": "pontos.route",
         "pk": "E2303AAA0A",
         "fields": {
-            "linha": "E2303A",
+            "linha": "E2303AAA0A",
             "agency": "22005",
-            "mode": "E",
+            "mode": "O",
             "short_name": "2303",
             "vista": "Cesar\u00e3o - Carioca"
         }
@@ -2511,9 +2236,9 @@
         "model": "pontos.route",
         "pk": "E2307AAA0A",
         "fields": {
-            "linha": "E2307A",
+            "linha": "E2307AAA0A",
             "agency": "22005",
-            "mode": "E",
+            "mode": "O",
             "short_name": "2307",
             "vista": "Jardim 7 de Abril - Carioca"
         }
@@ -2522,9 +2247,9 @@
         "model": "pontos.route",
         "pk": "E2308AAA0A",
         "fields": {
-            "linha": "E2308A",
+            "linha": "E2308AAA0A",
             "agency": "22005",
-            "mode": "E",
+            "mode": "O",
             "short_name": "2308",
             "vista": "Cosmos - Carioca"
         }
@@ -2533,9 +2258,9 @@
         "model": "pontos.route",
         "pk": "E2309AAA0A",
         "fields": {
-            "linha": "E2309A",
+            "linha": "E2309AAA0A",
             "agency": "22005",
-            "mode": "E",
+            "mode": "O",
             "short_name": "2309",
             "vista": "Uruc\u00e2nia - Carioca"
         }
@@ -2544,9 +2269,9 @@
         "model": "pontos.route",
         "pk": "E2310AAA0A",
         "fields": {
-            "linha": "E2310A",
+            "linha": "E2310AAA0A",
             "agency": "22005",
-            "mode": "E",
+            "mode": "O",
             "short_name": "2310",
             "vista": "Bangu - Candel\u00e1ria"
         }
@@ -2555,9 +2280,9 @@
         "model": "pontos.route",
         "pk": "E2332AAA0A",
         "fields": {
-            "linha": "E2332A",
+            "linha": "E2332AAA0A",
             "agency": "22005",
-            "mode": "E",
+            "mode": "O",
             "short_name": "2332",
             "vista": "Campo Grande - Castelo"
         }
@@ -2566,9 +2291,9 @@
         "model": "pontos.route",
         "pk": "E2334AAA0A",
         "fields": {
-            "linha": "E2334A",
+            "linha": "E2334AAA0A",
             "agency": "22005",
-            "mode": "E",
+            "mode": "O",
             "short_name": "2334",
             "vista": "Campo Grande - Castelo"
         }
@@ -2577,9 +2302,9 @@
         "model": "pontos.route",
         "pk": "E2334AAV0A",
         "fields": {
-            "linha": "E2334A",
+            "linha": "E2334AAV0A",
             "agency": "22005",
-            "mode": "E",
+            "mode": "O",
             "short_name": "SV2334",
             "vista": "Campo Grande - Castelo"
         }
@@ -2588,9 +2313,9 @@
         "model": "pontos.route",
         "pk": "E2335AAA0A",
         "fields": {
-            "linha": "E2335A",
+            "linha": "E2335AAA0A",
             "agency": "22005",
-            "mode": "E",
+            "mode": "O",
             "short_name": "2335",
             "vista": "Santa Cruz - Castelo"
         }
@@ -2599,9 +2324,9 @@
         "model": "pontos.route",
         "pk": "E2336AAA0A",
         "fields": {
-            "linha": "E2336A",
+            "linha": "E2336AAA0A",
             "agency": "22005",
-            "mode": "E",
+            "mode": "O",
             "short_name": "2336",
             "vista": "Campo Grande - Castelo"
         }
@@ -2610,9 +2335,9 @@
         "model": "pontos.route",
         "pk": "E2337AAA0A",
         "fields": {
-            "linha": "E2337A",
+            "linha": "E2337AAA0A",
             "agency": "22005",
-            "mode": "E",
+            "mode": "O",
             "short_name": "2337",
             "vista": "Santa Cruz - Castelo"
         }
@@ -2621,9 +2346,9 @@
         "model": "pontos.route",
         "pk": "E2338AAA0A",
         "fields": {
-            "linha": "E2338A",
+            "linha": "E2338AAA0A",
             "agency": "22005",
-            "mode": "E",
+            "mode": "O",
             "short_name": "2338",
             "vista": "Campo Grande - Castelo"
         }
@@ -2632,9 +2357,9 @@
         "model": "pontos.route",
         "pk": "E2339AAA0A",
         "fields": {
-            "linha": "E2339A",
+            "linha": "E2339AAA0A",
             "agency": "22005",
-            "mode": "E",
+            "mode": "O",
             "short_name": "2339",
             "vista": "Campo Grande - Castelo"
         }
@@ -2643,9 +2368,9 @@
         "model": "pontos.route",
         "pk": "E2380AAA0A",
         "fields": {
-            "linha": "E2380A",
+            "linha": "E2380AAA0A",
             "agency": "22005",
-            "mode": "E",
+            "mode": "O",
             "short_name": "2380",
             "vista": "Jardim Maravilha - Castelo"
         }
@@ -2654,9 +2379,9 @@
         "model": "pontos.route",
         "pk": "E2381AAA0A",
         "fields": {
-            "linha": "E2381A",
+            "linha": "E2381AAA0A",
             "agency": "22005",
-            "mode": "E",
+            "mode": "O",
             "short_name": "2381",
             "vista": "Pedra de Guaratiba - Castelo"
         }
@@ -2665,9 +2390,9 @@
         "model": "pontos.route",
         "pk": "E2381AAV0A",
         "fields": {
-            "linha": "E2381A",
+            "linha": "E2381AAV0A",
             "agency": "22005",
-            "mode": "E",
+            "mode": "O",
             "short_name": "SV2381",
             "vista": "Pedra de Guaratiba - Castelo"
         }
@@ -2676,9 +2401,9 @@
         "model": "pontos.route",
         "pk": "E2383AAA0A",
         "fields": {
-            "linha": "E2383A",
+            "linha": "E2383AAA0A",
             "agency": "22005",
-            "mode": "E",
+            "mode": "O",
             "short_name": "2383",
             "vista": "Sepetiba - Carioca"
         }
@@ -2687,9 +2412,9 @@
         "model": "pontos.route",
         "pk": "E2801AAA0A",
         "fields": {
-            "linha": "E2801A",
+            "linha": "E2801AAA0A",
             "agency": "22005",
-            "mode": "E",
+            "mode": "O",
             "short_name": "2801",
             "vista": "Campo Grande - Barra da Tijuca"
         }
@@ -2698,9 +2423,9 @@
         "model": "pontos.route",
         "pk": "E2802AAA0A",
         "fields": {
-            "linha": "E2802A",
+            "linha": "E2802AAA0A",
             "agency": "22005",
-            "mode": "E",
+            "mode": "O",
             "short_name": "2802",
             "vista": "Santa Cruz - Barra da Tijuca"
         }
@@ -2709,9 +2434,9 @@
         "model": "pontos.route",
         "pk": "E2803AAA0A",
         "fields": {
-            "linha": "E2803A",
+            "linha": "E2803AAA0A",
             "agency": "22005",
-            "mode": "E",
+            "mode": "O",
             "short_name": "2803",
             "vista": "Vila Kennedy - Alvorada"
         }
@@ -2720,9 +2445,9 @@
         "model": "pontos.route",
         "pk": "E2804AAA0A",
         "fields": {
-            "linha": "E2804A",
+            "linha": "E2804AAA0A",
             "agency": "22005",
-            "mode": "E",
+            "mode": "O",
             "short_name": "2804",
             "vista": "Bangu - Barra da Tijuca"
         }
@@ -2731,7 +2456,7 @@
         "model": "pontos.route",
         "pk": "O0300AAA0A",
         "fields": {
-            "linha": "O0300A",
+            "linha": "O0300AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "300",
@@ -2742,7 +2467,7 @@
         "model": "pontos.route",
         "pk": "O0369AAA0A",
         "fields": {
-            "linha": "O0369A",
+            "linha": "O0369AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "369",
@@ -2753,7 +2478,7 @@
         "model": "pontos.route",
         "pk": "O0379AAA0A",
         "fields": {
-            "linha": "O0379A",
+            "linha": "O0379AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "379",
@@ -2764,7 +2489,7 @@
         "model": "pontos.route",
         "pk": "O0383AAA0A",
         "fields": {
-            "linha": "O0383A",
+            "linha": "O0383AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "383",
@@ -2775,18 +2500,7 @@
         "model": "pontos.route",
         "pk": "O0383AAN0A",
         "fields": {
-            "linha": "O0383A",
-            "agency": "22005",
-            "mode": "O",
-            "short_name": "SN383",
-            "vista": "Realengo - Pra\u00e7a da Rep\u00fablica"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0383AAN0A",
-        "fields": {
-            "linha": "O0383A",
+            "linha": "O0383AAN0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "SN383",
@@ -2797,7 +2511,7 @@
         "model": "pontos.route",
         "pk": "O0388AAA0A",
         "fields": {
-            "linha": "O0388A",
+            "linha": "O0388AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "388",
@@ -2808,7 +2522,7 @@
         "model": "pontos.route",
         "pk": "O0389AAA0A",
         "fields": {
-            "linha": "O0389A",
+            "linha": "O0389AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "389",
@@ -2819,7 +2533,7 @@
         "model": "pontos.route",
         "pk": "O0393AAA0A",
         "fields": {
-            "linha": "O0393A",
+            "linha": "O0393AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "393",
@@ -2830,18 +2544,7 @@
         "model": "pontos.route",
         "pk": "O0393AAN0A",
         "fields": {
-            "linha": "O0393A",
-            "agency": "22005",
-            "mode": "O",
-            "short_name": "SN393",
-            "vista": "Bangu - Candel\u00e1ria"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0393AAN0A",
-        "fields": {
-            "linha": "O0393A",
+            "linha": "O0393AAN0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "SN393",
@@ -2852,7 +2555,7 @@
         "model": "pontos.route",
         "pk": "O0394AAV0A",
         "fields": {
-            "linha": "O0394A",
+            "linha": "O0394AAV0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "SV394",
@@ -2863,7 +2566,7 @@
         "model": "pontos.route",
         "pk": "O0395AAA0A",
         "fields": {
-            "linha": "O0395A",
+            "linha": "O0395AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "395",
@@ -2874,7 +2577,7 @@
         "model": "pontos.route",
         "pk": "O0397AAA0A",
         "fields": {
-            "linha": "O0397A",
+            "linha": "O0397AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "397",
@@ -2885,7 +2588,7 @@
         "model": "pontos.route",
         "pk": "O0731AAA0A",
         "fields": {
-            "linha": "O0731A",
+            "linha": "O0731AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "731",
@@ -2896,18 +2599,7 @@
         "model": "pontos.route",
         "pk": "O0731AAN0A",
         "fields": {
-            "linha": "O0731A",
-            "agency": "22005",
-            "mode": "O",
-            "short_name": "SN731",
-            "vista": "Campo Grande - Marechal Hermes"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0731AAN0A",
-        "fields": {
-            "linha": "O0731A",
+            "linha": "O0731AAN0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "SN731",
@@ -2918,7 +2610,7 @@
         "model": "pontos.route",
         "pk": "O0741AAA0A",
         "fields": {
-            "linha": "O0741A",
+            "linha": "O0741AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "741",
@@ -2929,7 +2621,7 @@
         "model": "pontos.route",
         "pk": "O0743AAA0A",
         "fields": {
-            "linha": "O0743A",
+            "linha": "O0743AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "743",
@@ -2940,7 +2632,7 @@
         "model": "pontos.route",
         "pk": "O0745AAA0A",
         "fields": {
-            "linha": "O0745A",
+            "linha": "O0745AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "745",
@@ -2951,7 +2643,7 @@
         "model": "pontos.route",
         "pk": "O0746AAA0A",
         "fields": {
-            "linha": "O0746A",
+            "linha": "O0746AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "746",
@@ -2962,7 +2654,7 @@
         "model": "pontos.route",
         "pk": "O0752AAA0A",
         "fields": {
-            "linha": "O0752A",
+            "linha": "O0752AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "752",
@@ -2973,7 +2665,7 @@
         "model": "pontos.route",
         "pk": "O0756AAA0A",
         "fields": {
-            "linha": "O0756A",
+            "linha": "O0756AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "756",
@@ -2984,7 +2676,7 @@
         "model": "pontos.route",
         "pk": "O0759AAA0A",
         "fields": {
-            "linha": "O0759A",
+            "linha": "O0759AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "759",
@@ -2995,7 +2687,7 @@
         "model": "pontos.route",
         "pk": "O0770AAA0A",
         "fields": {
-            "linha": "O0770A",
+            "linha": "O0770AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "770",
@@ -3006,7 +2698,7 @@
         "model": "pontos.route",
         "pk": "O0771AAA0A",
         "fields": {
-            "linha": "O0771A",
+            "linha": "O0771AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "771",
@@ -3017,7 +2709,7 @@
         "model": "pontos.route",
         "pk": "O0777AAV0A",
         "fields": {
-            "linha": "O0777A",
+            "linha": "O0777AAV0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "SV777",
@@ -3028,7 +2720,7 @@
         "model": "pontos.route",
         "pk": "O0786AAA0A",
         "fields": {
-            "linha": "O0786A",
+            "linha": "O0786AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "786",
@@ -3039,7 +2731,7 @@
         "model": "pontos.route",
         "pk": "O0790AAA0A",
         "fields": {
-            "linha": "O0790A",
+            "linha": "O0790AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "790",
@@ -3050,18 +2742,7 @@
         "model": "pontos.route",
         "pk": "O0790AAN0A",
         "fields": {
-            "linha": "O0790A",
-            "agency": "22005",
-            "mode": "O",
-            "short_name": "SN790",
-            "vista": "Campo Grande - Cascadura"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0790AAN0A",
-        "fields": {
-            "linha": "O0790A",
+            "linha": "O0790AAN0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "SN790",
@@ -3072,7 +2753,7 @@
         "model": "pontos.route",
         "pk": "O0790AAV0A",
         "fields": {
-            "linha": "O0790A",
+            "linha": "O0790AAV0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "SV790",
@@ -3083,7 +2764,7 @@
         "model": "pontos.route",
         "pk": "O0794AAA0A",
         "fields": {
-            "linha": "O0794A",
+            "linha": "O0794AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "794",
@@ -3094,18 +2775,7 @@
         "model": "pontos.route",
         "pk": "O0794AAN0A",
         "fields": {
-            "linha": "O0794A",
-            "agency": "22005",
-            "mode": "O",
-            "short_name": "SN794",
-            "vista": "Bangu - Cascadura"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0794AAN0A",
-        "fields": {
-            "linha": "O0794A",
+            "linha": "O0794AAN0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "SN794",
@@ -3116,7 +2786,7 @@
         "model": "pontos.route",
         "pk": "O0801AAA0A",
         "fields": {
-            "linha": "O0801A",
+            "linha": "O0801AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "801",
@@ -3127,7 +2797,7 @@
         "model": "pontos.route",
         "pk": "O0801AAP0A",
         "fields": {
-            "linha": "O0801A",
+            "linha": "O0801AAP0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "SP801",
@@ -3138,7 +2808,7 @@
         "model": "pontos.route",
         "pk": "O0802AAA0A",
         "fields": {
-            "linha": "O0802A",
+            "linha": "O0802AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "802",
@@ -3149,7 +2819,7 @@
         "model": "pontos.route",
         "pk": "O0803AAA0A",
         "fields": {
-            "linha": "O0803A",
+            "linha": "O0803AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "803",
@@ -3160,7 +2830,7 @@
         "model": "pontos.route",
         "pk": "O0803AAP0A",
         "fields": {
-            "linha": "O0803A",
+            "linha": "O0803AAP0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "SP803",
@@ -3171,18 +2841,7 @@
         "model": "pontos.route",
         "pk": "O0803AAN0A",
         "fields": {
-            "linha": "O0803A",
-            "agency": "22005",
-            "mode": "O",
-            "short_name": "SN803",
-            "vista": "Senador Camar\u00e1 - Taquara"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0803AAN0A",
-        "fields": {
-            "linha": "O0803A",
+            "linha": "O0803AAN0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "SN803",
@@ -3193,7 +2852,7 @@
         "model": "pontos.route",
         "pk": "O0804AAA0A",
         "fields": {
-            "linha": "O0804A",
+            "linha": "O0804AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "804",
@@ -3204,7 +2863,7 @@
         "model": "pontos.route",
         "pk": "O0812AAA0A",
         "fields": {
-            "linha": "O0812A",
+            "linha": "O0812AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "812",
@@ -3215,7 +2874,7 @@
         "model": "pontos.route",
         "pk": "O0819AAA0A",
         "fields": {
-            "linha": "O0819A",
+            "linha": "O0819AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "819",
@@ -3226,7 +2885,7 @@
         "model": "pontos.route",
         "pk": "O0821AAA0A",
         "fields": {
-            "linha": "O0821A",
+            "linha": "O0821AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "821",
@@ -3237,18 +2896,7 @@
         "model": "pontos.route",
         "pk": "O0821AAN0A",
         "fields": {
-            "linha": "O0821A",
-            "agency": "22005",
-            "mode": "O",
-            "short_name": "SN821",
-            "vista": "Campo Grande - Corcundinha"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0821AAN0A",
-        "fields": {
-            "linha": "O0821A",
+            "linha": "O0821AAN0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "SN821",
@@ -3259,7 +2907,7 @@
         "model": "pontos.route",
         "pk": "O0822AAA0A",
         "fields": {
-            "linha": "O0822A",
+            "linha": "O0822AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "822",
@@ -3270,7 +2918,7 @@
         "model": "pontos.route",
         "pk": "O0834AAA0A",
         "fields": {
-            "linha": "O0834A",
+            "linha": "O0834AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "834",
@@ -3281,7 +2929,7 @@
         "model": "pontos.route",
         "pk": "O0835AAA0A",
         "fields": {
-            "linha": "O0835A",
+            "linha": "O0835AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "835",
@@ -3292,7 +2940,7 @@
         "model": "pontos.route",
         "pk": "O0836AAA0A",
         "fields": {
-            "linha": "O0836A",
+            "linha": "O0836AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "836",
@@ -3303,7 +2951,7 @@
         "model": "pontos.route",
         "pk": "O0837AAA0A",
         "fields": {
-            "linha": "O0837A",
+            "linha": "O0837AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "837",
@@ -3314,7 +2962,7 @@
         "model": "pontos.route",
         "pk": "O0838AAA0A",
         "fields": {
-            "linha": "O0838A",
+            "linha": "O0838AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "838",
@@ -3325,7 +2973,7 @@
         "model": "pontos.route",
         "pk": "O0840AAA0A",
         "fields": {
-            "linha": "O0840A",
+            "linha": "O0840AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "840",
@@ -3336,18 +2984,7 @@
         "model": "pontos.route",
         "pk": "O0840AAN0A",
         "fields": {
-            "linha": "O0840A",
-            "agency": "22005",
-            "mode": "O",
-            "short_name": "SN840",
-            "vista": "S\u00e3o Fernando - Campo Grande"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0840AAN0A",
-        "fields": {
-            "linha": "O0840A",
+            "linha": "O0840AAN0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "SN840",
@@ -3358,7 +2995,7 @@
         "model": "pontos.route",
         "pk": "O0843AAA0A",
         "fields": {
-            "linha": "O0843A",
+            "linha": "O0843AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "843",
@@ -3369,7 +3006,7 @@
         "model": "pontos.route",
         "pk": "O0845AAA0A",
         "fields": {
-            "linha": "O0845A",
+            "linha": "O0845AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "845",
@@ -3380,7 +3017,7 @@
         "model": "pontos.route",
         "pk": "O0846AAA0A",
         "fields": {
-            "linha": "O0846A",
+            "linha": "O0846AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "846",
@@ -3391,7 +3028,7 @@
         "model": "pontos.route",
         "pk": "O0847AAA0A",
         "fields": {
-            "linha": "O0847A",
+            "linha": "O0847AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "847",
@@ -3402,7 +3039,7 @@
         "model": "pontos.route",
         "pk": "O0848AAA0A",
         "fields": {
-            "linha": "O0848A",
+            "linha": "O0848AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "848",
@@ -3413,7 +3050,7 @@
         "model": "pontos.route",
         "pk": "O0849AAA0A",
         "fields": {
-            "linha": "O0849A",
+            "linha": "O0849AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "849",
@@ -3424,7 +3061,7 @@
         "model": "pontos.route",
         "pk": "O0851AAA0A",
         "fields": {
-            "linha": "O0851A",
+            "linha": "O0851AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "851",
@@ -3435,7 +3072,7 @@
         "model": "pontos.route",
         "pk": "O0852AAA0A",
         "fields": {
-            "linha": "O0852A",
+            "linha": "O0852AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "852",
@@ -3446,7 +3083,7 @@
         "model": "pontos.route",
         "pk": "O0853AAA0A",
         "fields": {
-            "linha": "O0853A",
+            "linha": "O0853AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "853",
@@ -3457,7 +3094,7 @@
         "model": "pontos.route",
         "pk": "O0853AAV0A",
         "fields": {
-            "linha": "O0853A",
+            "linha": "O0853AAV0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "SV853",
@@ -3468,7 +3105,7 @@
         "model": "pontos.route",
         "pk": "O0864AAA0A",
         "fields": {
-            "linha": "O0864A",
+            "linha": "O0864AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "864",
@@ -3479,7 +3116,7 @@
         "model": "pontos.route",
         "pk": "O0866AAA0A",
         "fields": {
-            "linha": "O0866A",
+            "linha": "O0866AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "866",
@@ -3490,7 +3127,7 @@
         "model": "pontos.route",
         "pk": "O0866AAV0A",
         "fields": {
-            "linha": "O0866A",
+            "linha": "O0866AAV0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "SV866",
@@ -3501,7 +3138,7 @@
         "model": "pontos.route",
         "pk": "O0867AAA0A",
         "fields": {
-            "linha": "O0867A",
+            "linha": "O0867AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "867",
@@ -3512,18 +3149,7 @@
         "model": "pontos.route",
         "pk": "O0867AAN0A",
         "fields": {
-            "linha": "O0867A",
-            "agency": "22005",
-            "mode": "O",
-            "short_name": "SN867",
-            "vista": "Barra de Guaratiba - Campo Grande"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0867AAN0A",
-        "fields": {
-            "linha": "O0867A",
+            "linha": "O0867AAN0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "SN867",
@@ -3534,7 +3160,7 @@
         "model": "pontos.route",
         "pk": "O0868AAA0A",
         "fields": {
-            "linha": "O0868A",
+            "linha": "O0868AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "868",
@@ -3545,7 +3171,7 @@
         "model": "pontos.route",
         "pk": "O0869AAA0A",
         "fields": {
-            "linha": "O0869A",
+            "linha": "O0869AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "869",
@@ -3556,7 +3182,7 @@
         "model": "pontos.route",
         "pk": "O0870AAA0A",
         "fields": {
-            "linha": "O0870A",
+            "linha": "O0870AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "870",
@@ -3567,7 +3193,7 @@
         "model": "pontos.route",
         "pk": "O0871AAA0A",
         "fields": {
-            "linha": "O0871A",
+            "linha": "O0871AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "871",
@@ -3578,7 +3204,7 @@
         "model": "pontos.route",
         "pk": "O0883AAA0A",
         "fields": {
-            "linha": "O0883A",
+            "linha": "O0883AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "883",
@@ -3589,7 +3215,7 @@
         "model": "pontos.route",
         "pk": "O0884AAA0A",
         "fields": {
-            "linha": "O0884A",
+            "linha": "O0884AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "884",
@@ -3600,18 +3226,7 @@
         "model": "pontos.route",
         "pk": "O0884AAN0A",
         "fields": {
-            "linha": "O0884A",
-            "agency": "22005",
-            "mode": "O",
-            "short_name": "SN884",
-            "vista": "Sepetiba - Campo Grande"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0884AAN0A",
-        "fields": {
-            "linha": "O0884A",
+            "linha": "O0884AAN0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "SN884",
@@ -3622,7 +3237,7 @@
         "model": "pontos.route",
         "pk": "O0892AAA0A",
         "fields": {
-            "linha": "O0892A",
+            "linha": "O0892AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "892",
@@ -3633,7 +3248,7 @@
         "model": "pontos.route",
         "pk": "O0893AAA0A",
         "fields": {
-            "linha": "O0893A",
+            "linha": "O0893AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "893",
@@ -3644,7 +3259,7 @@
         "model": "pontos.route",
         "pk": "O0895AAA0A",
         "fields": {
-            "linha": "O0895A",
+            "linha": "O0895AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "895",
@@ -3655,7 +3270,7 @@
         "model": "pontos.route",
         "pk": "O0897AAA0A",
         "fields": {
-            "linha": "O0897A",
+            "linha": "O0897AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "897",
@@ -3666,7 +3281,7 @@
         "model": "pontos.route",
         "pk": "O0918AAA0A",
         "fields": {
-            "linha": "O0918A",
+            "linha": "O0918AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "918",
@@ -3677,18 +3292,7 @@
         "model": "pontos.route",
         "pk": "O0918AAN0A",
         "fields": {
-            "linha": "O0918A",
-            "agency": "22005",
-            "mode": "O",
-            "short_name": "SN918",
-            "vista": "Bangu - Bonsucesso"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0918AAN0A",
-        "fields": {
-            "linha": "O0918A",
+            "linha": "O0918AAN0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "SN918",
@@ -3699,7 +3303,7 @@
         "model": "pontos.route",
         "pk": "O0926AAA0A",
         "fields": {
-            "linha": "O0926A",
+            "linha": "O0926AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "926",
@@ -3710,7 +3314,7 @@
         "model": "pontos.route",
         "pk": "O0936AAA0A",
         "fields": {
-            "linha": "O0936A",
+            "linha": "O0936AAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "936",
@@ -3721,7 +3325,7 @@
         "model": "pontos.route",
         "pk": "O0006AAA0A",
         "fields": {
-            "linha": "O0006A",
+            "linha": "O0006AAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "006",
@@ -3732,18 +3336,7 @@
         "model": "pontos.route",
         "pk": "O0006AAN0A",
         "fields": {
-            "linha": "O0006A",
-            "agency": "22002",
-            "mode": "O",
-            "short_name": "SN006",
-            "vista": "Silvestre - Castelo"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0006AAN0A",
-        "fields": {
-            "linha": "O0006A",
+            "linha": "O0006AAN0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "SN006",
@@ -3754,7 +3347,7 @@
         "model": "pontos.route",
         "pk": "O0007AAA0A",
         "fields": {
-            "linha": "O0007A",
+            "linha": "O0007AAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "007",
@@ -3765,7 +3358,7 @@
         "model": "pontos.route",
         "pk": "O0010AAA0A",
         "fields": {
-            "linha": "O0010A",
+            "linha": "O0010AAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "010",
@@ -3776,7 +3369,7 @@
         "model": "pontos.route",
         "pk": "O0014AAA0A",
         "fields": {
-            "linha": "O0014A",
+            "linha": "O0014AAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "014",
@@ -3787,7 +3380,7 @@
         "model": "pontos.route",
         "pk": "O0100AAA0A",
         "fields": {
-            "linha": "O0100A",
+            "linha": "O0100AAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "100",
@@ -3798,7 +3391,7 @@
         "model": "pontos.route",
         "pk": "O0104AAA0A",
         "fields": {
-            "linha": "O0104A",
+            "linha": "O0104AAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "104",
@@ -3809,7 +3402,7 @@
         "model": "pontos.route",
         "pk": "O0105AAA0A",
         "fields": {
-            "linha": "O0105A",
+            "linha": "O0105AAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "105",
@@ -3820,7 +3413,7 @@
         "model": "pontos.route",
         "pk": "O0107AAA0A",
         "fields": {
-            "linha": "O0107A",
+            "linha": "O0107AAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "107",
@@ -3831,7 +3424,7 @@
         "model": "pontos.route",
         "pk": "O0108AAA0A",
         "fields": {
-            "linha": "O0108A",
+            "linha": "O0108AAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "108",
@@ -3842,7 +3435,7 @@
         "model": "pontos.route",
         "pk": "O0110AAA0A",
         "fields": {
-            "linha": "O0110A",
+            "linha": "O0110AAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "110",
@@ -3853,7 +3446,7 @@
         "model": "pontos.route",
         "pk": "O0112AAA0A",
         "fields": {
-            "linha": "O0112A",
+            "linha": "O0112AAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "112",
@@ -3864,7 +3457,7 @@
         "model": "pontos.route",
         "pk": "O0117AAA0A",
         "fields": {
-            "linha": "O0117A",
+            "linha": "O0117AAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "117",
@@ -3875,7 +3468,7 @@
         "model": "pontos.route",
         "pk": "O0133AAA0A",
         "fields": {
-            "linha": "O0133A",
+            "linha": "O0133AAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "133",
@@ -3886,7 +3479,7 @@
         "model": "pontos.route",
         "pk": "O0181AAA0A",
         "fields": {
-            "linha": "O0181A",
+            "linha": "O0181AAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "181",
@@ -3897,7 +3490,7 @@
         "model": "pontos.route",
         "pk": "O0201AAA0A",
         "fields": {
-            "linha": "O0201A",
+            "linha": "O0201AAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "201",
@@ -3908,18 +3501,7 @@
         "model": "pontos.route",
         "pk": "O0201AAN0A",
         "fields": {
-            "linha": "O0201A",
-            "agency": "22002",
-            "mode": "O",
-            "short_name": "SN201",
-            "vista": "Santa Alexandrina - Castelo"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0201AAN0A",
-        "fields": {
-            "linha": "O0201A",
+            "linha": "O0201AAN0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "SN201",
@@ -3930,7 +3512,7 @@
         "model": "pontos.route",
         "pk": "O0202AAA0A",
         "fields": {
-            "linha": "O0202A",
+            "linha": "O0202AAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "202",
@@ -3941,7 +3523,7 @@
         "model": "pontos.route",
         "pk": "O0209AAA0A",
         "fields": {
-            "linha": "O0209A",
+            "linha": "O0209AAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "209",
@@ -3952,7 +3534,7 @@
         "model": "pontos.route",
         "pk": "O0210AAA0A",
         "fields": {
-            "linha": "O0210A",
+            "linha": "O0210AAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "210",
@@ -3963,7 +3545,7 @@
         "model": "pontos.route",
         "pk": "O0217AAA0A",
         "fields": {
-            "linha": "O0217A",
+            "linha": "O0217AAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "217",
@@ -3974,7 +3556,7 @@
         "model": "pontos.route",
         "pk": "O0220AAA0A",
         "fields": {
-            "linha": "O0220A",
+            "linha": "O0220AAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "220",
@@ -3985,7 +3567,7 @@
         "model": "pontos.route",
         "pk": "O0275AAA0A",
         "fields": {
-            "linha": "O0275A",
+            "linha": "O0275AAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "275",
@@ -3996,7 +3578,7 @@
         "model": "pontos.route",
         "pk": "O0410AAA0A",
         "fields": {
-            "linha": "O0410A",
+            "linha": "O0410AAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "410",
@@ -4007,7 +3589,7 @@
         "model": "pontos.route",
         "pk": "O0415AAA0A",
         "fields": {
-            "linha": "O0415A",
+            "linha": "O0415AAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "415",
@@ -4018,18 +3600,7 @@
         "model": "pontos.route",
         "pk": "O0415AAN0A",
         "fields": {
-            "linha": "O0415A",
-            "agency": "22002",
-            "mode": "O",
-            "short_name": "SN415",
-            "vista": "Usina - Leblon"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0415AAN0A",
-        "fields": {
-            "linha": "O0415A",
+            "linha": "O0415AAN0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "SN415",
@@ -4040,7 +3611,7 @@
         "model": "pontos.route",
         "pk": "O0422AAA0A",
         "fields": {
-            "linha": "O0422A",
+            "linha": "O0422AAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "422",
@@ -4051,18 +3622,7 @@
         "model": "pontos.route",
         "pk": "O0422AAN0A",
         "fields": {
-            "linha": "O0422A",
-            "agency": "22002",
-            "mode": "O",
-            "short_name": "SN422",
-            "vista": "Graja\u00fa - Cosme Velho"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0422AAN0A",
-        "fields": {
-            "linha": "O0422A",
+            "linha": "O0422AAN0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "SN422",
@@ -4073,7 +3633,7 @@
         "model": "pontos.route",
         "pk": "O0426AAA0A",
         "fields": {
-            "linha": "O0426A",
+            "linha": "O0426AAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "426",
@@ -4084,7 +3644,7 @@
         "model": "pontos.route",
         "pk": "O0432AAA0A",
         "fields": {
-            "linha": "O0432A",
+            "linha": "O0432AAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "432",
@@ -4095,7 +3655,7 @@
         "model": "pontos.route",
         "pk": "O0433AAA0A",
         "fields": {
-            "linha": "O0433A",
+            "linha": "O0433AAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "433",
@@ -4106,7 +3666,7 @@
         "model": "pontos.route",
         "pk": "O0435AAA0A",
         "fields": {
-            "linha": "O0435A",
+            "linha": "O0435AAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "435",
@@ -4117,7 +3677,7 @@
         "model": "pontos.route",
         "pk": "O0439AAA0A",
         "fields": {
-            "linha": "O0439A",
+            "linha": "O0439AAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "439",
@@ -4128,7 +3688,7 @@
         "model": "pontos.route",
         "pk": "O0440AAA0A",
         "fields": {
-            "linha": "O0440A",
+            "linha": "O0440AAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "440",
@@ -4139,7 +3699,7 @@
         "model": "pontos.route",
         "pk": "O0444AAA0A",
         "fields": {
-            "linha": "O0444A",
+            "linha": "O0444AAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "444",
@@ -4150,7 +3710,7 @@
         "model": "pontos.route",
         "pk": "O0448AAA0A",
         "fields": {
-            "linha": "O0448A",
+            "linha": "O0448AAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "448",
@@ -4161,7 +3721,7 @@
         "model": "pontos.route",
         "pk": "O0460AAA0A",
         "fields": {
-            "linha": "O0460A",
+            "linha": "O0460AAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "460",
@@ -4172,7 +3732,7 @@
         "model": "pontos.route",
         "pk": "O0461AAA0A",
         "fields": {
-            "linha": "O0461A",
+            "linha": "O0461AAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "461",
@@ -4183,7 +3743,7 @@
         "model": "pontos.route",
         "pk": "O0462AAA0A",
         "fields": {
-            "linha": "O0462A",
+            "linha": "O0462AAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "462",
@@ -4194,7 +3754,7 @@
         "model": "pontos.route",
         "pk": "O0463AAA0A",
         "fields": {
-            "linha": "O0463A",
+            "linha": "O0463AAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "463",
@@ -4205,7 +3765,7 @@
         "model": "pontos.route",
         "pk": "O0472AAA0A",
         "fields": {
-            "linha": "O0472A",
+            "linha": "O0472AAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "472",
@@ -4216,7 +3776,7 @@
         "model": "pontos.route",
         "pk": "O0473AAA0A",
         "fields": {
-            "linha": "O0473A",
+            "linha": "O0473AAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "473",
@@ -4227,7 +3787,7 @@
         "model": "pontos.route",
         "pk": "O0474AAA0A",
         "fields": {
-            "linha": "O0474A",
+            "linha": "O0474AAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "474",
@@ -4238,18 +3798,7 @@
         "model": "pontos.route",
         "pk": "O0474AAN0A",
         "fields": {
-            "linha": "O0474A",
-            "agency": "22002",
-            "mode": "O",
-            "short_name": "SN474",
-            "vista": "Jacar\u00e9 - Copacabana"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0474AAN0A",
-        "fields": {
-            "linha": "O0474A",
+            "linha": "O0474AAN0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "SN474",
@@ -4260,7 +3809,7 @@
         "model": "pontos.route",
         "pk": "O0474AAV0A",
         "fields": {
-            "linha": "O0474A",
+            "linha": "O0474AAV0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "SV474",
@@ -4271,7 +3820,7 @@
         "model": "pontos.route",
         "pk": "O0476AAA0A",
         "fields": {
-            "linha": "O0476A",
+            "linha": "O0476AAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "476",
@@ -4282,7 +3831,7 @@
         "model": "pontos.route",
         "pk": "O0507AAA0A",
         "fields": {
-            "linha": "O0507A",
+            "linha": "O0507AAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "507",
@@ -4293,7 +3842,7 @@
         "model": "pontos.route",
         "pk": "O0513AAP0A",
         "fields": {
-            "linha": "O0513A",
+            "linha": "O0513AAP0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "SP513",
@@ -4304,7 +3853,7 @@
         "model": "pontos.route",
         "pk": "O0538AAA0A",
         "fields": {
-            "linha": "O0538A",
+            "linha": "O0538AAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "538",
@@ -4315,18 +3864,7 @@
         "model": "pontos.route",
         "pk": "O0538AAN0A",
         "fields": {
-            "linha": "O0538A",
-            "agency": "22002",
-            "mode": "O",
-            "short_name": "SN538",
-            "vista": "Rocinha - Leme"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0538AAN0A",
-        "fields": {
-            "linha": "O0538A",
+            "linha": "O0538AAN0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "SN538",
@@ -4337,7 +3875,7 @@
         "model": "pontos.route",
         "pk": "O0539AAA0A",
         "fields": {
-            "linha": "O0539A",
+            "linha": "O0539AAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "539",
@@ -4348,18 +3886,7 @@
         "model": "pontos.route",
         "pk": "O0539AAN0A",
         "fields": {
-            "linha": "O0539A",
-            "agency": "22002",
-            "mode": "O",
-            "short_name": "SN539",
-            "vista": "Rocinha - Leme"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0539AAN0A",
-        "fields": {
-            "linha": "O0539A",
+            "linha": "O0539AAN0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "SN539",
@@ -4370,7 +3897,7 @@
         "model": "pontos.route",
         "pk": "O0548AAA0A",
         "fields": {
-            "linha": "O0548A",
+            "linha": "O0548AAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "548",
@@ -4381,7 +3908,7 @@
         "model": "pontos.route",
         "pk": "O0552AAA0A",
         "fields": {
-            "linha": "O0552A",
+            "linha": "O0552AAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "552",
@@ -4392,7 +3919,7 @@
         "model": "pontos.route",
         "pk": "O0553AAA0A",
         "fields": {
-            "linha": "O0553A",
+            "linha": "O0553AAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "553",
@@ -4403,18 +3930,7 @@
         "model": "pontos.route",
         "pk": "O0553AAN0A",
         "fields": {
-            "linha": "O0553A",
-            "agency": "22002",
-            "mode": "O",
-            "short_name": "SN553",
-            "vista": "Rio Sul - Recreio"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0553AAN0A",
-        "fields": {
-            "linha": "O0553A",
+            "linha": "O0553AAN0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "SN553",
@@ -4425,7 +3941,7 @@
         "model": "pontos.route",
         "pk": "O0553AAP0A",
         "fields": {
-            "linha": "O0553A",
+            "linha": "O0553AAP0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "SP553",
@@ -4436,7 +3952,7 @@
         "model": "pontos.route",
         "pk": "O0554AAA0A",
         "fields": {
-            "linha": "O0554A",
+            "linha": "O0554AAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "554",
@@ -4447,7 +3963,7 @@
         "model": "pontos.route",
         "pk": "O0558AAA0A",
         "fields": {
-            "linha": "O0558A",
+            "linha": "O0558AAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "558",
@@ -4458,7 +3974,7 @@
         "model": "pontos.route",
         "pk": "O0583AAA0A",
         "fields": {
-            "linha": "O0583A",
+            "linha": "O0583AAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "583",
@@ -4469,7 +3985,7 @@
         "model": "pontos.route",
         "pk": "O0584AAA0A",
         "fields": {
-            "linha": "O0584A",
+            "linha": "O0584AAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "584",
@@ -4480,7 +3996,7 @@
         "model": "pontos.route",
         "pk": "O0603AAA0A",
         "fields": {
-            "linha": "O0603A",
+            "linha": "O0603AAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "603",
@@ -4491,7 +4007,7 @@
         "model": "pontos.route",
         "pk": "O0608AAA0A",
         "fields": {
-            "linha": "O0608A",
+            "linha": "O0608AAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "608",
@@ -4502,7 +4018,7 @@
         "model": "pontos.route",
         "pk": "O0626AAA0A",
         "fields": {
-            "linha": "O0626A",
+            "linha": "O0626AAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "626",
@@ -4513,7 +4029,7 @@
         "model": "pontos.route",
         "pk": "O0498AAA0A",
         "fields": {
-            "linha": "O0498A",
+            "linha": "O0498AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "498",
@@ -4524,7 +4040,7 @@
         "model": "pontos.route",
         "pk": "O0335AAA0A",
         "fields": {
-            "linha": "O0335A",
+            "linha": "O0335AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "335",
@@ -4535,7 +4051,7 @@
         "model": "pontos.route",
         "pk": "O0485AAA0A",
         "fields": {
-            "linha": "O0485A",
+            "linha": "O0485AAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "485",
@@ -4546,18 +4062,7 @@
         "model": "pontos.route",
         "pk": "O0386AAN0A",
         "fields": {
-            "linha": "O0386A",
-            "agency": "22003",
-            "mode": "O",
-            "short_name": "SN386",
-            "vista": "Anchieta - Passeio"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0386AAN0A",
-        "fields": {
-            "linha": "O0386A",
+            "linha": "O0386AAN0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "SN386",
@@ -4568,7 +4073,7 @@
         "model": "pontos.route",
         "pk": "O0416AAA0A",
         "fields": {
-            "linha": "O0416A",
+            "linha": "O0416AAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "416",
@@ -4579,7 +4084,7 @@
         "model": "pontos.route",
         "pk": "O0917AAV0A",
         "fields": {
-            "linha": "O0917A",
+            "linha": "O0917AAV0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "SV917",
@@ -4590,18 +4095,7 @@
         "model": "pontos.route",
         "pk": "O0483AAN0A",
         "fields": {
-            "linha": "O0483A",
-            "agency": "22003",
-            "mode": "O",
-            "short_name": "SN483",
-            "vista": "Penha - General Os\u00f3rio"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0483AAN0A",
-        "fields": {
-            "linha": "O0483A",
+            "linha": "O0483AAN0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "SN483",
@@ -4612,7 +4106,7 @@
         "model": "pontos.route",
         "pk": "O0036CAA0A",
         "fields": {
-            "linha": "O0036A",
+            "linha": "O0036CAA0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "LECD36",
@@ -4623,18 +4117,7 @@
         "model": "pontos.route",
         "pk": "O0209AAN0A",
         "fields": {
-            "linha": "O0209A",
-            "agency": "22002",
-            "mode": "O",
-            "short_name": "SN209",
-            "vista": "Candel\u00e1ria - Caju"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0209AAN0A",
-        "fields": {
-            "linha": "O0209A",
+            "linha": "O0209AAN0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "SN209",
@@ -4645,7 +4128,7 @@
         "model": "pontos.route",
         "pk": "O0805AAP0A",
         "fields": {
-            "linha": "O0805A",
+            "linha": "O0805AAP0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "SP805",
@@ -4656,7 +4139,7 @@
         "model": "pontos.route",
         "pk": "O0554AAPAA",
         "fields": {
-            "linha": "O0554A",
+            "linha": "O0554AAPAA",
             "agency": "22002",
             "mode": "O",
             "short_name": "SPA554",
@@ -4667,7 +4150,7 @@
         "model": "pontos.route",
         "pk": "O0554AAPBA",
         "fields": {
-            "linha": "O0554A",
+            "linha": "O0554AAPBA",
             "agency": "22002",
             "mode": "O",
             "short_name": "SPB554",
@@ -4678,7 +4161,7 @@
         "model": "pontos.route",
         "pk": "O0550AAP0A",
         "fields": {
-            "linha": "O0550A",
+            "linha": "O0550AAP0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "SP550",
@@ -4689,7 +4172,7 @@
         "model": "pontos.route",
         "pk": "O0565AAP0A",
         "fields": {
-            "linha": "O0565A",
+            "linha": "O0565AAP0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "SP565",
@@ -4700,7 +4183,7 @@
         "model": "pontos.route",
         "pk": "O0613AAPBA",
         "fields": {
-            "linha": "O0613A",
+            "linha": "O0613AAPBA",
             "agency": "22004",
             "mode": "O",
             "short_name": "SPB613",
@@ -4711,7 +4194,7 @@
         "model": "pontos.route",
         "pk": "O0692AAP0A",
         "fields": {
-            "linha": "O0692A",
+            "linha": "O0692AAP0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "SP692",
@@ -4722,7 +4205,7 @@
         "model": "pontos.route",
         "pk": "O0766AAP0A",
         "fields": {
-            "linha": "O0766A",
+            "linha": "O0766AAP0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "SP766",
@@ -4733,7 +4216,7 @@
         "model": "pontos.route",
         "pk": "O0900AAP0A",
         "fields": {
-            "linha": "O0900A",
+            "linha": "O0900AAP0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "SP900",
@@ -4744,7 +4227,7 @@
         "model": "pontos.route",
         "pk": "O0483AAV0A",
         "fields": {
-            "linha": "O0483A",
+            "linha": "O0483AAV0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "SV483",
@@ -4755,7 +4238,7 @@
         "model": "pontos.route",
         "pk": "O0483AAPAA",
         "fields": {
-            "linha": "O0483A",
+            "linha": "O0483AAPAA",
             "agency": "22003",
             "mode": "O",
             "short_name": "SPA483",
@@ -4766,7 +4249,7 @@
         "model": "pontos.route",
         "pk": "O0483AAPBA",
         "fields": {
-            "linha": "O0483A",
+            "linha": "O0483AAPBA",
             "agency": "22003",
             "mode": "O",
             "short_name": "SPB483",
@@ -4777,7 +4260,7 @@
         "model": "pontos.route",
         "pk": "O0756AAP0A",
         "fields": {
-            "linha": "O0756A",
+            "linha": "O0756AAP0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "SP756",
@@ -4788,7 +4271,7 @@
         "model": "pontos.route",
         "pk": "O0752AAP0A",
         "fields": {
-            "linha": "O0752A",
+            "linha": "O0752AAP0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "SP752",
@@ -4799,7 +4282,7 @@
         "model": "pontos.route",
         "pk": "O0309AAP0A",
         "fields": {
-            "linha": "O0309A",
+            "linha": "O0309AAP0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "SP309",
@@ -4810,7 +4293,7 @@
         "model": "pontos.route",
         "pk": "O0315AAP0A",
         "fields": {
-            "linha": "O0315A",
+            "linha": "O0315AAP0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "SP315",
@@ -4821,7 +4304,7 @@
         "model": "pontos.route",
         "pk": "O0922AAV0A",
         "fields": {
-            "linha": "O0922A",
+            "linha": "O0922AAV0A",
             "agency": "22003",
             "mode": "O",
             "short_name": "SV922",
@@ -4832,7 +4315,7 @@
         "model": "pontos.route",
         "pk": "O0361AAP0A",
         "fields": {
-            "linha": "O0361A",
+            "linha": "O0361AAP0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "SP361",
@@ -4843,18 +4326,7 @@
         "model": "pontos.route",
         "pk": "O0746AAN0A",
         "fields": {
-            "linha": "O0746A",
-            "agency": "22005",
-            "mode": "O",
-            "short_name": "SN746",
-            "vista": "Jabour - Cascadura"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0746AAN0A",
-        "fields": {
-            "linha": "O0746A",
+            "linha": "O0746AAN0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "SN746",
@@ -4865,7 +4337,7 @@
         "model": "pontos.route",
         "pk": "O0037CAA0A",
         "fields": {
-            "linha": "O0037A",
+            "linha": "O0037CAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "LECD37",
@@ -4876,7 +4348,7 @@
         "model": "pontos.route",
         "pk": "O0038CAA0A",
         "fields": {
-            "linha": "O0038A",
+            "linha": "O0038CAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "LECD38",
@@ -4887,7 +4359,7 @@
         "model": "pontos.route",
         "pk": "O0039CAA0A",
         "fields": {
-            "linha": "O0039A",
+            "linha": "O0039CAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "LECD39",
@@ -4898,7 +4370,7 @@
         "model": "pontos.route",
         "pk": "O0040CAA0A",
         "fields": {
-            "linha": "O0040A",
+            "linha": "O0040CAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "LECD40",
@@ -4909,7 +4381,7 @@
         "model": "pontos.route",
         "pk": "O0041CAA0A",
         "fields": {
-            "linha": "O0041A",
+            "linha": "O0041CAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "LECD41",
@@ -4920,7 +4392,7 @@
         "model": "pontos.route",
         "pk": "O0042CAA0A",
         "fields": {
-            "linha": "O0042A",
+            "linha": "O0042CAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "LECD42",
@@ -4931,7 +4403,7 @@
         "model": "pontos.route",
         "pk": "O0043CAA0A",
         "fields": {
-            "linha": "O0043A",
+            "linha": "O0043CAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "LECD43",
@@ -4942,7 +4414,7 @@
         "model": "pontos.route",
         "pk": "O0044CAA0A",
         "fields": {
-            "linha": "O0044A",
+            "linha": "O0044CAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "LECD44",
@@ -4953,7 +4425,7 @@
         "model": "pontos.route",
         "pk": "O0045CAA0A",
         "fields": {
-            "linha": "O0045A",
+            "linha": "O0045CAA0A",
             "agency": "22004",
             "mode": "O",
             "short_name": "LECD45",
@@ -4964,7 +4436,7 @@
         "model": "pontos.route",
         "pk": "O0046CAA0A",
         "fields": {
-            "linha": "O0046A",
+            "linha": "O0046CAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "LECD46",
@@ -4975,7 +4447,7 @@
         "model": "pontos.route",
         "pk": "O0047CAA0A",
         "fields": {
-            "linha": "O0047A",
+            "linha": "O0047CAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "LECD47",
@@ -4986,7 +4458,7 @@
         "model": "pontos.route",
         "pk": "O0048CAA0A",
         "fields": {
-            "linha": "O0048A",
+            "linha": "O0048CAA0A",
             "agency": "22005",
             "mode": "O",
             "short_name": "LECD48",
@@ -4997,7 +4469,7 @@
         "model": "pontos.route",
         "pk": "O0049CAA0A",
         "fields": {
-            "linha": "O0049A",
+            "linha": "O0049CAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "LECD49",
@@ -5008,7 +4480,7 @@
         "model": "pontos.route",
         "pk": "O0050CAA0A",
         "fields": {
-            "linha": "O0050A",
+            "linha": "O0050CAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "LECD50",

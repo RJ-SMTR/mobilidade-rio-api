@@ -1,7 +1,7 @@
 [
     {
         "model": "pontos.linha",
-        "pk": "80833e",
+        "pk": "84be",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -11,47 +11,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "u09285",
-        "fields": {
-            "agency": 22003,
-            "mode": "O",
-            "initials": "928",
-            "name": "Marechal Hermes - Bonsucesso"
-        }
-    },
-    {
-        "model": "pontos.linha",
-        "pk": "O0901A",
-        "fields": {
-            "agency": 22003,
-            "mode": "O",
-            "initials": "901",
-            "name": "Bonsucesso - Bananal"
-        }
-    },
-    {
-        "model": "pontos.linha",
-        "pk": "O0054A",
-        "fields": {
-            "agency": 22002,
-            "mode": "O",
-            "initials": "LECD54",
-            "name": "Urca - Copacabana"
-        }
-    },
-    {
-        "model": "pontos.linha",
-        "pk": "O0055A",
-        "fields": {
-            "agency": 22002,
-            "mode": "O",
-            "initials": "LECD55",
-            "name": "Urca - Botafogo"
-        }
-    },
-    {
-        "model": "pontos.linha",
-        "pk": "b0052w",
+        "pk": "bosw",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -61,37 +21,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "i0053w",
-        "fields": {
-            "agency": 22002,
-            "mode": "O",
-            "initials": "LECD53",
-            "name": "Rodovi\u00e1ria - Castelo"
-        }
-    },
-    {
-        "model": "pontos.linha",
-        "pk": "j0809d",
-        "fields": {
-            "agency": 22005,
-            "mode": "O",
-            "initials": "809",
-            "name": "Sagrado Cora\u00e7\u00e3o - Santa Cruz"
-        }
-    },
-    {
-        "model": "pontos.linha",
-        "pk": "j0254t",
-        "fields": {
-            "agency": 22003,
-            "mode": "O",
-            "initials": "254",
-            "name": "Madureira - Candel\u00e1ria"
-        }
-    },
-    {
-        "model": "pontos.linha",
-        "pk": "h0678k",
+        "pk": "hvak",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -101,7 +31,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "l0051n",
+        "pk": "lbvn",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -111,7 +41,117 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0409A",
+        "pk": "qro7",
+        "fields": {
+            "agency": 22002,
+            "mode": "O",
+            "initials": "229",
+            "name": "Usina - Castelo"
+        }
+    },
+    {
+        "model": "pontos.linha",
+        "pk": "bxu3",
+        "fields": {
+            "agency": 22003,
+            "mode": "O",
+            "initials": "277",
+            "name": "Rocha Miranda - Candel\u00e1ria"
+        }
+    },
+    {
+        "model": "pontos.linha",
+        "pk": "ukw5",
+        "fields": {
+            "agency": 22003,
+            "mode": "O",
+            "initials": "928",
+            "name": "Marechal Hermes - Bonsucesso"
+        }
+    },
+    {
+        "model": "pontos.linha",
+        "pk": "O0901AAA0A",
+        "fields": {
+            "agency": 22003,
+            "mode": "O",
+            "initials": "901",
+            "name": "Bonsucesso - Bananal"
+        }
+    },
+    {
+        "model": "pontos.linha",
+        "pk": "c2tb",
+        "fields": {
+            "agency": 22003,
+            "mode": "O",
+            "initials": "335 SR",
+            "name": "Cordovil - Tiradentes"
+        }
+    },
+    {
+        "model": "pontos.linha",
+        "pk": "O0054CAA0A",
+        "fields": {
+            "agency": 22002,
+            "mode": "O",
+            "initials": "LECD54",
+            "name": "Urca - Copacabana"
+        }
+    },
+    {
+        "model": "pontos.linha",
+        "pk": "O0055CAA0A",
+        "fields": {
+            "agency": 22002,
+            "mode": "O",
+            "initials": "LECD55",
+            "name": "Urca - Botafogo"
+        }
+    },
+    {
+        "model": "pontos.linha",
+        "pk": "O0056CAA0A",
+        "fields": {
+            "agency": 22004,
+            "mode": "O",
+            "initials": "LECD56",
+            "name": "Pra\u00e7a Seca - Madureira"
+        }
+    },
+    {
+        "model": "pontos.linha",
+        "pk": "O0051CAA0A",
+        "fields": {
+            "agency": 22002,
+            "mode": "O",
+            "initials": "LECD53",
+            "name": "Rodovi\u00e1ria - Castelo"
+        }
+    },
+    {
+        "model": "pontos.linha",
+        "pk": "O0254AAA0A",
+        "fields": {
+            "agency": 22003,
+            "mode": "O",
+            "initials": "254",
+            "name": "Madureira - Candel\u00e1ria"
+        }
+    },
+    {
+        "model": "pontos.linha",
+        "pk": "O0809AAA0A",
+        "fields": {
+            "agency": 22005,
+            "mode": "O",
+            "initials": "809",
+            "name": "Sagrado Cora\u00e7\u00e3o - Santa Cruz"
+        }
+    },
+    {
+        "model": "pontos.linha",
+        "pk": "O0409AAA0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -121,27 +161,27 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "E2145A",
+        "pk": "E2145AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "E",
+            "mode": "O",
             "initials": "2145",
             "name": "RIOgale\u00e3o - Aeroporto Santos Dumont"
         }
     },
     {
         "model": "pontos.linha",
-        "pk": "E2305A",
+        "pk": "E2305AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "E",
+            "mode": "O",
             "initials": "2305",
             "name": "Jardim Am\u00e9rica - Castelo"
         }
     },
     {
         "model": "pontos.linha",
-        "pk": "O0232A",
+        "pk": "O0232AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -151,7 +191,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0232A",
+        "pk": "O0232AAN0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -161,7 +201,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0232A",
+        "pk": "O0232AAV0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -171,37 +211,37 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "E2342A",
+        "pk": "E2342AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "E",
+            "mode": "O",
             "initials": "2342",
             "name": "Bananal - Castelo"
         }
     },
     {
         "model": "pontos.linha",
-        "pk": "E2343A",
+        "pk": "E2343AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "E",
+            "mode": "O",
             "initials": "2343",
             "name": "Ribeira - Castelo"
         }
     },
     {
         "model": "pontos.linha",
-        "pk": "E2344A",
+        "pk": "E2344AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "E",
+            "mode": "O",
             "initials": "2344",
             "name": "Banc\u00e1rios - Castelo"
         }
     },
     {
         "model": "pontos.linha",
-        "pk": "O0238A",
+        "pk": "O0238AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -211,7 +251,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0238A",
+        "pk": "O0238AAN0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -221,7 +261,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0239A",
+        "pk": "O0239AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -231,7 +271,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0247A",
+        "pk": "O0247AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -241,7 +281,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0249A",
+        "pk": "O0249AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -251,7 +291,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0265A",
+        "pk": "O0265AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -261,7 +301,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0265A",
+        "pk": "O0265AAN0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -271,7 +311,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0265A",
+        "pk": "O0265AAP0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -281,7 +321,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0292A",
+        "pk": "O0292AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -291,7 +331,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0296A",
+        "pk": "O0296AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -301,7 +341,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0298A",
+        "pk": "O0298AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -311,7 +351,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0311A",
+        "pk": "O0311AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -321,7 +361,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0312A",
+        "pk": "O0312AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -331,7 +371,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0312A",
+        "pk": "O0312AAN0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -341,7 +381,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0313A",
+        "pk": "O0313AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -351,7 +391,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0321A",
+        "pk": "O0321AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -361,7 +401,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0323A",
+        "pk": "O0323AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -371,7 +411,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0324A",
+        "pk": "O0324AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -381,7 +421,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0324A",
+        "pk": "O0324AAN0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -391,7 +431,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0325A",
+        "pk": "O0325AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -401,7 +441,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0326A",
+        "pk": "O0326AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -411,7 +451,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0326A",
+        "pk": "O0326AAN0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -421,7 +461,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0327A",
+        "pk": "O0327AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -431,7 +471,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0328A",
+        "pk": "O0328AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -441,7 +481,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0329A",
+        "pk": "O0329AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -451,7 +491,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0342A",
+        "pk": "O0342AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -461,7 +501,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0342A",
+        "pk": "O0342AAN0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -471,7 +511,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0349A",
+        "pk": "O0349AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -481,7 +521,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0350A",
+        "pk": "O0350AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -491,7 +531,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0355A",
+        "pk": "O0355AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -501,7 +541,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0355A",
+        "pk": "O0355AAN0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -511,7 +551,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0362A",
+        "pk": "O0362AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -521,7 +561,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0378A",
+        "pk": "O0378AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -531,7 +571,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0384A",
+        "pk": "O0384AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -541,7 +581,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0385A",
+        "pk": "O0385AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -551,7 +591,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0386A",
+        "pk": "O0386AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -561,7 +601,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0399A",
+        "pk": "O0399AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -571,7 +611,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0404A",
+        "pk": "O0404AAP0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -581,7 +621,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0455A",
+        "pk": "O0455AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -591,7 +631,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0457A",
+        "pk": "O0457AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -601,7 +641,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0457A",
+        "pk": "O0457AAN0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -611,7 +651,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0483A",
+        "pk": "O0483AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -621,7 +661,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0484A",
+        "pk": "O0484AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -631,7 +671,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0485A",
+        "pk": "O0485AAP0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -641,7 +681,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0486A",
+        "pk": "O0486AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -651,7 +691,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0492A",
+        "pk": "O0492AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -661,7 +701,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0497A",
+        "pk": "O0497AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -671,7 +711,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0606A",
+        "pk": "O0606AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -681,7 +721,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0606A",
+        "pk": "O0606AAV0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -691,7 +731,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0616A",
+        "pk": "O0616AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -701,7 +741,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0621A",
+        "pk": "O0621AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -711,7 +751,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0622A",
+        "pk": "O0622AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -721,7 +761,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0623A",
+        "pk": "O0623AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -731,7 +771,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0624A",
+        "pk": "O0624AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -741,7 +781,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0624A",
+        "pk": "O0624AAN0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -751,7 +791,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0625A",
+        "pk": "O0625AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -761,7 +801,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0627A",
+        "pk": "O0627AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -771,7 +811,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0628A",
+        "pk": "O0628AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -781,7 +821,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0629A",
+        "pk": "O0629AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -791,7 +831,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0630A",
+        "pk": "O0630AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -801,7 +841,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0634A",
+        "pk": "O0634AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -811,7 +851,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0638A",
+        "pk": "O0638AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -821,7 +861,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0639A",
+        "pk": "O0639AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -831,7 +871,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0650A",
+        "pk": "O0650AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -841,7 +881,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0663A",
+        "pk": "O0663AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -851,7 +891,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0665A",
+        "pk": "O0665AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -861,7 +901,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0665A",
+        "pk": "O0665AAVAA",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -871,7 +911,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0669A",
+        "pk": "O0669AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -881,7 +921,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0679A",
+        "pk": "O0679AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -891,7 +931,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0680A",
+        "pk": "O0680AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -901,7 +941,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0685A",
+        "pk": "O0685AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -911,7 +951,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0685A",
+        "pk": "O0685AAVAA",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -921,7 +961,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0685A",
+        "pk": "O0685AAVBA",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -931,7 +971,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0687A",
+        "pk": "O0687AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -941,7 +981,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0688A",
+        "pk": "O0688AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -951,7 +991,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0696A",
+        "pk": "O0696AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -961,7 +1001,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0711A",
+        "pk": "O0711AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -971,7 +1011,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0721A",
+        "pk": "O0721AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -981,7 +1021,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0778A",
+        "pk": "O0778AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -991,7 +1031,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0778A",
+        "pk": "O0778AAN0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -1001,7 +1041,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0779A",
+        "pk": "O0779AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -1011,7 +1051,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0779A",
+        "pk": "O0779AAV0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -1021,7 +1061,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0793A",
+        "pk": "O0793AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -1031,7 +1071,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0795A",
+        "pk": "O0795AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -1041,7 +1081,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0905A",
+        "pk": "O0905AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -1051,7 +1091,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0906A",
+        "pk": "O0906AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -1061,7 +1101,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0908A",
+        "pk": "O0908AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -1071,7 +1111,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0908A",
+        "pk": "O0908AAV0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -1081,7 +1121,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0910A",
+        "pk": "O0910AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -1091,7 +1131,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0913A",
+        "pk": "O0913AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -1101,7 +1141,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0915A",
+        "pk": "O0915AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -1111,7 +1151,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0917A",
+        "pk": "O0917AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -1121,7 +1161,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0919A",
+        "pk": "O0919AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -1131,7 +1171,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0920A",
+        "pk": "O0920AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -1141,7 +1181,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0922A",
+        "pk": "O0922AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -1151,7 +1191,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0925A",
+        "pk": "O0925AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -1161,7 +1201,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0944A",
+        "pk": "O0944AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -1171,7 +1211,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0945A",
+        "pk": "O0945AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -1181,7 +1221,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0946A",
+        "pk": "O0946AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -1191,7 +1231,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0950A",
+        "pk": "O0950AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -1201,7 +1241,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0951A",
+        "pk": "O0951AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -1211,67 +1251,67 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "E2018A",
+        "pk": "E2018AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "E",
+            "mode": "O",
             "initials": "2018",
             "name": "RIOgale\u00e3o - Alvorada"
         }
     },
     {
         "model": "pontos.linha",
-        "pk": "E2111A",
+        "pk": "E2111AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "E",
+            "mode": "O",
             "initials": "2111",
             "name": "Pra\u00e7a Seca - Castelo"
         }
     },
     {
         "model": "pontos.linha",
-        "pk": "E2112A",
+        "pk": "E2112AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "E",
+            "mode": "O",
             "initials": "2112",
             "name": "Taquara - Castelo"
         }
     },
     {
         "model": "pontos.linha",
-        "pk": "E2114A",
+        "pk": "E2114AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "E",
+            "mode": "O",
             "initials": "2114",
             "name": "Freguesia - Castelo"
         }
     },
     {
         "model": "pontos.linha",
-        "pk": "E2345A",
+        "pk": "E2345AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "E",
+            "mode": "O",
             "initials": "2345",
             "name": "Vila Valqueire - Castelo"
         }
     },
     {
         "model": "pontos.linha",
-        "pk": "E2345A",
+        "pk": "E2345AAVBA",
         "fields": {
             "agency": 22004,
-            "mode": "E",
+            "mode": "O",
             "initials": "SVB2345",
             "name": "Vila Valqueire - Castelo"
         }
     },
     {
         "model": "pontos.linha",
-        "pk": "O0302A",
+        "pk": "O0302AAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1281,7 +1321,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0306A",
+        "pk": "O0306AAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1291,7 +1331,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0309A",
+        "pk": "O0309AAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1301,7 +1341,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0309A",
+        "pk": "O0309AAN0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1311,7 +1351,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0315A",
+        "pk": "O0315AAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1321,7 +1361,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0338A",
+        "pk": "O0338AAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1331,7 +1371,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0341A",
+        "pk": "O0341AAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1341,7 +1381,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0341A",
+        "pk": "O0341AAP0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1351,7 +1391,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0343A",
+        "pk": "O0343AAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1361,7 +1401,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0343A",
+        "pk": "O0343AAP0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1371,7 +1411,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0348A",
+        "pk": "O0348AAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1381,7 +1421,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0353A",
+        "pk": "O0353AAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1391,7 +1431,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0361A",
+        "pk": "O0361AAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1401,7 +1441,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0363A",
+        "pk": "O0363AAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1411,7 +1451,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0363A",
+        "pk": "O0363AAV0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1421,7 +1461,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0368A",
+        "pk": "O0368AAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1431,7 +1471,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0371A",
+        "pk": "O0371AAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1441,7 +1481,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0380A",
+        "pk": "O0380AAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1451,7 +1491,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0390A",
+        "pk": "O0390AAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1461,7 +1501,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0550A",
+        "pk": "O0550AAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1471,7 +1511,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0550A",
+        "pk": "O0550AAN0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1481,7 +1521,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0555A",
+        "pk": "O0555AAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1491,7 +1531,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0557A",
+        "pk": "O0557AAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1501,7 +1541,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0565A",
+        "pk": "O0565AAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1511,7 +1551,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0565A",
+        "pk": "O0565AAN0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1521,7 +1561,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0600A",
+        "pk": "O0600AAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1531,7 +1571,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0601A",
+        "pk": "O0601AAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1541,7 +1581,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0601A",
+        "pk": "O0601AAN0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1551,7 +1591,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0607A",
+        "pk": "O0607AAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1561,7 +1601,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0610A",
+        "pk": "O0610AAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1571,7 +1611,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0611A",
+        "pk": "O0611AAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1581,7 +1621,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0613A",
+        "pk": "O0613AAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1591,7 +1631,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0613A",
+        "pk": "O0613AAPAA",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1601,7 +1641,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0614A",
+        "pk": "O0614AAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1611,7 +1651,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0636A",
+        "pk": "O0636AAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1621,7 +1661,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0636A",
+        "pk": "O0636AAN0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1631,7 +1671,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0651A",
+        "pk": "O0651AAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1641,7 +1681,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0652A",
+        "pk": "O0652AAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1651,7 +1691,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0691A",
+        "pk": "O0691AAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1661,7 +1701,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0692A",
+        "pk": "O0692AAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1671,7 +1711,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0693A",
+        "pk": "O0693AAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1681,17 +1721,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0702A",
-        "fields": {
-            "agency": 22004,
-            "mode": "O",
-            "initials": "702",
-            "name": "Pra\u00e7a Seca - Madureira"
-        }
-    },
-    {
-        "model": "pontos.linha",
-        "pk": "O0709A",
+        "pk": "O0709AAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1701,7 +1731,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0712A",
+        "pk": "O0712AAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1711,7 +1741,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0766A",
+        "pk": "O0766AAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1721,7 +1751,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0774A",
+        "pk": "O0774AAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1731,7 +1761,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0774A",
+        "pk": "O0774AAV0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1741,7 +1771,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0775A",
+        "pk": "O0775AAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1751,7 +1781,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0783A",
+        "pk": "O0783AAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1761,7 +1791,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0805A",
+        "pk": "O0805AAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1771,7 +1801,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0810A",
+        "pk": "O0810AAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1781,7 +1811,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0810A",
+        "pk": "O0810AAN0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1791,7 +1821,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0829A",
+        "pk": "O0829AAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1801,7 +1831,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0831A",
+        "pk": "O0831AAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1811,7 +1841,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0844A",
+        "pk": "O0844AAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1821,7 +1851,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0859A",
+        "pk": "O0859AAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1831,7 +1861,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0861A",
+        "pk": "O0861AAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1841,7 +1871,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0862A",
+        "pk": "O0862AAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1851,7 +1881,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0862A",
+        "pk": "O0862AAN0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1861,7 +1891,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0863A",
+        "pk": "O0863AAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1871,7 +1901,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0865A",
+        "pk": "O0865AAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1881,7 +1911,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0875A",
+        "pk": "O0875AAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1891,7 +1921,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0878A",
+        "pk": "O0878AAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1901,7 +1931,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0878A",
+        "pk": "O0878AAN0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1911,7 +1941,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0880A",
+        "pk": "O0880AAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1921,7 +1951,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0900A",
+        "pk": "O0900AAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1931,7 +1961,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0932A",
+        "pk": "O0932AAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1941,7 +1971,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0940A",
+        "pk": "O0940AAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1951,7 +1981,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0953A",
+        "pk": "O0953AAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1961,7 +1991,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0954A",
+        "pk": "O0954AAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1971,7 +2001,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0954A",
+        "pk": "O0954AAN0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1981,7 +2011,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0955A",
+        "pk": "O0955AAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -1991,217 +2021,217 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "E2303A",
+        "pk": "E2303AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "E",
+            "mode": "O",
             "initials": "2303",
             "name": "Cesar\u00e3o - Carioca"
         }
     },
     {
         "model": "pontos.linha",
-        "pk": "E2307A",
+        "pk": "E2307AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "E",
+            "mode": "O",
             "initials": "2307",
             "name": "Jardim 7 de Abril - Carioca"
         }
     },
     {
         "model": "pontos.linha",
-        "pk": "E2308A",
+        "pk": "E2308AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "E",
+            "mode": "O",
             "initials": "2308",
             "name": "Cosmos - Carioca"
         }
     },
     {
         "model": "pontos.linha",
-        "pk": "E2309A",
+        "pk": "E2309AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "E",
+            "mode": "O",
             "initials": "2309",
             "name": "Uruc\u00e2nia - Carioca"
         }
     },
     {
         "model": "pontos.linha",
-        "pk": "E2310A",
+        "pk": "E2310AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "E",
+            "mode": "O",
             "initials": "2310",
             "name": "Bangu - Candel\u00e1ria"
         }
     },
     {
         "model": "pontos.linha",
-        "pk": "E2332A",
+        "pk": "E2332AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "E",
+            "mode": "O",
             "initials": "2332",
             "name": "Campo Grande - Castelo"
         }
     },
     {
         "model": "pontos.linha",
-        "pk": "E2334A",
+        "pk": "E2334AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "E",
+            "mode": "O",
             "initials": "2334",
             "name": "Campo Grande - Castelo"
         }
     },
     {
         "model": "pontos.linha",
-        "pk": "E2334A",
+        "pk": "E2334AAV0A",
         "fields": {
             "agency": 22005,
-            "mode": "E",
+            "mode": "O",
             "initials": "SV2334",
             "name": "Campo Grande - Castelo"
         }
     },
     {
         "model": "pontos.linha",
-        "pk": "E2335A",
+        "pk": "E2335AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "E",
+            "mode": "O",
             "initials": "2335",
             "name": "Santa Cruz - Castelo"
         }
     },
     {
         "model": "pontos.linha",
-        "pk": "E2336A",
+        "pk": "E2336AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "E",
+            "mode": "O",
             "initials": "2336",
             "name": "Campo Grande - Castelo"
         }
     },
     {
         "model": "pontos.linha",
-        "pk": "E2337A",
+        "pk": "E2337AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "E",
+            "mode": "O",
             "initials": "2337",
             "name": "Santa Cruz - Castelo"
         }
     },
     {
         "model": "pontos.linha",
-        "pk": "E2338A",
+        "pk": "E2338AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "E",
+            "mode": "O",
             "initials": "2338",
             "name": "Campo Grande - Castelo"
         }
     },
     {
         "model": "pontos.linha",
-        "pk": "E2339A",
+        "pk": "E2339AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "E",
+            "mode": "O",
             "initials": "2339",
             "name": "Campo Grande - Castelo"
         }
     },
     {
         "model": "pontos.linha",
-        "pk": "E2380A",
+        "pk": "E2380AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "E",
+            "mode": "O",
             "initials": "2380",
             "name": "Jardim Maravilha - Castelo"
         }
     },
     {
         "model": "pontos.linha",
-        "pk": "E2381A",
+        "pk": "E2381AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "E",
+            "mode": "O",
             "initials": "2381",
             "name": "Pedra de Guaratiba - Castelo"
         }
     },
     {
         "model": "pontos.linha",
-        "pk": "E2381A",
+        "pk": "E2381AAV0A",
         "fields": {
             "agency": 22005,
-            "mode": "E",
+            "mode": "O",
             "initials": "SV2381",
             "name": "Pedra de Guaratiba - Castelo"
         }
     },
     {
         "model": "pontos.linha",
-        "pk": "E2383A",
+        "pk": "E2383AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "E",
+            "mode": "O",
             "initials": "2383",
             "name": "Sepetiba - Carioca"
         }
     },
     {
         "model": "pontos.linha",
-        "pk": "E2801A",
+        "pk": "E2801AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "E",
+            "mode": "O",
             "initials": "2801",
             "name": "Campo Grande - Barra da Tijuca"
         }
     },
     {
         "model": "pontos.linha",
-        "pk": "E2802A",
+        "pk": "E2802AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "E",
+            "mode": "O",
             "initials": "2802",
             "name": "Santa Cruz - Barra da Tijuca"
         }
     },
     {
         "model": "pontos.linha",
-        "pk": "E2803A",
+        "pk": "E2803AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "E",
+            "mode": "O",
             "initials": "2803",
             "name": "Vila Kennedy - Alvorada"
         }
     },
     {
         "model": "pontos.linha",
-        "pk": "E2804A",
+        "pk": "E2804AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "E",
+            "mode": "O",
             "initials": "2804",
             "name": "Bangu - Barra da Tijuca"
         }
     },
     {
         "model": "pontos.linha",
-        "pk": "O0300A",
+        "pk": "O0300AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2211,7 +2241,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0369A",
+        "pk": "O0369AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2221,7 +2251,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0379A",
+        "pk": "O0379AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2231,7 +2261,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0383A",
+        "pk": "O0383AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2241,7 +2271,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0383A",
+        "pk": "O0383AAN0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2251,7 +2281,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0388A",
+        "pk": "O0388AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2261,7 +2291,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0389A",
+        "pk": "O0389AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2271,7 +2301,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0393A",
+        "pk": "O0393AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2281,7 +2311,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0393A",
+        "pk": "O0393AAN0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2291,7 +2321,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0394A",
+        "pk": "O0394AAV0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2301,7 +2331,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0395A",
+        "pk": "O0395AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2311,7 +2341,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0397A",
+        "pk": "O0397AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2321,7 +2351,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0731A",
+        "pk": "O0731AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2331,7 +2361,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0731A",
+        "pk": "O0731AAN0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2341,7 +2371,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0741A",
+        "pk": "O0741AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2351,7 +2381,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0743A",
+        "pk": "O0743AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2361,7 +2391,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0745A",
+        "pk": "O0745AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2371,7 +2401,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0746A",
+        "pk": "O0746AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2381,7 +2411,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0752A",
+        "pk": "O0752AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2391,7 +2421,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0756A",
+        "pk": "O0756AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2401,7 +2431,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0759A",
+        "pk": "O0759AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2411,7 +2441,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0770A",
+        "pk": "O0770AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2421,7 +2451,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0771A",
+        "pk": "O0771AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2431,7 +2461,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0777A",
+        "pk": "O0777AAV0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2441,7 +2471,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0786A",
+        "pk": "O0786AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2451,7 +2481,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0790A",
+        "pk": "O0790AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2461,7 +2491,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0790A",
+        "pk": "O0790AAN0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2471,7 +2501,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0790A",
+        "pk": "O0790AAV0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2481,7 +2511,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0794A",
+        "pk": "O0794AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2491,7 +2521,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0794A",
+        "pk": "O0794AAN0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2501,7 +2531,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0801A",
+        "pk": "O0801AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2511,7 +2541,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0801A",
+        "pk": "O0801AAP0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2521,7 +2551,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0802A",
+        "pk": "O0802AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2531,7 +2561,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0803A",
+        "pk": "O0803AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2541,7 +2571,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0803A",
+        "pk": "O0803AAP0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2551,7 +2581,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0803A",
+        "pk": "O0803AAN0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2561,7 +2591,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0804A",
+        "pk": "O0804AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2571,7 +2601,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0812A",
+        "pk": "O0812AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2581,7 +2611,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0819A",
+        "pk": "O0819AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2591,7 +2621,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0821A",
+        "pk": "O0821AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2601,7 +2631,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0821A",
+        "pk": "O0821AAN0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2611,7 +2641,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0822A",
+        "pk": "O0822AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2621,7 +2651,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0834A",
+        "pk": "O0834AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2631,7 +2661,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0835A",
+        "pk": "O0835AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2641,7 +2671,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0836A",
+        "pk": "O0836AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2651,7 +2681,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0837A",
+        "pk": "O0837AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2661,7 +2691,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0838A",
+        "pk": "O0838AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2671,7 +2701,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0840A",
+        "pk": "O0840AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2681,7 +2711,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0840A",
+        "pk": "O0840AAN0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2691,7 +2721,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0843A",
+        "pk": "O0843AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2701,7 +2731,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0845A",
+        "pk": "O0845AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2711,7 +2741,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0846A",
+        "pk": "O0846AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2721,7 +2751,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0847A",
+        "pk": "O0847AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2731,7 +2761,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0848A",
+        "pk": "O0848AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2741,7 +2771,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0849A",
+        "pk": "O0849AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2751,7 +2781,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0851A",
+        "pk": "O0851AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2761,7 +2791,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0852A",
+        "pk": "O0852AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2771,7 +2801,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0853A",
+        "pk": "O0853AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2781,7 +2811,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0853A",
+        "pk": "O0853AAV0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2791,7 +2821,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0864A",
+        "pk": "O0864AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2801,7 +2831,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0866A",
+        "pk": "O0866AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2811,7 +2841,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0866A",
+        "pk": "O0866AAV0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2821,7 +2851,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0867A",
+        "pk": "O0867AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2831,7 +2861,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0867A",
+        "pk": "O0867AAN0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2841,7 +2871,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0868A",
+        "pk": "O0868AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2851,7 +2881,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0869A",
+        "pk": "O0869AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2861,7 +2891,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0870A",
+        "pk": "O0870AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2871,7 +2901,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0871A",
+        "pk": "O0871AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2881,7 +2911,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0883A",
+        "pk": "O0883AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2891,7 +2921,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0884A",
+        "pk": "O0884AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2901,7 +2931,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0884A",
+        "pk": "O0884AAN0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2911,7 +2941,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0892A",
+        "pk": "O0892AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2921,7 +2951,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0893A",
+        "pk": "O0893AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2931,7 +2961,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0895A",
+        "pk": "O0895AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2941,7 +2971,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0897A",
+        "pk": "O0897AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2951,7 +2981,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0918A",
+        "pk": "O0918AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2961,7 +2991,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0918A",
+        "pk": "O0918AAN0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2971,7 +3001,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0926A",
+        "pk": "O0926AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2981,7 +3011,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0936A",
+        "pk": "O0936AAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -2991,7 +3021,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0006A",
+        "pk": "O0006AAA0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3001,7 +3031,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0006A",
+        "pk": "O0006AAN0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3011,7 +3041,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0007A",
+        "pk": "O0007AAA0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3021,7 +3051,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0010A",
+        "pk": "O0010AAA0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3031,7 +3061,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0014A",
+        "pk": "O0014AAA0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3041,7 +3071,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0100A",
+        "pk": "O0100AAA0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3051,7 +3081,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0104A",
+        "pk": "O0104AAA0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3061,7 +3091,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0105A",
+        "pk": "O0105AAA0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3071,7 +3101,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0107A",
+        "pk": "O0107AAA0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3081,7 +3111,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0108A",
+        "pk": "O0108AAA0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3091,7 +3121,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0110A",
+        "pk": "O0110AAA0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3101,7 +3131,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0112A",
+        "pk": "O0112AAA0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3111,7 +3141,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0117A",
+        "pk": "O0117AAA0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3121,7 +3151,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0133A",
+        "pk": "O0133AAA0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3131,7 +3161,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0181A",
+        "pk": "O0181AAA0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3141,7 +3171,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0201A",
+        "pk": "O0201AAA0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3151,7 +3181,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0201A",
+        "pk": "O0201AAN0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3161,7 +3191,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0202A",
+        "pk": "O0202AAA0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3171,7 +3201,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0209A",
+        "pk": "O0209AAA0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3181,7 +3211,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0210A",
+        "pk": "O0210AAA0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3191,7 +3221,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0217A",
+        "pk": "O0217AAA0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3201,7 +3231,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0220A",
+        "pk": "O0220AAA0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3211,7 +3241,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0275A",
+        "pk": "O0275AAA0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3221,7 +3251,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0410A",
+        "pk": "O0410AAA0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3231,7 +3261,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0415A",
+        "pk": "O0415AAA0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3241,7 +3271,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0415A",
+        "pk": "O0415AAN0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3251,7 +3281,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0422A",
+        "pk": "O0422AAA0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3261,7 +3291,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0422A",
+        "pk": "O0422AAN0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3271,7 +3301,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0426A",
+        "pk": "O0426AAA0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3281,7 +3311,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0432A",
+        "pk": "O0432AAA0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3291,7 +3321,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0433A",
+        "pk": "O0433AAA0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3301,7 +3331,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0435A",
+        "pk": "O0435AAA0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3311,7 +3341,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0439A",
+        "pk": "O0439AAA0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3321,7 +3351,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0440A",
+        "pk": "O0440AAA0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3331,7 +3361,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0444A",
+        "pk": "O0444AAA0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3341,7 +3371,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0448A",
+        "pk": "O0448AAA0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3351,7 +3381,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0460A",
+        "pk": "O0460AAA0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3361,7 +3391,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0461A",
+        "pk": "O0461AAA0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3371,7 +3401,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0462A",
+        "pk": "O0462AAA0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3381,7 +3411,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0463A",
+        "pk": "O0463AAA0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3391,7 +3421,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0472A",
+        "pk": "O0472AAA0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3401,7 +3431,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0473A",
+        "pk": "O0473AAA0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3411,7 +3441,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0474A",
+        "pk": "O0474AAA0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3421,7 +3451,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0474A",
+        "pk": "O0474AAN0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3431,7 +3461,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0474A",
+        "pk": "O0474AAV0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3441,7 +3471,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0476A",
+        "pk": "O0476AAA0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3451,7 +3481,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0507A",
+        "pk": "O0507AAA0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3461,7 +3491,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0513A",
+        "pk": "O0513AAP0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3471,7 +3501,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0538A",
+        "pk": "O0538AAA0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3481,7 +3511,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0538A",
+        "pk": "O0538AAN0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3491,7 +3521,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0539A",
+        "pk": "O0539AAA0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3501,7 +3531,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0539A",
+        "pk": "O0539AAN0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3511,7 +3541,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0548A",
+        "pk": "O0548AAA0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3521,7 +3551,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0552A",
+        "pk": "O0552AAA0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3531,7 +3561,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0553A",
+        "pk": "O0553AAA0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3541,7 +3571,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0553A",
+        "pk": "O0553AAN0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3551,7 +3581,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0553A",
+        "pk": "O0553AAP0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3561,7 +3591,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0554A",
+        "pk": "O0554AAA0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3571,7 +3601,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0558A",
+        "pk": "O0558AAA0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3581,7 +3611,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0583A",
+        "pk": "O0583AAA0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3591,7 +3621,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0584A",
+        "pk": "O0584AAA0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3601,7 +3631,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0603A",
+        "pk": "O0603AAA0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3611,7 +3641,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0608A",
+        "pk": "O0608AAA0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3621,7 +3651,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0626A",
+        "pk": "O0626AAA0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3631,7 +3661,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0498A",
+        "pk": "O0498AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -3641,7 +3671,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0335A",
+        "pk": "O0335AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -3651,7 +3681,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0485A",
+        "pk": "O0485AAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -3661,7 +3691,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0386A",
+        "pk": "O0386AAN0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -3671,7 +3701,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0416A",
+        "pk": "O0416AAA0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3681,7 +3711,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0917A",
+        "pk": "O0917AAV0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -3691,7 +3721,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0483A",
+        "pk": "O0483AAN0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -3701,7 +3731,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0036A",
+        "pk": "O0036CAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -3711,7 +3741,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0209A",
+        "pk": "O0209AAN0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3721,7 +3751,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0805A",
+        "pk": "O0805AAP0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -3731,7 +3761,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0554A",
+        "pk": "O0554AAPAA",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3741,7 +3771,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0554A",
+        "pk": "O0554AAPBA",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3751,7 +3781,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0550A",
+        "pk": "O0550AAP0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -3761,7 +3791,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0565A",
+        "pk": "O0565AAP0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -3771,7 +3801,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0613A",
+        "pk": "O0613AAPBA",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -3781,7 +3811,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0692A",
+        "pk": "O0692AAP0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -3791,7 +3821,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0766A",
+        "pk": "O0766AAP0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -3801,7 +3831,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0900A",
+        "pk": "O0900AAP0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -3811,7 +3841,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0483A",
+        "pk": "O0483AAV0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -3821,7 +3851,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0483A",
+        "pk": "O0483AAPAA",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -3831,7 +3861,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0483A",
+        "pk": "O0483AAPBA",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -3841,7 +3871,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0756A",
+        "pk": "O0756AAP0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -3851,7 +3881,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0752A",
+        "pk": "O0752AAP0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -3861,7 +3891,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0309A",
+        "pk": "O0309AAP0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -3871,7 +3901,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0315A",
+        "pk": "O0315AAP0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -3881,7 +3911,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0922A",
+        "pk": "O0922AAV0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
@@ -3891,7 +3921,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0361A",
+        "pk": "O0361AAP0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -3901,7 +3931,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0746A",
+        "pk": "O0746AAN0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -3911,7 +3941,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0037A",
+        "pk": "O0037CAA0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -3921,7 +3951,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0038A",
+        "pk": "O0038CAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -3931,7 +3961,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0039A",
+        "pk": "O0039CAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -3941,7 +3971,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0040A",
+        "pk": "O0040CAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -3951,7 +3981,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0041A",
+        "pk": "O0041CAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -3961,7 +3991,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0042A",
+        "pk": "O0042CAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -3971,7 +4001,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0043A",
+        "pk": "O0043CAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -3981,7 +4011,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0044A",
+        "pk": "O0044CAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -3991,7 +4021,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0045A",
+        "pk": "O0045CAA0A",
         "fields": {
             "agency": 22004,
             "mode": "O",
@@ -4001,7 +4031,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0046A",
+        "pk": "O0046CAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -4011,7 +4041,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0047A",
+        "pk": "O0047CAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -4021,7 +4051,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0048A",
+        "pk": "O0048CAA0A",
         "fields": {
             "agency": 22005,
             "mode": "O",
@@ -4031,7 +4061,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0049A",
+        "pk": "O0049CAA0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
@@ -4041,7 +4071,7 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0050A",
+        "pk": "O0050CAA0A",
         "fields": {
             "agency": 22002,
             "mode": "O",

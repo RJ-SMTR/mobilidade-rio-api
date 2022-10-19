@@ -10,10 +10,10 @@ models:
     source: ~/code/SMTR/data/gtfsv2/routes.txt
     json:
       model: linha
-      pk: mode(1).name(4).tipo(1).versao(1)
+      pk: route_id
       fields: 
         agency: agency_id
-        mode: route_id[0:1]
+        mode: route_type
         initials: route_short_name
         name: route_long_name
   route:
@@ -22,9 +22,9 @@ models:
       model: route
       pk: route_id
       fields: 
-        linha: mode(1).name(4).tipo(1).versao(1)
+        linha: route_id
         agency: agency_id
-        mode: route_id[0:1]
+        mode: route_type
         short_name: route_short_name
         vista: route_long_name
   trip:
@@ -36,7 +36,7 @@ models:
         route: route_id
         headsign: trip_headsign
         via: ""
-        version: trip_id[-3:]
+        version: trip_id[12:15]
         direction: direction_id
       fix_lenght:
         headsign: 50
