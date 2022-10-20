@@ -191,16 +191,6 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0232AAN0A",
-        "fields": {
-            "agency": 22003,
-            "mode": "O",
-            "initials": "SN232",
-            "name": "Lins - Castelo"
-        }
-    },
-    {
-        "model": "pontos.linha",
         "pk": "O0232AAV0A",
         "fields": {
             "agency": 22003,
@@ -251,16 +241,6 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0238AAN0A",
-        "fields": {
-            "agency": 22003,
-            "mode": "O",
-            "initials": "SN238",
-            "name": "\u00c1gua Santa - Castelo"
-        }
-    },
-    {
-        "model": "pontos.linha",
         "pk": "O0239AAA0A",
         "fields": {
             "agency": 22003,
@@ -296,16 +276,6 @@
             "agency": 22003,
             "mode": "O",
             "initials": "265",
-            "name": "Marechal Hermes - Castelo"
-        }
-    },
-    {
-        "model": "pontos.linha",
-        "pk": "O0265AAN0A",
-        "fields": {
-            "agency": 22003,
-            "mode": "O",
-            "initials": "SN265",
             "name": "Marechal Hermes - Castelo"
         }
     },
@@ -371,16 +341,6 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0312AAN0A",
-        "fields": {
-            "agency": 22003,
-            "mode": "O",
-            "initials": "SN312",
-            "name": "Olaria - Candel\u00e1ria"
-        }
-    },
-    {
-        "model": "pontos.linha",
         "pk": "O0313AAA0A",
         "fields": {
             "agency": 22003,
@@ -421,16 +381,6 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0324AAN0A",
-        "fields": {
-            "agency": 22003,
-            "mode": "O",
-            "initials": "SN324",
-            "name": "Ribeira - Candel\u00e1ria"
-        }
-    },
-    {
-        "model": "pontos.linha",
         "pk": "O0325AAA0A",
         "fields": {
             "agency": 22003,
@@ -446,16 +396,6 @@
             "agency": 22003,
             "mode": "O",
             "initials": "326",
-            "name": "Banc\u00e1rios - Candel\u00e1ria"
-        }
-    },
-    {
-        "model": "pontos.linha",
-        "pk": "O0326AAN0A",
-        "fields": {
-            "agency": 22003,
-            "mode": "O",
-            "initials": "SN326",
             "name": "Banc\u00e1rios - Candel\u00e1ria"
         }
     },
@@ -501,16 +441,6 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0342AAN0A",
-        "fields": {
-            "agency": 22003,
-            "mode": "O",
-            "initials": "SN342",
-            "name": "Jardim Am\u00e9rica - Castelo"
-        }
-    },
-    {
-        "model": "pontos.linha",
         "pk": "O0349AAA0A",
         "fields": {
             "agency": 22003,
@@ -536,16 +466,6 @@
             "agency": 22003,
             "mode": "O",
             "initials": "355",
-            "name": "Madureira - Pra\u00e7a Tiradentes"
-        }
-    },
-    {
-        "model": "pontos.linha",
-        "pk": "O0355AAN0A",
-        "fields": {
-            "agency": 22003,
-            "mode": "O",
-            "initials": "SN355",
             "name": "Madureira - Pra\u00e7a Tiradentes"
         }
     },
@@ -636,16 +556,6 @@
             "agency": 22003,
             "mode": "O",
             "initials": "457",
-            "name": "Aboli\u00e7\u00e3o - Copacabana"
-        }
-    },
-    {
-        "model": "pontos.linha",
-        "pk": "O0457AAN0A",
-        "fields": {
-            "agency": 22003,
-            "mode": "O",
-            "initials": "SN457",
             "name": "Aboli\u00e7\u00e3o - Copacabana"
         }
     },
@@ -776,16 +686,6 @@
             "agency": 22003,
             "mode": "O",
             "initials": "624",
-            "name": "Mari\u00f3polis - Pra\u00e7a da Bandeira"
-        }
-    },
-    {
-        "model": "pontos.linha",
-        "pk": "O0624AAN0A",
-        "fields": {
-            "agency": 22003,
-            "mode": "O",
-            "initials": "SN624",
             "name": "Mari\u00f3polis - Pra\u00e7a da Bandeira"
         }
     },
@@ -1026,16 +926,6 @@
             "agency": 22003,
             "mode": "O",
             "initials": "778",
-            "name": "Cascadura - Pavuna"
-        }
-    },
-    {
-        "model": "pontos.linha",
-        "pk": "O0778AAN0A",
-        "fields": {
-            "agency": 22003,
-            "mode": "O",
-            "initials": "SN778",
             "name": "Cascadura - Pavuna"
         }
     },
@@ -1341,16 +1231,6 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0309AAN0A",
-        "fields": {
-            "agency": 22004,
-            "mode": "O",
-            "initials": "SN309",
-            "name": "Alvorada - Central"
-        }
-    },
-    {
-        "model": "pontos.linha",
         "pk": "O0315AAA0A",
         "fields": {
             "agency": 22004,
@@ -1511,16 +1391,6 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0550AAN0A",
-        "fields": {
-            "agency": 22004,
-            "mode": "O",
-            "initials": "SN550",
-            "name": "Cidade de Deus - G\u00e1vea"
-        }
-    },
-    {
-        "model": "pontos.linha",
         "pk": "O0555AAA0A",
         "fields": {
             "agency": 22004,
@@ -1551,16 +1421,6 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0565AAN0A",
-        "fields": {
-            "agency": 22004,
-            "mode": "O",
-            "initials": "SN565",
-            "name": "Tanque - G\u00e1vea"
-        }
-    },
-    {
-        "model": "pontos.linha",
         "pk": "O0600AAA0A",
         "fields": {
             "agency": 22004,
@@ -1576,16 +1436,6 @@
             "agency": 22004,
             "mode": "O",
             "initials": "601",
-            "name": "Saens Pe\u00f1a - Santa Maria"
-        }
-    },
-    {
-        "model": "pontos.linha",
-        "pk": "O0601AAN0A",
-        "fields": {
-            "agency": 22004,
-            "mode": "O",
-            "initials": "SN601",
             "name": "Saens Pe\u00f1a - Santa Maria"
         }
     },
@@ -1656,16 +1506,6 @@
             "agency": 22004,
             "mode": "O",
             "initials": "636",
-            "name": "Pra\u00e7a Seca - Saens Pe\u00f1a"
-        }
-    },
-    {
-        "model": "pontos.linha",
-        "pk": "O0636AAN0A",
-        "fields": {
-            "agency": 22004,
-            "mode": "O",
-            "initials": "SN636",
             "name": "Pra\u00e7a Seca - Saens Pe\u00f1a"
         }
     },
@@ -1811,16 +1651,6 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0810AAN0A",
-        "fields": {
-            "agency": 22004,
-            "mode": "O",
-            "initials": "SN810",
-            "name": "Taquara - Pontal"
-        }
-    },
-    {
-        "model": "pontos.linha",
         "pk": "O0829AAA0A",
         "fields": {
             "agency": 22004,
@@ -1881,16 +1711,6 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0862AAN0A",
-        "fields": {
-            "agency": 22004,
-            "mode": "O",
-            "initials": "SN862",
-            "name": "Rio das Pedras - Barra"
-        }
-    },
-    {
-        "model": "pontos.linha",
         "pk": "O0863AAA0A",
         "fields": {
             "agency": 22004,
@@ -1926,16 +1746,6 @@
             "agency": 22004,
             "mode": "O",
             "initials": "878",
-            "name": "Tanque - Barra da Tijuca"
-        }
-    },
-    {
-        "model": "pontos.linha",
-        "pk": "O0878AAN0A",
-        "fields": {
-            "agency": 22004,
-            "mode": "O",
-            "initials": "SN878",
             "name": "Tanque - Barra da Tijuca"
         }
     },
@@ -1996,16 +1806,6 @@
             "agency": 22004,
             "mode": "O",
             "initials": "954",
-            "name": "Taquara - Recreio"
-        }
-    },
-    {
-        "model": "pontos.linha",
-        "pk": "O0954AAN0A",
-        "fields": {
-            "agency": 22004,
-            "mode": "O",
-            "initials": "SN954",
             "name": "Taquara - Recreio"
         }
     },
@@ -2271,16 +2071,6 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0383AAN0A",
-        "fields": {
-            "agency": 22005,
-            "mode": "O",
-            "initials": "SN383",
-            "name": "Realengo - Pra\u00e7a da Rep\u00fablica"
-        }
-    },
-    {
-        "model": "pontos.linha",
         "pk": "O0388AAA0A",
         "fields": {
             "agency": 22005,
@@ -2306,16 +2096,6 @@
             "agency": 22005,
             "mode": "O",
             "initials": "393",
-            "name": "Bangu - Candel\u00e1ria"
-        }
-    },
-    {
-        "model": "pontos.linha",
-        "pk": "O0393AAN0A",
-        "fields": {
-            "agency": 22005,
-            "mode": "O",
-            "initials": "SN393",
             "name": "Bangu - Candel\u00e1ria"
         }
     },
@@ -2356,16 +2136,6 @@
             "agency": 22005,
             "mode": "O",
             "initials": "731",
-            "name": "Campo Grande - Marechal Hermes"
-        }
-    },
-    {
-        "model": "pontos.linha",
-        "pk": "O0731AAN0A",
-        "fields": {
-            "agency": 22005,
-            "mode": "O",
-            "initials": "SN731",
             "name": "Campo Grande - Marechal Hermes"
         }
     },
@@ -2491,16 +2261,6 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0790AAN0A",
-        "fields": {
-            "agency": 22005,
-            "mode": "O",
-            "initials": "SN790",
-            "name": "Campo Grande - Cascadura"
-        }
-    },
-    {
-        "model": "pontos.linha",
         "pk": "O0790AAV0A",
         "fields": {
             "agency": 22005,
@@ -2516,16 +2276,6 @@
             "agency": 22005,
             "mode": "O",
             "initials": "794",
-            "name": "Bangu - Cascadura"
-        }
-    },
-    {
-        "model": "pontos.linha",
-        "pk": "O0794AAN0A",
-        "fields": {
-            "agency": 22005,
-            "mode": "O",
-            "initials": "SN794",
             "name": "Bangu - Cascadura"
         }
     },
@@ -2581,16 +2331,6 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0803AAN0A",
-        "fields": {
-            "agency": 22005,
-            "mode": "O",
-            "initials": "SN803",
-            "name": "Senador Camar\u00e1 - Taquara"
-        }
-    },
-    {
-        "model": "pontos.linha",
         "pk": "O0804AAA0A",
         "fields": {
             "agency": 22005,
@@ -2626,16 +2366,6 @@
             "agency": 22005,
             "mode": "O",
             "initials": "821",
-            "name": "Campo Grande - Corcundinha"
-        }
-    },
-    {
-        "model": "pontos.linha",
-        "pk": "O0821AAN0A",
-        "fields": {
-            "agency": 22005,
-            "mode": "O",
-            "initials": "SN821",
             "name": "Campo Grande - Corcundinha"
         }
     },
@@ -2706,16 +2436,6 @@
             "agency": 22005,
             "mode": "O",
             "initials": "840",
-            "name": "S\u00e3o Fernando - Campo Grande"
-        }
-    },
-    {
-        "model": "pontos.linha",
-        "pk": "O0840AAN0A",
-        "fields": {
-            "agency": 22005,
-            "mode": "O",
-            "initials": "SN840",
             "name": "S\u00e3o Fernando - Campo Grande"
         }
     },
@@ -2861,16 +2581,6 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0867AAN0A",
-        "fields": {
-            "agency": 22005,
-            "mode": "O",
-            "initials": "SN867",
-            "name": "Barra de Guaratiba - Campo Grande"
-        }
-    },
-    {
-        "model": "pontos.linha",
         "pk": "O0868AAA0A",
         "fields": {
             "agency": 22005,
@@ -2931,16 +2641,6 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0884AAN0A",
-        "fields": {
-            "agency": 22005,
-            "mode": "O",
-            "initials": "SN884",
-            "name": "Sepetiba - Campo Grande"
-        }
-    },
-    {
-        "model": "pontos.linha",
         "pk": "O0892AAA0A",
         "fields": {
             "agency": 22005,
@@ -2991,16 +2691,6 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0918AAN0A",
-        "fields": {
-            "agency": 22005,
-            "mode": "O",
-            "initials": "SN918",
-            "name": "Bangu - Bonsucesso"
-        }
-    },
-    {
-        "model": "pontos.linha",
         "pk": "O0926AAA0A",
         "fields": {
             "agency": 22005,
@@ -3026,16 +2716,6 @@
             "agency": 22002,
             "mode": "O",
             "initials": "006",
-            "name": "Silvestre - Castelo"
-        }
-    },
-    {
-        "model": "pontos.linha",
-        "pk": "O0006AAN0A",
-        "fields": {
-            "agency": 22002,
-            "mode": "O",
-            "initials": "SN006",
             "name": "Silvestre - Castelo"
         }
     },
@@ -3181,16 +2861,6 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0201AAN0A",
-        "fields": {
-            "agency": 22002,
-            "mode": "O",
-            "initials": "SN201",
-            "name": "Santa Alexandrina - Castelo"
-        }
-    },
-    {
-        "model": "pontos.linha",
         "pk": "O0202AAA0A",
         "fields": {
             "agency": 22002,
@@ -3271,31 +2941,11 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0415AAN0A",
-        "fields": {
-            "agency": 22002,
-            "mode": "O",
-            "initials": "SN415",
-            "name": "Usina - Leblon"
-        }
-    },
-    {
-        "model": "pontos.linha",
         "pk": "O0422AAA0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
             "initials": "422",
-            "name": "Graja\u00fa - Cosme Velho"
-        }
-    },
-    {
-        "model": "pontos.linha",
-        "pk": "O0422AAN0A",
-        "fields": {
-            "agency": 22002,
-            "mode": "O",
-            "initials": "SN422",
             "name": "Graja\u00fa - Cosme Velho"
         }
     },
@@ -3451,16 +3101,6 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0474AAN0A",
-        "fields": {
-            "agency": 22002,
-            "mode": "O",
-            "initials": "SN474",
-            "name": "Jacar\u00e9 - Copacabana"
-        }
-    },
-    {
-        "model": "pontos.linha",
         "pk": "O0474AAV0A",
         "fields": {
             "agency": 22002,
@@ -3511,31 +3151,11 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0538AAN0A",
-        "fields": {
-            "agency": 22002,
-            "mode": "O",
-            "initials": "SN538",
-            "name": "Rocinha - Leme"
-        }
-    },
-    {
-        "model": "pontos.linha",
         "pk": "O0539AAA0A",
         "fields": {
             "agency": 22002,
             "mode": "O",
             "initials": "539",
-            "name": "Rocinha - Leme"
-        }
-    },
-    {
-        "model": "pontos.linha",
-        "pk": "O0539AAN0A",
-        "fields": {
-            "agency": 22002,
-            "mode": "O",
-            "initials": "SN539",
             "name": "Rocinha - Leme"
         }
     },
@@ -3566,16 +3186,6 @@
             "agency": 22002,
             "mode": "O",
             "initials": "553",
-            "name": "Rio Sul - Recreio"
-        }
-    },
-    {
-        "model": "pontos.linha",
-        "pk": "O0553AAN0A",
-        "fields": {
-            "agency": 22002,
-            "mode": "O",
-            "initials": "SN553",
             "name": "Rio Sul - Recreio"
         }
     },
@@ -3691,16 +3301,6 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0386AAN0A",
-        "fields": {
-            "agency": 22003,
-            "mode": "O",
-            "initials": "SN386",
-            "name": "Anchieta - Passeio"
-        }
-    },
-    {
-        "model": "pontos.linha",
         "pk": "O0416AAA0A",
         "fields": {
             "agency": 22002,
@@ -3721,32 +3321,12 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0483AAN0A",
-        "fields": {
-            "agency": 22003,
-            "mode": "O",
-            "initials": "SN483",
-            "name": "Penha - General Os\u00f3rio"
-        }
-    },
-    {
-        "model": "pontos.linha",
         "pk": "O0036CAA0A",
         "fields": {
             "agency": 22003,
             "mode": "O",
             "initials": "LECD36",
             "name": "Mari\u00f3polis - Pra\u00e7a da Bandeira"
-        }
-    },
-    {
-        "model": "pontos.linha",
-        "pk": "O0209AAN0A",
-        "fields": {
-            "agency": 22002,
-            "mode": "O",
-            "initials": "SN209",
-            "name": "Candel\u00e1ria - Caju"
         }
     },
     {
@@ -3927,16 +3507,6 @@
             "mode": "O",
             "initials": "SP361",
             "name": "Gard\u00eania Azul - Castelo"
-        }
-    },
-    {
-        "model": "pontos.linha",
-        "pk": "O0746AAN0A",
-        "fields": {
-            "agency": 22005,
-            "mode": "O",
-            "initials": "SN746",
-            "name": "Jabour - Cascadura"
         }
     },
     {

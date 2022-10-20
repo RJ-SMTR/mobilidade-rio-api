@@ -210,17 +210,6 @@
     },
     {
         "model": "pontos.route",
-        "pk": "O0232AAN0A",
-        "fields": {
-            "linha": "O0232AAN0A",
-            "agency": "22003",
-            "mode": "O",
-            "short_name": "SN232",
-            "vista": "Lins - Castelo"
-        }
-    },
-    {
-        "model": "pontos.route",
         "pk": "O0232AAV0A",
         "fields": {
             "linha": "O0232AAV0A",
@@ -276,17 +265,6 @@
     },
     {
         "model": "pontos.route",
-        "pk": "O0238AAN0A",
-        "fields": {
-            "linha": "O0238AAN0A",
-            "agency": "22003",
-            "mode": "O",
-            "short_name": "SN238",
-            "vista": "\u00c1gua Santa - Castelo"
-        }
-    },
-    {
-        "model": "pontos.route",
         "pk": "O0239AAA0A",
         "fields": {
             "linha": "O0239AAA0A",
@@ -326,17 +304,6 @@
             "agency": "22003",
             "mode": "O",
             "short_name": "265",
-            "vista": "Marechal Hermes - Castelo"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0265AAN0A",
-        "fields": {
-            "linha": "O0265AAN0A",
-            "agency": "22003",
-            "mode": "O",
-            "short_name": "SN265",
             "vista": "Marechal Hermes - Castelo"
         }
     },
@@ -408,17 +375,6 @@
     },
     {
         "model": "pontos.route",
-        "pk": "O0312AAN0A",
-        "fields": {
-            "linha": "O0312AAN0A",
-            "agency": "22003",
-            "mode": "O",
-            "short_name": "SN312",
-            "vista": "Olaria - Candel\u00e1ria"
-        }
-    },
-    {
-        "model": "pontos.route",
         "pk": "O0313AAA0A",
         "fields": {
             "linha": "O0313AAA0A",
@@ -463,17 +419,6 @@
     },
     {
         "model": "pontos.route",
-        "pk": "O0324AAN0A",
-        "fields": {
-            "linha": "O0324AAN0A",
-            "agency": "22003",
-            "mode": "O",
-            "short_name": "SN324",
-            "vista": "Ribeira - Candel\u00e1ria"
-        }
-    },
-    {
-        "model": "pontos.route",
         "pk": "O0325AAA0A",
         "fields": {
             "linha": "O0325AAA0A",
@@ -491,17 +436,6 @@
             "agency": "22003",
             "mode": "O",
             "short_name": "326",
-            "vista": "Banc\u00e1rios - Candel\u00e1ria"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0326AAN0A",
-        "fields": {
-            "linha": "O0326AAN0A",
-            "agency": "22003",
-            "mode": "O",
-            "short_name": "SN326",
             "vista": "Banc\u00e1rios - Candel\u00e1ria"
         }
     },
@@ -551,17 +485,6 @@
     },
     {
         "model": "pontos.route",
-        "pk": "O0342AAN0A",
-        "fields": {
-            "linha": "O0342AAN0A",
-            "agency": "22003",
-            "mode": "O",
-            "short_name": "SN342",
-            "vista": "Jardim Am\u00e9rica - Castelo"
-        }
-    },
-    {
-        "model": "pontos.route",
         "pk": "O0349AAA0A",
         "fields": {
             "linha": "O0349AAA0A",
@@ -590,17 +513,6 @@
             "agency": "22003",
             "mode": "O",
             "short_name": "355",
-            "vista": "Madureira - Pra\u00e7a Tiradentes"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0355AAN0A",
-        "fields": {
-            "linha": "O0355AAN0A",
-            "agency": "22003",
-            "mode": "O",
-            "short_name": "SN355",
             "vista": "Madureira - Pra\u00e7a Tiradentes"
         }
     },
@@ -700,17 +612,6 @@
             "agency": "22003",
             "mode": "O",
             "short_name": "457",
-            "vista": "Aboli\u00e7\u00e3o - Copacabana"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0457AAN0A",
-        "fields": {
-            "linha": "O0457AAN0A",
-            "agency": "22003",
-            "mode": "O",
-            "short_name": "SN457",
             "vista": "Aboli\u00e7\u00e3o - Copacabana"
         }
     },
@@ -854,17 +755,6 @@
             "agency": "22003",
             "mode": "O",
             "short_name": "624",
-            "vista": "Mari\u00f3polis - Pra\u00e7a da Bandeira"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0624AAN0A",
-        "fields": {
-            "linha": "O0624AAN0A",
-            "agency": "22003",
-            "mode": "O",
-            "short_name": "SN624",
             "vista": "Mari\u00f3polis - Pra\u00e7a da Bandeira"
         }
     },
@@ -1129,17 +1019,6 @@
             "agency": "22003",
             "mode": "O",
             "short_name": "778",
-            "vista": "Cascadura - Pavuna"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0778AAN0A",
-        "fields": {
-            "linha": "O0778AAN0A",
-            "agency": "22003",
-            "mode": "O",
-            "short_name": "SN778",
             "vista": "Cascadura - Pavuna"
         }
     },
@@ -1475,17 +1354,6 @@
     },
     {
         "model": "pontos.route",
-        "pk": "O0309AAN0A",
-        "fields": {
-            "linha": "O0309AAN0A",
-            "agency": "22004",
-            "mode": "O",
-            "short_name": "SN309",
-            "vista": "Alvorada - Central"
-        }
-    },
-    {
-        "model": "pontos.route",
         "pk": "O0315AAA0A",
         "fields": {
             "linha": "O0315AAA0A",
@@ -1662,17 +1530,6 @@
     },
     {
         "model": "pontos.route",
-        "pk": "O0550AAN0A",
-        "fields": {
-            "linha": "O0550AAN0A",
-            "agency": "22004",
-            "mode": "O",
-            "short_name": "SN550",
-            "vista": "Cidade de Deus - G\u00e1vea"
-        }
-    },
-    {
-        "model": "pontos.route",
         "pk": "O0555AAA0A",
         "fields": {
             "linha": "O0555AAA0A",
@@ -1706,17 +1563,6 @@
     },
     {
         "model": "pontos.route",
-        "pk": "O0565AAN0A",
-        "fields": {
-            "linha": "O0565AAN0A",
-            "agency": "22004",
-            "mode": "O",
-            "short_name": "SN565",
-            "vista": "Tanque - G\u00e1vea"
-        }
-    },
-    {
-        "model": "pontos.route",
         "pk": "O0600AAA0A",
         "fields": {
             "linha": "O0600AAA0A",
@@ -1734,17 +1580,6 @@
             "agency": "22004",
             "mode": "O",
             "short_name": "601",
-            "vista": "Saens Pe\u00f1a - Santa Maria"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0601AAN0A",
-        "fields": {
-            "linha": "O0601AAN0A",
-            "agency": "22004",
-            "mode": "O",
-            "short_name": "SN601",
             "vista": "Saens Pe\u00f1a - Santa Maria"
         }
     },
@@ -1822,17 +1657,6 @@
             "agency": "22004",
             "mode": "O",
             "short_name": "636",
-            "vista": "Pra\u00e7a Seca - Saens Pe\u00f1a"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0636AAN0A",
-        "fields": {
-            "linha": "O0636AAN0A",
-            "agency": "22004",
-            "mode": "O",
-            "short_name": "SN636",
             "vista": "Pra\u00e7a Seca - Saens Pe\u00f1a"
         }
     },
@@ -1992,17 +1816,6 @@
     },
     {
         "model": "pontos.route",
-        "pk": "O0810AAN0A",
-        "fields": {
-            "linha": "O0810AAN0A",
-            "agency": "22004",
-            "mode": "O",
-            "short_name": "SN810",
-            "vista": "Taquara - Pontal"
-        }
-    },
-    {
-        "model": "pontos.route",
         "pk": "O0829AAA0A",
         "fields": {
             "linha": "O0829AAA0A",
@@ -2069,17 +1882,6 @@
     },
     {
         "model": "pontos.route",
-        "pk": "O0862AAN0A",
-        "fields": {
-            "linha": "O0862AAN0A",
-            "agency": "22004",
-            "mode": "O",
-            "short_name": "SN862",
-            "vista": "Rio das Pedras - Barra"
-        }
-    },
-    {
-        "model": "pontos.route",
         "pk": "O0863AAA0A",
         "fields": {
             "linha": "O0863AAA0A",
@@ -2119,17 +1921,6 @@
             "agency": "22004",
             "mode": "O",
             "short_name": "878",
-            "vista": "Tanque - Barra da Tijuca"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0878AAN0A",
-        "fields": {
-            "linha": "O0878AAN0A",
-            "agency": "22004",
-            "mode": "O",
-            "short_name": "SN878",
             "vista": "Tanque - Barra da Tijuca"
         }
     },
@@ -2196,17 +1987,6 @@
             "agency": "22004",
             "mode": "O",
             "short_name": "954",
-            "vista": "Taquara - Recreio"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0954AAN0A",
-        "fields": {
-            "linha": "O0954AAN0A",
-            "agency": "22004",
-            "mode": "O",
-            "short_name": "SN954",
             "vista": "Taquara - Recreio"
         }
     },
@@ -2498,17 +2278,6 @@
     },
     {
         "model": "pontos.route",
-        "pk": "O0383AAN0A",
-        "fields": {
-            "linha": "O0383AAN0A",
-            "agency": "22005",
-            "mode": "O",
-            "short_name": "SN383",
-            "vista": "Realengo - Pra\u00e7a da Rep\u00fablica"
-        }
-    },
-    {
-        "model": "pontos.route",
         "pk": "O0388AAA0A",
         "fields": {
             "linha": "O0388AAA0A",
@@ -2537,17 +2306,6 @@
             "agency": "22005",
             "mode": "O",
             "short_name": "393",
-            "vista": "Bangu - Candel\u00e1ria"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0393AAN0A",
-        "fields": {
-            "linha": "O0393AAN0A",
-            "agency": "22005",
-            "mode": "O",
-            "short_name": "SN393",
             "vista": "Bangu - Candel\u00e1ria"
         }
     },
@@ -2592,17 +2350,6 @@
             "agency": "22005",
             "mode": "O",
             "short_name": "731",
-            "vista": "Campo Grande - Marechal Hermes"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0731AAN0A",
-        "fields": {
-            "linha": "O0731AAN0A",
-            "agency": "22005",
-            "mode": "O",
-            "short_name": "SN731",
             "vista": "Campo Grande - Marechal Hermes"
         }
     },
@@ -2740,17 +2487,6 @@
     },
     {
         "model": "pontos.route",
-        "pk": "O0790AAN0A",
-        "fields": {
-            "linha": "O0790AAN0A",
-            "agency": "22005",
-            "mode": "O",
-            "short_name": "SN790",
-            "vista": "Campo Grande - Cascadura"
-        }
-    },
-    {
-        "model": "pontos.route",
         "pk": "O0790AAV0A",
         "fields": {
             "linha": "O0790AAV0A",
@@ -2768,17 +2504,6 @@
             "agency": "22005",
             "mode": "O",
             "short_name": "794",
-            "vista": "Bangu - Cascadura"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0794AAN0A",
-        "fields": {
-            "linha": "O0794AAN0A",
-            "agency": "22005",
-            "mode": "O",
-            "short_name": "SN794",
             "vista": "Bangu - Cascadura"
         }
     },
@@ -2839,17 +2564,6 @@
     },
     {
         "model": "pontos.route",
-        "pk": "O0803AAN0A",
-        "fields": {
-            "linha": "O0803AAN0A",
-            "agency": "22005",
-            "mode": "O",
-            "short_name": "SN803",
-            "vista": "Senador Camar\u00e1 - Taquara"
-        }
-    },
-    {
-        "model": "pontos.route",
         "pk": "O0804AAA0A",
         "fields": {
             "linha": "O0804AAA0A",
@@ -2889,17 +2603,6 @@
             "agency": "22005",
             "mode": "O",
             "short_name": "821",
-            "vista": "Campo Grande - Corcundinha"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0821AAN0A",
-        "fields": {
-            "linha": "O0821AAN0A",
-            "agency": "22005",
-            "mode": "O",
-            "short_name": "SN821",
             "vista": "Campo Grande - Corcundinha"
         }
     },
@@ -2977,17 +2680,6 @@
             "agency": "22005",
             "mode": "O",
             "short_name": "840",
-            "vista": "S\u00e3o Fernando - Campo Grande"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0840AAN0A",
-        "fields": {
-            "linha": "O0840AAN0A",
-            "agency": "22005",
-            "mode": "O",
-            "short_name": "SN840",
             "vista": "S\u00e3o Fernando - Campo Grande"
         }
     },
@@ -3147,17 +2839,6 @@
     },
     {
         "model": "pontos.route",
-        "pk": "O0867AAN0A",
-        "fields": {
-            "linha": "O0867AAN0A",
-            "agency": "22005",
-            "mode": "O",
-            "short_name": "SN867",
-            "vista": "Barra de Guaratiba - Campo Grande"
-        }
-    },
-    {
-        "model": "pontos.route",
         "pk": "O0868AAA0A",
         "fields": {
             "linha": "O0868AAA0A",
@@ -3224,17 +2905,6 @@
     },
     {
         "model": "pontos.route",
-        "pk": "O0884AAN0A",
-        "fields": {
-            "linha": "O0884AAN0A",
-            "agency": "22005",
-            "mode": "O",
-            "short_name": "SN884",
-            "vista": "Sepetiba - Campo Grande"
-        }
-    },
-    {
-        "model": "pontos.route",
         "pk": "O0892AAA0A",
         "fields": {
             "linha": "O0892AAA0A",
@@ -3290,17 +2960,6 @@
     },
     {
         "model": "pontos.route",
-        "pk": "O0918AAN0A",
-        "fields": {
-            "linha": "O0918AAN0A",
-            "agency": "22005",
-            "mode": "O",
-            "short_name": "SN918",
-            "vista": "Bangu - Bonsucesso"
-        }
-    },
-    {
-        "model": "pontos.route",
         "pk": "O0926AAA0A",
         "fields": {
             "linha": "O0926AAA0A",
@@ -3329,17 +2988,6 @@
             "agency": "22002",
             "mode": "O",
             "short_name": "006",
-            "vista": "Silvestre - Castelo"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0006AAN0A",
-        "fields": {
-            "linha": "O0006AAN0A",
-            "agency": "22002",
-            "mode": "O",
-            "short_name": "SN006",
             "vista": "Silvestre - Castelo"
         }
     },
@@ -3499,17 +3147,6 @@
     },
     {
         "model": "pontos.route",
-        "pk": "O0201AAN0A",
-        "fields": {
-            "linha": "O0201AAN0A",
-            "agency": "22002",
-            "mode": "O",
-            "short_name": "SN201",
-            "vista": "Santa Alexandrina - Castelo"
-        }
-    },
-    {
-        "model": "pontos.route",
         "pk": "O0202AAA0A",
         "fields": {
             "linha": "O0202AAA0A",
@@ -3598,34 +3235,12 @@
     },
     {
         "model": "pontos.route",
-        "pk": "O0415AAN0A",
-        "fields": {
-            "linha": "O0415AAN0A",
-            "agency": "22002",
-            "mode": "O",
-            "short_name": "SN415",
-            "vista": "Usina - Leblon"
-        }
-    },
-    {
-        "model": "pontos.route",
         "pk": "O0422AAA0A",
         "fields": {
             "linha": "O0422AAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "422",
-            "vista": "Graja\u00fa - Cosme Velho"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0422AAN0A",
-        "fields": {
-            "linha": "O0422AAN0A",
-            "agency": "22002",
-            "mode": "O",
-            "short_name": "SN422",
             "vista": "Graja\u00fa - Cosme Velho"
         }
     },
@@ -3796,17 +3411,6 @@
     },
     {
         "model": "pontos.route",
-        "pk": "O0474AAN0A",
-        "fields": {
-            "linha": "O0474AAN0A",
-            "agency": "22002",
-            "mode": "O",
-            "short_name": "SN474",
-            "vista": "Jacar\u00e9 - Copacabana"
-        }
-    },
-    {
-        "model": "pontos.route",
         "pk": "O0474AAV0A",
         "fields": {
             "linha": "O0474AAV0A",
@@ -3862,34 +3466,12 @@
     },
     {
         "model": "pontos.route",
-        "pk": "O0538AAN0A",
-        "fields": {
-            "linha": "O0538AAN0A",
-            "agency": "22002",
-            "mode": "O",
-            "short_name": "SN538",
-            "vista": "Rocinha - Leme"
-        }
-    },
-    {
-        "model": "pontos.route",
         "pk": "O0539AAA0A",
         "fields": {
             "linha": "O0539AAA0A",
             "agency": "22002",
             "mode": "O",
             "short_name": "539",
-            "vista": "Rocinha - Leme"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0539AAN0A",
-        "fields": {
-            "linha": "O0539AAN0A",
-            "agency": "22002",
-            "mode": "O",
-            "short_name": "SN539",
             "vista": "Rocinha - Leme"
         }
     },
@@ -3923,17 +3505,6 @@
             "agency": "22002",
             "mode": "O",
             "short_name": "553",
-            "vista": "Rio Sul - Recreio"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0553AAN0A",
-        "fields": {
-            "linha": "O0553AAN0A",
-            "agency": "22002",
-            "mode": "O",
-            "short_name": "SN553",
             "vista": "Rio Sul - Recreio"
         }
     },
@@ -4060,17 +3631,6 @@
     },
     {
         "model": "pontos.route",
-        "pk": "O0386AAN0A",
-        "fields": {
-            "linha": "O0386AAN0A",
-            "agency": "22003",
-            "mode": "O",
-            "short_name": "SN386",
-            "vista": "Anchieta - Passeio"
-        }
-    },
-    {
-        "model": "pontos.route",
         "pk": "O0416AAA0A",
         "fields": {
             "linha": "O0416AAA0A",
@@ -4093,17 +3653,6 @@
     },
     {
         "model": "pontos.route",
-        "pk": "O0483AAN0A",
-        "fields": {
-            "linha": "O0483AAN0A",
-            "agency": "22003",
-            "mode": "O",
-            "short_name": "SN483",
-            "vista": "Penha - General Os\u00f3rio"
-        }
-    },
-    {
-        "model": "pontos.route",
         "pk": "O0036CAA0A",
         "fields": {
             "linha": "O0036CAA0A",
@@ -4111,17 +3660,6 @@
             "mode": "O",
             "short_name": "LECD36",
             "vista": "Mari\u00f3polis - Pra\u00e7a da Bandeira"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0209AAN0A",
-        "fields": {
-            "linha": "O0209AAN0A",
-            "agency": "22002",
-            "mode": "O",
-            "short_name": "SN209",
-            "vista": "Candel\u00e1ria - Caju"
         }
     },
     {
@@ -4320,17 +3858,6 @@
             "mode": "O",
             "short_name": "SP361",
             "vista": "Gard\u00eania Azul - Castelo"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0746AAN0A",
-        "fields": {
-            "linha": "O0746AAN0A",
-            "agency": "22005",
-            "mode": "O",
-            "short_name": "SN746",
-            "vista": "Jabour - Cascadura"
         }
     },
     {
