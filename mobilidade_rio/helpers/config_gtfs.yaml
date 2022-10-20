@@ -13,7 +13,7 @@ models:
       pk: route_id
       fields: 
         agency: agency_id
-        mode: route_type
+        mode: 3
         initials: route_short_name
         name: route_long_name
   route:
@@ -24,7 +24,7 @@ models:
       fields: 
         linha: route_id
         agency: agency_id
-        mode: route_type
+        mode: 3
         short_name: route_short_name
         vista: route_long_name
   trip:
@@ -46,7 +46,7 @@ models:
       model: stop
       pk: stop_id
       fields: 
-        mode: stop_id[4:5]
+        mode: 3
         name: stop_name
         address: stop_name
         latitude: stop_lat

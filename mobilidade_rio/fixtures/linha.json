@@ -4,7 +4,7 @@
         "pk": "84be",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "833",
             "name": "Manguariba - Campo Grande"
         }
@@ -14,7 +14,7 @@
         "pk": "bosw",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "LECD52",
             "name": "Cascadura - Coelho Neto"
         }
@@ -24,7 +24,7 @@
         "pk": "hvak",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "678",
             "name": "M\u00e9ier - Vila Valqueire"
         }
@@ -34,7 +34,7 @@
         "pk": "lbvn",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "LECD51",
             "name": "Terminal Recreio - Barra de Guaratiba"
         }
@@ -44,7 +44,7 @@
         "pk": "qro7",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "229",
             "name": "Usina - Castelo"
         }
@@ -54,7 +54,7 @@
         "pk": "bxu3",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "277",
             "name": "Rocha Miranda - Candel\u00e1ria"
         }
@@ -64,7 +64,7 @@
         "pk": "ukw5",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "928",
             "name": "Marechal Hermes - Bonsucesso"
         }
@@ -74,7 +74,7 @@
         "pk": "O0901AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "901",
             "name": "Bonsucesso - Bananal"
         }
@@ -84,7 +84,7 @@
         "pk": "c2tb",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "335 SR",
             "name": "Cordovil - Tiradentes"
         }
@@ -94,7 +94,7 @@
         "pk": "O0054CAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "LECD54",
             "name": "Urca - Copacabana"
         }
@@ -104,7 +104,7 @@
         "pk": "O0055CAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "LECD55",
             "name": "Urca - Botafogo"
         }
@@ -114,7 +114,7 @@
         "pk": "O0056CAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "LECD56",
             "name": "Pra\u00e7a Seca - Madureira"
         }
@@ -124,7 +124,7 @@
         "pk": "O0051CAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "LECD53",
             "name": "Rodovi\u00e1ria - Castelo"
         }
@@ -134,7 +134,7 @@
         "pk": "O0254AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "254",
             "name": "Madureira - Candel\u00e1ria"
         }
@@ -144,7 +144,7 @@
         "pk": "O0809AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "809",
             "name": "Sagrado Cora\u00e7\u00e3o - Santa Cruz"
         }
@@ -154,7 +154,7 @@
         "pk": "O0409AAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "409",
             "name": "Saens Pe\u00f1a - Horto"
         }
@@ -164,7 +164,7 @@
         "pk": "E2145AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "2145",
             "name": "RIOgale\u00e3o - Aeroporto Santos Dumont"
         }
@@ -174,7 +174,7 @@
         "pk": "E2305AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "2305",
             "name": "Jardim Am\u00e9rica - Castelo"
         }
@@ -184,7 +184,7 @@
         "pk": "O0232AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "232",
             "name": "Lins - Castelo"
         }
@@ -194,7 +194,7 @@
         "pk": "O0232AAV0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "SV232",
             "name": "Lins - Castelo"
         }
@@ -204,7 +204,7 @@
         "pk": "E2342AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "2342",
             "name": "Bananal - Castelo"
         }
@@ -214,7 +214,7 @@
         "pk": "E2343AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "2343",
             "name": "Ribeira - Castelo"
         }
@@ -224,7 +224,7 @@
         "pk": "E2344AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "2344",
             "name": "Banc\u00e1rios - Castelo"
         }
@@ -234,7 +234,7 @@
         "pk": "O0238AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "238",
             "name": "\u00c1gua Santa - Castelo"
         }
@@ -244,7 +244,7 @@
         "pk": "O0239AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "239",
             "name": "\u00c1gua Santa - Castelo"
         }
@@ -254,7 +254,7 @@
         "pk": "O0247AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "247",
             "name": "Camarista M\u00e9ier - Passeio"
         }
@@ -264,7 +264,7 @@
         "pk": "O0249AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "249",
             "name": "\u00c1gua Santa - Carioca"
         }
@@ -274,7 +274,7 @@
         "pk": "O0265AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "265",
             "name": "Marechal Hermes - Castelo"
         }
@@ -284,7 +284,7 @@
         "pk": "O0265AAP0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "SP265",
             "name": "Marechal Hermes - S\u00e3o Crist\u00f3v\u00e3o"
         }
@@ -294,7 +294,7 @@
         "pk": "O0292AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "292",
             "name": "Engenho da Rainha - Castelo"
         }
@@ -304,7 +304,7 @@
         "pk": "O0296AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "296",
             "name": "Iraj\u00e1 - Castelo"
         }
@@ -314,7 +314,7 @@
         "pk": "O0298AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "298",
             "name": "Acari - Castelo"
         }
@@ -324,7 +324,7 @@
         "pk": "O0311AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "311",
             "name": "Engenheiro Leal - Candel\u00e1ria"
         }
@@ -334,7 +334,7 @@
         "pk": "O0312AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "312",
             "name": "Olaria - Candel\u00e1ria"
         }
@@ -344,7 +344,7 @@
         "pk": "O0313AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "313",
             "name": "Penha (Grot\u00e3o) - Pra\u00e7a Tiradentes"
         }
@@ -354,7 +354,7 @@
         "pk": "O0321AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "321",
             "name": "Banc\u00e1rios - Castelo"
         }
@@ -364,7 +364,7 @@
         "pk": "O0323AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "323",
             "name": "Bananal - Castelo"
         }
@@ -374,7 +374,7 @@
         "pk": "O0324AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "324",
             "name": "Ribeira - Candel\u00e1ria"
         }
@@ -384,7 +384,7 @@
         "pk": "O0325AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "325",
             "name": "Ribeira - Castelo"
         }
@@ -394,7 +394,7 @@
         "pk": "O0326AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "326",
             "name": "Banc\u00e1rios - Candel\u00e1ria"
         }
@@ -404,7 +404,7 @@
         "pk": "O0327AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "327",
             "name": "Ribeira - Castelo"
         }
@@ -414,7 +414,7 @@
         "pk": "O0328AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "328",
             "name": "Bananal - Candel\u00e1ria"
         }
@@ -424,7 +424,7 @@
         "pk": "O0329AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "329",
             "name": "Banc\u00e1rios - Candel\u00e1ria"
         }
@@ -434,7 +434,7 @@
         "pk": "O0342AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "342",
             "name": "Jardim Am\u00e9rica - Castelo"
         }
@@ -444,7 +444,7 @@
         "pk": "O0349AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "349",
             "name": "Rocha Miranda - Castelo"
         }
@@ -454,7 +454,7 @@
         "pk": "O0350AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "350",
             "name": "Iraj\u00e1 - Passeio"
         }
@@ -464,7 +464,7 @@
         "pk": "O0355AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "355",
             "name": "Madureira - Pra\u00e7a Tiradentes"
         }
@@ -474,7 +474,7 @@
         "pk": "O0362AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "362",
             "name": "Hon\u00f3rio Gurgel - Castelo"
         }
@@ -484,7 +484,7 @@
         "pk": "O0378AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "378",
             "name": "Marechal Hermes - Castelo"
         }
@@ -494,7 +494,7 @@
         "pk": "O0384AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "384",
             "name": "Pavuna - Passeio"
         }
@@ -504,7 +504,7 @@
         "pk": "O0385AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "385",
             "name": "Village Pavuna - Passeio"
         }
@@ -514,7 +514,7 @@
         "pk": "O0386AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "386",
             "name": "Anchieta - Passeio"
         }
@@ -524,7 +524,7 @@
         "pk": "O0399AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "399",
             "name": "Pavuna - Passeio"
         }
@@ -534,7 +534,7 @@
         "pk": "O0404AAP0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "SP404",
             "name": "Caju - Leblon"
         }
@@ -544,7 +544,7 @@
         "pk": "O0455AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "455",
             "name": "M\u00e9ier - Copacabana"
         }
@@ -554,7 +554,7 @@
         "pk": "O0457AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "457",
             "name": "Aboli\u00e7\u00e3o - Copacabana"
         }
@@ -564,7 +564,7 @@
         "pk": "O0483AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "483",
             "name": "Penha - General Os\u00f3rio"
         }
@@ -574,7 +574,7 @@
         "pk": "O0484AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "484",
             "name": "Olaria - General Os\u00f3rio"
         }
@@ -584,7 +584,7 @@
         "pk": "O0485AAP0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "SP485",
             "name": "Pra\u00e7a XI - Fund\u00e3o"
         }
@@ -594,7 +594,7 @@
         "pk": "O0486AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "486",
             "name": "Fund\u00e3o - General Os\u00f3rio"
         }
@@ -604,7 +604,7 @@
         "pk": "O0492AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "492",
             "name": "Banc\u00e1rios - Prado J\u00fanior"
         }
@@ -614,7 +614,7 @@
         "pk": "O0497AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "497",
             "name": "Penha - Cosme Velho"
         }
@@ -624,7 +624,7 @@
         "pk": "O0606AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "606",
             "name": "Engenho de Dentro - Rodovi\u00e1ria"
         }
@@ -634,7 +634,7 @@
         "pk": "O0606AAV0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "SV606",
             "name": "Engenho de Dentro - Rodovi\u00e1ria"
         }
@@ -644,7 +644,7 @@
         "pk": "O0616AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "616",
             "name": "Del Castilho - Fund\u00e3o"
         }
@@ -654,7 +654,7 @@
         "pk": "O0621AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "621",
             "name": "Penha - Saens Pe\u00f1a"
         }
@@ -664,7 +664,7 @@
         "pk": "O0622AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "622",
             "name": "Penha - Saens Pe\u00f1a"
         }
@@ -674,7 +674,7 @@
         "pk": "O0623AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "623",
             "name": "Penha - Saens Pe\u00f1a"
         }
@@ -684,7 +684,7 @@
         "pk": "O0624AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "624",
             "name": "Mari\u00f3polis - Pra\u00e7a da Bandeira"
         }
@@ -694,7 +694,7 @@
         "pk": "O0625AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "625",
             "name": "Olaria - Saens Pe\u00f1a"
         }
@@ -704,7 +704,7 @@
         "pk": "O0627AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "627",
             "name": "Inha\u00fama - Saens Pe\u00f1a"
         }
@@ -714,7 +714,7 @@
         "pk": "O0628AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "628",
             "name": "Penha - Nova Am\u00e9rica"
         }
@@ -724,7 +724,7 @@
         "pk": "O0629AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "629",
             "name": "Iraj\u00e1 - Saens Pe\u00f1a"
         }
@@ -734,7 +734,7 @@
         "pk": "O0630AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "630",
             "name": "Penha (IAPI) - Saens Pe\u00f1a"
         }
@@ -744,7 +744,7 @@
         "pk": "O0634AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "634",
             "name": "Bananal - Saens Pe\u00f1a"
         }
@@ -754,7 +754,7 @@
         "pk": "O0638AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "638",
             "name": "Marechal Hermes - Saens Pe\u00f1a"
         }
@@ -764,7 +764,7 @@
         "pk": "O0639AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "639",
             "name": "Jardim Am\u00e9rica - Saens Pe\u00f1a"
         }
@@ -774,7 +774,7 @@
         "pk": "O0650AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "650",
             "name": "Marechal Hermes - Engenho Novo"
         }
@@ -784,7 +784,7 @@
         "pk": "O0663AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "663",
             "name": "M\u00e9ier - Fund\u00e3o"
         }
@@ -794,7 +794,7 @@
         "pk": "O0665AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "665",
             "name": "Pavuna - Saens Pe\u00f1a"
         }
@@ -804,7 +804,7 @@
         "pk": "O0665AAVAA",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "SVA665",
             "name": "Pavuna - Saens Pe\u00f1a"
         }
@@ -814,7 +814,7 @@
         "pk": "O0669AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "669",
             "name": "Pavuna - M\u00e9ier"
         }
@@ -824,7 +824,7 @@
         "pk": "O0679AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "679",
             "name": "Grot\u00e3o - M\u00e9ier"
         }
@@ -834,7 +834,7 @@
         "pk": "O0680AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "680",
             "name": "Penha (IAPI) - M\u00e9ier"
         }
@@ -844,7 +844,7 @@
         "pk": "O0685AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "685",
             "name": "Iraj\u00e1 - M\u00e9ier"
         }
@@ -854,7 +854,7 @@
         "pk": "O0685AAVAA",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "SVA685",
             "name": "Iraj\u00e1 - M\u00e9ier"
         }
@@ -864,7 +864,7 @@
         "pk": "O0685AAVBA",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "SVB685",
             "name": "Iraj\u00e1 - M\u00e9ier"
         }
@@ -874,7 +874,7 @@
         "pk": "O0687AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "687",
             "name": "Pavuna - M\u00e9ier"
         }
@@ -884,7 +884,7 @@
         "pk": "O0688AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "688",
             "name": "M\u00e9ier - Pavuna"
         }
@@ -894,7 +894,7 @@
         "pk": "O0696AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "696",
             "name": "M\u00e9ier - Praia do Dend\u00ea"
         }
@@ -904,7 +904,7 @@
         "pk": "O0711AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "711",
             "name": "Rocha Miranda - Rio Comprido"
         }
@@ -914,7 +914,7 @@
         "pk": "O0721AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "721",
             "name": "Vila Cruzeiro - Cascadura"
         }
@@ -924,7 +924,7 @@
         "pk": "O0778AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "778",
             "name": "Cascadura - Pavuna"
         }
@@ -934,7 +934,7 @@
         "pk": "O0779AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "779",
             "name": "Pavuna - Madureira"
         }
@@ -944,7 +944,7 @@
         "pk": "O0779AAV0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "SV779",
             "name": "Pavuna - Madureira"
         }
@@ -954,7 +954,7 @@
         "pk": "O0793AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "793",
             "name": "Pavuna - Sulacap"
         }
@@ -964,7 +964,7 @@
         "pk": "O0795AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "795",
             "name": "Pavuna - Sulacap"
         }
@@ -974,7 +974,7 @@
         "pk": "O0905AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "905",
             "name": "Bonsucesso - Iraj\u00e1"
         }
@@ -984,7 +984,7 @@
         "pk": "O0906AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "906",
             "name": "Jardim Am\u00e9rica - Caju"
         }
@@ -994,7 +994,7 @@
         "pk": "O0908AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "908",
             "name": "Bonsucesso - Guadalupe"
         }
@@ -1004,7 +1004,7 @@
         "pk": "O0908AAV0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "SV908",
             "name": "Bonsucesso - Guadalupe"
         }
@@ -1014,7 +1014,7 @@
         "pk": "O0910AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "910",
             "name": "Bananal - Iraj\u00e1"
         }
@@ -1024,7 +1024,7 @@
         "pk": "O0913AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "913",
             "name": "Del Castilho - Fund\u00e3o"
         }
@@ -1034,7 +1034,7 @@
         "pk": "O0915AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "915",
             "name": "Bonsucesso - RIOgale\u00e3o"
         }
@@ -1044,7 +1044,7 @@
         "pk": "O0917AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "917",
             "name": "Realengo - Bonsucesso"
         }
@@ -1054,7 +1054,7 @@
         "pk": "O0919AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "919",
             "name": "Pavuna - Bonsucesso"
         }
@@ -1064,7 +1064,7 @@
         "pk": "O0920AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "920",
             "name": "Pavuna - Bonsucesso"
         }
@@ -1074,7 +1074,7 @@
         "pk": "O0922AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "922",
             "name": "Tubiacanga - RIOgale\u00e3o"
         }
@@ -1084,7 +1084,7 @@
         "pk": "O0925AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "925",
             "name": "RIOgale\u00e3o - Banc\u00e1rios"
         }
@@ -1094,7 +1094,7 @@
         "pk": "O0944AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "944",
             "name": "Pavuna - Conjunto Engenheiro Rubens Paiva"
         }
@@ -1104,7 +1104,7 @@
         "pk": "O0945AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "945",
             "name": "Pavuna - Fund\u00e3o"
         }
@@ -1114,7 +1114,7 @@
         "pk": "O0946AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "946",
             "name": "Pavuna - Engenho da Rainha"
         }
@@ -1124,7 +1124,7 @@
         "pk": "O0950AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "950",
             "name": "Vicente de Carvalho - Vista Alegre"
         }
@@ -1134,7 +1134,7 @@
         "pk": "O0951AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "951",
             "name": "Vicente de Carvalho - Vista Alegre"
         }
@@ -1144,7 +1144,7 @@
         "pk": "E2018AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "2018",
             "name": "RIOgale\u00e3o - Alvorada"
         }
@@ -1154,7 +1154,7 @@
         "pk": "E2111AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "2111",
             "name": "Pra\u00e7a Seca - Castelo"
         }
@@ -1164,7 +1164,7 @@
         "pk": "E2112AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "2112",
             "name": "Taquara - Castelo"
         }
@@ -1174,7 +1174,7 @@
         "pk": "E2114AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "2114",
             "name": "Freguesia - Castelo"
         }
@@ -1184,7 +1184,7 @@
         "pk": "E2345AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "2345",
             "name": "Vila Valqueire - Castelo"
         }
@@ -1194,7 +1194,7 @@
         "pk": "E2345AAVBA",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "SVB2345",
             "name": "Vila Valqueire - Castelo"
         }
@@ -1204,7 +1204,7 @@
         "pk": "O0302AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "302",
             "name": "Rodovi\u00e1ria - Alvorada"
         }
@@ -1214,7 +1214,7 @@
         "pk": "O0306AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "306",
             "name": "Pra\u00e7a Seca - Castelo"
         }
@@ -1224,7 +1224,7 @@
         "pk": "O0309AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "309",
             "name": "Alvorada - Central"
         }
@@ -1234,7 +1234,7 @@
         "pk": "O0315AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "315",
             "name": "Central - Recreio"
         }
@@ -1244,7 +1244,7 @@
         "pk": "O0338AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "338",
             "name": "Taquara - Candel\u00e1ria"
         }
@@ -1254,7 +1254,7 @@
         "pk": "O0341AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "341",
             "name": "Taquara - Candel\u00e1ria"
         }
@@ -1264,7 +1264,7 @@
         "pk": "O0341AAP0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "SP341",
             "name": "Freguesia - Candel\u00e1ria"
         }
@@ -1274,7 +1274,7 @@
         "pk": "O0343AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "343",
             "name": "Jardim Oce\u00e2nico - Candel\u00e1ria"
         }
@@ -1284,7 +1284,7 @@
         "pk": "O0343AAP0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "SP343",
             "name": "Rio das Pedras - Candel\u00e1ria"
         }
@@ -1294,7 +1294,7 @@
         "pk": "O0348AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "348",
             "name": "Riocentro - Candel\u00e1ria"
         }
@@ -1304,7 +1304,7 @@
         "pk": "O0353AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "353",
             "name": "Pra\u00e7a Seca - Rodovi\u00e1ria"
         }
@@ -1314,7 +1314,7 @@
         "pk": "O0361AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "361",
             "name": "Recreio - Castelo"
         }
@@ -1324,7 +1324,7 @@
         "pk": "O0363AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "363",
             "name": "Vila Valqueire - Candel\u00e1ria"
         }
@@ -1334,7 +1334,7 @@
         "pk": "O0363AAV0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "SV363",
             "name": "Vila Valqueire - Candel\u00e1ria"
         }
@@ -1344,7 +1344,7 @@
         "pk": "O0368AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "368",
             "name": "Riocentro - Candel\u00e1ria"
         }
@@ -1354,7 +1354,7 @@
         "pk": "O0371AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "371",
             "name": "Pra\u00e7a Seca - Tiradentes"
         }
@@ -1364,7 +1364,7 @@
         "pk": "O0380AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "380",
             "name": "Curicica - Candel\u00e1ria"
         }
@@ -1374,7 +1374,7 @@
         "pk": "O0390AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "390",
             "name": "Curicica - Candel\u00e1ria"
         }
@@ -1384,7 +1384,7 @@
         "pk": "O0550AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "550",
             "name": "Cidade de Deus - G\u00e1vea"
         }
@@ -1394,7 +1394,7 @@
         "pk": "O0555AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "555",
             "name": "Rio das Pedras - G\u00e1vea"
         }
@@ -1404,7 +1404,7 @@
         "pk": "O0557AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "557",
             "name": "Rio das Pedras - Copacabana"
         }
@@ -1414,7 +1414,7 @@
         "pk": "O0565AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "565",
             "name": "Tanque - G\u00e1vea"
         }
@@ -1424,7 +1424,7 @@
         "pk": "O0600AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "600",
             "name": "Taquara - Saens Pe\u00f1a"
         }
@@ -1434,7 +1434,7 @@
         "pk": "O0601AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "601",
             "name": "Saens Pe\u00f1a - Santa Maria"
         }
@@ -1444,7 +1444,7 @@
         "pk": "O0607AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "607",
             "name": "Cascadura - Rio Comprido"
         }
@@ -1454,7 +1454,7 @@
         "pk": "O0610AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "610",
             "name": "Del Castilho - Tanque"
         }
@@ -1464,7 +1464,7 @@
         "pk": "O0611AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "611",
             "name": "Camorim - Del Castilho"
         }
@@ -1474,7 +1474,7 @@
         "pk": "O0613AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "613",
             "name": "Vargem Grande - Del Castilho"
         }
@@ -1484,7 +1484,7 @@
         "pk": "O0613AAPAA",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "SPA613",
             "name": "Riocentro - Del Castilho"
         }
@@ -1494,7 +1494,7 @@
         "pk": "O0614AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "614",
             "name": "Del Castilho - Alvorada"
         }
@@ -1504,7 +1504,7 @@
         "pk": "O0636AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "636",
             "name": "Pra\u00e7a Seca - Saens Pe\u00f1a"
         }
@@ -1514,7 +1514,7 @@
         "pk": "O0651AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "651",
             "name": "M\u00e9ier - Cascadura"
         }
@@ -1524,7 +1524,7 @@
         "pk": "O0652AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "652",
             "name": "M\u00e9ier - Cascadura"
         }
@@ -1534,7 +1534,7 @@
         "pk": "O0691AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "691",
             "name": "M\u00e9ier - Cidade de Deus"
         }
@@ -1544,7 +1544,7 @@
         "pk": "O0692AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "692",
             "name": "M\u00e9ier - Alvorada"
         }
@@ -1554,7 +1554,7 @@
         "pk": "O0693AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "693",
             "name": "M\u00e9ier - Alvorada"
         }
@@ -1564,7 +1564,7 @@
         "pk": "O0709AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "709",
             "name": "Cascadura - Amarelinho"
         }
@@ -1574,7 +1574,7 @@
         "pk": "O0712AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "712",
             "name": "Cascadura - Iraj\u00e1"
         }
@@ -1584,7 +1584,7 @@
         "pk": "O0766AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "766",
             "name": "Madureira - Freguesia"
         }
@@ -1594,7 +1594,7 @@
         "pk": "O0774AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "774",
             "name": "Madureira - Jardim Am\u00e9rica"
         }
@@ -1604,7 +1604,7 @@
         "pk": "O0774AAV0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "SV774",
             "name": "Madureira - Jardim Am\u00e9rica"
         }
@@ -1614,7 +1614,7 @@
         "pk": "O0775AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "775",
             "name": "Jardim Am\u00e9rica - Madureira"
         }
@@ -1624,7 +1624,7 @@
         "pk": "O0783AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "783",
             "name": "Marechal Hermes - Pra\u00e7a Seca"
         }
@@ -1634,7 +1634,7 @@
         "pk": "O0805AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "805",
             "name": "Alvorada - Jardim Oce\u00e2nico"
         }
@@ -1644,7 +1644,7 @@
         "pk": "O0810AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "810",
             "name": "Taquara - Pontal"
         }
@@ -1654,7 +1654,7 @@
         "pk": "O0829AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "829",
             "name": "Gard\u00eania Azul - Freguesia"
         }
@@ -1664,7 +1664,7 @@
         "pk": "O0831AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "831",
             "name": "Col\u00f4nia - Taquara"
         }
@@ -1674,7 +1674,7 @@
         "pk": "O0844AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "844",
             "name": "Barra Shopping - Barrinha"
         }
@@ -1684,7 +1684,7 @@
         "pk": "O0859AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "859",
             "name": "Covanca - Largo do Tanque"
         }
@@ -1694,7 +1694,7 @@
         "pk": "O0861AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "861",
             "name": "Rio das Pedras - Curicica"
         }
@@ -1704,7 +1704,7 @@
         "pk": "O0862AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "862",
             "name": "Rio das Pedras - Barra"
         }
@@ -1714,7 +1714,7 @@
         "pk": "O0863AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "863",
             "name": "Rio das Pedras - Barra"
         }
@@ -1724,7 +1724,7 @@
         "pk": "O0865AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "865",
             "name": "Pau da Fome - Taquara"
         }
@@ -1734,7 +1734,7 @@
         "pk": "O0875AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "875",
             "name": "Tanque - Ch\u00e1cara"
         }
@@ -1744,7 +1744,7 @@
         "pk": "O0878AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "878",
             "name": "Tanque - Barra da Tijuca"
         }
@@ -1754,7 +1754,7 @@
         "pk": "O0880AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "880",
             "name": "Rio das Pedras - Alvorada"
         }
@@ -1764,7 +1764,7 @@
         "pk": "O0900AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "900",
             "name": "Merck - Downtown"
         }
@@ -1774,7 +1774,7 @@
         "pk": "O0932AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "932",
             "name": "Gard\u00eania Azul - Tanque"
         }
@@ -1784,7 +1784,7 @@
         "pk": "O0940AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "940",
             "name": "Ramos (Praia) - Madureira"
         }
@@ -1794,7 +1794,7 @@
         "pk": "O0953AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "953",
             "name": "Taquara - Cidade de Deus"
         }
@@ -1804,7 +1804,7 @@
         "pk": "O0954AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "954",
             "name": "Taquara - Recreio"
         }
@@ -1814,7 +1814,7 @@
         "pk": "O0955AAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "955",
             "name": "Mar\u00e9 - Alvorada"
         }
@@ -1824,7 +1824,7 @@
         "pk": "E2303AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "2303",
             "name": "Cesar\u00e3o - Carioca"
         }
@@ -1834,7 +1834,7 @@
         "pk": "E2307AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "2307",
             "name": "Jardim 7 de Abril - Carioca"
         }
@@ -1844,7 +1844,7 @@
         "pk": "E2308AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "2308",
             "name": "Cosmos - Carioca"
         }
@@ -1854,7 +1854,7 @@
         "pk": "E2309AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "2309",
             "name": "Uruc\u00e2nia - Carioca"
         }
@@ -1864,7 +1864,7 @@
         "pk": "E2310AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "2310",
             "name": "Bangu - Candel\u00e1ria"
         }
@@ -1874,7 +1874,7 @@
         "pk": "E2332AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "2332",
             "name": "Campo Grande - Castelo"
         }
@@ -1884,7 +1884,7 @@
         "pk": "E2334AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "2334",
             "name": "Campo Grande - Castelo"
         }
@@ -1894,7 +1894,7 @@
         "pk": "E2334AAV0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "SV2334",
             "name": "Campo Grande - Castelo"
         }
@@ -1904,7 +1904,7 @@
         "pk": "E2335AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "2335",
             "name": "Santa Cruz - Castelo"
         }
@@ -1914,7 +1914,7 @@
         "pk": "E2336AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "2336",
             "name": "Campo Grande - Castelo"
         }
@@ -1924,7 +1924,7 @@
         "pk": "E2337AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "2337",
             "name": "Santa Cruz - Castelo"
         }
@@ -1934,7 +1934,7 @@
         "pk": "E2338AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "2338",
             "name": "Campo Grande - Castelo"
         }
@@ -1944,7 +1944,7 @@
         "pk": "E2339AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "2339",
             "name": "Campo Grande - Castelo"
         }
@@ -1954,7 +1954,7 @@
         "pk": "E2380AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "2380",
             "name": "Jardim Maravilha - Castelo"
         }
@@ -1964,7 +1964,7 @@
         "pk": "E2381AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "2381",
             "name": "Pedra de Guaratiba - Castelo"
         }
@@ -1974,7 +1974,7 @@
         "pk": "E2381AAV0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "SV2381",
             "name": "Pedra de Guaratiba - Castelo"
         }
@@ -1984,7 +1984,7 @@
         "pk": "E2383AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "2383",
             "name": "Sepetiba - Carioca"
         }
@@ -1994,7 +1994,7 @@
         "pk": "E2801AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "2801",
             "name": "Campo Grande - Barra da Tijuca"
         }
@@ -2004,7 +2004,7 @@
         "pk": "E2802AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "2802",
             "name": "Santa Cruz - Barra da Tijuca"
         }
@@ -2014,7 +2014,7 @@
         "pk": "E2803AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "2803",
             "name": "Vila Kennedy - Alvorada"
         }
@@ -2024,7 +2024,7 @@
         "pk": "E2804AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "2804",
             "name": "Bangu - Barra da Tijuca"
         }
@@ -2034,7 +2034,7 @@
         "pk": "O0300AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "300",
             "name": "Sulacap - Candel\u00e1ria"
         }
@@ -2044,7 +2044,7 @@
         "pk": "O0369AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "369",
             "name": "Bangu - Candel\u00e1ria"
         }
@@ -2054,7 +2054,7 @@
         "pk": "O0379AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "379",
             "name": "Catiri - Tiradentes"
         }
@@ -2064,7 +2064,7 @@
         "pk": "O0383AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "383",
             "name": "Realengo - Pra\u00e7a da Rep\u00fablica"
         }
@@ -2074,7 +2074,7 @@
         "pk": "O0388AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "388",
             "name": "Santa Cruz - Candel\u00e1ria"
         }
@@ -2084,7 +2084,7 @@
         "pk": "O0389AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "389",
             "name": "Vila Alian\u00e7a - Candel\u00e1ria"
         }
@@ -2094,7 +2094,7 @@
         "pk": "O0393AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "393",
             "name": "Bangu - Candel\u00e1ria"
         }
@@ -2104,7 +2104,7 @@
         "pk": "O0394AAV0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "SV394",
             "name": "Vila Kennedy - Tiradentes"
         }
@@ -2114,7 +2114,7 @@
         "pk": "O0395AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "395",
             "name": "Coqueiros - Tiradentes"
         }
@@ -2124,7 +2124,7 @@
         "pk": "O0397AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "397",
             "name": "Campo Grande - Candel\u00e1ria"
         }
@@ -2134,7 +2134,7 @@
         "pk": "O0731AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "731",
             "name": "Campo Grande - Marechal Hermes"
         }
@@ -2144,7 +2144,7 @@
         "pk": "O0741AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "741",
             "name": "Barata - Bangu"
         }
@@ -2154,7 +2154,7 @@
         "pk": "O0743AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "743",
             "name": "Barata - Bangu"
         }
@@ -2164,7 +2164,7 @@
         "pk": "O0745AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "745",
             "name": "Bangu - Cascadura"
         }
@@ -2174,7 +2174,7 @@
         "pk": "O0746AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "746",
             "name": "Jabour - Cascadura"
         }
@@ -2184,7 +2184,7 @@
         "pk": "O0752AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "752",
             "name": "Conjunto dos Palmares - Coelho Neto"
         }
@@ -2194,7 +2194,7 @@
         "pk": "O0756AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "756",
             "name": "Santa Cruz - Coelho Neto"
         }
@@ -2204,7 +2204,7 @@
         "pk": "O0759AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "759",
             "name": "Cesar\u00e3o - Coelho Neto"
         }
@@ -2214,7 +2214,7 @@
         "pk": "O0770AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "770",
             "name": "Campo Grande - Coelho Neto"
         }
@@ -2224,7 +2224,7 @@
         "pk": "O0771AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "771",
             "name": "Campo Grande - Coelho Neto"
         }
@@ -2234,7 +2234,7 @@
         "pk": "O0777AAV0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "SV777",
             "name": "Padre Miguel - Madureira"
         }
@@ -2244,7 +2244,7 @@
         "pk": "O0786AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "786",
             "name": "Campo Grande - Marechal Hermes"
         }
@@ -2254,7 +2254,7 @@
         "pk": "O0790AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "790",
             "name": "Campo Grande - Cascadura"
         }
@@ -2264,7 +2264,7 @@
         "pk": "O0790AAV0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "SV790",
             "name": "Campo Grande - Cascadura"
         }
@@ -2274,7 +2274,7 @@
         "pk": "O0794AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "794",
             "name": "Bangu - Cascadura"
         }
@@ -2284,7 +2284,7 @@
         "pk": "O0801AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "801",
             "name": "Bangu - Taquara"
         }
@@ -2294,7 +2294,7 @@
         "pk": "O0801AAP0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "SP801",
             "name": "Bangu - Terminal Sulacap"
         }
@@ -2304,7 +2304,7 @@
         "pk": "O0802AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "802",
             "name": "Bangu - Campo Grande"
         }
@@ -2314,7 +2314,7 @@
         "pk": "O0803AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "803",
             "name": "Senador Camar\u00e1 - Taquara"
         }
@@ -2324,7 +2324,7 @@
         "pk": "O0803AAP0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "SP803",
             "name": "Senador Camar\u00e1 - Sulacap"
         }
@@ -2334,7 +2334,7 @@
         "pk": "O0804AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "804",
             "name": "Largo do Aar\u00e3o - Campo Grande"
         }
@@ -2344,7 +2344,7 @@
         "pk": "O0812AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "812",
             "name": "Carobinha - Bangu"
         }
@@ -2354,7 +2354,7 @@
         "pk": "O0819AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "819",
             "name": "Jardim Bangu - Bangu"
         }
@@ -2364,7 +2364,7 @@
         "pk": "O0821AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "821",
             "name": "Campo Grande - Corcundinha"
         }
@@ -2374,7 +2374,7 @@
         "pk": "O0822AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "822",
             "name": "Campo Grande - Corcundinha"
         }
@@ -2384,7 +2384,7 @@
         "pk": "O0834AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "834",
             "name": "Alhambra - Campo Grande"
         }
@@ -2394,7 +2394,7 @@
         "pk": "O0835AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "835",
             "name": "Largo do Correia - Campo Grande"
         }
@@ -2404,7 +2404,7 @@
         "pk": "O0836AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "836",
             "name": "Caboclos - Campo Grande"
         }
@@ -2414,7 +2414,7 @@
         "pk": "O0837AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "837",
             "name": "Conjunto da Marinha - Campo Grande"
         }
@@ -2424,7 +2424,7 @@
         "pk": "O0838AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "838",
             "name": "Jardim Maravilha - Campo Grande"
         }
@@ -2434,7 +2434,7 @@
         "pk": "O0840AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "840",
             "name": "S\u00e3o Fernando - Campo Grande"
         }
@@ -2444,7 +2444,7 @@
         "pk": "O0843AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "843",
             "name": "Boa Esperan\u00e7a - Campo Grande"
         }
@@ -2454,7 +2454,7 @@
         "pk": "O0845AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "845",
             "name": "Cantagalo - Campo Grande"
         }
@@ -2464,7 +2464,7 @@
         "pk": "O0846AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "846",
             "name": "Rio da Prata - Campo Grande"
         }
@@ -2474,7 +2474,7 @@
         "pk": "O0847AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "847",
             "name": "Rio da Prata - Campo Grande"
         }
@@ -2484,7 +2484,7 @@
         "pk": "O0848AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "848",
             "name": "Bairro Monte Santo - Campo Grande"
         }
@@ -2494,7 +2494,7 @@
         "pk": "O0849AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "849",
             "name": "Base A\u00e9rea de Santa Cruz - Campo Grande"
         }
@@ -2504,7 +2504,7 @@
         "pk": "O0851AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "851",
             "name": "Campo Grande - Escola Amazonas"
         }
@@ -2514,7 +2514,7 @@
         "pk": "O0852AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "852",
             "name": "Campo Grande - Pedra de Guaratiba"
         }
@@ -2524,7 +2524,7 @@
         "pk": "O0853AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "853",
             "name": "Vila Kennedy - Esta\u00e7\u00e3o BRT Mato Alto"
         }
@@ -2534,7 +2534,7 @@
         "pk": "O0853AAV0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "SV853",
             "name": "Vila Kennedy - Esta\u00e7\u00e3o BRT Mato Alto"
         }
@@ -2544,7 +2544,7 @@
         "pk": "O0864AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "864",
             "name": "Bangu - Campo Grande"
         }
@@ -2554,7 +2554,7 @@
         "pk": "O0866AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "866",
             "name": "Campo Grande - Pedra de Guaratiba"
         }
@@ -2564,7 +2564,7 @@
         "pk": "O0866AAV0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "SV866",
             "name": "Cinco Marias - Campo Grande"
         }
@@ -2574,7 +2574,7 @@
         "pk": "O0867AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "867",
             "name": "Barra de Guaratiba - Campo Grande"
         }
@@ -2584,7 +2584,7 @@
         "pk": "O0868AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "868",
             "name": "Uruc\u00e2nia - Campo Grande"
         }
@@ -2594,7 +2594,7 @@
         "pk": "O0869AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "869",
             "name": "Santa Margarida - Campo Grande"
         }
@@ -2604,7 +2604,7 @@
         "pk": "O0870AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "870",
             "name": "Sepetiba - Santa Cruz"
         }
@@ -2614,7 +2614,7 @@
         "pk": "O0871AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "871",
             "name": "Sepetiba - Esta\u00e7\u00e3o Cesar\u00e3o III"
         }
@@ -2624,7 +2624,7 @@
         "pk": "O0883AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "883",
             "name": "Bangu - Esta\u00e7\u00e3o Mato Alto"
         }
@@ -2634,7 +2634,7 @@
         "pk": "O0884AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "884",
             "name": "Sepetiba - Campo Grande"
         }
@@ -2644,7 +2644,7 @@
         "pk": "O0892AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "892",
             "name": "S\u00e3o Benedito - Santa Cruz"
         }
@@ -2654,7 +2654,7 @@
         "pk": "O0893AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "893",
             "name": "Jardim Palmares - Campo Grande"
         }
@@ -2664,7 +2664,7 @@
         "pk": "O0895AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "895",
             "name": "Serrinha - Campo Grande"
         }
@@ -2674,7 +2674,7 @@
         "pk": "O0897AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "897",
             "name": "Paci\u00eancia - Pingo D'\u00c1gua"
         }
@@ -2684,7 +2684,7 @@
         "pk": "O0918AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "918",
             "name": "Bangu - Bonsucesso"
         }
@@ -2694,7 +2694,7 @@
         "pk": "O0926AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "926",
             "name": "Senador Camar\u00e1 - Penha"
         }
@@ -2704,7 +2704,7 @@
         "pk": "O0936AAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "936",
             "name": "Campo Grande - Cidade Universit\u00e1ria"
         }
@@ -2714,7 +2714,7 @@
         "pk": "O0006AAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "006",
             "name": "Silvestre - Castelo"
         }
@@ -2724,7 +2724,7 @@
         "pk": "O0007AAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "007",
             "name": "Silvestre - Central"
         }
@@ -2734,7 +2734,7 @@
         "pk": "O0010AAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "010",
             "name": "Bairro de F\u00e1tima - Central"
         }
@@ -2744,7 +2744,7 @@
         "pk": "O0014AAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "014",
             "name": "Paula Matos - Castelo"
         }
@@ -2754,7 +2754,7 @@
         "pk": "O0100AAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "100",
             "name": "General Os\u00f3rio - Central"
         }
@@ -2764,7 +2764,7 @@
         "pk": "O0104AAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "104",
             "name": "S\u00e3o Conrado - Rodovi\u00e1ria"
         }
@@ -2774,7 +2774,7 @@
         "pk": "O0105AAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "105",
             "name": "Alto G\u00e1vea - Central"
         }
@@ -2784,7 +2784,7 @@
         "pk": "O0107AAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "107",
             "name": "Central - Urca"
         }
@@ -2794,7 +2794,7 @@
         "pk": "O0108AAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "108",
             "name": "Jardim de Alah - Rodovi\u00e1ria"
         }
@@ -2804,7 +2804,7 @@
         "pk": "O0110AAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "110",
             "name": "Rodovi\u00e1ria - Jardim de Alah"
         }
@@ -2814,7 +2814,7 @@
         "pk": "O0112AAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "112",
             "name": "Rodovi\u00e1ria - Alto G\u00e1vea"
         }
@@ -2824,7 +2824,7 @@
         "pk": "O0117AAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "117",
             "name": "Central - Cosme Velho"
         }
@@ -2834,7 +2834,7 @@
         "pk": "O0133AAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "133",
             "name": "Largo do Machado - Rodovi\u00e1ria"
         }
@@ -2844,7 +2844,7 @@
         "pk": "O0181AAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "181",
             "name": "Rodovi\u00e1ria - S\u00e3o Conrado"
         }
@@ -2854,7 +2854,7 @@
         "pk": "O0201AAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "201",
             "name": "Santa Alexandrina - Castelo"
         }
@@ -2864,7 +2864,7 @@
         "pk": "O0202AAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "202",
             "name": "Rio Comprido - Castelo"
         }
@@ -2874,7 +2874,7 @@
         "pk": "O0209AAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "209",
             "name": "Est\u00e1cio - Caju"
         }
@@ -2884,7 +2884,7 @@
         "pk": "O0210AAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "210",
             "name": "Caju - Candel\u00e1ria"
         }
@@ -2894,7 +2894,7 @@
         "pk": "O0217AAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "217",
             "name": "Andara\u00ed - Carioca"
         }
@@ -2904,7 +2904,7 @@
         "pk": "O0220AAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "220",
             "name": "Usina - Candel\u00e1ria"
         }
@@ -2914,7 +2914,7 @@
         "pk": "O0275AAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "275",
             "name": "M\u00e9ier - Candel\u00e1ria"
         }
@@ -2924,7 +2924,7 @@
         "pk": "O0410AAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "410",
             "name": "Saens Pe\u00f1a - G\u00e1vea"
         }
@@ -2934,7 +2934,7 @@
         "pk": "O0415AAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "415",
             "name": "Usina - Leblon"
         }
@@ -2944,7 +2944,7 @@
         "pk": "O0422AAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "422",
             "name": "Graja\u00fa - Cosme Velho"
         }
@@ -2954,7 +2954,7 @@
         "pk": "O0426AAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "426",
             "name": "Usina - Jardim de Alah"
         }
@@ -2964,7 +2964,7 @@
         "pk": "O0432AAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "432",
             "name": "Vila Isabel - G\u00e1vea"
         }
@@ -2974,7 +2974,7 @@
         "pk": "O0433AAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "433",
             "name": "Vila Isabel - Prado J\u00fanior"
         }
@@ -2984,7 +2984,7 @@
         "pk": "O0435AAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "435",
             "name": "Graja\u00fa - G\u00e1vea"
         }
@@ -2994,7 +2994,7 @@
         "pk": "O0439AAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "439",
             "name": "Vila Isabel - Leblon"
         }
@@ -3004,7 +3004,7 @@
         "pk": "O0440AAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "440",
             "name": "Caju - Copacabana"
         }
@@ -3014,7 +3014,7 @@
         "pk": "O0444AAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "444",
             "name": "Mar\u00e9 - Copacabana"
         }
@@ -3024,7 +3024,7 @@
         "pk": "O0448AAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "448",
             "name": "Maraca\u00ed - S\u00e3o Conrado"
         }
@@ -3034,7 +3034,7 @@
         "pk": "O0460AAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "460",
             "name": "S\u00e3o Crist\u00f3v\u00e3o - Leblon"
         }
@@ -3044,7 +3044,7 @@
         "pk": "O0461AAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "461",
             "name": "S\u00e3o Crist\u00f3v\u00e3o - Ipanema"
         }
@@ -3054,7 +3054,7 @@
         "pk": "O0462AAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "462",
             "name": "S\u00e3o Crist\u00f3v\u00e3o - Copacabana"
         }
@@ -3064,7 +3064,7 @@
         "pk": "O0463AAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "463",
             "name": "S\u00e3o Crist\u00f3v\u00e3o - Copacabana"
         }
@@ -3074,7 +3074,7 @@
         "pk": "O0472AAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "472",
             "name": "Triagem - Leme"
         }
@@ -3084,7 +3084,7 @@
         "pk": "O0473AAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "473",
             "name": "S\u00e3o Janu\u00e1rio - Lido"
         }
@@ -3094,7 +3094,7 @@
         "pk": "O0474AAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "474",
             "name": "Jacar\u00e9 - Copacabana"
         }
@@ -3104,7 +3104,7 @@
         "pk": "O0474AAV0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "SV474",
             "name": "Jacar\u00e9 - Copacabana"
         }
@@ -3114,7 +3114,7 @@
         "pk": "O0476AAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "476",
             "name": "M\u00e9ier - Leblon"
         }
@@ -3124,7 +3124,7 @@
         "pk": "O0507AAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "507",
             "name": "Silvestre - Largo do Machado"
         }
@@ -3134,7 +3134,7 @@
         "pk": "O0513AAP0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "SP513",
             "name": "Urca - Botafogo"
         }
@@ -3144,7 +3144,7 @@
         "pk": "O0538AAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "538",
             "name": "Rocinha - Leme"
         }
@@ -3154,7 +3154,7 @@
         "pk": "O0539AAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "539",
             "name": "Rocinha - Leme"
         }
@@ -3164,7 +3164,7 @@
         "pk": "O0548AAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "548",
             "name": "Metr\u00f4 Botafogo - Alvorada"
         }
@@ -3174,7 +3174,7 @@
         "pk": "O0552AAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "552",
             "name": "Rio Sul - Alvorada"
         }
@@ -3184,7 +3184,7 @@
         "pk": "O0553AAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "553",
             "name": "Rio Sul - Recreio"
         }
@@ -3194,7 +3194,7 @@
         "pk": "O0553AAP0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "SP553",
             "name": "Rio Sul - Barra Sul"
         }
@@ -3204,7 +3204,7 @@
         "pk": "O0554AAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "554",
             "name": "Rio Sul - Piabas"
         }
@@ -3214,7 +3214,7 @@
         "pk": "O0558AAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "558",
             "name": "Copacabana - Cidade de Deus"
         }
@@ -3224,7 +3224,7 @@
         "pk": "O0583AAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "583",
             "name": "Cosme Velho - Leblon"
         }
@@ -3234,7 +3234,7 @@
         "pk": "O0584AAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "584",
             "name": "Cosme Velho - Leblon"
         }
@@ -3244,7 +3244,7 @@
         "pk": "O0603AAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "603",
             "name": "Usina - Saens Pe\u00f1a"
         }
@@ -3254,7 +3254,7 @@
         "pk": "O0608AAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "608",
             "name": "Graja\u00fa - Saens Pe\u00f1a"
         }
@@ -3264,7 +3264,7 @@
         "pk": "O0626AAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "626",
             "name": "Saens Pe\u00f1a - Muda"
         }
@@ -3274,7 +3274,7 @@
         "pk": "O0498AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "498",
             "name": "Circular da Penha - Largo do Machado"
         }
@@ -3284,7 +3284,7 @@
         "pk": "O0335AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "335",
             "name": "Cordovil - Tiradentes"
         }
@@ -3294,7 +3294,7 @@
         "pk": "O0485AAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "485",
             "name": "Penha - General Os\u00f3rio"
         }
@@ -3304,7 +3304,7 @@
         "pk": "O0416AAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "416",
             "name": "Saens Pe\u00f1a - Jardim Bot\u00e2nico"
         }
@@ -3314,7 +3314,7 @@
         "pk": "O0917AAV0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "SV917",
             "name": "Realengo - Bonsucesso"
         }
@@ -3324,7 +3324,7 @@
         "pk": "O0036CAA0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "LECD36",
             "name": "Mari\u00f3polis - Pra\u00e7a da Bandeira"
         }
@@ -3334,7 +3334,7 @@
         "pk": "O0805AAP0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "SP805",
             "name": "Alvorada - Pra\u00e7a Euvaldo Lodi"
         }
@@ -3344,7 +3344,7 @@
         "pk": "O0554AAPAA",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "SPA554",
             "name": "Piabas - Alvorada"
         }
@@ -3354,7 +3354,7 @@
         "pk": "O0554AAPBA",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "SPB554",
             "name": "Piabas - Jardim Oce\u00e2nico"
         }
@@ -3364,7 +3364,7 @@
         "pk": "O0550AAP0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "SP550",
             "name": "Cidade de Deus - Rocinha"
         }
@@ -3374,7 +3374,7 @@
         "pk": "O0565AAP0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "SP565",
             "name": "Estrada do Gabinal - G\u00e1vea"
         }
@@ -3384,7 +3384,7 @@
         "pk": "O0613AAPBA",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "SPB613",
             "name": "Centro Metropolitano - Del Castilho"
         }
@@ -3394,7 +3394,7 @@
         "pk": "O0692AAP0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "SP692",
             "name": "Freguesia - M\u00e9ier"
         }
@@ -3404,7 +3404,7 @@
         "pk": "O0766AAP0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "SP766",
             "name": "Tr\u00eas Rios - Madureira"
         }
@@ -3414,7 +3414,7 @@
         "pk": "O0900AAP0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "SP900",
             "name": "Merck - Downtown"
         }
@@ -3424,7 +3424,7 @@
         "pk": "O0483AAV0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "SV483",
             "name": "General Os\u00f3rio - Penha"
         }
@@ -3434,7 +3434,7 @@
         "pk": "O0483AAPAA",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "SPA483",
             "name": "Fiocruz - General Os\u00f3rio"
         }
@@ -3444,7 +3444,7 @@
         "pk": "O0483AAPBA",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "SPB483",
             "name": "Parque Uni\u00e3o - General Os\u00f3rio"
         }
@@ -3454,7 +3454,7 @@
         "pk": "O0756AAP0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "SP756",
             "name": "Mendanha - Coelho Neto"
         }
@@ -3464,7 +3464,7 @@
         "pk": "O0752AAP0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "SP752",
             "name": "Vila Kennedy - Coelho Neto"
         }
@@ -3474,7 +3474,7 @@
         "pk": "O0309AAP0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "SP309",
             "name": "S\u00e3o Conrado - Central"
         }
@@ -3484,7 +3484,7 @@
         "pk": "O0315AAP0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "SP315",
             "name": "Vila do Jo\u00e3o - Recreio dos Bandeirantes"
         }
@@ -3494,7 +3494,7 @@
         "pk": "O0922AAV0A",
         "fields": {
             "agency": 22003,
-            "mode": "O",
+            "mode": 3,
             "initials": "SV922",
             "name": "Tubiacanga - Fund\u00e3o"
         }
@@ -3504,7 +3504,7 @@
         "pk": "O0361AAP0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "SP361",
             "name": "Gard\u00eania Azul - Castelo"
         }
@@ -3514,7 +3514,7 @@
         "pk": "O0037CAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "LECD37",
             "name": "Mar\u00e9 - Leblon"
         }
@@ -3524,7 +3524,7 @@
         "pk": "O0038CAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "LECD38",
             "name": "Alvorada - Saens Pe\u00f1a"
         }
@@ -3534,7 +3534,7 @@
         "pk": "O0039CAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "LECD39",
             "name": "Piabas - Vargem Grande"
         }
@@ -3544,7 +3544,7 @@
         "pk": "O0040CAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "LECD40",
             "name": "Taquara - Alvorada"
         }
@@ -3554,7 +3554,7 @@
         "pk": "O0041CAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "LECD41",
             "name": "Vila do Jo\u00e3o - Alvorada"
         }
@@ -3564,7 +3564,7 @@
         "pk": "O0042CAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "LECD42",
             "name": "Merck - Jardim Oce\u00e2nico"
         }
@@ -3574,7 +3574,7 @@
         "pk": "O0043CAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "LECD43",
             "name": "Gard\u00eania Azul - Pechincha"
         }
@@ -3584,7 +3584,7 @@
         "pk": "O0044CAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "LECD44",
             "name": "Salim - Campo Grande"
         }
@@ -3594,7 +3594,7 @@
         "pk": "O0045CAA0A",
         "fields": {
             "agency": 22004,
-            "mode": "O",
+            "mode": 3,
             "initials": "LECD45",
             "name": "Terminal Recreio - Barra de Guaratiba"
         }
@@ -3604,7 +3604,7 @@
         "pk": "O0046CAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "LECD46",
             "name": "Sepetiba - Coelho Neto"
         }
@@ -3614,7 +3614,7 @@
         "pk": "O0047CAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "LECD47",
             "name": "Campo Grande - Terminal Sulacap"
         }
@@ -3624,7 +3624,7 @@
         "pk": "O0048CAA0A",
         "fields": {
             "agency": 22005,
-            "mode": "O",
+            "mode": 3,
             "initials": "LECD48",
             "name": "West Shopping - Terminal Sulacap"
         }
@@ -3634,7 +3634,7 @@
         "pk": "O0049CAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "LECD49",
             "name": "G\u00e1vea (PUC) - Castelo"
         }
@@ -3644,7 +3644,7 @@
         "pk": "O0050CAA0A",
         "fields": {
             "agency": 22002,
-            "mode": "O",
+            "mode": 3,
             "initials": "LECD50",
             "name": "Vila Isabel - Pra\u00e7a Saens Pe\u00f1a"
         }
