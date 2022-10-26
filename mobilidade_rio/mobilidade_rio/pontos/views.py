@@ -1,3 +1,4 @@
+from tracemalloc import stop
 from django.db.models.manager import BaseManager
 from rest_framework import viewsets
 from rest_framework import permissions
@@ -93,6 +94,9 @@ class SequenceViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         queryset = Sequence.objects.all().order_by("id")
         trip_id = self.request.query_params.get('trip_id')
+        stop_id = self.request.query_params.get('stop_id')
         if trip_id is not None:
             queryset = queryset.filter(trip=trip_id).order_by("order")
+        if stop_id is not None:
+            queryset = queryset.filter(stop=stop_id).order_by("order")
         return queryset
