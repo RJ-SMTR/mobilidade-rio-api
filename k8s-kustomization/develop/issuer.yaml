@@ -1,0 +1,15 @@
+apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+  name: letsencrypt-develop
+  namespace: meta-dados-rio
+spec:
+  acme:
+    email: gsperim@gmail.com
+    server: https://acme-v02.api.letsencrypt.org/directory
+    privateKeySecretRef:
+      name: letsencrypt-develop
+    solvers:
+      - http01:
+          ingress:
+            class: nginx

@@ -1,0 +1,10 @@
+# Estratégia para múltiplos enviroments
+# https://kubectl.docs.kubernetes.io/guides/example/multi_base/
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  # - ./k8s-kustomization/staging
+  # - ./k8s-kustomization/production
+  - ./k8s-kustomization/${MY_ENV}
+
+namePrefix: smtr-

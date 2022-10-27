@@ -12,7 +12,18 @@ cidade do Rio de Janeiro.
 
 ## Desenvolvimento
 
-[Adicionar instruções]
+```sh
+kubectl exec -it -n mobilidade-v2-develop deploy/smtr-dev-mobilidade-api -- /bin/bash
+```
+
+## Staging
+### Acessando o ambiente
+
+Para acessar o ambiente de Staging localmente, rode:
+
+```sh
+kubectl exec -it -n mobilidade-v2-staging deploy/smtr-stag-mobilidade-api -- /bin/bash
+```
 
 ## Produção
 ### Acessando o ambiente

@@ -1,0 +1,108 @@
+name: Deploy to staging
+
+on:
+  push:
+    branches:
+      - "release/*"
+
+env:
+  PROJECT_ID: ${{ secrets.GKE_PROJECT }}
+  GKE_CLUSTER: ${{ secrets.GKE_CLUSTER_NAME }}
+  GKE_ZONE: us-central1-c
+  IMAGE: mobilidade-rio-api
+
+jobs:
+  before:
+    name: Check for dependency installation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.8.x"
+          architecture: "x64"
+      - name: Install dependencies
+        run: pip install wheel && pip install --prefer-binary -r mobilidade_rio/requirements.txt
+
+  tests:
+    needs: before
+    name: ${{ matrix.os }}${{ matrix.arch }} - Python ${{ matrix.python-version }} - tests
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        arch: [x64]
+        python-version: ["3.8.x"]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+          architecture: ${{ matrix.arch }}
+      - name: Install dependencies
+        run: pip install wheel && pip install --prefer-binary -r mobilidade_rio/requirements.txt
+      - name: Run tests
+        run: |
+          cd mobilidade_rio/ && python3 manage.py test --settings=mobilidade_rio.settings.base
+  lint:
+    needs: before
+    name: Dockerfiles linting
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Run hadolint
+        uses: reviewdog/action-hadolint@v1
+        with:
+          hadolint_ignore: DL3008
+          reporter: github-pr-review
+
+  build:
+    needs: [lint, tests]
+    name: Build and update deployments
+    if: github.ref == 'refs/heads/dev'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Google Cloud CLI
+        uses: google-github-actions/setup-gcloud@v0.2.1
+        with:
+          service_account_key: ${{ secrets.GKE_SA_KEY }}
+          project_id: ${{ secrets.GKE_PROJECT }}
+
+      - name: Configure Docker with gcloud
+        run: |-
+          gcloud --quiet auth configure-docker
+
+      - name: Get GKE credentials
+        uses: google-github-actions/get-gke-credentials@v0.2.1
+        with:
+          cluster_name: ${{ env.GKE_CLUSTER }}
+          location: ${{ env.GKE_ZONE }}
+          credentials: ${{ secrets.GKE_SA_KEY }}
+
+      - name: Build Docker image
+        run: |-
+          cd mobilidade_rio/
+          docker build \
+            --tag "gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA" \
+            .
+
+      - name: Publish Docker image
+        run: |-
+          docker push "gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA"
+
+      - name: Set up Kustomize
+        run: |-
+          curl -sfLo kustomize https://github.com/kubernetes-sigs/kustomize/releases/download/v3.1.0/kustomize_3.1.0_linux_amd64
+          chmod u+x ./kustomize
+
+      - name: Deploy
+        run: |-
+          ./kustomize edit set image gcr.io/PROJECT_ID/IMAGE_API:TAG=gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA
+          ./kustomize build . | kubectl apply -n mobilidade-v2-staging -f -
+          kubectl get services -n mobilidade-v2-staging -o wide
