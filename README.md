@@ -6,17 +6,64 @@ cidade do Rio de Janeiro.
 
 ## Requerimentos
 
-- Docker
-- Python >=3.9
-- Kubernetes (produção), ver [como configurar local](todo-add-link-library)
+* Docker <= 20.10.20 `build 9fdeb9c`
+* Python >=3.9
+
+Para desenvolvimento:
+* Windows ou Linux
+  > não foi testado no macOS
+
+Para produção:
+* Linux
+* Kubernetes
+  > instruções a adicionar
 
 ## Desenvolvimento
 
-```sh
-kubectl exec -it -n mobilidade-v2-develop deploy/smtr-dev-mobilidade-api -- /bin/bash
+### Configurar o projeto
+
+```
+docker compose build
 ```
 
+### Rodar projeto
+
+```
+docker compose up
+```
+
+Atenção:
+
+O Dockerfile e startup.sh ainda não estão 100%, portanto é normal ver avisos como os abaixo:
+
+```
+...
+: not found  | /django/startup.sh: 6:
+django_hd    | /django/startup.sh: 7: source: not found
+: not found  | /django/startup.sh: 7:
+...
+Enviroment variable 'mobilidade_rio' is not defined, by default 'dev' settings wil be used.
+
+...
+```
+
+### Testar o servidor
+
+**Na máquina real:**
+
+Django: `localhost:8010`
+
+Postgres: `localhost:5433`
+
+**Nos contêineres:**
+
+Django: `localhost:8000`
+
+Postgres: `localhost:5432`
+
+
 ## Staging
+
 ### Acessando o ambiente
 
 Para acessar o ambiente de Staging localmente, rode:
