@@ -20,7 +20,10 @@ COPY . .
 RUN /env/bin/python manage.py collectstatic --no-input --settings=mobilidade_rio.settings.base && \
   chown -R www-data:www-data /app
 
-# Expose and run app
+
+# Expose
 EXPOSE 80
 STOPSIGNAL SIGTERM
-CMD ["/app/start-server.sh"]
+
+# Run commands 
+CMD ["/bin/sh", "-c", "/app/startup.sh"]
