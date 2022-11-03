@@ -20,6 +20,8 @@ COPY . .
 RUN /env/bin/python manage.py collectstatic --no-input --settings=mobilidade_rio.settings.base && \
   chown -R www-data:www-data /app
 
+#use django dev settings
+ENV  mobilidade_rio="dev"
 
 # Expose
 EXPOSE 80

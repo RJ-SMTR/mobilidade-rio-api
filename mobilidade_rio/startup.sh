@@ -11,8 +11,6 @@
 (
     echo 'hello startup.sh';
     cd /app;
-    # echo 'files:'; ls -a;
-    source .env;
     python manage.py makemigrations;
     python manage.py migrate;
     python manage.py runserver 0.0.0.0:8000;

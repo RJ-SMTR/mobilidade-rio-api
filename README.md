@@ -20,47 +20,11 @@ Para produção:
 
 ## Desenvolvimento
 
-### Configurar o projeto
+Para rodar projeto localmente
 
+```sh
+docker compose up --build -d
 ```
-docker compose build
-```
-
-### Rodar projeto
-
-```
-docker compose up
-```
-
-Atenção:
-
-O Dockerfile e startup.sh ainda não estão 100%, portanto é normal ver avisos como os abaixo:
-
-```
-...
-: not found  | /django/startup.sh: 6:
-django_hd    | /django/startup.sh: 7: source: not found
-: not found  | /django/startup.sh: 7:
-...
-Enviroment variable 'mobilidade_rio' is not defined, by default 'dev' settings wil be used.
-
-...
-```
-
-### Testar o servidor
-
-**Na máquina real:**
-
-Django: `localhost:8010`
-
-Postgres: `localhost:5433`
-
-**Nos contêineres:**
-
-Django: `localhost:8000`
-
-Postgres: `localhost:5432`
-
 
 ## Staging
 
