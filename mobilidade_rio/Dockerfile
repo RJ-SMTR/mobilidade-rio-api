@@ -20,8 +20,16 @@ COPY . .
 RUN /env/bin/python manage.py collectstatic --no-input --settings=mobilidade_rio.settings.base && \
   chown -R www-data:www-data /app
 
-#use django dev settings
-ENV  mobilidade_rio="dev"
+# env
+ENV mobilidade_rio="dev"
+ENV DB_NAME="postgres"
+ENV DB_USER="postgres"
+ENV DB_PASSWORD="postgres"
+ENV DB_HOST="db"
+ENV DB_PORT=3306
+
+## debug
+ENV DOCKERFILE=1
 
 # Expose
 EXPOSE 80
