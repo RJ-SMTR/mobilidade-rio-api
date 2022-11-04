@@ -28,4 +28,4 @@ EXPOSE 80
 STOPSIGNAL SIGTERM
 
 # Run commands 
-CMD ["/bin/sh", "-c", "/app/startup.sh"]
+CMD ["/bin/bash", "-c", "'python manage.py runserver'"]
