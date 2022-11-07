@@ -6,12 +6,12 @@ cidade do Rio de Janeiro.
 
 ## Requerimentos
 
-* Docker <= 20.10.20 `build 9fdeb9c`
-* Python >=3.9
+* Windows, Linux ou macOS
+* Docker >= 20.10.20
+  * https://www.docker.com/
 
 Para desenvolvimento:
-* Windows ou Linux
-  > não foi testado no macOS
+* Python >=3.9
 
 Para produção:
 * Linux
@@ -20,29 +20,43 @@ Para produção:
 
 ## Desenvolvimento
 
+Rodando o projeto pela primeira vez  
+ou caso altere o `models.py`:
+
+```sh
+docker exec -it django_hd bash
+python manage.py makemigrations
+python manage.py migrate
+```
+
 Para rodar projeto localmente
 
 ```sh
 docker compose up --build -d
 ```
 
-## Staging
 
-### Acessando o ambiente
+### Banco de dados
+
+Sempre que fizer alterações no `models.py` é necessário dar:
+
+```
+docker exec -it django_hd bash
+python manage.py makemigrations
+python manage.py migrate
+```
+
+> É necessário rodar desta forma pois há perguntas de segurança que não são respondidas automaticamente.
+
+
+## Produção
+
+### Acessar o ambiente
 
 Para acessar o ambiente de Staging localmente, rode:
 
 ```sh
 kubectl exec -it -n mobilidade-v2-staging deploy/smtr-stag-mobilidade-api -- /bin/bash
-```
-
-## Produção
-### Acessando o ambiente
-
-Para acessar o ambiente de produção localmente, rode:
-
-```sh
-kubectl exec -it -n mobilidade-v2 deploy/mobilidade-api -- /bin/bash
 ```
 
 ### Como subir dados
