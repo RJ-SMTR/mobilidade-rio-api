@@ -20,12 +20,13 @@ import os
 from .utils import _yellow, _reset
 
 project_name = "mobilidade_rio"
+default_settings = "test"
 
-# if none, warn and use dev
+# if none, warn and use default
 if os.getenv(project_name) is None:
    warn(
 f"""{_yellow}
-Enviroment variable '{project_name}' is not defined, by default 'dev' settings wil be used.
+Enviroment variable '{project_name}' is not defined, by default '{default_settings}' settings wil be used.
 
 How to set enviroment variables:
 bash: export {project_name}="prod"
@@ -33,15 +34,20 @@ PS:   $env:{project_name}="prod"
 CMD:  set {project_name}=prod
 {_reset}"""
    , stacklevel=3)
-
-# prod
-elif os.environ[project_name] == 'prod':
-   from .prod import *
+   os.environ[project_name] = default_settings
 
 # test
 elif os.environ[project_name] == 'test':
    from .test import *
 
-# if any other, use dev
-else:
+# dev
+elif os.environ[project_name] == 'dev':
    from .dev import *
+
+# prod
+elif os.environ[project_name] == 'prod':
+   from .prod import *
+
+# if any other, use test anyway
+else:
+   from .test import *
