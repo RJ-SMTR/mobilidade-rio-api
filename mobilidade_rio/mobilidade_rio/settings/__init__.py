@@ -17,10 +17,9 @@ set site1=dev
 from warnings import warn
 from .base import *
 import os
+from .utils import _yellow, _reset
 
 project_name = "mobilidade_rio"
-_yellow = "\x1b[33;20m"
-_reset = "\x1b[0m"
 
 # if none, warn and use dev
 if os.getenv(project_name) is None:
