@@ -20,6 +20,8 @@ Para produção:
 
 ## Desenvolvimento
 
+Certifique-se de estar na pasta `mobilidade_rio` para executar os comandos.
+
 Rodando o projeto pela primeira vez  
 ou caso altere o `models.py`:
 
