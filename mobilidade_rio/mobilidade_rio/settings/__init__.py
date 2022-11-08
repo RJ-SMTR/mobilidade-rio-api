@@ -32,12 +32,15 @@ bash: export {project_name}="prod"
 PS:   $env:{project_name}="prod"
 CMD:  set {project_name}=prod
 {_reset}"""
-   )
-   from .dev import *
+   , stacklevel=3)
 
 # prod
 elif os.environ[project_name] == 'prod':
    from .prod import *
+
+# test
+elif os.environ[project_name] == 'test':
+   from .test import *
 
 # if any other, use dev
 else:
