@@ -42,7 +42,7 @@ db_params = {
 script_params = {
     'csv_path': csv_path,
     'table_prefix': 'pontos_',
-    'header': 'true',
+    'empty_table': 'false',
 }
 
 
@@ -77,10 +77,26 @@ cur = conn.cursor()
 
 for file in os.listdir(script_params['csv_path']):
     if file.endswith('.csv'):
+        # remove all elements from table, but not the table itself
+        if script_params['empty_table'] == 'true':
+            cur.execute(f"TRUNCATE TABLE {get_table_name(file.split('.')[0])};")
+            conn.commit()
+
         with open(os.path.join(script_params['csv_path'], file), 'r') as f:
-            next(f)  # Skip the header row.
-            cur.copy_from(f, get_table_name(
-                file.split('.')[0]),
-                sep=','
-                if script_params['header'] == 'true' else None
-            )
+            # copy and use the first line as header, without variable script_params['header']
+            copy_sql = f"""
+                COPY {get_table_name(file.replace('.csv', ''))}
+                FROM STDIN
+                CSV HEADER
+                DELIMITER AS ','
+                ;"""
+            
+            cur.copy_expert(copy_sql, f)
+            conn.commit()
+
+            # # 
+            # next(f)  # Skip the header row.
+            # cur.copy_from(f, get_table_name(
+            #     file.split('.')[0]),
+            #     sep=',',
+            # )
