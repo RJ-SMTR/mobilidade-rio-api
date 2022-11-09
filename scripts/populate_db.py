@@ -141,7 +141,6 @@ for table_name in file_list:
         with open(file_path, 'r', encoding="utf8") as f:
             cols = f.readline().strip().split(',')
 
-
             try:
                 # Read null values (string or number)
                 cur.copy_from(f, table_name, sep=',', null='', columns=cols)
