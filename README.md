@@ -50,6 +50,32 @@ python manage.py migrate
 
 > É necessário rodar desta forma pois há perguntas de segurança que não são respondidas automaticamente.
 
+### Populando banco
+
+Para popular o banco use o script `/scripts/populate_db.py`.
+
+O servidor postgres está configurado na porta `5433`, então você deve executar o script com os seguintes parâmetros:
+
+```
+python3 scripts/populate_db.py --port 5433 --user postgres
+```
+
+As configurações padrão e demais opções podem ser vistas no próprio script ou executando:
+
+```
+python3 scripts/populate_db.py --help
+```
+
+* O nome das colunas do CSV devem ser iguais aos da tabela.
+  * É possível adicionar um prefixo, porém 
+* A ordem dos arquivos (que pode ser definida também no script) é importante, pois há dependências entre as tabelas.
+
+TODO:
+* Tentar corrigir colunas csv automaticamente
+  > O algoritmo nem sempre consegue achar a coluna certa, mas para erros simples como `nome` e `nome_`, por exemplo, é possível corrigir automaticamente.
+  
+* Ler subpastas e usar como prefixo (módulos django) de cada tabela
+  > Ex.: `./scripts/csv_files/pontos/agency.csv` -> `pontos_agency.csv`
 
 ## Produção
 
