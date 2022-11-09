@@ -84,7 +84,7 @@ class SequenceViewSet(viewsets.ModelViewSet):
         trip_id = self.request.query_params.get('trip')
         stop_id = self.request.query_params.get('stop')
         if trip_id is not None:
-            queryset = queryset.filter(trip_id=trip_id).order_by("order")
+            queryset = queryset.filter(trip_id=trip_id).order_by("stop_sequence")
         if stop_id is not None:
-            queryset = queryset.filter(stop_id=stop_id).order_by("order")
+            queryset = queryset.filter(stop_id=stop_id).order_by("stop_sequence")
         return queryset

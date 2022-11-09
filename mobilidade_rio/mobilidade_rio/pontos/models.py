@@ -51,7 +51,7 @@ class Stop_times (models.Model):
     id = models.CharField(max_length=50, primary_key=True)
     trip_id = models.ForeignKey(Trip, on_delete=models.CASCADE)
     stop_id = models.ForeignKey(Stop, on_delete=models.CASCADE)
-    order = models.IntegerField()
+    stop_sequence = models.IntegerField()
 
     def __str__(self):
         return f"Sequência {self.trip_id} - {self.stop_id} - {self.order}"

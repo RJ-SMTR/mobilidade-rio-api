@@ -47,4 +47,4 @@ class SequenceSerializer (serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Stop_times
-        fields = ('url', 'trip_id', 'stop_id', 'order')
+        fields = ('url', 'trip_id', 'stop_id', 'stop_sequence')
