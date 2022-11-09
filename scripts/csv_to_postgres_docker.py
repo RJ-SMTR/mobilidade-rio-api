@@ -66,7 +66,6 @@ for key in script_params.keys():
         if arg.startswith('--' + key + '='):
             script_params[key] = arg.split('=')[1]
 
-print("params: ", db_params)
 
 # Conect to the database
 
