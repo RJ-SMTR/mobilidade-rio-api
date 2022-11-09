@@ -7,21 +7,30 @@ How to use:
 
 - Run script 
 
-Parameters (optional):
-    --host
-    --port
-    --user
-    --password
-    --database
+"""
 
-    --table_prefix
-    --csv_path
-    --header
+parameters = \
+"""\
+--host
+--port
+--user
+--password
+--database
+--csv_path
+--table_prefix
+--header
 """
 
 import os
 import sys
 import psycopg2
+
+# print help if --help or -h
+
+if '--help' in sys.argv or '-h' in sys.argv:
+    print("parameters:")
+    print(parameters)
+    sys.exit(0)
 
 # Current script path
 
@@ -78,19 +87,24 @@ for file in os.listdir(script_params['csv_path']):
     if file.endswith('.csv'):
         # remove all elements from table, but not the table itself
         if script_params['empty_table'] == 'true':
-            cur.execute(f"TRUNCATE TABLE {get_table_name(file.split('.')[0])};")
+            cur.execute(f"TRUNCATE TABLE {get_table_name(file.split('.')[0])} CASCADE;")
             conn.commit()
 
         with open(os.path.join(script_params['csv_path'], file), 'r') as f:
+            # get first line of csv and get a list of collumns
+            header = f.readline()
+            # (stop,code)
+            cur.copy_from(f, get_table_name(file.split('.')[0]), sep=',')
             # copy and use the first line as header, without variable script_params['header']
             copy_sql = f"""
-                COPY {get_table_name(file.replace('.csv', ''))}
+                COPY {get_table_name(file.replace('.csv', ''))} ({header})
                 FROM STDIN
-                CSV HEADER
                 DELIMITER AS ','
                 ;"""
             
             cur.copy_expert(copy_sql, f)
+            cur.copy_from(f, get_table_name(file.replace('.csv', '')), sep=',', columns=header)
+            cur.copy_to(f, get_table_name(file.replace('.csv', '')), sep=',', columns=header)
             conn.commit()
 
             # # 
