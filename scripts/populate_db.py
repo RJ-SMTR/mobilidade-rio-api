@@ -101,6 +101,10 @@ def treat_data(data_str, table_name):
     # get first line
     first = data_str.split()
 
+def get_db_cols(table_name, cursor):
+    cursor.execute(f"SELECT column_name FROM information_schema.columns WHERE table_name = '{table_name}'")
+    return [col[0] for col in cursor.fetchall()]
+
 # Conect to the database
 
 conn = psycopg2.connect(**db_params)
@@ -122,6 +126,7 @@ file_list = _table_order
 
 # Clear tables if --empty_table
 if 'empty_table' in flag_params:
+    print("Clearing tables")
     for table_name in file_list:
         cur.execute(f"TRUNCATE {get_table_name(table_name)} CASCADE")
         conn.commit()
@@ -135,7 +140,7 @@ for table_name in file_list:
     if 'no_insert' not in flag_params:
         with open(file_path, 'r', encoding="utf8") as f:
             cols = f.readline().strip().split(',')
-            print(cols)
+
 
             try:
                 # Read null values (string or number)
@@ -148,6 +153,9 @@ for table_name in file_list:
                     cur.copy_expert(f"COPY {table_name} ({','.join(cols)}) FROM STDIN DELIMITER ',' CSV;", f)
                     conn.commit()
                 except Exception as e:
-                    print(e)
+                    print("csv collumns:\n",cols)
+                    conn.rollback()
+                    db_cols = get_db_cols(table_name, cur)
+                    print("db collumns:\n", db_cols)
                     exit(1)
             
