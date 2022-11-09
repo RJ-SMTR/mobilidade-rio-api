@@ -67,13 +67,14 @@ python3 scripts/populate_db.py --help
 ```
 
 * O nome das colunas do CSV devem ser iguais aos da tabela.
-  * É possível adicionar um prefixo, porém 
+  * É possível adicionar um prefixo, porém ele se aplica a todas as tabelas.
+ 
 * A ordem dos arquivos (que pode ser definida também no script) é importante, pois há dependências entre as tabelas.
 
 TODO:
 * Tentar corrigir colunas csv automaticamente
   > O algoritmo nem sempre consegue achar a coluna certa, mas para erros simples como `nome` e `nome_`, por exemplo, é possível corrigir automaticamente.
-  
+
 * Ler subpastas e usar como prefixo (módulos django) de cada tabela
   > Ex.: `./scripts/csv_files/pontos/agency.csv` -> `pontos_agency.csv`
 
