@@ -50,33 +50,94 @@ python manage.py migrate
 
 > É necessário rodar desta forma pois há perguntas de segurança que não são respondidas automaticamente.
 
-### Populando banco
+### Populando o banco
 
-Para popular o banco use o script `/scripts/populate_db.py`.
+Para popular o banco use o script `scripts/populate_db/populate_db.py`.
 
-O servidor postgres está configurado na porta `5433`, então você deve executar o script com os seguintes parâmetros:
+> Só funciona com o postgres.
+
+Dependências:
+
+```sh
+pip install -r scripts/populate_db/requirements.txt
+```
+
+**Configurando o script**
+
+O script possui argumentos, para ver a lista de argumentos veja os script ou use:
 
 ```
-python3 scripts/populate_db.py --port 5433 --user postgres
+python3 scripts/populate_db/populate_db.py --help
 ```
 
-As configurações padrão e demais opções podem ser vistas no próprio script ou executando:
+As configurações padrão estão no próprio script.
 
-```
-python3 scripts/populate_db.py --help
-```
+Para editar as configurações use o arquivo `settings.jsonc`, na mesma pasta do script.  
+Veja o arquivo `settings.example.jsonc` para ver como configurar.
+
+**Arquivos CSV**
+
+Os arquivos CSV devem estar na pasta `scripts/populate_db/csv_files`.
+
+O script irá popular tabelas Django, que ficam dentro de apps, por exemplo: `my_app.table_1`.
+
+Seguindo este padrão, os arquivos CSV devem estar dentro de pastas com o nome do app, por exemplo:
+  
+  ```
+  csv_files
+  ├── my_app
+  │   ├── table_1.csv
+  │   └── table_2.csv
+  └── other_app
+      └── table_1.csv
+  ```
+
+**Sintaxe dos arquivos CSV**
 
 * O nome das colunas do CSV devem ser iguais aos da tabela.
-  * É possível adicionar um prefixo, porém ele se aplica a todas as tabelas.
  
-* A ordem dos arquivos (que pode ser definida também no script) é importante, pois há dependências entre as tabelas.
+* A ordem dos arquivos e pastas é importante, pois há dependências entre as tabelas. (configurável em `settings.jsonc`)
 
-TODO:
-* Tentar corrigir colunas csv automaticamente
-  > O algoritmo nem sempre consegue achar a coluna certa, mas para erros simples como `nome` e `nome_`, por exemplo, é possível corrigir automaticamente.
+**Ordem das tabelas e dependências**
 
-* Ler subpastas e usar como prefixo (módulos django) de cada tabela
-  > Ex.: `./scripts/csv_files/pontos/agency.csv` -> `pontos_agency.csv`
+> A ordem das tabelas é configurável em `settings.jsonc`.
+
+Se não for configurado, a ordem padrão é a ordem alfabética, padrão do Python.
+
+Com a configuração, é possível evitar erros de dependência:
+
+```jsonc
+"table_order": {
+    "pontos": ["ponto", "placa"],
+    "linhas": ["linha"],
+}
+```
+
+Resultado:
+```
+1. pontos_ponto
+2. pontos_placa
+3. linhas_linha
+```
+
+É possível preencher os dados de uma pasta, pular para outra e voltar para a primeira. Isto resolve as dependências entre tabelas, mesmo que não estejam na mesma pasta:
+
+```python
+table_order = {
+    "pontos": ["ponto", "placa"],
+    "linhas": ["linha"],
+    "pontos": ["parada"],
+}
+```
+
+Resultado:
+```
+1. pontos_ponto
+2. pontos_placa
+3. linhas_linha
+4. pontos_parada
+```
+
 
 ## Produção
 
