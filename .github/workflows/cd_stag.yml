@@ -63,7 +63,7 @@ jobs:
   build:
     needs: [lint, tests]
     name: Build and update deployments
-    if: github.ref == 'refs/heads/release/*'
+    if: github.ref == 'refs/heads/release/staging'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
