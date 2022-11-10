@@ -104,8 +104,6 @@ flag_params = [
     'no_insert',
 ]
 
-# Convert back to list
-# table_order = script_params['table_order'].split(',')
 
 # if file exists
 file_path = os.path.join(local_path, "settings.jsonc")
@@ -113,11 +111,15 @@ if os.path.isfile(file_path):
     with open(file_path, 'r') as f:
         settings = json5_loads(f.read())
     # Update settings
+    if 'db_params' in settings:
+        db_params.update(settings['db_params'])
     db_params.update(settings.get('db_params', {}))
-    table_order.update(settings.get('table_order', {}))
+    # Replace table_order with settings
+    if 'table_order' in settings:
+        table_order = settings.get('table_order', table_order)
 else:
     print("No settings.jsonc file found, using default settings.")
-
+exit()
 # Parameters
 
 # print help if --help or -h
