@@ -1,0 +1,27 @@
+// JSONC format, so you can comment
+{
+    "db_params": {
+        "host ": "localhost",
+        // changed
+        "port": "5433",
+        "user": "postgres",
+        "password": "postgres",
+        "database": "postgres"
+    },
+
+    "table_order": {
+        "pontos": [
+            "agency",
+            "route",
+            "trip",
+            "stop",
+            "qrcode",
+            "stop_tst"
+            // "stop_times"
+        ],
+        "pontos_test": [
+            "agency",
+            "route"
+        ]
+    }
+}
