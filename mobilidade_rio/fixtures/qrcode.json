@@ -241,14 +241,6 @@
     },
     {
         "model": "pontos.qrcode",
-        "pk": 30,
-        "fields": {
-            "stop": "t2u9",
-            "code": "CZ9H"
-        }
-    },
-    {
-        "model": "pontos.qrcode",
         "pk": 31,
         "fields": {
             "stop": "3061O00018C0",
