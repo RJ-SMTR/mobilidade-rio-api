@@ -1,12 +1,15 @@
 from django.contrib import admin
-from mobilidade_rio.pontos.models import Agency, Route, Stop, QrCode, Trip, Stop_times
+from mobilidade_rio.pontos.models import *
 
 admin.site.register(Agency)
-admin.site.register(Route)
-admin.site.register(Stop)
-admin.site.register(QrCode)
-admin.site.register(Trip)
-admin.site.register(Stop_times)
+admin.site.register(Calendar)
+admin.site.register(CalendarDates)
+admin.site.register(Routes)
+admin.site.register(Trips)
+admin.site.register(Shapes)
+admin.site.register(Stops)
+admin.site.register(StopTimes)
+admin.site.register(Frequencies)
 admin.site.site_header = "App QR-Code"
 
 

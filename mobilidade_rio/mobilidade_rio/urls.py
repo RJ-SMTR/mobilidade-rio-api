@@ -7,20 +7,23 @@ from rest_framework import routers
 from mobilidade_rio.pontos import views
 
 router = routers.DefaultRouter()
-router.register(r'agency', views.AgencyViewSet)
-router.register(r'route', views.RouteViewSet)
-router.register(r'trip', views.TripViewSet, basename='trip')
-router.register(r'stop', views.StopViewSet, basename='stop')
-router.register(r'qrcode', views.QrCodeViewSet, basename='qrcode')
-router.register(r'stop_times', views.SequenceViewSet, basename='stop_times')
+router.register(r"agency", views.AgencyViewSet)
+router.register(r"calendar", views.CalendarViewSet)
+router.register(r"calendar_dates", views.CalendarDatesViewSet)
+router.register(r"routes", views.RoutesViewSet)
+router.register(r"trips", views.TripsViewSet, basename="trips")
+router.register(r"shapes", views.ShapesViewSet)
+router.register(r"stops", views.StopsViewSet, basename="stops")
+router.register(r"stop_times", views.StopTimesViewSet, basename="stop_times")
+router.register(r"frequencies", views.FrequenciesViewSet)
 
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
-    path('', include(router.urls)),
-    path('admin/', admin.site.urls),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    url(r'^auth/', include('djoser.urls')),
-    url(r'^auth/', include('djoser.urls.authtoken')),
+    path("", include(router.urls)),
+    path("admin/", admin.site.urls),
+    path("api-auth/", include("rest_framework.urls", namespace="rest_framework")),
+    url(r"^auth/", include("djoser.urls")),
+    url(r"^auth/", include("djoser.urls.authtoken")),
 ]

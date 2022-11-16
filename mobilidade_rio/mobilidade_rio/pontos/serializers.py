@@ -1,50 +1,56 @@
-from mobilidade_rio.pontos.models import Agency, Route, Stop, QrCode, Trip, Stop_times
+from mobilidade_rio.pontos.models import *
 from rest_framework import serializers
 
-class StopSerializer (serializers.HyperlinkedModelSerializer):
-    
-    class Meta:
-        model = Stop
-        fields = ('url', 'stop_id', 'stop_name', 'stop_lat',
-                  'stop_lat', 'stop_lon')
 
-#troquei stop_id por stop add stopserializaer
-class QrCodeSerializer (serializers.HyperlinkedModelSerializer):
-    stop_id = StopSerializer(read_only=True)
-
-    class Meta:
-        model = QrCode
-        fields = ('url', 'stop_code', 'stop_id')
-        
-
-class AgencySerializer (serializers.HyperlinkedModelSerializer):
+class AgencySerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Agency
-        fields = ('url', 'agency_id', 'agency_name')
+        fields = "__all__"
 
 
-class RouteSerializer (serializers.HyperlinkedModelSerializer):
-    agency_id = AgencySerializer(read_only=True)
-    
-    
+class CalendarSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = Route
-        fields = ('url', 'route_id', 'agency_id',
-                  'route_type', 'route_short_name', 'route_long_name')
+        model = Calendar
+        fields = "__all__"
 
 
-class TripSerializer (serializers.HyperlinkedModelSerializer):
-    route_id = RouteSerializer(read_only=True)
-
+class CalendarDatesSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = Trip
-        fields = ('url', 'trip_id', 'route_id', 'trip_headsign', 'direction_id')
+        model = CalendarDates
+        fields = "__all__"
 
 
-class SequenceSerializer (serializers.HyperlinkedModelSerializer):
-    trip_id = TripSerializer(read_only=True)
-    stop_id = StopSerializer(read_only=True)
-
+class RoutesSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = Stop_times
-        fields = ('url', 'trip_id', 'stop_id', 'order')
+        model = Routes
+        fields = "__all__"
+
+
+class TripsSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Trips
+        fields = "__all__"
+
+
+class ShapesSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Shapes
+        fields = "__all__"
+
+
+class StopsSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Stops
+        fields = "__all__"
+
+
+class StopTimesSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = StopTimes
+        fields = "__all__"
+
+
+class FrequenciesSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Frequencies
+        fields = "__all__"
