@@ -25,7 +25,7 @@ def upload_data(app, model, flag_params):
 
     if os.path.isfile(file_path):
         if "empty_table" in flag_params:
-            print("Clearing tables...")
+            print(f"Clearing table {table_name} ...")
             cur.execute(f"TRUNCATE {table_name} CASCADE")
             conn.commit()
 
