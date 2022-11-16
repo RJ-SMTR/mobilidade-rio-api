@@ -45,6 +45,8 @@ class StopsSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class StopTimesSerializer(serializers.HyperlinkedModelSerializer):
+    url = serializers.HyperlinkedRelatedField(view_name="stop_times-detail", read_only=True)
+    
     class Meta:
         model = StopTimes
         fields = "__all__"
