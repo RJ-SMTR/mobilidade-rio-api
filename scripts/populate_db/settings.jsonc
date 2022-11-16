@@ -1,0 +1,27 @@
+{
+    "db_params": {
+        "host ": "localhost",
+        "port": "5433",
+        "user": "postgres",
+        "password": "postgres",
+        "database": "postgres"
+    },
+    "django_apps": {
+        "pontos": [
+            "agency",
+            "calendar_dates",
+            "calendar",
+            "frequencies",
+            "routes",
+            "shapes",
+            "stops",
+            "stop_times",
+            "trips",
+            "qrcode"
+        ]
+    },
+    "flag_params": [
+        "empty_table",
+        "no_insert"
+    ]
+}

@@ -1,145 +1,97 @@
+
 # mobilidade-rio-api
 
-API estática do aplicativo de
-[pontos.mobilidade.rio](http://pontos.mobilidade.rio) da Prefeitura da
-cidade do Rio de Janeiro.
+API estática do aplicativo de [pontos.mobilidade.rio](http://pontos.mobilidade.rio) da Prefeitura da cidade do Rio de Janeiro.
 
 ## Requerimentos
 
-* Windows, Linux ou macOS
-* Docker >= 20.10.20
-  * https://www.docker.com/
-
-Para desenvolvimento:
+* [Docker](https://www.docker.com/) (local), Kubernetes (produção)
 * Python >=3.9
-
-Para produção:
-* Linux
-* Kubernetes
-  > instruções a adicionar
 
 ## Desenvolvimento
 
-Certifique-se de estar na pasta `mobilidade_rio` para executar os comandos.
+### Iniciando o ambiente
 
-Rodando o projeto pela primeira vez  
-ou caso altere o `models.py`:
+```bash
+python -m venv .venv
+. .venv/bin/activate
+pip install -r requirements-dev.txt
+```
+
+### Criando a aplicação
 
 ```sh
-docker exec -it django_hd bash
-python manage.py makemigrations
-python manage.py migrate
+docker-compose -f ./mobilidade_rio/docker-compose.yml up --build
 ```
 
-Para rodar projeto localmente
+Os containers `django_hd` (API) e e`postgres_hd` (banco) são criados a
+partir desse comando. Você pode acessar a API em:
+`http://localhost:8010`
+
+> Para resetar a aplicação do zero, remova os containers e volumes
+> associados:
+>
+> ```sh
+> docker-compose -f ./mobilidade_rio/docker-compose.yml down -v && docker image prune -f
+> ```
+
+Para acessar o banco via linha de comando (ainda está vazio!), basta rodar:
 
 ```sh
-docker compose up --build -d
+docker exec -it postgres_hd psql -U postgres
 ```
 
-
-### Banco de dados
-
-Sempre que fizer alterações no `models.py` é necessário dar:
-
-```
-docker exec -it django_hd bash
-python manage.py makemigrations
-python manage.py migrate
-```
-
-> É necessário rodar desta forma pois há perguntas de segurança que não são respondidas automaticamente.
+> Veja mais sobre os comandos do psql [aqui](https://www.postgresql.org/docs/9.1/app-psql.html).
 
 ### Populando o banco
 
-Para popular o banco use o script `scripts/populate_db/populate_db.py`.
+1. Salve os arquivos do GTFS na pasta
+   [`scripts/populate_db/csv_files/pontos`](/scripts/populate_db/csv_files/pontos).
+   A estrutura deve seguir:
 
-> Só funciona com o postgres.
-
-Dependências:
-
-```sh
-pip install -r scripts/populate_db/requirements.txt
-```
-
-**Configurando o script**
-
-O script possui argumentos, para ver a lista de argumentos veja os script ou use:
-
-```
-python3 scripts/populate_db/populate_db.py --help
-```
-
-As configurações padrão estão no próprio script.
-
-Para editar as configurações use o arquivo `settings.jsonc`, na mesma pasta do script.  
-Veja o arquivo `settings.example.jsonc` para ver como configurar.
-
-**Arquivos CSV**
-
-Os arquivos CSV devem estar na pasta `scripts/populate_db/csv_files`.
-
-O script irá popular tabelas Django, que ficam dentro de apps, por exemplo: `my_app.table_1`.
-
-Seguindo este padrão, os arquivos CSV devem estar dentro de pastas com o nome do app, por exemplo:
-  
   ```
   csv_files
-  ├── my_app
-  │   ├── table_1.csv
-  │   └── table_2.csv
-  └── other_app
-      └── table_1.csv
+  ├── pontos
+  │   ├── agency.csv
+  │   ├── calendar_dates.csv
+  │   ├── calendar.csv
+  │   ├── routes.csv
+  │   ├── shapes.csv
+  │   ├── stop_times.csv
+  │   ├── stops.csv
+  │   ├── transfers.csv
+  │   └── trips.csv
   ```
 
-**Sintaxe dos arquivos CSV**
+2. Execute o upload dos dados:
 
-* O nome das colunas do CSV devem ser iguais aos da tabela.
- 
-* A ordem dos arquivos e pastas é importante, pois há dependências entre as tabelas. (configurável em `settings.jsonc`)
-
-**Ordem das tabelas e dependências**
-
-> A ordem das tabelas é configurável em `settings.jsonc`.
-
-Se não for configurado, a ordem padrão é a ordem alfabética, padrão do Python.
-
-Com a configuração, é possível evitar erros de dependência:
-
-```jsonc
-"table_order": {
-    "pontos": ["ponto", "placa"],
-    "linhas": ["linha"],
-}
+```sh
+python scripts/populate_db/populate_db.py --empty_table
 ```
 
-Resultado:
-```
-1. pontos_ponto
-2. pontos_placa
-3. linhas_linha
-```
+O arquivo `settings.jsonc` contém as configurações para popular o banco
+(nomes das tabelas, ordem, parâmetros para o upload).
+  
+  > **Os dados subiram?**
+  > Você pode listar as tabelas [pelo shell do
+  > Postgres](#acessando-o-banco-local) com o comando `\d`. Elas estarão nomeadas como `pontos_[model]` (ex: `pontos_agency`).
 
-É possível preencher os dados de uma pasta, pular para outra e voltar para a primeira. Isto resolve as dependências entre tabelas, mesmo que não estejam na mesma pasta:
+### Alterando os modelos
 
-```python
-table_order = {
-    "pontos": ["ponto", "placa"],
-    "linhas": ["linha"],
-    "pontos": ["parada"],
-}
-```
+<!-- TODO: Caso haja mudança em outros arquivos (urls, views, serializers, admin.py), essas tambem sao registradas via migrations? -->
 
-Resultado:
-```
-1. pontos_ponto
-2. pontos_placa
-3. linhas_linha
-4. pontos_parada
+Os modelos estão definidos em `mobilidade_rio/models.py`. Para registrar mudanças feitas nesse arquivo (migrações), rode:
+
+```sh
+python mobilidade_rio/manage.py makemigrations
+python mobilidade_rio/manage.py migrate
 ```
 
+> Esses comando são executados automaticamente quando o container é criado.
 
-## Produção
+Pronto! Basta acessar a API e ver os dados (ex: <http://localhost:8010/stops/?stop_code=7KKY>).
+
+## Produção (ATUALIZAR)
 
 ### Acessar o ambiente
 
@@ -155,7 +107,7 @@ No seu local, copie o novo `fixture` para o Kubernetes (veja
    `<pod-em-prod>` [aqui](todo-add-link-library)) rodando:
 
 ```sh
-$ kubectl cp mobilidade_rio/fixtures/<seu-fixture>.json mobilidade-v2/<pod-em-prod>:/app/fixtures/<seu-fixture>.json
+kubectl cp mobilidade_rio/fixtures/<seu-fixture>.json mobilidade-v2/<pod-em-prod>:/app/fixtures/<seu-fixture>.json
 ```
 
 > Você pode também copiar um `fixture` do Kubernetes para seu local trocando a
@@ -165,7 +117,7 @@ Agora seu `fixture` está armazenado em produção! Para subir os dados
 no banco, acesse o ambiente de produção e rode:
 
 ```sh
-$ python manage.py loaddata fixtures/<seu-fixture>.json
+python manage.py loaddata fixtures/<seu-fixture>.json
 ```
 
 ### Como deletar dados
@@ -173,7 +125,7 @@ $ python manage.py loaddata fixtures/<seu-fixture>.json
 Acesse o ambiente de produção e rode:
 
 ```sh
-$ python3 manage.py shell
+python3 manage.py shell
 ```
 
 Esse comando vai abrir um `shell` do Django. Em seguida, importe o
@@ -185,6 +137,7 @@ from mobilidade_rio.pontos.models import Sequence
 # exclui uma linha passando seu `trip_id`
 Sequence.objects.filter(trip=<trip_id>).delete()
 ```
+
 > Para deletar todos os dados de um modelo, use `.all()` ao invés de
 `.filter(...)`.
 
