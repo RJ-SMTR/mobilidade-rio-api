@@ -29,6 +29,7 @@ def upload_data(app, model, flag_params):
             cur.execute(f"TRUNCATE {table_name} CASCADE")
             conn.commit()
 
+        if "--no_insert" not in sys.argv:
         print(f"Inserting data into {table_name}...")
         with open(file_path, "r", encoding="utf8") as f:
             # try:
