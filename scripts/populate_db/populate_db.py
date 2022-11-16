@@ -10,6 +10,7 @@ How to use:
 
 parameters = """\
 --empty_table
+--no_dada
 """
 
 import os
@@ -30,23 +31,27 @@ def upload_data(app, model, flag_params):
             conn.commit()
 
         if "--no_insert" not in sys.argv:
-        print(f"Inserting data into {table_name}...")
-        with open(file_path, "r", encoding="utf8") as f:
-            # try:
-            # Read null values (string or number)
-            cols = f.readline().strip().split(",")
-            # cur.copy_from(f, table_name, sep=',', null='', columns=cols)
-            cur.copy_expert(
-                f"COPY {table_name} ({','.join(cols)}) FROM STDIN DELIMITER ',' CSV;", f
-            )
-            conn.commit()
-            # print(f"Done!")
-            # except Exception as e:
-            #     conn.rollback()
-            # try:
-            #     # Read string with comma (ex: "Rio de Janeiro, RJ")
-            #     cur.copy_expert(f"COPY {table_name} ({','.join(cols)}) FROM STDIN DELIMITER ',' CSV;", f)
-            #     conn.commit()
+            print(f"Inserting data into {table_name}...")
+            with open(file_path, "r", encoding="utf8") as f:
+                cols = f.readline().strip().split(",")
+                try:
+                    # Read null values (string or number)
+                    cur.copy_from(f, table_name, sep=",", null="", columns=cols)
+                    conn.commit()
+                except Exception as e:
+                    conn.rollback()
+                    try:
+                        # Read string with comma (ex: "Rio de Janeiro, RJ")
+                        cur.copy_expert(
+                            f"COPY {table_name} ({','.join(cols)}) FROM STDIN DELIMITER ',' CSV;", f
+                        )
+                        conn.commit()
+                    except:
+                        conn.rollback()
+                        print(f"Error inserting data into {table_name}...")
+                        print(e)
+                        exit(1)
+                    
 
 
 if __name__ == "__main__":
@@ -60,13 +65,13 @@ if __name__ == "__main__":
     local_path = os.path.dirname(os.path.abspath(__file__))
 
     csv_path = os.path.join(local_path, "csv_files")
-    file_path = os.path.join(local_path, "settings.jsonc")
+    file_path = os.path.join(local_path, "settings.json")
 
     try:
         with open(file_path, "r") as f:
             settings = json.load(f)
     except Exception as e:
-        raise "Couldn't find settings.jsonc file. Please create one and try again."
+        raise "Couldn't find settings.json file. Please create one and try again."
 
     for key in settings["db_params"].keys():
         for i, arg in enumerate(sys.argv):
@@ -94,10 +99,8 @@ if __name__ == "__main__":
                 model = model.split(".")[0]
 
                 if model in app_models:
-                    print(f"Uploading {model} data...")
                     upload_data(app, model, flag_params)
-                    print(f"Done uploading {model} data.")
         else:
             print(
-                f"Couldn't find {app} in settings.jsonc. Make sure you have the correct app name - should be a folder in mobilidade_rio/mobilidade_rio."
+                f"Couldn't find {app} in 'settings.json'. Make sure you have the correct app name - should be a folder in mobilidade_rio/mobilidade_rio."
             )
