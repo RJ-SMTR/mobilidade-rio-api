@@ -45,17 +45,6 @@
     },
     {
         "model": "pontos.trip",
-        "pk": "O0837AAA0ACDU01",
-        "fields": {
-            "route": "O0837AAA0A",
-            "headsign": "",
-            "via": "",
-            "version": "U01",
-            "direction": NaN
-        }
-    },
-    {
-        "model": "pontos.trip",
         "pk": "O0741AAA0ACDU02",
         "fields": {
             "route": "O0741AAA0A",
@@ -1548,28 +1537,6 @@
             "via": "",
             "version": "U02",
             "direction": 1.0
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "3665e9bb-2da4-4a67-a8ce-fef12b378ad2",
-        "fields": {
-            "route": "btwr",
-            "headsign": "",
-            "via": "",
-            "version": "4-4",
-            "direction": NaN
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "0373fd52-e961-45ea-afb2-5959b62d11e3",
-        "fields": {
-            "route": "btwr",
-            "headsign": "",
-            "via": "",
-            "version": "1-4",
-            "direction": NaN
         }
     },
     {
@@ -7107,17 +7074,6 @@
     },
     {
         "model": "pontos.trip",
-        "pk": "O0665AAVBAIDU01",
-        "fields": {
-            "route": "fzws",
-            "headsign": "Saens Pe\u00f1a",
-            "via": "",
-            "version": "U01",
-            "direction": NaN
-        }
-    },
-    {
-        "model": "pontos.trip",
         "pk": "O0010AAA0ACDU02",
         "fields": {
             "route": "O0010AAA0A",
@@ -7316,28 +7272,6 @@
     },
     {
         "model": "pontos.trip",
-        "pk": "O0669AAV0AVDU02",
-        "fields": {
-            "route": "r0ll",
-            "headsign": "Pavuna",
-            "via": "",
-            "version": "U02",
-            "direction": NaN
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0669AAV0AIDU02",
-        "fields": {
-            "route": "r0ll",
-            "headsign": "M\u00e9ier",
-            "via": "",
-            "version": "U02",
-            "direction": NaN
-        }
-    },
-    {
-        "model": "pontos.trip",
         "pk": "O0801AAP0AIDU01",
         "fields": {
             "route": "O0801AAP0A",
@@ -7400,17 +7334,6 @@
             "via": "",
             "version": "U02",
             "direction": 1.0
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0665AAVBAVDU01",
-        "fields": {
-            "route": "fzws",
-            "headsign": "Pavuna",
-            "via": "",
-            "version": "U01",
-            "direction": NaN
         }
     }
 ]
