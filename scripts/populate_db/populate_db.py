@@ -36,31 +36,23 @@ def upload_data(_app: str, _model: str, _flag_params: str):
     file_path_1 = os.path.join(folder, f"{_model}.txt")
 
     if os.path.isfile(file_path_1):
-        if "empty_table" in _flag_params:
-            print(f"Clearing table {table_name} ...")
-            cur.execute(f"TRUNCATE {table_name} CASCADE")
-            conn.commit()
-
+        
         if "--no_insert" not in sys.argv:
-            print(f"Inserting data into {table_name}...")
-            with open(file_path_1, "r", encoding="utf8") as f_1:
-                cols = f_1.readline().strip().split(",")
-                try:
-                    # Read null values (string or number)
-                    cur.copy_from(f_1, table_name, sep=",",
-                                  null="", columns=cols)
+            print(f"Table '{table_name}'  - ", end='')
+            with open(file_path_1, 'r', encoding="utf8") as f_1:
+                cols = f_1.readline().strip().split(',')
+
+                # clear table
+                if "empty_table" in _flag_params:
+                    print("clearing ", end='')
+                    cur.execute(f"TRUNCATE {table_name} CASCADE")
                     conn.commit()
-                finally:
-                    conn.rollback()
-                    try:
-                        # Read string with comma (ex: "Rio de Janeiro, RJ")
-                        cur.copy_expert(f"COPY {table_name} ({','.join(cols)}) \
-                                          FROM STDIN DELIMITER ',' CSV;", f_1)
-                        conn.commit()
-                    finally:
-                        conn.rollback()
-                        print(f"Error inserting data into {table_name}...")
-                        sys.exit(1)
+                # Read null values (string or number)
+                print("inserting ", end='')
+                cur.copy_expert(f"COPY {table_name} ({','.join(cols)}) \
+                                    FROM STDIN DELIMITER ',' CSV;", f_1)
+                conn.commit()
+    print("[OK]")
 
 
 if __name__ == "__main__":
