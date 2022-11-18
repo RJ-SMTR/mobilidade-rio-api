@@ -101,9 +101,9 @@ if __name__ == "__main__":
     # Update data from files in csv_path
     for app in os.listdir(csv_path):
 
-        if app in settings["django_apps"].keys():
+        if app in settings["table_order"].keys():
             folder = os.path.join(csv_path, app)
-            app_models = settings["django_apps"][app]
+            app_models = settings["table_order"][app]
 
             for model in os.listdir(folder):
                 model = model.split(".")[0]

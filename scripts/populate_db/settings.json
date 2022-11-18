@@ -6,7 +6,7 @@
         "password": "postgres",
         "database": "postgres"
     },
-    "django_apps": {
+    "table_order": {
         "pontos": [
             "agency",
             "calendar_dates",
