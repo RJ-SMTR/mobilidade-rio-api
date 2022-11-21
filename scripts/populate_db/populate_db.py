@@ -36,19 +36,21 @@ def upload_data(_app: str, _model: str, _flag_params: str):
     file_path_1 = os.path.join(folder, f"{_model}.txt")
 
     if os.path.isfile(file_path_1):
-        
+
         if "--no_insert" not in sys.argv:
-            print(f"Table '{table_name}'  - ", end='')
+            print(f"Table '{table_name}'")
             with open(file_path_1, 'r', encoding="utf8") as f_1:
                 cols = f_1.readline().strip().split(',')
 
                 # clear table
                 if "empty_table" in _flag_params:
-                    print("clearing ", end='')
+                    print("clearing ...")
                     cur.execute(f"TRUNCATE {table_name} CASCADE")
+                    # advanced execute
                     conn.commit()
                 # Read null values (string or number)
-                print("inserting ", end='')
+                print("inserting ...")
+                # copy with loading bar
                 cur.copy_expert(f"COPY {table_name} ({','.join(cols)}) \
                                     FROM STDIN DELIMITER ',' CSV;", f_1)
                 conn.commit()
