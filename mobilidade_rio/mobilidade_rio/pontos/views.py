@@ -1,5 +1,7 @@
-# from tracemalloc import stop
-from django.db.models.manager import BaseManager
+"""
+pontos.views - to serve API endpoints
+"""
+
 from rest_framework import viewsets
 from rest_framework import permissions
 from mobilidade_rio.pontos.models import *
@@ -10,30 +12,54 @@ from .serializers import *
 
 
 class AgencyViewSet(viewsets.ModelViewSet):
+
+    """
+    API endpoint to show agency data
+    """
+
     serializer_class = AgencySerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
     queryset = Agency.objects.all().order_by("agency_id")
 
 
 class CalendarViewSet(viewsets.ModelViewSet):
+
+    """
+    API endpoint to show calendar data
+    """
+
     serializer_class = CalendarSerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
     queryset = Calendar.objects.all().order_by("service_id")
 
 
 class CalendarDatesViewSet(viewsets.ModelViewSet):
+
+    """
+    API endpoint to show calendar data
+    """
+
     serializer_class = CalendarDatesSerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
     queryset = CalendarDates.objects.all().order_by("service_id")
 
 
 class RoutesViewSet(viewsets.ModelViewSet):
+
+    """
+    API endpoint to show routes data
+    """
+
     serializer_class = RoutesSerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
     queryset = Routes.objects.all().order_by("route_id")
 
 
 class TripsViewSet(viewsets.ModelViewSet):
+
+    """
+    API endpoint to show trips data
+    """
     serializer_class = TripsSerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
 
@@ -45,37 +71,41 @@ class TripsViewSet(viewsets.ModelViewSet):
             queryset = queryset.filter(trip_id=trip_id)
         return queryset
 
-
-#     #     if code is not None:
-#     #         qrcode: QrCode = None
-#     #         try:
-#     #             qrcode: QrCode = QrCode.objects.get(stop_code=code)
-#     #         except QrCode.DoesNotExist:
-#     #             return Trip.objects.none()
-#     #         sequence: BaseManager = Stop_times.objects.filter(stop_id=qrcode.stop_id)
-#     #         queryset = queryset.filter(trip_id__in=sequence.values_list('trip_id'))
+        # if code is not None:
+        #     qrcode: QrCode = None
+        #     try:
+        #         qrcode: QrCode = QrCode.objects.get(stop_code=code)
+        #     except QrCode.DoesNotExist:
+        #         return Trip.objects.none()
+        #     sequence: BaseManager = Stop_times.objects.filter(stop_id=qrcode.stop_id)
+        #     queryset = queryset.filter(trip_id__in=sequence.values_list('trip_id'))
 
 
 class ShapesViewSet(viewsets.ModelViewSet):
+
+    """
+    API endpoint to show shapes data
+    """
+
     serializer_class = ShapesSerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
     queryset = Shapes.objects.all().order_by("shape_id")
 
 
 class StopsViewSet(viewsets.ModelViewSet):
+
+    """
+    API endpoint to show stops data
+    """
+
     serializer_class = StopsSerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
 
     def get_queryset(self):
         queryset = Stops.objects.all().order_by("stop_id")
-        stop_code = self.request.query_params.get(
-            "stop_id"
-        )  # todo: trocar para stop_code quando preenchido
-
+        stop_code = self.request.query_params.get("stop_id")
         if stop_code is not None:
-            queryset = queryset.filter(stop_id=stop_code).order_by(
-                "stop_id"
-            )  # todo: trocar para stop_code quando preenchido
+            queryset = queryset.filter(stop_id=stop_code).order_by("stop_id")
 
         return queryset
 
@@ -96,6 +126,13 @@ class StopsViewSet(viewsets.ModelViewSet):
 
 
 class StopTimesViewSet(viewsets.ModelViewSet):
+
+    """
+    API endpoint to show stop_times data
+
+    get:
+        Return a list of all the existing stop_times.
+    """
     serializer_class = StopTimesSerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
 
@@ -144,18 +181,11 @@ class StopTimesViewSet(viewsets.ModelViewSet):
         return queryset
 
 
-#     # def get_queryset(self):
-#     #     queryset = Stop_times.objects.all().order_by("stop_id")
-#     #     trip_id = self.request.query_params.get('trip')
-#     #     stop_id = self.request.query_params.get('stop')
-#     #     if trip_id is not None:
-#     #         queryset = queryset.filter(trip_id=trip_id).order_by("order")
-#     #     if stop_id is not None:
-#     #         queryset = queryset.filter(stop_id=stop_id).order_by("order")
-#     #     return queryset
-
-
 class FrequenciesViewSet(viewsets.ModelViewSet):
+
+    """
+    API endpoint to show frequencies data
+    """
     serializer_class = FrequenciesSerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
     queryset = Frequencies.objects.all().order_by("trip_id")
