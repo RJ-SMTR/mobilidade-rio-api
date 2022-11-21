@@ -106,35 +106,41 @@ class StopTimesViewSet(viewsets.ModelViewSet):
         if 'stop_id' in self.request.query_params:
             stop_id = self.request.query_params.get('stop_id')
 
-        if stop_id is not None:
+        if stop_id is not None and len(stop_id):
             # get multiple stop_ids
+
+            # variables
+            table = 'pontos_stoptimes'
             stop_ids = stop_id.split(",")
-            stops = queryset.filter(stop_id__in=stop_ids)
+            stop_ids_formatted = tuple(stop_ids)
+            if len(stop_ids) == 1:
+                stop_ids_formatted = f"('{stop_id}')"
 
-            # If some stop_id from input is not in results, return empty
-            stop_id_list = stops.order_by("stop_id").values_list('stop_id', flat=True).distinct()
-            if len(stop_id_list) != len(stop_ids):
-                return queryset.none()
-            
-            # filter if trips passing by all stop_ids
-            trip_id_list = stops.order_by('trip_id').values_list('trip_id', flat=True).distinct()
-            trip_id_list = [str(trip_id) for trip_id in trip_id_list]
-            stops = stops.filter(trip_id__in=trip_id_list)
+            # select rows if stop_id in in <stop_ids>
+            q_stop_id = f"""
+            SELECT * FROM {table} WHERE stop_id IN {stop_ids_formatted}
+            """
 
-            # filter if trips passing by all stop_ids
-            stop_id_queries = [stops.filter(stop_id=_stop_id) for _stop_id in stop_ids]
-            for trip_id in list(trip_id_list):
-                for stop_query in stop_id_queries:
-                    query = stop_query.filter(trip_id=trip_id)
-                    if not query:
-                        trip_id_list.remove(trip_id)
-                        break
+            # select unique combinations of trip_id and stop_id
+            q_trip_ids = f"""
+            SELECT DISTINCT trip_id, stop_id FROM ({q_stop_id}) AS t1
+            """
 
-            queryset = stops.filter(trip_id__in=trip_id_list)
+            # select if trip_id combines with ALL stop_ids
+            q_trip_id_unique = f"""
+            SELECT DISTINCT trip_id FROM ({q_trip_ids}) AS t2
+            GROUP BY trip_id
+            HAVING COUNT(*) = {len(stop_ids)}
+            """
 
-            # order by
-            queryset = queryset.order_by("trip_id", "stop_sequence")
+            # select rows if trip_id in q_trip_id_unique
+            q = f"""
+            SELECT * FROM ({q_stop_id}) AS t3
+            WHERE trip_id IN ({q_trip_id_unique})
+            """
 
+            # execute query
+            queryset = queryset.raw(q)
         return queryset
 
 
