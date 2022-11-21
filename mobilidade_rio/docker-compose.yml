@@ -14,10 +14,11 @@ services:
     # command: python manage.py runserver 0.0.0.0:8000
     command: >
       bash -c "
-             python manage.py makemigrations --noinput 
-             python manage.py migrate
-             python manage.py runserver 0.0.0.0:8000
-             "
+        echo 'DOCKER_ENV: $TST_DOCKERFILE_ENV'
+        python manage.py makemigrations --noinput 
+        python manage.py migrate
+        python manage.py runserver 0.0.0.0:8000
+      "
 
   db:
     image: postgres

@@ -1,5 +1,8 @@
 FROM python:3.8-slim
 
+# install postgresql-client
+RUN apt-get update && apt-get install -y postgresql-client
+
 # Install virtualenv and create a virtual environment
 RUN pip install --no-cache-dir virtualenv==20.6.0 && virtualenv /env --python=python3.8
 ENV PATH /env/bin:$PATH
@@ -29,7 +32,7 @@ ENV DB_HOST="db"
 ENV DB_PORT=5432
 
 ## debug
-ENV TST_DOCKERFILE=1
+ENV TST_DOCKERFILE_ENV=1
 ENV PYTHONUNBUFFERED=1
 
 # Expose
