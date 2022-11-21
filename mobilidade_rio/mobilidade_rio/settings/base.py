@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'djoser',
     'mobilidade_rio.pontos',
+    'mobilidade_rio.predictor',
 ]
 
 MIDDLEWARE = [
