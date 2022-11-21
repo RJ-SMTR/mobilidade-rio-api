@@ -24,6 +24,9 @@ pip install -r requirements-dev.txt
 docker-compose -f ./mobilidade_rio/docker-compose.yml up --build
 ```
 
+* URLs for pontos are in `<site>/gtfs/<entity>` prefix;
+  > Example: `http://localhost:8000/gtfs/routes` instead of `http://localhost:8000/routes`
+
 Os containers `django_hd` (API) e e`postgres_hd` (banco) são criados a
 partir desse comando. Você pode acessar a API em:
 `http://localhost:8010`
