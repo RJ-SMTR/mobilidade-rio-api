@@ -129,9 +129,6 @@ class StopTimesViewSet(viewsets.ModelViewSet):
 
     """
     API endpoint to show stop_times data
-
-    get:
-        Return a list of all the existing stop_times.
     """
     serializer_class = StopTimesSerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
