@@ -13003,35 +13003,24 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "2036O00050S9",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 4,5,I: Gonzaga Bastos",
-            "address": "BRS 4,5,I: Gonzaga Bastos",
-            "latitude": "-22.915228",
-            "longitude": "-43.243439"
-        }
-    },
-    {
-        "model": "pontos.stop",
         "pk": "2036O00045S9",
         "fields": {
             "mode": 3,
-            "name": "BRS 2,6,7: Visconde de Abaet\u00e9",
-            "address": "BRS 2,6,7: Visconde de Abaet\u00e9",
+            "name": "BRS 4,5,I: Visconde de Abaet\u00e9",
+            "address": "BRS 4,5,I: Visconde de Abaet\u00e9",
             "latitude": "-22.91526",
             "longitude": "-43.24374"
         }
     },
     {
         "model": "pontos.stop",
-        "pk": "2036O00013S9",
+        "pk": "2036O00050S9",
         "fields": {
             "mode": 3,
-            "name": "BRS 4,5,I: Souza Franco",
-            "address": "BRS 4,5,I: Souza Franco",
-            "latitude": "-22.91577",
-            "longitude": "-43.24644"
+            "name": "BRS 2,6,7: Gonzaga Bastos",
+            "address": "BRS 2,6,7: Gonzaga Bastos",
+            "latitude": "-22.915228",
+            "longitude": "-43.243439"
         }
     },
     {
@@ -13219,6 +13208,17 @@
             "address": "BRS 2,6,7: Jos\u00e9 Vicente",
             "latitude": "-22.920008",
             "longitude": "-43.258301"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "2036O00013S9",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 2,4,5,6,7,I: Souza Franco",
+            "address": "BRS 2,4,5,6,7,I: Souza Franco",
+            "latitude": "-22.91577",
+            "longitude": "-43.24644"
         }
     },
     {
@@ -73459,6 +73459,17 @@
     },
     {
         "model": "pontos.stop",
+        "pk": "2036O00012S9",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 2,4,5,6,7,I: Hip\u00f3lito da Costa",
+            "address": "BRS 2,4,5,6,7,I: Hip\u00f3lito da Costa",
+            "latitude": "-22.91446",
+            "longitude": "-43.23969"
+        }
+    },
+    {
+        "model": "pontos.stop",
         "pk": "2035O00018S0",
         "fields": {
             "mode": 3,
@@ -73532,17 +73543,6 @@
             "address": "BRS 1,2,3,4,5,I: Gra\u00e7a Aranha",
             "latitude": "-22.906484",
             "longitude": "-43.175706"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "2036O00012S9",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 2,6,7: Hip\u00f3lito da Costa",
-            "address": "BRS 2,6,7: Hip\u00f3lito da Costa",
-            "latitude": "-22.91446",
-            "longitude": "-43.23969"
         }
     },
     {
@@ -97450,17 +97450,6 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "4122C00008C0",
-        "fields": {
-            "mode": 3,
-            "name": "Estrada Miguel Salazar Mendes de Moraes em frente ao Prezunic",
-            "address": "Estrada Miguel Salazar Mendes de Moraes em frente ao Prezunic",
-            "latitude": "-22.9431",
-            "longitude": "-43.36607"
-        }
-    },
-    {
-        "model": "pontos.stop",
         "pk": "4122L00251C0",
         "fields": {
             "mode": 3,
@@ -98964,6 +98953,17 @@
             "address": "Pedra de Ita\u00fana",
             "latitude": "-23.00295",
             "longitude": "-43.424"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "4122C00008C0",
+        "fields": {
+            "mode": 3,
+            "name": "Estrada Miguel Salazar Mendes de Moraes em frente ao Prezunic",
+            "address": "Estrada Miguel Salazar Mendes de Moraes em frente ao Prezunic",
+            "latitude": "-22.9431",
+            "longitude": "-43.366017"
         }
     }
 ]

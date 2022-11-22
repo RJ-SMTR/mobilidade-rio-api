@@ -163,213 +163,13 @@
         "model": "pontos.qrcode",
         "pk": 20,
         "fields": {
-            "stop": "2035O00028S9",
-            "code": "1BJG"
-        }
-    },
-    {
-        "model": "pontos.qrcode",
-        "pk": 21,
-        "fields": {
-            "stop": "2035O00039S9",
-            "code": "1EBQ"
-        }
-    },
-    {
-        "model": "pontos.qrcode",
-        "pk": 22,
-        "fields": {
-            "stop": "2036O00012S9",
-            "code": "1G30"
-        }
-    },
-    {
-        "model": "pontos.qrcode",
-        "pk": 23,
-        "fields": {
-            "stop": "2036O00050S9",
-            "code": "1LBP"
-        }
-    },
-    {
-        "model": "pontos.qrcode",
-        "pk": 24,
-        "fields": {
-            "stop": "2036O00045S9",
-            "code": "1LVC"
-        }
-    },
-    {
-        "model": "pontos.qrcode",
-        "pk": 25,
-        "fields": {
-            "stop": "2036O00013S9",
-            "code": "1T1W"
-        }
-    },
-    {
-        "model": "pontos.qrcode",
-        "pk": 26,
-        "fields": {
-            "stop": "2036O00051S9",
-            "code": "1VYH"
-        }
-    },
-    {
-        "model": "pontos.qrcode",
-        "pk": 27,
-        "fields": {
-            "stop": "2036O00052S9",
-            "code": "2DAX"
-        }
-    },
-    {
-        "model": "pontos.qrcode",
-        "pk": 28,
-        "fields": {
-            "stop": "2036O00014S9",
-            "code": "2HSG"
-        }
-    },
-    {
-        "model": "pontos.qrcode",
-        "pk": 29,
-        "fields": {
-            "stop": "2036O00015S9",
-            "code": "2L8R"
-        }
-    },
-    {
-        "model": "pontos.qrcode",
-        "pk": 30,
-        "fields": {
-            "stop": "2036O00053S9",
-            "code": "2L88"
-        }
-    },
-    {
-        "model": "pontos.qrcode",
-        "pk": 31,
-        "fields": {
-            "stop": "2036O00054S9",
-            "code": "2PVS"
-        }
-    },
-    {
-        "model": "pontos.qrcode",
-        "pk": 32,
-        "fields": {
-            "stop": "2036O00016S9",
-            "code": "2TDL"
-        }
-    },
-    {
-        "model": "pontos.qrcode",
-        "pk": 33,
-        "fields": {
-            "stop": "2036O00055S0",
-            "code": "Q3VX"
-        }
-    },
-    {
-        "model": "pontos.qrcode",
-        "pk": 34,
-        "fields": {
-            "stop": "2036O00001S9",
-            "code": "3A7T"
-        }
-    },
-    {
-        "model": "pontos.qrcode",
-        "pk": 35,
-        "fields": {
-            "stop": "2036O00043S9",
-            "code": "EN4C"
-        }
-    },
-    {
-        "model": "pontos.qrcode",
-        "pk": 36,
-        "fields": {
-            "stop": "2036O00002S9",
-            "code": "FFD3"
-        }
-    },
-    {
-        "model": "pontos.qrcode",
-        "pk": 37,
-        "fields": {
-            "stop": "2036O00003S9",
-            "code": "FL96"
-        }
-    },
-    {
-        "model": "pontos.qrcode",
-        "pk": 38,
-        "fields": {
-            "stop": "2036O00004S9",
-            "code": "3FP6"
-        }
-    },
-    {
-        "model": "pontos.qrcode",
-        "pk": 39,
-        "fields": {
-            "stop": "2036O00056S9",
-            "code": "3GJF"
-        }
-    },
-    {
-        "model": "pontos.qrcode",
-        "pk": 40,
-        "fields": {
-            "stop": "2036O00057S9",
-            "code": "3JH6"
-        }
-    },
-    {
-        "model": "pontos.qrcode",
-        "pk": 41,
-        "fields": {
-            "stop": "2036O00044S9",
-            "code": "FU3N"
-        }
-    },
-    {
-        "model": "pontos.qrcode",
-        "pk": 42,
-        "fields": {
-            "stop": "2036O00058S9",
-            "code": "FYF6"
-        }
-    },
-    {
-        "model": "pontos.qrcode",
-        "pk": 43,
-        "fields": {
-            "stop": "2036O00005S9",
-            "code": "G56G"
-        }
-    },
-    {
-        "model": "pontos.qrcode",
-        "pk": 44,
-        "fields": {
-            "stop": "2036O00006S9",
-            "code": "4AZE"
-        }
-    },
-    {
-        "model": "pontos.qrcode",
-        "pk": 45,
-        "fields": {
             "stop": "3061O00018C0",
             "code": "DQ2D"
         }
     },
     {
         "model": "pontos.qrcode",
-        "pk": 46,
+        "pk": 21,
         "fields": {
             "stop": "3061O00019C0",
             "code": "T5TT"
@@ -377,7 +177,7 @@
     },
     {
         "model": "pontos.qrcode",
-        "pk": 47,
+        "pk": 22,
         "fields": {
             "stop": "3061O00020C0",
             "code": "HFGL"
@@ -385,7 +185,7 @@
     },
     {
         "model": "pontos.qrcode",
-        "pk": 48,
+        "pk": 23,
         "fields": {
             "stop": "3061O00021C0",
             "code": "DRVV"
@@ -393,7 +193,7 @@
     },
     {
         "model": "pontos.qrcode",
-        "pk": 49,
+        "pk": 24,
         "fields": {
             "stop": "3061O00022C0",
             "code": "TDBA"
@@ -401,10 +201,210 @@
     },
     {
         "model": "pontos.qrcode",
-        "pk": 50,
+        "pk": 25,
         "fields": {
             "stop": "3061O00023C0",
             "code": "DQ3X"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 26,
+        "fields": {
+            "stop": "2035O00028S9",
+            "code": "1BJG"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 27,
+        "fields": {
+            "stop": "2035O00039S9",
+            "code": "1EBQ"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 28,
+        "fields": {
+            "stop": "2036O00012S9",
+            "code": "1G30"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 29,
+        "fields": {
+            "stop": "2036O00050S9",
+            "code": "1LBP"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 30,
+        "fields": {
+            "stop": "2036O00045S9",
+            "code": "1LVC"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 31,
+        "fields": {
+            "stop": "2036O00013S9",
+            "code": "1T1W"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 32,
+        "fields": {
+            "stop": "2036O00051S9",
+            "code": "1VYH"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 33,
+        "fields": {
+            "stop": "2036O00052S9",
+            "code": "2DAX"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 34,
+        "fields": {
+            "stop": "2036O00014S9",
+            "code": "2HSG"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 35,
+        "fields": {
+            "stop": "2036O00015S9",
+            "code": "2L8R"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 36,
+        "fields": {
+            "stop": "2036O00053S9",
+            "code": "2L88"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 37,
+        "fields": {
+            "stop": "2036O00054S9",
+            "code": "2PVS"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 38,
+        "fields": {
+            "stop": "2036O00016S9",
+            "code": "2TDL"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 39,
+        "fields": {
+            "stop": "2036O00055S0",
+            "code": "Q3VX"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 40,
+        "fields": {
+            "stop": "2036O00001S9",
+            "code": "3A7T"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 41,
+        "fields": {
+            "stop": "2036O00043S9",
+            "code": "EN4C"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 42,
+        "fields": {
+            "stop": "2036O00002S9",
+            "code": "FFD3"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 43,
+        "fields": {
+            "stop": "2036O00003S9",
+            "code": "FL96"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 44,
+        "fields": {
+            "stop": "2036O00004S9",
+            "code": "3FP6"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 45,
+        "fields": {
+            "stop": "2036O00056S9",
+            "code": "3GJF"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 46,
+        "fields": {
+            "stop": "2036O00057S9",
+            "code": "3JH6"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 47,
+        "fields": {
+            "stop": "2036O00044S9",
+            "code": "FU3N"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 48,
+        "fields": {
+            "stop": "2036O00058S9",
+            "code": "FYF6"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 49,
+        "fields": {
+            "stop": "2036O00005S9",
+            "code": "G56G"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 50,
+        "fields": {
+            "stop": "2036O00006S9",
+            "code": "4AZE"
         }
     }
 ]

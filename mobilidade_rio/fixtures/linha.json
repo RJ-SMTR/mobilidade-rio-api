@@ -91,6 +91,26 @@
     },
     {
         "model": "pontos.linha",
+        "pk": "O0825AAA0A",
+        "fields": {
+            "agency": 22005,
+            "mode": 3,
+            "initials": "825",
+            "name": "Jesu\u00edtas - Campo Grande"
+        }
+    },
+    {
+        "model": "pontos.linha",
+        "pk": "O00600AAA0A",
+        "fields": {
+            "agency": 22004,
+            "mode": 3,
+            "initials": "600",
+            "name": "Taquara - Saens Pe\u00f1a"
+        }
+    },
+    {
+        "model": "pontos.linha",
         "pk": "ukw5",
         "fields": {
             "agency": 22003,
@@ -177,16 +197,6 @@
             "mode": 3,
             "initials": "335 SR",
             "name": "Cordovil - Tiradentes"
-        }
-    },
-    {
-        "model": "pontos.linha",
-        "pk": "O0825AAA0A",
-        "fields": {
-            "agency": 22005,
-            "mode": 3,
-            "initials": "825",
-            "name": "Jesu\u00edtas - Campo Grande"
         }
     },
     {
@@ -1581,16 +1591,6 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0692AAA0A",
-        "fields": {
-            "agency": 22004,
-            "mode": 3,
-            "initials": "692",
-            "name": "M\u00e9ier - Alvorada"
-        }
-    },
-    {
-        "model": "pontos.linha",
         "pk": "O0693AAA0A",
         "fields": {
             "agency": 22004,
@@ -2037,6 +2037,16 @@
             "mode": 3,
             "initials": "844",
             "name": "Jardim Oce\u00e2nico - Barrinha"
+        }
+    },
+    {
+        "model": "pontos.linha",
+        "pk": "O0692AAV0A",
+        "fields": {
+            "agency": 22004,
+            "mode": 3,
+            "initials": "SV692",
+            "name": "M\u00e9ier - Alvorada"
         }
     },
     {

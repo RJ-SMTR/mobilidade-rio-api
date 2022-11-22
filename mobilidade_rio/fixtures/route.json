@@ -100,6 +100,28 @@
     },
     {
         "model": "pontos.route",
+        "pk": "O0825AAA0A",
+        "fields": {
+            "linha": "O0825AAA0A",
+            "agency": "22005",
+            "mode": 3,
+            "short_name": "825",
+            "vista": "Jesu\u00edtas - Campo Grande"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "O00600AAA0A",
+        "fields": {
+            "linha": "O00600AAA0A",
+            "agency": "22004",
+            "mode": 3,
+            "short_name": "600",
+            "vista": "Taquara - Saens Pe\u00f1a"
+        }
+    },
+    {
+        "model": "pontos.route",
         "pk": "ukw5",
         "fields": {
             "linha": "ukw5",
@@ -195,17 +217,6 @@
             "mode": 3,
             "short_name": "335 SR",
             "vista": "Cordovil - Tiradentes"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0825AAA0A",
-        "fields": {
-            "linha": "O0825AAA0A",
-            "agency": "22005",
-            "mode": 3,
-            "short_name": "825",
-            "vista": "Jesu\u00edtas - Campo Grande"
         }
     },
     {
@@ -1739,17 +1750,6 @@
     },
     {
         "model": "pontos.route",
-        "pk": "O0692AAA0A",
-        "fields": {
-            "linha": "O0692AAA0A",
-            "agency": "22004",
-            "mode": 3,
-            "short_name": "692",
-            "vista": "M\u00e9ier - Alvorada"
-        }
-    },
-    {
-        "model": "pontos.route",
         "pk": "O0693AAA0A",
         "fields": {
             "linha": "O0693AAA0A",
@@ -2241,6 +2241,17 @@
             "mode": 3,
             "short_name": "844",
             "vista": "Jardim Oce\u00e2nico - Barrinha"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "O0692AAV0A",
+        "fields": {
+            "linha": "O0692AAV0A",
+            "agency": "22004",
+            "mode": 3,
+            "short_name": "SV692",
+            "vista": "M\u00e9ier - Alvorada"
         }
     },
     {
