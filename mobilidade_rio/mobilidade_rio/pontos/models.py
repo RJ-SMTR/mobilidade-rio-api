@@ -1,82 +1,137 @@
 from django.db import models
 
 
-class Mode (models.Model):
-    name = models.CharField(max_length=30)
-
-    def __str__(self):
-        return f"Modo {self.name}"
-
-
-class Stop (models.Model):
-    id = models.CharField(max_length=50, primary_key=True)
-    mode = models.ForeignKey(Mode, on_delete=models.CASCADE, null=True)
-    name = models.CharField(max_length=250)
-    address = models.CharField(max_length=250, null=True)
-    latitude = models.FloatField(null=True)
-    longitude = models.FloatField(null=True)
-
-    def __str__(self):
-        return f"Ponto {self.name}: {self.address}"
+class Agency(models.Model):
+    agency_id = models.CharField(max_length=500, blank=True, primary_key=True)
+    agency_name = models.CharField(max_length=500, blank=True, null=True)
+    agency_url = models.CharField(max_length=500, blank=True, null=True)
+    agency_timezone = models.CharField(max_length=500, blank=True, null=True)
+    agency_lang = models.CharField(max_length=500, blank=True, null=True)
+    agency_phone = models.CharField(max_length=500, blank=True, null=True)
+    agency_branding_url = models.CharField(max_length=500, blank=True, null=True)
+    agency_fare_url = models.CharField(max_length=500, blank=True, null=True)
+    agency_email = models.CharField(max_length=500, blank=True, null=True)
 
 
-class QrCode (models.Model):
-    code = models.CharField(max_length=4)
-    stop = models.OneToOneField(
-        Stop, on_delete=models.CASCADE, primary_key=True)
-
-    def __str__(self):
-        return f"QrCode {self.code}: {self.stop}"
-
-
-class Agency (models.Model):
-    id = models.CharField(max_length=50, primary_key=True)
-    name = models.CharField(max_length=150)
-
-    def __str__(self):
-        return f"Agência {self.name}"
+class Calendar(models.Model):
+    service_id = models.CharField(max_length=500, blank=True, primary_key=True)
+    monday = models.CharField(max_length=500, blank=True, null=True)
+    tuesday = models.CharField(max_length=500, blank=True, null=True)
+    wednesday = models.CharField(max_length=500, blank=True, null=True)
+    thursday = models.CharField(max_length=500, blank=True, null=True)
+    friday = models.CharField(max_length=500, blank=True, null=True)
+    saturday = models.CharField(max_length=500, blank=True, null=True)
+    sunday = models.CharField(max_length=500, blank=True, null=True)
+    start_date = models.CharField(max_length=500, blank=True, null=True)
+    end_date = models.CharField(max_length=500, blank=True, null=True)
 
 
-class Linha (models.Model):
-    id = models.CharField(max_length=50, primary_key=True)
-    agency = models.ForeignKey(Agency, on_delete=models.CASCADE, null=True)
-    mode = models.ForeignKey(Mode, on_delete=models.CASCADE, null=True)
-    initials = models.CharField(max_length=10)
-    name = models.CharField(max_length=150, default="")
+class CalendarDates(models.Model):
+    service_id = models.CharField(max_length=500, blank=True)
+    date = models.CharField(max_length=500, blank=True, null=True)
+    exception_type = models.CharField(max_length=500, blank=True, null=True)
 
-    def __str__(self):
-        return f"Linha {self.initials}"
-
-
-class Route (models.Model):
-    id = models.CharField(max_length=50, primary_key=True)
-    linha = models.ForeignKey(Linha, on_delete=models.CASCADE)
-    agency = models.ForeignKey(Agency, on_delete=models.CASCADE)
-    mode = models.ForeignKey(Mode, on_delete=models.CASCADE)
-    short_name = models.CharField(max_length=50)
-    vista = models.CharField(max_length=150, default="")
-
-    def __str__(self):
-        return f"Rota {self.linha} - {self.short_name}"
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(
+                fields=['service_id', 'date'], name='calendar_date_id'
+            )
+        ]
 
 
-class Trip (models.Model):
-    id = models.CharField(max_length=50, primary_key=True)
-    route = models.ForeignKey(Route, on_delete=models.CASCADE)
-    headsign = models.CharField(max_length=250)
-    via = models.CharField(max_length=50, blank=True, null=True)
-    version = models.CharField(max_length=50, blank=True, null=True)
-    direction = models.IntegerField(default=0)
+class Routes(models.Model):
+    route_id = models.CharField(max_length=500, blank=True, primary_key=True)
+    agency_id = models.CharField(max_length=500, blank=True, null=True)
+    route_short_name = models.CharField(max_length=500, blank=True, null=True)
+    route_long_name = models.CharField(max_length=500, blank=True, null=True)
+    route_desc = models.CharField(max_length=500, blank=True, null=True)
+    route_type = models.CharField(max_length=500, blank=True, null=True)
+    route_url = models.CharField(max_length=500, blank=True, null=True)
+    route_branding_url = models.CharField(max_length=500, blank=True, null=True)
+    route_color = models.CharField(max_length=500, blank=True, null=True)
+    route_text_color = models.CharField(max_length=500, blank=True, null=True)
+    route_sort_order = models.CharField(max_length=500, blank=True, null=True)
+    continuous_pickup = models.CharField(max_length=500, blank=True, null=True)
+    continuous_drop_off = models.CharField(max_length=500, blank=True, null=True)
 
-    def __str__(self):
-        return f"Viagem {self.route} - {self.headsign}"
+
+class Trips(models.Model):
+    trip_id = models.CharField(max_length=500, blank=True, primary_key=True)
+    route_id = models.CharField(max_length=500, blank=True, null=True)
+    service_id = models.CharField(max_length=500, blank=True, null=True)
+    trip_headsign = models.CharField(max_length=500, blank=True, null=True)
+    trip_short_name = models.CharField(max_length=500, blank=True, null=True)
+    direction_id = models.CharField(max_length=500, blank=True, null=True)
+    block_id = models.CharField(max_length=500, blank=True, null=True)
+    shape_id = models.CharField(max_length=500, blank=True, null=True)
+    wheelchair_accessible = models.CharField(max_length=500, blank=True, null=True)
+    bikes_allowed = models.CharField(max_length=500, blank=True, null=True)
 
 
-class Sequence (models.Model):
-    id = models.CharField(max_length=50, primary_key=True)
-    trip = models.ForeignKey(Trip, on_delete=models.CASCADE)
-    stop = models.ForeignKey(Stop, on_delete=models.CASCADE)
-    order = models.IntegerField()
+class Shapes(models.Model):
+    shape_id = models.CharField(max_length=500, blank=True)
+    shape_pt_sequence = models.CharField(max_length=500, blank=True, null=True)
+    shape_pt_lat = models.CharField(max_length=500, blank=True, null=True)
+    shape_pt_lon = models.CharField(max_length=500, blank=True, null=True)
+    shape_dist_traveled = models.CharField(max_length=500, blank=True, null=True)
 
-    def __str__(self):
-        return f"Sequência {self.trip} - {self.stop} - {self.order}"
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(
+                fields=['shape_id', 'shape_pt_sequence'], name='shape_sequence_id'
+            )
+        ]
+
+
+class Stops(models.Model):
+    stop_id = models.CharField(max_length=500, blank=True, primary_key=True)
+    stop_code = models.CharField(max_length=500, blank=True, null=True)
+    stop_name = models.CharField(max_length=500, blank=True, null=True)
+    stop_desc = models.CharField(max_length=500, blank=True, null=True)
+    stop_lat = models.CharField(max_length=500, blank=True, null=True)
+    stop_lon = models.CharField(max_length=500, blank=True, null=True)
+    zone_id = models.CharField(max_length=500, blank=True, null=True)
+    stop_url = models.CharField(max_length=500, blank=True, null=True)
+    location_type = models.CharField(max_length=500, blank=True, null=True)
+    parent_station = models.CharField(max_length=500, blank=True, null=True)
+    stop_timezone = models.CharField(max_length=500, blank=True, null=True)
+    wheelchair_boarding = models.CharField(max_length=500, blank=True, null=True)
+    platform_code = models.CharField(max_length=500, blank=True, null=True)
+
+
+class StopTimes(models.Model):
+    trip_id = models.CharField(max_length=500, blank=True)
+    stop_sequence = models.CharField(max_length=500, blank=True, null=True)
+    stop_id = models.CharField(max_length=500, blank=True)
+    arrival_time = models.CharField(max_length=500, blank=True, null=True)
+    departure_time = models.CharField(max_length=500, blank=True, null=True)
+    stop_headsign = models.CharField(max_length=500, blank=True, null=True)
+    pickup_type = models.CharField(max_length=500, blank=True, null=True)
+    drop_off_type = models.CharField(max_length=500, blank=True, null=True)
+    continuous_pickup = models.CharField(max_length=500, blank=True, null=True)
+    continuous_drop_off = models.CharField(max_length=500, blank=True, null=True)
+    shape_dist_traveled = models.CharField(max_length=500, blank=True, null=True)
+    timepoint = models.CharField(max_length=500, blank=True, null=True)
+
+    # TODO: check constraint for circular routes
+    # class Meta:
+    #     constraints = [
+    #         models.UniqueConstraint(
+    #             fields=['trip_id', 'stop_id'], name='stop_times_id'
+    #         )
+    #     ]
+
+
+class Frequencies(models.Model):
+    trip_id = models.CharField(max_length=500, blank=True)
+    start_time = models.CharField(max_length=500, blank=True, null=True)
+    end_time = models.CharField(max_length=500, blank=True, null=True)
+    headway_secs = models.CharField(max_length=500, blank=True, null=True)
+    exact_times = models.CharField(max_length=500, blank=True, null=True)
+
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(
+                fields=['trip_id', 'start_time'], name='frequency_id'
+            )
+        ]

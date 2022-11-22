@@ -1,5 +1,8 @@
 FROM python:3.8-slim
 
+# install postgresql-client
+RUN apt-get update && apt-get install -y postgresql-client
+
 # Install virtualenv and create a virtual environment
 RUN pip install --no-cache-dir virtualenv==20.6.0 && virtualenv /env --python=python3.8
 ENV PATH /env/bin:$PATH
@@ -20,7 +23,21 @@ COPY . .
 RUN /env/bin/python manage.py collectstatic --no-input --settings=mobilidade_rio.settings.base && \
   chown -R www-data:www-data /app
 
-# Expose and run app
+# env
+ENV mobilidade_rio="dev"
+ENV DB_NAME="postgres"
+ENV DB_USER="postgres"
+ENV DB_PASSWORD="postgres"
+ENV DB_HOST="db"
+ENV DB_PORT=5432
+
+## debug
+ENV TST_DOCKERFILE_ENV=1
+ENV PYTHONUNBUFFERED=1
+
+# Expose
 EXPOSE 80
 STOPSIGNAL SIGTERM
-CMD ["/app/start-server.sh"]
+
+# Run commands 
+CMD ["/bin/bash", "-c", "'python manage.py runserver'"]
