@@ -2,7 +2,9 @@ version: "3.9"
 
 services:
   web:
-    build: .
+    build: 
+      context: .
+      dockerfile: ./Dockerfile_dev 
     image: django
     container_name: django_hd
     volumes:
@@ -26,7 +28,7 @@ services:
     ports:
       - 5433:5432
     volumes:
-      - postgres_data:/var/lib/postgresql/data/
+      - dpostgres_data:/var/lib/postgresql/data/
     environment:
       - "POSTGRES_HOST_AUTH_METHOD=trust"
       - "POSTGRES_DB=postgres"
@@ -36,4 +38,4 @@ services:
 
 # For some reason, this definition is necesarry
 volumes:
-  postgres_data:
+  dpostgres_data:
