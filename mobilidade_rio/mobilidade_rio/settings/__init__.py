@@ -20,7 +20,6 @@ import os
 from .utils import _yellow, _reset
 
 project_name = "mobilidade_rio"
-default_settings = "test"
 
 # if none, warn and use default
 if os.getenv(project_name) is None:
