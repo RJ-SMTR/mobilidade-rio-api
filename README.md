@@ -3,14 +3,6 @@
 
 API estática do aplicativo de [pontos.mobilidade.rio](http://pontos.mobilidade.rio) da Prefeitura da cidade do Rio de Janeiro.
 
-## Requerimentos
-
-* [Docker](https://www.docker.com/)
-* [Kubernetes](https://kubernetes.io/) (produção)
-* (local), Kubernetes (produção)
-* [Postgres](https://www.postgresql.org/) (teste local)
-* Python >=3.9
-
 ## Estágios de desenvolvimento
 
 * **Teste local**
@@ -27,9 +19,6 @@ API estática do aplicativo de [pontos.mobilidade.rio](http://pontos.mobilidade.
   * _Produção_
   * Executar as mesmas configurações do ambiente de desenvolvimento, porém com o Docker configurado para produção.
 
-## Desenvolvimento
-
-
 Resumindo o que cada estágio faz:
 
 | Nome | Descrição | Recursos |
@@ -38,6 +27,16 @@ Resumindo o que cada estágio faz:
 | Dev local | Desenv. local | 🐋 |
 | Dev | Desenv. Remoto | 🐋☸️ |
 | Prod | Produção | 🐋☸️ |
+
+## Requerimentos
+
+* [Docker](https://www.docker.com/)
+* [Kubernetes](https://kubernetes.io/) (produção)
+* (local), Kubernetes (produção)
+* [Postgres](https://www.postgresql.org/) (teste local)
+* Python >=3.9
+
+## Desenvolvimento
 
 ### Iniciando o ambiente
 
