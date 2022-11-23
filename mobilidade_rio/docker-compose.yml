@@ -2,7 +2,9 @@ version: "3.9"
 
 services:
   web:
-    build: .
+    build: 
+      context: .
+      dockerfile: ./Dockerfile_dev 
     image: django
     container_name: django_hd
     volumes:
@@ -11,6 +13,8 @@ services:
       - 8010:8000
     depends_on:
       - db
+    environment:
+      - DJANGO_SETTINGS_MODULE=mobilidade_rio.settings.dev
     # command: python manage.py runserver 0.0.0.0:8000
     command: >
       bash -c "
@@ -26,7 +30,7 @@ services:
     ports:
       - 5433:5432
     volumes:
-      - postgres_data:/var/lib/postgresql/data/
+      - dpostgres_data:/var/lib/postgresql/data/
     environment:
       - "POSTGRES_HOST_AUTH_METHOD=trust"
       - "POSTGRES_DB=postgres"
@@ -36,4 +40,4 @@ services:
 
 # For some reason, this definition is necesarry
 volumes:
-  postgres_data:
+  dpostgres_data:
