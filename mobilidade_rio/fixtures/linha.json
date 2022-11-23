@@ -101,22 +101,22 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O00600AAA0A",
-        "fields": {
-            "agency": 22004,
-            "mode": 3,
-            "initials": "600",
-            "name": "Taquara - Saens Pe\u00f1a"
-        }
-    },
-    {
-        "model": "pontos.linha",
         "pk": "ukw5",
         "fields": {
             "agency": 22003,
             "mode": 3,
             "initials": "928",
             "name": "Marechal Hermes - Bonsucesso"
+        }
+    },
+    {
+        "model": "pontos.linha",
+        "pk": "O0600AAA0A",
+        "fields": {
+            "agency": 22004,
+            "mode": 3,
+            "initials": "600",
+            "name": "Taquara - Saens Pe\u00f1a"
         }
     },
     {

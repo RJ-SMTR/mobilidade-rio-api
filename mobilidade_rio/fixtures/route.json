@@ -111,17 +111,6 @@
     },
     {
         "model": "pontos.route",
-        "pk": "O00600AAA0A",
-        "fields": {
-            "linha": "O00600AAA0A",
-            "agency": "22004",
-            "mode": 3,
-            "short_name": "600",
-            "vista": "Taquara - Saens Pe\u00f1a"
-        }
-    },
-    {
-        "model": "pontos.route",
         "pk": "ukw5",
         "fields": {
             "linha": "ukw5",
@@ -129,6 +118,17 @@
             "mode": 3,
             "short_name": "928",
             "vista": "Marechal Hermes - Bonsucesso"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "O0600AAA0A",
+        "fields": {
+            "linha": "O0600AAA0A",
+            "agency": "22004",
+            "mode": 3,
+            "short_name": "600",
+            "vista": "Taquara - Saens Pe\u00f1a"
         }
     },
     {
