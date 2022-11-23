@@ -168,13 +168,13 @@ class StopTimesViewSet(viewsets.ModelViewSet):
             """
 
             # select rows if trip_id in q_trip_id_unique
-            q = f"""
+            query = f"""
             SELECT * FROM ({q_stop_id}) AS t3
             WHERE trip_id IN ({q_trip_id_unique})
             """
 
             # execute query
-            queryset = queryset.raw(q)
+            queryset = queryset.raw(query)
         return queryset
 
 
