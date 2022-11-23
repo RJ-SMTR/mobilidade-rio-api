@@ -11,9 +11,7 @@ API estática do aplicativo de [pontos.mobilidade.rio](http://pontos.mobilidade.
 * [Postgres](https://www.postgresql.org/) (teste local)
 * Python >=3.9
 
-## Desenvolvimento
-
-### Estágios de desenvolvimento
+## Estágios de desenvolvimento
 
 * **Teste local**
   * _Desenvolvimento para Testes Localmente_
@@ -28,6 +26,8 @@ API estática do aplicativo de [pontos.mobilidade.rio](http://pontos.mobilidade.
 * **Produção**
   * _Produção_
   * Executar as mesmas configurações do ambiente de desenvolvimento, porém com o Docker configurado para produção.
+
+## Desenvolvimento
 
 
 Resumindo o que cada estágio faz:
