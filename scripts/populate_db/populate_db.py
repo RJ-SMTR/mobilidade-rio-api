@@ -17,6 +17,7 @@ import pandas
 PARAMETERS = """\
 --exclude_tables
 --no_dada
+-p --port
 """
 
 remove_duplicates_col = {
@@ -74,7 +75,6 @@ def clear_table(_app: str, _model: str, suffix: str = ""):
     if suffix:
         table_name = f"{table_name}_{suffix}"
     if "--exclude_tables" in sys.argv:
-        cascade = "CASCADE" if not suffix else ""
         cur.execute(f"TRUNCATE {table_name} CASCADE")
         conn.commit()
 
@@ -138,6 +138,13 @@ if __name__ == "__main__":
         for i, arg in enumerate(sys.argv):
             if arg == f"--{key}":
                 settings["db_params"][key] = sys.argv[i + 1]
+    db_params = settings["db_params"]
+
+    # if -p or --port in sys.argv:
+    db_params["port"] = sys.argv[sys.argv.index("-p") + 1] \
+        if "-p" in sys.argv else db_params["port"]
+    db_params["port"] = sys.argv[sys.argv.index("--port") + 1] \
+        if "--port" in sys.argv else db_params["port"]
 
     # Remove flag params if not in sys.argv (--param)
     flag_params = [
@@ -146,7 +153,7 @@ if __name__ == "__main__":
 
     # Connect to the database
     print("\nConnecting to the PostgreSQL database...")
-    conn = psycopg2.connect(**settings["db_params"])
+    conn = psycopg2.connect(**db_params)
     cur = conn.cursor()
 
     # Update data from files in csv_path
