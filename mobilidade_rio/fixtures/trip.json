@@ -1783,6 +1783,28 @@
     },
     {
         "model": "pontos.trip",
+        "pk": "48039ab0-52ed-400a-a4fe-e73f4172cb2f",
+        "fields": {
+            "route": "O0600AAA0A",
+            "headsign": "Taquara",
+            "via": "",
+            "version": "d-4",
+            "direction": 1.0
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "0c6a8d53-6604-4c96-9b38-b2b1a491e42e",
+        "fields": {
+            "route": "O0600AAA0A",
+            "headsign": "Saens Pe\u00f1a",
+            "via": "",
+            "version": "4-4",
+            "direction": 0.0
+        }
+    },
+    {
+        "model": "pontos.trip",
         "pk": "O0630AAA0AIDU01",
         "fields": {
             "route": "O0630AAA0A",
