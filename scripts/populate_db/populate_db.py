@@ -161,6 +161,36 @@ if __name__ == "__main__":
     # Update data from files in csv_path
     for app in os.listdir(csv_path):
 
+        # drop all tables from database
+        if "--drop_all" in sys.argv or "-a" in sys.argv:
+            print("Dropping all tables...")
+            cur.execute(f"DROP SCHEMA {app} CASCADE")
+            conn.commit()
+            exit(0)
+
+        # drop all related tables then exit
+        if "--drop_tables" in sys.argv or "-t" in sys.argv:
+            # if table exists
+            cur.execute("SELECT table_name FROM information_schema.tables \
+                            WHERE table_schema = 'public'")
+            tables = cur.fetchall()
+            print(f"Dropping related tables in {app}:")
+            count = 0
+            if app in settings["table_order"].keys():
+                folder = os.path.join(csv_path, app)
+                app_models = settings["table_order"][app]
+                for model in os.listdir(folder):
+                    model = model.split(".")[0].replace("_", "")
+                    if model in app_models and f"{app}_{model}" in tables:
+                        print(f"\tDropping {app}_{model}...")
+                        cur.execute(f"DROP TABLE IF EXISTS {app}_{model} CASCADE")
+                        # drop if exists
+                        conn.commit()
+                        count += 1
+            if not count:
+                print("\tNo related tables found.")
+            continue
+
         # Clear all tables
         if "--exclude_tables" in sys.argv:
             print(f"Clearing all tables in {app}:")
