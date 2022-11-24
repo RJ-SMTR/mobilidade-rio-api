@@ -76,7 +76,7 @@ def clear_table(_app: str, _model: str, suffix: str = ""):
     table_name = f"{_app}_{_model.replace('_', '')}"
     if suffix:
         table_name = f"{table_name}_{suffix}"
-    if "--exclude_tables" in sys.argv:
+    if "--empty_tables" in sys.argv:
         cur.execute(f"TRUNCATE {table_name} CASCADE")
         conn.commit()
 
@@ -192,7 +192,7 @@ if __name__ == "__main__":
             continue
 
         # Clear all tables
-        if "--exclude_tables" in sys.argv:
+        if "--empty_tables" in sys.argv or '-e' in flag_params:
             print(f"Clearing all tables in {app}:")
             if app in settings["table_order"].keys():
                 folder = os.path.join(csv_path, app)
@@ -205,7 +205,7 @@ if __name__ == "__main__":
             print("[OK]\n")
 
         # Insert tables
-        if "--no_insert" not in sys.argv:
+        if "--no_insert" not in sys.argv or '-i' in flag_params:
             if app in settings["table_order"].keys():
                 folder = os.path.join(csv_path, app)
                 app_models = settings["table_order"][app]
