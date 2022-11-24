@@ -14,12 +14,12 @@ import os
 import psycopg2
 import pandas
 
-PARAMETERS = """\
--a --drop_all           Drop all tables
--e --empty_tables       Empty all tables
--i --no_insert          Don't insert data
+parameters = """\
+-a --drop_all           Drop all tables          [<drop_all>]
+-e --empty_tables       Empty all tables         [<empty_tables>]
+-i --no_insert          Don't insert data        [<no_insert>]
 -p --port
--t --drop_tables        Drop tables in list
+-t --drop_tables        Drop tables in list      [<drop_tables>]
 """
 
 remove_duplicates_col = {
@@ -31,6 +31,29 @@ remove_duplicates_col = {
     }
 }
 
+
+def validate_cols(table, cols: list()=None):
+    """Test if column name is in table with common tricks"""
+    cur.execute(f"SELECT column_name FROM information_schema.columns \
+        WHERE table_name = '{table}';")
+    query_cols = cur.fetchall()
+    query_cols = [col[0] for col in query_cols]
+
+    # for q_cols, if col not in columns, test with _id
+    for q_col in query_cols:
+        if q_col not in cols:
+            if q_col + "_id" in cols:
+                cols[cols.index(q_col + "_id")] = q_col
+
+def validade_table(table:str, app:str=""):
+    """Test if table exists, try another combination if not"""
+    # if app, table = app_table
+    if app:
+        table = f"{app}_{table}"
+    table_prefix = table.split("_")[0]
+    table_remaining = table[len(table_prefix) + 1:]
+    table = f"{table_prefix}_{table_remaining.replace('_', '')}"
+    return table
 
 def filter_col(data, table: str, cols: list) -> str:
     """
@@ -46,39 +69,21 @@ def filter_col(data, table: str, cols: list) -> str:
     # if table name in key
     if table in remove_duplicates_col:
         for col in remove_duplicates_col[table]:
-            if col in cols:
-                dataframe = pandas.read_csv(data, sep=",", encoding="utf8", low_memory=False)
-                dataframe[col]= dataframe[col].str.split("_").str[0]
+            if validate_cols(col, table) in cols:
+                dataframe = pandas.read_csv(
+                    data, sep=",", encoding="utf8", low_memory=False)
+                dataframe[col] = dataframe[col].str.split("_").str[0]
                 dataframe = dataframe.drop_duplicates(subset=[col])
                 print("FILTERING...")
 
                 # save log csv file
-                dataframe.to_csv(os.path.join(folder, "temp.csv"), index=False, header=False)
+                dataframe.to_csv(os.path.join(
+                    folder, "temp.csv"), index=False, header=False)
 
                 # save to postgres (exclude header)
                 return open(os.path.join(folder, "temp.csv"), 'r', encoding="utf8")
     return data
 
-
-def clear_table(_app: str, _model: str, suffix: str = ""):
-    """
-    Clear tables
-
-    Args:
-        app (str): app name
-        model (str): model name
-        flag_params (str): flag parameters
-
-    Returns:
-        None
-    """
-
-    table_name = f"{_app}_{_model.replace('_', '')}"
-    if suffix:
-        table_name = f"{table_name}_{suffix}"
-    if "--empty_tables" in sys.argv:
-        cur.execute(f"TRUNCATE {table_name} CASCADE")
-        conn.commit()
 
 def upload_data(_app: str, _model: str, _flag_params: str):
     """
@@ -95,7 +100,6 @@ def upload_data(_app: str, _model: str, _flag_params: str):
 
     table_name = f"{_app}_{_model.replace('_', '')}"
     file_path_1 = os.path.join(folder, f"{_model}.txt")
-    print(_model)
 
     if os.path.isfile(file_path_1):
         print(f"Table '{table_name}'")
@@ -103,9 +107,10 @@ def upload_data(_app: str, _model: str, _flag_params: str):
             # Insert data
             if "--no_insert" not in sys.argv:
                 # Filter table
-                cols = f_1.readline().strip().split(',')
-                f_1.seek(0)
                 print("Filtering...")
+                cols = f_1.readline().strip().split(',')
+                validate_cols(table_name, cols)
+                f_1.seek(1)
                 data = filter_col(f_1, table_name, cols)
                 # Insert table
                 print("inserting ...")
@@ -116,12 +121,13 @@ def upload_data(_app: str, _model: str, _flag_params: str):
     print("[OK]\n")
 
 
-if __name__ == "__main__":
+def help_1():
+    """Help"""
+    print("Usage: populate_db.py [options]")
+    print(parameters)
 
-    if "--help" in sys.argv or "-h" in sys.argv:
-        print("Parameters: ")
-        print(PARAMETERS)
-        sys.exit(0)
+
+if __name__ == "__main__":
 
     # Setting default parameters
     local_path = os.path.dirname(os.path.abspath(__file__))
@@ -132,10 +138,31 @@ if __name__ == "__main__":
     try:
         with open(file_path, "r", encoding="utf8") as f:
             settings = json.load(f)
-    finally:
+    except FileNotFoundError:
         # raise string
         print("Couldn't find settings.json file. Please create one and try again.")
 
+    #  update parameters if exists in settings[param]
+    # if flag_params in settings:
+    if 'flag_params' in settings:
+        for param in settings['flag_params']:
+            if param in parameters:
+                if settings['flag_params'] != "false":
+                    parameters = parameters.replace(f"<{param}>", "ACTIVE")
+
+        # remove all from "[" if this line is not [ACTIVE]
+        parameters_new = ""
+        for param in parameters.split("\n"):
+            if "ACTIVE" not in param:
+                param = param[:param.find("[")]
+            parameters_new += param + "\n"
+        parameters = parameters_new
+    # Help
+    if "--help" in sys.argv or "-h" in sys.argv:
+        help_1()
+        sys.exit(0)
+
+    # Get postgres params
     for key in settings["db_params"].keys():
         for i, arg in enumerate(sys.argv):
             if arg == f"--{key}":
@@ -186,16 +213,17 @@ if __name__ == "__main__":
                     model = model.split(".")[0].replace("_", "")
                     if model in app_models and f"{app}_{model}" in tables:
                         print(f"\tDropping {app}_{model}...")
-                        cur.execute(f"DROP TABLE IF EXISTS {app}_{model} CASCADE")
+                        cur.execute(
+                            f"DROP TABLE IF EXISTS {app}_{model} CASCADE")
                         # drop if exists
                         conn.commit()
                         count += 1
             if not count:
                 print("\tNo related tables found.")
             continue
-
         # Clear all tables
-        if "--empty_tables" in sys.argv or '-e' in flag_params:
+        if "--empty_tables" in sys.argv or '-e' in sys.argv or \
+                "empty_tables" in settings["flag_params"]:
             print(f"Clearing all tables in {app}:")
             if app in settings["table_order"].keys():
                 folder = os.path.join(csv_path, app)
@@ -204,11 +232,13 @@ if __name__ == "__main__":
                     model = model.split(".")[0]
                     if model in app_models:
                         print(f"\tClearing {app}_{model}...")
-                        clear_table(app, model)
+                        table = validade_table(model, app)
+                        cur.execute(f"TRUNCATE {table} CASCADE")
+                        conn.commit()
             print("[OK]\n")
 
         # Insert tables
-        if "--no_insert" not in sys.argv or '-i' in flag_params:
+        if "--no_insert" not in sys.argv and '-i' not in sys.argv:
             if app in settings["table_order"].keys():
                 folder = os.path.join(csv_path, app)
                 app_models = settings["table_order"][app]
