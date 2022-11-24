@@ -15,9 +15,11 @@ import psycopg2
 import pandas
 
 PARAMETERS = """\
---exclude_tables
---no_dada
+-a --drop_all           Drop all tables
+-e --empty_tables       Empty all tables
+-i --no_insert          Don't insert data
 -p --port
+-t --drop_tables        Drop tables in list
 """
 
 remove_duplicates_col = {
