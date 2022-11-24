@@ -96,7 +96,7 @@ def upload_data(_app: str, _model: str, _flag_params: str):
     table_name = f"{_app}_{_model.replace('_', '')}"
     file_path_1 = os.path.join(folder, f"{_model}.txt")
     print(_model)
-    
+
     if os.path.isfile(file_path_1):
         print(f"Table '{table_name}'")
         with open(file_path_1, 'r', encoding="utf8") as f_1:
@@ -158,15 +158,18 @@ if __name__ == "__main__":
     conn = psycopg2.connect(**db_params)
     cur = conn.cursor()
 
+    # drop all tables from database
+    if "--drop_all" in sys.argv or "-a" in sys.argv:
+        print("Dropping schema...")
+        cur.execute(f"DROP SCHEMA IF EXISTS public CASCADE")
+        conn.commit()
+        print("Creating schema...")
+        cur.execute(f"CREATE SCHEMA IF NOT EXISTS public")
+        conn.commit()
+        exit(0)
+
     # Update data from files in csv_path
     for app in os.listdir(csv_path):
-
-        # drop all tables from database
-        if "--drop_all" in sys.argv or "-a" in sys.argv:
-            print("Dropping all tables...")
-            cur.execute(f"DROP SCHEMA {app} CASCADE")
-            conn.commit()
-            exit(0)
 
         # drop all related tables then exit
         if "--drop_tables" in sys.argv or "-t" in sys.argv:
