@@ -100,7 +100,8 @@ class Stops(models.Model):
 
 
 class StopTimes(models.Model):
-    trip_id = models.CharField(max_length=500, blank=True)
+    trip_id = models.ForeignKey(Trips, on_delete=models.CASCADE, related_name='trip_id_id', related_query_name='trip_id_id')
+    # trip_id = models.CharField(max_length=500, blank=True)
     stop_sequence = models.CharField(max_length=500, blank=True, null=True)
     stop_id = models.CharField(max_length=500, blank=True)
     arrival_time = models.CharField(max_length=500, blank=True, null=True)

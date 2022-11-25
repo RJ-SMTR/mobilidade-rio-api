@@ -46,10 +46,12 @@ class StopsSerializer(serializers.HyperlinkedModelSerializer):
 
 class StopTimesSerializer(serializers.HyperlinkedModelSerializer):
     url = serializers.HyperlinkedRelatedField(view_name="stop_times-detail", read_only=True)
-    
+    trip_id = TripsSerializer(read_only=True)
+
     class Meta:
         model = StopTimes
-        fields = "__all__"
+        fields = ([field.name for field in StopTimes._meta.get_fields()])
+        fields += ["url"]
 
 
 class FrequenciesSerializer(serializers.HyperlinkedModelSerializer):
