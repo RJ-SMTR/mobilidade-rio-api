@@ -13014,6 +13014,17 @@
     },
     {
         "model": "pontos.stop",
+        "pk": "2036O00058S9",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 2,4,5,6,7,I: Souza Franco",
+            "address": "BRS 2,4,5,6,7,I: Souza Franco",
+            "latitude": "-22.917543",
+            "longitude": "-43.244913"
+        }
+    },
+    {
+        "model": "pontos.stop",
         "pk": "2036O00050S9",
         "fields": {
             "mode": 3,
@@ -13102,35 +13113,24 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "2036O00006S9",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 2,6,7: Gonzaga Bastos",
-            "address": "BRS 2,6,7: Gonzaga Bastos",
-            "latitude": "-22.917071",
-            "longitude": "-43.24241"
-        }
-    },
-    {
-        "model": "pontos.stop",
         "pk": "2036O00005S9",
         "fields": {
             "mode": 3,
-            "name": "BRS 4,5,I: Visconde de Abaet\u00e9",
-            "address": "BRS 4,5,I: Visconde de Abaet\u00e9",
+            "name": "BRS 2,6,7: Visconde de Abaet\u00e9",
+            "address": "BRS 2,6,7: Visconde de Abaet\u00e9",
             "latitude": "-22.91722",
             "longitude": "-43.24318"
         }
     },
     {
         "model": "pontos.stop",
-        "pk": "2036O00058S9",
+        "pk": "2036O00006S9",
         "fields": {
             "mode": 3,
-            "name": "BRS 2,6,7: Souza Franco",
-            "address": "BRS 2,6,7: Souza Franco",
-            "latitude": "-22.917543",
-            "longitude": "-43.244913"
+            "name": "BRS 4,5,I: Gonzaga Bastos",
+            "address": "BRS 4,5,I: Gonzaga Bastos",
+            "latitude": "-22.917071",
+            "longitude": "-43.24241"
         }
     },
     {
