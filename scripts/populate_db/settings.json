@@ -21,7 +21,6 @@
         ]
     },
     "flag_params": [
-        "empty_table",
-        "no_insert"
+        "empty_tables"
     ]
 }
