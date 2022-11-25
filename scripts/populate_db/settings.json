@@ -15,8 +15,8 @@
             "routes",
             "shapes",
             "stops",
-            "stop_times",
             "trips",
+            "stop_times",
             "qrcode"
         ]
     },
