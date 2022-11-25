@@ -243,10 +243,11 @@ if __name__ == "__main__":
                 folder = os.path.join(csv_path, app)
                 app_models = settings["table_order"][app]
 
-                for model in os.listdir(folder):
-                    model = model.split(".")[0]
-
-                    if model in app_models:
+                print(folder)
+                folder_dirs = [f.split(".")[0] for f in os.listdir(folder)]
+                for model in app_models:
+                    if model in folder_dirs:
+                        model = model.split(".")[0]
                         upload_data(app, model, flag_params)
             else:
                 print(
