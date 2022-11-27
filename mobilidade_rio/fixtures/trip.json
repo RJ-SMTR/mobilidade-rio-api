@@ -166,10 +166,10 @@
     },
     {
         "model": "pontos.trip",
-        "pk": "O0232AAV0AIDU01",
+        "pk": "O0837AAA0ACDU01",
         "fields": {
-            "route": "O0232AAV0A",
-            "headsign": "Castelo",
+            "route": "O0837AAA0A",
+            "headsign": "",
             "via": "",
             "version": "U01",
             "direction": 0.0
@@ -177,10 +177,10 @@
     },
     {
         "model": "pontos.trip",
-        "pk": "O0837AAA0ACDU01",
+        "pk": "O0232AAV0AIDU01",
         "fields": {
-            "route": "O0837AAA0A",
-            "headsign": "",
+            "route": "O0232AAV0A",
+            "headsign": "Castelo",
             "via": "",
             "version": "U01",
             "direction": 0.0
@@ -1871,17 +1871,6 @@
     },
     {
         "model": "pontos.trip",
-        "pk": "O0232AAA0AIDU02",
-        "fields": {
-            "route": "O0232AAA0A",
-            "headsign": "Castelo",
-            "via": "",
-            "version": "U02",
-            "direction": 0.0
-        }
-    },
-    {
-        "model": "pontos.trip",
         "pk": "O0433AAA0AIDU01",
         "fields": {
             "route": "O0433AAA0A",
@@ -1915,23 +1904,12 @@
     },
     {
         "model": "pontos.trip",
-        "pk": "O0306AAA0AIDU01",
+        "pk": "O0232AAA0AIDU02",
         "fields": {
-            "route": "O0306AAA0A",
+            "route": "O0232AAA0A",
             "headsign": "Castelo",
             "via": "",
-            "version": "U01",
-            "direction": 0.0
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0341AAA0AIDU01",
-        "fields": {
-            "route": "O0341AAA0A",
-            "headsign": "Candel\u00e1ria",
-            "via": "",
-            "version": "U01",
+            "version": "U02",
             "direction": 0.0
         }
     },
@@ -1943,6 +1921,17 @@
             "headsign": "Candel\u00e1ria",
             "via": "",
             "version": "U02",
+            "direction": 0.0
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "O0306AAA0AIDU01",
+        "fields": {
+            "route": "O0306AAA0A",
+            "headsign": "Castelo",
+            "via": "",
+            "version": "U01",
             "direction": 0.0
         }
     },
@@ -1974,6 +1963,17 @@
         "fields": {
             "route": "O0422AAA0A",
             "headsign": "Cosme Velho",
+            "via": "",
+            "version": "U01",
+            "direction": 0.0
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "O0341AAA0AIDU01",
+        "fields": {
+            "route": "O0341AAA0A",
+            "headsign": "Candel\u00e1ria",
             "via": "",
             "version": "U01",
             "direction": 0.0
@@ -2630,17 +2630,6 @@
     },
     {
         "model": "pontos.trip",
-        "pk": "O0368AAA0AIDU01",
-        "fields": {
-            "route": "O0368AAA0A",
-            "headsign": "Candel\u00e1ria",
-            "via": "",
-            "version": "U01",
-            "direction": 0.0
-        }
-    },
-    {
-        "model": "pontos.trip",
         "pk": "O0341AAP0AIDU01",
         "fields": {
             "route": "O0341AAP0A",
@@ -2659,6 +2648,17 @@
             "via": "",
             "version": "U01",
             "direction": 1.0
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "O0368AAA0AIDU01",
+        "fields": {
+            "route": "O0368AAA0A",
+            "headsign": "Candel\u00e1ria",
+            "via": "",
+            "version": "U01",
+            "direction": 0.0
         }
     },
     {
