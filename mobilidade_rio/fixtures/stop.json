@@ -10861,8 +10861,8 @@
         "pk": "2033O00045S0",
         "fields": {
             "mode": 3,
-            "name": "BRS 1,3,5,I: Pereira de Siqueira",
-            "address": "BRS 1,3,5,I: Pereira de Siqueira",
+            "name": "BRS 1,2,3,6,I: Pereira de Siqueira",
+            "address": "BRS 1,2,3,6,I: Pereira de Siqueira",
             "latitude": "-22.91958",
             "longitude": "-43.2235"
         }
@@ -12376,13 +12376,13 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "2035O00002S0",
+        "pk": "2033O00245S0",
         "fields": {
             "mode": 3,
-            "name": "BRS 5,6,7: Santa Lu\u00edza",
-            "address": "BRS 5,6,7: Santa Lu\u00edza",
-            "latitude": "-22.91533",
-            "longitude": "-43.2325"
+            "name": "BRS 6,7: Benevenuto Berna",
+            "address": "BRS 6,7: Benevenuto Berna",
+            "latitude": "-22.91739",
+            "longitude": "-43.225"
         }
     },
     {
@@ -12394,17 +12394,6 @@
             "address": "BRS 2,3,4,I: Jacegua\u00ed",
             "latitude": "-22.91584",
             "longitude": "-43.23182"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "2033O00245S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 5,6,7: Benevenuto Berna",
-            "address": "BRS 5,6,7: Benevenuto Berna",
-            "latitude": "-22.91739",
-            "longitude": "-43.225"
         }
     },
     {
@@ -12438,6 +12427,17 @@
             "address": "BRS 4,5,I: Jorge Rudge",
             "latitude": "-22.91384",
             "longitude": "-43.23697"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "2035O00002S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 5,6: Santa Lu\u00edza",
+            "address": "BRS 5,6: Santa Lu\u00edza",
+            "latitude": "-22.91533",
+            "longitude": "-43.2325"
         }
     },
     {
@@ -13014,6 +13014,17 @@
     },
     {
         "model": "pontos.stop",
+        "pk": "2036O00058S9",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 2,4,5,6,7,I: Souza Franco",
+            "address": "BRS 2,4,5,6,7,I: Souza Franco",
+            "latitude": "-22.917543",
+            "longitude": "-43.244913"
+        }
+    },
+    {
+        "model": "pontos.stop",
         "pk": "2036O00050S9",
         "fields": {
             "mode": 3,
@@ -13102,35 +13113,24 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "2036O00006S9",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 2,6,7: Gonzaga Bastos",
-            "address": "BRS 2,6,7: Gonzaga Bastos",
-            "latitude": "-22.917071",
-            "longitude": "-43.24241"
-        }
-    },
-    {
-        "model": "pontos.stop",
         "pk": "2036O00005S9",
         "fields": {
             "mode": 3,
-            "name": "BRS 4,5,I: Visconde de Abaet\u00e9",
-            "address": "BRS 4,5,I: Visconde de Abaet\u00e9",
+            "name": "BRS 2,6,7: Visconde de Abaet\u00e9",
+            "address": "BRS 2,6,7: Visconde de Abaet\u00e9",
             "latitude": "-22.91722",
             "longitude": "-43.24318"
         }
     },
     {
         "model": "pontos.stop",
-        "pk": "2036O00058S9",
+        "pk": "2036O00006S9",
         "fields": {
             "mode": 3,
-            "name": "BRS 2,6,7: Souza Franco",
-            "address": "BRS 2,6,7: Souza Franco",
-            "latitude": "-22.917543",
-            "longitude": "-43.244913"
+            "name": "BRS 4,5,I: Gonzaga Bastos",
+            "address": "BRS 4,5,I: Gonzaga Bastos",
+            "latitude": "-22.917071",
+            "longitude": "-43.24241"
         }
     },
     {
@@ -73470,17 +73470,6 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "2035O00018S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 5,6,7: Felipe Camar\u00e3o",
-            "address": "BRS 5,6,7: Felipe Camar\u00e3o",
-            "latitude": "-22.91266",
-            "longitude": "-43.23625"
-        }
-    },
-    {
-        "model": "pontos.stop",
         "pk": "2035O00019S0",
         "fields": {
             "mode": 3,
@@ -73488,28 +73477,6 @@
             "address": "BRS 2,3,4,5,6,7,I: Professor Manoel de Abreu",
             "latitude": "-22.91365",
             "longitude": "-43.23451"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "2036O00049S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 5,6,7: Luiz de Matos",
-            "address": "BRS 5,6,7: Luiz de Matos",
-            "latitude": "-22.91011",
-            "longitude": "-43.2384"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "2033O00021S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 5,6,7: Bar\u00e3o de Mesquita",
-            "address": "BRS 5,6,7: Bar\u00e3o de Mesquita",
-            "latitude": "-22.91638",
-            "longitude": "-43.22806"
         }
     },
     {
@@ -73763,6 +73730,39 @@
             "address": "Rodovi\u00e1ria",
             "latitude": "-22.89878",
             "longitude": "-43.207513"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "2036O00049S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 5,6: Luiz de Matos",
+            "address": "BRS 5,6: Luiz de Matos",
+            "latitude": "-22.91011",
+            "longitude": "-43.2384"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "2035O00018S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 5,6: Felipe Camar\u00e3o",
+            "address": "BRS 5,6: Felipe Camar\u00e3o",
+            "latitude": "-22.91266",
+            "longitude": "-43.23625"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "2033O00021S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 6,7: Bar\u00e3o de Mesquita",
+            "address": "BRS 6,7: Bar\u00e3o de Mesquita",
+            "latitude": "-22.91638",
+            "longitude": "-43.22806"
         }
     },
     {

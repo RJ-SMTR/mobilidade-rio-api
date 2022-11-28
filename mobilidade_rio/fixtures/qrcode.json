@@ -406,5 +406,109 @@
             "stop": "2036O00006S9",
             "code": "4AZE"
         }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 51,
+        "fields": {
+            "stop": "2036O00007S0",
+            "code": "4HKB"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 52,
+        "fields": {
+            "stop": "2036O00049S0",
+            "code": "5GT3"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 53,
+        "fields": {
+            "stop": "2035O00043S0",
+            "code": "5SGU"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 54,
+        "fields": {
+            "stop": "2035O00018S0",
+            "code": "7V3P"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 55,
+        "fields": {
+            "stop": "2035O00019S0",
+            "code": "8A9A"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 56,
+        "fields": {
+            "stop": "2035O00002S0",
+            "code": "8AES"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 57,
+        "fields": {
+            "stop": "2035O00041S0",
+            "code": "8HAM"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 58,
+        "fields": {
+            "stop": "2033O00021S0",
+            "code": "8UHE"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 59,
+        "fields": {
+            "stop": "2033O00022S0",
+            "code": "9D2Q"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 60,
+        "fields": {
+            "stop": "2033O00245S0",
+            "code": "9E8I"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 61,
+        "fields": {
+            "stop": "2033O00244S2",
+            "code": "9NWD"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 62,
+        "fields": {
+            "stop": "2033O00045S0",
+            "code": "31HK"
+        }
+    },
+    {
+        "model": "pontos.qrcode",
+        "pk": 63,
+        "fields": {
+            "stop": "2033O00046S0",
+            "code": "47K3"
+        }
     }
 ]
