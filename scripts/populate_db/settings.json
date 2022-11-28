@@ -15,13 +15,12 @@
             "routes",
             "shapes",
             "stops",
-            "stop_times",
             "trips",
+            "stop_times",
             "qrcode"
         ]
     },
     "flag_params": [
-        "empty_table",
-        "no_insert"
+        "empty_tables"
     ]
 }

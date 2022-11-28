@@ -3,9 +3,40 @@
 
 API estática do aplicativo de [pontos.mobilidade.rio](http://pontos.mobilidade.rio) da Prefeitura da cidade do Rio de Janeiro.
 
+## Estágios de desenvolvimento
+
+* **Teste local**
+  * _Desenvolvimento para Testes Localmente_
+  * Para desenvolver localmente na sua máquina, sem utilizar o Docker.
+    > Use-o caso você não queira ficar subindo e parando o Docker, pois é mais lento que o ambiente local.
+* **Local**
+  * _Desenvolvimento Local_
+  * Utiliza localmente o Docker.
+* **Desenvolvimento**
+  * _Desenvolvimento em servidor Remoto_
+  * Desenvolver remotamente usando orquestrador Kubernetes (K8s) com o Docker.
+* **Staging**
+  * _Teste em servidor Remoto_
+  * Testar remotamente usando orquestrador Kubernetes (K8s) com o Docker.
+* **Produção**
+  * _Produção_
+  * Executar as mesmas configurações do ambiente de desenvolvimento, porém com o Docker configurado para produção.
+
+Resumindo o que cada estágio faz:
+
+| Nome | Descrição | Recursos |
+|---|---|---|
+| native | Desenv. testes | 🖥️ |
+| local | Desenv. local | 🐋 |
+| dev | Desenv. Remoto | 🐋☸️ |
+| stag | Staging | 🐋☸️ |
+| prod | Produção | 🐋☸️ |
+
 ## Requerimentos
 
-* [Docker](https://www.docker.com/) (local), Kubernetes (produção)
+* [Docker](https://www.docker.com/)(local, desenvolvimento)
+* [Kubernetes](https://kubernetes.io/) (produção)
+* [Postgres](https://www.postgresql.org/) (nativo)
 * Python >=3.9
 
 ## Desenvolvimento
@@ -145,3 +176,10 @@ Sequence.objects.filter(trip=<trip_id>).delete()
 `.filter(...)`.
 
 Todos os modelos existentes na API correespondem a [estas classes](/mobilidade_rio/pontos/models.py).
+
+
+
+O que NÃO pode alterar ali sem quebrar o Kubernetes:
+
+* Dockerfile
+* setup.sh

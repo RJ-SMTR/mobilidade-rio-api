@@ -107,22 +107,13 @@ class StopsViewSet(viewsets.ModelViewSet):
         if stop_code is not None:
             queryset = queryset.filter(stop_id=stop_code).order_by("stop_id")
 
-        return queryset
+        stop_code = self.request.query_params.get("stop_code")
+        if stop_code is not None:
+            # split comma
+            stop_code = stop_code.split(",")
+            queryset = queryset.filter(stop_code__in=stop_code).order_by("stop_id")
 
-    #     location = self.request.query_params.get('location', None)
-    #     distance = self.request.query_params.get('distance', None)
-    #     distance = safe_cast(distance, float)
-    #     lat, lon = None, None
-    #     if location is not None:
-    #         lat, lon = self.request.query_params.get('location').split(',')
-    #         lat = safe_cast(lat, float)
-    #         lon = safe_cast(lon, float)
-    #     if (lat is not None) and (lon is not None):
-    #         if distance is None:
-    #             distance = constants.DEFAULT_STOPS_DISTANCE_METERS.value
-    #         queryset = queryset.filter(stop_id__in=[s.stop_id for s in queryset if get_distance(
-    #             (s.stop_lat, s.stop_lon), (lat, lon)) < distance])
-    #     return queryset
+        return queryset
 
 
 class StopTimesViewSet(viewsets.ModelViewSet):
@@ -168,13 +159,13 @@ class StopTimesViewSet(viewsets.ModelViewSet):
             """
 
             # select rows if trip_id in q_trip_id_unique
-            q = f"""
+            query = f"""
             SELECT * FROM ({q_stop_id}) AS t3
             WHERE trip_id IN ({q_trip_id_unique})
             """
 
             # execute query
-            queryset = queryset.raw(q)
+            queryset = queryset.raw(query)
         return queryset
 
 
