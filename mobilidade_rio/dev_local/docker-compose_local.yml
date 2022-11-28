@@ -4,7 +4,7 @@ services:
   web:
     build: 
       context: .
-      dockerfile: ./Dockerfile_dev 
+      dockerfile: ./Dockerfile_local
     image: django
     container_name: django_hd
     volumes:
@@ -14,7 +14,7 @@ services:
     depends_on:
       - db
     environment:
-      - DJANGO_SETTINGS_MODULE=mobilidade_rio.settings.dev
+      - DJANGO_SETTINGS_MODULE=mobilidade_rio.settings.local
     # command: python manage.py runserver 0.0.0.0:8000
     command: >
       bash -c "

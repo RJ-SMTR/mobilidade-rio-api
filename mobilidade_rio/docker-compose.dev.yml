@@ -1,6 +1,0 @@
-version: "3.9"
-
-services:
-  web:
-    environment:
-      - DJANGO_SETTINGS_MODULE=mobilidade_rio.settings.local
