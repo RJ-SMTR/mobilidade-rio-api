@@ -33,7 +33,6 @@ remove_duplicates_cols = {
 }
 
 
-
 def print_colored(color, *args, **kwargs):
     """Print text in color"""
     colors = {
@@ -50,11 +49,11 @@ def print_colored(color, *args, **kwargs):
 
 
 def convert_to_type(
-    data: io.TextIOWrapper | pandas.DataFrame,
+    data,
     initial_type: type=None,
     ret_type: type=io.TextIOWrapper,
     file_name: str = None,
-    ) -> io.TextIOWrapper | pandas.DataFrame:
+    ):
 
     """Return data from type"""
 
@@ -114,11 +113,11 @@ def validate_table_name(_table: str, _app: str = "") -> str:
 
 
 def validate_col_values(
-    data: io.TextIOWrapper | pandas.DataFrame,
+    data,
     table_name: str,
     cols: list = None,
     ret_type: str = None
-) -> io.TextIOWrapper | pandas.DataFrame:
+):
     """
     Filter columns before upload
 
