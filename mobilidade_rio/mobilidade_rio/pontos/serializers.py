@@ -27,6 +27,7 @@ class RoutesSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class TripsSerializer(serializers.HyperlinkedModelSerializer):
+    route_id = RoutesSerializer()
     class Meta:
         model = Trips
         fields = "__all__"

@@ -57,7 +57,7 @@ class Routes(models.Model):
 
 class Trips(models.Model):
     trip_id = models.CharField(max_length=500, blank=True, primary_key=True)
-    route_id = models.CharField(max_length=500, blank=True, null=True)
+    route_id = models.ForeignKey(Routes, on_delete=models.CASCADE, null=True)
     service_id = models.CharField(max_length=500, blank=True, null=True)
     trip_headsign = models.CharField(max_length=500, blank=True, null=True)
     trip_short_name = models.CharField(max_length=500, blank=True, null=True)
