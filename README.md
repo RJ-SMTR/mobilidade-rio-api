@@ -5,21 +5,21 @@ API estática do aplicativo de [pontos.mobilidade.rio](http://pontos.mobilidade.
 
 ## Estágios de desenvolvimento
 
-* **Teste local**
-  * _Desenvolvimento para Testes Localmente_
-  * Para desenvolver localmente na sua máquina, sem utilizar o Docker.
-    > Use-o caso você não queira ficar subindo e parando o Docker, pois é mais lento que o ambiente local.
+* **Nativo**
+  * _Desenvolvimento Local em servidor Nativo_
+  * Para desenvolver com rapidez os recursos do servidor, ele é executado localmente na sua máquina, sem utilizar o Docker.
+  * Se este não é o seu caso, use o `Local`.
 * **Local**
   * _Desenvolvimento Local_
   * Utiliza localmente o Docker.
-* **Desenvolvimento**
+* **Dev**
   * _Desenvolvimento em servidor Remoto_
   * Desenvolver remotamente usando orquestrador Kubernetes (K8s) com o Docker.
 * **Staging**
   * _Teste em servidor Remoto_
   * Testar remotamente usando orquestrador Kubernetes (K8s) com o Docker.
-* **Produção**
-  * _Produção_
+* **Prod**
+  * _Produção em servidor oficial_
   * Executar as mesmas configurações do ambiente de desenvolvimento, porém com o Docker configurado para produção.
 
 Resumindo o que cada estágio faz:
@@ -44,30 +44,39 @@ Resumindo o que cada estágio faz:
 ### Iniciando o ambiente
 
 ```bash
-python -m venv .venv
-. .venv/bin/activate
-pip install -r requirements-dev.txt
+conda activate mobilidade_rio_api
+pip install -r mobilidade_rio/requirements-dev.txt
 ```
 
 ### Criando a aplicação
 
-```sh
-docker-compose -f ./mobilidade_rio/docker-compose.yml up --build
+Dev nativo:
+```bash
+python mobilidade_rio/manage.py makemigrations
+python mobilidade_rio/manage.py migrate
+python mobilidade_rio/manage.py runserver 8001
 ```
 
-* URLs for pontos are in `<site>/gtfs/<entity>` prefix;
-  > Example: `http://localhost:8000/gtfs/routes` instead of `http://localhost:8000/routes`
+Dev local:
+```bash
+docker-compose -f "mobilidade_rio/dev_local/docker-compose_local.yml" up --build
+```
 
-Os containers `django_hd` (API) e e`postgres_hd` (banco) são criados a
+Dev remoto:
+
+> _em construção, a saber se será necessário_
+
+### Acessando a aplicação
+
+Para acessar 
+* URLs for pontos are in `<site>/gtfs/<entity>` prefix;
+  > Example:  
+  > Use ✔️ `http://localhost:8010/gtfs/routes`  
+  > instead of ❌ `http://localhost:8010/routes`
+
+Os containers `django_hd` (API) e `postgres_hd` (banco) são criados a
 partir desse comando. Você pode acessar a API em:
 `http://localhost:8010`
-
-> Para resetar a aplicação do zero, remova os containers e volumes
-> associados:
->
-> ```sh
-> docker-compose -f ./mobilidade_rio/docker-compose.yml down -v && docker image prune -f
-> ```
 
 Para acessar o banco via linha de comando (ainda está vazio!), basta rodar:
 
@@ -76,6 +85,13 @@ docker exec -it postgres_hd psql -U postgres
 ```
 
 > Veja mais sobre os comandos do psql [aqui](https://www.postgresql.org/docs/9.1/app-psql.html).
+
+> Para resetar a aplicação do zero, remova os containers e volumes
+> associados:
+>
+> ```sh
+> docker-compose -f ./mobilidade_rio/docker-compose.yml down -v && docker image prune -f
+> ```
 
 ### Populando o banco
 
@@ -103,7 +119,7 @@ docker exec -it postgres_hd psql -U postgres
 python scripts/populate_db/populate_db.py --empty_table
 ```
 
-O arquivo `settings.jsonc` contém as configurações para popular o banco
+O arquivo `settings.json` contém as configurações para popular o banco
 (nomes das tabelas, ordem, parâmetros para o upload).
   
   > **Os dados subiram?**
