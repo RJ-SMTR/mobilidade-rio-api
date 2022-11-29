@@ -26,7 +26,7 @@ Resumindo o que cada estágio faz:
 
 | Nome | Descrição | Recursos |
 |---|---|---|
-| native | Desenv. testes | 🖥️ |
+| native | Desenv. nativo | 🖥️ |
 | local | Desenv. local | 🐋 |
 | dev | Desenv. Remoto | 🐋☸️ |
 | stag | Staging | 🐋☸️ |
