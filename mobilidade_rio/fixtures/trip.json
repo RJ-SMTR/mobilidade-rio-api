@@ -1981,6 +1981,28 @@
     },
     {
         "model": "pontos.trip",
+        "pk": "O0623AAA0AIDU01",
+        "fields": {
+            "route": "O0623AAA0A",
+            "headsign": "Saens Pe\u00f1a",
+            "via": "",
+            "version": "U01",
+            "direction": 0.0
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "O0639AAA0AIDU02",
+        "fields": {
+            "route": "O0639AAA0A",
+            "headsign": "Saens Pe\u00f1a",
+            "via": "",
+            "version": "U02",
+            "direction": 0.0
+        }
+    },
+    {
+        "model": "pontos.trip",
         "pk": "O0117AAA0AIDU01",
         "fields": {
             "route": "O0117AAA0A",
@@ -3851,17 +3873,6 @@
     },
     {
         "model": "pontos.trip",
-        "pk": "O0623AAA0AIDU01",
-        "fields": {
-            "route": "O0623AAA0A",
-            "headsign": "Saens Pe\u00f1a",
-            "via": "",
-            "version": "U01",
-            "direction": 0.0
-        }
-    },
-    {
-        "model": "pontos.trip",
         "pk": "O0601AAA0AIDU01",
         "fields": {
             "route": "O0601AAA0A",
@@ -4140,17 +4151,6 @@
         "pk": "O0636AAA0AIDU02",
         "fields": {
             "route": "O0636AAA0A",
-            "headsign": "Saens Pe\u00f1a",
-            "via": "",
-            "version": "U02",
-            "direction": 0.0
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0639AAA0AIDU02",
-        "fields": {
-            "route": "O0639AAA0A",
             "headsign": "Saens Pe\u00f1a",
             "via": "",
             "version": "U02",
