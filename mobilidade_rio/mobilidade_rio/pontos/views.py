@@ -135,7 +135,7 @@ class StopTimesViewSet(viewsets.ModelViewSet):
             # get multiple stop_ids
 
             # variables
-            table = 'pontos_stoptimes'
+            t_stoptimes = 'pontos_stoptimes'
             stop_ids = stop_id.split(",")
             stop_ids_formatted = tuple(stop_ids)
             if len(stop_ids) == 1:
