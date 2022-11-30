@@ -15,21 +15,21 @@ class Agency(models.Model):
 
 class Calendar(models.Model):
     service_id = models.CharField(max_length=500, blank=True, primary_key=True)
-    monday = models.CharField(max_length=500, blank=True, null=True)
-    tuesday = models.CharField(max_length=500, blank=True, null=True)
-    wednesday = models.CharField(max_length=500, blank=True, null=True)
-    thursday = models.CharField(max_length=500, blank=True, null=True)
-    friday = models.CharField(max_length=500, blank=True, null=True)
-    saturday = models.CharField(max_length=500, blank=True, null=True)
-    sunday = models.CharField(max_length=500, blank=True, null=True)
-    start_date = models.CharField(max_length=500, blank=True, null=True)
-    end_date = models.CharField(max_length=500, blank=True, null=True)
+    monday = models.BooleanField(blank=True, null=True)
+    tuesday = models.BooleanField(blank=True, null=True)
+    wednesday = models.BooleanField(blank=True, null=True)
+    thursday = models.BooleanField(blank=True, null=True)
+    friday = models.BooleanField(blank=True, null=True)
+    saturday = models.BooleanField(blank=True, null=True)
+    sunday = models.BooleanField(blank=True, null=True)
+    start_date = models.DateField(blank=True, null=True)
+    end_date = models.DateField(blank=True, null=True)
 
 
 class CalendarDates(models.Model):
     service_id = models.CharField(max_length=500, blank=True)
-    date = models.CharField(max_length=500, blank=True, null=True)
-    exception_type = models.CharField(max_length=500, blank=True, null=True)
+    date = models.DateField(blank=True, null=True)
+    exception_type = models.IntegerField(blank=True, null=True)
 
     class Meta:
         constraints = [
@@ -61,7 +61,8 @@ class Trips(models.Model):
     service_id = models.CharField(max_length=500, blank=True, null=True)
     trip_headsign = models.CharField(max_length=500, blank=True, null=True)
     trip_short_name = models.CharField(max_length=500, blank=True, null=True)
-    direction_id = models.CharField(max_length=500, blank=True, null=True)
+    # direction_id = models.IntegerField(blank=True, null=True)
+    direction_id = models.CharField(max_length=500, blank=True, null=True)  # TODO: change to int
     block_id = models.CharField(max_length=500, blank=True, null=True)
     shape_id = models.CharField(max_length=500, blank=True, null=True)
     wheelchair_accessible = models.CharField(max_length=500, blank=True, null=True)
