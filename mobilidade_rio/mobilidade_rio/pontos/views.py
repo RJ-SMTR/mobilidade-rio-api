@@ -166,6 +166,14 @@ class StopTimesViewSet(viewsets.ModelViewSet):
 
             # execute query
             queryset = queryset.raw(query)
+
+        trip_id = None
+        # get trip_id from query params
+        if 'trip_id' in self.request.query_params:
+            trip_id = self.request.query_params.get('trip_id')
+            queryset = queryset.filter(trip_id=trip_id)
+
+
         return queryset
 
 
