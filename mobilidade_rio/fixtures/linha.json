@@ -2026,7 +2026,7 @@
             "agency": 22004,
             "mode": 3,
             "initials": "LECD57",
-            "name": "Boiuna - Saens Pe\u00f1a"
+            "name": "Teixeiras - Saens Pe\u00f1a"
         }
     },
     {
@@ -3181,16 +3181,6 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0513AAP0A",
-        "fields": {
-            "agency": 22002,
-            "mode": 3,
-            "initials": "SP513",
-            "name": "Urca - Botafogo"
-        }
-    },
-    {
-        "model": "pontos.linha",
         "pk": "O0538AAA0A",
         "fields": {
             "agency": 22002,
@@ -3237,6 +3227,16 @@
             "mode": 3,
             "initials": "553",
             "name": "Rio Sul - Recreio"
+        }
+    },
+    {
+        "model": "pontos.linha",
+        "pk": "O0513AAA0A",
+        "fields": {
+            "agency": 22002,
+            "mode": 3,
+            "initials": "513",
+            "name": "Urca - Botafogo"
         }
     },
     {

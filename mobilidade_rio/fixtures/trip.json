@@ -1530,12 +1530,23 @@
     },
     {
         "model": "pontos.trip",
-        "pk": "3665e9bb-2da4-4a67-a8ce-fef12b378ad2",
+        "pk": "O0057AAA0AIDU01",
         "fields": {
-            "route": "btwr",
-            "headsign": "",
+            "route": "O00057CAA0A",
+            "headsign": "Saens Pe\u00f1a",
             "via": "",
-            "version": "4-4",
+            "version": "U01",
+            "direction": 0.0
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "O0057AAA0AVDU01",
+        "fields": {
+            "route": "O00057CAA0A",
+            "headsign": "Teixeiras",
+            "via": "",
+            "version": "U01",
             "direction": 1.0
         }
     },
@@ -1544,7 +1555,7 @@
         "pk": "0373fd52-e961-45ea-afb2-5959b62d11e3",
         "fields": {
             "route": "btwr",
-            "headsign": "",
+            "headsign": "Pedregoso",
             "via": "",
             "version": "1-4",
             "direction": 0.0
@@ -1552,46 +1563,13 @@
     },
     {
         "model": "pontos.trip",
-        "pk": "839f8266-ea92-4bf7-92f3-0703f0f47072",
+        "pk": "3665e9bb-2da4-4a67-a8ce-fef12b378ad2",
         "fields": {
-            "route": "O00057CAA0A",
-            "headsign": "Boiuna",
+            "route": "btwr",
+            "headsign": "Campo Grande",
             "via": "",
-            "version": "2-4",
+            "version": "4-4",
             "direction": 1.0
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "18df4ba6-1eb6-42d4-9248-4cdaf9f571f7",
-        "fields": {
-            "route": "O00057CAA0A",
-            "headsign": "Boiuna",
-            "via": "",
-            "version": "6-4",
-            "direction": 1.0
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "a842a2ae-4403-4a00-9467-c0117ee716f8",
-        "fields": {
-            "route": "O00057CAA0A",
-            "headsign": "Saens Pe\u00f1a",
-            "via": "",
-            "version": "3-4",
-            "direction": 0.0
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "1949ca7a-4499-4f16-98ee-5f597dfd7745",
-        "fields": {
-            "route": "O00057CAA0A",
-            "headsign": "Saens Pe\u00f1a",
-            "via": "",
-            "version": "9-4",
-            "direction": 0.0
         }
     },
     {
@@ -2003,12 +1981,34 @@
     },
     {
         "model": "pontos.trip",
+        "pk": "O0777AAV0AIDU02",
+        "fields": {
+            "route": "O0777AAV0A",
+            "headsign": "Madureira",
+            "via": "",
+            "version": "U02",
+            "direction": 0.0
+        }
+    },
+    {
+        "model": "pontos.trip",
         "pk": "O0117AAA0AIDU01",
         "fields": {
             "route": "O0117AAA0A",
             "headsign": "Cosme Velho",
             "via": "",
             "version": "U01",
+            "direction": 1.0
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "O0777AAV0AVDU02",
+        "fields": {
+            "route": "O0777AAV0A",
+            "headsign": "Padre Miguel",
+            "via": "",
+            "version": "U02",
             "direction": 1.0
         }
     },
@@ -2054,6 +2054,39 @@
             "via": "",
             "version": "U01",
             "direction": 1.0
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "O0805AAA0AVDU01",
+        "fields": {
+            "route": "O0805AAA0A",
+            "headsign": "Alvorada",
+            "via": "",
+            "version": "U01",
+            "direction": 1.0
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "O0513AAP0AIDU01",
+        "fields": {
+            "route": "O0513AAA0A",
+            "headsign": "Botafogo",
+            "via": "",
+            "version": "U01",
+            "direction": 0.0
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "O0805AAA0AIDU01",
+        "fields": {
+            "route": "O0805AAA0A",
+            "headsign": "Jardim Oce\u00e2nico",
+            "via": "",
+            "version": "U01",
+            "direction": 0.0
         }
     },
     {
@@ -3686,17 +3719,6 @@
     },
     {
         "model": "pontos.trip",
-        "pk": "O0513AAP0AVDU01",
-        "fields": {
-            "route": "O0513AAP0A",
-            "headsign": "Urca",
-            "via": "",
-            "version": "U01",
-            "direction": 1.0
-        }
-    },
-    {
-        "model": "pontos.trip",
         "pk": "O0498AAA0AVDU02",
         "fields": {
             "route": "O0498AAA0A",
@@ -3715,6 +3737,17 @@
             "via": "",
             "version": "U02",
             "direction": 0.0
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "O0513AAP0AVDU01",
+        "fields": {
+            "route": "O0513AAA0A",
+            "headsign": "Urca",
+            "via": "",
+            "version": "U01",
+            "direction": 1.0
         }
     },
     {
@@ -4188,17 +4221,6 @@
             "via": "",
             "version": "U02",
             "direction": 1.0
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0513AAP0AIDU01",
-        "fields": {
-            "route": "O0513AAP0A",
-            "headsign": "Botafogo",
-            "via": "",
-            "version": "U01",
-            "direction": 0.0
         }
     },
     {
@@ -5237,28 +5259,6 @@
     },
     {
         "model": "pontos.trip",
-        "pk": "O0777AAV0AIDU02",
-        "fields": {
-            "route": "O0777AAV0A",
-            "headsign": "Madureira",
-            "via": "",
-            "version": "U02",
-            "direction": 0.0
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0777AAV0AVDU02",
-        "fields": {
-            "route": "O0777AAV0A",
-            "headsign": "Padre Miguel",
-            "via": "",
-            "version": "U02",
-            "direction": 1.0
-        }
-    },
-    {
-        "model": "pontos.trip",
         "pk": "O0778AAA0AIDU01",
         "fields": {
             "route": "O0778AAA0A",
@@ -5538,28 +5538,6 @@
         "fields": {
             "route": "O0805AAP0A",
             "headsign": "Pra\u00e7a Euvaldo Lodi",
-            "via": "",
-            "version": "U01",
-            "direction": 0.0
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0805AAA0AVDU01",
-        "fields": {
-            "route": "O0805AAA0A",
-            "headsign": "Alvorada",
-            "via": "",
-            "version": "U01",
-            "direction": 1.0
-        }
-    },
-    {
-        "model": "pontos.trip",
-        "pk": "O0805AAA0AIDU01",
-        "fields": {
-            "route": "O0805AAA0A",
-            "headsign": "Jardim Oce\u00e2nico",
             "via": "",
             "version": "U01",
             "direction": 0.0

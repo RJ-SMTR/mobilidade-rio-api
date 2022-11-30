@@ -2229,7 +2229,7 @@
             "agency": "22004",
             "mode": 3,
             "short_name": "LECD57",
-            "vista": "Boiuna - Saens Pe\u00f1a"
+            "vista": "Teixeiras - Saens Pe\u00f1a"
         }
     },
     {
@@ -3499,17 +3499,6 @@
     },
     {
         "model": "pontos.route",
-        "pk": "O0513AAP0A",
-        "fields": {
-            "linha": "O0513AAP0A",
-            "agency": "22002",
-            "mode": 3,
-            "short_name": "SP513",
-            "vista": "Urca - Botafogo"
-        }
-    },
-    {
-        "model": "pontos.route",
         "pk": "O0538AAA0A",
         "fields": {
             "linha": "O0538AAA0A",
@@ -3561,6 +3550,17 @@
             "mode": 3,
             "short_name": "553",
             "vista": "Rio Sul - Recreio"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "O0513AAA0A",
+        "fields": {
+            "linha": "O0513AAA0A",
+            "agency": "22002",
+            "mode": 3,
+            "short_name": "513",
+            "vista": "Urca - Botafogo"
         }
     },
     {
