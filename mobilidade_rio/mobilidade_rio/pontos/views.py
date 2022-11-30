@@ -143,25 +143,25 @@ class StopTimesViewSet(viewsets.ModelViewSet):
 
             # select rows if stop_id in in <stop_ids>
             q_stop_id = f"""
-            SELECT * FROM {table} WHERE stop_id IN {stop_ids_formatted}
+            SELECT * FROM {t_stoptimes} WHERE stop_id IN {stop_ids_formatted}
             """
 
             # select unique combinations of trip_id and stop_id
             q_trip_ids = f"""
-            SELECT DISTINCT trip_id, stop_id FROM ({q_stop_id}) AS t1
+            SELECT DISTINCT trip_id_id, stop_id FROM ({q_stop_id}) AS t1
             """
 
             # select if trip_id combines with ALL stop_ids
             q_trip_id_unique = f"""
-            SELECT DISTINCT trip_id FROM ({q_trip_ids}) AS t2
-            GROUP BY trip_id
+            SELECT DISTINCT trip_id_id FROM ({q_trip_ids}) AS t2
+            GROUP BY trip_id_id
             HAVING COUNT(*) = {len(stop_ids)}
             """
 
             # select rows if trip_id in q_trip_id_unique
             query = f"""
             SELECT * FROM ({q_stop_id}) AS t3
-            WHERE trip_id IN ({q_trip_id_unique})
+            WHERE trip_id_id IN ({q_trip_id_unique})
             """
 
             # execute query
