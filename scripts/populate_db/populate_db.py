@@ -216,8 +216,9 @@ def upload_data(_app: str, _model: str):
                     FROM STDIN WITH CSV DELIMITER AS ','
                 """
                 try:
-                    cur.copy_expert(sql, data)
-                    conn.commit()
+                    if "--no_insert" not in sys.argv and '-i' not in sys.argv:
+                        cur.copy_expert(sql, data)
+                        conn.commit()
                     print("[OK]")
 
                 except psycopg2.Error as error:
@@ -278,6 +279,7 @@ if __name__ == "__main__":
     file_path = os.path.join(script_path, "settings.json")
 
     try:
+        # if file exists
         with open(file_path, "r", encoding="utf8") as f:
             settings = json.load(f)
     except FileNotFoundError:
@@ -388,20 +390,20 @@ if __name__ == "__main__":
             print("[OK]\n")
 
         # Insert tables
-        if "--no_insert" not in sys.argv and '-i' not in sys.argv:
-            if app in settings["table_order"].keys():
-                folder = os.path.join(csv_path, app)
-                app_models = settings["table_order"][app]
+        
+        if app in settings["table_order"].keys():
+            folder = os.path.join(csv_path, app)
+            app_models = settings["table_order"][app]
 
-                print(folder)
-                folder_dirs = [f.split(".")[0] for f in os.listdir(folder)]
-                for model in app_models:
-                    if model in folder_dirs:
-                        model = model.split(".")[0]
-                        upload_data(app, model)
-            else:
-                print(
-                    f"Couldn't find {app} in 'settings.json'.\n\
-                    Make sure you have the correct app name - \
-                    should be a folder in mobilidade_rio/mobilidade_rio."
-                )
+            print(folder)
+            folder_dirs = [f.split(".")[0] for f in os.listdir(folder)]
+            for model in app_models:
+                if model in folder_dirs:
+                    model = model.split(".")[0]
+                    upload_data(app, model)
+        else:
+            print(
+                f"Couldn't find {app} in 'settings.json'.\n\
+                Make sure you have the correct app name - \
+                should be a folder in mobilidade_rio/mobilidade_rio."
+            )
