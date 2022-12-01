@@ -155,6 +155,9 @@ def validate_col_values(
                 # data = data[data[col].str.contains("2") == False]
                 # ?remove row if contains _<n> except _1
                 data = data[~data[col].str.contains("_")].copy()
+
+                # remove duplicates
+                data = data.drop_duplicates(subset=[col]).copy()
     len_history.append(len(data))
     # print("CVC hist", len_history)
 
