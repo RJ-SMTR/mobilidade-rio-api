@@ -25,7 +25,7 @@ parameters = """\
 
 remove_duplicates_cols = {
     "pontos_stoptimes": [
-        "trip_id"
+        # "trip_id"
     ],
     "pontos_trips": [
         "trip_id"
