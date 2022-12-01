@@ -23,9 +23,15 @@ parameters = """\
 -t --drop_tables        Drop tables in list      [<drop_tables>]
 """
 
-remove_duplicates_cols = {
+remove_duplicate_cols = {
+    "pontos_trips": [
+        "trip_id"
+    ]
+}
+
+validate_cols = {
     "pontos_stoptimes": [
-        # "trip_id"
+        "trip_id"
     ],
     "pontos_trips": [
         "trip_id"
@@ -116,7 +122,8 @@ def validate_col_values(
     data,
     table_name: str,
     cols: list = None,
-    ret_type: str = None
+    ret_type: str = None,
+    remove_duplicates: bool = True,
 ):
     """
     Filter columns before upload
@@ -145,8 +152,16 @@ def validate_col_values(
 
     len_history = [len(data)]
     # remove duplicates
-    if table_name in remove_duplicates_cols:
-        for col in validate_col_names(table_name, remove_duplicates_cols[table_name]):
+    cols_duplicates = []
+    if table_name in remove_duplicate_cols:
+        cols_duplicates = validate_col_names(table_name, remove_duplicate_cols[table_name])
+    cols_validates = []
+    if table_name in validate_cols:
+        cols_validates = validate_col_names(table_name, validate_cols[table_name])
+
+    # cols_validates = validate_col_names(table_name, validate_cols[table_name])
+    if table_name in remove_duplicate_cols:
+        for col in cols_validates:
             if col in cols:
                 # ? if value ends with _1, split and remove _1
                 data[col] = data[col].str.split("_1").str[0]
@@ -157,7 +172,8 @@ def validate_col_values(
                 data = data[~data[col].str.contains("_")].copy()
 
                 # remove duplicates
-                data = data.drop_duplicates(subset=[col]).copy()
+                if remove_duplicates and col in cols_duplicates:
+                    data = data.drop_duplicates(subset=[col]).copy()
     len_history.append(len(data))
     # print("CVC hist", len_history)
 
@@ -283,6 +299,12 @@ if __name__ == "__main__":
                 param = param[:param.find("[")]
             parameters_new += param + "\n"
         parameters = parameters_new
+    if 'remove_duplicate_cols' in settings:
+        # append
+        remove_duplicate_cols = settings['remove_duplicate_cols']
+    if 'validate_cols' in settings:
+        # append
+        validate_cols = settings['validate_cols']
     # Help
     if "--help" in sys.argv or "-h" in sys.argv:
         help_1()
