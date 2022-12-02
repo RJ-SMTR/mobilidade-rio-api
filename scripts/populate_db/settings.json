@@ -24,9 +24,6 @@
         "pontos_trips": [
             "trip_id"
         ]
-        ,"test_table": [
-            "col1"
-        ]
     },
     "validate_cols": {
         "pontos_stoptimes": [
@@ -35,11 +32,8 @@
         "pontos_trips": [
             "trip_id"
         ]
-        ,"test_table_VAL": [
-            "col1_VAL"
-        ]
     },
     "flag_params": [
-        "#empty_tables"
+        "empty_tables"
     ]
 }
