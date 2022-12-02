@@ -95,6 +95,11 @@ docker exec -it postgres_hd psql -U postgres
 
 ### Populando o banco
 
+1. Remova os containers e volumes associados:
+```sh
+docker-compose -f ./mobilidade_rio/dev_local/docker-compose_local.yml down -v
+```
+
 1. Salve os arquivos do GTFS na pasta
    [`scripts/populate_db/csv_files/pontos`](/scripts/populate_db/csv_files/pontos).
    A estrutura deve seguir:
@@ -171,6 +176,17 @@ python manage.py loaddata fixtures/<seu-fixture>.json
 ```
 
 ### Como deletar dados
+
+Para esvaziar as tabelas rode:
+
+```sh
+scripts\populate_db\populate_db.py --empty_tables --no_insert
+```
+
+Para esvaziar todo o banco de dados, rode:
+```sh
+scripts/populate_db/populate_db.py --empty_db
+```
 
 Acesse o ambiente de produção e rode:
 

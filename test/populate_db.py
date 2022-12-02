@@ -16,22 +16,16 @@ import psycopg2
 import pandas
 
 parameters = """\
--d --empty_db           Empty database           [<drop_all>]
+-a --drop_all           Drop all tables          [<drop_all>]
 -e --empty_tables       Empty all tables         [<empty_tables>]
 -i --no_insert          Don't insert data        [<no_insert>]
 -p --port
 -t --drop_tables        Drop tables in list      [<drop_tables>]
 """
 
-remove_duplicate_cols = {
-    "pontos_trips": [
-        "trip_id"
-    ]
-}
-
-validate_cols = {
+remove_duplicates_cols = {
     "pontos_stoptimes": [
-        "trip_id"
+        # "trip_id"
     ],
     "pontos_trips": [
         "trip_id"
@@ -152,16 +146,8 @@ def validate_col_values(
 
     len_history = [len(data)]
     # remove duplicates
-    cols_duplicates = []
-    if table_name in remove_duplicate_cols:
-        cols_duplicates = validate_col_names(table_name, remove_duplicate_cols[table_name])
-    cols_validates = []
-    if table_name in validate_cols:
-        cols_validates = validate_col_names(table_name, validate_cols[table_name])
-
-    # cols_validates = validate_col_names(table_name, validate_cols[table_name])
-    if table_name in validate_cols:
-        for col in cols_validates:
+    if table_name in remove_duplicates_cols:
+        for col in validate_col_names(table_name, remove_duplicates_cols[table_name]):
             if col in cols:
                 # ? if value ends with _1, split and remove _1
                 data[col] = data[col].str.split("_1").str[0]
@@ -172,7 +158,7 @@ def validate_col_values(
                 data = data[~data[col].str.contains("_")].copy()
 
                 # remove duplicates
-                if remove_duplicates and col in cols_duplicates:
+                if remove_duplicates:
                     data = data.drop_duplicates(subset=[col]).copy()
     len_history.append(len(data))
     # print("CVC hist", len_history)
@@ -301,12 +287,10 @@ if __name__ == "__main__":
                 param = param[:param.find("[")]
             parameters_new += param + "\n"
         parameters = parameters_new
-    if 'remove_duplicate_cols' in settings:
+    if 'remove_duplicates_cols' in settings:
         # append
-        remove_duplicate_cols = settings['remove_duplicate_cols']
-    if 'validate_cols' in settings:
-        # append
-        validate_cols = settings['validate_cols']
+        remove_duplicates_cols.update(settings['remove_duplicates_cols'])
+    print("remove cols:", remove_duplicates_cols)
     # Help
     if "--help" in sys.argv or "-h" in sys.argv:
         help_1()
@@ -336,7 +320,7 @@ if __name__ == "__main__":
     cur = conn.cursor()
 
     # drop all tables from database
-    if "--empty_database" in sys.argv or "-d" in sys.argv:
+    if "--drop_all" in sys.argv or "-a" in sys.argv:
         print("Dropping schema...")
         cur.execute("DROP SCHEMA IF EXISTS public CASCADE")
         conn.commit()
