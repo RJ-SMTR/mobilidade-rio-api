@@ -1,4 +1,7 @@
 """
+populate_db
+v1.0 - 02/12/2022
+
 Copy CSV to Postgres
 
 How to use:
