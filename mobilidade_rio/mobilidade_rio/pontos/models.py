@@ -20,16 +20,17 @@ class Agency(models.Model):
 
 
 class Calendar(models.Model):
+    """Model for Calendar"""
     service_id = models.CharField(max_length=500, blank=True, primary_key=True)
-    monday = models.BooleanField(blank=True, null=True)
-    tuesday = models.BooleanField(blank=True, null=True)
-    wednesday = models.BooleanField(blank=True, null=True)
-    thursday = models.BooleanField(blank=True, null=True)
-    friday = models.BooleanField(blank=True, null=True)
-    saturday = models.BooleanField(blank=True, null=True)
-    sunday = models.BooleanField(blank=True, null=True)
-    start_date = models.DateField(blank=True, null=True)
-    end_date = models.DateField(blank=True, null=True)
+    monday = models.IntegerField(blank=False, null=False)
+    tuesday = models.IntegerField(blank=False, null=False)
+    wednesday = models.IntegerField(blank=False, null=False)
+    thursday = models.IntegerField(blank=False, null=False)
+    friday = models.IntegerField(blank=False, null=False)
+    saturday = models.IntegerField(blank=False, null=False)
+    sunday = models.IntegerField(blank=False, null=False)
+    start_date = models.DateField(blank=False, null=False)
+    end_date = models.DateField(blank=False, null=False)
 
 
 class CalendarDates(models.Model):
