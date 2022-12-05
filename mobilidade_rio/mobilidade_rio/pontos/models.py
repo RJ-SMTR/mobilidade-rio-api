@@ -7,7 +7,10 @@ from django.db import models
 
 
 class Agency(models.Model):
-    """Model for agency.txt"""
+    """
+    Model for agency.txt
+    Mandatory fields: agency_id, agency_name, agency_url, agency_timezone
+    """
     agency_id = models.CharField(max_length=500, blank=True, primary_key=True)
     agency_name = models.CharField(max_length=500, blank=False, null=False)
     agency_url = models.URLField(max_length=500, blank=False, null=False)
@@ -21,7 +24,10 @@ class Agency(models.Model):
 
 
 class Calendar(models.Model):
-    """Model for calendar.txt"""
+    """
+    Model for calendar.txt
+    Mandatory fields: all
+    """
     service_id = models.CharField(max_length=500, blank=True, primary_key=True)
     monday = models.IntegerField(blank=False, null=False)
     tuesday = models.IntegerField(blank=False, null=False)
