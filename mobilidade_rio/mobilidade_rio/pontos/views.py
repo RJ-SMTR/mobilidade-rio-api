@@ -141,29 +141,17 @@ class StopTimesViewSet(viewsets.ModelViewSet):
             if len(stop_ids) == 1:
                 stop_ids_formatted = f"('{stop_id}')"
 
-            # select rows if stop_id in in <stop_ids>
-            q_stop_id = f"""
-            SELECT * FROM {t_stoptimes} WHERE stop_id IN {stop_ids_formatted}
-            """
-
-            # select unique combinations
+            # select unique combinations if stop_id in in <stop_ids>
             q_unique_cols = f"""
-            SELECT DISTINCT trip_id_id, stop_id, arrival_time, departure_time FROM ({q_stop_id}) AS t1
-            """
-            # get remaining cols from q_unique_cols
-            q_unique_cols = f"""
-            SELECT trip_id_id, stop_id, arrival_time, departure_time FROM {t_stoptimes}
-            WHERE (trip_id_id, stop_id, arrival_time, departure_time) IN ({q_unique_cols})
-            """
-            # select extra cols from remaining rows
-            q_unique_cols = f"""
-            SELECT id, trip_id_id, stop_id, arrival_time, departure_time,
-            ROW_NUMBER() OVER (PARTITION BY trip_id_id, stop_id ORDER BY id) AS row_num
-            FROM pontos_stoptimes
-            WHERE (trip_id_id, stop_id, arrival_time, departure_time) IN ({q_unique_cols})
-            """
-            q_unique_cols = f"""
-            SELECT * FROM ({q_unique_cols}) AS t1
+            SELECT * FROM (
+                SELECT id, trip_id_id, stop_id, arrival_time, departure_time,
+                ROW_NUMBER() OVER (PARTITION BY trip_id_id, stop_id ORDER BY id) AS row_num
+                FROM pontos_stoptimes
+                WHERE (trip_id_id, stop_id, arrival_time, departure_time) IN (
+                    SELECT DISTINCT trip_id_id, stop_id, arrival_time, departure_time FROM {t_stoptimes}
+                    WHERE stop_id IN {stop_ids_formatted}
+                )
+            ) AS q_unique_cols
             WHERE row_num = 1
             """
             query = q_unique_cols
