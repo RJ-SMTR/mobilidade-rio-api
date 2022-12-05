@@ -1,3 +1,8 @@
+"""
+models for GTFS data
+Types are defined in the GTFS specification:
+https://developers.google.com/transit/gtfs/reference
+"""
 from django.db import models
 
 
