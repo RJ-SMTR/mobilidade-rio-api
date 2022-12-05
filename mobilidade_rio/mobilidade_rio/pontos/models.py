@@ -7,10 +7,11 @@ from django.db import models
 
 
 class Agency(models.Model):
+    """Model for Agency"""
     agency_id = models.CharField(max_length=500, blank=True, primary_key=True)
-    agency_name = models.CharField(max_length=500, blank=True, null=True)
-    agency_url = models.CharField(max_length=500, blank=True, null=True)
-    agency_timezone = models.CharField(max_length=500, blank=True, null=True)
+    agency_name = models.CharField(max_length=500, blank=False, null=False)
+    agency_url = models.URLField(max_length=500, blank=False, null=False)
+    agency_timezone = models.CharField(max_length=500, blank=False, null=False)
     agency_lang = models.CharField(max_length=500, blank=True, null=True)
     agency_phone = models.CharField(max_length=500, blank=True, null=True)
     agency_branding_url = models.CharField(max_length=500, blank=True, null=True)
