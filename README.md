@@ -215,3 +215,61 @@ O que NÃO pode alterar ali sem quebrar o Kubernetes:
 
 * Dockerfile
 * setup.sh
+
+## Problemas comuns
+
+### Erro ao usar manage.py
+
+Possíveis causas:
+
+**Os arquivos `migrations` foram alterados**
+
+Para resolver rode os comandos de acordo com o estágio em que você está trabalhando (veja [aqui](#estágios-de-desenvolvimento)):
+
+Dev nativo:
+
+* Esvaziar banco de dados
+
+  ```sh
+  scripts/populate_db/populate_db.py -p 5432 --empty_db
+  ```
+
+* Criar tabelas
+
+  ```sh
+  python mobilidade_rio/manage.py migrate
+  ```
+
+* Subir dados
+
+  ```sh
+  scripts/populate_db/populate_db.py
+  ```
+
+Dev local:
+
+* Eliminar arquivos do docker, e esvaziar disco virtual
+
+  ```sh
+  docker-compose -f ./mobilidade_rio/dev_local/docker-compose_local.yml down -v
+  docker image prune -f
+  ```
+
+* Rodar o Docker novamente
+
+  ```sh
+  docker-compose -f ./mobilidade_rio/dev_local/docker-compose_local.yml up
+  ```
+
+* Subir dados
+
+  ```sh
+  python scripts/populate_db/populate_db.py
+  ```
+> Lembre-se que, para usar o `populate_db`, você deve ter os arquivos `.csv` na pasta `csv_files` (veja [aqui](#como-subir-dados))
+
+> **O que é o disco virtual?**
+>
+> Disco virtual é o disco que o Docker usa para armazenar os dados do banco de dados. Com o passar do tempo, ele pode ficar cheio, ocupando centenas de GBs.
+> 
+> Para esvaziá-lo, rode o comando `docker system prune -a -f` (ou `docker system prune -a` para ver o que será apagado).
