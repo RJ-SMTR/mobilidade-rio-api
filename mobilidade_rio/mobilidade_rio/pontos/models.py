@@ -14,7 +14,8 @@ class Agency(models.Model):
     agency_timezone = models.CharField(max_length=500, blank=False, null=False)
     agency_lang = models.CharField(max_length=500, blank=True, null=True)
     agency_phone = models.CharField(max_length=500, blank=True, null=True)
-    agency_branding_url = models.CharField(max_length=500, blank=True, null=True)
+    agency_branding_url = models.CharField(
+        max_length=500, blank=True, null=True)
     agency_fare_url = models.CharField(max_length=500, blank=True, null=True)
     agency_email = models.CharField(max_length=500, blank=True, null=True)
 
