@@ -146,23 +146,27 @@ class StopTimesViewSet(viewsets.ModelViewSet):
             SELECT * FROM {t_stoptimes} WHERE stop_id IN {stop_ids_formatted}
             """
 
-            # select unique combinations of trip_id and stop_id
-            q_trip_ids = f"""
-            SELECT DISTINCT trip_id_id, stop_id FROM ({q_stop_id}) AS t1
+            # select unique combinations
+            q_unique_cols = f"""
+            SELECT DISTINCT trip_id_id, stop_id, arrival_time, departure_time FROM ({q_stop_id}) AS t1
             """
-
-            # select if trip_id combines with ALL stop_ids
-            q_trip_id_unique = f"""
-            SELECT DISTINCT trip_id_id FROM ({q_trip_ids}) AS t2
-            GROUP BY trip_id_id
-            HAVING COUNT(*) = {len(stop_ids)}
+            # get remaining cols from q_unique_cols
+            q_unique_cols = f"""
+            SELECT trip_id_id, stop_id, arrival_time, departure_time FROM {t_stoptimes}
+            WHERE (trip_id_id, stop_id, arrival_time, departure_time) IN ({q_unique_cols})
             """
-
-            # select rows if trip_id in q_trip_id_unique
-            query = f"""
-            SELECT * FROM ({q_stop_id}) AS t3
-            WHERE trip_id_id IN ({q_trip_id_unique})
+            # select extra cols from remaining rows
+            q_unique_cols = f"""
+            SELECT id, trip_id_id, stop_id, arrival_time, departure_time,
+            ROW_NUMBER() OVER (PARTITION BY trip_id_id, stop_id ORDER BY id) AS row_num
+            FROM pontos_stoptimes
+            WHERE (trip_id_id, stop_id, arrival_time, departure_time) IN ({q_unique_cols})
             """
+            q_unique_cols = f"""
+            SELECT * FROM ({q_unique_cols}) AS t1
+            WHERE row_num = 1
+            """
+            query = q_unique_cols
 
             # execute query
             queryset = queryset.raw(query)
