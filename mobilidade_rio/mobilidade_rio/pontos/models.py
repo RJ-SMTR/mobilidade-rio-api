@@ -109,9 +109,15 @@ class Routes(models.Model):
 
 
 class Trips(models.Model):
-    trip_id = models.CharField(max_length=500, blank=True, primary_key=True)
+    """
+    Model for trips.txt
+    Mandatory fields: route_id, service_id, trip_id
+    Primary keys: trip_id
+    Foreign keys: route_id
+    """
     route_id = models.ForeignKey(Routes, on_delete=models.CASCADE, null=True)
-    service_id = models.CharField(max_length=500, blank=True, null=True)
+    service_id = models.CharField(max_length=500, blank=False, null=False)
+    trip_id = models.CharField(max_length=500, blank=True, primary_key=True)
     trip_headsign = models.CharField(max_length=500, blank=True, null=True)
     trip_short_name = models.CharField(max_length=500, blank=True, null=True)
     # direction_id = models.IntegerField(blank=True, null=True)
