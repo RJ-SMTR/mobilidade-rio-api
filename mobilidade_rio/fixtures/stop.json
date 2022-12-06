@@ -1013,17 +1013,6 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "1005O00140C0",
-        "fields": {
-            "mode": 3,
-            "name": "Estivadores",
-            "address": "Estivadores",
-            "latitude": "-22.89945",
-            "longitude": "-43.18764"
-        }
-    },
-    {
-        "model": "pontos.stop",
         "pk": "1005O00142C0",
         "fields": {
             "mode": 3,
@@ -1658,6 +1647,17 @@
             "address": "BRS 4: Erasmo Braga",
             "latitude": "-22.90519",
             "longitude": "-43.17367"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "1005O00140C0",
+        "fields": {
+            "mode": 3,
+            "name": "Estivadores",
+            "address": "Estivadores",
+            "latitude": "-22.899345",
+            "longitude": "-43.187624"
         }
     },
     {
@@ -39601,17 +39601,6 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "4115O00150C0",
-        "fields": {
-            "mode": 3,
-            "name": "Ponto Final: Col\u00f4nia :: Linha 831",
-            "address": "Ponto Final: Col\u00f4nia :: Linha 831",
-            "latitude": "-22.94843",
-            "longitude": "-43.3949"
-        }
-    },
-    {
-        "model": "pontos.stop",
         "pk": "4115O00154C2",
         "fields": {
             "mode": 3,
@@ -39861,6 +39850,17 @@
             "address": "Avenida Salvador, s/n",
             "latitude": "-22.964655",
             "longitude": "-43.39547"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "4115O00150C0",
+        "fields": {
+            "mode": 3,
+            "name": "Ponto Final: Col\u00f4nia :: Linha 831",
+            "address": "Ponto Final: Col\u00f4nia :: Linha 831",
+            "latitude": "-22.948257",
+            "longitude": "-43.394895"
         }
     },
     {
@@ -40158,17 +40158,6 @@
             "address": "Ponto Final: Pau da Fome :: \u00d4nibus e STPL",
             "latitude": "-22.93046",
             "longitude": "-43.43855"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "4115O00233C0",
-        "fields": {
-            "mode": 3,
-            "name": "Estrada dos Bandeirantes ,8591",
-            "address": "Estrada dos Bandeirantes ,8591",
-            "latitude": "-22.974385",
-            "longitude": "-43.4144"
         }
     },
     {
@@ -43308,17 +43297,6 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "4122O00259C0",
-        "fields": {
-            "mode": 3,
-            "name": "Estrada Rodrigues Caldas,1077",
-            "address": "Estrada Rodrigues Caldas,1077",
-            "latitude": "-22.92417",
-            "longitude": "-43.384751"
-        }
-    },
-    {
-        "model": "pontos.stop",
         "pk": "4122O00263C0",
         "fields": {
             "mode": 3,
@@ -43502,17 +43480,6 @@
             "address": "Estr. do Tindiba 2003",
             "latitude": "-22.923915",
             "longitude": "-43.371854"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "4122O00300P1",
-        "fields": {
-            "mode": 3,
-            "name": "Terminal Bandeira Brasil (Taquara) :: Plat. Leste",
-            "address": "Terminal Bandeira Brasil (Taquara) :: Plat. Leste",
-            "latitude": "-22.923392",
-            "longitude": "-43.374281"
         }
     },
     {
@@ -43953,6 +43920,17 @@
             "address": "Rua Luiz Beltr\u00e3o pr\u00f3ximo ao 1396",
             "latitude": "-22.89228",
             "longitude": "-43.35733"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "4122O00300P1",
+        "fields": {
+            "mode": 3,
+            "name": "Terminal Bandeira Brasil (Taquara) :: Plat. Leste",
+            "address": "Terminal Bandeira Brasil (Taquara) :: Plat. Leste",
+            "latitude": "-22.923396",
+            "longitude": "-43.374238"
         }
     },
     {
@@ -47037,17 +47015,6 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "4129O00016C0",
-        "fields": {
-            "mode": 3,
-            "name": "Estrada dos Bandeirantes,8923",
-            "address": "Estrada dos Bandeirantes,8923",
-            "latitude": "-22.980566",
-            "longitude": "-43.423046"
-        }
-    },
-    {
-        "model": "pontos.stop",
         "pk": "4129O00017C0",
         "fields": {
             "mode": 3,
@@ -47143,6 +47110,17 @@
             "address": "Ponto Final: Terminal Nuta James",
             "latitude": "-23.005589",
             "longitude": "-43.312447"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "4129O00016C0",
+        "fields": {
+            "mode": 3,
+            "name": "Estrada dos Bandeirantes,8923",
+            "address": "Estrada dos Bandeirantes,8923",
+            "latitude": "-22.980492",
+            "longitude": "-43.423207"
         }
     },
     {
@@ -47275,17 +47253,6 @@
             "address": "Estrada dos Bandeirantes,14574",
             "latitude": "-22.985361",
             "longitude": "-43.460145"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "4130O00023C0",
-        "fields": {
-            "mode": 3,
-            "name": "Estrada dos Bandeirantes,15076",
-            "address": "Estrada dos Bandeirantes,15076",
-            "latitude": "-22.982331",
-            "longitude": "-43.464097"
         }
     },
     {
@@ -65550,17 +65517,6 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "5149O00026C9",
-        "fields": {
-            "mode": 3,
-            "name": "Rua Felipe Cardoso, pr\u00f3ximo ao n\u00famero 819.",
-            "address": "Rua Felipe Cardoso, pr\u00f3ximo ao n\u00famero 819.",
-            "latitude": "-22.9221",
-            "longitude": "-43.679543"
-        }
-    },
-    {
-        "model": "pontos.stop",
         "pk": "5149O00030C9",
         "fields": {
             "mode": 3,
@@ -66382,17 +66338,6 @@
             "address": "Estrada de Uruc\u00e2nia, lado oposto ao n\u00famero 1680.",
             "latitude": "-22.917368",
             "longitude": "-43.659752"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "5149O00122C9",
-        "fields": {
-            "mode": 3,
-            "name": "Dom Pedro I",
-            "address": "Dom Pedro I",
-            "latitude": "-22.9169",
-            "longitude": "-43.68457"
         }
     },
     {
@@ -70265,17 +70210,6 @@
             "address": "Estrada da Pedra, 3058",
             "latitude": "-22.954846",
             "longitude": "-43.649611"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "5151O00173C0",
-        "fields": {
-            "mode": 3,
-            "name": "Estrada da Pedra, 3650",
-            "address": "Estrada da Pedra, 3650",
-            "latitude": "-22.958377",
-            "longitude": "-43.650111"
         }
     },
     {
@@ -90289,17 +90223,6 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "3110O00002C0",
-        "fields": {
-            "mode": 3,
-            "name": "Rodovia Governador M\u00e1rio Covas pr\u00f3ximo ao 1138",
-            "address": "Rodovia Governador M\u00e1rio Covas pr\u00f3ximo ao 1138",
-            "latitude": "-22.83073",
-            "longitude": "-43.35054"
-        }
-    },
-    {
-        "model": "pontos.stop",
         "pk": "3110O00008C0",
         "fields": {
             "mode": 3,
@@ -91022,6 +90945,17 @@
             "address": "Recanto das Palmeiras",
             "latitude": "-22.94827",
             "longitude": "-43.37242"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "3110O00002C0",
+        "fields": {
+            "mode": 3,
+            "name": "Rodovia Governador M\u00e1rio Covas pr\u00f3ximo ao 1138",
+            "address": "Rodovia Governador M\u00e1rio Covas pr\u00f3ximo ao 1138",
+            "latitude": "-22.830773",
+            "longitude": "-43.350501"
         }
     },
     {
@@ -93710,17 +93644,6 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "3043O00090C0",
-        "fields": {
-            "mode": 3,
-            "name": "Av. Brasil pr\u00f3ximo ao Bamrj | Cnab",
-            "address": "Av. Brasil pr\u00f3ximo ao Bamrj | Cnab",
-            "latitude": "-22.834563",
-            "longitude": "-43.263248"
-        }
-    },
-    {
-        "model": "pontos.stop",
         "pk": "3043O00094C0",
         "fields": {
             "mode": 3,
@@ -94036,6 +93959,17 @@
             "address": "Rua Taborari pr\u00f3ximo ao 129",
             "latitude": "-22.82964",
             "longitude": "-43.28554"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "3043O00090C0",
+        "fields": {
+            "mode": 3,
+            "name": "Av. Brasil pr\u00f3ximo ao Bamrj | Cnab",
+            "address": "Av. Brasil pr\u00f3ximo ao Bamrj | Cnab",
+            "latitude": "-22.83448",
+            "longitude": "-43.263191"
         }
     },
     {
@@ -96240,17 +96174,6 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "5151O00113C0",
-        "fields": {
-            "mode": 3,
-            "name": "Rua Francisco Brusque pr\u00f3ximo ao 16-18",
-            "address": "Rua Francisco Brusque pr\u00f3ximo ao 16-18",
-            "latitude": "-22.972501",
-            "longitude": "-43.648028"
-        }
-    },
-    {
-        "model": "pontos.stop",
         "pk": "5151O00116C0",
         "fields": {
             "mode": 3,
@@ -96302,6 +96225,17 @@
             "address": "Estrada do Mato Alto pr\u00f3ximo ao 7528-7622",
             "latitude": "-22.98972",
             "longitude": "-43.59327"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "5151O00113C0",
+        "fields": {
+            "mode": 3,
+            "name": "Rua Francisco Brusque pr\u00f3ximo ao 16-18",
+            "address": "Rua Francisco Brusque pr\u00f3ximo ao 16-18",
+            "latitude": "-22.972466",
+            "longitude": "-43.647978"
         }
     },
     {
@@ -98964,6 +98898,72 @@
             "address": "BRS 2: Bar\u00e3o de Ipanema",
             "latitude": "-22.97536",
             "longitude": "-43.18965"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "5149O00026C9",
+        "fields": {
+            "mode": 3,
+            "name": "Rua Felipe Cardoso, pr\u00f3ximo ao n\u00famero 819.",
+            "address": "Rua Felipe Cardoso, pr\u00f3ximo ao n\u00famero 819.",
+            "latitude": "-22.922151",
+            "longitude": "-43.679575"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "5149O00122C9",
+        "fields": {
+            "mode": 3,
+            "name": "Dom Pedro I",
+            "address": "Dom Pedro I",
+            "latitude": "-22.916894",
+            "longitude": "-43.684538"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "5151O00173C0",
+        "fields": {
+            "mode": 3,
+            "name": "Estrada da Pedra, 3650",
+            "address": "Estrada da Pedra, 3650",
+            "latitude": "-22.958407",
+            "longitude": "-43.650049"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "4122O00259C0",
+        "fields": {
+            "mode": 3,
+            "name": "Estrada Rodrigues Caldas,1077",
+            "address": "Estrada Rodrigues Caldas,1077",
+            "latitude": "-22.924063",
+            "longitude": "-43.384806"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "4115O00233C0",
+        "fields": {
+            "mode": 3,
+            "name": "Estrada dos Bandeirantes ,8591",
+            "address": "Estrada dos Bandeirantes ,8591",
+            "latitude": "-22.974393",
+            "longitude": "-43.414511"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "4130O00023C0",
+        "fields": {
+            "mode": 3,
+            "name": "Estrada dos Bandeirantes,15076",
+            "address": "Estrada dos Bandeirantes,15076",
+            "latitude": "-22.982414",
+            "longitude": "-43.464107"
         }
     }
 ]
