@@ -71,30 +71,41 @@ class Routes(models.Model):
     Non GTFS fields: route_branding_url
     """
     route_id = models.CharField(max_length=500, blank=False, primary_key=True)
-    agency_id = models.ForeignKey(Agency, on_delete=models.CASCADE, blank=False, null=False)
-    route_short_name = models.CharField(max_length=500, blank=False, null=False)
+    agency_id = models.ForeignKey(
+        Agency, on_delete=models.CASCADE, blank=False, null=False)
+    route_short_name = models.CharField(
+        max_length=500, blank=False, null=False)
     route_long_name = models.CharField(max_length=500, blank=False, null=False)
     route_desc = models.CharField(max_length=500, blank=True, null=True)
-    route_type = models.CharField(max_length=500, blank=False, null=False,
-        choices=(
-            ('0', 'VLT'),
-            ('1', 'Trem e metrô municipais'),
-            ('2', 'Trem e metrô intermunicipais'),
-            ('3', 'Ônibus'),
-            ('4', 'Barcas'),
-            ('5', 'Bonde'),
-            ('6', 'Teleférico'),
-            ('7', 'Funicular'),
-            ('11', 'Ônibus elétrico'),
-            ('12', 'Monotrilho'),
-        ))
+    route_type = models.IntegerField(
+        blank=False, null=False,
+        choices=((0, 'VLT'),
+                 (1, 'Trem e metrô municipais'),
+                 (2, 'Trem e metrô intermunicipais'),
+                 (3, 'Ônibus'),
+                 (4, 'Barcas'),
+                 (5, 'Bonde'),
+                 (6, 'Teleférico'),
+                 (7, 'Funicular'),
+                 (11, 'Ônibus elétrico'),
+                 (12, 'Monotrilho')))
     route_url = models.URLField(max_length=500, blank=True, null=True)
     route_branding_url = models.URLField(max_length=500, blank=True, null=True)
     route_color = models.CharField(max_length=500, blank=True, null=True)
     route_text_color = models.CharField(max_length=500, blank=True, null=True)
     route_sort_order = models.PositiveIntegerField(blank=True, null=True)
-    continuous_pickup = models.CharField(max_length=500, blank=True, null=True)
-    continuous_drop_off = models.CharField(max_length=500, blank=True, null=True)
+    continuous_pickup = models.IntegerField(
+        blank=True, null=True, default=1,
+        choices=((0, 'embarque com paradas contínuas'),
+                 (1, 'nenhum embarque com paradas contínuas'),
+                 (2, 'agendar embarque com paradas contínuas'),
+                 (3, 'combinar agendamento com o motorista')))
+    continuous_drop_off = models.IntegerField(
+        blank=True, null=True, default=1,
+        choices=((0, 'embarque com paradas contínuas'),
+                 (1, 'nenhum embarque com paradas contínuas'),
+                 (2, 'agendar embarque com paradas contínuas'),
+                 (3, 'combinar agendamento com o motorista')))
 
 
 class Trips(models.Model):
@@ -104,10 +115,12 @@ class Trips(models.Model):
     trip_headsign = models.CharField(max_length=500, blank=True, null=True)
     trip_short_name = models.CharField(max_length=500, blank=True, null=True)
     # direction_id = models.IntegerField(blank=True, null=True)
-    direction_id = models.CharField(max_length=500, blank=True, null=True)  # TODO: change to int
+    direction_id = models.CharField(
+        max_length=500, blank=True, null=True)  # TODO: change to int
     block_id = models.CharField(max_length=500, blank=True, null=True)
     shape_id = models.CharField(max_length=500, blank=True, null=True)
-    wheelchair_accessible = models.CharField(max_length=500, blank=True, null=True)
+    wheelchair_accessible = models.CharField(
+        max_length=500, blank=True, null=True)
     bikes_allowed = models.CharField(max_length=500, blank=True, null=True)
 
 
@@ -116,7 +129,8 @@ class Shapes(models.Model):
     shape_pt_sequence = models.CharField(max_length=500, blank=True, null=True)
     shape_pt_lat = models.CharField(max_length=500, blank=True, null=True)
     shape_pt_lon = models.CharField(max_length=500, blank=True, null=True)
-    shape_dist_traveled = models.CharField(max_length=500, blank=True, null=True)
+    shape_dist_traveled = models.CharField(
+        max_length=500, blank=True, null=True)
 
     class Meta:
         constraints = [
@@ -138,12 +152,14 @@ class Stops(models.Model):
     location_type = models.CharField(max_length=500, blank=True, null=True)
     parent_station = models.CharField(max_length=500, blank=True, null=True)
     stop_timezone = models.CharField(max_length=500, blank=True, null=True)
-    wheelchair_boarding = models.CharField(max_length=500, blank=True, null=True)
+    wheelchair_boarding = models.CharField(
+        max_length=500, blank=True, null=True)
     platform_code = models.CharField(max_length=500, blank=True, null=True)
 
 
 class StopTimes(models.Model):
-    trip_id = models.ForeignKey(Trips, on_delete=models.CASCADE, related_name='trip_id_id', related_query_name='trip_id_id')
+    trip_id = models.ForeignKey(Trips, on_delete=models.CASCADE,
+                                related_name='trip_id_id', related_query_name='trip_id_id')
     # trip_id = models.CharField(max_length=500, blank=True)
     stop_sequence = models.CharField(max_length=500, blank=True, null=True)
     stop_id = models.CharField(max_length=500, blank=True)
@@ -153,8 +169,10 @@ class StopTimes(models.Model):
     pickup_type = models.CharField(max_length=500, blank=True, null=True)
     drop_off_type = models.CharField(max_length=500, blank=True, null=True)
     continuous_pickup = models.CharField(max_length=500, blank=True, null=True)
-    continuous_drop_off = models.CharField(max_length=500, blank=True, null=True)
-    shape_dist_traveled = models.CharField(max_length=500, blank=True, null=True)
+    continuous_drop_off = models.CharField(
+        max_length=500, blank=True, null=True)
+    shape_dist_traveled = models.CharField(
+        max_length=500, blank=True, null=True)
     timepoint = models.CharField(max_length=500, blank=True, null=True)
 
     # TODO: check constraint for circular routes

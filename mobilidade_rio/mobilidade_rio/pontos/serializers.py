@@ -27,7 +27,9 @@ class RoutesSerializer(serializers.HyperlinkedModelSerializer):
 
         # show description of the route_type
         extra_kwargs = {
-            'route_type': {'source': 'get_route_type_display'}
+            # 'route_type': {'source': 'get_route_type_display'},
+            # 'continuous_pickup': {'source': 'get_continuous_pickup_display'},
+            # 'continuous_drop_off': {'source': 'get_continuous_drop_off_display'},
         }
 
 
