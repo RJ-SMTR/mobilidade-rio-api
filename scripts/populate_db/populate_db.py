@@ -236,11 +236,11 @@ def upload_data(_app: str, _model: str):
                     print_colored("yellow", "Retrying manually...")
 
                     # if detail is "fk not present in table"
+                    count_1 = 0
                     if constraint_err(detail):
                         # try catch per line
                         f_1.seek(0)
                         total = f_1.readlines()
-                        count = 0
                         f_1.seek(0)
                         cols = f_1.readline().strip().split(',')
                         cols = validate_col_names(table_name, cols)
@@ -255,18 +255,28 @@ def upload_data(_app: str, _model: str):
                                     columns=cols
                                 )
                                 conn.commit()
-                                count += 1
-                            except psycopg2.Error as error_1:
+                                count_1 += 1
+                            except psycopg2.Error:
                                 conn.rollback()
-                                if constraint_err(error_1.diag.message_detail):
-                                    pass
-                                else:
-                                    raise error_1
-                        if count == 0:
-                            print_colored("red","[FAIL - NO INSERT]")
-                            print_colored("red",error)
-                        else:
-                            print(f"[OK - {count}/{len(total)}]")
+                                try:
+                                    print("copy_expert")
+                                    # copy expert, for null values
+                                    cur.copy_expert(f"""
+                                        COPY {table_name} ({','.join(cols)})
+                                        FROM STDIN WITH CSV DELIMITER AS ','
+                                    """, io.StringIO(line))
+                                    conn.commit()
+                                    count_1 += 1
+                                except psycopg2.Error as error_2:
+                                    conn.rollback()
+                                    if constraint_err(error_2.diag.message_detail):
+                                        pass
+                                    else:
+                                        raise error_2
+                    if count_1 == 0:
+                        print_colored("red","[FAIL - NO INSERT]")
+                    else:
+                        print(f"[OK - {count_1}/{len(total)}]")
     print()
 
 
