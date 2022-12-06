@@ -92,7 +92,7 @@ class Routes(models.Model):
     route_branding_url = models.URLField(max_length=500, blank=True, null=True)
     route_color = models.CharField(max_length=500, blank=True, null=True)
     route_text_color = models.CharField(max_length=500, blank=True, null=True)
-    route_sort_order = models.CharField(max_length=500, blank=True, null=True)
+    route_sort_order = models.PositiveIntegerField(blank=True, null=True)
     continuous_pickup = models.CharField(max_length=500, blank=True, null=True)
     continuous_drop_off = models.CharField(max_length=500, blank=True, null=True)
 
