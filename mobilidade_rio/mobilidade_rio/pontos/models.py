@@ -41,11 +41,19 @@ class Calendar(models.Model):
 
 
 class CalendarDates(models.Model):
-    service_id = models.CharField(max_length=500, blank=True)
-    date = models.DateField(blank=True, null=True)
-    exception_type = models.IntegerField(blank=True, null=True)
+    """
+    Model for calendar_dates.txt
+    Mandatory fields: service_id, date, exception_type
+    """
+    service_id = models.CharField(max_length=500, blank=False, null=False)
+    date = models.DateField(blank=False, null=False)
+    # TODO: change to real ENUM type in database
+    exception_type = models.CharField(
+        max_length=500, blank=False, null=False,
+        choices=(('1', 'Added service'), ('2', 'Removed service')))
 
     class Meta:
+        """Constraints for the model"""
         constraints = [
             models.UniqueConstraint(
                 fields=['service_id', 'date'], name='calendar_date_id'
