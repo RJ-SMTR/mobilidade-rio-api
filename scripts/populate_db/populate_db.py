@@ -158,6 +158,7 @@ def validate_col_values(
     cols_duplicates = []
     if table_name in remove_duplicate_cols:
         cols_duplicates = validate_col_names(table_name, remove_duplicate_cols[table_name])
+    # validate cols
     cols_validates = []
     if table_name in validate_cols:
         cols_validates = validate_col_names(table_name, validate_cols[table_name])
