@@ -62,12 +62,17 @@ class CalendarDates(models.Model):
 
 
 class Routes(models.Model):
-    route_id = models.CharField(max_length=500, blank=True, primary_key=True)
-    agency_id = models.CharField(max_length=500, blank=True, null=True)
-    route_short_name = models.CharField(max_length=500, blank=True, null=True)
-    route_long_name = models.CharField(max_length=500, blank=True, null=True)
+    """
+    Model for routes.txt
+    Mandatory fields:
+        route_id, agency_id, route_short_name, route_long_name, route_type
+    """
+    route_id = models.CharField(max_length=500, blank=False, primary_key=False)
+    agency_id = models.CharField(max_length=500, blank=False, null=False)
+    route_short_name = models.CharField(max_length=500, blank=False, null=False)
+    route_long_name = models.CharField(max_length=500, blank=False, null=False)
     route_desc = models.CharField(max_length=500, blank=True, null=True)
-    route_type = models.CharField(max_length=500, blank=True, null=True)
+    route_type = models.CharField(max_length=500, blank=False, null=False)
     route_url = models.CharField(max_length=500, blank=True, null=True)
     route_branding_url = models.CharField(max_length=500, blank=True, null=True)
     route_color = models.CharField(max_length=500, blank=True, null=True)
