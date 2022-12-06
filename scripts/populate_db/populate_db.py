@@ -208,7 +208,11 @@ def upload_data(_app: str, _model: str):
         print(f"Table '{table_name}'")
         with open(file_path_1, 'r', encoding="utf8") as f_1:
             # if type is _io.TextIOWrapper
-            if "--no_insert" not in sys.argv:
+            if "--no_insert" in sys.argv:
+                cols = f_1.readline().strip().split(',')
+                validate_col_names(table_name, cols)
+                data = validate_col_values(f_1, table_name, cols)
+            else:
                 # Filter table
                 print("Filtering...")
                 cols = f_1.readline().strip().split(',')
