@@ -162,6 +162,10 @@ def validate_col_values(
     cols_validates = []
     if table_name in validate_cols:
         cols_validates = validate_col_names(table_name, validate_cols[table_name])
+    # enforce types
+    cols_set_types = []
+    if 'enforce_type_cols' in settings and table_name in settings['enforce_type_cols']:
+        cols_set_types = validate_col_names(table_name, settings['enforce_type_cols'][table_name])
 
     # cols_validates = validate_col_names(table_name, validate_cols[table_name])
     if table_name in validate_cols:
@@ -178,6 +182,11 @@ def validate_col_values(
             # remove duplicates
             if remove_duplicates and col in cols_duplicates:
                 data = data.drop_duplicates(subset=[col]).copy()
+
+            # convert to type
+            if col in cols_set_types:
+                if cols_set_types[col] == "int":
+                    data[col] = data[col].astype("Int64")
     len_history.append(len(data))
     # print("CVC hist", len_history)
 
@@ -416,7 +425,6 @@ if __name__ == "__main__":
             folder = os.path.join(csv_path, app)
             app_models = settings["table_order"][app]
 
-            print(folder)
             folder_dirs = [f.split(".")[0] for f in os.listdir(folder)]
             for model in app_models:
                 if model in folder_dirs:
