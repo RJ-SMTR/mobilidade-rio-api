@@ -71,7 +71,7 @@ class Routes(models.Model):
     """
     route_id = models.CharField(max_length=500, blank=False, primary_key=True)
     agency_id = models.ForeignKey(Agency, on_delete=models.CASCADE, blank=False, null=False)
-    route_short_name = models.CharField(max_length=500, blank=True, null=True)
+    route_short_name = models.CharField(max_length=500, blank=False, null=False)
     route_long_name = models.CharField(max_length=500, blank=True, null=True)
     route_desc = models.CharField(max_length=500, blank=True, null=True)
     route_type = models.CharField(max_length=500, blank=True, null=True)
