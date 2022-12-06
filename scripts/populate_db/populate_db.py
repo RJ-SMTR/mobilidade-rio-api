@@ -290,7 +290,7 @@ if __name__ == "__main__":
             settings = json.load(f)
     except FileNotFoundError:
         # raise string
-        print("Couldn't find settings.json file. Please create one and try again.")
+        print_colored("red", "File not found: settings.json")
 
     #  update parameters if exists in settings[param]
     # if flag_params in settings:
