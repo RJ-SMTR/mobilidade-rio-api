@@ -30,6 +30,7 @@ class RoutesSerializer(serializers.HyperlinkedModelSerializer):
             # 'route_type': {'source': 'get_route_type_display'},
             # 'continuous_pickup': {'source': 'get_continuous_pickup_display'},
             # 'continuous_drop_off': {'source': 'get_continuous_drop_off_display'},
+            # 'weelchair_accessible': {'source': 'get_weelchair_accessible_display'},
         }
 
 

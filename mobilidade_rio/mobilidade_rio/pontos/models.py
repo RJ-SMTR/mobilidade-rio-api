@@ -80,15 +80,15 @@ class Routes(models.Model):
     route_type = models.IntegerField(
         blank=False, null=False,
         choices=((0, 'VLT'),
-                 (1, 'Trem e metrô municipais'),
-                 (2, 'Trem e metrô intermunicipais'),
-                 (3, 'Ônibus'),
-                 (4, 'Barcas'),
-                 (5, 'Bonde'),
-                 (6, 'Teleférico'),
+                 (1, 'Urban trains and subways'),
+                 (2, 'Interurban trains and subways'),
+                 (3, 'Bus'),
+                 (4, 'Ferry'),
+                 (5, 'Cable car'),
+                 (6, 'Gondola'),
                  (7, 'Funicular'),
-                 (11, 'Ônibus elétrico'),
-                 (12, 'Monotrilho')))
+                 (11, 'Tram'),
+                 (12, 'Monorail')))
     route_url = models.URLField(max_length=500, blank=True, null=True)
     route_branding_url = models.URLField(max_length=500, blank=True, null=True)
     route_color = models.CharField(max_length=500, blank=True, null=True)
@@ -96,23 +96,26 @@ class Routes(models.Model):
     route_sort_order = models.PositiveIntegerField(blank=True, null=True)
     continuous_pickup = models.IntegerField(
         blank=True, null=True, default=1,
-        choices=((0, 'embarque com paradas contínuas'),
-                 (1, 'nenhum embarque com paradas contínuas'),
-                 (2, 'agendar embarque com paradas contínuas'),
-                 (3, 'combinar agendamento com o motorista')))
+        choices=((0, 'boarding with continuous stops'),
+                 (1, 'no boarding'),
+                 (2, 'schedule boarding'),
+                 (3, 'make an appointment with the driver')))
     continuous_drop_off = models.IntegerField(
         blank=True, null=True, default=1,
-        choices=((0, 'embarque com paradas contínuas'),
-                 (1, 'nenhum embarque com paradas contínuas'),
-                 (2, 'agendar embarque com paradas contínuas'),
-                 (3, 'combinar agendamento com o motorista')))
+        choices=((0, 'boarding with continuous stops'),
+                 (1, 'no boarding'),
+                 (2, 'schedule boarding'),
+                 (3, 'make an appointment with the driver')))
 
 
 class Trips(models.Model):
     """
     Model for trips.txt
-    Mandatory fields: route_id, service_id,
-    Primary keys: trip_id
+    Mandatory fields:
+        route_id,
+        service_id,
+        shape_id: under certain conditions (see GTFS reference)
+    Primary keys: trip_id, block_id
     Foreign keys: route_id, shape_id
     """
     route_id = models.ForeignKey(Routes, on_delete=models.CASCADE, null=True)
@@ -124,9 +127,25 @@ class Trips(models.Model):
                                        choices=((0, 'ida'), (1, 'volta')))
     block_id = models.CharField(max_length=500, blank=True, null=True)
     shape_id = models.CharField(max_length=500, blank=True, null=True)
-    wheelchair_accessible = models.CharField(
-        max_length=500, blank=True, null=True)
-    bikes_allowed = models.CharField(max_length=500, blank=True, null=True)
+    wheelchair_accessible = models.IntegerField(
+        blank=True, null=True,
+        choices=((0, 'information not available'),
+                 (1, 'accessible'),
+                 (2, 'not accessible')))
+    bikes_allowed = models.IntegerField(
+        blank=True, null=True,
+        choices=((0, 'information not available'),
+                 (1, 'allowed'),
+                 (2, 'not allowed')))
+
+    class Meta:
+        """Constraints for the model"""
+        constraints = [
+            models.UniqueConstraint(
+                # treat block_id as another primary key
+                fields=['trip_id', 'block_id'], name='trip_block_id'
+            )
+        ]
 
 
 class Shapes(models.Model):
