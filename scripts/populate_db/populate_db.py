@@ -196,6 +196,8 @@ def upload_data(_app: str, _model: str):
     """
 
     def constraint_err(detail:str):
+        if not detail:
+            return
         return [i for i in ["Key ", " is not present in table "] if i in detail]
 
     table_name = f"{_app}_{_model.replace('_', '')}"
@@ -261,6 +263,7 @@ def upload_data(_app: str, _model: str):
                                     raise error_1
                         if count == 0:
                             print_colored("red","[FAIL - NO INSERT]")
+                            print_colored("red",error)
                         else:
                             print(f"[OK - {count}/{len(total)}]")
     print()
