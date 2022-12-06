@@ -165,8 +165,8 @@ def validate_col_values(
 
     # cols_validates = validate_col_names(table_name, validate_cols[table_name])
     if table_name in validate_cols:
-        for col in cols_validates:
-            if col in cols:
+        for col in cols:
+            if col in cols_validates:
                 # ? if value ends with _1, split and remove _1
                 data[col] = data[col].str.split("_1").str[0]
                 data = data.copy()
@@ -175,9 +175,9 @@ def validate_col_values(
                 # ?remove row if contains _<n> except _1
                 data = data[~data[col].str.contains("_")].copy()
 
-                # remove duplicates
-                if remove_duplicates and col in cols_duplicates:
-                    data = data.drop_duplicates(subset=[col]).copy()
+            # remove duplicates
+            if remove_duplicates and col in cols_duplicates:
+                data = data.drop_duplicates(subset=[col]).copy()
     len_history.append(len(data))
     # print("CVC hist", len_history)
 
