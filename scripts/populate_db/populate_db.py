@@ -147,7 +147,7 @@ def validate_col_values(
     if data_type != pandas.DataFrame:
         # read data without index
         data = pandas.read_csv(
-            data, sep=",", encoding="utf8", low_memory=False)
+            data, sep=",", encoding="utf8", low_memory=False, dtype=str)
     if cols is None:
         cols = [col for col in data.columns]
     cols = validate_col_names(table_name, cols)
