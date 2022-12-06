@@ -65,7 +65,7 @@ class Routes(models.Model):
     """
     Model for routes.txt
     Mandatory fields:
-        route_id, agency_id, route_short_name, route_long_name, route_type (1-8)
+        route_id, agency_id, route_short_name, route_long_name, route_type
     Primary keys: route_id, agency_id
     Foreign keys: agency_id
     Non GTFS fields: route_branding_url
