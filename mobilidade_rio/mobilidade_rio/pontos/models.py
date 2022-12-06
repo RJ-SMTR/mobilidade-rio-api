@@ -74,8 +74,20 @@ class Routes(models.Model):
     route_short_name = models.CharField(max_length=500, blank=False, null=False)
     route_long_name = models.CharField(max_length=500, blank=False, null=False)
     route_desc = models.CharField(max_length=500, blank=True, null=True)
-    route_type = models.CharField(max_length=500, blank=False, null=False)
-    route_url = models.CharField(max_length=500, blank=True, null=True)
+    route_type = models.CharField(max_length=500, blank=False, null=False,
+        choices=(
+            ('0', 'VLT'),
+            ('1', 'Trem e metrô municipais'),
+            ('2', 'Trem e metrô intermunicipais'),
+            ('3', 'Ônibus'),
+            ('4', 'Barcas'),
+            ('5', 'Bonde'),
+            ('6', 'Teleférico'),
+            ('7', 'Funicular'),
+            ('11', 'Ônibus elétrico'),
+            ('12', 'Monotrilho'),
+        ))
+    route_url = models.URLField(max_length=500, blank=True, null=True)
     route_branding_url = models.CharField(max_length=500, blank=True, null=True)
     route_color = models.CharField(max_length=500, blank=True, null=True)
     route_text_color = models.CharField(max_length=500, blank=True, null=True)

@@ -25,6 +25,11 @@ class RoutesSerializer(serializers.HyperlinkedModelSerializer):
         model = Routes
         fields = [field.name for field in model._meta.fields]
 
+        # show description of the route_type
+        extra_kwargs = {
+            'route_type': {'source': 'get_route_type_display'}
+        }
+
 
 class TripsSerializer(serializers.HyperlinkedModelSerializer):
     route_id = RoutesSerializer()
