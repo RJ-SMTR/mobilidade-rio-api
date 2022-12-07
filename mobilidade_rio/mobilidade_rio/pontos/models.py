@@ -4,7 +4,8 @@ Types are defined in the GTFS specification:
 https://developers.google.com/transit/gtfs/reference
 """
 from django.db import models
-from django.core.validators import MinValueValidator, MaxValueValidator
+from django.core.validators import MinValueValidator
+from django.db.models import Q
 
 
 class Agency(models.Model):
@@ -175,18 +176,22 @@ class Shapes(models.Model):
 class Stops(models.Model):
     """
     Model for stops.txt
+
     Mandatory fields:
         stop_id,
-        stop_name: mandatory when name is comprehensive (ex. "Rio de Janeiro" instead of "RJ")
-        stop_lat, stop_lon : mandatory when local_type is 0, 1 or 2
+        stop_name: mandatory when name is comprehensive
+            e.g. "Rio de Janeiro" instead of "RJ" (TODO)
+        stop_lat, stop_lon : mandatory when local_type is 0, 1 or 2,
+        zone_id: mandatory if fare information is provided via fare_rules.txt (TODO)
+
     Primary keys: stop_id
     """
     stop_id = models.CharField(max_length=500, blank=False, primary_key=True)
     stop_code = models.CharField(max_length=500, blank=True, null=True)
     stop_name = models.CharField(max_length=500, blank=True, null=True)
     stop_desc = models.CharField(max_length=500, blank=True, null=True)
-    stop_lat = models.CharField(max_length=500, blank=True, null=True)
-    stop_lon = models.CharField(max_length=500, blank=True, null=True)
+    stop_lat = models.FloatField(blank=True, null=True)
+    stop_lon = models.FloatField(blank=True, null=True)
     zone_id = models.CharField(max_length=500, blank=True, null=True)
     stop_url = models.CharField(max_length=500, blank=True, null=True)
     location_type = models.CharField(max_length=500, blank=True, null=True)
@@ -195,6 +200,23 @@ class Stops(models.Model):
     wheelchair_boarding = models.CharField(
         max_length=500, blank=True, null=True)
     platform_code = models.CharField(max_length=500, blank=True, null=True)
+
+    class Meta:
+        """Constraints for the model"""
+        # TODO: find a way to check if stop_name has a comprehensive name
+
+        constraints = [
+            # stop_lat and stop_lon are mandatory when location_type is 0, 1 or 2
+            models.CheckConstraint(
+                check=~Q(location_type__in=[0, 1, 2])
+                | Q(stop_lat__isnull=False) & Q(stop_lon__isnull=False),
+                name='stop_lat_lon'
+            ),
+            models.UniqueConstraint(
+                # treat stop_code as another primary key
+                fields=['stop_id', 'stop_code'], name='stop_code_id'
+            )
+        ]
 
 
 class StopTimes(models.Model):
