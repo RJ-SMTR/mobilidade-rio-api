@@ -272,7 +272,6 @@ def upload_data(_app: str, _model: str):
                             except psycopg2.Error:
                                 conn.rollback()
                                 try:
-                                    print("copy_expert")
                                     # copy expert, for null values
                                     cur.copy_expert(f"""
                                         COPY {table_name} ({','.join(cols)})
