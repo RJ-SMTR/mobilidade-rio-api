@@ -97,17 +97,17 @@ class Routes(models.Model):
     route_text_color = models.CharField(max_length=500, blank=True, null=True)
     route_sort_order = models.PositiveIntegerField(blank=True, null=True)
     continuous_pickup = models.IntegerField(
-        blank=True, null=True, default=1,
-        choices=((0, 'boarding with continuous stops'),
-                 (1, 'no boarding'),
-                 (2, 'schedule boarding'),
-                 (3, 'make an appointment with the driver')))
+        blank=True, null=True,
+        choices=((0, 'embarking with continuous stops'),
+                 (1, 'no embarking available'),
+                 (2, 'set embarking with the company'),
+                 (3, 'set embarking with the driver')))
     continuous_drop_off = models.IntegerField(
         blank=True, null=True, default=1,
-        choices=((0, 'boarding with continuous stops'),
-                 (1, 'no boarding'),
-                 (2, 'schedule boarding'),
-                 (3, 'make an appointment with the driver')))
+        choices=((0, 'disembarking with continuous stops'),
+                 (1, 'no disembarking available'),
+                 (2, 'set disembarking with the company'),
+                 (3, 'set disembarking with the driver')))
 
 
 class Trips(models.Model):
@@ -201,13 +201,13 @@ class Stops(models.Model):
     zone_id = models.CharField(max_length=500, blank=True, null=True)
     stop_url = models.URLField(max_length=500, blank=True, null=True)
     location_type = models.IntegerField(
-        blank=True, null=True, validators=[MinValueValidator(0), MaxValueValidator(4)],
+        blank=True, null=True,
         choices=((0, 'stop'), (1, 'station'), (2, 'entrance/exit'),
                  (3, 'generic node'), (4, 'boarding area')))
     parent_station = models.ForeignKey('self', on_delete=models.CASCADE, blank=True, null=True)
     stop_timezone = models.CharField(max_length=500, blank=True, null=True)
     wheelchair_boarding = models.IntegerField(
-        blank=True, null=True, validators=[MinValueValidator(0), MaxValueValidator(2)],
+        blank=True, null=True,
         choices=((0, 'information not available'),
                  (1, 'available'),
                  (2, 'not available')))
@@ -241,22 +241,51 @@ class Stops(models.Model):
 
 
 class StopTimes(models.Model):
+    """
+    Model for stop_times.txt
+    Mandatory fields: trip_id,
+        arrival_time: mandatory if stop is the first or last stop of a trip (TODO)
+        stop_id, stop_sequence
+    Optional fields: departure_time: mandatory "if you can insert it", so it's optional
+    Primary keys: trip_id + stop_sequence
+    Foreign keys: trip_id, stop_id
+    """
     trip_id = models.ForeignKey(Trips, on_delete=models.CASCADE,
                                 related_name='trip_id_id', related_query_name='trip_id_id')
-    # trip_id = models.CharField(max_length=500, blank=True)
     stop_sequence = models.CharField(max_length=500, blank=True, null=True)
-    stop_id = models.CharField(max_length=500, blank=True)
-    arrival_time = models.CharField(max_length=500, blank=True, null=True)
-    departure_time = models.CharField(max_length=500, blank=True, null=True)
+    stop_id = models.ForeignKey(Stops, on_delete=models.CASCADE,
+                                related_name='stop_id_id', related_query_name='stop_id_id')
+    arrival_time = models.TimeField(blank=True, null=True)
+    departure_time = models.TimeField(max_length=500, blank=True, null=True)
     stop_headsign = models.CharField(max_length=500, blank=True, null=True)
-    pickup_type = models.CharField(max_length=500, blank=True, null=True)
-    drop_off_type = models.CharField(max_length=500, blank=True, null=True)
-    continuous_pickup = models.CharField(max_length=500, blank=True, null=True)
-    continuous_drop_off = models.CharField(
-        max_length=500, blank=True, null=True)
-    shape_dist_traveled = models.CharField(
-        max_length=500, blank=True, null=True)
-    timepoint = models.CharField(max_length=500, blank=True, null=True)
+    pickup_type = models.IntegerField(
+        blank=True, null=True, default=1,
+        choices=((0, 'regularly scheduled embarking'),
+                 (1, 'no embarking available'),
+                 (2, 'set embarking with the company'),
+                 (3, 'set embarking with the driver')))
+    drop_off_type = models.IntegerField(
+        blank=True, null=True, default=1,
+        choices=((0, 'regularly scheduled disembarking'),
+                 (1, 'no disembarking available'),
+                 (2, 'set disembarking with the company'),
+                 (3, 'set disembarking with the driver')))
+    continuous_pickup = models.IntegerField(
+        blank=True, null=True,
+        choices=((0, 'embarking with continuous stops'),
+                 (1, 'no embarking available'),
+                 (2, 'set embarking with the company'),
+                 (3, 'set embarking with the driver')))
+    continuous_drop_off = models.IntegerField(
+        blank=True, null=True, default=1,
+        choices=((0, 'disembarking with continuous stops'),
+                 (1, 'no disembarking available'),
+                 (2, 'set disembarking with the company'),
+                 (3, 'set disembarking with the driver')))
+    shape_dist_traveled = models.FloatField(
+        max_length=500, blank=True, null=True, validators=[MinValueValidator(0)])
+    timepoint = models.IntegerField(blank=True, null=True,
+                                    choices=((0, 'exact time'), (1, 'approximate time')))
 
     # TODO: check constraint for circular routes
     # class Meta:
