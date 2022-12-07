@@ -4,6 +4,7 @@ Types are defined in the GTFS specification:
 https://developers.google.com/transit/gtfs/reference
 """
 from django.db import models
+from django.core.validators import MinValueValidator, MaxValueValidator
 
 
 class Agency(models.Model):
@@ -149,16 +150,23 @@ class Trips(models.Model):
 
 
 class Shapes(models.Model):
-    shape_id = models.CharField(max_length=500, blank=True)
-    shape_pt_sequence = models.CharField(max_length=500, blank=True, null=True)
-    shape_pt_lat = models.CharField(max_length=500, blank=True, null=True)
-    shape_pt_lon = models.CharField(max_length=500, blank=True, null=True)
-    shape_dist_traveled = models.CharField(
-        max_length=500, blank=True, null=True)
+    """
+    Model for shapes.txt
+    Mandatory fields: shape_id, shape_pt_lat, shape_pt_lon, shape_pt_sequence
+    Primary keys: shape_id + shape_pt_sequence
+    """
+    shape_id = models.CharField(max_length=500, blank=False, null=False)
+    shape_pt_lat = models.FloatField(blank=False, null=False)
+    shape_pt_lon = models.FloatField(blank=False, null=False)
+    shape_pt_sequence = models.PositiveIntegerField(blank=False, null=False)
+    shape_dist_traveled = models.FloatField(
+        blank=True, null=True, validators=[MinValueValidator(0)])
 
     class Meta:
+        """Constraints for the model"""
         constraints = [
             models.UniqueConstraint(
+                # composite primary key
                 fields=['shape_id', 'shape_pt_sequence'], name='shape_sequence_id'
             )
         ]
