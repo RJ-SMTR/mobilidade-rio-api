@@ -173,7 +173,15 @@ class Shapes(models.Model):
 
 
 class Stops(models.Model):
-    stop_id = models.CharField(max_length=500, blank=True, primary_key=True)
+    """
+    Model for stops.txt
+    Mandatory fields:
+        stop_id,
+        stop_name: mandatory when name is comprehensive (ex. "Rio de Janeiro" instead of "RJ")
+        stop_lat, stop_lon : mandatory when local_type is 0, 1 or 2
+    Primary keys: stop_id
+    """
+    stop_id = models.CharField(max_length=500, blank=False, primary_key=True)
     stop_code = models.CharField(max_length=500, blank=True, null=True)
     stop_name = models.CharField(max_length=500, blank=True, null=True)
     stop_desc = models.CharField(max_length=500, blank=True, null=True)
