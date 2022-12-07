@@ -11,11 +11,11 @@
             "agency",
             "calendar_dates",
             "calendar",
-            "frequencies",
             "routes",
             "shapes",
             "stops",
             "trips",
+            "frequencies",
             "stop_times",
             "qrcode"
         ]
