@@ -4,7 +4,7 @@ Types are defined in the GTFS specification:
 https://developers.google.com/transit/gtfs/reference
 """
 from django.db import models
-from django.core.validators import MinValueValidator
+from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db.models import Q
 
 
@@ -183,8 +183,13 @@ class Stops(models.Model):
             e.g. "Rio de Janeiro" instead of "RJ" (TODO)
         stop_lat, stop_lon : mandatory when local_type is 0, 1 or 2,
         zone_id: mandatory if fare information is provided via fare_rules.txt (TODO)
+        parent_station:
+            mandatory if location_type is 2, 3, 4
+            forbidden if location_type is 1
+            optional if location_type is 0
 
     Primary keys: stop_id
+    Foreign keys: parent_station
     """
     stop_id = models.CharField(max_length=500, blank=False, primary_key=True)
     stop_code = models.CharField(max_length=500, blank=True, null=True)
@@ -193,9 +198,12 @@ class Stops(models.Model):
     stop_lat = models.FloatField(blank=True, null=True)
     stop_lon = models.FloatField(blank=True, null=True)
     zone_id = models.CharField(max_length=500, blank=True, null=True)
-    stop_url = models.CharField(max_length=500, blank=True, null=True)
-    location_type = models.CharField(max_length=500, blank=True, null=True)
-    parent_station = models.CharField(max_length=500, blank=True, null=True)
+    stop_url = models.URLField(max_length=500, blank=True, null=True)
+    location_type = models.IntegerField(
+        blank=True, null=True, validators=[MinValueValidator(0), MaxValueValidator(4)],
+        choices=((0, 'stop'), (1, 'station'), (2, 'entrance/exit'),
+                 (3, 'generic node'), (4, 'boarding area')))
+    parent_station = models.ForeignKey('self', on_delete=models.CASCADE, blank=True, null=True)
     stop_timezone = models.CharField(max_length=500, blank=True, null=True)
     wheelchair_boarding = models.CharField(
         max_length=500, blank=True, null=True)
@@ -212,8 +220,18 @@ class Stops(models.Model):
                 | Q(stop_lat__isnull=False) & Q(stop_lon__isnull=False),
                 name='stop_lat_lon'
             ),
+            models.CheckConstraint(
+                # parent_station is mandatory if location_type is 2, 3, 4
+                check=~Q(location_type__in=[2, 3, 4]) | Q(parent_station__isnull=False),
+                name='parent_station_mandatory'
+            ),
+            # parent_station is forbidden if location_type is 1
+            models.CheckConstraint(
+                check=~Q(location_type=1) | Q(parent_station__isnull=True),
+                name='parent_station_forbidden'
+            ),
+            # treat stop_code as another primary key
             models.UniqueConstraint(
-                # treat stop_code as another primary key
                 fields=['stop_id', 'stop_code'], name='stop_code_id'
             )
         ]
