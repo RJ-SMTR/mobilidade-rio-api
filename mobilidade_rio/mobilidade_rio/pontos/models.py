@@ -205,8 +205,11 @@ class Stops(models.Model):
                  (3, 'generic node'), (4, 'boarding area')))
     parent_station = models.ForeignKey('self', on_delete=models.CASCADE, blank=True, null=True)
     stop_timezone = models.CharField(max_length=500, blank=True, null=True)
-    wheelchair_boarding = models.CharField(
-        max_length=500, blank=True, null=True)
+    wheelchair_boarding = models.IntegerField(
+        blank=True, null=True, validators=[MinValueValidator(0), MaxValueValidator(2)],
+        choices=((0, 'information not available'),
+                 (1, 'available'),
+                 (2, 'not available')))
     platform_code = models.CharField(max_length=500, blank=True, null=True)
 
     class Meta:
