@@ -23,6 +23,9 @@
     "remove_duplicate_cols": {
         "pontos_trips": [
             "trip_id"
+        ],
+        "pontos_frequencies": [
+            "trip_id"
         ]
     },
     "validate_cols": {
@@ -30,6 +33,9 @@
             "trip_id"
         ],
         "pontos_trips": [
+            "trip_id"
+        ],
+        "pontos_frequencies": [
             "trip_id"
         ]
     },
