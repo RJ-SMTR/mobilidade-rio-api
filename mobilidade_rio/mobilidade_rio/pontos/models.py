@@ -216,8 +216,6 @@ class Stops(models.Model):
 
     class Meta:
         """Constraints for the model"""
-        # TODO: find a way to check if stop_name has a comprehensive name
-
         constraints = [
             # stop_lat and stop_lon are mandatory when location_type is 0, 1 or 2
             models.CheckConstraint(
