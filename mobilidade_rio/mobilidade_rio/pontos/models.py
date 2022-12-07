@@ -247,7 +247,7 @@ class StopTimes(models.Model):
         arrival_time: mandatory if stop is the first or last stop of a trip (TODO)
         stop_id, stop_sequence
     Optional fields: departure_time: mandatory "if you can insert it", so it's optional
-    Primary keys: trip_id + stop_sequence
+    Primary keys: trip_id + stop_sequence + stop_id
     Foreign keys: trip_id, stop_id
     """
     trip_id = models.ForeignKey(Trips, on_delete=models.CASCADE,
@@ -287,13 +287,14 @@ class StopTimes(models.Model):
     timepoint = models.IntegerField(blank=True, null=True,
                                     choices=((0, 'exact time'), (1, 'approximate time')))
 
-    # TODO: check constraint for circular routes
-    # class Meta:
-    #     constraints = [
-    #         models.UniqueConstraint(
-    #             fields=['trip_id', 'stop_id'], name='stop_times_id'
-    #         )
-    #     ]
+    class Meta:
+        """Constraints for the model"""
+        constraints = [
+            # composite primary key: trip_id + stop_sequence + stop_id
+            models.UniqueConstraint(
+                fields=['trip_id', 'stop_id', 'stop_sequence'], name='trip_stop_sequence'
+            )
+        ]
 
 
 class Frequencies(models.Model):
