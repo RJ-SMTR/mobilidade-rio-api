@@ -189,7 +189,8 @@ class Stops(models.Model):
             optional if location_type is 0
 
     Primary keys: stop_id
-    Foreign keys: parent_station
+    Foreign keys: parent_station,
+        zone_id, level_id (TODO)
     """
     stop_id = models.CharField(max_length=500, blank=False, primary_key=True)
     stop_code = models.CharField(max_length=500, blank=True, null=True)
@@ -210,6 +211,7 @@ class Stops(models.Model):
         choices=((0, 'information not available'),
                  (1, 'available'),
                  (2, 'not available')))
+    level_id = models.CharField(max_length=500, blank=True, null=True)
     platform_code = models.CharField(max_length=500, blank=True, null=True)
 
     class Meta:
