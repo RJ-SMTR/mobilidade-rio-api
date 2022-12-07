@@ -10605,17 +10605,6 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "2033O00022S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 2,3,4,I: Moraes e Silva",
-            "address": "BRS 2,3,4,I: Moraes e Silva",
-            "latitude": "-22.91656",
-            "longitude": "-43.22631"
-        }
-    },
-    {
-        "model": "pontos.stop",
         "pk": "2032O00012S9",
         "fields": {
             "mode": 3,
@@ -10766,6 +10755,17 @@
             "address": "BRS 1,6: Saens Pe\u00f1a",
             "latitude": "-22.92408",
             "longitude": "-43.23273"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "2033O00022S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 2,3,4: Moraes e Silva",
+            "address": "BRS 2,3,4: Moraes e Silva",
+            "latitude": "-22.91656",
+            "longitude": "-43.22631"
         }
     },
     {
@@ -12255,17 +12255,6 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "2035O00043S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 2,3,4,I: Mar\u00e3",
-            "address": "BRS 2,3,4,I: Mar\u00e3",
-            "latitude": "-22.91206",
-            "longitude": "-43.23707"
-        }
-    },
-    {
-        "model": "pontos.stop",
         "pk": "2033O00245S0",
         "fields": {
             "mode": 3,
@@ -12277,24 +12266,35 @@
     },
     {
         "model": "pontos.stop",
+        "pk": "2033O00244S2",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 2,3,4: Almirante C\u00f3chrane",
+            "address": "BRS 2,3,4: Almirante C\u00f3chrane",
+            "latitude": "-22.91836",
+            "longitude": "-43.22432"
+        }
+    },
+    {
+        "model": "pontos.stop",
         "pk": "2035O00041S0",
         "fields": {
             "mode": 3,
-            "name": "BRS 2,3,4,I: Jacegua\u00ed",
-            "address": "BRS 2,3,4,I: Jacegua\u00ed",
+            "name": "BRS 2,3,4: Jacegua\u00ed",
+            "address": "BRS 2,3,4: Jacegua\u00ed",
             "latitude": "-22.91584",
             "longitude": "-43.23182"
         }
     },
     {
         "model": "pontos.stop",
-        "pk": "2033O00244S2",
+        "pk": "2035O00043S0",
         "fields": {
             "mode": 3,
-            "name": "BRS 2,3,4,I: Almirante C\u00f3chrane",
-            "address": "BRS 2,3,4,I: Almirante C\u00f3chrane",
-            "latitude": "-22.91836",
-            "longitude": "-43.22432"
+            "name": "BRS 3,4,I: Mar\u00e3",
+            "address": "BRS 3,4,I: Mar\u00e3",
+            "latitude": "-22.91206",
+            "longitude": "-43.23707"
         }
     },
     {
@@ -12871,17 +12871,6 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "2036O00007S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 2,3,4,I: Oito de Dezembro",
-            "address": "BRS 2,3,4,I: Oito de Dezembro",
-            "latitude": "-22.90921",
-            "longitude": "-43.23863"
-        }
-    },
-    {
-        "model": "pontos.stop",
         "pk": "2035O00056C0",
         "fields": {
             "mode": 3,
@@ -12999,6 +12988,17 @@
             "address": "BRS 2,5,7,I: Bar\u00e3o do Bom Retiro",
             "latitude": "-22.916988",
             "longitude": "-43.261141"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "2036O00007S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 3,4,I: Oito de Dezembro",
+            "address": "BRS 3,4,I: Oito de Dezembro",
+            "latitude": "-22.90921",
+            "longitude": "-43.23863"
         }
     },
     {
@@ -73272,17 +73272,6 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "2035O00019S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 2,3,4,5,6,7,I: Professor Manoel de Abreu",
-            "address": "BRS 2,3,4,5,6,7,I: Professor Manoel de Abreu",
-            "latitude": "-22.91365",
-            "longitude": "-43.23451"
-        }
-    },
-    {
-        "model": "pontos.stop",
         "pk": "3111O00003C0",
         "fields": {
             "mode": 3,
@@ -73532,6 +73521,17 @@
             "address": "Rodovi\u00e1ria",
             "latitude": "-22.89878",
             "longitude": "-43.207513"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "2035O00019S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 3,4,5,6: Professor Manoel de Abreu",
+            "address": "BRS 3,4,5,6: Professor Manoel de Abreu",
+            "latitude": "-22.91365",
+            "longitude": "-43.23451"
         }
     },
     {
