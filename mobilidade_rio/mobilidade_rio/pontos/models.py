@@ -243,7 +243,7 @@ class Stops(models.Model):
 class StopTimes(models.Model):
     """
     Model for stop_times.txt
-    Mandatory fields: trip_id,
+    Mandatory fields: trip_id, stop_id, stop_sequence
         arrival_time: mandatory if stop is the first or last stop of a trip (TODO)
         stop_id, stop_sequence
     Optional fields: departure_time: mandatory "if you can insert it", so it's optional
@@ -252,7 +252,7 @@ class StopTimes(models.Model):
     """
     trip_id = models.ForeignKey(Trips, on_delete=models.CASCADE,
                                 related_name='trip_id_id', related_query_name='trip_id_id')
-    stop_sequence = models.CharField(max_length=500, blank=True, null=True)
+    stop_sequence = models.CharField(max_length=500, blank=False, null=False)
     stop_id = models.ForeignKey(Stops, on_delete=models.CASCADE,
                                 related_name='stop_id_id', related_query_name='stop_id_id')
     arrival_time = models.TimeField(blank=True, null=True)
