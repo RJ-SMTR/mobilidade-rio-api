@@ -7451,7 +7451,7 @@
         "pk": "O0050CAA0ACDU01",
         "fields": {
             "route": "O0050CAA0A",
-            "headsign": "Circular",
+            "headsign": "",
             "via": "",
             "version": "U01",
             "direction": 0
