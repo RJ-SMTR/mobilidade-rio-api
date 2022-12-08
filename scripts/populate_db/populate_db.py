@@ -279,7 +279,10 @@ def upload_data(_app: str, _model: str):
                     f_1.seek(0)
                     cols = f_1.readline().strip().split(',')
                     cols = validate_col_names(table_name, cols)
-                    data = f_1.readlines()
+                    temp_path = os.path.join(script_path, "temp.txt")
+                    print("Path:", temp_path)
+                    with open(temp_path, 'r', encoding="utf8") as f_temp:
+                        data = validate_col_values(f_temp, table_name, cols)
                     # iterate lines
                     for line in data:
                         try:
@@ -296,18 +299,18 @@ def upload_data(_app: str, _model: str):
                             try:
                                 # copy expert, for null values
                                 sql_1 = f"""
-                                    COPY {table_name} ({','.join(cols)})
-                                    FROM STDIN WITH CSV DELIMITER AS ','
+                                COPY {table_name} ({','.join(cols)})
+                                FROM STDIN WITH CSV DELIMITER AS ','
                                 """
                                 cur.copy_expert(sql_1, io.StringIO(line))
                                 conn.commit()
                                 count_1 += 1
                             except psycopg2.Error as error_2:
-                                conn.rollback()
                                 # write error to file
                                 with open(log_path, 'a', encoding="utf8") as f_2:
-                                    f_2.write(error_2.diag.message_detail)
+                                    f_2.write(str(error_2))
                                     f_2.write("\n")
+                                conn.rollback()
                                 if constraint_err(error_2.diag.message_detail):
                                     pass
                                 else:
