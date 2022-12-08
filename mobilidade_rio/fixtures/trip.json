@@ -337,7 +337,7 @@
             "headsign": "Riocentro",
             "via": "",
             "version": "U01",
-            "direction": 1
+            "direction": 1P
         }
     },
     {
@@ -7451,7 +7451,7 @@
         "pk": "O0050CAA0ACDU01",
         "fields": {
             "route": "O0050CAA0A",
-            "headsign": "",
+            "headsign": "Circular",
             "via": "",
             "version": "U01",
             "direction": 0
