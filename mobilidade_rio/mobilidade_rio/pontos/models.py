@@ -252,7 +252,7 @@ class StopTimes(models.Model):
     """
     trip_id = models.ForeignKey(Trips, on_delete=models.CASCADE,
                                 related_name='trip_id_id', related_query_name='trip_id_id')
-    stop_sequence = models.CharField(max_length=500, blank=False, null=False)
+    stop_sequence = models.PositiveIntegerField(blank=False, null=False)
     stop_id = models.ForeignKey(Stops, on_delete=models.CASCADE,
                                 related_name='stop_id_id', related_query_name='stop_id_id')
     arrival_time = models.TimeField(blank=True, null=True)
@@ -289,24 +289,45 @@ class StopTimes(models.Model):
 
     class Meta:
         """Constraints for the model"""
+        # composite primary key: trip_id + stop_sequence + stop_id
         constraints = [
-            # composite primary key: trip_id + stop_sequence + stop_id
-            models.UniqueConstraint(
-                fields=['trip_id', 'stop_id', 'stop_sequence'], name='trip_stop_sequence'
-            )
+            # TODO: For testing purposes, this composite primary key is disabled
+            # ?   because of errors like "Key (trip_id_id, stop_id_id, stop_sequence)
+            # ?       =(O0108AAA0AIDU01, 1003O00022P0, 35) already exists."
+            # models.UniqueConstraint(
+            #     fields=['trip_id', 'stop_id', 'stop_sequence'], name='trip_stop_sequence'
+            # )
         ]
 
 
 class Frequencies(models.Model):
-    trip_id = models.CharField(max_length=500, blank=True)
-    start_time = models.CharField(max_length=500, blank=True, null=True)
-    end_time = models.CharField(max_length=500, blank=True, null=True)
-    headway_secs = models.CharField(max_length=500, blank=True, null=True)
-    exact_times = models.CharField(max_length=500, blank=True, null=True)
+    """
+    Model for frequencies.txt
+    Mandatory fields: trip_id, start_time, end_time, headway_secs
+    Primary keys: trip_id + start_time
+    Foreign keys: trip_id
+    """
+    trip_id = models.ForeignKey(Trips, on_delete=models.CASCADE, blank=False, null=False)
+    # ? `start_time` and `end_time` can exceed 23:59:59, so they are stored as Char
+    start_time = models.CharField(blank=False, null=False, max_length=10)
+    end_time = models.CharField(blank=False, null=False, max_length=10)
+    headway_secs = models.PositiveIntegerField(blank=False, null=False)
+    exact_times = models.IntegerField(blank=True, null=True,
+                                      choices=((0, 'frequency-based trips'), (1, 'exact times')))
 
     class Meta:
+        """Constraints for the model"""
         constraints = [
             models.UniqueConstraint(
                 fields=['trip_id', 'start_time'], name='frequency_id'
-            )
+            ),
+            # if start_time and end_time are hh:mm:ss
+            models.CheckConstraint(
+                check=Q(start_time__regex=r'^[0-9]+:[0-9]{1,2}:[0-9]{1,2}$'),
+                name='start_time_format',
+            ),
+            models.CheckConstraint(
+                check=Q(end_time__regex=r'^[0-9]+:[0-9]{1,2}:[0-9]{1,2}$'),
+                name='end_time_format'
+            ),
         ]

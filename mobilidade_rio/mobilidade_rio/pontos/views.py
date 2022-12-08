@@ -144,12 +144,12 @@ class StopTimesViewSet(viewsets.ModelViewSet):
             # select unique combinations if stop_id in in <stop_ids>
             q_unique_cols = f"""
             SELECT * FROM (
-                SELECT id, trip_id_id, stop_id, arrival_time, departure_time,
-                ROW_NUMBER() OVER (PARTITION BY trip_id_id, stop_id ORDER BY id) AS row_num
+                SELECT id, trip_id_id, stop_id_id, arrival_time, departure_time,
+                ROW_NUMBER() OVER (PARTITION BY trip_id_id, stop_id_id ORDER BY id) AS row_num
                 FROM pontos_stoptimes
-                WHERE (trip_id_id, stop_id, arrival_time, departure_time) IN (
-                    SELECT DISTINCT trip_id_id, stop_id, arrival_time, departure_time FROM {t_stoptimes}
-                    WHERE stop_id IN {stop_ids_formatted}
+                WHERE (trip_id_id, stop_id_id, arrival_time, departure_time) IN (
+                    SELECT DISTINCT trip_id_id, stop_id_id, arrival_time, departure_time FROM {t_stoptimes}
+                    WHERE stop_id_id IN {stop_ids_formatted}
                 )
             ) AS q_unique_cols
             WHERE row_num = 1
