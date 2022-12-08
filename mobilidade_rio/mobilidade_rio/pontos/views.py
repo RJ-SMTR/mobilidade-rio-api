@@ -135,37 +135,37 @@ class StopTimesViewSet(viewsets.ModelViewSet):
             # get multiple stop_ids
 
             # variables
-            table = 'pontos_stoptimes'
+            t_stoptimes = 'pontos_stoptimes'
             stop_ids = stop_id.split(",")
             stop_ids_formatted = tuple(stop_ids)
             if len(stop_ids) == 1:
                 stop_ids_formatted = f"('{stop_id}')"
 
-            # select rows if stop_id in in <stop_ids>
-            q_stop_id = f"""
-            SELECT * FROM {table} WHERE stop_id IN {stop_ids_formatted}
+            # select unique combinations if stop_id in in <stop_ids>
+            q_unique_cols = f"""
+            SELECT * FROM (
+                SELECT id, trip_id_id, stop_id_id, arrival_time, departure_time,
+                ROW_NUMBER() OVER (PARTITION BY trip_id_id, stop_id_id ORDER BY id) AS row_num
+                FROM pontos_stoptimes
+                WHERE (trip_id_id, stop_id_id, arrival_time, departure_time) IN (
+                    SELECT DISTINCT trip_id_id, stop_id_id, arrival_time, departure_time FROM {t_stoptimes}
+                    WHERE stop_id_id IN {stop_ids_formatted}
+                )
+            ) AS q_unique_cols
+            WHERE row_num = 1
             """
-
-            # select unique combinations of trip_id and stop_id
-            q_trip_ids = f"""
-            SELECT DISTINCT trip_id, stop_id FROM ({q_stop_id}) AS t1
-            """
-
-            # select if trip_id combines with ALL stop_ids
-            q_trip_id_unique = f"""
-            SELECT DISTINCT trip_id FROM ({q_trip_ids}) AS t2
-            GROUP BY trip_id
-            HAVING COUNT(*) = {len(stop_ids)}
-            """
-
-            # select rows if trip_id in q_trip_id_unique
-            query = f"""
-            SELECT * FROM ({q_stop_id}) AS t3
-            WHERE trip_id IN ({q_trip_id_unique})
-            """
+            query = q_unique_cols
 
             # execute query
             queryset = queryset.raw(query)
+
+        trip_id = None
+        # get trip_id from query params
+        if 'trip_id' in self.request.query_params:
+            trip_id = self.request.query_params.get('trip_id')
+            queryset = queryset.filter(trip_id=trip_id)
+
+
         return queryset
 
 

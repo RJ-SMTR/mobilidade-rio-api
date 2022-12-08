@@ -11,13 +11,32 @@
             "agency",
             "calendar_dates",
             "calendar",
-            "frequencies",
             "routes",
             "shapes",
             "stops",
             "trips",
+            "frequencies",
             "stop_times",
             "qrcode"
+        ]
+    },
+    "remove_duplicate_cols": {
+        "pontos_trips": [
+            "trip_id"
+        ],
+        "pontos_frequencies": [
+            "trip_id"
+        ]
+    },
+    "validate_cols": {
+        "pontos_stoptimes": [
+            "trip_id"
+        ],
+        "pontos_trips": [
+            "trip_id"
+        ],
+        "pontos_frequencies": [
+            "trip_id"
         ]
     },
     "flag_params": [

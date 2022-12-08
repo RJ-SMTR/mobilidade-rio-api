@@ -134,3 +134,4 @@ secrets.y*ml
 notebooks/
 
 scripts/populate_db/csv_files/*
+scripts/populate_db/logs/*
