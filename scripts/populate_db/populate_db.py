@@ -41,6 +41,8 @@ validate_cols = {
     ]
 }
 
+script_path = os.path.dirname(os.path.abspath(__file__))
+current_path = os.getcwd()
 
 def print_colored(color, *args, **kwargs):
     """Print text in color"""
@@ -61,30 +63,48 @@ def convert_to_type(
     data,
     initial_type: type=None,
     ret_type: type=io.TextIOWrapper,
-    file_name: str = None,
+    save_file_name: str = None,
     ):
 
     """Return data from type"""
 
     if initial_type is None:
         initial_type = type(data)
-    if file_name is None:
-        file_name = "temp.txt"
+    file_name = "temp.txt"
+
+    save_file_path = None
+    if save_file_name is not None:
+        # crete ./logs folder if not exists
+        if not os.path.exists(script_path + "/logs"):
+            os.makedirs(script_path + "/logs")
+        save_file_path = os.path.join(script_path, "logs", save_file_name)
+
 
     # return DataFrame
     if ret_type == pandas.DataFrame or (ret_type is None and initial_type == pandas.DataFrame):
         if isinstance(data, pandas.DataFrame):
+            if save_file_name is not None:
+                data.to_csv(save_file_path, index=False, header=False)
             return data
         else:
-            return pandas.read_csv(data)
+            data = pandas.read_csv(data)
+            if save_file_name is not None:
+                data.to_csv(save_file_path, index=False, header=False)
+            return data
 
     # return Text
     elif ret_type == io.TextIOWrapper or (ret_type is None and initial_type == io.TextIOWrapper):
         if isinstance(data, io.TextIOWrapper):
+            if save_file_name is not None:
+                with open(save_file_path, 'w', encoding="utf8") as f_1:
+                    f_1.write(data.read())
+                    f_1.seek(0)
             return data
         else:
             file_path_1 = os.path.join(script_path, file_name)
             data.to_csv(file_path_1, index=False, header=False)
+            if save_file_name is not None:
+                data.to_csv(save_file_path, index=False, header=False)
             return open(file_path_1, 'r', encoding="utf8")
     exit()
 
@@ -190,7 +210,7 @@ def validate_col_values(
     len_history.append(len(data))
     # print("CVC hist", len_history)
 
-    return convert_to_type(data, data_type, ret_type)
+    return convert_to_type(data, data_type, ret_type, table_name + ".txt")
 
 def upload_data(_app: str, _model: str):
     """
@@ -217,78 +237,85 @@ def upload_data(_app: str, _model: str):
         print(f"Table '{table_name}'")
         with open(file_path_1, 'r', encoding="utf8") as f_1:
             # if type is _io.TextIOWrapper
+            # Filter table
+            print("Filtering...")
+            cols = f_1.readline().strip().split(',')
+            cols = validate_col_names(table_name, cols)
+            f_1.seek(0)
+            data = validate_col_values(f_1, table_name, cols)
             if "--no_insert" in sys.argv:
-                cols = f_1.readline().strip().split(',')
-                validate_col_names(table_name, cols)
-                data = validate_col_values(f_1, table_name, cols)
-            else:
-                # Filter table
-                print("Filtering...")
-                cols = f_1.readline().strip().split(',')
-                cols = validate_col_names(table_name, cols)
-                f_1.seek(0)
-                data = validate_col_values(f_1, table_name, cols)
-                # insert data
-                print("inserting ...")
-                sql = f"""
-                    COPY {table_name} ({','.join(cols)})
-                    FROM STDIN WITH CSV DELIMITER AS ','
-                """
-                try:
-                    if "--no_insert" not in sys.argv and '-i' not in sys.argv:
-                        cur.copy_expert(sql, data)
-                        conn.commit()
-                    print("[OK]")
+                return
+            # insert data
+            print("inserting ...")
+            sql = f"""
+                COPY {table_name} ({','.join(cols)})
+                FROM STDIN WITH CSV DELIMITER AS ','
+            """
+            try:
+                if "--no_insert" not in sys.argv and '-i' not in sys.argv:
+                    cur.copy_expert(sql, data)
+                    conn.commit()
+                print("[OK]")
 
-                except psycopg2.Error as error:
-                    conn.rollback()
-                    print_colored("yellow","Error on copy data:")
-                    detail = error.diag.message_detail
-                    # diag.message_detail comes from psycopg2
-                    print_colored("yellow", error, end='')
-                    print_colored("yellow", "Retrying manually...")
+            except psycopg2.Error as error:
+                conn.rollback()
+                print_colored("yellow","Error on copy data:")
+                detail = error.diag.message_detail
+                # diag.message_detail comes from psycopg2
+                print_colored("yellow", error, end='')
+                print_colored("yellow", "Retrying manually...")
+                # write error to file
+                log_path = os.path.join(script_path, "logs", f"{table_name}_error.log")
+                with open(log_path, 'w', encoding="utf8") as f_2:
+                    f_2.write(error.diag.message_detail)
+                    f_2.write("\nRetrying manually...\n")
 
-                    # if detail is "fk not present in table"
-                    count_1 = 0
-                    if constraint_err(detail):
-                        # try catch per line
-                        f_1.seek(0)
-                        total = f_1.readlines()
-                        f_1.seek(0)
-                        cols = f_1.readline().strip().split(',')
-                        cols = validate_col_names(table_name, cols)
-                        data = f_1.readlines()
-                        # iterate lines
-                        for line in data:
+                # if detail is "fk not present in table"
+                count_1 = 0
+                if constraint_err(detail):
+                    # try catch per line
+                    f_1.seek(0)
+                    total = f_1.readlines()
+                    f_1.seek(0)
+                    cols = f_1.readline().strip().split(',')
+                    cols = validate_col_names(table_name, cols)
+                    data = f_1.readlines()
+                    # iterate lines
+                    for line in data:
+                        try:
+                            cur.copy_from(
+                                file=io.StringIO(line),
+                                table=table_name,
+                                sep=",",
+                                columns=cols
+                            )
+                            conn.commit()
+                            count_1 += 1
+                        except psycopg2.Error:
+                            conn.rollback()
                             try:
-                                cur.copy_from(
-                                    file=io.StringIO(line),
-                                    table=table_name,
-                                    sep=",",
-                                    columns=cols
-                                )
+                                # copy expert, for null values
+                                sql_1 = f"""
+                                    COPY {table_name} ({','.join(cols)})
+                                    FROM STDIN WITH CSV DELIMITER AS ','
+                                """
+                                cur.copy_expert(sql_1, io.StringIO(line))
                                 conn.commit()
                                 count_1 += 1
-                            except psycopg2.Error:
+                            except psycopg2.Error as error_2:
                                 conn.rollback()
-                                try:
-                                    # copy expert, for null values
-                                    cur.copy_expert(f"""
-                                        COPY {table_name} ({','.join(cols)})
-                                        FROM STDIN WITH CSV DELIMITER AS ','
-                                    """, io.StringIO(line))
-                                    conn.commit()
-                                    count_1 += 1
-                                except psycopg2.Error as error_2:
-                                    conn.rollback()
-                                    if constraint_err(error_2.diag.message_detail):
-                                        pass
-                                    else:
-                                        raise error_2
-                    if count_1 == 0:
-                        print_colored("red","[FAIL - NO INSERT]")
-                    else:
-                        print(f"[OK - {count_1}/{len(total)}]")
+                                # write error to file
+                                with open(log_path, 'a', encoding="utf8") as f_2:
+                                    f_2.write(error_2.diag.message_detail)
+                                    f_2.write("\n")
+                                if constraint_err(error_2.diag.message_detail):
+                                    pass
+                                else:
+                                    raise error_2
+                if count_1 == 0:
+                    print_colored("red","[FAIL - NO INSERT]")
+                else:
+                    print(f"[OK - {count_1}/{len(total)}]")
     print()
 
 
@@ -301,8 +328,6 @@ def help_1():
 if __name__ == "__main__":
 
     # Setting default parameters
-    script_path = os.path.dirname(os.path.abspath(__file__))
-    current_path = os.getcwd()
 
     csv_path = os.path.join(script_path, "csv_files")
     file_path = os.path.join(script_path, "settings.json")
