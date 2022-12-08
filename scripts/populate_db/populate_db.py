@@ -280,7 +280,6 @@ def upload_data(_app: str, _model: str):
                     cols = f_1.readline().strip().split(',')
                     cols = validate_col_names(table_name, cols)
                     temp_path = os.path.join(script_path, "temp.txt")
-                    print("Path:", temp_path)
                     with open(temp_path, 'r', encoding="utf8") as f_temp:
                         data = validate_col_values(f_temp, table_name, cols)
                     # iterate lines
