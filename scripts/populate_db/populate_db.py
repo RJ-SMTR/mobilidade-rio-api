@@ -429,7 +429,7 @@ if __name__ == "__main__":
         # Clear all tables
         if (("-e" in sys.argv or "--empty_tables" in sys.argv\
         or "empty_tables" in settings["flag_params"])and\
-            not "-e=false" in sys.argv and not "--empty_tables=false" in sys.argv):
+            "-e=false" not in sys.argv and "--empty_tables=false" not in sys.argv):
             print(f"Clearing all tables in {app}:")
             if app in settings["table_order"].keys():
                 folder = os.path.join(csv_path, app)
@@ -444,7 +444,6 @@ if __name__ == "__main__":
             print("[OK]\n")
 
         # Insert tables
-        
         if app in settings["table_order"].keys():
             folder = os.path.join(csv_path, app)
             app_models = settings["table_order"][app]
