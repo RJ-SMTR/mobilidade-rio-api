@@ -309,21 +309,21 @@
     },
     {
         "model": "pontos.trip",
-        "pk": "O0821AAA0ACDU01",
+        "pk": "767790e4-89c6-47b9-bb10-e82b69b54ec1",
         "fields": {
-            "route": "O0821AAA0A",
-            "headsign": "",
+            "route": "O0342AAA0A",
+            "headsign": "Jardim Am\u00e9rica",
             "via": "",
-            "version": "U01",
-            "direction": 0
+            "version": "6-4",
+            "direction": 1
         }
     },
     {
         "model": "pontos.trip",
-        "pk": "O0342AAA0AIDU01",
+        "pk": "O0821AAA0ACDU01",
         "fields": {
-            "route": "O0342AAA0A",
-            "headsign": "Castelo",
+            "route": "O0821AAA0A",
+            "headsign": "",
             "via": "",
             "version": "U01",
             "direction": 0
@@ -2570,6 +2570,17 @@
             "headsign": "Candel\u00e1ria",
             "via": "",
             "version": "U02",
+            "direction": 0
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "O0342AAA0AIDU01",
+        "fields": {
+            "route": "O0342AAA0A",
+            "headsign": "Castelo",
+            "via": "",
+            "version": "U01",
             "direction": 0
         }
     },
