@@ -131,6 +131,16 @@
     },
     {
         "model": "pontos.linha",
+        "pk": "h9ji",
+        "fields": {
+            "agency": 22005,
+            "mode": 3,
+            "initials": "885",
+            "name": "Santa Cruz - Mato Alto"
+        }
+    },
+    {
+        "model": "pontos.linha",
         "pk": "O0054CAA0A",
         "fields": {
             "agency": 22002,
@@ -201,6 +211,56 @@
     },
     {
         "model": "pontos.linha",
+        "pk": "u8ud",
+        "fields": {
+            "agency": 22004,
+            "mode": 3,
+            "initials": "831",
+            "name": "Col\u00f4nia - Taquara"
+        }
+    },
+    {
+        "model": "pontos.linha",
+        "pk": "wvv2",
+        "fields": {
+            "agency": 22004,
+            "mode": 3,
+            "initials": "SV692",
+            "name": "M\u00e9ier - Alvorada"
+        }
+    },
+    {
+        "model": "pontos.linha",
+        "pk": "7ub2",
+        "fields": {
+            "agency": 22005,
+            "mode": 3,
+            "initials": "869",
+            "name": "Campo Grande - Santa Margarida"
+        }
+    },
+    {
+        "model": "pontos.linha",
+        "pk": "O0384AAV0A",
+        "fields": {
+            "agency": 22003,
+            "mode": 3,
+            "initials": "SV384",
+            "name": "Pavuna - Passeio"
+        }
+    },
+    {
+        "model": "pontos.linha",
+        "pk": "O0810AAP0A",
+        "fields": {
+            "agency": 22004,
+            "mode": 3,
+            "initials": "SP810",
+            "name": "Taquara - Vargem Grande"
+        }
+    },
+    {
+        "model": "pontos.linha",
         "pk": "fzws",
         "fields": {
             "agency": 22003,
@@ -217,6 +277,16 @@
             "mode": 3,
             "initials": "409",
             "name": "Saens Pe\u00f1a - Horto"
+        }
+    },
+    {
+        "model": "pontos.linha",
+        "pk": "O0384AAA0A",
+        "fields": {
+            "agency": 22003,
+            "mode": 3,
+            "initials": "384",
+            "name": "Pavuna - Passeio"
         }
     },
     {
@@ -246,16 +316,6 @@
             "agency": 22003,
             "mode": 3,
             "initials": "232",
-            "name": "Lins - Castelo"
-        }
-    },
-    {
-        "model": "pontos.linha",
-        "pk": "O0232AAV0A",
-        "fields": {
-            "agency": 22003,
-            "mode": 3,
-            "initials": "SV232",
             "name": "Lins - Castelo"
         }
     },
@@ -547,16 +607,6 @@
             "mode": 3,
             "initials": "378",
             "name": "Marechal Hermes - Castelo"
-        }
-    },
-    {
-        "model": "pontos.linha",
-        "pk": "O0384AAA0A",
-        "fields": {
-            "agency": 22003,
-            "mode": 3,
-            "initials": "384",
-            "name": "Pavuna - Passeio"
         }
     },
     {
@@ -2026,7 +2076,7 @@
             "agency": 22004,
             "mode": 3,
             "initials": "LECD57",
-            "name": "Boiuna - Saens Pe\u00f1a"
+            "name": "Teixeiras - Saens Pe\u00f1a"
         }
     },
     {
@@ -2041,11 +2091,11 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0692AAV0A",
+        "pk": "O0692AAA0A",
         "fields": {
             "agency": 22004,
             "mode": 3,
-            "initials": "SV692",
+            "initials": "692",
             "name": "M\u00e9ier - Alvorada"
         }
     },
@@ -3181,16 +3231,6 @@
     },
     {
         "model": "pontos.linha",
-        "pk": "O0513AAP0A",
-        "fields": {
-            "agency": 22002,
-            "mode": 3,
-            "initials": "SP513",
-            "name": "Urca - Botafogo"
-        }
-    },
-    {
-        "model": "pontos.linha",
         "pk": "O0538AAA0A",
         "fields": {
             "agency": 22002,
@@ -3237,6 +3277,16 @@
             "mode": 3,
             "initials": "553",
             "name": "Rio Sul - Recreio"
+        }
+    },
+    {
+        "model": "pontos.linha",
+        "pk": "O0513AAA0A",
+        "fields": {
+            "agency": 22002,
+            "mode": 3,
+            "initials": "513",
+            "name": "Urca - Botafogo"
         }
     },
     {

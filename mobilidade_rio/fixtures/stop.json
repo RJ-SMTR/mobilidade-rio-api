@@ -529,28 +529,6 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "1005O00016S9",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 1,2: Treze de Maio",
-            "address": "BRS 1,2: Treze de Maio",
-            "latitude": "-22.90836",
-            "longitude": "-43.17734"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "1005O00018S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 1,2,3: Santa Luzia",
-            "address": "BRS 1,2,3: Santa Luzia",
-            "latitude": "-22.90853",
-            "longitude": "-43.17225"
-        }
-    },
-    {
-        "model": "pontos.stop",
         "pk": "1005O00019S0",
         "fields": {
             "mode": 3,
@@ -558,17 +536,6 @@
             "address": "BRS 5,I: Central",
             "latitude": "-22.90609",
             "longitude": "-43.19353"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "1005O00020S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 1,4: Pra\u00e7a Tiradentes",
-            "address": "BRS 1,4: Pra\u00e7a Tiradentes",
-            "latitude": "-22.90723",
-            "longitude": "-43.18272"
         }
     },
     {
@@ -602,17 +569,6 @@
             "address": "BRS 4: Central",
             "latitude": "-22.90562",
             "longitude": "-43.19151"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "1005O00029S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 1,2,3: Beira Mar",
-            "address": "BRS 1,2,3: Beira Mar",
-            "latitude": "-22.91079",
-            "longitude": "-43.1713"
         }
     },
     {
@@ -668,17 +624,6 @@
             "address": "Rezende",
             "latitude": "-22.91448",
             "longitude": "-43.18843"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "1005O00043S9",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 1,2,3,4,I: Senado",
-            "address": "BRS 1,2,3,4,I: Senado",
-            "latitude": "-22.91118",
-            "longitude": "-43.19203"
         }
     },
     {
@@ -848,13 +793,57 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "1005O00063S0",
+        "pk": "1005O00020S0",
         "fields": {
             "mode": 3,
-            "name": "BRS 1,2,4: General Caldwell",
-            "address": "BRS 1,2,4: General Caldwell",
-            "latitude": "-22.90978",
-            "longitude": "-43.19101"
+            "name": "BRS 1,4: Pra\u00e7a Tiradentes",
+            "address": "BRS 1,4: Pra\u00e7a Tiradentes",
+            "latitude": "-22.90723",
+            "longitude": "-43.18272"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "1005O00016S9",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 1,2: Treze de Maio",
+            "address": "BRS 1,2: Treze de Maio",
+            "latitude": "-22.90836",
+            "longitude": "-43.17734"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "1005O00043S9",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 1,2,3,4,I: Senado",
+            "address": "BRS 1,2,3,4,I: Senado",
+            "latitude": "-22.91118",
+            "longitude": "-43.19203"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "1005O00018S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 1,2,3: Santa Luzia",
+            "address": "BRS 1,2,3: Santa Luzia",
+            "latitude": "-22.90853",
+            "longitude": "-43.17225"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "1005O00029S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 1,2,3: Beira Mar",
+            "address": "BRS 1,2,3: Beira Mar",
+            "latitude": "-22.91079",
+            "longitude": "-43.1713"
         }
     },
     {
@@ -921,17 +910,6 @@
             "address": "Terminal Rodovi\u00e1rio Menezes Cortes :: Plat. B",
             "latitude": "-22.90537",
             "longitude": "-43.17485"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "1005O00081S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 5,I: Cruz Vermelha",
-            "address": "BRS 5,I: Cruz Vermelha",
-            "latitude": "-22.91251",
-            "longitude": "-43.18975"
         }
     },
     {
@@ -1035,17 +1013,6 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "1005O00140C0",
-        "fields": {
-            "mode": 3,
-            "name": "Estivadores",
-            "address": "Estivadores",
-            "latitude": "-22.89945",
-            "longitude": "-43.18764"
-        }
-    },
-    {
-        "model": "pontos.stop",
         "pk": "1005O00142C0",
         "fields": {
             "mode": 3,
@@ -1068,28 +1035,6 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "1005O00146S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 1,2,3,4: Cruz Vermelha",
-            "address": "BRS 1,2,3,4: Cruz Vermelha",
-            "latitude": "-22.9124",
-            "longitude": "-43.18938"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "1005O00149S9",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 1,2,3,4,I: Carlos de Carvalho",
-            "address": "BRS 1,2,3,4,I: Carlos de Carvalho",
-            "latitude": "-22.91168",
-            "longitude": "-43.18936"
-        }
-    },
-    {
-        "model": "pontos.stop",
         "pk": "1005O00150S0",
         "fields": {
             "mode": 3,
@@ -1108,17 +1053,6 @@
             "address": "BRS 1,2,3,4: Franklin Roosevelt",
             "latitude": "-22.910308",
             "longitude": "-43.171774"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "1005O00152S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 4: Erasmo Braga",
-            "address": "BRS 4: Erasmo Braga",
-            "latitude": "-22.90519",
-            "longitude": "-43.17367"
         }
     },
     {
@@ -1442,39 +1376,6 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "1005O00230S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 1,2: Pra\u00e7a da Rep\u00fablica",
-            "address": "BRS 1,2: Pra\u00e7a da Rep\u00fablica",
-            "latitude": "-22.90843",
-            "longitude": "-43.1869"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "1005O00231S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 4: Pra\u00e7a da Rep\u00fablica",
-            "address": "BRS 4: Pra\u00e7a da Rep\u00fablica",
-            "latitude": "-22.90864",
-            "longitude": "-43.18772"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "1005O00232S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 5: Pra\u00e7a da Rep\u00fablica",
-            "address": "BRS 5: Pra\u00e7a da Rep\u00fablica",
-            "latitude": "-22.90879",
-            "longitude": "-43.18819"
-        }
-    },
-    {
-        "model": "pontos.stop",
         "pk": "1005O00233C0",
         "fields": {
             "mode": 3,
@@ -1515,28 +1416,6 @@
             "address": "Ponto Final: Terminal Jamil Amiden: \u00d4nibus Executivos :: Zona Oeste",
             "latitude": "-22.90917",
             "longitude": "-43.18048"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "1005O00237S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS I: Rep\u00fablica do Paraguai",
-            "address": "BRS I: Rep\u00fablica do Paraguai",
-            "latitude": "-22.90913",
-            "longitude": "-43.17964"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "1005O00238S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 4: Rep\u00fablica do Paraguai",
-            "address": "BRS 4: Rep\u00fablica do Paraguai",
-            "latitude": "-22.909",
-            "longitude": "-43.17926"
         }
     },
     {
@@ -1662,13 +1541,123 @@
     },
     {
         "model": "pontos.stop",
+        "pk": "1005O00063S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 1,2,4: General Caldwell",
+            "address": "BRS 1,2,4: General Caldwell",
+            "latitude": "-22.90978",
+            "longitude": "-43.19101"
+        }
+    },
+    {
+        "model": "pontos.stop",
         "pk": "1005O00180C0",
         "fields": {
             "mode": 3,
-            "name": "BRS 1, 2, 3, 4, 5, I: Uruguaiana",
-            "address": "BRS 1, 2, 3, 4, 5, I: Uruguaiana",
+            "name": "BRS 1,2,3,4,5,I: Uruguaiana",
+            "address": "BRS 1,2,3,4,5,I: Uruguaiana",
             "latitude": "-22.90664",
             "longitude": "-43.18006"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "1005O00232S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 5: Pra\u00e7a da Rep\u00fablica",
+            "address": "BRS 5: Pra\u00e7a da Rep\u00fablica",
+            "latitude": "-22.90879",
+            "longitude": "-43.18819"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "1005O00231S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 4: Pra\u00e7a da Rep\u00fablica",
+            "address": "BRS 4: Pra\u00e7a da Rep\u00fablica",
+            "latitude": "-22.90864",
+            "longitude": "-43.18772"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "1005O00238S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 4: Rep\u00fablica do Paraguai",
+            "address": "BRS 4: Rep\u00fablica do Paraguai",
+            "latitude": "-22.909",
+            "longitude": "-43.17926"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "1005O00237S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS I: Rep\u00fablica do Paraguai",
+            "address": "BRS I: Rep\u00fablica do Paraguai",
+            "latitude": "-22.90913",
+            "longitude": "-43.17964"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "1005O00146S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 1,2,3,4: Cruz Vermelha",
+            "address": "BRS 1,2,3,4: Cruz Vermelha",
+            "latitude": "-22.9124",
+            "longitude": "-43.18938"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "1005O00081S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 5,I: Cruz Vermelha",
+            "address": "BRS 5,I: Cruz Vermelha",
+            "latitude": "-22.91251",
+            "longitude": "-43.18975"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "1005O00149S9",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 1,2,3,4,I: Carlos de Carvalho",
+            "address": "BRS 1,2,3,4,I: Carlos de Carvalho",
+            "latitude": "-22.91168",
+            "longitude": "-43.18936"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "1005O00152S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 4: Erasmo Braga",
+            "address": "BRS 4: Erasmo Braga",
+            "latitude": "-22.90519",
+            "longitude": "-43.17367"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "1005O00140C0",
+        "fields": {
+            "mode": 3,
+            "name": "Estivadores",
+            "address": "Estivadores",
+            "latitude": "-22.899345",
+            "longitude": "-43.187624"
         }
     },
     {
@@ -1680,17 +1669,6 @@
             "address": "Carlos de Carvalho",
             "latitude": "-22.91066",
             "longitude": "-43.18825"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "1005O00249S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 1,2,3: Ouvidor",
-            "address": "BRS 1,2,3: Ouvidor",
-            "latitude": "-22.90266",
-            "longitude": "-43.17553"
         }
     },
     {
@@ -2102,17 +2080,6 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "1006O00013S9",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 1,2,3,4: Marqu\u00eas de Sapuca\u00ed",
-            "address": "BRS 1,2,3,4: Marqu\u00eas de Sapuca\u00ed",
-            "latitude": "-22.91423",
-            "longitude": "-43.19633"
-        }
-    },
-    {
-        "model": "pontos.stop",
         "pk": "1006O00018C0",
         "fields": {
             "mode": 3,
@@ -2175,17 +2142,6 @@
             "address": "Rua Bar\u00e3o de Petr\u00f3polis , 374",
             "latitude": "-22.92831",
             "longitude": "-43.20358"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "1007O00017S9",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 2,4,5: Bar\u00e3o de Ub\u00e1",
-            "address": "BRS 2,4,5: Bar\u00e3o de Ub\u00e1",
-            "latitude": "-22.91747",
-            "longitude": "-43.21103"
         }
     },
     {
@@ -2520,6 +2476,28 @@
     },
     {
         "model": "pontos.stop",
+        "pk": "1007O00017S9",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 2,4,5: Bar\u00e3o de Ub\u00e1",
+            "address": "BRS 2,4,5: Bar\u00e3o de Ub\u00e1",
+            "latitude": "-22.91747",
+            "longitude": "-43.21103"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "1005O00249S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 1,2,3: Ouvidor",
+            "address": "BRS 1,2,3: Ouvidor",
+            "latitude": "-22.90266",
+            "longitude": "-43.17553"
+        }
+    },
+    {
+        "model": "pontos.stop",
         "pk": "1007O00059C0",
         "fields": {
             "mode": 3,
@@ -2740,39 +2718,6 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "1008O00011S9",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 1,4,I: An\u00edbal Ben\u00e9volo",
-            "address": "BRS 1,4,I: An\u00edbal Ben\u00e9volo",
-            "latitude": "-22.91221",
-            "longitude": "-43.19866"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "1008O00015S9",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 2: Pra\u00e7a Castelo Branco",
-            "address": "BRS 2: Pra\u00e7a Castelo Branco",
-            "latitude": "-22.91205",
-            "longitude": "-43.19781"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "1008O00016S9",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 2: Correia Vasques",
-            "address": "BRS 2: Correia Vasques",
-            "latitude": "-22.91274",
-            "longitude": "-43.20142"
-        }
-    },
-    {
-        "model": "pontos.stop",
         "pk": "1008O00017C0",
         "fields": {
             "mode": 3,
@@ -2813,17 +2758,6 @@
             "address": "Ponto Final: Metr\u00f4 Est\u00e1cio :: Linha 209",
             "latitude": "-22.91259",
             "longitude": "-43.20581"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "1008O00021S9",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 1,4: Reverendo \u00c1lvaro Reis",
-            "address": "BRS 1,4: Reverendo \u00c1lvaro Reis",
-            "latitude": "-22.91288",
-            "longitude": "-43.20215"
         }
     },
     {
@@ -2960,61 +2894,6 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "1009O00001S9",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 1,4: Largo do Est\u00e1cio",
-            "address": "BRS 1,4: Largo do Est\u00e1cio",
-            "latitude": "-22.91405",
-            "longitude": "-43.20528"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "1009O00002S9",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 1,2,4: Paulo de Frontin",
-            "address": "BRS 1,2,4: Paulo de Frontin",
-            "latitude": "-22.91639",
-            "longitude": "-43.2093"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "1009O00004S9",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 1,2,4: Largo do Est\u00e1cio",
-            "address": "BRS 1,2,4: Largo do Est\u00e1cio",
-            "latitude": "-22.91439",
-            "longitude": "-43.20535"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "1009O00005S9",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 1,2,4: Viscondessa de Piracinunga",
-            "address": "BRS 1,2,4: Viscondessa de Piracinunga",
-            "latitude": "-22.91401",
-            "longitude": "-43.20054"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "1009O00006S9",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 2: Paulo de Frontin",
-            "address": "BRS 2: Paulo de Frontin",
-            "latitude": "-22.91547",
-            "longitude": "-43.20947"
-        }
-    },
-    {
-        "model": "pontos.stop",
         "pk": "1009O00007C0",
         "fields": {
             "mode": 3,
@@ -3026,28 +2905,6 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "1009O00009S9",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 5,6: Sampaio Ferraz",
-            "address": "BRS 5,6: Sampaio Ferraz",
-            "latitude": "-22.91564",
-            "longitude": "-43.20808"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "1009O00010S9",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 2: Largo do Est\u00e1cio",
-            "address": "BRS 2: Largo do Est\u00e1cio",
-            "latitude": "-22.91415",
-            "longitude": "-43.20564"
-        }
-    },
-    {
-        "model": "pontos.stop",
         "pk": "1009O00011S9",
         "fields": {
             "mode": 3,
@@ -3055,17 +2912,6 @@
             "address": "BRS 1,4,6: Joaquim Palhares",
             "latitude": "-22.91531",
             "longitude": "-43.20902"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "1009O00012S9",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 1,2,4: Reverendo \u00c1lvaro Reis",
-            "address": "BRS 1,2,4: Reverendo \u00c1lvaro Reis",
-            "latitude": "-22.91331",
-            "longitude": "-43.20284"
         }
     },
     {
@@ -3312,17 +3158,6 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "1008O00022S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 1,2,3,4,5,I: Cidade Nova",
-            "address": "BRS 1,2,3,4,5,I: Cidade Nova",
-            "latitude": "-22.910093",
-            "longitude": "-43.205632"
-        }
-    },
-    {
-        "model": "pontos.stop",
         "pk": "1008O00005S0",
         "fields": {
             "mode": 3,
@@ -3334,6 +3169,17 @@
     },
     {
         "model": "pontos.stop",
+        "pk": "1009O00006S9",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 2: Paulo de Frontin",
+            "address": "BRS 2: Paulo de Frontin",
+            "latitude": "-22.91547",
+            "longitude": "-43.20947"
+        }
+    },
+    {
+        "model": "pontos.stop",
         "pk": "1007O00073C0",
         "fields": {
             "mode": 3,
@@ -3341,6 +3187,127 @@
             "address": "Dom Joaquim Mamede",
             "latitude": "-22.938403",
             "longitude": "-43.206927"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "1009O00010S9",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 2: Largo do Est\u00e1cio",
+            "address": "BRS 2: Largo do Est\u00e1cio",
+            "latitude": "-22.91415",
+            "longitude": "-43.20564"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "1009O00001S9",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 1,4: Largo do Est\u00e1cio",
+            "address": "BRS 1,4: Largo do Est\u00e1cio",
+            "latitude": "-22.91405",
+            "longitude": "-43.20528"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "1009O00002S9",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 1,2,4: Paulo de Frontin",
+            "address": "BRS 1,2,4: Paulo de Frontin",
+            "latitude": "-22.91639",
+            "longitude": "-43.2093"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "1008O00021S9",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 1,4: Reverendo \u00c1lvaro Reis",
+            "address": "BRS 1,4: Reverendo \u00c1lvaro Reis",
+            "latitude": "-22.91288",
+            "longitude": "-43.20215"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "1008O00011S9",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 1,4,I: An\u00edbal Ben\u00e9volo",
+            "address": "BRS 1,4,I: An\u00edbal Ben\u00e9volo",
+            "latitude": "-22.91221",
+            "longitude": "-43.19866"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "1008O00015S9",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 2: Pra\u00e7a Castelo Branco",
+            "address": "BRS 2: Pra\u00e7a Castelo Branco",
+            "latitude": "-22.91205",
+            "longitude": "-43.19781"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "1009O00005S9",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 1,2,4: Viscondessa de Piracinunga",
+            "address": "BRS 1,2,4: Viscondessa de Piracinunga",
+            "latitude": "-22.91401",
+            "longitude": "-43.20054"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "1009O00012S9",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 1,2,4: Reverendo \u00c1lvaro Reis",
+            "address": "BRS 1,2,4: Reverendo \u00c1lvaro Reis",
+            "latitude": "-22.91331",
+            "longitude": "-43.20284"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "1009O00009S9",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 5,6: Sampaio Ferraz",
+            "address": "BRS 5,6: Sampaio Ferraz",
+            "latitude": "-22.91564",
+            "longitude": "-43.20808"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "1009O00004S9",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 1,2,4: Largo do Est\u00e1cio",
+            "address": "BRS 1,2,4: Largo do Est\u00e1cio",
+            "latitude": "-22.91439",
+            "longitude": "-43.20535"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "1008O00022S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 1,2,3,4,5,I: Cidade Nova",
+            "address": "BRS 1,2,3,4,5,I: Cidade Nova",
+            "latitude": "-22.910093",
+            "longitude": "-43.205632"
         }
     },
     {
@@ -5028,39 +4995,6 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "1161O00006S9",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 1,3,I: Lavradio",
-            "address": "BRS 1,3,I: Lavradio",
-            "latitude": "-22.91303",
-            "longitude": "-43.18213"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "1161O00007S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 2,4: Ubaldino do Amaral",
-            "address": "BRS 2,4: Ubaldino do Amaral",
-            "latitude": "-22.91236",
-            "longitude": "-43.18567"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "1161O00012S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 1,2,4: Rua dos Inv\u00e1lidos",
-            "address": "BRS 1,2,4: Rua dos Inv\u00e1lidos",
-            "latitude": "-22.91126",
-            "longitude": "-43.18609"
-        }
-    },
-    {
-        "model": "pontos.stop",
         "pk": "1161O00017C0",
         "fields": {
             "mode": 3,
@@ -5079,39 +5013,6 @@
             "address": "Av. Gomes Freire , 822",
             "latitude": "-22.913926",
             "longitude": "-43.182645"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "1161O00019S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 5,I: Rua dos Inv\u00e1lidos",
-            "address": "BRS 5,I: Rua dos Inv\u00e1lidos",
-            "latitude": "-22.91129",
-            "longitude": "-43.18621"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "1161O00020S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 2,4: Av. Mem de S\u00e1, 102",
-            "address": "BRS 2,4: Av. Mem de S\u00e1, 102",
-            "latitude": "-22.912949",
-            "longitude": "-43.182542"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "1161O00021S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 1,3,I: Inv\u00e1lidos",
-            "address": "BRS 1,3,I: Inv\u00e1lidos",
-            "latitude": "-22.91241",
-            "longitude": "-43.18541"
         }
     },
     {
@@ -5798,6 +5699,61 @@
     },
     {
         "model": "pontos.stop",
+        "pk": "1161O00019S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 5,I: Rua dos Inv\u00e1lidos",
+            "address": "BRS 5,I: Rua dos Inv\u00e1lidos",
+            "latitude": "-22.91129",
+            "longitude": "-43.18621"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "1161O00007S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 2,4: Ubaldino do Amaral",
+            "address": "BRS 2,4: Ubaldino do Amaral",
+            "latitude": "-22.91236",
+            "longitude": "-43.18567"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "1161O00021S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 1,3,I: Inv\u00e1lidos",
+            "address": "BRS 1,3,I: Inv\u00e1lidos",
+            "latitude": "-22.91241",
+            "longitude": "-43.18541"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "1161O00020S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 2,4: Av. Mem de S\u00e1",
+            "address": "BRS 2,4: Av. Mem de S\u00e1",
+            "latitude": "-22.912949",
+            "longitude": "-43.182542"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "1161O00006S9",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 1,3,I: Lavradio",
+            "address": "BRS 1,3,I: Lavradio",
+            "latitude": "-22.91303",
+            "longitude": "-43.18213"
+        }
+    },
+    {
+        "model": "pontos.stop",
         "pk": "2017O00051C0",
         "fields": {
             "mode": 3,
@@ -6183,28 +6139,6 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "2020O00011S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 3,I: Lauro Sodr\u00e9",
-            "address": "BRS 3,I: Lauro Sodr\u00e9",
-            "latitude": "-22.956059",
-            "longitude": "-43.177493"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "2020O00012C0",
-        "fields": {
-            "mode": 3,
-            "name": "UFRJ - Pinel",
-            "address": "UFRJ - Pinel",
-            "latitude": "-22.95274",
-            "longitude": "-43.17599"
-        }
-    },
-    {
-        "model": "pontos.stop",
         "pk": "2020O00016S0",
         "fields": {
             "mode": 3,
@@ -6245,17 +6179,6 @@
             "address": "BRS 1,I: Nelson Mandela",
             "latitude": "-22.951229",
             "longitude": "-43.183652"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "2020O00027S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 1: Lauro Sodr\u00e9",
-            "address": "BRS 1: Lauro Sodr\u00e9",
-            "latitude": "-22.956596",
-            "longitude": "-43.177407"
         }
     },
     {
@@ -6663,6 +6586,39 @@
             "address": "Laranjeiras",
             "latitude": "-22.93343",
             "longitude": "-43.18448"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "2020O00027S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 1: Lauro Sodr\u00e9",
+            "address": "BRS 1: Lauro Sodr\u00e9",
+            "latitude": "-22.956596",
+            "longitude": "-43.177407"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "2020O00011S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 3,I: Lauro Sodr\u00e9",
+            "address": "BRS 3,I: Lauro Sodr\u00e9",
+            "latitude": "-22.956059",
+            "longitude": "-43.177493"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "2020O00012C0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 1,2,3,I: UFRJ - Pinel",
+            "address": "BRS 1,2,3,I: UFRJ - Pinel",
+            "latitude": "-22.95274",
+            "longitude": "-43.17599"
         }
     },
     {
@@ -7206,94 +7162,6 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "2024O00002S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 2: Francisco S\u00e1",
-            "address": "BRS 2: Francisco S\u00e1",
-            "latitude": "-22.982959",
-            "longitude": "-43.192112"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "2024O00004S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 2: Rep\u00fablica do Peru",
-            "address": "BRS 2: Rep\u00fablica do Peru",
-            "latitude": "-22.96725",
-            "longitude": "-43.18096"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "2024O00006S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 1,3: Joaquim Nabuco",
-            "address": "BRS 1,3: Joaquim Nabuco",
-            "latitude": "-22.98607",
-            "longitude": "-43.189898"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "2024O00007S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 1,3: Sousa Lima",
-            "address": "BRS 1,3: Sousa Lima",
-            "latitude": "-22.98239",
-            "longitude": "-43.19094"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "2024O00008S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 1,3: Bol\u00edvar",
-            "address": "BRS 1,3: Bol\u00edvar",
-            "latitude": "-22.97653",
-            "longitude": "-43.19017"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "2024O00009S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 2: Raimundo Corr\u00eaa",
-            "address": "BRS 2: Raimundo Corr\u00eaa",
-            "latitude": "-22.97303",
-            "longitude": "-43.18818"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "2024O00010S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 1,3: Siqueira Campos",
-            "address": "BRS 1,3: Siqueira Campos",
-            "latitude": "-22.96959",
-            "longitude": "-43.18506"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "2024O00011S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 1,3: Fernando Mendes",
-            "address": "BRS 1,3: Fernando Mendes",
-            "latitude": "-22.96685",
-            "longitude": "-43.17974"
-        }
-    },
-    {
-        "model": "pontos.stop",
         "pk": "2024O00013S0",
         "fields": {
             "mode": 3,
@@ -7301,50 +7169,6 @@
             "address": "BRS 2: Raul Pompeia",
             "latitude": "-22.983389",
             "longitude": "-43.192411"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "2024O00014S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 1,3: Djalma Ulrich",
-            "address": "BRS 1,3: Djalma Ulrich",
-            "latitude": "-22.97936",
-            "longitude": "-43.19089"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "2024O00015S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 1,3: Santa Clara",
-            "address": "BRS 1,3: Santa Clara",
-            "latitude": "-22.97243",
-            "longitude": "-43.18779"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "2024O00016S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 2: Hil\u00e1rio de Gouveia",
-            "address": "BRS 2: Hil\u00e1rio de Gouveia",
-            "latitude": "-22.9688",
-            "longitude": "-43.18396"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "2024O00017S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 2: Dem\u00e9trio Ribeiro",
-            "address": "BRS 2: Dem\u00e9trio Ribeiro",
-            "latitude": "-22.961987",
-            "longitude": "-43.174865"
         }
     },
     {
@@ -7389,6 +7213,50 @@
             "address": "Rua Pompeu Loureiro , 116",
             "latitude": "-22.97528",
             "longitude": "-43.19346"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "2024O00033C0",
+        "fields": {
+            "mode": 3,
+            "name": "Ponto Final: Copacabana :: Linha 455",
+            "address": "Ponto Final: Copacabana :: Linha 455",
+            "latitude": "-22.986714",
+            "longitude": "-43.190978"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "2024O00034S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 1,3: Conselheiro Lafaiete",
+            "address": "BRS 1,3: Conselheiro Lafaiete",
+            "latitude": "-22.983611",
+            "longitude": "-43.193179"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "2024O00017S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 2: Dem\u00e9trio Ribeiro",
+            "address": "BRS 2: Dem\u00e9trio Ribeiro",
+            "latitude": "-22.961987",
+            "longitude": "-43.174865"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "2024O00040S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 1: Ministro Viveiros de Castro",
+            "address": "BRS 1: Ministro Viveiros de Castro",
+            "latitude": "-22.962401",
+            "longitude": "-43.174617"
         }
     },
     {
@@ -7448,13 +7316,13 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "2024O00031S0",
+        "pk": "2024O00002S0",
         "fields": {
             "mode": 3,
-            "name": "BRS 2: Miguel Lemos",
-            "address": "BRS 2: Miguel Lemos",
-            "latitude": "-22.97702",
-            "longitude": "-43.19276"
+            "name": "BRS 2: Francisco S\u00e1",
+            "address": "BRS 2: Francisco S\u00e1",
+            "latitude": "-22.982959",
+            "longitude": "-43.192112"
         }
     },
     {
@@ -7470,57 +7338,35 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "2024O00033C0",
+        "pk": "2024O00039S0",
         "fields": {
             "mode": 3,
-            "name": "Ponto Final: Copacabana :: Linha 455",
-            "address": "Ponto Final: Copacabana :: Linha 455",
-            "latitude": "-22.986714",
-            "longitude": "-43.190978"
+            "name": "BRS 2: Rodolfo Dantas",
+            "address": "BRS 2: Rodolfo Dantas",
+            "latitude": "-22.96599",
+            "longitude": "-43.17815"
         }
     },
     {
         "model": "pontos.stop",
-        "pk": "2024O00034S0",
+        "pk": "2024O00011S0",
         "fields": {
             "mode": 3,
-            "name": "BRS 1,3: Conselheiro Lafaiete",
-            "address": "BRS 1,3: Conselheiro Lafaiete",
-            "latitude": "-22.983611",
-            "longitude": "-43.193179"
+            "name": "BRS 1,3: Fernando Mendes",
+            "address": "BRS 1,3: Fernando Mendes",
+            "latitude": "-22.96685",
+            "longitude": "-43.17974"
         }
     },
     {
         "model": "pontos.stop",
-        "pk": "2024O00035C2",
+        "pk": "2024O00004S0",
         "fields": {
             "mode": 3,
-            "name": "S\u00e1 Ferreira",
-            "address": "S\u00e1 Ferreira",
-            "latitude": "-22.98044",
-            "longitude": "-43.191017"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "2024O00036S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 1,3: Constante Ramos",
-            "address": "BRS 1,3: Constante Ramos",
-            "latitude": "-22.97361",
-            "longitude": "-43.18856"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "2024O00037S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 2: Figueiredo Magalh\u00e3es",
-            "address": "BRS 2: Figueiredo Magalh\u00e3es",
-            "latitude": "-22.97113",
-            "longitude": "-43.18675"
+            "name": "BRS 2: Rep\u00fablica do Peru",
+            "address": "BRS 2: Rep\u00fablica do Peru",
+            "latitude": "-22.96725",
+            "longitude": "-43.18096"
         }
     },
     {
@@ -7536,112 +7382,112 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "2024O00039S0",
+        "pk": "2024O00016S0",
         "fields": {
             "mode": 3,
-            "name": "BRS 2: Rodolfo Dantas",
-            "address": "BRS 2: Rodolfo Dantas",
-            "latitude": "-22.96599",
-            "longitude": "-43.17815"
+            "name": "BRS 2: Hil\u00e1rio de Gouveia",
+            "address": "BRS 2: Hil\u00e1rio de Gouveia",
+            "latitude": "-22.9688",
+            "longitude": "-43.18396"
         }
     },
     {
         "model": "pontos.stop",
-        "pk": "2024O00040S0",
+        "pk": "2024O00010S0",
         "fields": {
             "mode": 3,
-            "name": "BRS 1: Ministro Viveiros de Castro",
-            "address": "BRS 1: Ministro Viveiros de Castro",
-            "latitude": "-22.962401",
-            "longitude": "-43.174617"
+            "name": "BRS 1,3: Siqueira Campos",
+            "address": "BRS 1,3: Siqueira Campos",
+            "latitude": "-22.96959",
+            "longitude": "-43.18506"
         }
     },
     {
         "model": "pontos.stop",
-        "pk": "2024O00041S0",
+        "pk": "2024O00015S0",
         "fields": {
             "mode": 3,
-            "name": "BRS 1,3: Rep\u00fablica do Peru",
-            "address": "BRS 1,3: Rep\u00fablica do Peru",
-            "latitude": "-22.96616",
-            "longitude": "-43.1821"
+            "name": "BRS 1,3: Santa Clara",
+            "address": "BRS 1,3: Santa Clara",
+            "latitude": "-22.97243",
+            "longitude": "-43.18779"
         }
     },
     {
         "model": "pontos.stop",
-        "pk": "2024O00042S0",
+        "pk": "2024O00009S0",
         "fields": {
             "mode": 3,
-            "name": "BRS 2: Figueiredo Magalh\u00e3es",
-            "address": "BRS 2: Figueiredo Magalh\u00e3es",
-            "latitude": "-22.96875",
-            "longitude": "-43.18608"
+            "name": "BRS 2: Raimundo Corr\u00eaa",
+            "address": "BRS 2: Raimundo Corr\u00eaa",
+            "latitude": "-22.97303",
+            "longitude": "-43.18818"
         }
     },
     {
         "model": "pontos.stop",
-        "pk": "2024O00043S0",
+        "pk": "2024O00036S0",
         "fields": {
             "mode": 3,
-            "name": "BRS 1,3: Raimundo Corr\u00eaa",
-            "address": "BRS 1,3: Raimundo Corr\u00eaa",
-            "latitude": "-22.9716",
-            "longitude": "-43.18967"
+            "name": "BRS 1,3: Constante Ramos",
+            "address": "BRS 1,3: Constante Ramos",
+            "latitude": "-22.97361",
+            "longitude": "-43.18856"
         }
     },
     {
         "model": "pontos.stop",
-        "pk": "2024O00044S0",
+        "pk": "2024O00008S0",
         "fields": {
             "mode": 3,
-            "name": "BRS 2: Bol\u00edvar",
-            "address": "BRS 2: Bol\u00edvar",
-            "latitude": "-22.9753",
-            "longitude": "-43.1922"
+            "name": "BRS 1,3: Bol\u00edvar",
+            "address": "BRS 1,3: Bol\u00edvar",
+            "latitude": "-22.97653",
+            "longitude": "-43.19017"
         }
     },
     {
         "model": "pontos.stop",
-        "pk": "2024O00045S0",
+        "pk": "2024O00014S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 1,3: Djalma Ulrich",
+            "address": "BRS 1,3: Djalma Ulrich",
+            "latitude": "-22.97936",
+            "longitude": "-43.19089"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "2024O00035C2",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 2: S\u00e1 Ferreira",
+            "address": "BRS 2: S\u00e1 Ferreira",
+            "latitude": "-22.98044",
+            "longitude": "-43.191017"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "2024O00007S0",
         "fields": {
             "mode": 3,
             "name": "BRS 1,3: Sousa Lima",
             "address": "BRS 1,3: Sousa Lima",
-            "latitude": "-22.9818",
-            "longitude": "-43.19247"
+            "latitude": "-22.98239",
+            "longitude": "-43.19094"
         }
     },
     {
         "model": "pontos.stop",
-        "pk": "2024O00047S0",
+        "pk": "2024O00006S0",
         "fields": {
             "mode": 3,
-            "name": "BRS 2: Paula Freitas",
-            "address": "BRS 2: Paula Freitas",
-            "latitude": "-22.96688",
-            "longitude": "-43.18321"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "2024O00048S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 1,3: Anita Garibaldi",
-            "address": "BRS 1,3: Anita Garibaldi",
-            "latitude": "-22.96953",
-            "longitude": "-43.18727"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "2024O00049S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 2: Constante Ramos",
-            "address": "BRS 2: Constante Ramos",
-            "latitude": "-22.97249",
-            "longitude": "-43.19054"
+            "name": "BRS 1,3: Joaquim Nabuco",
+            "address": "BRS 1,3: Joaquim Nabuco",
+            "latitude": "-22.98607",
+            "longitude": "-43.189898"
         }
     },
     {
@@ -7653,17 +7499,6 @@
             "address": "Avenida Princesa Isabel , 183",
             "latitude": "-22.963549",
             "longitude": "-43.17452"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "2024O00065S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 2: Raul Pompeia",
-            "address": "BRS 2: Raul Pompeia",
-            "latitude": "-22.985165",
-            "longitude": "-43.191863"
         }
     },
     {
@@ -7756,17 +7591,6 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "2024O00083S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 2: Rainha Elizabeth",
-            "address": "BRS 2: Rainha Elizabeth",
-            "latitude": "-22.985066",
-            "longitude": "-43.19019"
-        }
-    },
-    {
-        "model": "pontos.stop",
         "pk": "2024O00086C1",
         "fields": {
             "mode": 3,
@@ -7774,72 +7598,6 @@
             "address": "Barata Ribeiro",
             "latitude": "-22.975714",
             "longitude": "-43.191932"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "2024O00091S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 1: Ronald de Carvalho",
-            "address": "BRS 1: Ronald de Carvalho",
-            "latitude": "-22.9629",
-            "longitude": "-43.177096"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "2024O00092S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 1: Rodolfo Dantas",
-            "address": "BRS 1: Rodolfo Dantas",
-            "latitude": "-22.96443",
-            "longitude": "-43.17945"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "2024O00093S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 1,3: Xavier da Silveira",
-            "address": "BRS 1,3: Xavier da Silveira",
-            "latitude": "-22.97608",
-            "longitude": "-43.19251"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "2024O00096S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 2: Miguel Lemos",
-            "address": "BRS 2: Miguel Lemos",
-            "latitude": "-22.9783",
-            "longitude": "-43.19061"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "2024O00097S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 2: Bar\u00e3o de Ipanema",
-            "address": "BRS 2: Bar\u00e3o de Ipanema",
-            "latitude": "-22.97536",
-            "longitude": "-43.18965"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "2024O00098S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 1,3: Belfort Roxo",
-            "address": "BRS 1,3: Belfort Roxo",
-            "latitude": "-22.965",
-            "longitude": "-43.17623"
         }
     },
     {
@@ -7928,17 +7686,6 @@
             "address": "Atl\u00e2ntica",
             "latitude": "-22.964835",
             "longitude": "-43.174598"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "2024O00120S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 3,I: Nossa Senhora de Copacabana",
-            "address": "BRS 3,I: Nossa Senhora de Copacabana",
-            "latitude": "-22.96307",
-            "longitude": "-43.17426"
         }
     },
     {
@@ -8119,17 +7866,6 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "2025O00001S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 1: Canning",
-            "address": "BRS 1: Canning",
-            "latitude": "-22.985642",
-            "longitude": "-43.193549"
-        }
-    },
-    {
-        "model": "pontos.stop",
         "pk": "2025O00002S0",
         "fields": {
             "mode": 3,
@@ -8225,17 +7961,6 @@
             "address": "BRS 1,3,I: Jangadeiros",
             "latitude": "-22.984783",
             "longitude": "-43.195964"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "2025O00012S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 3: Apollo Onze",
-            "address": "BRS 3: Apollo Onze",
-            "latitude": "-22.98612",
-            "longitude": "-43.19546"
         }
     },
     {
@@ -8390,6 +8115,193 @@
             "address": "Ponto Final: General Os\u00f3rio :: Rua Teixeira de Melo",
             "latitude": "-22.984883",
             "longitude": "-43.198536"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "2024O00120S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 3,I: Nossa Senhora de Copacabana",
+            "address": "BRS 3,I: Nossa Senhora de Copacabana",
+            "latitude": "-22.96307",
+            "longitude": "-43.17426"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "2024O00098S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 1,3: Belfort Roxo",
+            "address": "BRS 1,3: Belfort Roxo",
+            "latitude": "-22.965",
+            "longitude": "-43.17623"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "2024O00091S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 1: Ronald de Carvalho",
+            "address": "BRS 1: Ronald de Carvalho",
+            "latitude": "-22.9629",
+            "longitude": "-43.177096"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "2024O00092S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 1: Rodolfo Dantas",
+            "address": "BRS 1: Rodolfo Dantas",
+            "latitude": "-22.96443",
+            "longitude": "-43.17945"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "2024O00041S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 1,3: Rep\u00fablica do Peru",
+            "address": "BRS 1,3: Rep\u00fablica do Peru",
+            "latitude": "-22.96616",
+            "longitude": "-43.1821"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "2024O00047S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 2: Paula Freitas",
+            "address": "BRS 2: Paula Freitas",
+            "latitude": "-22.96688",
+            "longitude": "-43.18321"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "2024O00048S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 1,3: Anita Garibaldi",
+            "address": "BRS 1,3: Anita Garibaldi",
+            "latitude": "-22.96953",
+            "longitude": "-43.18727"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "2024O00043S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 1,3: Raimundo Corr\u00eaa",
+            "address": "BRS 1,3: Raimundo Corr\u00eaa",
+            "latitude": "-22.9716",
+            "longitude": "-43.18967"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "2024O00049S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 2: Constante Ramos",
+            "address": "BRS 2: Constante Ramos",
+            "latitude": "-22.97249",
+            "longitude": "-43.19054"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "2024O00044S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 2: Bol\u00edvar",
+            "address": "BRS 2: Bol\u00edvar",
+            "latitude": "-22.9753",
+            "longitude": "-43.1922"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "2024O00093S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 1,3: Xavier da Silveira",
+            "address": "BRS 1,3: Xavier da Silveira",
+            "latitude": "-22.97608",
+            "longitude": "-43.19251"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "2024O00045S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 1,3: Sousa Lima",
+            "address": "BRS 1,3: Sousa Lima",
+            "latitude": "-22.9818",
+            "longitude": "-43.19247"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "2024O00065S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 2: Raul Pompeia",
+            "address": "BRS 2: Raul Pompeia",
+            "latitude": "-22.985165",
+            "longitude": "-43.191863"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "2025O00001S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 1: Canning",
+            "address": "BRS 1: Canning",
+            "latitude": "-22.985642",
+            "longitude": "-43.193549"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "2025O00012S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 3: Apollo Onze",
+            "address": "BRS 3: Apollo Onze",
+            "latitude": "-22.98612",
+            "longitude": "-43.19546"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "2024O00096S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 2: Miguel Lemos",
+            "address": "BRS 2: Miguel Lemos",
+            "latitude": "-22.9783",
+            "longitude": "-43.19061"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "2024O00083S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 2: Rainha Elizabeth",
+            "address": "BRS 2: Rainha Elizabeth",
+            "latitude": "-22.985066",
+            "longitude": "-43.19019"
         }
     },
     {
@@ -10385,28 +10297,6 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "2032O00008S9",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 2: Matoso",
-            "address": "BRS 2: Matoso",
-            "latitude": "-22.91608",
-            "longitude": "-43.212"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "2032O00012S9",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 1,4,5,6,I: Bar\u00e3o de Ub\u00e1",
-            "address": "BRS 1,4,5,6,I: Bar\u00e3o de Ub\u00e1",
-            "latitude": "-22.9158",
-            "longitude": "-43.21098"
-        }
-    },
-    {
-        "model": "pontos.stop",
         "pk": "2032O00015C0",
         "fields": {
             "mode": 3,
@@ -10550,50 +10440,6 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "2033O00001S9",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 4,5,6,I: Caruso",
-            "address": "BRS 4,5,6,I: Caruso",
-            "latitude": "-22.91683",
-            "longitude": "-43.2139"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "2033O00024S9",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 5,6,I: Afonso Pena",
-            "address": "BRS 5,6,I: Afonso Pena",
-            "latitude": "-22.91833",
-            "longitude": "-43.21774"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "2033O00025S9",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 5,6,I: S\u00e3o Francisco Xavier",
-            "address": "BRS 5,6,I: S\u00e3o Francisco Xavier",
-            "latitude": "-22.92072",
-            "longitude": "-43.2232"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "2033O00026S9",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 5,6,I: Carmela Dutra",
-            "address": "BRS 5,6,I: Carmela Dutra",
-            "latitude": "-22.92097",
-            "longitude": "-43.22676"
-        }
-    },
-    {
-        "model": "pontos.stop",
         "pk": "2033O00039C0",
         "fields": {
             "mode": 3,
@@ -10601,39 +10447,6 @@
             "address": "Ponto Final: Saens Pe\u00f1a :: Linha 639",
             "latitude": "-22.923128",
             "longitude": "-43.234252"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "2033O00040S9",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 2: Dom\u00edcio da Gama",
-            "address": "BRS 2: Dom\u00edcio da Gama",
-            "latitude": "-22.91704",
-            "longitude": "-43.21443"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "2033O00041S9",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 2: Afonso Pena",
-            "address": "BRS 2: Afonso Pena",
-            "latitude": "-22.91847",
-            "longitude": "-43.21807"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "2033O00042S9",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 2,7: Conselheiro Zenha",
-            "address": "BRS 2,7: Conselheiro Zenha",
-            "latitude": "-22.92163",
-            "longitude": "-43.22848"
         }
     },
     {
@@ -10726,28 +10539,6 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "2033O00108S9",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 2,7: Saens Pe\u00f1a",
-            "address": "BRS 2,7: Saens Pe\u00f1a",
-            "latitude": "-22.92341",
-            "longitude": "-43.23182"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "2033O00111S9",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 5,I: Saens Pe\u00f1a",
-            "address": "BRS 5,I: Saens Pe\u00f1a",
-            "latitude": "-22.92371",
-            "longitude": "-43.23222"
-        }
-    },
-    {
-        "model": "pontos.stop",
         "pk": "2033O00112C9",
         "fields": {
             "mode": 3,
@@ -10766,39 +10557,6 @@
             "address": "RUA CONDE DE BONFIM , oposto ao 1042",
             "latitude": "-22.93912",
             "longitude": "-43.24779"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "2033O00120S9",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 2,5,6,I: Professor Gabizo",
-            "address": "BRS 2,5,6,I: Professor Gabizo",
-            "latitude": "-22.91935",
-            "longitude": "-43.22004"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "2033O00121S9",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 2: Alzira Brand\u00e3o",
-            "address": "BRS 2: Alzira Brand\u00e3o",
-            "latitude": "-22.92078",
-            "longitude": "-43.22418"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "2033O00122S9",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 1,6: Saens Pe\u00f1a",
-            "address": "BRS 1,6: Saens Pe\u00f1a",
-            "latitude": "-22.92408",
-            "longitude": "-43.23273"
         }
     },
     {
@@ -10847,13 +10605,13 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "2033O00022S0",
+        "pk": "2032O00012S9",
         "fields": {
             "mode": 3,
-            "name": "BRS 2,3,4,I: Moraes e Silva",
-            "address": "BRS 2,3,4,I: Moraes e Silva",
-            "latitude": "-22.91656",
-            "longitude": "-43.22631"
+            "name": "BRS 1,4,5,6,I: Bar\u00e3o de Ub\u00e1",
+            "address": "BRS 1,4,5,6,I: Bar\u00e3o de Ub\u00e1",
+            "latitude": "-22.9158",
+            "longitude": "-43.21098"
         }
     },
     {
@@ -10876,6 +10634,138 @@
             "address": "BRS 4,7: Heitor Beltr\u00e3o",
             "latitude": "-22.920144",
             "longitude": "-43.223047"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "2032O00008S9",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 2: Matoso",
+            "address": "BRS 2: Matoso",
+            "latitude": "-22.91608",
+            "longitude": "-43.212"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "2033O00040S9",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 2: Dom\u00edcio da Gama",
+            "address": "BRS 2: Dom\u00edcio da Gama",
+            "latitude": "-22.91704",
+            "longitude": "-43.21443"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "2033O00024S9",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 5,6,I: Afonso Pena",
+            "address": "BRS 5,6,I: Afonso Pena",
+            "latitude": "-22.91833",
+            "longitude": "-43.21774"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "2033O00041S9",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 2: Afonso Pena",
+            "address": "BRS 2: Afonso Pena",
+            "latitude": "-22.91847",
+            "longitude": "-43.21807"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "2033O00120S9",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 2,5,6,I: Professor Gabizo",
+            "address": "BRS 2,5,6,I: Professor Gabizo",
+            "latitude": "-22.91935",
+            "longitude": "-43.22004"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "2033O00025S9",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 5,6,I: S\u00e3o Francisco Xavier",
+            "address": "BRS 5,6,I: S\u00e3o Francisco Xavier",
+            "latitude": "-22.92072",
+            "longitude": "-43.2232"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "2033O00121S9",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 2: Alzira Brand\u00e3o",
+            "address": "BRS 2: Alzira Brand\u00e3o",
+            "latitude": "-22.92078",
+            "longitude": "-43.22418"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "2033O00026S9",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 5,6,I: Carmela Dutra",
+            "address": "BRS 5,6,I: Carmela Dutra",
+            "latitude": "-22.92097",
+            "longitude": "-43.22676"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "2033O00042S9",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 2,7: Conselheiro Zenha",
+            "address": "BRS 2,7: Conselheiro Zenha",
+            "latitude": "-22.92163",
+            "longitude": "-43.22848"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "2033O00111S9",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 5,I: Saens Pe\u00f1a",
+            "address": "BRS 5,I: Saens Pe\u00f1a",
+            "latitude": "-22.92371",
+            "longitude": "-43.23222"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "2033O00122S9",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 1,6: Saens Pe\u00f1a",
+            "address": "BRS 1,6: Saens Pe\u00f1a",
+            "latitude": "-22.92408",
+            "longitude": "-43.23273"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "2033O00022S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 2,3,4: Moraes e Silva",
+            "address": "BRS 2,3,4: Moraes e Silva",
+            "latitude": "-22.91656",
+            "longitude": "-43.22631"
         }
     },
     {
@@ -12365,17 +12255,6 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "2035O00043S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 2,3,4,I: Mar\u00e3",
-            "address": "BRS 2,3,4,I: Mar\u00e3",
-            "latitude": "-22.91206",
-            "longitude": "-43.23707"
-        }
-    },
-    {
-        "model": "pontos.stop",
         "pk": "2033O00245S0",
         "fields": {
             "mode": 3,
@@ -12387,24 +12266,35 @@
     },
     {
         "model": "pontos.stop",
+        "pk": "2033O00244S2",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 2,3,4: Almirante C\u00f3chrane",
+            "address": "BRS 2,3,4: Almirante C\u00f3chrane",
+            "latitude": "-22.91836",
+            "longitude": "-43.22432"
+        }
+    },
+    {
+        "model": "pontos.stop",
         "pk": "2035O00041S0",
         "fields": {
             "mode": 3,
-            "name": "BRS 2,3,4,I: Jacegua\u00ed",
-            "address": "BRS 2,3,4,I: Jacegua\u00ed",
+            "name": "BRS 2,3,4: Jacegua\u00ed",
+            "address": "BRS 2,3,4: Jacegua\u00ed",
             "latitude": "-22.91584",
             "longitude": "-43.23182"
         }
     },
     {
         "model": "pontos.stop",
-        "pk": "2033O00244S2",
+        "pk": "2035O00043S0",
         "fields": {
             "mode": 3,
-            "name": "BRS 2,3,4,I: Almirante C\u00f3chrane",
-            "address": "BRS 2,3,4,I: Almirante C\u00f3chrane",
-            "latitude": "-22.91836",
-            "longitude": "-43.22432"
+            "name": "BRS 3,4,I: Mar\u00e3",
+            "address": "BRS 3,4,I: Mar\u00e3",
+            "latitude": "-22.91206",
+            "longitude": "-43.23707"
         }
     },
     {
@@ -12981,17 +12871,6 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "2036O00007S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 2,3,4,I: Oito de Dezembro",
-            "address": "BRS 2,3,4,I: Oito de Dezembro",
-            "latitude": "-22.90921",
-            "longitude": "-43.23863"
-        }
-    },
-    {
-        "model": "pontos.stop",
         "pk": "2035O00056C0",
         "fields": {
             "mode": 3,
@@ -13109,6 +12988,17 @@
             "address": "BRS 2,5,7,I: Bar\u00e3o do Bom Retiro",
             "latitude": "-22.916988",
             "longitude": "-43.261141"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "2036O00007S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 3,4,I: Oito de Dezembro",
+            "address": "BRS 3,4,I: Oito de Dezembro",
+            "latitude": "-22.90921",
+            "longitude": "-43.23863"
         }
     },
     {
@@ -21253,28 +21143,6 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "3058O00010S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 3,4,5,6: S\u00e3o Jo\u00e3o",
-            "address": "BRS 3,4,5,6: S\u00e3o Jo\u00e3o",
-            "latitude": "-22.90305",
-            "longitude": "-43.25057"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "3058O00011S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 3,4,5,6: General Rodrigues",
-            "address": "BRS 3,4,5,6: General Rodrigues",
-            "latitude": "-22.90292",
-            "longitude": "-43.24876"
-        }
-    },
-    {
-        "model": "pontos.stop",
         "pk": "3058O00016C0",
         "fields": {
             "mode": 3,
@@ -21363,17 +21231,6 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "3059O00005S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 3,4,5,6: Marechal Bitencourt",
-            "address": "BRS 3,4,5,6: Marechal Bitencourt",
-            "latitude": "-22.90353",
-            "longitude": "-43.2558"
-        }
-    },
-    {
-        "model": "pontos.stop",
         "pk": "3059O00001S1",
         "fields": {
             "mode": 3,
@@ -21440,13 +21297,24 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "3059O00006S0",
+        "pk": "3059O00005S0",
         "fields": {
             "mode": 3,
-            "name": "BRS 3,4,5,6: Alice Figueiredo",
-            "address": "BRS 3,4,5,6: Alice Figueiredo",
-            "latitude": "-22.90328",
-            "longitude": "-43.25345"
+            "name": "BRS 3,4,5,6: Marechal Bitencourt",
+            "address": "BRS 3,4,5,6: Marechal Bitencourt",
+            "latitude": "-22.90353",
+            "longitude": "-43.2558"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "3058O00010S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 3,4,5,6: S\u00e3o Jo\u00e3o",
+            "address": "BRS 3,4,5,6: S\u00e3o Jo\u00e3o",
+            "latitude": "-22.90305",
+            "longitude": "-43.25057"
         }
     },
     {
@@ -21524,28 +21392,6 @@
             "address": "Rua Ana Neri, oposto ao 2104",
             "latitude": "-22.901379",
             "longitude": "-43.256398"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "3060O00001S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 3,4,5,6: Alzira Valdetaro",
-            "address": "BRS 3,4,5,6: Alzira Valdetaro",
-            "latitude": "-22.90407",
-            "longitude": "-43.2627"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "3060O00007S9",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 3,4,5,6: Paes de Andrade",
-            "address": "BRS 3,4,5,6: Paes de Andrade",
-            "latitude": "-22.90386",
-            "longitude": "-43.25888"
         }
     },
     {
@@ -21722,50 +21568,6 @@
             "address": "Av. Menezes Cortes pr\u00f3ximo ao 945",
             "latitude": "-22.916411",
             "longitude": "-43.276251"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "3061O00024S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 3,4,5,6: Maria Ant\u00f4nia",
-            "address": "BRS 3,4,5,6: Maria Ant\u00f4nia",
-            "latitude": "-22.90826",
-            "longitude": "-43.27383"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "3061O00025S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 3,4,5,6: General Belegarde",
-            "address": "BRS 3,4,5,6: General Belegarde",
-            "latitude": "-22.90651",
-            "longitude": "-43.27094"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "3061O00026S9",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 3,4,5,6: Greg\u00f3rio Neves",
-            "address": "BRS 3,4,5,6: Greg\u00f3rio Neves",
-            "latitude": "-22.9051",
-            "longitude": "-43.26781"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "3061O00027S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 3,4,5,6: Manoel Miranda",
-            "address": "BRS 3,4,5,6: Manoel Miranda",
-            "latitude": "-22.90464",
-            "longitude": "-43.26452"
         }
     },
     {
@@ -21975,17 +21777,6 @@
             "address": "Avenida Menezes Cortes pr\u00f3ximo ao 955",
             "latitude": "-22.91731",
             "longitude": "-43.27897"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "3062O00003S1",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 3,4,5,6: Padre Roma",
-            "address": "BRS 3,4,5,6: Padre Roma",
-            "latitude": "-22.90785",
-            "longitude": "-43.27568"
         }
     },
     {
@@ -22239,6 +22030,83 @@
             "address": "Raul Cardoso",
             "latitude": "-22.914962",
             "longitude": "-43.265758"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "3061O00025S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 3,4,5,6: General Belegarde",
+            "address": "BRS 3,4,5,6: General Belegarde",
+            "latitude": "-22.90651",
+            "longitude": "-43.27094"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "3061O00024S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 3,4,5,6: Maria Ant\u00f4nia",
+            "address": "BRS 3,4,5,6: Maria Ant\u00f4nia",
+            "latitude": "-22.90826",
+            "longitude": "-43.27383"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "3062O00003S1",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 3,4,5,6: Padre Roma",
+            "address": "BRS 3,4,5,6: Padre Roma",
+            "latitude": "-22.90785",
+            "longitude": "-43.27568"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "3061O00026S9",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 3,4,5,6: Greg\u00f3rio Neves",
+            "address": "BRS 3,4,5,6: Greg\u00f3rio Neves",
+            "latitude": "-22.9051",
+            "longitude": "-43.26781"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "3061O00027S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 3,4,5,6: Manoel Miranda",
+            "address": "BRS 3,4,5,6: Manoel Miranda",
+            "latitude": "-22.90464",
+            "longitude": "-43.26452"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "3060O00001S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 3,4,5,6: Alzira Valdetaro",
+            "address": "BRS 3,4,5,6: Alzira Valdetaro",
+            "latitude": "-22.90407",
+            "longitude": "-43.2627"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "3059O00006S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 3,4,5,6: Alice Figueiredo",
+            "address": "BRS 3,4,5,6: Alice Figueiredo",
+            "latitude": "-22.90328",
+            "longitude": "-43.25345"
         }
     },
     {
@@ -22602,17 +22470,6 @@
             "address": "Rua Rio Grande do Sul, 55",
             "latitude": "-22.898211",
             "longitude": "-43.275313"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "3063O00027S9",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 3,4,5,6: Thompson Flores",
-            "address": "BRS 3,4,5,6: Thompson Flores",
-            "latitude": "-22.90576",
-            "longitude": "-43.27688"
         }
     },
     {
@@ -23024,17 +22881,6 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "3063O00073S1",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 3,4,5,6: Joaquim M\u00e9ier",
-            "address": "BRS 3,4,5,6: Joaquim M\u00e9ier",
-            "latitude": "-22.90386",
-            "longitude": "-43.27879"
-        }
-    },
-    {
-        "model": "pontos.stop",
         "pk": "3063O00075C0",
         "fields": {
             "mode": 3,
@@ -23053,6 +22899,28 @@
             "address": "Rua Dias da Cruz, 185 - M\u00e9ier",
             "latitude": "-22.903066",
             "longitude": "-43.282178"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "3063O00027S9",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 3,4,5,6: Thompson Flores",
+            "address": "BRS 3,4,5,6: Thompson Flores",
+            "latitude": "-22.90576",
+            "longitude": "-43.27688"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "3063O00073S1",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 3,4,5,6: Joaquim M\u00e9ier",
+            "address": "BRS 3,4,5,6: Joaquim M\u00e9ier",
+            "latitude": "-22.90386",
+            "longitude": "-43.27879"
         }
     },
     {
@@ -39733,17 +39601,6 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "4115O00150C0",
-        "fields": {
-            "mode": 3,
-            "name": "Ponto Final: Col\u00f4nia :: Linha 831",
-            "address": "Ponto Final: Col\u00f4nia :: Linha 831",
-            "latitude": "-22.94843",
-            "longitude": "-43.3949"
-        }
-    },
-    {
-        "model": "pontos.stop",
         "pk": "4115O00154C2",
         "fields": {
             "mode": 3,
@@ -39993,6 +39850,17 @@
             "address": "Avenida Salvador, s/n",
             "latitude": "-22.964655",
             "longitude": "-43.39547"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "4115O00150C0",
+        "fields": {
+            "mode": 3,
+            "name": "Ponto Final: Col\u00f4nia :: Linha 831",
+            "address": "Ponto Final: Col\u00f4nia :: Linha 831",
+            "latitude": "-22.948257",
+            "longitude": "-43.394895"
         }
     },
     {
@@ -40290,17 +40158,6 @@
             "address": "Ponto Final: Pau da Fome :: \u00d4nibus e STPL",
             "latitude": "-22.93046",
             "longitude": "-43.43855"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "4115O00233C0",
-        "fields": {
-            "mode": 3,
-            "name": "Estrada dos Bandeirantes ,8591",
-            "address": "Estrada dos Bandeirantes ,8591",
-            "latitude": "-22.974385",
-            "longitude": "-43.4144"
         }
     },
     {
@@ -43440,17 +43297,6 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "4122O00259C0",
-        "fields": {
-            "mode": 3,
-            "name": "Estrada Rodrigues Caldas,1077",
-            "address": "Estrada Rodrigues Caldas,1077",
-            "latitude": "-22.92417",
-            "longitude": "-43.384751"
-        }
-    },
-    {
-        "model": "pontos.stop",
         "pk": "4122O00263C0",
         "fields": {
             "mode": 3,
@@ -43634,17 +43480,6 @@
             "address": "Estr. do Tindiba 2003",
             "latitude": "-22.923915",
             "longitude": "-43.371854"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "4122O00300P1",
-        "fields": {
-            "mode": 3,
-            "name": "Terminal Bandeira Brasil (Taquara) :: Plat. Leste",
-            "address": "Terminal Bandeira Brasil (Taquara) :: Plat. Leste",
-            "latitude": "-22.923392",
-            "longitude": "-43.374281"
         }
     },
     {
@@ -44085,6 +43920,17 @@
             "address": "Rua Luiz Beltr\u00e3o pr\u00f3ximo ao 1396",
             "latitude": "-22.89228",
             "longitude": "-43.35733"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "4122O00300P1",
+        "fields": {
+            "mode": 3,
+            "name": "Terminal Bandeira Brasil (Taquara) :: Plat. Leste",
+            "address": "Terminal Bandeira Brasil (Taquara) :: Plat. Leste",
+            "latitude": "-22.923396",
+            "longitude": "-43.374238"
         }
     },
     {
@@ -46784,17 +46630,6 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "4128O00154P0",
-        "fields": {
-            "mode": 3,
-            "name": "Ponto Final: Terminal Nuta James",
-            "address": "Ponto Final: Terminal Nuta James",
-            "latitude": "-23.00558",
-            "longitude": "-43.31243"
-        }
-    },
-    {
-        "model": "pontos.stop",
         "pk": "4128O00169P0",
         "fields": {
             "mode": 3,
@@ -47180,17 +47015,6 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "4129O00016C0",
-        "fields": {
-            "mode": 3,
-            "name": "Estrada dos Bandeirantes,8923",
-            "address": "Estrada dos Bandeirantes,8923",
-            "latitude": "-22.980566",
-            "longitude": "-43.423046"
-        }
-    },
-    {
-        "model": "pontos.stop",
         "pk": "4129O00017C0",
         "fields": {
             "mode": 3,
@@ -47275,6 +47099,28 @@
             "address": "Estrada dos Bandeirantes,13841",
             "latitude": "-22.98801",
             "longitude": "-43.45528"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "4128O00154P0",
+        "fields": {
+            "mode": 3,
+            "name": "Ponto Final: Terminal Nuta James",
+            "address": "Ponto Final: Terminal Nuta James",
+            "latitude": "-23.005589",
+            "longitude": "-43.312447"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "4129O00016C0",
+        "fields": {
+            "mode": 3,
+            "name": "Estrada dos Bandeirantes,8923",
+            "address": "Estrada dos Bandeirantes,8923",
+            "latitude": "-22.980492",
+            "longitude": "-43.423207"
         }
     },
     {
@@ -47407,17 +47253,6 @@
             "address": "Estrada dos Bandeirantes,14574",
             "latitude": "-22.985361",
             "longitude": "-43.460145"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "4130O00023C0",
-        "fields": {
-            "mode": 3,
-            "name": "Estrada dos Bandeirantes,15076",
-            "address": "Estrada dos Bandeirantes,15076",
-            "latitude": "-22.982331",
-            "longitude": "-43.464097"
         }
     },
     {
@@ -65682,17 +65517,6 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "5149O00026C9",
-        "fields": {
-            "mode": 3,
-            "name": "Rua Felipe Cardoso, pr\u00f3ximo ao n\u00famero 819.",
-            "address": "Rua Felipe Cardoso, pr\u00f3ximo ao n\u00famero 819.",
-            "latitude": "-22.9221",
-            "longitude": "-43.679543"
-        }
-    },
-    {
-        "model": "pontos.stop",
         "pk": "5149O00030C9",
         "fields": {
             "mode": 3,
@@ -66514,17 +66338,6 @@
             "address": "Estrada de Uruc\u00e2nia, lado oposto ao n\u00famero 1680.",
             "latitude": "-22.917368",
             "longitude": "-43.659752"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "5149O00122C9",
-        "fields": {
-            "mode": 3,
-            "name": "Dom Pedro I",
-            "address": "Dom Pedro I",
-            "latitude": "-22.9169",
-            "longitude": "-43.68457"
         }
     },
     {
@@ -70401,17 +70214,6 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "5151O00173C0",
-        "fields": {
-            "mode": 3,
-            "name": "Estrada da Pedra, 3650",
-            "address": "Estrada da Pedra, 3650",
-            "latitude": "-22.958377",
-            "longitude": "-43.650111"
-        }
-    },
-    {
-        "model": "pontos.stop",
         "pk": "5151O00174C0",
         "fields": {
             "mode": 3,
@@ -72590,17 +72392,6 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "2020O00015S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 2: Lauro Sodr\u00e9",
-            "address": "BRS 2: Lauro Sodr\u00e9",
-            "latitude": "-22.956734",
-            "longitude": "-43.177401"
-        }
-    },
-    {
-        "model": "pontos.stop",
         "pk": "2024O00095C0",
         "fields": {
             "mode": 3,
@@ -72795,6 +72586,17 @@
             "address": "Pra\u00e7a Miami",
             "latitude": "-22.8553",
             "longitude": "-43.49289"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "2020O00015S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 2: Lauro Sodr\u00e9",
+            "address": "BRS 2: Lauro Sodr\u00e9",
+            "latitude": "-22.956734",
+            "longitude": "-43.177401"
         }
     },
     {
@@ -73099,8 +72901,8 @@
         "pk": "1005O00181C0",
         "fields": {
             "mode": 3,
-            "name": "BRS 1, 2, 3, 4, 5, I: Largo da Carioca",
-            "address": "BRS 1, 2, 3, 4, 5, I: Largo da Carioca",
+            "name": "BRS 1,2,3,4,5,I: Largo da Carioca",
+            "address": "BRS 1,2,3,4,5,I: Largo da Carioca",
             "latitude": "-22.90649",
             "longitude": "-43.17764"
         }
@@ -73470,17 +73272,6 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "2035O00019S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 2,3,4,5,6,7,I: Professor Manoel de Abreu",
-            "address": "BRS 2,3,4,5,6,7,I: Professor Manoel de Abreu",
-            "latitude": "-22.91365",
-            "longitude": "-43.23451"
-        }
-    },
-    {
-        "model": "pontos.stop",
         "pk": "3111O00003C0",
         "fields": {
             "mode": 3,
@@ -73730,6 +73521,17 @@
             "address": "Rodovi\u00e1ria",
             "latitude": "-22.89878",
             "longitude": "-43.207513"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "2035O00019S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 3,4,5,6: Professor Manoel de Abreu",
+            "address": "BRS 3,4,5,6: Professor Manoel de Abreu",
+            "latitude": "-22.91365",
+            "longitude": "-43.23451"
         }
     },
     {
@@ -85746,28 +85548,6 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "1005O00077S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS I: Rep\u00fablica do L\u00edbano",
-            "address": "BRS I: Rep\u00fablica do L\u00edbano",
-            "latitude": "-22.90804",
-            "longitude": "-43.18544"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "1005O00078S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS I: Moncorvo Filho",
-            "address": "BRS I: Moncorvo Filho",
-            "latitude": "-22.9106",
-            "longitude": "-43.19249"
-        }
-    },
-    {
-        "model": "pontos.stop",
         "pk": "1005O00084C0",
         "fields": {
             "mode": 3,
@@ -86153,17 +85933,6 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "1006O00014S9",
-        "fields": {
-            "mode": 3,
-            "name": "BRS I: Carolina Reidner",
-            "address": "BRS I: Carolina Reidner",
-            "latitude": "-22.91432",
-            "longitude": "-43.19684"
-        }
-    },
-    {
-        "model": "pontos.stop",
         "pk": "1008MZ0043P3",
         "fields": {
             "mode": 3,
@@ -86237,28 +86006,6 @@
             "address": "Est\u00e1cio",
             "latitude": "-22.913548",
             "longitude": "-43.206707"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "1009O00003S9",
-        "fields": {
-            "mode": 3,
-            "name": "BRS I: Largo do Est\u00e1cio",
-            "address": "BRS I: Largo do Est\u00e1cio",
-            "latitude": "-22.9146",
-            "longitude": "-43.20611"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "1009O00008S9",
-        "fields": {
-            "mode": 3,
-            "name": "BRS I: Correia Vasques",
-            "address": "BRS I: Correia Vasques",
-            "latitude": "-22.91358",
-            "longitude": "-43.20178"
         }
     },
     {
@@ -86677,6 +86424,39 @@
             "address": "R. Alm. Alexandrino , 2781 (ponto de parada de bonde)",
             "latitude": "-22.932736",
             "longitude": "-43.197767"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "1006O00014S9",
+        "fields": {
+            "mode": 3,
+            "name": "BRS I: Carolina Reidner",
+            "address": "BRS I: Carolina Reidner",
+            "latitude": "-22.91432",
+            "longitude": "-43.19684"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "1009O00003S9",
+        "fields": {
+            "mode": 3,
+            "name": "BRS I: Largo do Est\u00e1cio",
+            "address": "BRS I: Largo do Est\u00e1cio",
+            "latitude": "-22.9146",
+            "longitude": "-43.20611"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "1009O00008S9",
+        "fields": {
+            "mode": 3,
+            "name": "BRS I: Correia Vasques",
+            "address": "BRS I: Correia Vasques",
+            "latitude": "-22.91358",
+            "longitude": "-43.20178"
         }
     },
     {
@@ -90443,17 +90223,6 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "3110O00002C0",
-        "fields": {
-            "mode": 3,
-            "name": "Rodovia Governador M\u00e1rio Covas pr\u00f3ximo ao 1138",
-            "address": "Rodovia Governador M\u00e1rio Covas pr\u00f3ximo ao 1138",
-            "latitude": "-22.83073",
-            "longitude": "-43.35054"
-        }
-    },
-    {
-        "model": "pontos.stop",
         "pk": "3110O00008C0",
         "fields": {
             "mode": 3,
@@ -91176,6 +90945,17 @@
             "address": "Recanto das Palmeiras",
             "latitude": "-22.94827",
             "longitude": "-43.37242"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "3110O00002C0",
+        "fields": {
+            "mode": 3,
+            "name": "Rodovia Governador M\u00e1rio Covas pr\u00f3ximo ao 1138",
+            "address": "Rodovia Governador M\u00e1rio Covas pr\u00f3ximo ao 1138",
+            "latitude": "-22.830773",
+            "longitude": "-43.350501"
         }
     },
     {
@@ -93864,17 +93644,6 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "3043O00090C0",
-        "fields": {
-            "mode": 3,
-            "name": "Av. Brasil pr\u00f3ximo ao Bamrj | Cnab",
-            "address": "Av. Brasil pr\u00f3ximo ao Bamrj | Cnab",
-            "latitude": "-22.834563",
-            "longitude": "-43.263248"
-        }
-    },
-    {
-        "model": "pontos.stop",
         "pk": "3043O00094C0",
         "fields": {
             "mode": 3,
@@ -94190,6 +93959,17 @@
             "address": "Rua Taborari pr\u00f3ximo ao 129",
             "latitude": "-22.82964",
             "longitude": "-43.28554"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "3043O00090C0",
+        "fields": {
+            "mode": 3,
+            "name": "Av. Brasil pr\u00f3ximo ao Bamrj | Cnab",
+            "address": "Av. Brasil pr\u00f3ximo ao Bamrj | Cnab",
+            "latitude": "-22.83448",
+            "longitude": "-43.263191"
         }
     },
     {
@@ -94689,17 +94469,6 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "3058O00022S9",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 3,4,5,6: Senador Jaguaribe",
-            "address": "BRS 3,4,5,6: Senador Jaguaribe",
-            "latitude": "-22.903216",
-            "longitude": "-43.246858"
-        }
-    },
-    {
-        "model": "pontos.stop",
         "pk": "3059L00013C0",
         "fields": {
             "mode": 3,
@@ -94971,6 +94740,17 @@
             "address": "Conde de Azambuja",
             "latitude": "-22.88079",
             "longitude": "-43.25904"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "3058O00022S9",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 3,4,5,6: Senador Jaguaribe",
+            "address": "BRS 3,4,5,6: Senador Jaguaribe",
+            "latitude": "-22.903216",
+            "longitude": "-43.246858"
         }
     },
     {
@@ -96394,17 +96174,6 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "5151O00113C0",
-        "fields": {
-            "mode": 3,
-            "name": "Rua Francisco Brusque pr\u00f3ximo ao 16-18",
-            "address": "Rua Francisco Brusque pr\u00f3ximo ao 16-18",
-            "latitude": "-22.972501",
-            "longitude": "-43.648028"
-        }
-    },
-    {
-        "model": "pontos.stop",
         "pk": "5151O00116C0",
         "fields": {
             "mode": 3,
@@ -96456,6 +96225,17 @@
             "address": "Estrada do Mato Alto pr\u00f3ximo ao 7528-7622",
             "latitude": "-22.98972",
             "longitude": "-43.59327"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "5151O00113C0",
+        "fields": {
+            "mode": 3,
+            "name": "Rua Francisco Brusque pr\u00f3ximo ao 16-18",
+            "address": "Rua Francisco Brusque pr\u00f3ximo ao 16-18",
+            "latitude": "-22.972466",
+            "longitude": "-43.647978"
         }
     },
     {
@@ -98964,6 +98744,226 @@
             "address": "Estrada Miguel Salazar Mendes de Moraes em frente ao Prezunic",
             "latitude": "-22.9431",
             "longitude": "-43.366017"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "3060O00007S9",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 3,4,5,6: Paes de Andrade",
+            "address": "BRS 3,4,5,6: Paes de Andrade",
+            "latitude": "-22.90386",
+            "longitude": "-43.25888"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "3058O00011S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 3,4,5,6: General Rodrigues",
+            "address": "BRS 3,4,5,6: General Rodrigues",
+            "latitude": "-22.90292",
+            "longitude": "-43.24876"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "2033O00001S9",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 4,5,6,I: Caruso",
+            "address": "BRS 4,5,6,I: Caruso",
+            "latitude": "-22.91683",
+            "longitude": "-43.2139"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "2033O00108S9",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 2,7: Saens Pe\u00f1a",
+            "address": "BRS 2,7: Saens Pe\u00f1a",
+            "latitude": "-22.92341",
+            "longitude": "-43.23182"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "1008O00016S9",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 2: Correia Vasques",
+            "address": "BRS 2: Correia Vasques",
+            "latitude": "-22.91274",
+            "longitude": "-43.20142"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "1005O00078S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS I: Moncorvo Filho",
+            "address": "BRS I: Moncorvo Filho",
+            "latitude": "-22.9106",
+            "longitude": "-43.19249"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "1005O00230S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 1,2: Pra\u00e7a da Rep\u00fablica",
+            "address": "BRS 1,2: Pra\u00e7a da Rep\u00fablica",
+            "latitude": "-22.90843",
+            "longitude": "-43.1869"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "1005O00077S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS I: Rep\u00fablica do L\u00edbano",
+            "address": "BRS I: Rep\u00fablica do L\u00edbano",
+            "latitude": "-22.90804",
+            "longitude": "-43.18544"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "1161O00012S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 1,2,4: Rua dos Inv\u00e1lidos",
+            "address": "BRS 1,2,4: Rua dos Inv\u00e1lidos",
+            "latitude": "-22.91126",
+            "longitude": "-43.18609"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "1006O00013S9",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 1,2,3,4: Marqu\u00eas de Sapuca\u00ed",
+            "address": "BRS 1,2,3,4: Marqu\u00eas de Sapuca\u00ed",
+            "latitude": "-22.91423",
+            "longitude": "-43.19633"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "2024O00042S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 2: Figueiredo Magalh\u00e3es",
+            "address": "BRS 2: Figueiredo Magalh\u00e3es",
+            "latitude": "-22.96875",
+            "longitude": "-43.18608"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "2024O00031S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 2: Miguel Lemos",
+            "address": "BRS 2: Miguel Lemos",
+            "latitude": "-22.97702",
+            "longitude": "-43.19276"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "2024O00037S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 2: Figueiredo Magalh\u00e3es",
+            "address": "BRS 2: Figueiredo Magalh\u00e3es",
+            "latitude": "-22.97113",
+            "longitude": "-43.18675"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "2024O00097S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 2: Bar\u00e3o de Ipanema",
+            "address": "BRS 2: Bar\u00e3o de Ipanema",
+            "latitude": "-22.97536",
+            "longitude": "-43.18965"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "5149O00026C9",
+        "fields": {
+            "mode": 3,
+            "name": "Rua Felipe Cardoso, pr\u00f3ximo ao n\u00famero 819.",
+            "address": "Rua Felipe Cardoso, pr\u00f3ximo ao n\u00famero 819.",
+            "latitude": "-22.922151",
+            "longitude": "-43.679575"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "5149O00122C9",
+        "fields": {
+            "mode": 3,
+            "name": "Dom Pedro I",
+            "address": "Dom Pedro I",
+            "latitude": "-22.916894",
+            "longitude": "-43.684538"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "5151O00173C0",
+        "fields": {
+            "mode": 3,
+            "name": "Estrada da Pedra, 3650",
+            "address": "Estrada da Pedra, 3650",
+            "latitude": "-22.958407",
+            "longitude": "-43.650049"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "4122O00259C0",
+        "fields": {
+            "mode": 3,
+            "name": "Estrada Rodrigues Caldas,1077",
+            "address": "Estrada Rodrigues Caldas,1077",
+            "latitude": "-22.924063",
+            "longitude": "-43.384806"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "4115O00233C0",
+        "fields": {
+            "mode": 3,
+            "name": "Estrada dos Bandeirantes ,8591",
+            "address": "Estrada dos Bandeirantes ,8591",
+            "latitude": "-22.974393",
+            "longitude": "-43.414511"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "4130O00023C0",
+        "fields": {
+            "mode": 3,
+            "name": "Estrada dos Bandeirantes,15076",
+            "address": "Estrada dos Bandeirantes,15076",
+            "latitude": "-22.982414",
+            "longitude": "-43.464107"
         }
     }
 ]
