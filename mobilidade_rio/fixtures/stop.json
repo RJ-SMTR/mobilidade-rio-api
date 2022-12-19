@@ -507,17 +507,6 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "1005O00012S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 1,3,5: Central",
-            "address": "BRS 1,3,5: Central",
-            "latitude": "-22.90558",
-            "longitude": "-43.1936"
-        }
-    },
-    {
-        "model": "pontos.stop",
         "pk": "1005O00013S0",
         "fields": {
             "mode": 3,
@@ -848,6 +837,17 @@
     },
     {
         "model": "pontos.stop",
+        "pk": "1005O00012S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 1,3,5: Central",
+            "address": "BRS 1,3,5: Central",
+            "latitude": "-22.905642",
+            "longitude": "-43.193556"
+        }
+    },
+    {
+        "model": "pontos.stop",
         "pk": "1005O00064S0",
         "fields": {
             "mode": 3,
@@ -1086,17 +1086,6 @@
             "address": "BRS 2,3: Pra\u00e7a da Rep\u00fablica",
             "latitude": "-22.90446",
             "longitude": "-43.18946"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "1005O00158S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS 4,5: Passos",
-            "address": "BRS 4,5: Passos",
-            "latitude": "-22.90325",
-            "longitude": "-43.18625"
         }
     },
     {
@@ -1658,6 +1647,17 @@
             "address": "Estivadores",
             "latitude": "-22.899345",
             "longitude": "-43.187624"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "1005O00158S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS 4,5: Regente Feij\u00f3",
+            "address": "BRS 4,5: Regente Feij\u00f3",
+            "latitude": "-22.90325",
+            "longitude": "-43.18625"
         }
     },
     {
@@ -37775,28 +37775,6 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "3114O00026C0",
-        "fields": {
-            "mode": 3,
-            "name": "Avenida Chris\u00f3stomo Pimentel de Oliveira pr\u00f3ximo ao 2215-2431",
-            "address": "Avenida Chris\u00f3stomo Pimentel de Oliveira pr\u00f3ximo ao 2215-2431",
-            "latitude": "-22.81374",
-            "longitude": "-43.37811"
-        }
-    },
-    {
-        "model": "pontos.stop",
-        "pk": "3114O00027C0",
-        "fields": {
-            "mode": 3,
-            "name": "Avenida Chris\u00f3stomo Pimentel de Oliveira pr\u00f3ximo ao 2135",
-            "address": "Avenida Chris\u00f3stomo Pimentel de Oliveira pr\u00f3ximo ao 2135",
-            "latitude": "-22.81416",
-            "longitude": "-43.38021"
-        }
-    },
-    {
-        "model": "pontos.stop",
         "pk": "3114O00028C0",
         "fields": {
             "mode": 3,
@@ -38255,6 +38233,28 @@
             "address": "R. Emba\u00fa pr\u00f3ximo ao 335",
             "latitude": "-22.818882",
             "longitude": "-43.34987"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "3114O00027C0",
+        "fields": {
+            "mode": 3,
+            "name": "Avenida Chris\u00f3stomo Pimentel de Oliveira pr\u00f3ximo ao 2135",
+            "address": "Avenida Chris\u00f3stomo Pimentel de Oliveira pr\u00f3ximo ao 2135",
+            "latitude": "-22.814189",
+            "longitude": "-43.380191"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "3114O00026C0",
+        "fields": {
+            "mode": 3,
+            "name": "Avenida Chris\u00f3stomo Pimentel de Oliveira pr\u00f3ximo ao 2215-2431",
+            "address": "Avenida Chris\u00f3stomo Pimentel de Oliveira pr\u00f3ximo ao 2215-2431",
+            "latitude": "-22.813784",
+            "longitude": "-43.378095"
         }
     },
     {
@@ -60655,17 +60655,6 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "5144O00417C0",
-        "fields": {
-            "mode": 3,
-            "name": "ParkShoppingCampoGrande",
-            "address": "ParkShoppingCampoGrande",
-            "latitude": "-22.92822",
-            "longitude": "-43.57332"
-        }
-    },
-    {
-        "model": "pontos.stop",
         "pk": "5144O00419C0",
         "fields": {
             "mode": 3,
@@ -73910,17 +73899,6 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "1005MZ0288P2",
-        "fields": {
-            "mode": 3,
-            "name": "Presidente Vargas",
-            "address": "Presidente Vargas",
-            "latitude": "-22.903143",
-            "longitude": "-43.185747"
-        }
-    },
-    {
-        "model": "pontos.stop",
         "pk": "1005MZ0290P1",
         "fields": {
             "mode": 3,
@@ -74401,6 +74379,17 @@
             "address": "Uruguaiana",
             "latitude": "-22.90304",
             "longitude": "-43.18169"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "1005MZ0288P2",
+        "fields": {
+            "mode": 3,
+            "name": "Regente Feij\u00f3",
+            "address": "Regente Feij\u00f3",
+            "latitude": "-22.903143",
+            "longitude": "-43.185747"
         }
     },
     {
@@ -85537,17 +85526,6 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "1005O00075S0",
-        "fields": {
-            "mode": 3,
-            "name": "BRS I: Central",
-            "address": "BRS I: Central",
-            "latitude": "-22.90579",
-            "longitude": "-43.19424"
-        }
-    },
-    {
-        "model": "pontos.stop",
         "pk": "1005O00084C0",
         "fields": {
             "mode": 3,
@@ -85698,6 +85676,17 @@
             "address": "Ponto Regulador: Carioca :: Linha 226",
             "latitude": "-22.90837",
             "longitude": "-43.17813"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "1005O00075S0",
+        "fields": {
+            "mode": 3,
+            "name": "BRS I: Central",
+            "address": "BRS I: Central",
+            "latitude": "-22.905855",
+            "longitude": "-43.19424"
         }
     },
     {
@@ -90542,17 +90531,6 @@
     },
     {
         "model": "pontos.stop",
-        "pk": "3114O00025C0",
-        "fields": {
-            "mode": 3,
-            "name": "Avenida Chris\u00f3stomo Pimentel de Oliveira pr\u00f3ximo ao 2505",
-            "address": "Avenida Chris\u00f3stomo Pimentel de Oliveira pr\u00f3ximo ao 2505",
-            "latitude": "-22.81344",
-            "longitude": "-43.37674"
-        }
-    },
-    {
-        "model": "pontos.stop",
         "pk": "3114O00036C0",
         "fields": {
             "mode": 3,
@@ -90956,6 +90934,17 @@
             "address": "Rodovia Governador M\u00e1rio Covas pr\u00f3ximo ao 1138",
             "latitude": "-22.830773",
             "longitude": "-43.350501"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "3114O00025C0",
+        "fields": {
+            "mode": 3,
+            "name": "Avenida Chris\u00f3stomo Pimentel de Oliveira pr\u00f3ximo ao 2505",
+            "address": "Avenida Chris\u00f3stomo Pimentel de Oliveira pr\u00f3ximo ao 2505",
+            "latitude": "-22.813506",
+            "longitude": "-43.37673"
         }
     },
     {
@@ -98964,6 +98953,28 @@
             "address": "Estrada dos Bandeirantes,15076",
             "latitude": "-22.982414",
             "longitude": "-43.464107"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "5144O00417C0",
+        "fields": {
+            "mode": 3,
+            "name": "ParkShopping Campo Grande",
+            "address": "ParkShopping Campo Grande",
+            "latitude": "-22.928257",
+            "longitude": "-43.573286"
+        }
+    },
+    {
+        "model": "pontos.stop",
+        "pk": "4h4v",
+        "fields": {
+            "mode": 3,
+            "name": "Tom\u00e9 de Sousa 1",
+            "address": "Tom\u00e9 de Sousa 1",
+            "latitude": "-22.903652",
+            "longitude": "-43.187537"
         }
     }
 ]

@@ -290,7 +290,7 @@
         "pk": "O0384AAVAAVDU01",
         "fields": {
             "route": "O0384AAV0A",
-            "headsign": "",
+            "headsign": "Pavuna",
             "via": "",
             "version": "U01",
             "direction": 1
@@ -980,17 +980,6 @@
     },
     {
         "model": "pontos.trip",
-        "pk": "E2380AAA0AVDU01",
-        "fields": {
-            "route": "E2380AAA0A",
-            "headsign": "Jardim Maravilha",
-            "via": "",
-            "version": "U01",
-            "direction": 1
-        }
-    },
-    {
-        "model": "pontos.trip",
         "pk": "E2381AAA0AVDU01",
         "fields": {
             "route": "E2381AAA0A",
@@ -1112,9 +1101,9 @@
     },
     {
         "model": "pontos.trip",
-        "pk": "E2381AAV0AIDU01",
+        "pk": "E2380AAA0AIDU01",
         "fields": {
-            "route": "E2381AAV0A",
+            "route": "E2380AAA0A",
             "headsign": "Castelo",
             "via": "",
             "version": "U01",
@@ -1123,9 +1112,20 @@
     },
     {
         "model": "pontos.trip",
-        "pk": "E2380AAA0AIDU01",
+        "pk": "E2380AAA0AVDU01",
         "fields": {
             "route": "E2380AAA0A",
+            "headsign": "Jardim Maravilha",
+            "via": "",
+            "version": "U01",
+            "direction": 1
+        }
+    },
+    {
+        "model": "pontos.trip",
+        "pk": "E2381AAV0AIDU01",
+        "fields": {
+            "route": "E2381AAV0A",
             "headsign": "Castelo",
             "via": "",
             "version": "U01",

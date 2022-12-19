@@ -1,69 +1,70 @@
-from .models import Mode, Stop, QrCode, Linha, Agency, Route, Trip, Sequence
+from mobilidade_rio.pontos.models import *
 from rest_framework import serializers
 
 
-class ModeSerializer (serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = Mode
-        fields = ('url', 'id', 'name')
-
-
-class StopSerializer (serializers.HyperlinkedModelSerializer):
-    mode = ModeSerializer()
-
-    class Meta:
-        model = Stop
-        fields = ('url', 'id', 'name', 'address',
-                  'latitude', 'longitude', 'mode')
-
-
-class QrCodeSerializer (serializers.HyperlinkedModelSerializer):
-    stop = StopSerializer()
-
-    class Meta:
-        model = QrCode
-        fields = ('url', 'code', 'stop')
-
-
-class AgencySerializer (serializers.HyperlinkedModelSerializer):
+class AgencySerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Agency
-        fields = ('url', 'id', 'name')
+        fields = [field.name for field in model._meta.fields]
 
 
-class LinhaSerializer (serializers.HyperlinkedModelSerializer):
-    mode = ModeSerializer()
-    agency = AgencySerializer()
+class CalendarSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Calendar
+        fields = [field.name for field in model._meta.fields]
+
+
+class CalendarDatesSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = CalendarDates
+        fields = [field.name for field in model._meta.fields]
+
+
+class RoutesSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Routes
+        fields = [field.name for field in model._meta.fields]
+
+        # show description of the route_type
+        extra_kwargs = {
+            # 'route_type': {'source': 'get_route_type_display'},
+            # 'continuous_pickup': {'source': 'get_continuous_pickup_display'},
+            # 'continuous_drop_off': {'source': 'get_continuous_drop_off_display'},
+            # 'weelchair_accessible': {'source': 'get_weelchair_accessible_display'},
+        }
+
+
+class TripsSerializer(serializers.HyperlinkedModelSerializer):
+    route_id = RoutesSerializer()
+    class Meta:
+        model = Trips
+        fields = [field.name for field in model._meta.fields]
+
+
+class ShapesSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Shapes
+        fields = [field.name for field in model._meta.fields]
+
+
+class StopsSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Stops
+        fields = [field.name for field in model._meta.fields]
+
+
+class StopTimesSerializer(serializers.HyperlinkedModelSerializer):
+    url = serializers.HyperlinkedRelatedField(view_name="stop_times-detail", read_only=True)
+    trip_id = TripsSerializer(read_only=True)
+    stop_id = StopsSerializer(read_only=True)
 
     class Meta:
-        model = Linha
-        fields = ('url', 'id', 'initials', 'mode', 'agency')
+        model = StopTimes
+        fields = [field.name for field in model._meta.fields]
+        fields.append("url")
 
 
-class RouteSerializer (serializers.HyperlinkedModelSerializer):
-    linha = LinhaSerializer()
-    agency = AgencySerializer()
-    mode = ModeSerializer()
-
+class FrequenciesSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = Route
-        fields = ('url', 'id', 'linha', 'agency',
-                  'mode', 'short_name', 'vista')
-
-
-class TripSerializer (serializers.HyperlinkedModelSerializer):
-    route = RouteSerializer()
-
-    class Meta:
-        model = Trip
-        fields = ('url', 'id', 'route', 'headsign',
-                  'via', 'version', 'direction')
-
-
-class SequenceSerializer (serializers.HyperlinkedModelSerializer):
-    trip = TripSerializer()
-    stop = StopSerializer()
-
-    class Meta:
-        model = Sequence
-        fields = ('url', 'id', 'trip', 'stop', 'order')
+        model = Frequencies
+        fields = [field.name for field in model._meta.fields]

@@ -26,6 +26,7 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
+*temp.txt
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -131,3 +132,6 @@ dmypy.json
 static/
 secrets.y*ml
 notebooks/
+
+scripts/populate_db/csv_files/*
+scripts/populate_db/logs/*

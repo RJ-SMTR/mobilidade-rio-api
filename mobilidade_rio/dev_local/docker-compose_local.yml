@@ -1,0 +1,43 @@
+version: "3.9"
+
+services:
+  web:
+    build: 
+      context: ../
+      dockerfile: ./dev_local/Dockerfile_local
+    image: django
+    container_name: django_hd
+    volumes:
+      - .:/django
+    ports:
+      - 8010:8000
+    depends_on:
+      - db
+    environment:
+      - DJANGO_SETTINGS_MODULE=mobilidade_rio.settings.local
+    # command: python manage.py runserver 0.0.0.0:8000
+    command: >
+      bash -c "
+        echo 'DOCKER_ENV: $TST_DOCKERFILE_ENV'
+        python manage.py makemigrations --noinput 
+        python manage.py migrate
+        python manage.py runserver 0.0.0.0:8000
+      "
+
+  db:
+    image: postgres
+    container_name: postgres_hd
+    ports:
+      - 5433:5432
+    volumes:
+      - dpostgres_data:/var/lib/postgresql/data/
+    environment:
+      - "POSTGRES_HOST_AUTH_METHOD=trust"
+      - "POSTGRES_DB=postgres"
+      - "POSTGRES_USER=postgres"
+      - "POSTGRES_PASSWORD=postgres"
+      #- <path>\.env
+
+# For some reason, this definition is necesarry
+volumes:
+  dpostgres_data:
