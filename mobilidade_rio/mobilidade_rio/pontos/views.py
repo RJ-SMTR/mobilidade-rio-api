@@ -6,6 +6,7 @@ from rest_framework import viewsets
 from rest_framework import permissions
 from mobilidade_rio.pontos.models import *
 from .serializers import *
+from .paginations import LargePagination
 
 # from .utils import get_distance, safe_cast
 # from .constants import constants
@@ -90,6 +91,7 @@ class ShapesViewSet(viewsets.ModelViewSet):
     serializer_class = ShapesSerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
     queryset = Shapes.objects.all().order_by("shape_id")
+    pagination_class = LargePagination
 
 
 class StopsViewSet(viewsets.ModelViewSet):
