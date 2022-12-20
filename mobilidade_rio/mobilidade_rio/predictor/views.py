@@ -11,7 +11,7 @@ import mobilidade_rio.pontos.models as gtfs_models
 from django.db import connection
 
 
-#from rest_framework.views import APIView
+#from rest_framework.generics import APIView
 
 from mobilidade_rio.__init__ import predictor
 import pandas as pd
