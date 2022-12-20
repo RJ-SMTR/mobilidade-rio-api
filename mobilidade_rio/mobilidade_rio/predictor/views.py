@@ -1,93 +1,47 @@
-#from django.shortcuts import render
+import json
+
+from rest_framework.views import APIView
 from rest_framework import viewsets
 from rest_framework import permissions
 from rest_framework.response import Response
+
 from mobilidade_rio.predictor.models import *
 from mobilidade_rio.predictor.serializers import *
 import mobilidade_rio.pontos.models as gtfs_models
 from django.db import connection
-# import APIView
-from rest_framework.views import APIView
 
 
-class ShapeWithStopsView(APIView):
+#from rest_framework.views import APIView
 
+from mobilidade_rio.__init__ import predictor
+import pandas as pd
+
+#http://localhost:8010/predictor/pred/?trip_names=22,41,50&stops=4128BC0005U2,4128BO0017U2
+class PredictorView(APIView):
     def get(self, request):
-        shapes_name = gtfs_models.Shapes.objects.model._meta.db_table
-        stops_name = gtfs_models.Stops.objects.model._meta.db_table
+        all_next_stops = pd.DataFrame()
+        stop_list = []
+        trip_short_name_list = []
+        has_trip = request.GET.get('trip_names', '')!=''
+        has_stop = request.GET.get('trip_names', '')!=''
 
-        # exclude null cols (or with same name as its collumn)
-        shapes_cols = [col.name for col in gtfs_models.Shapes.objects.model._meta.get_fields()]
-        stops_cols = [col.name for col in gtfs_models.Stops.objects.model._meta.get_fields()]
-        shape_with_stops_cols = list(set(["shape_pt_lat", "shape_pt_lon", "stop_lat", "stop_lon"]))
-        q_row_ne_col_name = [f"{col} != '{col}'" for col in shape_with_stops_cols if col != 'id']
-        q_row_ne_col_name = 'AND '.join(q_row_ne_col_name)
+        if has_trip:
+            trip_short_name_list = request.GET.get('trip_names', '')
+            trip_short_name_list = trip_short_name_list.strip().split(",")
+            
+        if has_stop:
+            stop_list = request.GET.get('stops', '')
+            stop_list = stop_list.strip().split(",")
 
-        
-        # join shapes with stops
-        # q_join_shapes_stops = f"""
-        # select count (*) from (SELECT * FROM pontos_shapes INNER JOIN pontos_stops ON pontos_shapes.shape_pt_sequence < 100) as q
-        # """
+        predictor.capture_real_time_data(trip_short_name_list,has_trip)
+        pred = predictor.predict_all_arrivals()
+        if has_stop:
+            pred = pred[["trip_id","chegada", "stop_id","bus_id"]].loc[pred['stop_id'].isin(stop_list)]
+        else:
+            pred = pred[["trip_id","chegada", "stop_id","bus_id"]]
+ 
+        return Response(json.loads(pred.to_json(orient="records")))
 
-        # show stops where lat and lon are equal +- 0.0001 compared to shapes, using join
-        offset = 0.00001
-        q_shapes_stops_pos = f"""
-        SELECT * FROM {stops_name} INNER JOIN {shapes_name} ON
-        {q_row_ne_col_name}
-        -- AND CAST({shapes_name}.shape_pt_lat AS DECIMAL(10,6)) = CAST({stops_name}.stop_lat AS DECIMAL(10,6))
-        -- AND CAST({shapes_name}.shape_pt_lon AS DECIMAL(10,6)) = CAST({stops_name}.stop_lon AS DECIMAL(10,6))
-        -- {q_row_ne_col_name}
-        AND ABS(CAST({shapes_name}.shape_pt_lat AS DECIMAL(10,6)) - CAST({stops_name}.stop_lat AS DECIMAL(10,6))) < {offset}
-        AND ABS(CAST({shapes_name}.shape_pt_lon AS DECIMAL(10,6)) - CAST({stops_name}.stop_lon AS DECIMAL(10,6))) < {offset}
-        """
-
-        # q_shapes_stops_pos = f"""
-        # SELECT * FROM {stops_name}, {shapes_name}
-        # -- WHERE {shapes_name}.shape_pt_lat IS NOT NULL AND {shapes_name}.shape_pt_lon IS NOT NULL
-        # -- AND {stops_name}.stop_lat IS NOT NULL AND {stops_name}.stop_lon IS NOT NULL
-        # WHERE {q_row_ne_col_name}
-        # AND ABS(CAST({shapes_name}.shape_pt_lat AS DECIMAL(10,6)) - CAST({stops_name}.stop_lat AS DECIMAL(10,6))) < {offset}
-        # AND ABS(CAST({shapes_name}.shape_pt_lon AS DECIMAL(10,6)) - CAST({stops_name}.stop_lon AS DECIMAL(10,6))) < {offset}
-        # """
-
-        q_shapes_stops = f"""
-        SELECT * FROM {shapes_name}, {stops_name}
-        """
-
-        q_limit = f"""
-        {q_shapes_stops_pos} LIMIT 20
-        """
-
-        q_count = f"""
-        SELECT COUNT(*) FROM {shapes_name}
-        """
-
-        # count total number of rows in the table 
-
-        
-        with connection.cursor() as cursor:
-            # print("[TESTING]")
-            cursor.execute(q_shapes_stops_pos)
-            # row = [dict(zip([key[0] for key in cursor.description], row))
-            #        for row in cursor.fetchall()]
-            row = cursor.fetchall()
-            print(row)
-            return Response(row)
-            # print(row)
-            # convert the list to dict, corresponding to ShapeWithStops model
-            print("[COUNTING]")
-            cursor.execute(q_count)
-            count = cursor.fetchone()[0]
-            print(count)
-
-            # print
-            shape_with_stops_cols = ShapeWithStops._meta.get_fields()
-
-
-            return Response(row)
-        # return json response
-        # return Response({'get': 'query'})
-        # return Response(query)
 
 
 class ShapeWithStopsViewSet(viewsets.ModelViewSet):
@@ -132,6 +86,7 @@ class ShapeWithStopsViewSet(viewsets.ModelViewSet):
         # print query result
         print("[LOG] queryset: ", queryset)
         return queryset
+        
         # queryset that is literally shapes + stops
         stop_id = None
         # get stop_id from query params
@@ -158,6 +113,4 @@ class ShapeWithStopsViewSet(viewsets.ModelViewSet):
             # execute query
             # queryset = queryset.raw(query)
         return queryset
-
-class PredictorViewSet(viewsets.ModelViewSet):
-    pass
+    
