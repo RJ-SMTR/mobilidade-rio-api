@@ -93,6 +93,17 @@ class ShapesViewSet(viewsets.ModelViewSet):
     queryset = Shapes.objects.all().order_by("shape_id")
     pagination_class = LargePagination
 
+    def get_queryset(self):
+        queryset = Shapes.objects.all().order_by("shape_id")
+
+        # fillter by shape_id
+        shape_id = self.request.query_params.get("shape_id")
+        if shape_id is not None:
+            shape_id = shape_id.split(",")
+            queryset = queryset.filter(shape_id__in=shape_id).order_by("shape_id")
+
+        return queryset
+
 
 class StopsViewSet(viewsets.ModelViewSet):
 
