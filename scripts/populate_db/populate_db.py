@@ -175,22 +175,48 @@ def validate_col_values(
 
     len_history = [len(data)]
     # remove duplicates
-    cols_duplicates = []
+    remove_duplicate_cols_table_commas = []
+    remove_duplicate_cols_table_no_commas = []
     if table_name in remove_duplicate_cols:
-        cols_duplicates = validate_col_names(table_name, remove_duplicate_cols[table_name])
+        # separate cols with commas, without and unique
+        for col in remove_duplicate_cols[table_name]:
+            if "," in col:
+                cols_1 = validate_col_names(table_name, col.split(","))
+                remove_duplicate_cols_table_commas.append(cols_1)
+            else:
+                remove_duplicate_cols_table_no_commas.append(col)
+        remove_duplicate_cols_table_no_commas = validate_col_names(
+            table_name, remove_duplicate_cols_table_no_commas)
+
     # validate cols
-    cols_validates = []
+    validade_cols_table = []
     if table_name in validate_cols:
-        cols_validates = validate_col_names(table_name, validate_cols[table_name])
+        validade_cols_table = validate_col_names(
+            table_name, validate_cols[table_name])
+
+    # remove_cols_containing
+    remove_cols_containing = []
+    remove_cols_containing_table = []
+    if 'remove_cols_containing' in settings:
+        remove_cols_containing = settings['remove_cols_containing']
+        if table_name in remove_cols_containing:
+            remove_cols_containing_table = remove_cols_containing[table_name]
+            # validate cols for each table
+            remove_cols_containing_table = validate_col_names(
+                table_name, remove_cols_containing_table)
+
     # enforce types
     cols_set_types = []
     if 'enforce_type_cols' in settings and table_name in settings['enforce_type_cols']:
-        cols_set_types = validate_col_names(table_name, settings['enforce_type_cols'][table_name])
+        cols_set_types = validate_col_names(
+            table_name, settings['enforce_type_cols'][table_name])
 
-    # cols_validates = validate_col_names(table_name, validate_cols[table_name])
-    if table_name in validate_cols:
+    # run validate cols
+    if (table_name in validate_cols
+        or table_name in remove_duplicate_cols
+        or table_name in remove_cols_containing):
         for col in cols:
-            if col in cols_validates:
+            if col in validade_cols_table:
                 # ? if value ends with _1, split and remove _1
                 data[col] = data[col].str.split("_1").str[0]
                 data = data.copy()
@@ -200,17 +226,26 @@ def validate_col_values(
                 data = data[~data[col].str.contains("_")].copy()
 
             # remove duplicates
-            if remove_duplicates and col in cols_duplicates:
+            if remove_duplicates and col in remove_duplicate_cols_table_no_commas:
                 data = data.drop_duplicates(subset=[col]).copy()
 
             # convert to type
             if col in cols_set_types:
                 if cols_set_types[col] == "int":
                     data[col] = data[col].astype("Int64")
+
+            # remove cols containing
+            if col in remove_cols_containing_table:
+                print(f"Removing_cols_containing: {col}")
+                # drop rows if col value contains part of substring
+                for substring in remove_cols_containing_table[col]:
+                    data = data[~data[col].str.contains(substring)].copy()
+
     len_history.append(len(data))
     # print("CVC hist", len_history)
 
     return convert_to_type(data, data_type, ret_type, table_name + ".txt")
+
 
 def upload_data(_app: str, _model: str):
     """
