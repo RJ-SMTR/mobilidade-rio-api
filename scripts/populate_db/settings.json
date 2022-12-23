@@ -39,6 +39,13 @@
             "trip_id"
         ]
     },
+    "remove_cols_containing": {
+        "pontos_routes": {
+            "route_short_name": [
+                "SN"
+            ]
+        }
+    },
     "flag_params": [
         "empty_tables"
     ]
