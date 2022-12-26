@@ -61,6 +61,7 @@ class TripsViewSet(viewsets.ModelViewSet):
     """
     API endpoint to show trips data
     """
+
     serializer_class = TripsSerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
 
@@ -187,6 +188,7 @@ class FrequenciesViewSet(viewsets.ModelViewSet):
     """
     API endpoint to show frequencies data
     """
+
     serializer_class = FrequenciesSerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
     queryset = Frequencies.objects.all().order_by("trip_id")
