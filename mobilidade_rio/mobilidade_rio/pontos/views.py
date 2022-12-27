@@ -139,6 +139,11 @@ class StopTimesViewSet(viewsets.ModelViewSet):
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
 
     def get_queryset(self):
+        # get real col names and stuff
+        TRIP_ID_COL = StopTimes._meta.get_field("trip_id").column
+        STOP_ID_COL = StopTimes._meta.get_field("stop_id").column
+        STOPTIMES_TABLE = StopTimes._meta.db_table
+
         queryset = StopTimes.objects.all().order_by("trip_id")
         stop_id = None
         # get stop_id from query params
