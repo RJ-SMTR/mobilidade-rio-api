@@ -3,10 +3,25 @@
 
 API estática do aplicativo de [pontos.mobilidade.rio](http://pontos.mobilidade.rio) da Prefeitura da cidade do Rio de Janeiro.
 
-## Estágios de desenvolvimento
+## Requerimentos
 
-* **Nativo**
-  * _Desenvolvimento Local em servidor Nativo_
+Em parêntesis, o [modo de execução](#modo-de-execução) que utiliza o recurso.
+
+* [Docker](https://www.docker.com/) (local, dev)
+* [Kubernetes kubectl](https://kubernetes.io/docs/tasks/tools/) (dev, staging, prod)
+* [Kubernetes Lens](https://k8slens.dev/) (dev, staging, prod)
+* [Postgres](https://www.postgresql.org/) (nativo)
+* Python >=3.9
+
+## Desenvolvimento
+
+### Modo de execução
+
+> Você pode executar a aplicação de várias formas, cada uma tem seu objetivo e suas vantagens. A seguir, é descrito o que cada uma faz.
+
+* **Native**
+  * _Desenvolvimento Local em servidor nativo_
+  * Também chamado de `native`
   * Para desenvolver com rapidez os recursos do servidor, ele é executado localmente na sua máquina, sem utilizar o Docker.
   * Se este não é o seu caso, use o `Local`.
 * **Local**
@@ -14,32 +29,25 @@ API estática do aplicativo de [pontos.mobilidade.rio](http://pontos.mobilidade.
   * Utiliza localmente o Docker.
 * **Dev**
   * _Desenvolvimento em servidor Remoto_
-  * Desenvolver remotamente usando orquestrador Kubernetes (K8s) com o Docker.
+  * Desenvolver num servidor remoto, utilizando o orquestrador Kubernetes (K8s) com o Docker.
 * **Staging**
   * _Teste em servidor Remoto_
-  * Testar remotamente usando orquestrador Kubernetes (K8s) com o Docker.
+  * Também chamado de `stag`
+  * Funciona semelhante ao `dev`, mas com um banco de dados diferente.
 * **Prod**
   * _Produção em servidor oficial_
-  * Executar as mesmas configurações do ambiente de desenvolvimento, porém com o Docker configurado para produção.
+  * Também chamado de `prod`
+  * Funciona semelhante ao `dev`, mas tudo é executado em um servidor oficial.
 
-Resumindo o que cada estágio faz:
+Resumindo o que cada um faz:
 
 | Nome | Descrição | Recursos |
 |---|---|---|
-| native | Desenv. nativo | 🖥️ |
+| native | Desenv nativo | 🖥️ |
 | local | Desenv. local | 🐋 |
 | dev | Desenv. Remoto | 🐋☸️ |
-| stag | Staging | 🐋☸️ |
-| prod | Produção | 🐋☸️ |
-
-## Requerimentos
-
-* [Docker](https://www.docker.com/)(local, desenvolvimento)
-* [Kubernetes](https://kubernetes.io/) (produção)
-* [Postgres](https://www.postgresql.org/) (nativo)
-* Python >=3.9
-
-## Desenvolvimento
+| stag | Remoto como staging | 🐋☸️ |
+| prod | Remoto como produção | 🐋☸️ |
 
 ### Iniciando o ambiente
 
