@@ -21,15 +21,20 @@ pred_router = routers.DefaultRouter()
 pred_router.register(r"shape_with_stops", pred.ShapeWithStopsViewSet,basename="shape_with_stops")
 #pred_router.register(r"predictor", pred.PredictorViewSet,basename="pred_arrivals")
 
+unified_router = routers.DefaultRouter()
+# add all gtfs_router and pred_router to unified_router
+unified_router.registry.extend(gtfs_router.registry)
+unified_router.registry.extend(pred_router.registry)
+
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
+    path("", include(unified_router.urls)),
     path("gtfs/", include(gtfs_router.urls)),
     path("predictor/", include(pred_router.urls)),
     path("admin/", admin.site.urls),
     path("api-auth/", include("rest_framework.urls", namespace="rest_framework")),
-    path("predictor/shape_with_stops1/", pred.ShapeWithStopsView.as_view()),
     url(r"^auth/", include("djoser.urls")),
     url(r"^auth/", include("djoser.urls.authtoken")),
 ]
