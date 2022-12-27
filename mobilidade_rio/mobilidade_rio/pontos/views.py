@@ -139,6 +139,14 @@ class ShapesViewSet(viewsets.ModelViewSet):
             shape_id = shape_id.split(",")
             queryset = queryset.filter(shape_id__in=shape_id).order_by("shape_id")
 
+        # filter by route_type
+        route_type = self.request.query_params.get("route_type")
+        if route_type is not None:
+            route_type = route_type.split(",")
+            routes = Routes.objects.filter(route_type__in=route_type)
+            trips = Trips.objects.filter(route_id__in=routes.values_list('route_id'))
+            queryset = queryset.filter(shape_id__in=trips.values_list('shape_id'))
+
         return queryset
 
 
