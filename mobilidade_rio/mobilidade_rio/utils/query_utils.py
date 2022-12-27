@@ -104,7 +104,7 @@ def q_col_in(
 def q_unique_cols(
     table,
     unique_cols: list,
-    select_cols: list = "*",
+    select: list = "*",
     col_in: dict = None,
     col_match_all: list = None,
     q_conditions: str = None,
@@ -132,12 +132,12 @@ def q_unique_cols(
     # if cols is a list, convert to string
     if isinstance(unique_cols, list):
         unique_cols = ",".join(unique_cols)
-    if isinstance(select_cols, list):
-        select_cols = ",".join(select_cols)
+    if isinstance(select, list):
+        select = ",".join(select)
 
     # select cols in query and subquery
-    select_cols_1 = select_cols
-    select_cols_2 = select_cols.replace("row_num", "").replace(",,", ",")
+    select_cols_1 = select
+    select_cols_2 = select.replace("row_num", "").replace(",,", ",")
     if select_cols_2[-1] == ",":
         select_cols_2 = select_cols_2[:-1]
 
