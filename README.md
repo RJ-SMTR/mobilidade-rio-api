@@ -317,6 +317,13 @@ Parâmetros:
   * Ao terminar, deve-se fazer um PR para a respectiva branch, então deletar esta aqui.
 
 
+## Github Project
+
+_Vulgo Board, Kanban ou Org._
+
+* [Board deste projeto](https://github.com/orgs/prefeitura-rio/projects/18/views/1)
+
+
 ## Problemas comuns
 
 ### Erro ao usar manage.py
