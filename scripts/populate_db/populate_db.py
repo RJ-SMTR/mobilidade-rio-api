@@ -174,6 +174,7 @@ def validate_col_values(
     data.columns = cols
 
     len_history = [len(data)]
+
     # remove duplicates
     remove_duplicate_cols_table_commas = []
     remove_duplicate_cols_table_no_commas = []
@@ -241,7 +242,13 @@ def validate_col_values(
                 for substring in remove_cols_containing_table[col]:
                     data = data[~data[col].str.contains(substring)].copy()
 
+        # remove duplicates with commas
+        if remove_duplicates and remove_duplicate_cols_table_commas:
+            for cols_1 in remove_duplicate_cols_table_commas:
+                data = data.drop_duplicates(subset=cols_1).copy()
+
     len_history.append(len(data))
+    # ? debug
     # print("CVC hist", len_history)
 
     return convert_to_type(data, data_type, ret_type, table_name + ".txt")

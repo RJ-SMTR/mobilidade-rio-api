@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'djoser',
     'mobilidade_rio.pontos',
     'mobilidade_rio.predictor',
+    'mobilidade_rio.utils',
 ]
 
 MIDDLEWARE = [
