@@ -251,6 +251,86 @@ A página inicial mostra todos os endpoints disponíveis.
 
 Todos os endpoints estão no endereço `/gtfs`.
 
+#### agency
+
+Endereço: `/gtfs/agency`
+
+Parâmetros:
+
+* `route_type` - Filtra por 1 ou mais route_type
+  * Uso: `route_type=1,2,3`
+  * Exemplo real: <http://localhost:8010/gtfs/agency/?route_type=2,3>
+
+#### calendar
+
+Endereço: `/gtfs/calendar`
+
+Parâmetros:
+
+* `route_type` - Filtra por 1 ou mais route_type
+  * Uso: `route_type=1,2,3`
+  * Exemplo real: <http://localhost:8010/gtfs/calendar/?route_type=2,3>
+
+#### calendar_dates
+
+Endereço: `/gtfs/calendar_dates`
+
+Parâmetros:
+
+* `route_type` - Filtra por 1 ou mais route_type
+  * Uso: `route_type=1,2,3`
+  * Exemplo real: <http://localhost:8010/gtfs/calendar_dates/?route_type=2,3>
+
+#### frequencies
+
+Endereço: `/gtfs/frequencies`
+
+Parâmetros:
+
+* `route_type` - Filtra por 1 ou mais route_type
+  * Uso: `route_type=1,2,3`
+  * Exemplo real: <http://localhost:8010/gtfs/frequencies/?route_type=2,3>
+
+#### routes
+
+Endereço: `/gtfs/routes`
+
+Parâmetros:
+
+* `route_type` - Filtra por 1 ou mais route_type
+  * Uso: `route_type=1,2,3`
+  * Exemplo real: <http://localhost:8010/gtfs/routes/?route_type=2,3>
+
+#### trips
+
+Endereço: `/gtfs/trips`
+
+Parâmetros:
+
+* `route_type` - Filtra por 1 ou mais route_type
+  * Uso: `route_type=1,2,3`
+  * Exemplo real: <http://localhost:8010/gtfs/trips/?route_type=2,3>
+
+#### shapes
+
+Endereço: `/gtfs/shapes`
+
+Parâmetros:
+
+* `route_type` - Filtra por 1 ou mais route_type
+  * Uso: `route_type=1,2,3`
+  * Exemplo real: <http://localhost:8010/gtfs/shapes/?route_type=2,3>
+
+#### stops
+
+Endereço: `/gtfs/stops`
+
+Parâmetros:
+
+* `route_type` - Filtra por 1 ou mais route_type
+  * Uso: `route_type=1,2,3`
+  * Exemplo real: <http://localhost:8010/gtfs/stops/?route_type=2,3>
+
 #### stop_times
 
 Endereço: `/gtfs/stop_times`
@@ -283,6 +363,10 @@ Parâmetros:
 * É possível combinar todos os parâmetros acima.
   * Exemplo: `trip_id=a,b&stop_id=1,2,3&stop_id__all=2,3,4`
   * Exemplo real: <http://localhost:8010/gtfs/stop_times/?trip_id=O0041CAA0AIDU01,O0309AAA0AVDU01&stop_id=2028O00023C0,5144O00512C9>
+
+* `route_type` - Filtra por 1 ou mais route_type
+  * Uso: `route_type=1,2,3`
+  * Exemplo real: <http://localhost:8010/gtfs/stop_times/?route_type=2,3>
 
 ## Apps
 
