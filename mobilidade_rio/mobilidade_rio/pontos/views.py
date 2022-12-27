@@ -390,6 +390,19 @@ class FrequenciesViewSet(viewsets.ModelViewSet):
         # increase performance if no need to raw query
         raw_filter_used = False
 
+        # trip_id
+        trip_id = self.request.query_params.get("trip_id")
+        if trip_id is not None:
+            trip_id = trip_id.split(",")
+
+            if raw_filter_used:
+                query = f"""
+                SELECT * FROM ({query}) AS {qu.q_random_hash()}
+                WHERE {TRIP_ID__FREQUENCIES} IN ({str(trip_id)[1:-1]})
+                """
+            else:
+                queryset = queryset.filter(trip_id__in=trip_id).order_by("trip_id")
+
         # filter by route_type
         route_type = self.request.query_params.get("route_type")
         if route_type is not None:
