@@ -223,16 +223,3 @@ def print_query(query):
     # remove first line if is break line
     for i, line in enumerate(query.splitlines()):
         print(f"{blue}{i:03d}{end} {line}")
-
-
-if "__main__" == __name__:
-
-    q_unique_cols_1 = q_unique_cols(
-        table="pontos_stoptimes",
-        unique_cols=["trip_id_id", "stop_id_id"],
-        select_cols=["*"],
-        col_in={"stop_id_id": ["4128O00122C0", "2028O00023C0"]},
-        col_match_all=["trip_id_id"],
-        # q_conditions="stop_id_id IN (4128O00169P0)",
-    )
-    print(q_unique_cols_1)
