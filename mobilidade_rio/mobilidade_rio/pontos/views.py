@@ -290,3 +290,44 @@ class FrequenciesViewSet(viewsets.ModelViewSet):
     serializer_class = FrequenciesSerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
     queryset = Frequencies.objects.all().order_by("trip_id")
+
+    def get_queryset(self):
+        TABLE_FREQUENCIES = Frequencies._meta.db_table
+        TRIP_ID__FREQUENCIES = Frequencies._meta.get_field("trip_id").column
+
+        queryset = Frequencies.objects.all().order_by("trip_id")
+        query = f"SELECT * FROM {TABLE_FREQUENCIES} ORDER BY {TRIP_ID__FREQUENCIES}"
+
+        # increase performance if no need to raw query
+        raw_filter_used = False
+
+        # filter by route_type
+        route_type = self.request.query_params.get("route_type")
+        if route_type is not None:
+            route_type = route_type.split(",")
+
+            if raw_filter_used:
+                ROUTE_TABLE = Routes._meta.db_table
+                ROUTE_ID__TRIPS = Trips._meta.get_field("route_id").column
+                TRIPS_TABLE = Trips._meta.db_table
+                query = f"""
+                SELECT *
+                FROM ({query}) AS {qu.q_random_hash()}
+                WHERE {TRIP_ID__FREQUENCIES} IN (
+                    SELECT trip_id FROM {TRIPS_TABLE}
+                    WHERE {ROUTE_ID__TRIPS} IN (
+                        SELECT route_id FROM {ROUTE_TABLE}
+                        WHERE route_type IN ({str(route_type)[1:-1]})
+                    )
+                )
+                ORDER BY {TRIP_ID__FREQUENCIES}
+                """
+            else:
+                routes = Routes.objects.filter(route_type__in=route_type)
+                trips = Trips.objects.filter(route_id__in=routes.values_list('route_id'))
+                queryset = queryset.filter(trip_id__in=trips.values_list('trip_id'))
+
+        # execute query
+        if raw_filter_used:
+            queryset = queryset.raw(query)
+        return queryset
