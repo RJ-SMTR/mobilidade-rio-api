@@ -245,6 +245,8 @@ O que NÃO pode alterar ali sem quebrar o Kubernetes:
 Os diagramas dos endpoints (e ) [here](https://miro.com/app/board/o9J_lqIY7Eg=/).
 > Os diagramas estão em português.
 
+A página inicial mostra todos os endpoints disponíveis.
+
 ### Pontos (gtfs)
 
 Todos os endpoints estão no endereço `/gtfs`.
