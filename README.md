@@ -374,3 +374,29 @@ Dev local:
 > Disco virtual é o disco que o Docker usa para armazenar os dados do banco de dados. Com o passar do tempo, ele pode ficar cheio, ocupando centenas de GBs.
 > 
 > Para esvaziá-lo, rode o comando `docker system prune -a -f` (ou `docker system prune -a` para ver o que será apagado).
+
+
+### PG Admin: Erro ao conectar ao banco de dados
+
+
+### PG Admin: must be owner of database
+
+**Causa:**
+
+O seu usuário atual (e.g. `postgres`) não é dono do banco de dados.
+
+**Solução:**
+
+1. Se necessário, peça ajuda ao responsável pelo banco de dados.
+
+2. Entre no banco de dados `postgres`:
+
+Exemplo:
+```sh
+psql -h localhost -p 5433 -U postgres -W postgres
+``` 
+
+3. Altere o dono do banco de dados (ex: `mobilidade_rio`) para o usuário em questão (ex: `meu_usuario`):
+```sql
+ALTER DATABASE mobilidade_rio OWNER TO meu_usuario;
+```
