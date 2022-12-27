@@ -368,6 +368,18 @@ Parâmetros:
   * Uso: `route_type=1,2,3`
   * Exemplo real: <http://localhost:8010/gtfs/stop_times/?route_type=2,3>
 
+### predictor
+
+#### shapes_with_stops
+
+Endereço: `/predictor/shapes_with_stops`
+
+Parâmetros:
+
+* `route_type` - Filtra por 1 ou mais route_type
+  * Uso: `route_type=1,2,3`
+  * Exemplo real: <http://localhost:8010/predictor/shapes_with_stops/?route_type=2,3>
+
 ## Apps
 
 ### Utils
