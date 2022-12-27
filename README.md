@@ -282,6 +282,41 @@ Parâmetros:
   * Exemplo: `trip_id=a,b&stop_id=1,2,3&stop_id__all=2,3,4`
   * Exemplo real: <http://localhost:8010/gtfs/stop_times/?trip_id=O0041CAA0AIDU01,O0309AAA0AVDU01&stop_id=2028O00023C0,5144O00512C9>
 
+
+## Branches do projeto
+
+* **main**
+  * _Produção_
+  * Branch principal do projeto, onde o código está em produção.
+
+* **staging**
+  * _Testar aplicação para produção, mas em servidor de desenvolvimento_
+  * Quando o `dev` estiver funcionando corretamente, o código é enviado para o `staging`.
+
+* **dev**
+  * _Desenvolvimento_
+  * Branch de desenvolvimento, onde o código está em desenvolvimento.
+
+* ⚠️ **dev-local**
+  * _Desenvolvimento local_
+  * Criado inicialmente para permitir o desenvolvimento local, sem a necessidade de um servidor remoto.
+  * Talvez seja deletado, pois já cumpriu seu objetivo.
+
+* **hotfix/`branch`**
+  * _Tudo relacionado a correções de bugs naquela branch_
+  * Nomes alternativos:
+    * hotfix-outro_titulo/`branch`
+  * Apenas uma correção de bug por vez.
+  * Ao terminar, deve-se fazer um PR para a respectiva branch, então deletar esta aqui.
+
+* **feat/`branch`**
+  * _Tudo relacionado a novas funcionalidades naquela branch_
+  * Nomes alternativos:
+    * feat-outro_titulo/`branch`
+  * Apenas uma nova funcionalidade por vez.
+  * Ao terminar, deve-se fazer um PR para a respectiva branch, então deletar esta aqui.
+
+
 ## Problemas comuns
 
 ### Erro ao usar manage.py
