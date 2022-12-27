@@ -121,7 +121,7 @@ docker-compose -f ./mobilidade_rio/docker-compose.yml down -v && docker image pr
 docker-compose -f ./mobilidade_rio/dev_local/docker-compose_local.yml down -v
 ```
 
-1. Salve os arquivos do GTFS na pasta
+2. Salve os arquivos do GTFS na pasta
    [`scripts/populate_db/csv_files/pontos`](/scripts/populate_db/csv_files/pontos).
    A estrutura deve seguir:
 
@@ -139,7 +139,7 @@ docker-compose -f ./mobilidade_rio/dev_local/docker-compose_local.yml down -v
   │   └── trips.csv
   ```
 
-2. Execute o upload dos dados:
+3. Execute o upload dos dados:
 
 ```sh
 python scripts/populate_db/populate_db.py --empty_table
