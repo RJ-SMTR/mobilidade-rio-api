@@ -23,6 +23,18 @@ class AgencyViewSet(viewsets.ModelViewSet):
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
     queryset = Agency.objects.all().order_by("agency_id")
 
+    def get_queryset(self):
+        queryset = Agency.objects.all().order_by("agency_id")
+
+        # filter by route_type
+        route_type = self.request.query_params.get("route_type")
+        if route_type is not None:
+            route_type = route_type.split(",")
+            routes = Routes.objects.filter(route_type__in=route_type)
+            queryset = queryset.filter(agency_id__in=routes.values_list("agency_id", flat=True)).order_by("agency_id")
+
+        return queryset
+
 
 class CalendarViewSet(viewsets.ModelViewSet):
 
