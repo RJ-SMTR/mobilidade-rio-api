@@ -161,9 +161,6 @@ class StopsViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         queryset = Stops.objects.all().order_by("stop_id")
-        stop_code = self.request.query_params.get("stop_id")
-        if stop_code is not None:
-            queryset = queryset.filter(stop_id=stop_code).order_by("stop_id")
 
         # fillter by stop_id
         stop_id = self.request.query_params.get("stop_id")
