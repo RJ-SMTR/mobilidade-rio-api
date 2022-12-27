@@ -47,6 +47,48 @@ class CalendarViewSet(viewsets.ModelViewSet):
     queryset = Calendar.objects.all().order_by("service_id")
 
 
+    def get_queryset(self):
+        TABLE_CALENDAR = Calendar._meta.db_table
+        SERVICE_ID__CALENDAR = Calendar._meta.get_field("service_id").column
+
+        queryset = Calendar.objects.all().order_by("service_id")
+        query = f"SELECT * FROM {TABLE_CALENDAR} ORDER BY {SERVICE_ID__CALENDAR}"
+
+        # increase performance if no need to raw query
+        raw_filter_used = False
+
+        # filter by route_type
+        route_type = self.request.query_params.get("route_type")
+        if route_type is not None:
+            route_type = route_type.split(",")
+
+            if raw_filter_used:
+                ROUTE_TABLE = Routes._meta.db_table
+                ROUTE_ID__TRIPS = Trips._meta.get_field("route_id").column
+                TRIPS_TABLE = Trips._meta.db_table
+                query = f"""
+                SELECT *
+                FROM ({query}) AS {qu.q_random_hash()}
+                WHERE {SERVICE_ID__CALENDAR} IN (
+                    SELECT service_id FROM {TRIPS_TABLE}
+                    WHERE {ROUTE_ID__TRIPS} IN (
+                        SELECT route_id FROM {ROUTE_TABLE}
+                        WHERE route_type IN ({str(route_type)[1:-1]})
+                    )
+                )
+                ORDER BY {SERVICE_ID__CALENDAR}
+                """
+            else:
+                routes = Routes.objects.filter(route_type__in=route_type)
+                trips = Trips.objects.filter(route_id__in=routes.values_list('route_id'))
+                queryset = queryset.filter(service_id__in=trips.values_list('service_id'))
+
+        # execute query
+        if raw_filter_used:
+            queryset = queryset.raw(query)
+        return queryset
+
+
 class CalendarDatesViewSet(viewsets.ModelViewSet):
 
     """
