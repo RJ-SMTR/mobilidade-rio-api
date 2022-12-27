@@ -68,6 +68,21 @@ class RoutesViewSet(viewsets.ModelViewSet):
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
     queryset = Routes.objects.all().order_by("route_id")
 
+    def get_queryset(self):
+        queryset = Routes.objects.all().order_by("route_id")
+
+        # fillter by route_id
+        route_id = self.request.query_params.get("route_id")
+        if route_id is not None:
+            queryset = queryset.filter(route_id=route_id).order_by("route_id")
+
+        # filter by route_type
+        route_type = self.request.query_params.get("route_type")
+        if route_type is not None:
+            queryset = queryset.filter(route_type=route_type).order_by("route_id")
+
+        return queryset
+
 
 class TripsViewSet(viewsets.ModelViewSet):
 
