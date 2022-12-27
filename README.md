@@ -167,7 +167,10 @@ python mobilidade_rio/manage.py migrate
 
 Pronto! Basta acessar a API e ver os dados (ex: <http://localhost:8010/stops/?stop_code=7KKY>).
 
-## Produção (ATUALIZAR)
+
+## Produção
+
+> TODO: Revisar e atualizar comandos
 
 ### Acessar o ambiente
 
@@ -195,6 +198,8 @@ no banco, acesse o ambiente de produção e rode:
 ```sh
 python manage.py loaddata fixtures/<seu-fixture>.json
 ```
+
+> loaddata é um comando do Django que carrega dados de um `fixture` no banco de dados.
 
 ### Como deletar dados
 
