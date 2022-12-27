@@ -197,12 +197,12 @@ class StopTimesViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         # get real col names and stuff
-        TRIP_ID_COL = StopTimes._meta.get_field("trip_id").column
-        STOP_ID_COL = StopTimes._meta.get_field("stop_id").column
+        TRIP_ID__STOPTIMES = StopTimes._meta.get_field("trip_id").column
+        STOP_ID__STOPTIMES = StopTimes._meta.get_field("stop_id").column
         STOPTIMES_TABLE = StopTimes._meta.db_table
 
         queryset = StopTimes.objects.all().order_by("trip_id")
-        query = f"SELECT * FROM {STOPTIMES_TABLE} ORDER BY {TRIP_ID_COL}"
+        query = f"SELECT * FROM {STOPTIMES_TABLE} ORDER BY {TRIP_ID__STOPTIMES}"
 
         # increase performance if no need to raw query
         raw_filter_used = False
@@ -215,8 +215,8 @@ class StopTimesViewSet(viewsets.ModelViewSet):
                 select="*",
                 from_target=STOPTIMES_TABLE,
                 target_is_query=False,
-                where_col_in={STOP_ID_COL: stop_id},
-                order_by=TRIP_ID_COL,
+                where_col_in={STOP_ID__STOPTIMES: stop_id},
+                order_by=TRIP_ID__STOPTIMES,
             )
             raw_filter_used = True
 
@@ -227,9 +227,9 @@ class StopTimesViewSet(viewsets.ModelViewSet):
             stop_id__all = stop_id__all.split(",")
             query = qu.q_cols_match_all(
                 table=STOPTIMES_TABLE,
-                unique_cols=[TRIP_ID_COL, STOP_ID_COL],
-                col_in={STOP_ID_COL: stop_id__all},
-                col_match_all=[TRIP_ID_COL]
+                unique_cols=[TRIP_ID__STOPTIMES, STOP_ID__STOPTIMES],
+                col_in={STOP_ID__STOPTIMES: stop_id__all},
+                col_match_all=[TRIP_ID__STOPTIMES]
             )
             raw_filter_used = True
 
@@ -242,8 +242,8 @@ class StopTimesViewSet(viewsets.ModelViewSet):
                 query = qu.q_col_in(
                     select="*",
                     from_target=query,
-                    where_col_in={TRIP_ID_COL: trip_id},
-                    order_by=TRIP_ID_COL,
+                    where_col_in={TRIP_ID__STOPTIMES: trip_id},
+                    order_by=TRIP_ID__STOPTIMES,
                 )
             else:
                 queryset = queryset.filter(trip_id__in=trip_id).order_by("trip_id")
@@ -260,16 +260,16 @@ class StopTimesViewSet(viewsets.ModelViewSet):
                 query = f"""
                 SELECT *
                 FROM ({query}) AS {qu.q_random_hash()}
-                WHERE {TRIP_ID_COL} IN (
+                WHERE {TRIP_ID__STOPTIMES} IN (
                     SELECT trip_id FROM {TRIPS_TABLE}
                     WHERE {ROUTE_ID_TRIPS} IN (
                         SELECT route_id FROM {ROUTE_TABLE}
                         WHERE route_type IN ({str(route_type)[1:-1]})
                     )
                 )
-                ORDER BY {TRIP_ID_COL}
+                ORDER BY {TRIP_ID__STOPTIMES}
                 """
-            
+
             else:
                 routes = Routes.objects.filter(route_type__in=route_type)
                 trips = Trips.objects.filter(route_id__in=routes.values_list('route_id'))
