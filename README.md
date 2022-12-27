@@ -287,6 +287,10 @@ Endereço: `/gtfs/frequencies`
 
 Parâmetros:
 
+* `trip_id` - Filtra por 1 ou mais trip_id
+  * Uso: `trip_id=1,2,3`
+  * Exemplo real: <http://localhost:8010/gtfs/frequencies/?trip_id=O0006AAA0AVDU01,O0007AAA0AVDU01>
+
 * `route_type` - Filtra por 1 ou mais route_type
   * Uso: `route_type=1,2,3`
   * Exemplo real: <http://localhost:8010/gtfs/frequencies/?route_type=2,3>
