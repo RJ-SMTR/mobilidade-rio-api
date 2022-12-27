@@ -283,7 +283,9 @@ Parâmetros:
   * Exemplo real: <http://localhost:8010/gtfs/stop_times/?trip_id=O0041CAA0AIDU01,O0309AAA0AVDU01&stop_id=2028O00023C0,5144O00512C9>
 
 
-## Branches do projeto
+## Gerenciando o projeto
+
+### Branches do projeto
 
 * **main**
   * _Produção_
@@ -316,8 +318,7 @@ Parâmetros:
   * Apenas uma nova funcionalidade por vez.
   * Ao terminar, deve-se fazer um PR para a respectiva branch, então deletar esta aqui.
 
-
-## Github Project
+### Github Project
 
 _Vulgo Board, Kanban ou Org._
 
