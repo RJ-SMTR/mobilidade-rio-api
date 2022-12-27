@@ -248,6 +248,33 @@ class StopTimesViewSet(viewsets.ModelViewSet):
             else:
                 queryset = queryset.filter(trip_id__in=trip_id).order_by("trip_id")
 
+        # filter by route_type
+        route_type = self.request.query_params.get("route_type")
+        if route_type is not None:
+            route_type = route_type.split(",")
+
+            if raw_filter_used:
+                ROUTE_TABLE = Routes._meta.db_table
+                ROUTE_ID_TRIPS = Trips._meta.get_field("route_id").column
+                TRIPS_TABLE = Trips._meta.db_table
+                query = f"""
+                SELECT *
+                FROM ({query}) AS {qu.q_random_hash()}
+                WHERE {TRIP_ID_COL} IN (
+                    SELECT trip_id FROM {TRIPS_TABLE}
+                    WHERE {ROUTE_ID_TRIPS} IN (
+                        SELECT route_id FROM {ROUTE_TABLE}
+                        WHERE route_type IN ({str(route_type)[1:-1]})
+                    )
+                )
+                ORDER BY {TRIP_ID_COL}
+                """
+            
+            else:
+                routes = Routes.objects.filter(route_type__in=route_type)
+                trips = Trips.objects.filter(route_id__in=routes.values_list('route_id'))
+                queryset = queryset.filter(trip_id__in=trips.values_list('trip_id'))
+
         # execute query
         if raw_filter_used:
             queryset = queryset.raw(query)
