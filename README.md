@@ -324,6 +324,64 @@ _Vulgo Board, Kanban ou Org._
 
 * [Board deste projeto](https://github.com/orgs/prefeitura-rio/projects/18/views/1)
 
+Aqui ficam todos os problemas, correções, melhorias, e afins, que precisam ser feitos.
+
+Cada card representa um futuro PR a ser feito. Cada PR deve seguir o padrão adotado nas [branches do projeto](#branches-do-projeto).
+
+### Criando um PR
+
+Normalmente um PR é criado da seguinte forma:
+
+1. Baseado no Card do Kanban, crie uma branch a partir da branch que você está trabalhando. (e.g. de  `dev` para `fix/bug1`)
+
+2. Subir os commits com as alterações.
+
+3. Criar um PR da branch nova para a original. (e.g. de `fix/bug1` para `dev`)
+
+No PR, preencha os seguintes campos:
+
+**Reviewers**: Nessa etapa verifique quem irá revisar o PR.
+
+**Assignees** serve para marcar quem está trabalhando no PR. (e.g. você mesmo)
+
+**Projects**: Marque o projeto que o PR está relacionado.
+
+Caso você não tenha acesso ao Project com os cards você pode fazer o seguinte:
+* Peça para sua equipe te adicionar como [membro da organização](https://github.com/orgs/RJ-SMTR/people), que é diferente de [membro do projeto](https://github.com/RJ-SMTR/mobilidade-rio-api/graphs/contributors).
+* Caso não seja possível, insira o link do card no PR e o link do PR no card:
+
+  PR:
+  ```md
+  Kanban aberto em: https://github.com/orgs/prefeitura-rio/projects/18/views/1
+  Nome: **[BE] Remover rotas noturnas em routes**
+  ---
+  ### Objetivo
+  * Tirar tudo que tiver `SN` em `route_short_name`
+
+  ### O que foi alterado?
+
+  * Uma configuração para filtrar rotas noturnas em settings.json
+  * Código para filtrar rotas noturnas na função `validate_col_values()`
+
+  ### Como usar
+  ...
+  ```
+
+  Card (Kanban):
+  ```md
+  PR aberto em: https://github.com/RJ-SMTR/mobilidade-rio-api/pull/105
+  ---
+  ### Objetivo
+  * Tirar tudo que tiver `SN` em `route_short_name`
+
+  ### O que foi feito
+  - [x] Criar branch para hotfix de `populate_db`
+  - [x] Dar commit em `dev-local`
+  - [ ] Enviar PR
+  ```
+
+4. Aguarde a revisão do PR.
+5. Mova o card do Kanban para a coluna `✅ Feito`.
 
 ## Problemas comuns
 
