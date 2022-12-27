@@ -21,7 +21,6 @@ Em parêntesis, o [modo de execução](#modo-de-execução) que utiliza o recurs
 
 * **Native**
   * _Desenvolvimento Local em servidor nativo_
-  * Também chamado de `native`
   * Para desenvolver com rapidez os recursos do servidor, ele é executado localmente na sua máquina, sem utilizar o Docker.
   * Se este não é o seu caso, use o `Local`.
 * **Local**
@@ -58,21 +57,21 @@ pip install -r mobilidade_rio/requirements-dev.txt
 
 ### Criando a aplicação
 
-Dev nativo:
+Native:
 ```bash
 python mobilidade_rio/manage.py makemigrations
 python mobilidade_rio/manage.py migrate
 python mobilidade_rio/manage.py runserver 8001
 ```
 
-Dev local:
+Local:
 ```bash
 docker-compose -f "mobilidade_rio/dev_local/docker-compose_local.yml" up --build
 ```
 
-Dev remoto:
+Dev, Staging, Prod:
 
-> _em construção, a saber se será necessário_
+> _em construção_
 
 ### Acessando a aplicação
 
