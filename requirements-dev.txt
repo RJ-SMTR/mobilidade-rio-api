@@ -1,4 +1,3 @@
-pandas
 psycopg2-binary
 Django<=3.1.99
 django-extensions<=3.1.99
@@ -10,3 +9,9 @@ psycopg2-binary<=2.9.99
 django-cors-headers<=3.7.99
 autopep8
 pylint
+
+# populate_db
+pandas
+
+# jupyter
+ipykernel
