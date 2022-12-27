@@ -75,15 +75,29 @@ Dev, Staging, Prod:
 
 ### Acessando a aplicação
 
-Para acessar 
-* URLs for pontos are in `<site>/gtfs/<entity>` prefix;
-  > Example:  
-  > Use ✔️ `http://localhost:8010/gtfs/routes`  
-  > instead of ❌ `http://localhost:8010/routes`
+URL base para acessar a aplicação:
 
-Os containers `django_hd` (API) e `postgres_hd` (banco) são criados a
-partir desse comando. Você pode acessar a API em:
-`http://localhost:8010`
+* Nativo: `localhost:8001`
+* Local: `localhost:8010`
+* Dev: `https://api.dev.mobilidade.rio`
+
+
+Endpoints:
+
+* `<URL base>` - API Root com todos os endpoints disponíveis
+* `<URL base>/gtfs` - Endpoints para acessar os dados do GTFS
+* `<URL base>/predictor` - Endpoints para acessar os dados do predictor
+
+
+Acessando containers:
+
+> No Docker ou Kubernetes, são criados os containers `django_hd` (API) e `postgres_hd` (banco).
+
+`local` e `dev`:
+
+```bash
+docker exec -it django_hd bash
+```
 
 Para acessar o banco via linha de comando (ainda está vazio!), basta rodar:
 
@@ -93,12 +107,12 @@ docker exec -it postgres_hd psql -U postgres
 
 > Veja mais sobre os comandos do psql [aqui](https://www.postgresql.org/docs/9.1/app-psql.html).
 
-> Para resetar a aplicação do zero, remova os containers e volumes
-> associados:
->
-> ```sh
-> docker-compose -f ./mobilidade_rio/docker-compose.yml down -v && docker image prune -f
-> ```
+Para resetar a aplicação do zero, remova os containers e volumes
+associados:
+
+```sh
+docker-compose -f ./mobilidade_rio/docker-compose.yml down -v && docker image prune -f
+```
 
 ### Populando o banco
 
