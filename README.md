@@ -209,12 +209,52 @@ Sequence.objects.filter(trip=<trip_id>).delete()
 
 Todos os modelos existentes na API correespondem a [estas classes](/mobilidade_rio/pontos/models.py).
 
-
-
 O que NÃO pode alterar ali sem quebrar o Kubernetes:
 
 * Dockerfile
 * setup.sh
+
+## Endpoints
+
+Os diagramas dos endpoints (e ) [here](https://miro.com/app/board/o9J_lqIY7Eg=/).
+> Os diagramas estão em português.
+
+### Pontos (gtfs)
+
+Todos os endpoints estão no endereço `/gtfs`.
+
+#### stop_times
+
+Endereço: `/gtfs/stop_times`
+
+Parâmetros:
+
+* `trip_id` - Filtra por 1 ou mais trip_id
+  * Uso: `trip_id=1,2,3`
+  * Exemplo real: <http://localhost:8010/gtfs/stop_times/?trip_id=O0041CAA0AIDU01,O0309AAA0AVDU01>
+
+* `stop_id` - Filtra por 1 ou mais stop_id
+  * Uso: `stop_id=1,2,3`
+  * Exemplo real: <http://localhost:8010/gtfs/stop_times/?stop_id=2028O00023C0,5144O00512C9>
+
+* `stop_id__all` - Filtra por 1 ou mais stop_id, onde as trips combinam com todos os stops passados.
+  > **Por exemplo:**  
+  > Se stop_id__all = `1`, `2`, `3` retorna as ips > `a`, `b`.  
+  > **O resultado será:**
+  > | stop_id | trip_id |
+  > | --- | :--|
+  > |1|a|
+  > |1|b|
+  > |2|a|
+  > |2|b|
+  > |3|a|
+  > |3|b|
+  * Uso: `stop_id__all=1,2,3`
+  * Exemplo real: <http://localhost:8010/gtfs/stop_times/?stop_id__all=2028O00023C0,5144O00512C9>
+
+* É possível combinar todos os parâmetros acima.
+  * Exemplo: `trip_id=a,b&stop_id=1,2,3&stop_id__all=2,3,4`
+  * Exemplo real: <http://localhost:8010/gtfs/stop_times/?trip_id=O0041CAA0AIDU01,O0309AAA0AVDU01&stop_id=2028O00023C0,5144O00512C9>
 
 ## Problemas comuns
 
