@@ -99,7 +99,13 @@ class TripsViewSet(viewsets.ModelViewSet):
 
         if trip_id is not None:
             queryset = queryset.filter(trip_id=trip_id)
-        return queryset
+
+        # filter by route_type
+        route_type = self.request.query_params.get("route_type")
+        if route_type is not None:
+            route_type = route_type.split(",")
+            routes = Routes.objects.filter(route_type__in=route_type)
+            queryset = queryset.filter(route_id__in=routes.values_list('route_id'))
 
         # if code is not None:
         #     qrcode: QrCode = None
@@ -109,6 +115,8 @@ class TripsViewSet(viewsets.ModelViewSet):
         #         return Trip.objects.none()
         #     sequence: BaseManager = Stop_times.objects.filter(stop_id=qrcode.stop_id)
         #     queryset = queryset.filter(trip_id__in=sequence.values_list('trip_id'))
+
+        return queryset
 
 
 class ShapesViewSet(viewsets.ModelViewSet):
