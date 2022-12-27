@@ -170,27 +170,12 @@ class StopTimesViewSet(viewsets.ModelViewSet):
         if stop_id__all is not None:
             stop_id__all = self.request.query_params.get("stop_id__all")
             stop_id__all = stop_id__all.split(",")
-            str_stop_id__all = "(" + ",".join([f"'{i}'" for i in stop_id__all]) + ")"
-
-            # trips passing through all stops
-            q_trips = [
-                f"(SELECT DISTINCT {TRIP_ID_COL} FROM {STOPTIMES_TABLE} "
-                + f"WHERE {STOP_ID_COL} = '{s}')"
-                for s in stop_id__all
-            ]
-            q_trips = " INTERSECT ".join(q_trips)
-
-            # select unique combinations if stop_id in in <stop_ids>
-            query = f"""
-            SELECT * FROM (
-                SELECT *,
-                ROW_NUMBER() OVER (PARTITION BY {TRIP_ID_COL}, {STOP_ID_COL} ORDER BY id) AS row_num
-                FROM {STOPTIMES_TABLE}
-                WHERE {STOP_ID_COL} IN {str_stop_id__all}
-                AND {TRIP_ID_COL} IN ({q_trips})
-            ) AS q_unique_cols
-            WHERE row_num = 1
-            """
+            query = qu.q_cols_match_all(
+                table=STOPTIMES_TABLE,
+                unique_cols=[TRIP_ID_COL, STOP_ID_COL],
+                col_in={STOP_ID_COL: stop_id__all},
+                col_match_all=[TRIP_ID_COL]
+            )
             raw_filter_used = True
 
         # trip_id
