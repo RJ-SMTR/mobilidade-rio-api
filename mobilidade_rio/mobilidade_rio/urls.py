@@ -3,6 +3,8 @@ from django.urls import include, path
 from django.contrib import admin
 from rest_framework import routers
 
+#import rest_framework
+
 from mobilidade_rio.pontos import views as gtfs
 from mobilidade_rio.predictor import views as pred
 
@@ -16,10 +18,14 @@ gtfs_router.register(r"shapes", gtfs.ShapesViewSet)
 gtfs_router.register(r"stops", gtfs.StopsViewSet, basename="stops")
 gtfs_router.register(r"stop_times", gtfs.StopTimesViewSet, basename="stop_times")
 gtfs_router.register(r"frequencies", gtfs.FrequenciesViewSet)
+gtfs_router.register(r"test", gtfs.FrequenciesViewSet)
+#gtfs_router.register(r"test1", pred.PredictorView)
+#gtfs_router.register(r"pred", pred.PredictorView, basename="pred")
+
 
 pred_router = routers.DefaultRouter()
 pred_router.register(r"shape_with_stops", pred.ShapeWithStopsViewSet,basename="shape_with_stops")
-pred_router.register(r"predictor/pred/", pred.PredictorView.as_view())
+#pred_router.register(r"predictor/pred/", pred.PredictorView.as_view())
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
@@ -27,10 +33,8 @@ urlpatterns = [
     path("gtfs/", include(gtfs_router.urls)),
     path("predictor/", include(pred_router.urls)),
     path("admin/", admin.site.urls),
+    url("predictor/pred/", pred.PredictorView.as_view()),
     path("api-auth/", include("rest_framework.urls", namespace="rest_framework")),
-    
-    url(r'predictor/pred/', pred.PredictorView.as_view()),
-
     url(r"^auth/", include("djoser.urls")),
     url(r"^auth/", include("djoser.urls.authtoken")),
 ]

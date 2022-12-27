@@ -16,9 +16,10 @@ services:
     environment:
       - DJANGO_SETTINGS_MODULE=mobilidade_rio.settings.local
     # command: python manage.py runserver 0.0.0.0:8000
+    env_file:
+      - api.env
     command: >
       bash -c "
-        echo 'DOCKER_ENV: $TST_DOCKERFILE_ENV'
         python manage.py makemigrations --noinput 
         python manage.py migrate
         python manage.py runserver 0.0.0.0:8000

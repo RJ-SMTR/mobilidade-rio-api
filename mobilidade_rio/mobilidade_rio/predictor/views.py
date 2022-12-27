@@ -1,7 +1,9 @@
 import json
 
-from rest_framework.views import APIView
+from rest_framework.serializers import Serializer
+from rest_framework.response import Response
 from rest_framework import viewsets
+from rest_framework.views import APIView
 from rest_framework import permissions
 from rest_framework.response import Response
 
@@ -18,12 +20,13 @@ import pandas as pd
 
 #http://localhost:8010/predictor/pred/?trip_names=22,41,50&stops=4128BC0005U2,4128BO0017U2
 class PredictorView(APIView):
+    
     def get(self, request):
         all_next_stops = pd.DataFrame()
         stop_list = []
         trip_short_name_list = []
         has_trip = request.GET.get('trip_names', '')!=''
-        has_stop = request.GET.get('trip_names', '')!=''
+        has_stop = request.GET.get('stops', '')!=''
 
         if has_trip:
             trip_short_name_list = request.GET.get('trip_names', '')
@@ -41,7 +44,7 @@ class PredictorView(APIView):
             pred = pred[["trip_id","chegada", "stop_id","bus_id"]]
  
         return Response(json.loads(pred.to_json(orient="records")))
-
+    
 
 
 class ShapeWithStopsViewSet(viewsets.ModelViewSet):
@@ -77,7 +80,7 @@ class ShapeWithStopsViewSet(viewsets.ModelViewSet):
         
         query = q_shapes_stops
 
-        print("[LOG] query: ", query)
+        #print("[LOG] query: ", query)
         queryset = ShapeWithStops.objects.raw(query)
         if not queryset:
             # return empty queryset

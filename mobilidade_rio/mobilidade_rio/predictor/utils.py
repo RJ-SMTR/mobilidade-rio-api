@@ -14,39 +14,7 @@ import requests
 current_dir = os.path.dirname(__file__)
 TRIP_ID_INDICE_SENTIDO = 11
 
-def query_gcp(client, query_str):
-    query_job = client.query(query_str)
-
-    response = []
-    for row in query_job:
-        response.append(dict(row))
-
-    return response
-
-
-def transform_datetime_columns(df, columns):
-    for col in columns:
-        df[col] = pd.to_datetime(df[col])
-    return df
-
-
-def get_points_from_coords(df, col_longitude, col_latitude):
-    """ A partir de um df com colunas de lat e long, criar uma série de POINTS """
-
-    points_series = df.apply(lambda row: f"POINT({row[col_longitude]} {row[col_latitude]})", axis=1)
-    return points_series
-
-
-def transform_geopandas_df(df, points_columns, crs='epsg:31983'):
-    """ Transforma um pandas df em um geopandas df, aplicando wkt nas colunas e o mapeamento crs especificado """
-
-    for col in points_columns:
-        df[col] = df[col].apply(wkt.loads)
-
-    gpd.GeoDataFrame(df, crs=crs)
-    return df
-
-
+ 
 def map_direction(itinerary_name):
     """ Given an itinerary name, return if 'IDA' or 'VOLTA' """
 
@@ -57,11 +25,6 @@ def map_direction(itinerary_name):
         return 'V'
     else:
         return None
-
-
-def distancias_ate_ponto(lista_coords, ponto_coord):
-    """ Calcula a distancia por haversine de uma lista de coordenadas (em tuplas) e um ponto """
-    return pd.Series([haversine(coord, ponto_coord, unit='m') for coord in lista_coords])
 
 class Predictor:
 
@@ -82,10 +45,8 @@ class Predictor:
         
     def capture_real_time_data(self,trip_short_name_list, has_trip):
         """ Captura os dados em tempo real da API do GTFS """
-
-
-              
-        os.environ.get('API_REAL_TIME')
+            
+        url=os.environ.get('API_REAL_TIME')
         x=requests.get(url)
         real_time = pd.read_json(x.text)
 
@@ -302,7 +263,7 @@ class Predictor:
             trip_stops = self.trip_stops[self.trip_stops.trip_id == trip_id]
             next_stops, residual_distance, previous_stop_id = self.get_next_stops(latitude, longitude, trip_stops)
         except:
-             return pd.DataFrame()
+            return pd.DataFrame()
 
         if len(next_stops) == 0:
             return pd.DataFrame()
@@ -346,7 +307,7 @@ class Predictor:
     
 
     def get_model(self):
-        # TODO: uso apenas momentaneo
+        # TODO: depende do pipeline de modelo
         stops_path = os.path.join(current_dir, f'Modelos/Mediana/geral.parquet')
         modelo = pd.read_parquet(stops_path, engine='fastparquet')
         self.model = modelo
