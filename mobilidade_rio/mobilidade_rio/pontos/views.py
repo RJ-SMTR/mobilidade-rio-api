@@ -174,6 +174,15 @@ class StopsViewSet(viewsets.ModelViewSet):
             stop_code = stop_code.split(",")
             queryset = queryset.filter(stop_code__in=stop_code).order_by("stop_id")
 
+        # filter by route_type
+        route_type = self.request.query_params.get("route_type")
+        if route_type is not None:
+            route_type = route_type.split(",")
+            routes = Routes.objects.filter(route_type__in=route_type)
+            trips = Trips.objects.filter(route_id__in=routes.values_list('route_id'))
+            stoptimes = StopTimes.objects.filter(trip_id__in=trips.values_list('trip_id'))
+            queryset = queryset.filter(stop_id__in=stoptimes.values_list('stop_id'))
+
         return queryset
 
 
