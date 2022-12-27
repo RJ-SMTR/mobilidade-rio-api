@@ -101,16 +101,16 @@ def q_col_in(
         return f"SELECT {select} \nFROM {from_target} \nWHERE " + col_in + order_by
 
 
-def q_unique_cols(
+def q_cols_match_all(
     table,
     unique_cols: list,
-    select: list = "*",
+    col_match_all: list,
     col_in: dict = None,
-    col_match_all: list = None,
+    select: list = "*",
     q_conditions: str = None,
 ):
     """
-    v0.2 - 2022/12/26
+    v0.3 - 2022/12/26
     Get unique combinations of columns and select other columns
 
     Parameters
@@ -118,15 +118,16 @@ def q_unique_cols(
         unique_cols : list | str
         select_cols : list | str
 
+        col_match_all : dict -> {str: list, ...}
+            Filter by cols that match all conditions individually
+
         col_in (optional) : dict -> {str: list, ...}
             Filter if each col has a list of values
             Recommended way to filter in this query
 
-        col_match_all (optional) : dict -> {str: list, ...}
-            Filter by cols that match all conditions individually
-
         q_conditions (optional) : str
             Additional conditions to include in query
+            TODO: filter each condition individually too
     """
 
     # if cols is a list, convert to string
