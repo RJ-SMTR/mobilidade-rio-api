@@ -5,6 +5,7 @@ pontos.views - to serve API endpoints
 from rest_framework import viewsets
 from rest_framework import permissions
 from mobilidade_rio.pontos.models import *
+import mobilidade_rio.utils.query_utils as qu
 from .serializers import *
 from .paginations import LargePagination
 
@@ -135,6 +136,7 @@ class StopTimesViewSet(viewsets.ModelViewSet):
     """
     API endpoint to show stop_times data
     """
+
     serializer_class = StopTimesSerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
 
@@ -145,46 +147,70 @@ class StopTimesViewSet(viewsets.ModelViewSet):
         STOPTIMES_TABLE = StopTimes._meta.db_table
 
         queryset = StopTimes.objects.all().order_by("trip_id")
-        stop_id = None
-        # get stop_id from query params
-        if 'stop_id' in self.request.query_params:
-            stop_id = self.request.query_params.get('stop_id')
+        query = f"SELECT * FROM {STOPTIMES_TABLE} ORDER BY {TRIP_ID_COL}"
 
-        if stop_id is not None and len(stop_id):
-            # get multiple stop_ids
+        # increase performance if no need to raw query
+        raw_filter_used = False
 
-            # variables
-            t_stoptimes = 'pontos_stoptimes'
-            stop_ids = stop_id.split(",")
-            stop_ids_formatted = tuple(stop_ids)
-            if len(stop_ids) == 1:
-                stop_ids_formatted = f"('{stop_id}')"
+        # stop_id
+        stop_id = self.request.query_params.get("stop_id")
+        if stop_id is not None:
+            stop_id = stop_id.split(",")
+            query = qu.q_col_in(
+                select="*",
+                from_target=STOPTIMES_TABLE,
+                target_is_query=False,
+                where_col_in={STOP_ID_COL: stop_id},
+                order_by=TRIP_ID_COL,
+            )
+            raw_filter_used = True
+
+        # get stop_id_all
+        stop_id__all = self.request.query_params.get("stop_id__all")
+        if stop_id__all is not None:
+            stop_id__all = self.request.query_params.get("stop_id__all")
+            stop_id__all = stop_id__all.split(",")
+            str_stop_id__all = "(" + ",".join([f"'{i}'" for i in stop_id__all]) + ")"
+
+            # trips passing through all stops
+            q_trips = [
+                f"(SELECT DISTINCT {TRIP_ID_COL} FROM {STOPTIMES_TABLE} "
+                + f"WHERE {STOP_ID_COL} = '{s}')"
+                for s in stop_id__all
+            ]
+            q_trips = " INTERSECT ".join(q_trips)
 
             # select unique combinations if stop_id in in <stop_ids>
-            q_unique_cols = f"""
+            query = f"""
             SELECT * FROM (
-                SELECT id, trip_id_id, stop_id_id, arrival_time, departure_time,
-                ROW_NUMBER() OVER (PARTITION BY trip_id_id, stop_id_id ORDER BY id) AS row_num
-                FROM pontos_stoptimes
-                WHERE (trip_id_id, stop_id_id, arrival_time, departure_time) IN (
-                    SELECT DISTINCT trip_id_id, stop_id_id, arrival_time, departure_time FROM {t_stoptimes}
-                    WHERE stop_id_id IN {stop_ids_formatted}
-                )
+                SELECT *,
+                ROW_NUMBER() OVER (PARTITION BY {TRIP_ID_COL}, {STOP_ID_COL} ORDER BY id) AS row_num
+                FROM {STOPTIMES_TABLE}
+                WHERE {STOP_ID_COL} IN {str_stop_id__all}
+                AND {TRIP_ID_COL} IN ({q_trips})
             ) AS q_unique_cols
             WHERE row_num = 1
             """
-            query = q_unique_cols
+            raw_filter_used = True
 
-            # execute query
+        # trip_id
+        trip_id = self.request.query_params.get("trip_id")
+        if trip_id is not None:
+            trip_id = trip_id.split(",")
+
+            if raw_filter_used:
+                query = qu.q_col_in(
+                    select="*",
+                    from_target=query,
+                    where_col_in={TRIP_ID_COL: trip_id},
+                    order_by=TRIP_ID_COL,
+                )
+            else:
+                queryset = queryset.filter(trip_id__in=trip_id).order_by("trip_id")
+
+        # execute query
+        if raw_filter_used:
             queryset = queryset.raw(query)
-
-        trip_id = None
-        # get trip_id from query params
-        if 'trip_id' in self.request.query_params:
-            trip_id = self.request.query_params.get('trip_id')
-            queryset = queryset.filter(trip_id=trip_id)
-
-
         return queryset
 
 
