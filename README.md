@@ -282,7 +282,19 @@ Parâmetros:
   * Exemplo: `trip_id=a,b&stop_id=1,2,3&stop_id__all=2,3,4`
   * Exemplo real: <http://localhost:8010/gtfs/stop_times/?trip_id=O0041CAA0AIDU01,O0309AAA0AVDU01&stop_id=2028O00023C0,5144O00512C9>
 
+## Apps
 
+### Utils
+
+Contém funções úteis usadas em outros apps.
+
+**query_utils**
+
+Funções para separar a lógica de queries do código e facilitar a manutenção em queries complexas.
+
+Sempre que possível evite usar queries cruas, use o ORM do Django. Caso contrário, use ou crie uma função em `query_utils`.
+
+`query_utils.ipynb` é um notebook feito para testar as funções de `query_utils`. Testado na [extensão do VSCode](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter).
 ## Gerenciando o projeto
 
 ### Branches do projeto
