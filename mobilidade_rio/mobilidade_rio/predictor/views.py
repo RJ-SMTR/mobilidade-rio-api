@@ -8,6 +8,7 @@ import mobilidade_rio.pontos.models as gtfs_models
 from django.db import connection
 # import APIView
 from rest_framework.views import APIView
+import mobilidade_rio.utils.query_utils as qu
 
 
 class ShapeWithStopsView(APIView):
@@ -157,6 +158,21 @@ class ShapeWithStopsViewSet(viewsets.ModelViewSet):
 
             # execute query
             # queryset = queryset.raw(query)
+
+        # get route_type
+        route_type = None
+        if 'route_type' in self.request.query_params:
+            route_type = self.request.query_params.get('route_type')
+            route_type = route_type.split(",")
+            routes = f"""
+                SELECT route_id FROM pontos_routes
+                WHERE route_type IN ({','.join(route_type)})
+            """
+            query = f"""
+                SELECT * FROM ({query}) AS {qu.q_random_hash("q_shapes_stoptimes")}
+                WHERE route_id IN ({routes})
+            """
+
         return queryset
 
 class PredictorViewSet(viewsets.ModelViewSet):
