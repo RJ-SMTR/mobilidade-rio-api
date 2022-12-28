@@ -249,6 +249,24 @@ Os diagramas dos endpoints (e ) [here](https://miro.com/app/board/o9J_lqIY7Eg=/)
 
 Todos os endpoints estão no endereço `/gtfs`.
 
+#### stops
+
+Endereço: `/gtfs/stops`
+
+Parâmetros:
+
+* `stop_code` - Filtra por 1 ou mais stop_code
+  * Uso: `stop_code=1,2,3`
+  * Exemplo real: <http://localhost:8010/gtfs/stops/?stop_code=1K84,1EBQ>
+
+* `stop_name` - Filtra por 1 ou mais stop_name, não diferencia maiúsculas de minúsculas
+  * Uso: `stop_name=AB,cd,Ef`
+  * Exemplo real: <http://localhost:8010/gtfs/stops/?stop_name=term,AVen>
+
+* `stop_id` - Filtra por 1 ou mais stop_id
+  * Uso: `stop_id=1,2,3`
+  * Exemplo real: <http://localhost:8010/gtfs/stops/?stop_id=2028O00023C0,5144O00512C9>
+
 #### stop_times
 
 Endereço: `/gtfs/stop_times`
