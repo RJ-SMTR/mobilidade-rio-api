@@ -2,6 +2,12 @@
 pontos.views - to serve API endpoints
 """
 
+# stop_code
+import operator
+from functools import reduce
+from django.db.models import Q
+from rest_framework.exceptions import ValidationError
+# etc
 from rest_framework import viewsets
 from rest_framework import permissions
 from mobilidade_rio.pontos.models import *
@@ -118,15 +124,41 @@ class StopsViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         queryset = Stops.objects.all().order_by("stop_id")
-        stop_code = self.request.query_params.get("stop_id")
-        if stop_code is not None:
-            queryset = queryset.filter(stop_id=stop_code).order_by("stop_id")
 
+        # filter by stop_id
+        stop_id = self.request.query_params.get("stop_id")
+        if stop_id is not None:
+            queryset = queryset.filter(stop_id=stop_id).order_by("stop_id")
+
+        # filter by stop_code
         stop_code = self.request.query_params.get("stop_code")
         if stop_code is not None:
             # split comma
             stop_code = stop_code.split(",")
             queryset = queryset.filter(stop_code__in=stop_code).order_by("stop_id")
+
+        # filter by stop_name
+        stop_name = self.request.query_params.get("stop_name")
+        if stop_name is not None:
+            stop_name = stop_name.split(",")
+
+            # if any stop_name len is < 4, return custom error message
+            for name in stop_name:
+                if len(name) < 4:
+                    raise ValidationError(
+                        {"stop_name": "stop_name must be at least 4 characters long"}
+                        )
+
+            # filter if any stop_name is substring, ignore case
+            queryset = queryset.filter(
+                reduce(
+                    operator.or_,
+                    (Q(stop_name__icontains=name) for name in stop_name)
+                    )
+                ).order_by("stop_id")
+
+            # limit final result to 10
+            # queryset = queryset[:10]
 
         return queryset
 
