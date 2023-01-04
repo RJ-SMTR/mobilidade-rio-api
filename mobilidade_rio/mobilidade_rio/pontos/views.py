@@ -245,12 +245,11 @@ class StopTimesViewSet(viewsets.ModelViewSet):
             trip_id = trip_id.split(",")
 
             if raw_filter_used:
-                query = qu.q_col_in(
-                    select="*",
-                    from_target=query,
-                    where_col_in={TRIP_ID_COL: trip_id},
-                    order_by=TRIP_ID_COL,
-                )
+                query = f"""
+                SELECT * FROM ({query}) AS {qu.q_random_hash()}
+                WHERE {TRIP_ID_COL} IN ({str(list(trip_id))[1:-1]})
+                ORDER BY {TRIP_ID_COL}
+                """
             else:
                 queryset = queryset.filter(
                     trip_id__in=trip_id).order_by("trip_id")
