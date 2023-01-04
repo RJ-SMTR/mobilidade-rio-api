@@ -212,6 +212,7 @@ class StopTimesViewSet(viewsets.ModelViewSet):
                 stop_id__in=stop_id).values_list("location_type", flat=True)
 
             # prevent error on searching inexistent stop_id
+            # TODO: filter stop_id or children individually
             if len(location_type):
                 # if station has no child, return searched stations
                 if location_type[0] in (0, None):
