@@ -200,7 +200,6 @@ class StopTimesViewSet(viewsets.ModelViewSet):
         # get stop_id_all
         stop_id__all = self.request.query_params.get("stop_id__all")
         if stop_id__all is not None:
-            stop_id__all = self.request.query_params.get("stop_id__all")
             stop_id__all = stop_id__all.split(",")
             query = qu.q_cols_match_all(
                 table=STOPTIMES_TABLE,
