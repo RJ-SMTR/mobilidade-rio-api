@@ -201,11 +201,12 @@ class StopTimesViewSet(viewsets.ModelViewSet):
         stop_id__all = self.request.query_params.get("stop_id__all")
         if stop_id__all is not None:
             stop_id__all = stop_id__all.split(",")
+            # filter all trips that pass in all stops
             query = qu.q_cols_match_all(
                 table=STOPTIMES_TABLE,
                 unique_cols=[TRIP_ID_COL, STOP_ID_COL],
                 col_in={STOP_ID_COL: stop_id__all},
-                col_match_all=[TRIP_ID_COL]
+                col_match_all=[TRIP_ID_COL],
             )
             raw_filter_used = True
 
