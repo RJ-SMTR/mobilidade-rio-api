@@ -1,7 +1,6 @@
 """
-gtfs_queries.py
-Helpers to query gtfs data from database, and basic functions to help with queries
-All raw query utils, not only gtfs related, because they are used in gtfs queries
+query_utils.py
+Basic helpers to query gtfs data from database, and basic functions to help with queries
 """
 import os
 import hashlib
@@ -36,81 +35,17 @@ def q_limit(query: str, limit: int, external: bool = False):
         return f"{query} \nLIMIT {limit}"
 
 
-def q_col_in(
-    where_col_in: dict,
-    select: list = None,
-    from_target: str = None,
-    order_by: list = None,
-    target_is_query: bool = True,
-) -> str:
-    """
-    get_col_in v0.2 - 2022/12/26
-    Select target if cols have values
-
-    Params
-        select (list|str): list of columns to select
-            '*' is accepted as value
-            Example: ["col1", "col2", "col3"]
-            SQL: SELECT col1, col2, col3
-
-        from_table (str): table name to select and get column names
-
-        where_col_in (dict): dict with columns and values to filter
-            Dict format: {str: list, ...}
-            Example: {"col1": ["val1", '2', 14], "col2": ["val3"]}
-            SQL: col1 IN ('val1', '2', 14) AND col2 IN ('val3')
-
-        order_by (list|str): list of columns to order by
-
-        target_is_query (bool): if True, will wrap from_target in a subquery
-
-    Returns
-        if select, from_target, where_col_in are not None:
-            SELECT {select} FROM {from_target} WHERE {where_col_in} ...
-        else:
-            <col1> IN (<values>) AND <col2> IN (<values>), ...
-
-    Obs
-        you need to pass the real db table and cols' names
-    """
-
-    # validate params
-    if isinstance(select, list):
-        select = ", ".join(select)
-    if target_is_query:
-        from_target = f"({from_target}) as {q_random_hash()}"
-
-    if order_by:
-        if isinstance(order_by, (list, tuple)):
-            order_by = ", ".join(order_by)
-        order_by = f" \nORDER BY {order_by}"
-    else:
-        order_by = ""
-
-    col_in = " \nAND ".join(
-        [
-            f"{col} IN ({str(list(values))[1:-1]})"
-            for col, values in where_col_in.items()
-        ]
-    )
-
-    # build query
-    if None in (select, from_target, where_col_in):
-        return col_in
-    else:
-        return f"SELECT {select} \nFROM {from_target} \nWHERE " + col_in + order_by
-
-
 def q_cols_match_all(
     table,
     unique_cols: list,
     col_match_all: list,
     col_in: dict = None,
     select: list = "*",
+    table_is_query: bool = False,
     q_conditions: str = None,
 ):
     """
-    v0.3 - 2022/12/26
+    v0.4 - 2023/01/04
     Get unique combinations of columns and select other columns
 
     Parameters
@@ -124,6 +59,9 @@ def q_cols_match_all(
         col_in (optional) : dict -> {str: list, ...}
             Filter if each col has a list of values
             Recommended way to filter in this query
+
+        table_is_query (optional) : bool
+            If True, will wrap table in a subquery
 
         q_conditions (optional) : str
             Additional conditions to include in query
@@ -144,6 +82,10 @@ def q_cols_match_all(
 
     # validate q_conditions
     q_conditions = "\n" + " " * 12 + f"AND {q_conditions}" if q_conditions else ""
+
+    # wrap table in a subquery
+    if table_is_query:
+        table = f"({table}) as {q_random_hash()}"
 
     # filter col_match_all
     if None not in (col_match_all, col_in):

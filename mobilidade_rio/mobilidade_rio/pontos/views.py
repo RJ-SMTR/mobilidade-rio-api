@@ -5,8 +5,9 @@ pontos.views - to serve API endpoints
 # stop_code
 import operator
 from functools import reduce
-from django.db.models import Q
+import django.db.models
 from rest_framework.exceptions import ValidationError
+
 # etc
 from rest_framework import viewsets
 from rest_framework import permissions
@@ -15,9 +16,13 @@ import mobilidade_rio.utils.query_utils as qu
 from .serializers import *
 from .paginations import LargePagination
 
+# import connector to query directly from database
+from django.db import connection
+
+cursor = connection.cursor()
+
 # from .utils import get_distance, safe_cast
 # from .constants import constants
-
 
 class AgencyViewSet(viewsets.ModelViewSet):
 
@@ -176,39 +181,64 @@ class StopTimesViewSet(viewsets.ModelViewSet):
         # get real col names and stuff
         TRIP_ID_COL = StopTimes._meta.get_field("trip_id").column
         STOP_ID_COL = StopTimes._meta.get_field("stop_id").column
-        STOPTIMES_TABLE = StopTimes._meta.db_table
+        PARENT_STATION__STOPS = Stops._meta.get_field("parent_station").column
 
         queryset = StopTimes.objects.all().order_by("trip_id")
-        query = f"SELECT * FROM {STOPTIMES_TABLE} ORDER BY {TRIP_ID_COL}"
+        query = queryset.query
 
         # increase performance if no need to raw query
         raw_filter_used = False
+
+        # get stop_id_all
+        stop_id__all = self.request.query_params.get("stop_id__all")
+        if stop_id__all is not None:
+            stop_id__all = stop_id__all.split(",")
+            # filter all trips that pass in all stops
+            query = qu.q_cols_match_all(
+                table=queryset.query, table_is_query=True,
+                unique_cols=[TRIP_ID_COL, STOP_ID_COL],
+                col_in={STOP_ID_COL: stop_id__all},
+                col_match_all=[TRIP_ID_COL],
+            )
+            raw_filter_used = True
 
         # stop_id
         stop_id = self.request.query_params.get("stop_id")
         if stop_id is not None:
             stop_id = stop_id.split(",")
-            query = qu.q_col_in(
-                select="*",
-                from_target=STOPTIMES_TABLE,
-                target_is_query=False,
-                where_col_in={STOP_ID_COL: stop_id},
-                order_by=TRIP_ID_COL,
-            )
-            raw_filter_used = True
 
-        # get stop_id_all
-        stop_id__all = self.request.query_params.get("stop_id__all")
-        if stop_id__all is not None:
-            stop_id__all = self.request.query_params.get("stop_id__all")
-            stop_id__all = stop_id__all.split(",")
-            query = qu.q_cols_match_all(
-                table=STOPTIMES_TABLE,
-                unique_cols=[TRIP_ID_COL, STOP_ID_COL],
-                col_in={STOP_ID_COL: stop_id__all},
-                col_match_all=[TRIP_ID_COL]
-            )
-            raw_filter_used = True
+            # filter location_type
+            location_type = Stops.objects.filter(
+                stop_id__in=stop_id).values_list("location_type", flat=True)
+
+            # prevent error on searching inexistent stop_id
+            # TODO: filter stop_id or children individually
+            if len(location_type):
+                # if station is parent_station, return children
+                if location_type[0] == 1:
+                    if raw_filter_used:
+                        query = f"""
+                        SELECT * FROM ({query}) AS {qu.q_random_hash()}
+                        WHERE {STOP_ID_COL} IN (
+                            SELECT stop_id FROM pontos_stops
+                            WHERE {PARENT_STATION__STOPS} IN ({str(list(stop_id))[1:-1]})
+                        )
+                        """
+                    else:
+                        queryset = queryset.filter(
+                            stop_id__in=Stops.objects.filter(
+                                parent_station__in=stop_id).values_list("stop_id", flat=True)
+                        )
+                # if station has no child, return searched stations
+                # if location_type[0] in (0, None):
+                else:
+                    if raw_filter_used:
+                        query = f"""
+                        SELECT * FROM ({query}) AS {qu.q_random_hash()}
+                        WHERE {STOP_ID_COL} IN ({str(list(stop_id))[1:-1]})
+                        """
+                    else:
+                        queryset = queryset.filter(stop_id__in=stop_id)
 
         # trip_id
         trip_id = self.request.query_params.get("trip_id")
@@ -216,14 +246,14 @@ class StopTimesViewSet(viewsets.ModelViewSet):
             trip_id = trip_id.split(",")
 
             if raw_filter_used:
-                query = qu.q_col_in(
-                    select="*",
-                    from_target=query,
-                    where_col_in={TRIP_ID_COL: trip_id},
-                    order_by=TRIP_ID_COL,
-                )
+                query = f"""
+                SELECT * FROM ({query}) AS {qu.q_random_hash()}
+                WHERE {TRIP_ID_COL} IN ({str(list(trip_id))[1:-1]})
+                ORDER BY {TRIP_ID_COL}
+                """
             else:
-                queryset = queryset.filter(trip_id__in=trip_id).order_by("trip_id")
+                queryset = queryset.filter(
+                    trip_id__in=trip_id).order_by("trip_id")
 
         # execute query
         if raw_filter_used:
