@@ -176,10 +176,9 @@ class StopTimesViewSet(viewsets.ModelViewSet):
         # get real col names and stuff
         TRIP_ID_COL = StopTimes._meta.get_field("trip_id").column
         STOP_ID_COL = StopTimes._meta.get_field("stop_id").column
-        STOPTIMES_TABLE = StopTimes._meta.db_table
 
         queryset = StopTimes.objects.all().order_by("trip_id")
-        query = f"SELECT * FROM {STOPTIMES_TABLE} ORDER BY {TRIP_ID_COL}"
+        query = queryset.query
 
         # increase performance if no need to raw query
         raw_filter_used = False
@@ -188,14 +187,23 @@ class StopTimesViewSet(viewsets.ModelViewSet):
         stop_id = self.request.query_params.get("stop_id")
         if stop_id is not None:
             stop_id = stop_id.split(",")
-            query = qu.q_col_in(
-                select="*",
-                from_target=STOPTIMES_TABLE,
-                target_is_query=False,
-                where_col_in={STOP_ID_COL: stop_id},
-                order_by=TRIP_ID_COL,
-            )
-            raw_filter_used = True
+
+            # filter location_type
+            location_type = Stops.objects.filter(
+                stop_id__in=stop_id).values_list("location_type", flat=True)
+
+            # prevent error on searching inexistent stop_id
+            if len(location_type):
+                # if station has no child, return searched stations
+                if location_type[0] in (0, None):
+                    queryset = queryset.filter(stop_id__in=stop_id)
+
+                # if station has no child, return searched stations
+                if location_type[0] == 1:
+                    queryset = queryset.filter(
+                        stop_id__in=Stops.objects.filter(
+                            parent_station__in=stop_id).values_list("stop_id", flat=True)
+                    )
 
         # get stop_id_all
         stop_id__all = self.request.query_params.get("stop_id__all")
