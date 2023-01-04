@@ -125,6 +125,9 @@ def q_cols_match_all(
             Filter if each col has a list of values
             Recommended way to filter in this query
 
+        table_is_query (optional) : bool
+            If True, will wrap table in a subquery
+
         q_conditions (optional) : str
             Additional conditions to include in query
             TODO: filter each condition individually too
@@ -144,6 +147,10 @@ def q_cols_match_all(
 
     # validate q_conditions
     q_conditions = "\n" + " " * 12 + f"AND {q_conditions}" if q_conditions else ""
+
+    # wrap table in a subquery
+    if table_is_query:
+        table = f"({table}) as {q_random_hash()}"
 
     # filter col_match_all
     if None not in (col_match_all, col_in):
