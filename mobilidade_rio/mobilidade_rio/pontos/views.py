@@ -214,17 +214,7 @@ class StopTimesViewSet(viewsets.ModelViewSet):
             # prevent error on searching inexistent stop_id
             # TODO: filter stop_id or children individually
             if len(location_type):
-                # if station has no child, return searched stations
-                if location_type[0] in (0, None):
-                    if raw_filter_used:
-                        query = f"""
-                        SELECT * FROM ({query}) AS {qu.q_random_hash()}
-                        WHERE {STOP_ID_COL} IN ({str(list(stop_id))[1:-1]})
-                        """
-                    else:
-                        queryset = queryset.filter(stop_id__in=stop_id)
-
-                # if station has no child, return searched stations
+                # if station is parent_station, return children
                 if location_type[0] == 1:
                     if raw_filter_used:
                         query = f"""
@@ -239,6 +229,16 @@ class StopTimesViewSet(viewsets.ModelViewSet):
                             stop_id__in=Stops.objects.filter(
                                 parent_station__in=stop_id).values_list("stop_id", flat=True)
                         )
+                # if station has no child, return searched stations
+                # if location_type[0] in (0, None):
+                else:
+                    if raw_filter_used:
+                        query = f"""
+                        SELECT * FROM ({query}) AS {qu.q_random_hash()}
+                        WHERE {STOP_ID_COL} IN ({str(list(stop_id))[1:-1]})
+                        """
+                    else:
+                        queryset = queryset.filter(stop_id__in=stop_id)
 
         # trip_id
         trip_id = self.request.query_params.get("trip_id")
