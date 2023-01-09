@@ -251,7 +251,8 @@ def validate_col_values(
     # ? debug
     # print("CVC hist", len_history)
 
-    return convert_to_type(data, data_type, ret_type, table_name + ".txt")
+    return convert_to_type(
+        data, data_type, ret_type, table_name + f".{settings['table_extension']}")
 
 
 def upload_data(_app: str, _model: str):
@@ -273,7 +274,7 @@ def upload_data(_app: str, _model: str):
         return [i for i in ["Key ", " is not present in table "] if i in detail]
 
     table_name = f"{_app}_{_model.replace('_', '')}"
-    file_path_1 = os.path.join(folder, f"{_model}.txt")
+    file_path_1 = os.path.join(folder, f"{_model}.{settings['table_extension']}")
 
     if os.path.isfile(file_path_1):
         print(f"Table '{table_name}'")

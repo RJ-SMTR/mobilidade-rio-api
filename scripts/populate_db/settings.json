@@ -20,6 +20,7 @@
             "qrcode"
         ]
     },
+    "table_extension": "txt",
     "remove_duplicate_cols": {
         "pontos_stoptimes": [
             "trip_id,stop_id,stop_sequence"
