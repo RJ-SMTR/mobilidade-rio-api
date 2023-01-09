@@ -26,20 +26,8 @@ parameters = """\
 -t --drop_tables        Drop tables in list      [<drop_tables>]
 """
 
-remove_duplicate_cols = {
-    "pontos_trips": [
-        "trip_id"
-    ]
-}
-
-validate_cols = {
-    "pontos_stoptimes": [
-        "trip_id"
-    ],
-    "pontos_trips": [
-        "trip_id"
-    ]
-}
+# TODO: use settings directly
+validate_cols = {}
 
 script_path = os.path.dirname(os.path.abspath(__file__))
 current_path = os.getcwd()
@@ -176,10 +164,14 @@ def validate_col_values(
     len_history = [len(data)]
 
     # remove duplicates
+    remove_duplicate_cols = {}
+    if 'remove_duplicate_cols' in settings:
+        remove_duplicate_cols = settings['remove_duplicate_cols']
     remove_duplicate_cols_table_commas = []
     remove_duplicate_cols_table_no_commas = []
+
+    # separate cols with commas, without and unique
     if table_name in remove_duplicate_cols:
-        # separate cols with commas, without and unique
         for col in remove_duplicate_cols[table_name]:
             if "," in col:
                 cols_1 = validate_col_names(table_name, col.split(","))
@@ -237,7 +229,6 @@ def validate_col_values(
 
             # remove cols containing
             if col in remove_cols_containing_table:
-                print(f"Removing_cols_containing: {col}")
                 # drop rows if col value contains part of substring
                 for substring in remove_cols_containing_table[col]:
                     data = data[~data[col].str.contains(substring)].copy()
@@ -276,8 +267,8 @@ def upload_data(_app: str, _model: str):
     table_name = f"{_app}_{_model.replace('_', '')}"
     file_path_1 = os.path.join(folder, f"{_model}.{settings['table_extension']}")
 
+    print(table_name)
     if os.path.isfile(file_path_1):
-        print(f"Table '{table_name}'")
         with open(file_path_1, 'r', encoding="utf8") as f_1:
             # if type is _io.TextIOWrapper
             # Filter table
@@ -400,9 +391,6 @@ if __name__ == "__main__":
                 param = param[:param.find("[")]
             parameters_new += param + "\n"
         parameters = parameters_new
-    if 'remove_duplicate_cols' in settings:
-        # append
-        remove_duplicate_cols = settings['remove_duplicate_cols']
     if 'validate_cols' in settings:
         # append
         validate_cols = settings['validate_cols']
@@ -486,7 +474,6 @@ if __name__ == "__main__":
                         table = validate_table_name(model, app)
                         cur.execute(f"TRUNCATE {table} CASCADE")
                         conn.commit()
-            print("[OK]\n")
 
         # Insert tables
         if app in settings["table_order"].keys():
@@ -499,8 +486,4 @@ if __name__ == "__main__":
                     model = model.split(".")[0]
                     upload_data(app, model)
         else:
-            print(
-                f"Couldn't find {app} in 'settings.json'.\n\
-                Make sure you have the correct app name - \
-                should be a folder in mobilidade_rio/mobilidade_rio."
-            )
+            print_colored("yellow", f"Couldn't find {app} in 'settings.json', ignoring...")
