@@ -2,27 +2,16 @@
 pontos.views - to serve API endpoints
 """
 
-# stop_code
-import operator
-from functools import reduce
-import django.db.models
-from rest_framework.exceptions import ValidationError
-
-# etc
 from rest_framework import viewsets
 from rest_framework import permissions
 from mobilidade_rio.pontos.models import *
 import mobilidade_rio.utils.query_utils as qu
 from .serializers import *
 from .paginations import LargePagination
-
-# import connector to query directly from database
-from django.db import connection
-
-cursor = connection.cursor()
-
-# from .utils import get_distance, safe_cast
-# from .constants import constants
+import operator
+from functools import reduce
+from rest_framework.exceptions import ValidationError
+from mobilidade_rio.pontos.utils import q_stoptimes__stop_id
 
 class AgencyViewSet(viewsets.ModelViewSet):
 
@@ -207,38 +196,10 @@ class StopTimesViewSet(viewsets.ModelViewSet):
         if stop_id is not None:
             stop_id = stop_id.split(",")
 
-            # filter location_type
-            location_type = Stops.objects.filter(
-                stop_id__in=stop_id).values_list("location_type", flat=True)
-
-            # prevent error on searching inexistent stop_id
-            # TODO: filter stop_id or children individually
-            if len(location_type):
-                # if station is parent_station, return children
-                if location_type[0] == 1:
-                    if raw_filter_used:
-                        query = f"""
-                        SELECT * FROM ({query}) AS {qu.q_random_hash()}
-                        WHERE {STOP_ID_COL} IN (
-                            SELECT stop_id FROM pontos_stops
-                            WHERE {PARENT_STATION__STOPS} IN ({str(list(stop_id))[1:-1]})
-                        )
-                        """
-                    else:
-                        queryset = queryset.filter(
-                            stop_id__in=Stops.objects.filter(
-                                parent_station__in=stop_id).values_list("stop_id", flat=True)
-                        )
-                # if station has no child, return searched stations
-                # if location_type[0] in (0, None):
-                else:
-                    if raw_filter_used:
-                        query = f"""
-                        SELECT * FROM ({query}) AS {qu.q_random_hash()}
-                        WHERE {STOP_ID_COL} IN ({str(list(stop_id))[1:-1]})
-                        """
-                    else:
-                        queryset = queryset.filter(stop_id__in=stop_id)
+            if raw_filter_used:
+                query = q_stoptimes__stop_id(stop_id, query)
+            else:
+                queryset = q_stoptimes__stop_id(stop_id, queryset)
 
         # trip_id
         trip_id = self.request.query_params.get("trip_id")
