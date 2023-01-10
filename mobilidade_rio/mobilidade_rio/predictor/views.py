@@ -5,10 +5,8 @@ from mobilidade_rio.pontos.models import *
 from mobilidade_rio.predictor.serializers import *
 import mobilidade_rio.utils.query_utils as qu
 import mobilidade_rio.predictor.utils as utils
-import pandas as pd
-from django.db.models.expressions import RawSQL
 
-class ShapeWithStopsViewSet(viewsets.ModelViewSet):
+class ShapesWithStopsViewSet(viewsets.ModelViewSet):
     serializer_class = ShapeWithStopsSerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
     queryset = ShapesWithStops.objects.all().order_by("trip_id")
