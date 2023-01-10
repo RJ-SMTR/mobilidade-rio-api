@@ -2,16 +2,16 @@
 pontos.views - to serve API endpoints
 """
 
+import operator
+from functools import reduce
 from rest_framework import viewsets
 from rest_framework import permissions
+from rest_framework.exceptions import ValidationError
+import mobilidade_rio.pontos.utils as utils
 from mobilidade_rio.pontos.models import *
 import mobilidade_rio.utils.query_utils as qu
 from .serializers import *
 from .paginations import LargePagination
-import operator
-from functools import reduce
-from rest_framework.exceptions import ValidationError
-from mobilidade_rio.pontos.utils import q_stoptimes__stop_id
 
 class AgencyViewSet(viewsets.ModelViewSet):
 
@@ -197,9 +197,9 @@ class StopTimesViewSet(viewsets.ModelViewSet):
             stop_id = stop_id.split(",")
 
             if raw_filter_used:
-                query = q_stoptimes__stop_id(stop_id, query)
+                query = utils.q_stoptimes__stop_id(stop_id, query)
             else:
-                queryset = q_stoptimes__stop_id(stop_id, queryset)
+                queryset = utils.q_stoptimes__stop_id(stop_id, queryset)
 
         # trip_id
         trip_id = self.request.query_params.get("trip_id")
