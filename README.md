@@ -305,6 +305,36 @@ Parâmetros:
   * Exemplo: `trip_id=a,b&stop_id=1,2,3&stop_id__all=2,3,4`
   * Exemplo real: <http://localhost:8010/gtfs/stop_times/?trip_id=O0041CAA0AIDU01,O0309AAA0AVDU01&stop_id=2028O00023C0,5144O00512C9>
 
+### predictor
+
+#### shapes_with_stops
+
+Objetivo: 
+* Retornar a junção de shapes e stops com colunas de stoptimes, trips, routes.
+* O preditor usará esta junção para calcular a previsão de chegada do BRT.
+
+Endereço:
+* `/predictor/shapes_with_stops`
+
+Parâmetros:
+
+* `stop_id` - Filtra por 1 ou mais stop_id
+  * Uso: `stop_id=1,2,3`
+  * Exemplo real: <http://localhost:8010/predictor/shapes_with_stops/?stop_id=1001O00006C0,1003O00006C0>
+
+Funcionamento:
+1. Obtém o stoptimes com o stop_id passado.
+2. Junta stoptimes com shapes, trips, stops e routes.
+3. Calcula a distância entre cada shape e o stop e obtém o shape mais próximo
+   > Por padrão a distância calculada é cartesiana (2D).
+   >
+   > Caso o banco de dados possua a extensão `postgis` ([veja aqui](https://postgis.net/install/)), será calculada a distância geográfica (3D).
+4. Adiciona colunas extras:
+     * `previous_stop_id`
+     * `previous_stop_name`
+     * `next_stop_id`
+     * `next_stop_name`
+
 ## Apps
 
 ### Utils
