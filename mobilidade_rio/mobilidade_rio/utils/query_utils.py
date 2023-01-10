@@ -5,10 +5,6 @@ Basic helpers to query gtfs data from database, and basic functions to help with
 import os
 import hashlib
 
-# Jupyter
-import psycopg2
-from IPython.display import display, HTML
-
 # generate random names for subqueries
 
 
@@ -127,42 +123,3 @@ def q_cols_match_all(
     ) AS {q_random_hash()}
     WHERE row_num = 1
     """
-
-
-# Jupyter
-
-
-def plot_query(cur: psycopg2.extensions.cursor, query: str):
-    """Plot query results as html table in jupyter notebook"""
-    cur.execute(query)
-    # print len
-    print(f"len: {cur.rowcount}")
-    headers = [desc[0] for desc in cur.description]
-    # print headers and results as html
-    # format header with bold and color, like dataframe does with display()
-    header_html = "".join(
-        [
-            f"<th style=\"font-weight:bold; background-color:'#ebebeb'\">{h}</th>"
-            for h in headers
-        ]
-    )
-    display(
-        HTML(
-            f"""
-            <table>
-                <tr>{header_html}</tr>
-                {"".join([f"<tr>{''.join([f'<td>{c}</td>' for c in row])}</tr>"
-                    for row in cur.fetchall()])}
-            </table>
-            """
-        )
-    )
-
-
-def print_query(query):
-    """for each line, print line number"""
-    blue = "\033[94m"
-    end = "\033[0m"
-    # remove first line if is break line
-    for i, line in enumerate(query.splitlines()):
-        print(f"{blue}{i:03d}{end} {line}")
