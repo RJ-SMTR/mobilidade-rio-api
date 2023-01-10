@@ -6,7 +6,7 @@ import mobilidade_rio.utils.query_utils as qu
 import mobilidade_rio.utils.django_utils as du
 
 
-def q_stoptimes__in(stop_id=None, select=("*"), query=None):
+def q_stoptimes__stop_id(stop_id=None, select=("*"), query=None):
     """
     Filter stop by stop_id
     If stop is parent_station, filter by its children

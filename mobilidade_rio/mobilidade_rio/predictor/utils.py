@@ -2,7 +2,7 @@
 
 from mobilidade_rio.utils import query_utils as qu
 from mobilidade_rio.utils.django_utils import get_table, get_col
-from mobilidade_rio.pontos.utils import q_stoptimes__in, q_stops_prev_next
+from mobilidade_rio.pontos.utils import q_stoptimes__stop_id, q_stops_prev_next
 from mobilidade_rio.pontos.models import *
 
 def q_shapes_with_stops(
@@ -86,7 +86,7 @@ def q_shapes_with_stops(
                     AS DECIMAL(10,6))
             END AS distance
 
-        FROM ({q_stoptimes__in(
+        FROM ({q_stoptimes__stop_id(
                 stop_id=stop_id,
                 query=q_stops_prev_next()
             )}) AS stoptimes
