@@ -1,7 +1,7 @@
 """utils.py - Utils for predictor app"""
 
 from mobilidade_rio.utils import query_utils as qu
-from mobilidade_rio.utils.django_utils import get_table, get_col
+from mobilidade_rio.utils.django_utils import get_table, get_col, postgis_exists
 from mobilidade_rio.pontos.utils import q_stoptimes__stop_id, q_stops_prev_next
 from mobilidade_rio.pontos.models import *
 
@@ -28,6 +28,26 @@ def q_shapes_with_stops(
             Else, use 2D distance
         3. For each id__stoptimes, get the shape with the smallest distance
             Using DISTINCT and ORDER BY
+    """
+
+    distance = """
+        ST_Distance(
+            ST_MakePoint(shape_pt_lon, shape_pt_lat)::geography,
+            ST_MakePoint(stop_lon, stop_lat)::geography
+        )
+    """ if postgis_exists() else """
+        CAST(
+            SQRT(
+                POW(
+                    CAST(shape_pt_lat AS DECIMAL(10,6))
+                    - CAST(stop_lat AS DECIMAL(10,6))
+                ,2)
+                + POW(
+                    CAST(shape_pt_lon AS DECIMAL(10,6))
+                    - CAST(stop_lon AS DECIMAL(10,6))
+                ,2)
+            )
+        AS DECIMAL(10,6))
     """
 
     return f"""
@@ -64,27 +84,7 @@ def q_shapes_with_stops(
             stoptimes.id AS id__stoptimes,
             shapes.id AS id__shapes,
 
-            CASE
-                WHEN EXISTS (SELECT PostGIS_full_version())
-                THEN
-                    ST_Distance(
-                        ST_MakePoint(shape_pt_lon, shape_pt_lat)::geography,
-                        ST_MakePoint(stop_lon, stop_lat)::geography
-                    )
-                ELSE
-                    CAST(
-                        SQRT(
-                            POW(
-                                CAST(shape_pt_lat AS DECIMAL(10,6))
-                              - CAST(stop_lat AS DECIMAL(10,6))
-                            ,2)
-                            + POW(
-                                CAST(shape_pt_lon AS DECIMAL(10,6))
-                              - CAST(stop_lon AS DECIMAL(10,6))
-                            ,2)
-                        )
-                    AS DECIMAL(10,6))
-            END AS distance
+            {distance} AS distance
 
         FROM ({q_stoptimes__stop_id(
                 stop_id=stop_id,
