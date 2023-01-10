@@ -6,7 +6,7 @@ import mobilidade_rio.utils.query_utils as qu
 import mobilidade_rio.utils.django_utils as du
 
 
-def q_stoptimes__stop_id(stop_id=None, select=("*"), query=None):
+def q_stoptimes__stop_id(stop_id=None, query=None, select=("*")):
     """
     Filter stop by stop_id
     If stop is parent_station, filter by its children
@@ -22,7 +22,6 @@ def q_stoptimes__stop_id(stop_id=None, select=("*"), query=None):
             SQL query filtered by stop_id or children
 
     """
-    # get real col names and stuff
 
     # validade stop_id
     if stop_id is None:
