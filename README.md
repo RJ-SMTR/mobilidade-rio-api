@@ -282,8 +282,8 @@ Parâmetros:
   * Funcionamento:
     * Se o stop não possuir filhos (`location_type`=0), retorna apenas ele mesmo.
       * Exemplo real: <http://localhost:8010/gtfs/stop_times/?stop_id=2028O00023C0,5144O00512C9>
-    * Se o stop for `parent_station` de alguém (`location_type`=1), retorna apenas seus filhos.
-      * Exemplo real: <http://localhost:8010/gtfs/stop_times/?stop_id=4128O00169P0,5144O00487P9>
+    * Se o stop possuir filhos  de alguém (`location_type`=1, `parent_station`='...'), retorna apenas seus filhos.
+      * Exemplo real: <http://localhost:8010/gtfs/stop_times/?stop_id=4128BO0010T9,5144O00424T9>
     * ⚠️ Por enquanto não é possível pesquisar por `stop_id` e seus filhos ao mesmo tempo. O primeiro item deste parâmetro valerá para os demais.
 
 * `stop_id__all` - Filtra por 1 ou mais stop_id, onde as trips combinam com todos os stops passados.
