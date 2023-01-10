@@ -7,7 +7,7 @@ import mobilidade_rio.utils.query_utils as qu
 import mobilidade_rio.predictor.utils as utils
 
 class ShapesWithStopsViewSet(viewsets.ModelViewSet):
-    serializer_class = ShapeWithStopsSerializer
+    serializer_class = ShapesWithStopsSerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
     queryset = ShapesWithStops.objects.all().order_by("trip_id")
 

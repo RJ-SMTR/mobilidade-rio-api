@@ -18,7 +18,7 @@ gtfs_router.register(r"stop_times", gtfs.StopTimesViewSet, basename="stop_times"
 gtfs_router.register(r"frequencies", gtfs.FrequenciesViewSet)
 
 pred_router = routers.DefaultRouter()
-pred_router.register(r"shape_with_stops", pred.ShapeWithStopsViewSet,basename="shape_with_stops")
+pred_router.register(r"shapes_with_stops", pred.ShapesWithStopsViewSet,basename="shapes_with_stops")
 #pred_router.register(r"predictor", pred.PredictorViewSet,basename="pred_arrivals")
 
 unified_router = routers.DefaultRouter()
