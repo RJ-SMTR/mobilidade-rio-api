@@ -41,7 +41,7 @@ def q_stoptimes__stop_id(stop_id=None, select=("*"), query=None):
         # validate query
         if query is None:
             query = du.get_table(StopTimes)
-        else:
+        elif isinstance(query, str):
             query = f"({query}) AS {qu.q_random_hash()}"
 
         # if station is parent_station, return children
