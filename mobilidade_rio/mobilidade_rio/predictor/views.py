@@ -12,6 +12,7 @@ from mobilidade_rio.predictor.models import *
 from mobilidade_rio.predictor.serializers import *
 import mobilidade_rio.pontos.models as gtfs_models
 from django.db import connection
+import mobilidade_rio.predictor.utils
 
 
 #from rest_framework.generics import APIView
@@ -24,12 +25,9 @@ class PredictorView(APIView):
     
     def get(self, request):
         #?trip_name=22,41,50&stop_id=4128BC0005U2
-        all_next_stops = pd.DataFrame()
-        stop_list = []
-        trip_short_name_list = []
+        #all_next_stops = pd.DataFrame()
 
-        #Pegar realtime
-        #self.df_realtime --> realtime
+        # Pegar realtime do servidor do realtime
         url=os.environ.get('API_REAL_TIME')
         x=r.get(url)
         real_time = pd.read_json(x.text)
@@ -41,39 +39,36 @@ class PredictorView(APIView):
         if trip_short_name_list:
             trip_short_name_list = trip_short_name_list.strip().split(",")
 
-            #filtro em realtime
+            # filtrar por trip_short_name
             real_time = real_time.loc[real_time["linha"].isin(trip_short_name_list)] #fim da 5
 
             # filtro em predictormodel
-            model = MedianModel.objects.filter(trip_id__in=trip_short_name_list) # fim da 3
-            model = pd.DataFrame(list(model.values()))
+            modelo_mediana = MedianModel.objects.filter(trip_id__in=trip_short_name_list) # fim da 3
+            modelo_mediana = pd.DataFrame(list(modelo_mediana.values()))
 
             #self.self.trip_stops e --> swst
             swst = ShapeWithStops.objects.filter(trip_id__in=trip_short_name_list)
             swst = pd.DataFrame(list(swst.values()))
             trip_id = swst[["trip_id","trip_short_name","direction_id"]].dropna().drop_duplicates()
+            # Seria bom se quando gerar o swst já trocar o 0/1 por I/V adequando o ao modelo da realtime.
 
         else:
             #caso não tenha trip para filtrar.
             modelo = MedianModel.objects.all()
-            model = pd.DataFrame(list(model.values()))
+            modelo_mediana = pd.DataFrame(list(modelo_mediana.values()))
 
             swst = ShapeWithStops.objects.all()
             swst = pd.DataFrame(list(swst.values()))
+            #validar a necessidade do direction uma vez que temos trip_id
             trip_id = swst[["trip_id","trip_short_name","direction_id"]].dropna().drop_duplicates()
 
+        #passo 6.1
+        lista_predicoes = real_time.apply(utils.predict_individual_arrivals, axis=1).values
+        predicoes = pd.concat(lista_predicoes, ignore_index=True)
 
-
-
-
-        # filter by stops
-        stop_list = self.request.query_params.get('stop_id', None)
-        if stop_list:
-            stop_list = stop_list.strip().split(",")
-            # TODO: filter by stop_id
            
     
-        pred = predictor.predict_all_arrivals()
+        
         if stop_list:
             pred = pred[["trip_id","chegada", "stop_id","bus_id"]].loc[pred['stop_id'].isin(stop_list)]
         else:
@@ -81,6 +76,11 @@ class PredictorView(APIView):
  
         return Response(json.loads(pred.to_json(orient="records")))
     
+            # filter by stops
+        stop_list = self.request.query_params.get('stop_id', None)
+        if stop_list:
+            stop_list = stop_list.strip().split(",")
+            # TODO: filter by stop_id
 
 
 class ShapeWithStopsViewSet(viewsets.ModelViewSet):
