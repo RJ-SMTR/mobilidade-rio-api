@@ -65,8 +65,10 @@ class Predictor:
         stops_path = os.path.join(current_dir, 'Dados/gtfs_brt_treated/shapes_with_stops.csv')
         self.trip_stops = pd.read_csv(stops_path)
         self.trip_ids = self.trip_stops[["trip_id", "route_short_name"]].dropna().drop_duplicates()
+
+        #trocando por directon_id -> colocar campo em swst e validar se basta trocar.
+        # 0: inbound/ 1: outbound ?
         self.trip_ids["direction"] = [trip_id[TRIP_ID_INDICE_SENTIDO-1] for trip_id in self.trip_ids["trip_id"]]
-        
 
 
 

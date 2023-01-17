@@ -1,4 +1,5 @@
 import json
+import requests as r
 
 from rest_framework.serializers import Serializer
 from rest_framework.response import Response
@@ -18,27 +19,62 @@ from django.db import connection
 from mobilidade_rio.__init__ import predictor
 import pandas as pd
 
-#http://localhost:8010/predictor/pred/?trip_names=22,41,50&stops=4128BC0005U2,4128BO0017U2
+#http://localhost:8010/predictor/pred/
 class PredictorView(APIView):
     
     def get(self, request):
+        #?trip_name=22,41,50&stop_id=4128BC0005U2
         all_next_stops = pd.DataFrame()
         stop_list = []
         trip_short_name_list = []
-        has_trip = request.GET.get('trip_names', '')!=''
-        has_stop = request.GET.get('stops', '')!=''
 
-        if has_trip:
-            trip_short_name_list = request.GET.get('trip_names', '')
+        #Pegar realtime
+        #self.df_realtime --> realtime
+        url=os.environ.get('API_REAL_TIME')
+        x=r.get(url)
+        real_time = pd.read_json(x.text)
+        real_time["comunicacao"] = real_time["comunicacao"].apply(datetime.fromtimestamp)
+        real_time["inicio_viagem"] = real_time["inicio_viagem"].apply(datetime.fromtimestamp)
+
+        # Filtar por trip em swst, realtime and MedianModel
+        trip_short_name_list = self.request.query_params.get('trip_name', None)
+        if trip_short_name_list:
             trip_short_name_list = trip_short_name_list.strip().split(",")
-            
-        if has_stop:
-            stop_list = request.GET.get('stops', '')
-            stop_list = stop_list.strip().split(",")
 
-        predictor.capture_real_time_data(trip_short_name_list,has_trip)
+            #filtro em realtime
+            real_time = real_time.loc[real_time["linha"].isin(trip_short_name_list)] #fim da 5
+
+            # filtro em predictormodel
+            model = MedianModel.objects.filter(trip_id__in=trip_short_name_list) # fim da 3
+            model = pd.DataFrame(list(model.values()))
+
+            #self.self.trip_stops e --> swst
+            swst = ShapeWithStops.objects.filter(trip_id__in=trip_short_name_list)
+            swst = pd.DataFrame(list(swst.values()))
+            trip_id = swst[["trip_id","trip_short_name","direction_id"]].dropna().drop_duplicates()
+
+        else:
+            #caso não tenha trip para filtrar.
+            modelo = MedianModel.objects.all()
+            model = pd.DataFrame(list(model.values()))
+
+            swst = ShapeWithStops.objects.all()
+            swst = pd.DataFrame(list(swst.values()))
+            trip_id = swst[["trip_id","trip_short_name","direction_id"]].dropna().drop_duplicates()
+
+
+
+
+
+        # filter by stops
+        stop_list = self.request.query_params.get('stop_id', None)
+        if stop_list:
+            stop_list = stop_list.strip().split(",")
+            # TODO: filter by stop_id
+           
+    
         pred = predictor.predict_all_arrivals()
-        if has_stop:
+        if stop_list:
             pred = pred[["trip_id","chegada", "stop_id","bus_id"]].loc[pred['stop_id'].isin(stop_list)]
         else:
             pred = pred[["trip_id","chegada", "stop_id","bus_id"]]
