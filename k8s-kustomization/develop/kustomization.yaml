@@ -6,6 +6,5 @@ resources:
   - issuer.yaml
 namePrefix: dev-
 namespace: mobilidade-v2-develop
-
 # patchesStrategicMerge:
-#   - - 
+#   - -
