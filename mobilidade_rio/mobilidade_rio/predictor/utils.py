@@ -2,6 +2,7 @@ import os
 import requests
 from datetime import datetime, timedelta
 import pandas as pd
+import numpy as np
 
 def get_realtime(df_realtime: pd.DataFrame):
     """
@@ -40,3 +41,66 @@ def get_realtime(df_realtime: pd.DataFrame):
     df_realtime = df_realtime[df_realtime["dataHora"] > (datetime.now() - timedelta(seconds=20))]
 
     return df_realtime
+
+
+def _haversine_np(lon1, lat1, lon2, lat2):
+    """
+    Calculate the great circle distance between two points
+    on the earth (specified in decimal degrees)
+
+    All args must be of equal length.    
+
+    """
+    lon1, lat1, lon2, lat2 = map(np.radians, [lon1, lat1, lon2, lat2])
+
+    dlon = lon2 - lon1
+    dlat = lat2 - lat1
+
+    a = np.sin(dlat/2.0)**2 + np.cos(lat1) * np.cos(lat2) * np.sin(dlon/2.0)**2
+
+    c = 2 * np.arcsin(np.sqrt(a))
+    km = 6367 * c
+    return km
+
+# TODO: add trips and shapes_with_stops
+def get_current_stop(positions, trips, shapes):
+
+    """
+    1. Identifica trip_id
+    2. Identifica ponto origem, ponto destino (em relação ao veículo)
+    """
+    
+    # Identifica trip_id
+
+    cols = ["direction_id", "service_id", "trip_short_name"]
+
+    positions = positions.join(
+        trips[cols + ["trip_id"]],
+        on=["direction_id", "service_id", "trip_short_name"],
+        how="left"
+    )
+
+    # Mapeia posições no shape e obtem stop_id_origin, stop_id_destiny
+    positions = positions.join(
+        shapes,
+        on=["trip_id"],
+        how="left"
+    )
+
+    positions["distance"] = _haversine_np(
+        positions["latitude"], 
+        positions["longitude"], 
+        positions["shape_pt_lon"], 
+        positions["shape_pt_lat"], 
+        unit='m'
+    )
+
+    cols = ["codigo", "latitude", "longitude"]
+    ids = positions.groupby(cols)["distance"].idxmin()
+
+    return positions.loc[ids]
+
+
+
+
+
