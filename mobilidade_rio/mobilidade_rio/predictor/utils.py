@@ -101,25 +101,25 @@ def get_current_stop(positions, trips, shapes):
     return positions.loc[ids]
 
 def get_prediction(origem, destino, dia_da_semana, hora_atual, next_shape_point, next_stop):
-        """ Calculates de residual distance and returns prediction of current section using the model """
+    """ Calculates de residual distance and returns prediction of current section using the model """
 
-        # filtro em predictormodel
-        modelo_mediana = MedianModel.objects.filter()
-        modelo_mediana = pd.DataFrame(list(modelo_mediana.values()))
+    # filtro em predictormodel
+    modelo_mediana = MedianModel.objects.filter()
+    modelo_mediana = pd.DataFrame(list(modelo_mediana.values()))
 
-        prediction = modelo_mediana[ 
-                (modelo_mediana.stop_id_origem == origem) & 
-                (modelo_mediana.stop_id_destino == destino) &
-                (modelo_mediana.dia_da_semana == dia_da_semana) & 
-                (modelo_mediana.hora == hora_atual) 
-            ]["delta_tempo_minuto"].iloc[0]
+    prediction = modelo_mediana[ 
+            (modelo_mediana.stop_id_origem == origem) & 
+            (modelo_mediana.stop_id_destino == destino) &
+            (modelo_mediana.dia_da_semana == dia_da_semana) & 
+            (modelo_mediana.hora == hora_atual) 
+        ]["delta_tempo_minuto"].iloc[0]
 
-        # Aqui descartando a distancia entre a posição atual e o próximo ponto do shape
-        # residuo_prox_shape = (shape_posterior.shape_dist_traveled - shape_anterior.shape_dist_traveled) * (1-proj_entre_shapes)
-        next_stop_distance=next_stop["shape_dist_traveled"]
-        residual_distance= (next_shape_point["shape_dist_traveled"] - next_stop_distance) / next_stop_distance
+    # Aqui descartando a distancia entre a posição atual e o próximo ponto do shape
+    # residuo_prox_shape = (shape_posterior.shape_dist_traveled - shape_anterior.shape_dist_traveled) * (1-proj_entre_shapes)
+    next_stop_distance=next_stop["shape_dist_traveled"]
+    residual_distance= (next_shape_point["shape_dist_traveled"] - next_stop_distance) / next_stop_distance
 
-        if  residual_distance > 0:
-            return timedelta(minutes=prediction)*residual_distance  
-        else:
-            return timedelta(minutes=prediction)
+    if  residual_distance > 0:
+        return timedelta(minutes=prediction)*residual_distance  
+    else:
+        return timedelta(minutes=prediction)
