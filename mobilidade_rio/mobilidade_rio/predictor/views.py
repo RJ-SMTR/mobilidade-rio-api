@@ -11,4 +11,7 @@ from rest_framework.views import APIView
 
 
 class PredictorViewSet(viewsets.ModelViewSet):
+
+    predicoes = get_prediction(origem, destino, dia_da_semana, hora_atual,residual_distance, next_shape_point, next_stop)
+    predicoes_horario = pd.to_timedelta(pd.Series(predicoes)).cumsum()
     pass
