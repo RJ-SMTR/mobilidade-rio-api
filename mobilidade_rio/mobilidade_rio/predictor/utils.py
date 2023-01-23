@@ -48,7 +48,7 @@ def _haversine_np(lon1, lat1, lon2, lat2):
     Calculate the great circle distance between two points
     on the earth (specified in decimal degrees)
 
-    All args must be of equal length.    
+    All args must be of equal length.
 
     """
     lon1, lat1, lon2, lat2 = map(np.radians, [lon1, lat1, lon2, lat2])
@@ -69,7 +69,7 @@ def get_current_stop(positions, trips, shapes):
     1. Identifica trip_id
     2. Identifica ponto origem, ponto destino (em relação ao veículo)
     """
-    
+
     # Identifica trip_id
 
     cols = ["direction_id", "service_id", "trip_short_name"]
@@ -88,10 +88,10 @@ def get_current_stop(positions, trips, shapes):
     )
 
     positions["distance"] = _haversine_np(
-        positions["latitude"], 
-        positions["longitude"], 
-        positions["shape_pt_lon"], 
-        positions["shape_pt_lat"], 
+        positions["latitude"],
+        positions["longitude"],
+        positions["shape_pt_lon"],
+        positions["shape_pt_lat"],
         unit='m'
     )
 
@@ -107,11 +107,11 @@ def get_prediction(origem, destino, dia_da_semana, hora_atual, next_shape_point,
     modelo_mediana = MedianModel.objects.filter()
     modelo_mediana = pd.DataFrame(list(modelo_mediana.values()))
 
-    prediction = modelo_mediana[ 
-            (modelo_mediana.stop_id_origem == origem) & 
+    prediction = modelo_mediana[
+            (modelo_mediana.stop_id_origem == origem) &
             (modelo_mediana.stop_id_destino == destino) &
-            (modelo_mediana.dia_da_semana == dia_da_semana) & 
-            (modelo_mediana.hora == hora_atual) 
+            (modelo_mediana.dia_da_semana == dia_da_semana) &
+            (modelo_mediana.hora == hora_atual)
         ]["delta_tempo_minuto"].iloc[0]
 
     # Aqui descartando a distancia entre a posição atual e o próximo ponto do shape
@@ -120,6 +120,6 @@ def get_prediction(origem, destino, dia_da_semana, hora_atual, next_shape_point,
     residual_distance= (next_shape_point["shape_dist_traveled"] - next_stop_distance) / next_stop_distance
 
     if  residual_distance > 0:
-        return timedelta(minutes=prediction)*residual_distance  
+        return timedelta(minutes=prediction)*residual_distance
     else:
         return timedelta(minutes=prediction)
