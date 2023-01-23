@@ -41,7 +41,6 @@ def get_realtime(df_realtime: pd.DataFrame):
         {0: "U", 1: "U", 2: "U", 3: "U", 4: "U", 5: "S", 6: "D"})
 
     # 3. Excluir veículos mais antigos que 20s
-    # df_realtime = df_realtime[df_realtime["direction_id"] != 0]
     df_realtime = df_realtime[df_realtime["dataHora"]
                               > (datetime.now() - timedelta(seconds=20))]
 
