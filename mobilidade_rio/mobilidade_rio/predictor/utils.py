@@ -6,6 +6,7 @@ import numpy as np
 
 
 def get_realtime(df_realtime: pd.DataFrame):
+    # TODO: do we really need df_realtime param? Its generated via static URL
     """
     Get realtime API data, filter and return a dataframe.
 
