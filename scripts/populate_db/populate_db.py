@@ -434,7 +434,7 @@ if __name__ == "__main__":
     cur = conn.cursor()
 
     # drop all tables from database
-    if "--empty_database" in sys.argv or "-d" in sys.argv:
+    if "--empty_db" in sys.argv or "-d" in sys.argv:
         print("Dropping schema...")
         cur.execute("DROP SCHEMA IF EXISTS public CASCADE")
         conn.commit()
