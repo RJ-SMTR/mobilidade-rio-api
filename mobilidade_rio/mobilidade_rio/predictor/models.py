@@ -1,28 +1,32 @@
 from django.db import models
+from django.core.validators import MinValueValidator
 
 # Create your models here.
-class ShapeWithStops(models.Model):
+class ShapesWithStops(models.Model):
+    """
+    Tabela shapes_with_stops
+    """
     # from trips
     trip_short_name = models.CharField(max_length=500, blank=True, null=True) # route_short_name
-    
+
     # from stop_times
     trip_id = models.CharField(max_length=500, blank=True)
-    stop_sequence = models.CharField(max_length=500, blank=True, null=True)
+    stop_sequence = models.PositiveIntegerField(blank=False, null=False)
     stop_id = models.CharField(max_length=500, blank=True)
-    shape_dist_traveled = models.CharField(max_length=500, blank=True, null=True)
+    shape_dist_traveled = models.FloatField(blank=True, null=True, validators=[MinValueValidator(0)])
 
     # from shapes
     shape_id = models.CharField(max_length=500, blank=True)
-    shape_pt_sequence = models.CharField(max_length=500, blank=True, null=True)
-    shape_pt_lat = models.CharField(max_length=500, blank=True, null=True)
-    shape_pt_lon = models.CharField(max_length=500, blank=True, null=True)
+    shape_pt_sequence = models.PositiveIntegerField(blank=False, null=False)
+    shape_pt_lat = models.FloatField(blank=False, null=False)
+    shape_pt_lon = models.FloatField(blank=False, null=False)
 
 
 class Prediction(models.Model):
     """
-    Contém colunas da API realtime + colunas de predição
+    Contém as previsões de chegada dos veículos.
 
-    É a tabela que vai guardar as previsões de chegada dos veículos.
+    Utiliza colunas da API realtime + colunas de predição
 
     Colunas
     -------
@@ -47,8 +51,10 @@ class Prediction(models.Model):
     """
 
     # API realtime
-    
-    # são relacionados com o mesmo stop_id
+
+    # coluna de referência
+    stop_id = models.CharField(max_length=500)
+    # colunas relacionadas com o mesmo stop_id
     id_veiculo = models.CharField(max_length=500)
     latitude = models.FloatField()
     longitude = models.FloatField()
@@ -57,7 +63,6 @@ class Prediction(models.Model):
     direction_id  = models.CharField(max_length=500)
     service_id = models.CharField(max_length=500)
     stop_sequence = models.IntegerField()
-    stop_id = models.CharField(max_length=500)
     arrival_time = models.IntegerField()
 
 # ArrayField(models.CharField(max_length=500), blank=True, null=True)
