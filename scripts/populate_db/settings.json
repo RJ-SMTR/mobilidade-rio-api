@@ -18,6 +18,11 @@
             "frequencies",
             "stop_times",
             "qrcode"
+        ],
+        "predictor": [
+            "median_model",
+            "prediction",
+            "shapes_with_stops"
         ]
     },
     "remove_duplicate_cols": {
