@@ -4,7 +4,7 @@ from rest_framework import serializers
 
 class ShapeWithStopsSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = ShapeWithStops
+        model = ShapesWithStops
         fields = "__all__"
 
 

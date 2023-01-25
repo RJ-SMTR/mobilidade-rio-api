@@ -1,10 +1,12 @@
 import os
 import requests
 from datetime import datetime, timedelta
+from mobilidade_rio.predictor.models import *
 import pandas as pd
 import numpy as np
 
 
+# 1. obtém tabela api
 def get_realtime(df_realtime: pd.DataFrame):
     # TODO: do we really need df_realtime param? Its generated via static URL
     """
@@ -68,7 +70,7 @@ def _haversine_np(lon1, lat1, lon2, lat2):
 
 # TODO: add trips and shapes_with_stops
 
-
+# 2. localiza posição do veículo no shape
 def get_current_stop(positions, trips, shapes):
     """
     1. Identifica trip_id
@@ -97,14 +99,12 @@ def get_current_stop(positions, trips, shapes):
         positions["longitude"],
         positions["shape_pt_lon"],
         positions["shape_pt_lat"],
-        unit='m'
     )
 
     cols = ["codigo", "latitude", "longitude"]
     ids = positions.groupby(cols)["distance"].idxmin()
 
     return positions.loc[ids]
-
 
 def get_prediction(origem, destino, dia_da_semana, hora_atual, next_shape_point, next_stop):
     """ Calculates de residual distance and returns prediction of current section using the model """

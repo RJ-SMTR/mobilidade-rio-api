@@ -160,8 +160,7 @@ class Shapes(models.Model):
     shape_pt_lat = models.FloatField(blank=False, null=False)
     shape_pt_lon = models.FloatField(blank=False, null=False)
     shape_pt_sequence = models.PositiveIntegerField(blank=False, null=False)
-    shape_dist_traveled = models.FloatField(
-        blank=True, null=True, validators=[MinValueValidator(0)])
+    shape_dist_traveled = models.FloatField(blank=True, null=True, validators=[MinValueValidator(0)])
 
     class Meta:
         """Constraints for the model"""
