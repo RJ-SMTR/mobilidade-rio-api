@@ -25,7 +25,7 @@
             "trip_id,stop_id,stop_sequence"
         ],
         "pontos_trips": [
-            "trip_id"
+            "shape_id"
         ],
         "pontos_frequencies": [
             "trip_id"

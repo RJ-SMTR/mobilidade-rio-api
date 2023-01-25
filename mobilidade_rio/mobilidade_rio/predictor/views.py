@@ -1,17 +1,28 @@
 #from django.shortcuts import render
 from rest_framework import viewsets
-from rest_framework import permissions
-from rest_framework.response import Response
 from mobilidade_rio.predictor.models import *
 from mobilidade_rio.predictor.serializers import *
-import mobilidade_rio.pontos.models as gtfs_models
-from django.db import connection
 # import APIView
-from rest_framework.views import APIView
 
 
 class PredictorViewSet(viewsets.ModelViewSet):
+    """
+    Puxar dados da tabela Prediction
+    """
 
-    predicoes = get_prediction(origem, destino, dia_da_semana, hora_atual,residual_distance, next_shape_point, next_stop)
-    predicoes_horario = pd.to_timedelta(pd.Series(predicoes)).cumsum()
-    pass
+    def get_queryset(self):
+        queryset = Prediction.objects.all().order_by("data_hora","trip_short_name", "stop_id")
+
+        # filtrar por trip_name (trip_short_name)
+        trip_name = self.request.query_params.get("trip_name")
+        if trip_name:
+            trip_name = trip_name.split(",")
+            queryset = queryset.filter(trip_short_name__in=trip_name)
+
+        # filtrar por stop_id
+        stop_id = self.request.query_params.get("stop_id")
+        if stop_id:
+            stop_id = stop_id.split(",")
+            queryset = queryset.filter(stop_id__in=stop_id)
+
+        return queryset
