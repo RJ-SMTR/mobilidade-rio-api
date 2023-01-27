@@ -8,18 +8,24 @@ class ShapesWithStops(models.Model):
     """
     # from trips
     trip_short_name = models.CharField(max_length=500, blank=True, null=True) # route_short_name
+    direction_id = models.PositiveIntegerField(blank=True, null=True)
 
     # from stop_times
     trip_id = models.CharField(max_length=500, blank=True)
     stop_sequence = models.PositiveIntegerField(blank=False, null=False)
     stop_id = models.CharField(max_length=500, blank=True)
-    shape_dist_traveled = models.FloatField(blank=True, null=True, validators=[MinValueValidator(0)])
+    shape_dist_traveled = models.FloatField(blank=True, null=True,
+        validators=[MinValueValidator(0)])
 
     # from shapes
     shape_id = models.CharField(max_length=500, blank=True)
     shape_pt_sequence = models.PositiveIntegerField(blank=False, null=False)
-    shape_pt_lat = models.FloatField(blank=False, null=False)
-    shape_pt_lon = models.FloatField(blank=False, null=False)
+    latitude = models.FloatField(blank=False, null=False)
+    longitude = models.FloatField(blank=False, null=False)
+
+    # extra
+    next_stop_id = models.CharField(max_length=500, blank=False, null=False)
+    previous_stop_id = models.CharField(max_length=500, blank=False, null=False)
 
 
 class Prediction(models.Model):
@@ -76,7 +82,6 @@ class MedianModel(models.Model):
 
     Colunas
     -------
-
     tipo_dia (weekday)
     stop_id_origin
     stop_id_destiny
