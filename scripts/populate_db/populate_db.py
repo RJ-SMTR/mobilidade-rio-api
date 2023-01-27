@@ -309,7 +309,8 @@ def upload_data(_app: str, _model: str):
                 if "--no_insert" not in sys.argv and '-i' not in sys.argv:
                     cur.copy_expert(sql, data)
                     conn.commit()
-                print("[OK]")
+                else:
+                    print("[OK - no insert]")
 
             except psycopg2.Error as error:
                 conn.rollback()

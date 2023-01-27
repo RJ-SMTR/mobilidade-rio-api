@@ -21,7 +21,6 @@
         ],
         "predictor": [
             "median_model",
-            "prediction",
             "shapes_with_stops"
         ]
     },
@@ -65,8 +64,9 @@
             "stop_id_destiny"
         ],
         "predictor_shapeswithstops": [
-            "stop_id",
+            "service_id",
             "shape_pt_sequence",
+            "stop_id",
             "next_stop_id",
             "previous_stop_id"
         ]

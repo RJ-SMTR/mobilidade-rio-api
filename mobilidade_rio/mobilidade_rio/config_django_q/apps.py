@@ -45,12 +45,12 @@ class ConfigDjangoQConfig(AppConfig):
 
         # Config schedules
 
-        from django_q.models import Schedule
+        from django_q.models import Schedule, OrmQ, Task
         from mobilidade_rio.config_django_q import tasks as dq_tasks
 
         use_schedules = [
             {
-                "func": dq_tasks.print_hello,
+                "func": dq_tasks.generate_prediction,
                 "schedule": Schedule(
                     schedule_type=Schedule.MINUTES,
                     minutes=1,
@@ -76,6 +76,7 @@ class ConfigDjangoQConfig(AppConfig):
             # Add schedule
             Schedule.objects.update_or_create(**dic)
 
+
         # Validate schedules
 
         # Remove all not in use
@@ -85,3 +86,7 @@ class ConfigDjangoQConfig(AppConfig):
         for name in unique_name:
             for schedule in Schedule.objects.filter(name=name).order_by('-pk')[1:]:
                 schedule.delete()
+        
+        # empty other tables
+        OrmQ.objects.all().delete()
+        Task.objects.all().delete()
