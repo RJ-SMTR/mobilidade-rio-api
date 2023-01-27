@@ -8,16 +8,16 @@
     },
     "table_order": {
         "pontos": [
-            "#agency",
-            "#calendar_dates",
-            "#calendar",
-            "#routes",
-            "#shapes",
-            "#stops",
-            "#trips",
-            "#frequencies",
-            "#stop_times",
-            "#qrcode"
+            "agency",
+            "calendar_dates",
+            "calendar",
+            "routes",
+            "shapes",
+            "stops",
+            "trips",
+            "frequencies",
+            "stop_times",
+            "qrcode"
         ],
         "predictor": [
             "median_model",
