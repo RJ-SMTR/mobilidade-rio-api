@@ -396,7 +396,9 @@ if __name__ == "__main__":
         parameters_new = ""
         for param in parameters.split("\n"):
             if "ACTIVE" not in param:
-                param = param[:param.find("[")]
+                found = param.find("[")
+                if found != -1:
+                    param = param[:param.find("[")]
             parameters_new += param + "\n"
         parameters = parameters_new
     if 'remove_duplicate_cols' in settings:
