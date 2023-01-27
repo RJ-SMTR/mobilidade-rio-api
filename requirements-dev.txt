@@ -12,6 +12,7 @@ pylint
 
 # populate_db
 pandas
+pyarrow
 
 # jupyter
 ipykernel

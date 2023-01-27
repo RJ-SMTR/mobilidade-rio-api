@@ -209,8 +209,20 @@ def validate_col_values(
     # enforce types
     cols_set_types = []
     if 'enforce_type_cols' in settings and table_name in settings['enforce_type_cols']:
-        cols_set_types = validate_col_names(
-            table_name, settings['enforce_type_cols'][table_name])
+        cols_map = settings['enforce_type_cols'][table_name]
+        col_names = list(cols_map.keys())
+        # to int
+        cols_int = [k for k,v in cols_map.items() if 'int' in v]
+        data[cols_int] = data[cols_int].fillna(0)
+        data[col_names] = data[col_names].apply(pd.to_numeric, errors='ignore')
+        # to other types
+        data = data.astype(settings['enforce_type_cols'][table_name]).copy()
+        # TODO: get types from database
+        # cols_1 = validate_col_types(table_name, data.columns)
+
+    # drop null
+    if 'drop_null_cols' in settings and table_name in settings['drop_null_cols']:
+        data = data.dropna(subset=settings['drop_null_cols'][table_name]).copy()
 
     # run validate cols
     if (table_name in validate_cols
@@ -270,7 +282,7 @@ def upload_data(_app: str, _model: str):
     def constraint_err(detail:str):
         if not detail:
             return
-        return [i for i in ["Key ", " is not present in table "] if i in detail]
+        return [i for i in ["Key ", " is not present in table ", "constraint"] if i in detail]
 
     table_name = f"{_app}_{_model.replace('_', '')}"
     file_path_1 = os.path.join(folder, f"{_model}.txt")

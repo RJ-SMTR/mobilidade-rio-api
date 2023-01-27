@@ -8,16 +8,16 @@
     },
     "table_order": {
         "pontos": [
-            "agency",
-            "calendar_dates",
-            "calendar",
-            "routes",
-            "shapes",
-            "stops",
-            "trips",
-            "frequencies",
-            "stop_times",
-            "qrcode"
+            "#agency",
+            "#calendar_dates",
+            "#calendar",
+            "#routes",
+            "#shapes",
+            "#stops",
+            "#trips",
+            "#frequencies",
+            "#stop_times",
+            "#qrcode"
         ],
         "predictor": [
             "median_model",
@@ -53,6 +53,23 @@
                 "SN"
             ]
         }
+    },
+    "enforce_type_cols": {
+        "predictor_shapeswithstops": {
+            "stop_sequence": "int",
+            "shape_pt_sequence": "int"
+        }
+    },
+    "drop_null_cols": {
+        "predictor_medianmodel": [
+            "stop_id_destiny"
+        ],
+        "predictor_shapeswithstops": [
+            "stop_id",
+            "shape_pt_sequence",
+            "next_stop_id",
+            "previous_stop_id"
+        ]
     },
     "flag_params": [
         "empty_tables"
