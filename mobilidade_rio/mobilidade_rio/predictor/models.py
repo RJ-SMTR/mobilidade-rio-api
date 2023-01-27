@@ -9,7 +9,8 @@ class ShapesWithStops(models.Model):
     # from trips
     trip_short_name = models.CharField(max_length=500, blank=True, null=True) # route_short_name
     direction_id = models.PositiveIntegerField(blank=True, null=True)
-
+    service_id = models.CharField(max_length=500)
+    
     # from stop_times
     trip_id = models.CharField(max_length=500, blank=True)
     stop_sequence = models.PositiveIntegerField(blank=False, null=False)
@@ -60,15 +61,13 @@ class Prediction(models.Model):
         Tempo de chegada previsto
     """
 
-    # API realtime
-
-    # coluna de referência
+    
+    trip_id = models.CharField(max_length=500)
     stop_id = models.CharField(max_length=500)
-    # colunas relacionadas com o mesmo stop_id
     id_veiculo = models.CharField(max_length=500)
     latitude = models.FloatField()
     longitude = models.FloatField()
-    data_hora = models.CharField(max_length=500)
+    dataHora = models.CharField(max_length=500)
     trip_short_name = models.CharField(max_length=500)
     direction_id  = models.CharField(max_length=500)
     service_id = models.CharField(max_length=500)

@@ -1,14 +1,16 @@
-import os
-import requests
+
 from datetime import datetime, timedelta
-from mobilidade_rio.predictor.models import *
+import json
 import pandas as pd
 import numpy as np
+import requests
+
+from mobilidade_rio.predictor.models import *
 
 
-# 1. obtém tabela api
-def get_realtime(df_realtime: pd.DataFrame):
-    # TODO: do we really need df_realtime param? Its generated via static URL
+
+def get_realtime():
+    
     """
     Get realtime API data, filter and return a dataframe.
 
@@ -19,13 +21,14 @@ def get_realtime(df_realtime: pd.DataFrame):
     """
 
     # 1. Get realtime data from API
-
-    # TODO: trocar link da API por login do vault para obter URL
-    # Está configurado para rodar na API antiga, portanto não vai funcionar até pegar a nova.
-
+    #TODO: reverter para usar o env.
     url = os.environ.get('API_REALTIME')
-    api_response = requests.get(url, timeout=10)
-    df_realtime = pd.read_json(api_response.text)
+    headers = os.environ.get('API_HEADER')
+    headers = json.loads(headers)
+    api_response = requests.get(url, headers=headers ,timeout=10)
+    api_response =json.loads(api_response.text)
+    df_realtime= pd.json_normalize(api_response['veiculos'])
+    
     # Avoid warning 'json does not have iloc'
     df_realtime = pd.DataFrame(df_realtime)
 
@@ -39,17 +42,18 @@ def get_realtime(df_realtime: pd.DataFrame):
     # weekend
     df_realtime["dataHora"] = (
         df_realtime["dataHora"] / 1000).apply(datetime.fromtimestamp)
-    df_realtime["service_id"] = df_realtime["dataHora"].dt.weekday().map(
-        {0: "U", 1: "U", 2: "U", 3: "U", 4: "U", 5: "S", 6: "D"})
-
-    # 3. Excluir veículos mais antigos que 20s
+    
+    # Excluir veículos mais antigos que 20s
     df_realtime = df_realtime[df_realtime["dataHora"]
                               > (datetime.now() - timedelta(seconds=20))]
+    
+    df_realtime["service_id"] = df_realtime["dataHora"].dt.weekday.map(
+        {0: "U", 1: "U", 2: "U", 3: "U", 4: "U", 5: "S", 6: "D"})
 
     return df_realtime
 
 
-def _haversine_np(lon1, lat1, lon2, lat2):
+def _haversine_np(lat1,lon1,lat2, lon2):
     """
     Calculate the great circle distance between two points
     on the earth (specified in decimal degrees)
@@ -57,76 +61,64 @@ def _haversine_np(lon1, lat1, lon2, lat2):
     All args must be of equal length.
 
     """
+    
     lon1, lat1, lon2, lat2 = map(np.radians, [lon1, lat1, lon2, lat2])
 
     dlon = lon2 - lon1
     dlat = lat2 - lat1
 
-    a = np.sin(dlat/2.0)**2 + np.cos(lat1) * np.cos(lat2) * np.sin(dlon/2.0)**2
+    a = np.sin(dlat/2.0)**2 + np.cos(lat1) * np.cos(lat2) * np.sin(dlon/2.0)**2 # retorna NaN para todo
 
     c = 2 * np.arcsin(np.sqrt(a))
-    km = 6367 * c
+    km = 6367 * c 
+    
     return km
 
-# TODO: add trips and shapes_with_stops
 
-# 2. localiza posição do veículo no shape
-def get_current_stop(positions, trips, shapes):
+def get_current_stop(positions, shapes):
     """
     1. Identifica trip_id
     2. Identifica ponto origem, ponto destino (em relação ao veículo)
     """
+    
+    positions=positions.astype({'direction_id':'int64','trip_short_name':'string'})
+    shapes= shapes.astype({'direction_id':'int64','trip_short_name':'string'})
+    positions.rename(columns={"latitude":"registro_lat","longitude":"registro_lon"}, inplace=True)
+    positions = positions.merge(shapes, on=["trip_short_name","direction_id","service_id"],how='right')
+    positions['distance']=positions.apply(lambda row: _haversine_np(row['registro_lat'], row['registro_lon'], row['latitude'], row['longitude']), axis=1)
+    bestidxs=positions.dropna(subset=['distance']).sort_values(by=["distance"])
+    bestidxs.drop_duplicates(subset=['codigo'],inplace=True, keep='first')
+    return bestidxs[['trip_id','stop_id','next_stop_id','previous_stop_id','shape_dist_traveled','codigo','trip_short_name', 'direction_id', 'dataHora']]
+    
 
-    # Identifica trip_id
-
-    cols = ["direction_id", "service_id", "trip_short_name"]
-
-    positions = positions.join(
-        trips[cols + ["trip_id"]],
-        on=["direction_id", "service_id", "trip_short_name"],
-        how="left"
-    )
-
-    # Mapeia posições no shape e obtem stop_id_origin, stop_id_destiny
-    positions = positions.join(
-        shapes,
-        on=["trip_id"],
-        how="left"
-    )
-
-    positions["distance"] = _haversine_np(
-        positions["latitude"],
-        positions["longitude"],
-        positions["shape_pt_lon"],
-        positions["shape_pt_lat"],
-    )
-
-    cols = ["codigo", "latitude", "longitude"]
-    ids = positions.groupby(cols)["distance"].idxmin()
-
-    return positions.loc[ids]
-
-def get_prediction(origem, destino, dia_da_semana, hora_atual, next_shape_point, next_stop):
+def get_prediction(row,dia_da_semana,hora_atual,modelo_mediana):
     """ Calculates de residual distance and returns prediction of current section using the model """
-
-    # filtro em predictormodel
-    modelo_mediana = MedianModel.objects.filter()
-    modelo_mediana = pd.DataFrame(list(modelo_mediana.values()))
+   
+    stop_id_origem = row['previous_stop_id']
+    stop_id_destino = row['next_stop_id']
+    if stop_id_origem == None :
+        return None
+    if stop_id_destino == None :
+        return None
 
     prediction = modelo_mediana[
-        (modelo_mediana.stop_id_origem == origem) &
-        (modelo_mediana.stop_id_destino == destino) &
-        (modelo_mediana.dia_da_semana == dia_da_semana) &
+        (modelo_mediana.stop_id_origin == stop_id_origem) &
+        (modelo_mediana.stop_id_destiny == stop_id_destino) &
+        (modelo_mediana.tipo_dia == dia_da_semana) &
         (modelo_mediana.hora == hora_atual)
-    ]["delta_tempo_minuto"].iloc[0]
-
-    # Aqui descartando a distancia entre a posição atual e o próximo ponto do shape
-    # residuo_prox_shape = (shape_posterior.shape_dist_traveled - shape_anterior.shape_dist_traveled) * (1-proj_entre_shapes)
-    next_stop_distance = next_stop["shape_dist_traveled"]
-    residual_distance = (
-        next_shape_point["shape_dist_traveled"] - next_stop_distance) / next_stop_distance
-
-    if residual_distance > 0:
-        return timedelta(minutes=prediction)*residual_distance
+    ]["delta_secs"]
+    
+    if prediction.empty:
+        return None
+    prediction = prediction.squeeze()
+    display(row['codigo']==row['codigo'])
+    if row['codigo']==row['codigo']:
+        
+        next_stop_distance = swst[
+        (swst['stop_id'] == stop_id_destino) & 
+        (swst['trip_id'] == row['trip_id'])]["shape_dist_traveled"].squeeze()
+        residual_distance = (next_stop_distance - row["shape_dist_traveled"]) / next_stop_distance
+        
+        return timedelta(seconds=prediction*residual_distance)
     else:
-        return timedelta(minutes=prediction)
+        return timedelta(seconds=prediction)
