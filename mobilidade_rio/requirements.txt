@@ -1,3 +1,4 @@
+# django
 Django<=3.1.99
 django-extensions<=3.1.99
 djangorestframework<=3.11.99

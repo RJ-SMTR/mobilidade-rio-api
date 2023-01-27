@@ -7,7 +7,14 @@ from mobilidade_rio.predictor.serializers import *
 
 class PredictorViewSet(viewsets.ModelViewSet):
     """
-    Puxar dados da tabela Prediction
+    Obter previsão de chegada de **veículos** (trips) e **paradas de ônibus** (stops)
+
+    Parâmetros:
+    ---
+    - trip_name:
+        - Pesquisar parte do nome do veículo (`trip_short_name`)
+    - stop_id
+        - Pesquisar pelo id da parada
     """
 
     def get_queryset(self):

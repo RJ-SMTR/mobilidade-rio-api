@@ -34,7 +34,8 @@ class Prediction(models.Model):
         Para saber se posição do veículo se alterou, para atualizar o banco.
 
     data_hora
-        Pra ter controle se a posição do veículo é recente ou não.
+        Data e hora da captura desses dados
+        Para ter controle se a posição do veículo é recente ou não.
 
     direction_id, trip_short_name
         Para identificar a trip.
@@ -48,6 +49,9 @@ class Prediction(models.Model):
 
     stop_sequence
         A fim de evitar colunas duplicadas, para cada veículo, pegar o menor stop_sequence.
+
+    arrival_time
+        Tempo de chegada previsto
     """
 
     # API realtime
@@ -64,8 +68,6 @@ class Prediction(models.Model):
     service_id = models.CharField(max_length=500)
     stop_sequence = models.IntegerField()
     arrival_time = models.IntegerField()
-
-# ArrayField(models.CharField(max_length=500), blank=True, null=True)
 
 
 class MedianModel(models.Model):
