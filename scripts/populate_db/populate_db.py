@@ -303,13 +303,15 @@ def upload_data(_app: str, _model: str):
                 conn.rollback()
                 print_colored("yellow","Error on copy data:")
                 detail = error.diag.message_detail
+                if not detail:
+                    detail = str(error).strip()
                 # diag.message_detail comes from psycopg2
                 print_colored("yellow", error, end='')
                 print_colored("yellow", "Retrying manually...")
                 # write error to file
                 log_path = os.path.join(script_path, "logs", f"{table_name}_error.log")
                 with open(log_path, 'w', encoding="utf8") as f_2:
-                    f_2.write(error.diag.message_detail)
+                    f_2.write(detail)
                     f_2.write("\nRetrying manually...\n")
 
                 # if detail is "fk not present in table"
