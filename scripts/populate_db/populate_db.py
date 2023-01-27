@@ -16,7 +16,7 @@ import sys
 import os
 import io
 import psycopg2
-import pandas
+import pandas as pd
 
 parameters = """\
 -d --empty_db           Empty database           [<drop_all>]
@@ -81,13 +81,13 @@ def convert_to_type(
 
 
     # return DataFrame
-    if ret_type == pandas.DataFrame or (ret_type is None and initial_type == pandas.DataFrame):
-        if isinstance(data, pandas.DataFrame):
+    if ret_type == pd.DataFrame or (ret_type is None and initial_type == pd.DataFrame):
+        if isinstance(data, pd.DataFrame):
             if save_file_name is not None:
                 data.to_csv(save_file_path, index=False, header=False)
             return data
         else:
-            data = pandas.read_csv(data)
+            data = pd.read_csv(data)
             if save_file_name is not None:
                 data.to_csv(save_file_path, index=False, header=False)
             return data
@@ -164,9 +164,9 @@ def validate_col_values(
     """
     # if data is a string, read it as csv
     data_type = type(data)
-    if data_type != pandas.DataFrame:
+    if data_type != pd.DataFrame:
         # read data without index
-        data = pandas.read_csv(
+        data = pd.read_csv(
             data, sep=",", encoding="utf8", low_memory=False, dtype=str)
     if cols is None:
         cols = [col for col in data.columns]
