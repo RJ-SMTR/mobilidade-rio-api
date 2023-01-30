@@ -27,7 +27,7 @@ def generate_prediction():
     How it works:
     ---
     1. Get `real time` data and filter it according to the time limit and the day of the week
-    2. Get first segment of each trip and calculate the distance between the start point and the end point
+    2. Get first segment (e.g. stop1 - stop2) of each trip and calculate the distance between the start and end point.
     3. Get median model for the day of the week and hour
     """
 

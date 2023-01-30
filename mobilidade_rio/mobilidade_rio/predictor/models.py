@@ -38,11 +38,15 @@ class Prediction(models.Model):
     Colunas
     -------
     id_veiculo
-        Para saber se posição do veículo se alterou, para atualizar o banco.
+        - Para identificar o veículo em alguma trip.
+        - Se a posição do veículo se alterou, o cronjob deve atualizar a previsão.
+        - `"", None, etc`: não há veículo
+        - `str`: há veículo
 
-    data_hora
-        Data e hora da captura desses dados
-        Para ter controle se a posição do veículo é recente ou não.
+    dataHora
+        - Nomenclatura utilizada na API realtime.
+        - Data e hora da captura desses dados, \\
+        para ter controle se a posição do veículo é recente ou não.
 
     direction_id, trip_short_name
         Para identificar a trip.
@@ -58,7 +62,8 @@ class Prediction(models.Model):
         A fim de evitar colunas duplicadas, para cada veículo, pegar o menor stop_sequence.
 
     arrival_time
-        Tempo de chegada previsto
+        - Tempo de chegada previsto entre o stop_id e o próximo stop_id.
+        - Ou entre o veículo e o próximo stop_id, caso haja veículo.
     """
 
     
@@ -77,7 +82,8 @@ class Prediction(models.Model):
 
 class MedianModel(models.Model):
     """
-    Porcentagem ...
+    Tabela que contém a mediana de tempo de viagem,
+    entre dois pontos (stop), em determinada hora e dia da semana.
 
     Colunas
     -------
