@@ -324,7 +324,7 @@ def upload_data(_app: str, _model: str):
                 # write error to file
                 log_path = os.path.join(script_path, "logs", f"{table_name}_error.log")
                 with open(log_path, 'w', encoding="utf8") as f_2:
-                    f_2.write(detail)
+                    f_2.write("ERROR:" + str(error))
                     f_2.write("\nRetrying manually...\n")
 
                 # if detail is "fk not present in table"
@@ -460,8 +460,31 @@ if __name__ == "__main__":
         conn.commit()
         exit(0)
 
+    
+    tables_found = []
+    total_tables = []
+    comment_tables = []
+    # add <key>_table1 to total tables
+    for app in settings["table_order"].keys():
+        for table in settings["table_order"][app]:
+            if table.startswith("#"):
+                comment_tables.append(table)
+            else:
+                total_tables.append(table)
+
+    print(total_tables)
     # Update data from files in csv_path
     for app in os.listdir(csv_path):
+
+        # get tables found
+        if app in settings["table_order"].keys():
+            folder = os.path.join(csv_path, app)
+            app_models = settings["table_order"][app]
+            for model in os.listdir(folder):
+                model = model.split(".")[0]
+                print(model)
+                if model in app_models:
+                    tables_found.append(model)
 
         # drop all related tables then exit
         if "--drop_tables" in sys.argv or "-t" in sys.argv:
@@ -471,6 +494,8 @@ if __name__ == "__main__":
             tables = cur.fetchall()
             print(f"Dropping related tables in {app}:")
             count = 0
+
+
             if app in settings["table_order"].keys():
                 folder = os.path.join(csv_path, app)
                 app_models = settings["table_order"][app]
@@ -520,3 +545,21 @@ if __name__ == "__main__":
                 Make sure you have the correct app name - \
                 should be a folder in mobilidade_rio/mobilidade_rio."
             )
+
+    # Validate tables
+
+    tables_not_found = [table for table in total_tables if table not in tables_found]
+    if tables_not_found:
+        print_colored("red", "The following tables were not found:")
+        for table in tables_not_found:
+            print_colored("red", "  ",table)
+        print()
+        print_colored("red", "Tip: The table name in settings and in file must match the db.")
+        print_colored("red", "Tip: Check the file extension and compare with settings, default is .txt.")
+        print()
+
+    if comment_tables:
+        print_colored("yellow", "You have commented out the following tables:")
+        for table in comment_tables:
+            print_colored("yellow", "  ",table)
+        print()
