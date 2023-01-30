@@ -9,11 +9,27 @@ def print_hello():
     """Print to test django-q"""
     print(f"Hello from django-q {datetime.now()}")
 
-# TODO: function workaround
 
-
-
+# TODO: Decide if this function will recall itself every 20 seconds 3x or if apps.py will do it.
 def generate_prediction():
+    """
+    Update the prediction table.
+
+    How will it be used:
+    ---
+    The app will call this function every N seconds to show to the user  
+    the vehicles that arrives the fastest to the stop destiny.
+
+    Return:
+    ---
+    One prediction of arrival time for each vehicle (not trip, not stop, the vehicle itself).  
+
+    How it works:
+    ---
+    1. Get `real time` data and filter it according to the time limit and the day of the week
+    2. Get first segment of each trip and calculate the distance between the start point and the end point
+    3. Get median model for the day of the week and hour
+    """
 
     print("[GENPRED] etapa 1")
     # Etapa 1 - Obter os dados de tempo real
@@ -38,7 +54,6 @@ def generate_prediction():
     swst = pd.DataFrame.from_records(swst.values())
     swst = swst.astype({'direction_id':'int64','trip_short_name':'string'})
 
-    print("[GENPRED] etapa 2")
     # Etapa 2 - Obter o primeiro segmento de cada viagem
     # e calcular a distância entre o ponto de partida e o ponto de chegada
     first_segment = swst.copy()
