@@ -22,10 +22,8 @@ def get_realtime():
 
     # 1. Get realtime data from API
     #TODO: reverter para usar o env.
-    url = ""
-    headers = ''
-    # url = os.environ.get('API_REALTIME')
-    # headers = os.environ.get('API_HEADER')
+    url = os.environ.get('API_REALTIME')
+    headers = os.environ.get('API_HEADER')
     headers = json.loads(headers)
     api_response = requests.get(url, headers=headers ,timeout=10)
     api_response =json.loads(api_response.text)

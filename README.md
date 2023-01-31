@@ -26,9 +26,11 @@ Em parêntesis, o [modo de execução](#modo-de-execução) que utiliza o recurs
 * **Local**
   * _Desenvolvimento Local_
   * Utiliza localmente o Docker.
+  * O Docker é executado localmente apenas.
 * **Dev**
   * _Desenvolvimento em servidor Remoto_
   * Desenvolver num servidor remoto, utilizando o orquestrador Kubernetes (K8s) com o Docker.
+  * O Docker é testado no GitHub Actions e é executado no servidor remoto.
 * **Staging**
   * _Teste em servidor Remoto_
   * Também chamado de `stag`
