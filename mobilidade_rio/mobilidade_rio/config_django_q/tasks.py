@@ -10,28 +10,8 @@ def print_hello():
     print(f"Hello from django-q {datetime.now()}")
 
 
-# TODO: Decide if this function will recall itself every 20 seconds 3x or if apps.py will do it.
 def generate_prediction():
-    """
-    Update the prediction table.
 
-    How will it be used:
-    ---
-    The app will call this function every N seconds to show to the user  
-    the vehicles that arrives the fastest to the stop destiny.
-
-    Return:
-    ---
-    One prediction of arrival time for each vehicle (not trip, not stop, the vehicle itself).  
-
-    How it works:
-    ---
-    1. Get `real time` data and filter it according to the time limit and the day of the week
-    2. Get first segment (e.g. stop1 - stop2) of each trip and calculate the distance between the start and end point.
-    3. Get median model for the day of the week and hour
-    """
-
-    print("[GENPRED] etapa 1")
     # Etapa 1 - Obter os dados de tempo real
     # e filtrar os dados de acordo com o tempo limite e o dia da semana
     date=datetime.now()
@@ -61,21 +41,21 @@ def generate_prediction():
 
     hour = date_limit.hour
 
-    #TODO:verificar se a tabela no original será alterada.
-    median_model=MedianModel.objects.filter(tipo_dia=date_limit.weekday())
-    median_model=median_model.filter(hora=hour)
-    median_model = pd.DataFrame(list(median_model.values()))
+    #TODO:verificar se tipo_dia na tabela no original será alterada.
+    median_model = MedianModel.objects.filter(tipo_dia=date_limit.weekday()+1)
+    median_model = median_model.filter(hora=hour)#hora 1-7
+    median_model = pd.DataFrame.from_records(median_model.values())
 
     # Etapa 3 - substitui os elementos respectivos de swst com firt segment
     swst = swst[swst['stop_id'].isna()==False]
     swst=swst.merge(first_segment[['codigo','trip_id','shape_dist_traveled']], how='left', on=['trip_id','shape_dist_traveled'])
-    swst['arrival_time']=swst.apply(lambda x: get_prediction(x,date_limit.weekday(),hour,median_model), axis=1)
+    swst['arrival_time']=swst.apply(lambda x: get_prediction(x,date_limit.weekday(),hour,median_model,swst), axis=1)
     swst['dataHora']=date
-    df_prediction = swst[['trip_id','stop_id','codigo','latitude','longitude','dataHora','trip_short_name','direction_id','service_id','stop_sequence','arrival_time']].copy()
-    df_prediction = df_prediction.rename(columns={'codigo': 'id_veiculo'})
+    swst = swst[['trip_id','stop_id','codigo','latitude','longitude','dataHora','trip_short_name','direction_id','service_id','arrival_time']].copy()
+    swst = swst.rename(columns={'codigo': 'id_veiculo'})
+    
+    swst = swst.astype({"trip_id":"string","stop_id":"string","id_veiculo":"string","trip_id":"string","dataHora":"string","trip_short_name":"string","direction_id":"string","service_id":"string","arrival_time":"string"})
 
-    print("[GENPRED] 3.7 insert", df_prediction.head(2).to_dict('records'))
-    for row in df_prediction.to_dict('records'):
+    for row in swst.to_dict('records'):
         Prediction.objects.update_or_create(**row)
-    print("[GENPRED] end")
 

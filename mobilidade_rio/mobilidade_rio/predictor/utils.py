@@ -50,7 +50,7 @@ def get_realtime():
                               > (datetime.now() - timedelta(seconds=20))]
     
     df_realtime["service_id"] = df_realtime["dataHora"].dt.weekday.map(
-        {0: "U", 1: "U", 2: "U", 3: "U", 4: "U", 5: "S", 6: "D"})
+        {0: "U", 1: "U", 2: "U", 5: "U", 4: "U", 5: "S", 6: "D"}) #confirmar se o map {5:"S",6:"D"} está correto. 
 
     return df_realtime
 
@@ -93,34 +93,48 @@ def get_current_stop(positions, shapes):
     return bestidxs[['trip_id','stop_id','next_stop_id','previous_stop_id','shape_dist_traveled','codigo','trip_short_name', 'direction_id', 'dataHora']]
     
 
-def get_prediction(row,dia_da_semana,hora_atual,modelo_mediana):
+def get_prediction(row,dia_da_semana,hora_atual,modelo_mediana,swst):
     """ Calculates de residual distance and returns prediction of current section using the model """
    
     stop_id_origem = row['previous_stop_id']
     stop_id_destino = row['next_stop_id']
+
     if stop_id_origem == None :
         return None
     if stop_id_destino == None :
         return None
 
-    prediction = modelo_mediana[
-        (modelo_mediana.stop_id_origin == stop_id_origem) &
-        (modelo_mediana.stop_id_destiny == stop_id_destino) &
-        (modelo_mediana.tipo_dia == dia_da_semana) &
-        (modelo_mediana.hora == hora_atual)
-    ]["delta_secs"]
+    prediction=pd.DataFrame()
+    try:
+        prediction = modelo_mediana[
+            (modelo_mediana.stop_id_origin == stop_id_origem) &
+            (modelo_mediana.stop_id_destiny == stop_id_destino) &
+            (modelo_mediana.tipo_dia == dia_da_semana) &
+            (modelo_mediana.hora == hora_atual)
+        ]["delta_secs"]
+    except:
+        print(stop_id_origem, modelo_mediana.info())
+
+
     
     if prediction.empty:
         return None
     prediction = prediction.squeeze()
-    display(row['codigo']==row['codigo'])
-    if row['codigo']==row['codigo']:
-        
+
+    # Se existe um carro, calculamos o residual. 
+    if row['codigo']: 
         next_stop_distance = swst[
         (swst['stop_id'] == stop_id_destino) & 
         (swst['trip_id'] == row['trip_id'])]["shape_dist_traveled"].squeeze()
-        residual_distance = (next_stop_distance - row["shape_dist_traveled"]) / next_stop_distance
+
+        # verificando se denominador é um número e diferente de zero.
+        if next_stop_distance and next_stop_distance != 0: 
+            residual_distance = (next_stop_distance - row["shape_dist_traveled"]) / next_stop_distance
+        else:
+            return None
         
         return timedelta(seconds=prediction*residual_distance)
+
+    # se não um carro, predição do tempo entre stop next - stop current.    
     else:
         return timedelta(seconds=prediction)

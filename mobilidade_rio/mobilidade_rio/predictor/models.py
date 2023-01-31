@@ -76,8 +76,7 @@ class Prediction(models.Model):
     trip_short_name = models.CharField(max_length=500)
     direction_id  = models.CharField(max_length=500)
     service_id = models.CharField(max_length=500)
-    stop_sequence = models.IntegerField()
-    arrival_time = models.IntegerField()
+    arrival_time = models.CharField(max_length=500)
 
 
 class MedianModel(models.Model):
