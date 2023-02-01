@@ -1,7 +1,6 @@
-#from django.shortcuts import render
 from rest_framework import viewsets
-from mobilidade_rio.predictor.models import *
-from mobilidade_rio.predictor.serializers import *
+from mobilidade_rio.predictor.models import Prediction
+from mobilidade_rio.predictor.serializers import PredictionSerializer
 # import APIView
 
 
@@ -16,6 +15,8 @@ class PredictorViewSet(viewsets.ModelViewSet):
     - stop_id
         - Pesquisar pelo id da parada
     """
+
+    serializer_class = PredictionSerializer
 
     def get_queryset(self):
         queryset = Prediction.objects.all().order_by("dataHora","trip_short_name", "stop_id")

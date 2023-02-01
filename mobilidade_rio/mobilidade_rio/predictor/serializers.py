@@ -8,3 +8,7 @@ class ShapeWithStopsSerializer(serializers.HyperlinkedModelSerializer):
         fields = "__all__"
 
 
+class PredictionSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Prediction
+        fields = [field.name for field in model._meta.fields]
