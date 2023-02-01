@@ -4,6 +4,7 @@ import json
 import pandas as pd
 import numpy as np
 import requests
+import os
 
 from mobilidade_rio.predictor.models import *
 
@@ -21,7 +22,6 @@ def get_realtime():
     """
 
     # 1. Get realtime data from API
-    #TODO: reverter para usar o env.
     url = os.environ.get('API_REALTIME')
     headers = os.environ.get('API_HEADER')
     headers = json.loads(headers)
