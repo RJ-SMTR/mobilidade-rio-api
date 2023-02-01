@@ -1,6 +1,5 @@
 """
 populate_db
-v1.0 - 02/12/2022
 
 Copy CSV to Postgres
 
@@ -11,6 +10,7 @@ How to use:
 
 """
 
+
 import json
 import sys
 import os
@@ -18,6 +18,7 @@ import io
 import psycopg2
 import pandas as pd
 
+# TODO: --open_docker_db
 parameters = """\
 -d --empty_db           Empty database           [<drop_all>]
 -e --empty_tables       Empty all tables         [<empty_tables>]
@@ -460,7 +461,6 @@ if __name__ == "__main__":
         conn.commit()
         exit(0)
 
-    
     tables_found = []
     total_tables = []
     comment_tables = []
@@ -472,7 +472,6 @@ if __name__ == "__main__":
             else:
                 total_tables.append(table)
 
-    print(total_tables)
     # Update data from files in csv_path
     for app in os.listdir(csv_path):
 
@@ -482,7 +481,6 @@ if __name__ == "__main__":
             app_models = settings["table_order"][app]
             for model in os.listdir(folder):
                 model = model.split(".")[0]
-                print(model)
                 if model in app_models:
                     tables_found.append(model)
 
