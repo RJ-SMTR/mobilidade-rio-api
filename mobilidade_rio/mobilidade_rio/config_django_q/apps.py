@@ -27,8 +27,7 @@ class ConfigDjangoQConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
     name = 'mobilidade_rio.config_django_q'
 
-    # custom class to
-
+    # TODO: opção para que schedules rodem a cada X segundos
     def ready(self) -> None:
         """
         This method is called when the app is ready.

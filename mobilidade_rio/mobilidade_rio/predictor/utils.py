@@ -113,9 +113,8 @@ def get_prediction(row,dia_da_semana,hora_atual,modelo_mediana,swst):
             (modelo_mediana.tipo_dia == dia_da_semana) &
             (modelo_mediana.hora == hora_atual)
         ]["delta_secs"]
-    except:
+    except Exception:
         print(stop_id_origem, modelo_mediana.info())
-
 
 
     if prediction.empty:
