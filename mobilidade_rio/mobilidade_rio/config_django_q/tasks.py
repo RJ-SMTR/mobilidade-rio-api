@@ -85,18 +85,27 @@ def generate_prediction():
         ]].copy()
 
     pred = pred.rename(columns={'codigo': 'id_veiculo'})
+
     pred['id_veiculo'] = pred['id_veiculo'].replace({np.nan: None})
 
-    pred = pred.astype({
-        "trip_id":"string",
-        "stop_id":"string",
-        "id_veiculo":"string",
-        "dataHora":"string",
-        "trip_short_name":"string",
-        "direction_id":"string",
-        "service_id":"string",
-        "arrival_time":'object'
-        })
+    # FIXME: all rows has arrival_time = nan, so prediction can't be made.
+    #        To test viewset, set null arrival_time = 1 minute
+    pred['arrival_time'] = pred['arrival_time'].replace({
+        np.nan: timedelta(minutes=1), pd.NA: timedelta(minutes=1)})
+
+    # ! Enforcing types creates strings with <NA> instead of None
+    #   Not doing it doens't create any problem
+    # pred = pred.astype({
+    #     "trip_id":"string",
+    #     "stop_id":"string",
+    #     "id_veiculo":"string",
+    #     "dataHora":"string",
+    #     "trip_short_name":"string",
+    #     "direction_id":"string",
+    #     "service_id":"string",
+    #     "arrival_time":'object'
+    #     })
 
     for row in pred.to_dict('records'):
         Prediction.objects.update_or_create(**row)
+    Prediction.objects.exclude(pk__in=[i for i in range(1, len(pred)+1)]).delete()
