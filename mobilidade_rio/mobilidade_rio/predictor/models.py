@@ -10,7 +10,7 @@ class ShapesWithStops(models.Model):
     trip_short_name = models.CharField(max_length=500, blank=True, null=True) # route_short_name
     direction_id = models.PositiveIntegerField(blank=True, null=True)
     service_id = models.CharField(max_length=500)
-    
+
     # from stop_times
     trip_id = models.CharField(max_length=500, blank=True)
     stop_sequence = models.PositiveIntegerField(blank=False, null=False)
@@ -69,17 +69,16 @@ class Prediction(models.Model):
             - `id_veiculo = str`: O tempo de chegada previsto entre o veículo e o próximo stop_id.
     """
 
-    
     trip_id = models.CharField(max_length=500)
     stop_id = models.CharField(max_length=500)
-    id_veiculo = models.CharField(max_length=500)
+    id_veiculo = models.CharField(max_length=500, null=True)
     latitude = models.FloatField()
     longitude = models.FloatField()
     dataHora = models.CharField(max_length=500)
     trip_short_name = models.CharField(max_length=500)
     direction_id  = models.CharField(max_length=500)
     service_id = models.CharField(max_length=500)
-    arrival_time = models.CharField(max_length=500)
+    arrival_time = models.DurationField(null=True)
 
 
 class MedianModel(models.Model):
