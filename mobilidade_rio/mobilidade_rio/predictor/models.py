@@ -40,8 +40,9 @@ class Prediction(models.Model):
     id_veiculo
         - Para identificar o veículo em alguma trip.
         - Se a posição do veículo se alterou, o cronjob deve atualizar a previsão.
-        - `"", None, etc`: não há veículo
-        - `str`: há veículo
+        - Retorna:
+            - `None | ""`: não há veículo
+            - `str`: há veículo
 
     dataHora
         - Nomenclatura utilizada na API realtime.
@@ -62,8 +63,10 @@ class Prediction(models.Model):
         A fim de evitar colunas duplicadas, para cada veículo, pegar o menor stop_sequence.
 
     arrival_time
-        - Tempo de chegada previsto entre o stop_id e o próximo stop_id.
-        - Ou entre o veículo e o próximo stop_id, caso haja veículo.
+        - Retorna:
+            - `id_veiculo = (None | "")`: O tempo de chegada previsto
+            entre o stop_id e o próximo stop_id.
+            - `id_veiculo = str`: O tempo de chegada previsto entre o veículo e o próximo stop_id.
     """
 
     

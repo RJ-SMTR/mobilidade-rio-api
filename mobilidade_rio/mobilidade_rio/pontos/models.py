@@ -291,8 +291,8 @@ class StopTimes(models.Model):
         # composite primary key: trip_id + stop_sequence + stop_id
         constraints = [
             # TODO: For testing purposes, this composite primary key is disabled
-            # ?   because of errors like "Key (trip_id_id, stop_id_id, stop_sequence)
-            # ?       =(O0108AAA0AIDU01, 1003O00022P0, 35) already exists."
+            #       to prevent errors like "Key (a,b,c)=(1,2,3) already exists".
+            #       This can be enabled in production.
             # models.UniqueConstraint(
             #     fields=['trip_id', 'stop_id', 'stop_sequence'], name='trip_stop_sequence'
             # )

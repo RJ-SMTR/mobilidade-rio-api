@@ -162,7 +162,9 @@ STATIC_URL = '/static/'
 Q_CLUSTER = {
     'name': 'DjangoORM',
     'orm': 'default',
+    # Maximum execution time
     'timeout': 90,
+    # Seconds to wait older task to finish
     'retry': 120,
     'bulk': 10,
     'workers': 4,
