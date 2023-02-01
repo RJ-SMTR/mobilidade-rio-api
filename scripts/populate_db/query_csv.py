@@ -3,10 +3,10 @@
 import csv
 import os
 
-def query_csv(csv_file, contains_word: list, and_contains_word: list=[], not_contains_word: list = []):
+def query_csv(_csv_file, contains_word: list, and_contains_word: list=[], not_contains_word: list = []):
     """Query csv file and return a list with the lines that contains the words in the list 'contains_word'"""
-    with open(csv_file, 'r') as csv_file:
-        csv_reader = csv.reader(csv_file, delimiter=';')
+    with open(_csv_file, 'r', encoding='utf-8') as _csv_file:
+        csv_reader = csv.reader(_csv_file, delimiter=';')
         line_count = 0
         lines = []
         for row in csv_reader:
