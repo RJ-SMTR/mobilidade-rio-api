@@ -11,7 +11,28 @@ def print_hello():
 
 
 def generate_prediction():
+    """
+    Update the prediction table.
 
+    How will it be used:
+    ---
+    The prediction table will be updated every N seconds by a cron job.
+
+    The table itself will be used by the frontend app \
+        to show to the user the vehicles that arrives the fastest to the stop destiny.
+
+    Return:
+    ---
+    Vehicles ordered by the fastest arrival time to the stop destiny.
+
+    How it works:
+    ---
+    1. Get `real time` data and filter it according to the time limit and the day of the week
+    2. Get first segment of each trip and calculate the distance between the start point and the end point
+    3. Get median model for the day of the week and hour
+
+    TODO: review 'how it works'
+    """
     # Etapa 1 - Obter os dados de tempo real
     # e filtrar os dados de acordo com o tempo limite e o dia da semana
     date_now=datetime.now()

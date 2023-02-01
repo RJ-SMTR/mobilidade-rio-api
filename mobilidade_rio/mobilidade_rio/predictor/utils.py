@@ -15,10 +15,21 @@ def get_realtime():
     """
     Get realtime API data, filter and return a dataframe.
 
-    Parameters
-    ----------
-    df_realtime
-        Dataframe with realtime data
+    Realtime API fields:
+    ---
+    - codigo
+    - placa
+    - linha
+    - latitude
+    - longitude
+    - dataHora
+    - velocidade
+    - id_migracao_trajeto
+    - sentido
+    - trajeto
+    - hodometro
+
+    TODO: confirm if the fields are correct.
     """
 
     ret_data = {
