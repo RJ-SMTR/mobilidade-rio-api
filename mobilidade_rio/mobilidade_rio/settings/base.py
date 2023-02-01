@@ -169,4 +169,7 @@ Q_CLUSTER = {
     'bulk': 10,
     'workers': 4,
     'queue_limit': 50,
+    # Explicittly don't run deleted tasks
+    'max_attempts': 1,
+    'attempt_count': 1,
 }
