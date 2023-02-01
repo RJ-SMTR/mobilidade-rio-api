@@ -21,6 +21,12 @@ def get_realtime():
         Dataframe with realtime data
     """
 
+    ret_data = {
+        "code": 0,
+        "status": "ok",
+        "message": "",
+    }
+
     # 1. Get realtime data from API
     url = os.environ.get('API_REALTIME')
     headers = os.environ.get('API_HEADER')
@@ -35,6 +41,7 @@ def get_realtime():
     # 2. map direction, weekday; exclude old vehicles
     df_realtime.rename(columns={
         "sentido": "direction_id", "linha": "trip_short_name"}, inplace=True)
+
     # direction_id
     df_realtime["direction_id"] = df_realtime["direction_id"].map(
         {"ida": 0, "volta": 1})
@@ -42,17 +49,22 @@ def get_realtime():
     # weekend
     df_realtime["dataHora"] = (
         df_realtime["dataHora"] / 1000).apply(datetime.fromtimestamp)
+    print("GR 2.1 df_realtime:", df_realtime.head(5))
 
     # Excluir veículos mais antigos que 20s
     df_realtime = df_realtime[df_realtime["dataHora"]
                               > (datetime.now() - timedelta(seconds=20))]
+    if df_realtime.empty:
+        ret_data["message"] = "[get_realtime error] no vehicles in the last 20s."
+        ret_data["code"] = 1
+        ret_data["status"] = "err_vehicle_20s"
+        return df_realtime, ret_data
 
     # TODO: Confirmar se o map {5:"S",6:"D"} está correto.
     df_realtime["service_id"] = df_realtime["dataHora"].dt.weekday.map(
-        {0: "U", 1: "U", 2: "U", 3: "U", 4: "U", 5: "S", 6: "D"}
-        )
+        {0: "U", 1: "U", 2: "U", 3: "U", 4: "U", 5: "S", 6: "D"})
 
-    return df_realtime
+    return df_realtime, ret_data
 
 
 def _haversine_np(lat1,lon1,lat2, lon2):

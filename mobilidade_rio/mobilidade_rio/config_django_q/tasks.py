@@ -2,7 +2,7 @@
 
 from datetime import datetime, timedelta
 import pandas as pd
-
+import colorama as cl
 from mobilidade_rio.predictor.utils import *
 
 def print_hello():
@@ -18,7 +18,12 @@ def generate_prediction():
     date_limit = date_now - timedelta(seconds=60)
     weekday = {0: "U", 1: "U", 2: "U", 3: "U", 4: "U", 5: "S", 6: "D"}[date_limit.weekday()]
 
-    real_time = get_realtime()
+    real_time, real_time_ret = get_realtime()
+    if real_time_ret["status"] == "err_vehicle_20s":
+        print(cl.Fore.RED + real_time_ret["message"], cl.Fore.RESET)
+        return
+        # ? for now is better not to delete the old predictions
+        # TODO: decide if it's better to delete the old predictions, for dev and prod
     real_time.dropna(subset=[
         'dataHora','latitude','longitude','trip_short_name','direction_id','service_id'
         ],inplace=True)
