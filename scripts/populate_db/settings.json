@@ -16,8 +16,7 @@
             "stops",
             "trips",
             "frequencies",
-            "stop_times",
-            "qrcode"
+            "stop_times"
         ]
     },
     "remove_duplicate_cols": {
