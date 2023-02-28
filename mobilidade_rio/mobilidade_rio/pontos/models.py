@@ -185,8 +185,8 @@ class Stops(models.Model):
         zone_id: mandatory if fare information is provided via fare_rules.txt (TODO)
         parent_station:
             mandatory if location_type is 2, 3, 4
-            forbidden if location_type is 1
-            optional if location_type is 0
+            forbidden if location_type is 1 (station, stop parent)
+            optional if location_type is 0, None (platform, stop child)
 
     Primary keys: stop_id
     Foreign keys: parent_station,
