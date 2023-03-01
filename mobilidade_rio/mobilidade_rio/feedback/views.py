@@ -40,14 +40,18 @@ class FeedbackBRTViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
         """
         Save the feedback submission with the current user as the submitter.
         """
-        user_ip = self.request.META.get(
+
+        x_forwarded_for = self.request.META.get('HTTP_X_FORWARDED_FOR')
+        if x_forwarded_for:
+            ip = x_forwarded_for.split(',')[0]
+        else:
+            ip = self.request.META.get('REMOTE_ADDR')
+        ip = self.request.META.get(
             'HTTP_X_FORWARDED_FOR', self.request.META.get('REMOTE_ADDR'))
 
-        serializer.save(ip_address=user_ip)
+        serializer.save(ip_address=ip)
 
     def get_permissions(self):
-        print("permissions",self.action, self.request.method.upper())
         if self.request.method.upper() in ('OPTIONS'):
-            print("options")
             return [permissions.IsAuthenticated()]
         return super().get_permissions()
