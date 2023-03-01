@@ -5,6 +5,7 @@ from rest_framework import routers
 
 from mobilidade_rio.pontos import views as gtfs
 from mobilidade_rio.predictor import views as pred
+from mobilidade_rio.feedback import views as fb
 
 gtfs_router = routers.DefaultRouter()
 gtfs_router.register(r"agency", gtfs.AgencyViewSet)
@@ -21,10 +22,13 @@ pred_router = routers.DefaultRouter()
 pred_router.register(r"shape_with_stops", pred.ShapeWithStopsViewSet,basename="shape_with_stops")
 #pred_router.register(r"predictor", pred.PredictorViewSet,basename="pred_arrivals")
 
+feedback_router = routers.DefaultRouter()
+feedback_router.register(r"brt", fb.FeedbackBRTViewSet,basename="feedback_brt")
+
 unified_router = routers.DefaultRouter()
-# add all gtfs_router and pred_router to unified_router
 unified_router.registry.extend(gtfs_router.registry)
 unified_router.registry.extend(pred_router.registry)
+unified_router.registry.extend(feedback_router.registry)
 
 
 # Wire up our API using automatic URL routing.
@@ -33,6 +37,7 @@ urlpatterns = [
     path("", include(unified_router.urls)),
     path("gtfs/", include(gtfs_router.urls)),
     path("predictor/", include(pred_router.urls)),
+    path("feedback/", include(feedback_router.urls)),
     path("admin/", admin.site.urls),
     path("api-auth/", include("rest_framework.urls", namespace="rest_framework")),
     url(r"^auth/", include("djoser.urls")),
