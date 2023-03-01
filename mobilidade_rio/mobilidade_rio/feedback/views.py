@@ -47,13 +47,15 @@ class FeedbackBRTViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
         else:
             ip = self.request.META.get('REMOTE_ADDR')
 
-        if isinstance(ip, (list, tuple)):
-            ip = ip[0]
-        else:
-            if ", " in ip:
-                ip = ip.split(", ")[0]
-            else:
-                ip = ip.split(",")[0]
+        # TODO: make ip work
+        ip = ""
+        # if isinstance(ip, (list, tuple)):
+        #     ip = ip[0]
+        # else:
+        #     if ", " in ip:
+        #         ip = ip.split(", ")[0]
+        #     else:
+        #         ip = ip.split(",")[0]
 
         serializer.save(ip_address=ip)
 
