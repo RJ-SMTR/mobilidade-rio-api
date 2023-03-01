@@ -31,10 +31,10 @@ class FeedbackBRTViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
     serializer_class = FeedbackBRTSerializer
 
     # TODO: if it's ok to use settings.DEBUG
-    if settings.SETTINGS_MODULE.rsplit('.',1)[-1] in ("native", "local"):
-        permission_classes = [permissions.AllowAny]
-    else:
-        permission_classes = [permissions.IsAuthenticated]
+    # if settings.SETTINGS_MODULE.rsplit('.',1)[-1] in ("native", "local"):
+    permission_classes = [permissions.AllowAny]
+    # else:
+    #     permission_classes = [permissions.IsAuthenticated]
 
     def perform_create(self, serializer):
         """
