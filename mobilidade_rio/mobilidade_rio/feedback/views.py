@@ -55,9 +55,6 @@ class FeedbackBRTViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
             else:
                 ip = ip.split(",")[0]
 
-        ip = self.request.META.get(
-            'HTTP_X_FORWARDED_FOR', self.request.META.get('REMOTE_ADDR'))
-
         serializer.save(ip_address=ip)
 
     def get_permissions(self):
