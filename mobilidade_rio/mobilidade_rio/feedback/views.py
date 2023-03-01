@@ -43,9 +43,18 @@ class FeedbackBRTViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
 
         x_forwarded_for = self.request.META.get('HTTP_X_FORWARDED_FOR')
         if x_forwarded_for:
-            ip = x_forwarded_for.split(',')[0]
+            ip = x_forwarded_for
         else:
             ip = self.request.META.get('REMOTE_ADDR')
+
+        if isinstance(ip, (list, tuple)):
+            ip = ip[0]
+        else:
+            if ", " in ip:
+                ip = ip.split(", ")[0]
+            else:
+                ip = ip.split(",")[0]
+
         ip = self.request.META.get(
             'HTTP_X_FORWARDED_FOR', self.request.META.get('REMOTE_ADDR'))
 
