@@ -328,48 +328,48 @@ def upload_data(_app: str, _model: str):
 
                 # if detail is "fk not present in table"
                 count_1 = 0
-                if constraint_err(detail):
-                    # try catch per line
-                    f_1.seek(0)
-                    total = f_1.readlines()
-                    f_1.seek(0)
-                    cols = f_1.readline().strip().split(',')
-                    cols = validate_col_names(table_name, cols)
-                    temp_path = os.path.join(script_path, "temp.txt")
-                    with open(temp_path, 'r', encoding="utf8") as f_temp:
-                        data = validate_col_values(f_temp, table_name, cols)
-                    # iterate lines
-                    for line in data:
+                # if constraint_err(detail):
+                # try catch per line
+                f_1.seek(0)
+                total = f_1.readlines()
+                f_1.seek(0)
+                cols = f_1.readline().strip().split(',')
+                cols = validate_col_names(table_name, cols)
+                temp_path = os.path.join(script_path, "temp.txt")
+                with open(temp_path, 'r', encoding="utf8") as f_temp:
+                    data = validate_col_values(f_temp, table_name, cols)
+                # iterate lines
+                for line in data:
+                    try:
+                        cur.copy_from(
+                            file=io.StringIO(line),
+                            table=table_name,
+                            sep=",",
+                            columns=cols
+                        )
+                        conn.commit()
+                        count_1 += 1
+                    except psycopg2.Error:
+                        conn.rollback()
                         try:
-                            cur.copy_from(
-                                file=io.StringIO(line),
-                                table=table_name,
-                                sep=",",
-                                columns=cols
-                            )
+                            # copy expert, for null values
+                            sql_1 = f"""
+                            COPY {table_name} ({','.join(cols)})
+                            FROM STDIN WITH CSV DELIMITER AS ','
+                            """
+                            cur.copy_expert(sql_1, io.StringIO(line))
                             conn.commit()
                             count_1 += 1
-                        except psycopg2.Error:
+                        except psycopg2.Error as error_2:
+                            # write error to file
+                            with open(log_path, 'a', encoding="utf8") as f_2:
+                                f_2.write(str(error_2))
+                                f_2.write("\n")
                             conn.rollback()
-                            try:
-                                # copy expert, for null values
-                                sql_1 = f"""
-                                COPY {table_name} ({','.join(cols)})
-                                FROM STDIN WITH CSV DELIMITER AS ','
-                                """
-                                cur.copy_expert(sql_1, io.StringIO(line))
-                                conn.commit()
-                                count_1 += 1
-                            except psycopg2.Error as error_2:
-                                # write error to file
-                                with open(log_path, 'a', encoding="utf8") as f_2:
-                                    f_2.write(str(error_2))
-                                    f_2.write("\n")
-                                conn.rollback()
-                                if constraint_err(error_2.diag.message_detail):
-                                    pass
-                                else:
-                                    raise error_2
+                            # if constraint_err(error_2.diag.message_detail):
+                            #     pass
+                            # else:
+                            #     raise error_2
                 if count_1 == 0:
                     print_colored("red",f"{TAB}[FAIL - NO INSERT]")
                 else:
