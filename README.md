@@ -13,49 +13,43 @@ Em parêntesis, o [modo de execução](#modo-de-execução) que utiliza o recurs
 * [Postgres](https://www.postgresql.org/) (nativo)
 * Python >=3.9
 
-## Desenvolvimento
-
-### Modo de execução
-
-> Você pode executar a aplicação de várias formas, cada uma tem seu objetivo e suas vantagens. A seguir, é descrito o que cada uma faz.
-
-* **Native**
-  * _Desenvolvimento Local em servidor nativo_
-  * Para desenvolver com rapidez os recursos do servidor, ele é executado localmente na sua máquina, sem utilizar o Docker.
-  * Se este não é o seu caso, use o `Local`.
-* **Local**
-  * _Desenvolvimento Local_
-  * Utiliza localmente o Docker.
-* **Dev**
-  * _Desenvolvimento em servidor Remoto_
-  * Desenvolver num servidor remoto, utilizando o orquestrador Kubernetes (K8s) com o Docker.
-* **Staging**
-  * _Teste em servidor Remoto_
-  * Também chamado de `stag`
-  * Funciona semelhante ao `dev`, mas com um banco de dados diferente.
-* **Prod**
-  * _Produção em servidor oficial_
-  * Também chamado de `prod`
-  * Funciona semelhante ao `dev`, mas tudo é executado em um servidor oficial.
-
-Resumindo o que cada um faz:
-
-| Nome | Descrição | Recursos |
-|---|---|---|
-| native | Desenv nativo | 🖥️ |
-| local | Desenv. local | 🐋 |
-| dev | Desenv. Remoto | 🐋☸️ |
-| stag | Remoto como staging | 🐋☸️ |
-| prod | Remoto como produção | 🐋☸️ |
+## Desenvolvimento local
 
 ### Iniciando o ambiente
 
 ```bash
 conda activate mobilidade_rio_api
-pip install -r mobilidade_rio/requirements-dev.txt
+pip install -r mobilidade_rio/requirements.txt  -r requirements-dev.txt
 ```
 
-### Criando a aplicação
+### Configurando a aplicação
+
+> Para dúvidas sobre usar **Native** ou **Local**, veja [modos de execução do Django](#modos-de-execução-do-django)
+
+Deverá ser executado toda vez que abrir uma nova sessão no terminal.
+
+Native:
+* Bash
+  ```bash
+  export DJANGO_SETTINGS_MODULE="mobilidade_rio.settings.native"
+  ```
+* Powershell
+  ```powershell
+  $env:DJANGO_SETTINGS_MODULE="mobilidade_rio.settings.native"
+  ```
+
+Local:
+* Bash
+  ```bash
+  source mobilidade_rio/dev_local/api.env
+  ```
+* Powershell
+  ```powershell
+  $(Get-Content ./mobilidade_rio/dev_local/api.env | ForEach-Object { $name, $value = $_.split('=');set-content env:\$name $value });
+  ```
+
+
+### Iniciando a aplicação
 
 Native:
 ```bash
@@ -69,17 +63,19 @@ Local:
 docker-compose -f "mobilidade_rio/dev_local/docker-compose_local.yml" up --build
 ```
 
-Dev, Staging, Prod:
-
-> _em construção_
+Dev, Stag e Prod:
+* O deploy e execução das branches de dev, staging e produção são feitos automaticamente via [Github Actions](https://github.com/features/actions).
+* Essas branches usam a configuração Django de acordo com seu nome. Exemplo: a branch `dev` usa a configuração dev.
 
 ### Acessando a aplicação
 
 URL base para acessar a aplicação:
 
-* Nativo: `localhost:8001`
+* Native: `localhost:8001`
 * Local: `localhost:8010`
 * Dev: `https://api.dev.mobilidade.rio`
+* Stag: `https://api.staging.mobilidade.rio`
+* Prod: `https://api.mobilidade.rio`
 
 
 Endpoints:
@@ -88,8 +84,10 @@ Endpoints:
 * `<URL base>/gtfs` - Endpoints para acessar os dados do GTFS
 * `<URL base>/predictor` - Endpoints para acessar os dados do predictor
 
+Veja todos os endpoints em 
 
-Acessando containers:
+
+### Acessando o banco de dados:
 
 > No Docker ou Kubernetes, são criados os containers `django_hd` (API) e `postgres_hd` (banco).
 
@@ -116,36 +114,39 @@ docker-compose -f ./mobilidade_rio/docker-compose.yml down -v && docker image pr
 
 ### Populando o banco
 
-1. Remova os containers e volumes associados:
+1. Veja se seu banco está acessível:
+
+   Native:
+   * Você irá subir para um Postgres instalado na sua máquina. A porta deve ser `5432`.
+
+   Local:
+   * Você irá subir para um Postgres dentro de um Docker local, a porta deve ser `5433`.
+
+   Dev, Stag, Prod:
+   * Acesse seu Pod K8s e faça um port foward para uma porta da sua máquina. Vamos supor que seja `5434`.
+
+2. Verifique em `populate_db.yaml` se as credenciais do seu banco estão corretas.
+
+3. Salve os arquivos do GTFS na pasta
+   `scripts/populate_db/fixtures/pontos`.
+   A estrutura deve seguir neste padrão:
+   ```
+   Pastas                  tabela no banco
+
+   - 📂fixtures
+     - 📂pontos
+       - 🗒️stops.txt       pontos_stops
+       - 🗒️shapes.txt      pontos_shapes
+       - 🗒️trips.txt       pontos_trips
+       ...
+   ```
+
+4. Execute a subida dos dados:
 ```sh
-docker-compose -f ./mobilidade_rio/dev_local/docker-compose_local.yml down -v
+python scripts/populate_db/populate_db.py
 ```
 
-2. Salve os arquivos do GTFS na pasta
-   [`scripts/populate_db/csv_files/pontos`](/scripts/populate_db/csv_files/pontos).
-   A estrutura deve seguir:
-
-  ```
-  csv_files
-  ├── pontos
-  │   ├── agency.csv
-  │   ├── calendar_dates.csv
-  │   ├── calendar.csv
-  │   ├── routes.csv
-  │   ├── shapes.csv
-  │   ├── stop_times.csv
-  │   ├── stops.csv
-  │   ├── transfers.csv
-  │   └── trips.csv
-  ```
-
-3. Execute o upload dos dados:
-
-```sh
-python scripts/populate_db/populate_db.py --empty_table
-```
-
-O arquivo `settings.json` contém as configurações para popular o banco
+O arquivo `populate_db.yaml` contém as configurações para popular o banco
 (nomes das tabelas, ordem, parâmetros para o upload).
   
   > **Os dados subiram?**
@@ -180,60 +181,18 @@ Para acessar o ambiente de Staging localmente, rode:
 kubectl exec -it -n mobilidade-v2-staging deploy/smtr-stag-mobilidade-api -- /bin/bash
 ```
 
-### Como subir dados
-
-No seu local, copie o novo `fixture` para o Kubernetes (veja
-   `<pod-em-prod>` [aqui](todo-add-link-library)) rodando:
-
-```sh
-kubectl cp mobilidade_rio/fixtures/<seu-fixture>.json mobilidade-v2/<pod-em-prod>:/app/fixtures/<seu-fixture>.json
-```
-
-> Você pode também copiar um `fixture` do Kubernetes para seu local trocando a
-> ordem dos parâmetros.
-
-Agora seu `fixture` está armazenado em produção! Para subir os dados
-no banco, acesse o ambiente de produção e rode:
-
-```sh
-python manage.py loaddata fixtures/<seu-fixture>.json
-```
-
-> loaddata é um comando do Django que carrega dados de um `fixture` no banco de dados.
-
 ### Como deletar dados
 
 Para esvaziar as tabelas rode:
 
 ```sh
-scripts\populate_db\populate_db.py --empty_tables --no_insert
+scripts/populate_db/populate_db.py --empty_tables --no_insert
 ```
 
-Para esvaziar todo o banco de dados, rode:
-```sh
-scripts/populate_db/populate_db.py --empty_db
-```
-
-Acesse o ambiente de produção e rode:
-
-```sh
-python3 manage.py shell
-```
-
-Esse comando vai abrir um `shell` do Django. Em seguida, importe o
-respectivo modelo e delete os dados com:
-
-```python
-# ex: importa dados de Sequência das linhas
-from mobilidade_rio.pontos.models import Sequence
-# exclui uma linha passando seu `trip_id`
-Sequence.objects.filter(trip=<trip_id>).delete()
-```
-
-> Para deletar todos os dados de um modelo, use `.all()` ao invés de
-`.filter(...)`.
-
-Todos os modelos existentes na API correespondem a [estas classes](/mobilidade_rio/pontos/models.py).
+- Para esvaziar todo o banco de dados, rode:
+  ```sh
+  scripts/populate_db/populate_db.py --empty_db
+  ```
 
 O que NÃO pode alterar ali sem quebrar o Kubernetes:
 
@@ -242,10 +201,7 @@ O que NÃO pode alterar ali sem quebrar o Kubernetes:
 
 ## Endpoints
 
-Os diagramas dos endpoints (e ) [here](https://miro.com/app/board/o9J_lqIY7Eg=/).
-> Os diagramas estão em português.
-
-### Pontos (gtfs)
+### Pontos (`/gtfs`)
 
 Todos os endpoints estão no endereço `/gtfs`.
 
@@ -305,7 +261,7 @@ Parâmetros:
   * Exemplo: `trip_id=a,b&stop_id=1,2,3&stop_id__all=2,3,4`
   * Exemplo real: <http://localhost:8010/gtfs/stop_times/?trip_id=O0041CAA0AIDU01,O0309AAA0AVDU01&stop_id=2028O00023C0,5144O00512C9>
 
-## Apps
+## Apps Django
 
 ### Utils
 
@@ -318,7 +274,26 @@ Funções para separar a lógica de queries do código e facilitar a manutençã
 Sempre que possível evite usar queries cruas, use o ORM do Django. Caso contrário, use ou crie uma função em `query_utils`.
 
 `query_utils.ipynb` é um notebook feito para testar as funções de `query_utils`. Testado na [extensão do VSCode](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter).
+
 ## Gerenciando o projeto
+
+### Modos de execução do Django
+
+Para testar em sua máquina local:
+- **native** - Executa na sua máquina real (barebone), sem usar Docker.
+- **local** - Executa dentro de um contêiner Docker em na máquina real.
+
+Para branches `dev`, `feat/*`, `fix/*` e similares:
+- **dev** - Via automação, executa num pod K8s reseravdo para branches dev.
+
+Para branches `staging`, `release/*` e similares:
+- **stag** -  Via automação, executa num pod K8s reseravdo para branches de staging ([pré-produção](https://pt.wikipedia.org/wiki/Ambiente_de_implanta%C3%A7%C3%A3o#:~:text=um%20ambiente%20de%20preparacao%20(do%20ingles%20staging)%20ou%20pre-producao%20)).
+
+Para branch `main`:
+- **prod** - Via automação, executa num pod K8s reseravdo para branches dev.
+
+
+> O modo **base** contém as configurações base para todos os modos de execução.
 
 ### Branches do projeto
 
@@ -468,7 +443,7 @@ Dev local:
   ```sh
   python scripts/populate_db/populate_db.py
   ```
-> Lembre-se que, para usar o `populate_db`, você deve ter os arquivos `.csv` na pasta `csv_files` (veja [aqui](#como-subir-dados))
+> Lembre-se que, para usar o `populate_db`, você deve ter os arquivos `.csv` na pasta `fixtures` (veja [aqui](#como-subir-dados)).
 
 > **O que é o disco virtual?**
 >
