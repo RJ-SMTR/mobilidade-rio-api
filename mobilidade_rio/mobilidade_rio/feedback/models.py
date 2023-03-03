@@ -16,16 +16,16 @@ class FeedbackBRT(models.Model):
     - `route_id` (optional): route_id of selected bus
     """
 
-    # get automatically
-    created_at = models.DateTimeField(auto_now_add=True)
-    ip_address = models.GenericIPAddressField(null=True, blank=True)
-
     # get from client
     like = models.BooleanField(null=False)
     comment = models.TextField(null=True, blank=False, max_length=120)
     stop_code = models.TextField(null=False, blank=False, max_length=30)
     stop_id = models.TextField(null=True, blank=False, max_length=30)
     route_id = models.TextField(null=True, blank=False, max_length=30)
+
+    # get automatically
+    created_at = models.DateTimeField(auto_now_add=True)
+    ip_address = models.TextField(null=True, blank=True)
 
 
     class Meta:
