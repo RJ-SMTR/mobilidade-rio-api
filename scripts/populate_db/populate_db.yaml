@@ -4,10 +4,11 @@ db_params:
   user: postgres
   password: postgres
   database: postgres
+  # database: django_test_models
 
 flag_params:
   # ⚠️ Freeze here to append data instead of clearing tables
-  # - empty_tables
+  - empty_tables
 
 table_extension: txt
 
@@ -15,14 +16,14 @@ table_order:
 
   # ⚠️ put files in csv_files/pontos
   pontos:
-  # - agency
-  # - calendar_dates
-  # - calendar
-  # - routes
-  # - shapes
-  # - stops
-  # - trips
-  # - frequencies
+  - agency
+  - calendar_dates
+  - calendar
+  - routes
+  - shapes
+  - stops
+  - trips
+  - frequencies
   - stop_times
 
 remove_duplicate_cols:
@@ -32,6 +33,11 @@ remove_duplicate_cols:
   - trip_id
   pontos_frequencies:
   - trip_id
+
+ignore_existing_cols_in_db:
+  app1_person:
+  - name
+
 
 validate_cols:
   pontos_stoptimes:
@@ -44,4 +50,5 @@ validate_cols:
 remove_cols_containing:
   pontos_routes:
     route_short_name:
+    # 
     - SN

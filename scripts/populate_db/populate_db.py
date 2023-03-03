@@ -289,7 +289,6 @@ def upload_data(_app: str, _model: str):
     print(f"{TAB}Table '{table_name}'")
     if os.path.isfile(file_path_1):
         with open(file_path_1, 'r', encoding="utf8") as f_1:
-            # if type is _io.TextIOWrapper
             # Filter table
             print(f"{TAB}Filtering...")
             cols = f_1.readline().strip().split(',')
@@ -402,8 +401,6 @@ if __name__ == "__main__":
 
     # update parameters if exists in settings[param]
     # if flag_params in settings:
-    print("ABC")
-    print(settings['flag_params'])
     if 'flag_params' in settings and settings['flag_params']:
         for param in settings['flag_params']:
             if param in PARAMETERS:
@@ -442,11 +439,6 @@ if __name__ == "__main__":
     if _params:
         db_params["port"] = sys.argv[list(sys.argv).index(_params[0])+1]
 
-    # Remove flag params if not in sys.argv (--param)
-    flag_params = []
-    if 'flag_params' in settings and settings['flag_params']:
-        flag_params = [param for param in settings["flag_params"] if f"--{param}" in sys.argv]
-
     # Connect to the database
     print("\nConnecting to the PostgreSQL database...")
     conn = psycopg2.connect(**db_params)
@@ -467,14 +459,20 @@ if __name__ == "__main__":
     comment_tables = []
     # add <key>_table1 to total tables
     for app in settings["table_order"].keys():
+        if not settings["table_order"] or not settings["table_order"][app]:
+            continue
         for table in settings["table_order"][app]:
             if table.startswith("#"):
                 comment_tables.append(table)
             else:
                 total_tables.append(table)
 
-    # Update data from files in csv_path
+    # Update data from files in tables folder
     for app in os.listdir(tables_path):
+
+        # if not key or not values
+        if not app in settings["table_order"] or not settings["table_order"][app]:
+            continue
 
         # get tables found
         if app in settings["table_order"].keys():
@@ -512,9 +510,9 @@ if __name__ == "__main__":
             continue
 
         # Clear all tables
-        if (("-e" in sys.argv or "--empty_tables" in sys.argv\
-        or "empty_tables" in flag_params)and\
-            "-e=false" not in sys.argv and "--empty_tables=false" not in sys.argv):
+        EMPTY_TABLE = ("-e" in sys.argv or "--empty_tables" in sys.argv or
+        (settings.get("flag_params") and "empty_tables" in settings["flag_params"]))
+        if EMPTY_TABLE:
             print(f"Clearing all tables in {app}:")
             if app in settings["table_order"].keys():
                 folder = os.path.join(tables_path, app)
@@ -556,7 +554,7 @@ if __name__ == "__main__":
         for table in tables_not_found:
             print_colored("red", TAB,table)
         print()
-        print_colored("red", f"{TAB}Tip: Table name in settings and in file must match the db.")
+        print_colored("red", f"{TAB}Tip: Table name in settings and in '{TABLES_FOLDER}' folder must match the db.")
         print_colored("red", f"{TAB}Tip: Check file extension and compare with settings, default is txt.")
         print()
 
