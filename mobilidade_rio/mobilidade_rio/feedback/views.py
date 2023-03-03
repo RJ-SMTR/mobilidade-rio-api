@@ -24,9 +24,7 @@ def submit_feedback_gtfs(request):
 
     return render(request, 'feedback/thank_you.html')
 
-class FeedbackBRTViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet
-,mixins.ListModelMixin
-):
+class FeedbackBRTViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
     """
     API endpoint that allows feedback to be viewed or submitted.
     """
