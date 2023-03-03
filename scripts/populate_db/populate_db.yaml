@@ -1,0 +1,54 @@
+db_params:
+  host: localhost
+  port: '5432'
+  user: postgres
+  password: postgres
+  database: postgres
+  # database: django_test_models
+
+flag_params:
+  # ⚠️ Freeze here to append data instead of clearing tables
+  - empty_tables
+
+table_extension: txt
+
+table_order:
+
+  # ⚠️ put files in csv_files/pontos
+  pontos:
+  - agency
+  - calendar_dates
+  - calendar
+  - routes
+  - shapes
+  - stops
+  - trips
+  - frequencies
+  - stop_times
+
+remove_duplicate_cols:
+  pontos_stoptimes:
+  - trip_id,stop_id,stop_sequence
+  pontos_trips:
+  - trip_id
+  pontos_frequencies:
+  - trip_id
+
+ignore_existing_cols_in_db:
+  app1_person:
+  - name
+
+
+validate_cols:
+  pontos_stoptimes:
+  - trip_id
+  pontos_trips:
+  - trip_id
+  pontos_frequencies:
+  - trip_id
+
+remove_cols_containing:
+  pontos_routes:
+    route_short_name:
+    # 
+    - SN

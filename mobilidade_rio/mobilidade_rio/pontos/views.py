@@ -194,11 +194,11 @@ class StopTimesViewSet(viewsets.ModelViewSet):
         if stop_id__all is not None:
             stop_id__all = stop_id__all.split(",")
             # filter all trips that pass in all stops
-            query = qu.q_cols_match_all(
+            query = qu.q_cols_in_common(
                 table=queryset.query, table_is_query=True,
                 unique_cols=[TRIP_ID_COL, STOP_ID_COL],
-                col_in={STOP_ID_COL: stop_id__all},
-                col_match_all=[TRIP_ID_COL],
+                cols_contain_values={STOP_ID_COL: stop_id__all},
+                cols_in_common=[TRIP_ID_COL],
             )
             raw_filter_used = True
 
