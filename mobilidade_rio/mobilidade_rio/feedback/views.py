@@ -2,6 +2,7 @@ from django.conf import settings
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST
+from ipware import get_client_ip
 from rest_framework import viewsets, permissions, mixins
 from .models import FeedbackBRT
 from .serializers import FeedbackBRTSerializer
@@ -23,14 +24,16 @@ def submit_feedback_gtfs(request):
 
     return render(request, 'feedback/thank_you.html')
 
-class FeedbackBRTViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
+class FeedbackBRTViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet
+,mixins.ListModelMixin
+):
     """
     API endpoint that allows feedback to be viewed or submitted.
     """
     queryset = FeedbackBRT.objects.all()
     serializer_class = FeedbackBRTSerializer
 
-    # TODO: if it's ok to use settings.DEBUG
+    # TODO: use settings.DEBUG?
     # if settings.SETTINGS_MODULE.rsplit('.',1)[-1] in ("native", "local"):
     permission_classes = [permissions.AllowAny]
     # else:
@@ -42,22 +45,9 @@ class FeedbackBRTViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
         """
 
         # get ip
-        x_forwarded_for = self.request.META.get('HTTP_X_FORWARDED_FOR')
-        if x_forwarded_for:
-            ip_address = x_forwarded_for
-        else:
-            ip_address = self.request.META.get('REMOTE_ADDR')
+        client_ip = get_client_ip(self.request)[0]  # client_ip, is_routable
 
-        # clean ip data
-        if isinstance(ip_address, (list, tuple)):
-            ip_address = ip_address[0]
-        else:
-            if ", " in ip_address:
-                ip_address = ip_address.split(", ")[0]
-            else:
-                ip_address = ip_address.split(",")[0]
-
-        serializer.save(ip_address=ip_address)
+        serializer.save(ip_address=client_ip)
 
     def get_permissions(self):
         if self.request.method.upper() in ('OPTIONS'):

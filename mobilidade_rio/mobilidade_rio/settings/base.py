@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'djoser',
+    'ipware',
     'mobilidade_rio.pontos',
     'mobilidade_rio.predictor',
     'mobilidade_rio.feedback',
