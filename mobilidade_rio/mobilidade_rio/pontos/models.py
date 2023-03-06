@@ -255,8 +255,8 @@ class StopTimes(models.Model):
     stop_sequence = models.PositiveIntegerField(blank=False, null=False)
     stop_id = models.ForeignKey(Stops, on_delete=models.CASCADE,
                                 related_name='stop_id_id', related_query_name='stop_id_id')
-    arrival_time = models.TimeField(blank=True, null=True)
-    departure_time = models.TimeField(max_length=500, blank=True, null=True)
+    arrival_time = models.DurationField(blank=True, null=True)
+    departure_time = models.DurationField(blank=True, null=True)
     stop_headsign = models.CharField(max_length=500, blank=True, null=True)
     pickup_type = models.IntegerField(
         blank=True, null=True, default=1,
