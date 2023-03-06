@@ -1,6 +1,5 @@
 """
 populate_db
-v1.0 - 02/12/2022
 
 Copy CSV to Postgres
 
@@ -11,26 +10,23 @@ How to use:
 
 """
 
-import json
 import sys
 import os
+import shutil
 import io
+import yaml
 import psycopg2
-import pandas
+import pandas as pd
 
-parameters = """\
--d --empty_db           Empty database           [<drop_all>]
--e --empty_tables       Empty all tables         [<empty_tables>]
--i --no_insert          Don't insert data        [<no_insert>]
+# TODO: use argparse
+PARAMETERS = """\
+-d --empty_db           Empty database                      [<empty_db>]
+-e --empty_tables       Empty all tables                    [<empty_tables>]
+-m --merge_tables       Merge tables in any app subfolder   [<merge_tables>]
+-n --no_insert          Don't insert data                   [<no_insert>]
 -p --port
--t --drop_tables        Drop tables in list      [<drop_tables>]
+-t --drop_tables        Drop tables in list                 [<drop_tables>]
 """
-
-remove_duplicate_cols = {
-    "pontos_trips": [
-        "trip_id"
-    ]
-}
 
 validate_cols = {
     "pontos_stoptimes": [
@@ -43,6 +39,7 @@ validate_cols = {
 
 script_path = os.path.dirname(os.path.abspath(__file__))
 current_path = os.getcwd()
+TAB = " "*4
 
 def print_colored(color, *args, **kwargs):
     """Print text in color"""
@@ -81,13 +78,13 @@ def convert_to_type(
 
 
     # return DataFrame
-    if ret_type == pandas.DataFrame or (ret_type is None and initial_type == pandas.DataFrame):
-        if isinstance(data, pandas.DataFrame):
+    if ret_type == pd.DataFrame or (ret_type is None and initial_type == pd.DataFrame):
+        if isinstance(data, pd.DataFrame):
             if save_file_name is not None:
                 data.to_csv(save_file_path, index=False, header=False)
             return data
         else:
-            data = pandas.read_csv(data)
+            data = pd.read_csv(data)
             if save_file_name is not None:
                 data.to_csv(save_file_path, index=False, header=False)
             return data
@@ -164,9 +161,9 @@ def validate_col_values(
     """
     # if data is a string, read it as csv
     data_type = type(data)
-    if data_type != pandas.DataFrame:
+    if data_type != pd.DataFrame:
         # read data without index
-        data = pandas.read_csv(
+        data = pd.read_csv(
             data, sep=",", encoding="utf8", low_memory=False, dtype=str)
     if cols is None:
         cols = [col for col in data.columns]
@@ -175,24 +172,10 @@ def validate_col_values(
 
     len_history = [len(data)]
 
-    # remove duplicates
-    remove_duplicate_cols_table_commas = []
-    remove_duplicate_cols_table_no_commas = []
-    if table_name in remove_duplicate_cols:
-        # separate cols with commas, without and unique
-        for col in remove_duplicate_cols[table_name]:
-            if "," in col:
-                cols_1 = validate_col_names(table_name, col.split(","))
-                remove_duplicate_cols_table_commas.append(cols_1)
-            else:
-                remove_duplicate_cols_table_no_commas.append(col)
-        remove_duplicate_cols_table_no_commas = validate_col_names(
-            table_name, remove_duplicate_cols_table_no_commas)
-
     # validate cols
-    validade_cols_table = []
+    validate_cols_table = []
     if table_name in validate_cols:
-        validade_cols_table = validate_col_names(
+        validate_cols_table = validate_col_names(
             table_name, validate_cols[table_name])
 
     # remove_cols_containing
@@ -208,16 +191,37 @@ def validate_col_values(
 
     # enforce types
     cols_set_types = []
-    if 'enforce_type_cols' in settings and table_name in settings['enforce_type_cols']:
-        cols_set_types = validate_col_names(
-            table_name, settings['enforce_type_cols'][table_name])
+    if settings.get('enforce_type_cols').get(table_name):
+        cols_map = settings['enforce_type_cols'][table_name]
+        col_names = list(cols_map.keys())
+        # to int
+        cols_int = [k for k,v in cols_map.items() if 'int' in v]
+        data[cols_int] = data[cols_int].fillna(0)
+        data[col_names] = data[col_names].apply(pd.to_numeric, errors='ignore')
+        # to other types
+        data = data.astype(settings['enforce_type_cols'][table_name]).copy()
+        # TODO: get types from database
+        # cols_1 = validate_col_types(table_name, data.columns)
+
+    # drop null
+    if 'drop_null_cols' in settings and table_name in settings['drop_null_cols']:
+        data = data.dropna(subset=settings['drop_null_cols'][table_name]).copy()
 
     # run validate cols
     if (table_name in validate_cols
-        or table_name in remove_duplicate_cols
+        or (settings.get('remove_duplicate_cols') and 
+            table_name in settings.get('remove_duplicate_cols').keys())
         or table_name in remove_cols_containing):
+
+        # remove duplicates
+        duplicate_cols = settings.get('remove_duplicate_cols').get(table_name)
+        if duplicate_cols:
+            duplicate_cols =validate_col_names(table_name, duplicate_cols)
+            data = data.drop_duplicates(subset=duplicate_cols).copy()
+
+        # per col
         for col in cols:
-            if col in validade_cols_table:
+            if col in validate_cols_table:
                 # ? if value ends with _1, split and remove _1
                 data[col] = data[col].str.split("_1").str[0]
                 data = data.copy()
@@ -226,10 +230,6 @@ def validate_col_values(
                 # ?remove row if contains _<n> except _1
                 data = data[~data[col].str.contains("_")].copy()
 
-            # remove duplicates
-            if remove_duplicates and col in remove_duplicate_cols_table_no_commas:
-                data = data.drop_duplicates(subset=[col]).copy()
-
             # convert to type
             if col in cols_set_types:
                 if cols_set_types[col] == "int":
@@ -237,21 +237,15 @@ def validate_col_values(
 
             # remove cols containing
             if col in remove_cols_containing_table:
-                print(f"Removing_cols_containing: {col}")
                 # drop rows if col value contains part of substring
                 for substring in remove_cols_containing_table[col]:
                     data = data[~data[col].str.contains(substring)].copy()
-
-        # remove duplicates with commas
-        if remove_duplicates and remove_duplicate_cols_table_commas:
-            for cols_1 in remove_duplicate_cols_table_commas:
-                data = data.drop_duplicates(subset=cols_1).copy()
 
     len_history.append(len(data))
     # ? debug
     # print("CVC hist", len_history)
 
-    return convert_to_type(data, data_type, ret_type, table_name + ".txt")
+    return convert_to_type(data, data_type, ret_type, f"{table_name}.{settings['table_extension']}")
 
 
 def upload_data(_app: str, _model: str):
@@ -270,138 +264,175 @@ def upload_data(_app: str, _model: str):
     def constraint_err(detail:str):
         if not detail:
             return
-        return [i for i in ["Key ", " is not present in table "] if i in detail]
+        return [i for i in ["Key ", " is not present in table ", "constraint"] if i in detail]
 
     table_name = f"{_app}_{_model.replace('_', '')}"
-    file_path_1 = os.path.join(folder, f"{_model}.txt")
-
+    file_path_1 = os.path.join(folder, f"{_model}.{settings['table_extension']}")
+    print(f"{TAB}Table '{table_name}'")
     if os.path.isfile(file_path_1):
-        print(f"Table '{table_name}'")
         with open(file_path_1, 'r', encoding="utf8") as f_1:
-            # if type is _io.TextIOWrapper
             # Filter table
-            print("Filtering...")
+            print(f"{TAB}Filtering...")
             cols = f_1.readline().strip().split(',')
             cols = validate_col_names(table_name, cols)
             f_1.seek(0)
             data = validate_col_values(f_1, table_name, cols)
-            if "--no_insert" in sys.argv:
+            if "--no_insert" in sys.argv or '-n' in sys.argv:
                 return
             # insert data
-            print("inserting ...")
+            print(f"{TAB}Inserting ...")
             sql = f"""
                 COPY {table_name} ({','.join(cols)})
                 FROM STDIN WITH CSV DELIMITER AS ','
             """
             try:
-                if "--no_insert" not in sys.argv and '-i' not in sys.argv:
+                if "--no_insert" not in sys.argv and '-n' not in sys.argv:
                     cur.copy_expert(sql, data)
                     conn.commit()
-                print("[OK]")
+                else:
+                    print(f"{TAB}[OK - no insert]")
 
             except psycopg2.Error as error:
                 conn.rollback()
-                print_colored("yellow","Error on copy data:")
+                print_colored("yellow",f"{TAB}Error on copy data:")
                 detail = error.diag.message_detail
+                if not detail:
+                    detail = str(error).strip()
                 # diag.message_detail comes from psycopg2
-                print_colored("yellow", error, end='')
-                print_colored("yellow", "Retrying manually...")
+                print_colored("yellow", f"{TAB}{error}", end='')
+                print_colored("yellow", f"{TAB}Retrying manually...")
                 # write error to file
                 log_path = os.path.join(script_path, "logs", f"{table_name}_error.log")
                 with open(log_path, 'w', encoding="utf8") as f_2:
-                    f_2.write(error.diag.message_detail)
+                    f_2.write("ERROR:" + str(error))
                     f_2.write("\nRetrying manually...\n")
 
                 # if detail is "fk not present in table"
                 count_1 = 0
-                if constraint_err(detail):
-                    # try catch per line
-                    f_1.seek(0)
-                    total = f_1.readlines()
-                    f_1.seek(0)
-                    cols = f_1.readline().strip().split(',')
-                    cols = validate_col_names(table_name, cols)
-                    temp_path = os.path.join(script_path, "temp.txt")
-                    with open(temp_path, 'r', encoding="utf8") as f_temp:
-                        data = validate_col_values(f_temp, table_name, cols)
-                    # iterate lines
-                    for line in data:
+                # if constraint_err(detail):
+                # try catch per line
+                f_1.seek(0)
+                total = f_1.readlines()
+                f_1.seek(0)
+                cols = f_1.readline().strip().split(',')
+                cols = validate_col_names(table_name, cols)
+                temp_path = os.path.join(script_path, "temp.txt")
+                with open(temp_path, 'r', encoding="utf8") as f_temp:
+                    data = validate_col_values(f_temp, table_name, cols)
+                # iterate lines
+                for line in data:
+                    try:
+                        cur.copy_from(
+                            file=io.StringIO(line),
+                            table=table_name,
+                            sep=",",
+                            columns=cols
+                        )
+                        conn.commit()
+                        count_1 += 1
+                    except psycopg2.Error:
+                        conn.rollback()
                         try:
-                            cur.copy_from(
-                                file=io.StringIO(line),
-                                table=table_name,
-                                sep=",",
-                                columns=cols
-                            )
+                            # copy expert, for null values
+                            sql_1 = f"""
+                            COPY {table_name} ({','.join(cols)})
+                            FROM STDIN WITH CSV DELIMITER AS ','
+                            """
+                            cur.copy_expert(sql_1, io.StringIO(line))
                             conn.commit()
                             count_1 += 1
-                        except psycopg2.Error:
+                        except psycopg2.Error as error_2:
+                            # write error to file
+                            with open(log_path, 'a', encoding="utf8") as f_2:
+                                f_2.write(str(error_2))
+                                f_2.write("\n")
                             conn.rollback()
-                            try:
-                                # copy expert, for null values
-                                sql_1 = f"""
-                                COPY {table_name} ({','.join(cols)})
-                                FROM STDIN WITH CSV DELIMITER AS ','
-                                """
-                                cur.copy_expert(sql_1, io.StringIO(line))
-                                conn.commit()
-                                count_1 += 1
-                            except psycopg2.Error as error_2:
-                                # write error to file
-                                with open(log_path, 'a', encoding="utf8") as f_2:
-                                    f_2.write(str(error_2))
-                                    f_2.write("\n")
-                                conn.rollback()
-                                if constraint_err(error_2.diag.message_detail):
-                                    pass
-                                else:
-                                    raise error_2
+                            # if constraint_err(error_2.diag.message_detail):
+                            #     pass
+                            # else:
+                            #     raise error_2
                 if count_1 == 0:
-                    print_colored("red","[FAIL - NO INSERT]")
+                    print_colored("red",f"{TAB}[FAIL - NO INSERT]")
                 else:
-                    print(f"[OK - {count_1}/{len(total)}]")
+                    print(f"{TAB}[OK - {count_1}/{len(total)}]")
+    else:
+        print_colored("red",f"{TAB}[FAIL - NOT FOUND]")
     print()
 
 
 def help_1():
     """Help"""
     print("Usage: populate_db.py [options]")
-    print(parameters)
+    print(PARAMETERS)
+
+
+def empty_folder(folder_path):
+    "empty folder"
+    for filename in os.listdir(folder_path):
+        file_path_1 = os.path.join(folder_path, filename)
+        try:
+            if os.path.isfile(file_path_1) or os.path.islink(file_path_1):
+                os.unlink(file_path_1)
+            elif os.path.isdir(file_path_1):
+                shutil.rmtree(file_path_1)
+        except shutil.Error as shutil_error:
+            print(f'Failed to delete {file_path_1}. Reason: {shutil_error}')
+
+
+def merge_tables(app_folder, table_name, table_extension):
+    "Merge tables from tables in subfolder"
+    merged_df = pd.DataFrame()
+    for subfolder in os.listdir(app_folder):
+        if os.path.isdir(os.path.join(app_folder,subfolder)):
+            for table_file in os.listdir(f"{app_folder}/{subfolder}"):
+                table_name_file = table_file.split('.')[0]
+                if table_file.endswith(table_extension) and table_name_file == table_name:
+
+                    filepath = os.path.join(app_folder, subfolder, table_file)
+                    df = pd.read_csv(filepath)
+                    # Merge
+                    if not merged_df.empty:
+                        merged_df = pd.concat([merged_df,df], ignore_index=True)
+                    else:
+                        merged_df = df.copy()
+
+    # Save the merged tables to the output folder
+    filename = os.path.join(app_folder, f'{table_name}.{table_extension}')
+    merged_df.to_csv(filename, index=False)
 
 
 if __name__ == "__main__":
 
     # Setting default parameters
 
-    csv_path = os.path.join(script_path, "csv_files")
-    file_path = os.path.join(script_path, "settings.json")
-
-    try:
-        # if file exists
+    TABLES_FOLDER = "fixtures"
+    tables_path = os.path.join(script_path, TABLES_FOLDER)
+    SETTINGS_FILE = "populate_db.yaml"
+    if not os.path.isfile(os.path.join(script_path,SETTINGS_FILE)):
+        print_colored("red", f"File not found: {SETTINGS_FILE}")
+        exit(1)
+    else:
+        file_path = os.path.join(script_path, SETTINGS_FILE)
         with open(file_path, "r", encoding="utf8") as f:
-            settings = json.load(f)
-    except FileNotFoundError:
-        # raise string
-        print_colored("red", "File not found: settings.json")
+            settings = yaml.safe_load(f)
 
-    #  update parameters if exists in settings[param]
+    # update parameters if exists in settings[param]
     # if flag_params in settings:
-    if 'flag_params' in settings:
-        for param in settings['flag_params']:
-            if param in parameters:
-                if settings['flag_params'] != "false":
-                    parameters = parameters.replace(f"<{param}>", "ACTIVE")
+        for param in settings.keys():
+            if f"--{param} " in PARAMETERS:
+                if settings.get(param):
+                    PARAMETERS = PARAMETERS.replace(f"<{param}>", "ACTIVE")
 
         # remove all from "[" if this line is not [ACTIVE]
-        parameters_new = ""
-        for param in parameters.split("\n"):
+        PARAMETERS_NEW = ""
+        for param in PARAMETERS.split("\n"):
             if "ACTIVE" not in param:
-                param = param[:param.find("[")]
-            parameters_new += param + "\n"
-        parameters = parameters_new
-    if 'remove_duplicate_cols' in settings:
-        # append
-        remove_duplicate_cols = settings['remove_duplicate_cols']
+                found = param.find("[")
+                if found != -1:
+                    param = param[:param.find("[")]
+            PARAMETERS_NEW += param + "\n"
+        PARAMETERS = PARAMETERS_NEW
+
     if 'validate_cols' in settings:
         # append
         validate_cols = settings['validate_cols']
@@ -417,16 +448,10 @@ if __name__ == "__main__":
                 settings["db_params"][key] = sys.argv[i + 1]
     db_params = settings["db_params"]
 
-    # if -p or --port in sys.argv:
-    db_params["port"] = sys.argv[sys.argv.index("-p") + 1] \
-        if "-p" in sys.argv else db_params["port"]
-    db_params["port"] = sys.argv[sys.argv.index("--port") + 1] \
-        if "--port" in sys.argv else db_params["port"]
-
-    # Remove flag params if not in sys.argv (--param)
-    flag_params = [
-        param for param in settings["flag_params"] if f"--{param}" in sys.argv
-    ]
+    # param port
+    _params = [p for p in ("-p","--port") if p in sys.argv]
+    if _params:
+        db_params["port"] = sys.argv[list(sys.argv).index(_params[0])+1]
 
     # Connect to the database
     print("\nConnecting to the PostgreSQL database...")
@@ -434,7 +459,7 @@ if __name__ == "__main__":
     cur = conn.cursor()
 
     # drop all tables from database
-    if "--empty_database" in sys.argv or "-d" in sys.argv:
+    if "--empty_db" in sys.argv or "-d" in sys.argv:
         print("Dropping schema...")
         cur.execute("DROP SCHEMA IF EXISTS public CASCADE")
         conn.commit()
@@ -443,8 +468,54 @@ if __name__ == "__main__":
         conn.commit()
         exit(0)
 
-    # Update data from files in csv_path
-    for app in os.listdir(csv_path):
+
+    # Tables found
+    tables_found = []
+    total_tables = []
+    comment_tables = []
+    for app in settings["table_order"].keys():
+        if not settings["table_order"] or not settings["table_order"][app]:
+            continue
+        for table in settings["table_order"][app]:
+            if table.startswith("#"):
+                comment_tables.append(table)
+            else:
+                total_tables.append(table)
+
+
+    # Merge tables
+    if "--merge_tables" in sys.argv or "-m" in sys.argv or \
+        settings.get("merge_tables"):
+        print("Merging tables...")
+        for app in os.listdir(tables_path):
+            if not app in settings["table_order"] or not settings["table_order"][app]:
+                continue
+            app_models = settings["table_order"][app]
+            for model in app_models:
+                print(f"{TAB}Merging {app}/{model}.{settings['table_extension']}")
+                merge_tables(os.path.join(tables_path,app), model, settings['table_extension'])
+        
+        if "--merge_tables" in sys.argv or "-m" in sys.argv:
+            exit(0)
+
+    if settings.get("clear_logs"):
+        empty_folder(os.path.join(script_path,"logs"))
+
+    # Update data from files in tables folder
+    for app in os.listdir(tables_path):
+
+        # if not key or not values
+        if not app in settings["table_order"] or not settings["table_order"][app]:
+            continue
+
+        # get tables found
+        if app in settings["table_order"].keys():
+            folder = os.path.join(tables_path, app)
+            app_models = settings["table_order"][app]
+            for model in os.listdir(folder):
+                model = model.split(".")[0]
+                if model in app_models:
+                    tables_found.append(model)
 
         # drop all related tables then exit
         if "--drop_tables" in sys.argv or "-t" in sys.argv:
@@ -453,53 +524,77 @@ if __name__ == "__main__":
                             WHERE table_schema = 'public'")
             tables = cur.fetchall()
             print(f"Dropping related tables in {app}:")
-            count = 0
+            COUNT = 0
+
+
             if app in settings["table_order"].keys():
-                folder = os.path.join(csv_path, app)
+                folder = os.path.join(tables_path, app)
                 app_models = settings["table_order"][app]
                 for model in os.listdir(folder):
                     model = model.split(".")[0].replace("_", "")
                     if model in app_models and f"{app}_{model}" in tables:
-                        print(f"\tDropping {app}_{model}...")
+                        print(f"{TAB}Dropping {app}_{model}...")
                         cur.execute(
                             f"DROP TABLE IF EXISTS {app}_{model} CASCADE")
                         # drop if exists
                         conn.commit()
-                        count += 1
-            if not count:
-                print("\tNo related tables found.")
+                        COUNT += 1
+            if not COUNT:
+                print(f"{TAB}No related tables found.")
             continue
 
         # Clear all tables
-        if (("-e" in sys.argv or "--empty_tables" in sys.argv\
-        or "empty_tables" in settings["flag_params"])and\
-            "-e=false" not in sys.argv and "--empty_tables=false" not in sys.argv):
+        EMPTY_TABLE = ("-e" in sys.argv or "--empty_tables" in sys.argv or settings.get("empty_tables"))
+        if EMPTY_TABLE:
             print(f"Clearing all tables in {app}:")
             if app in settings["table_order"].keys():
-                folder = os.path.join(csv_path, app)
+                folder = os.path.join(tables_path, app)
                 app_models = settings["table_order"][app]
                 for model in os.listdir(folder):
                     model = model.split(".")[0]
                     if model in app_models:
-                        print(f"\tClearing {app}_{model}...")
+                        print(f"{TAB}Clearing {app}_{model}...")
                         table = validate_table_name(model, app)
                         cur.execute(f"TRUNCATE {table} CASCADE")
                         conn.commit()
             print("[OK]\n")
+            if "-e" in sys.argv or "--empty_tables" in sys.argv:
+                exit(0)
 
         # Insert tables
+        print(f"Inserting all tables in {app}:")
         if app in settings["table_order"].keys():
-            folder = os.path.join(csv_path, app)
+            folder = os.path.join(tables_path, app)
             app_models = settings["table_order"][app]
-
             folder_dirs = [f.split(".")[0] for f in os.listdir(folder)]
             for model in app_models:
                 if model in folder_dirs:
                     model = model.split(".")[0]
                     upload_data(app, model)
         else:
-            print(
-                f"Couldn't find {app} in 'settings.json'.\n\
-                Make sure you have the correct app name - \
-                should be a folder in mobilidade_rio/mobilidade_rio."
-            )
+            if "." in app:
+                print_colored("red", f"The file '{app}' is inside '{TABLES_FOLDER}'.\n"
+                    f"This script only read tables in '{TABLES_FOLDER}'/<django app>' folders\n")
+            else:
+                print_colored("red",
+                f"ERROR: The folder '{app}' is inside '{TABLES_FOLDER}' folder, "
+                f"but it's not configured in settings key [table_order]\n"
+                )
+
+    # Validate tables
+
+    tables_not_found = [table for table in total_tables if table not in tables_found]
+    if tables_not_found:
+        print_colored("red", "ERROR: The following tables were not found:")
+        for table in tables_not_found:
+            print_colored("red", TAB,table)
+        print()
+        print_colored("red", f"{TAB}Tip: Table name in settings and in '{TABLES_FOLDER}' folder must match the db.")
+        print_colored("red", f"{TAB}Tip: Check file extension and compare with settings, default is txt.")
+        print()
+
+    if comment_tables:
+        print_colored("yellow", "You have commented out the following tables:")
+        for table in comment_tables:
+            print_colored("yellow", TAB,table)
+        print()
