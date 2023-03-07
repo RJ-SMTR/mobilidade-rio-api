@@ -1,6 +1,5 @@
 from mobilidade_rio.pontos.models import *
 from rest_framework import serializers
-from mobilidade_rio.utils import serializers as utils
 
 
 class AgencySerializer(serializers.HyperlinkedModelSerializer):
