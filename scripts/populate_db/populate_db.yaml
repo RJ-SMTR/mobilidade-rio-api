@@ -20,7 +20,7 @@ clear_logs: true
 
 table_order:
 
-  # ⚠️ put files in csv_files/pontos
+  # ⚠️ put files in fixtures/pontos
   pontos:
   - agency
   - calendar_dates
