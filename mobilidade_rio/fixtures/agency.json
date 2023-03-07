@@ -26,5 +26,12 @@
         "fields": {
             "name": "Santa Cruz"
         }
+    },
+    {
+        "model": "pontos.agency",
+        "pk": "20001",
+        "fields": {
+            "name": "BRT Rio"
+        }
     }
 ]

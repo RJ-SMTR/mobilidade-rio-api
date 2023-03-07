@@ -64,7 +64,6 @@ jobs:
   build:
     needs: [lint, tests]
     name: Build and update deployments
-    # if: github.ref == 'refs/heads/dev'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -102,6 +101,10 @@ jobs:
         run: |-
           curl -sfLo kustomize https://github.com/kubernetes-sigs/kustomize/releases/download/v3.1.0/kustomize_3.1.0_linux_amd64
           chmod u+x ./kustomize
+          
+      - name: Set up Kustomize
+        run: |-
+          envsubst < kustomization.yaml.tmpl > kustomization.yaml
 
       - name: Set up Kustomize
         run: |-
