@@ -58,19 +58,12 @@ class StopTimesSerializer(serializers.HyperlinkedModelSerializer):
     url = serializers.HyperlinkedRelatedField(view_name="stop_times-detail", read_only=True)
     trip_id = TripsSerializer(read_only=True)
     stop_id = StopsSerializer(read_only=True)
-    arrival_time = serializers.SerializerMethodField()
-    departure_time = serializers.SerializerMethodField()
 
     class Meta:
         model = StopTimes
         fields = [field.name for field in model._meta.fields]
         fields.append("url")
 
-    def get_arrival_time(self, obj):
-        return utils.strfduration(obj.arrival_time)
-
-    def get_departure_time(self, obj):
-        return utils.strfduration(obj.departure_time)
 
 
 class FrequenciesSerializer(serializers.HyperlinkedModelSerializer):
