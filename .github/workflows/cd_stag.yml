@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - "release/*"
+      - "hotfix/*"
 
 env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }}
@@ -63,7 +64,6 @@ jobs:
   build:
     needs: [lint, tests]
     name: Build and update deployments
-    if: github.ref == 'refs/heads/release/staging'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -106,6 +106,10 @@ jobs:
         run: |-
           envsubst < kustomization.yaml.tmpl > kustomization.yaml
 
+      - name: Set up Kustomize
+        run: |-
+          envsubst < kustomization.yaml.tmpl > kustomization.yaml
+          
       - name: Deploy
         run: |-
           ./kustomize edit set image gcr.io/PROJECT_ID/IMAGE_API:TAG=gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA

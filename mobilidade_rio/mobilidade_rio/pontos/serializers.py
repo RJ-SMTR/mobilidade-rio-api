@@ -64,6 +64,7 @@ class StopTimesSerializer(serializers.HyperlinkedModelSerializer):
         fields.append("url")
 
 
+
 class FrequenciesSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Frequencies

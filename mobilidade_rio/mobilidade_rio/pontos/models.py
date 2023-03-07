@@ -185,8 +185,8 @@ class Stops(models.Model):
         zone_id: mandatory if fare information is provided via fare_rules.txt (TODO)
         parent_station:
             mandatory if location_type is 2, 3, 4
-            forbidden if location_type is 1
-            optional if location_type is 0
+            forbidden if location_type is 1 (station, stop parent)
+            optional if location_type is 0, None (platform, stop child)
 
     Primary keys: stop_id
     Foreign keys: parent_station,
@@ -255,8 +255,8 @@ class StopTimes(models.Model):
     stop_sequence = models.PositiveIntegerField(blank=False, null=False)
     stop_id = models.ForeignKey(Stops, on_delete=models.CASCADE,
                                 related_name='stop_id_id', related_query_name='stop_id_id')
-    arrival_time = models.TimeField(blank=True, null=True)
-    departure_time = models.TimeField(max_length=500, blank=True, null=True)
+    arrival_time = models.CharField(blank=True, null=True, max_length=10)
+    departure_time = models.CharField(blank=True, null=True, max_length=10)
     stop_headsign = models.CharField(max_length=500, blank=True, null=True)
     pickup_type = models.IntegerField(
         blank=True, null=True, default=1,
