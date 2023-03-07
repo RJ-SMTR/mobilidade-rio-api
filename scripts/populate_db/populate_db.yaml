@@ -32,7 +32,7 @@ table_order:
   - frequencies
   - stop_times
 
-# Based on gtfs.otg
+# Based on gtfs.org
 remove_duplicate_cols:
     pontos_agency:
     - agency_id
