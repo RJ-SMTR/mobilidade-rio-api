@@ -15,7 +15,6 @@ services:
       - db
     environment:
       - DJANGO_SETTINGS_MODULE=mobilidade_rio.settings.local
-    # command: python manage.py runserver 0.0.0.0:8000
     command: >
       bash -c "
         echo 'DOCKER_ENV: $TST_DOCKERFILE_ENV'
