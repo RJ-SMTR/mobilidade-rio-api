@@ -189,6 +189,14 @@ class StopTimesViewSet(viewsets.ModelViewSet):
         # increase performance if no need to raw query
         raw_filter_used = False
 
+        # stop_code - parent_station or itself
+        stop_code = self.request.query_params.get("stop_code")
+        if stop_code is not None:
+            stop_code = stop_code.split(",")
+            queryset = queryset.filter(
+                Q(stop_id__parent_station__stop_code__in=stop_code) |
+                Q(stop_id__stop_code__in=stop_code))
+
         # get stop_id_all
         stop_id__all = self.request.query_params.get("stop_id__all")
         if stop_id__all is not None:
