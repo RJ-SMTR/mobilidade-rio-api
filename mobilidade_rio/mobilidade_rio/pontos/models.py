@@ -39,6 +39,7 @@ class Calendar(models.Model):
     saturday = models.IntegerField(blank=False, null=False)
     sunday = models.IntegerField(blank=False, null=False)
     start_date = models.DateField(blank=False, null=False)
+    
     end_date = models.DateField(blank=False, null=False)
 
 
@@ -187,6 +188,7 @@ class Stops(models.Model):
             mandatory if location_type is 2, 3, 4
             forbidden if location_type is 1 (station, stop parent)
             optional if location_type is 0, None (platform, stop child)
+            
 
     Primary keys: stop_id
     Foreign keys: parent_station,

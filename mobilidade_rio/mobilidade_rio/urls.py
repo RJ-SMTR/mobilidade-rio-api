@@ -18,9 +18,9 @@ gtfs_router.register(r"stops", gtfs.StopsViewSet, basename="stops")
 gtfs_router.register(r"stop_times", gtfs.StopTimesViewSet, basename="stop_times")
 gtfs_router.register(r"frequencies", gtfs.FrequenciesViewSet)
 
+# For now it just register predictor in url list
 pred_router = routers.DefaultRouter()
-pred_router.register(r"shape_with_stops", pred.ShapeWithStopsViewSet,basename="shape_with_stops")
-#pred_router.register(r"predictor", pred.PredictorViewSet,basename="pred_arrivals")
+pred_router.register(r"predictor", pred.PredictorViewSet, basename='predictor')
 
 feedback_router = routers.DefaultRouter()
 feedback_router.register(r"brt", fb.FeedbackBRTViewSet,basename="feedback_brt")
@@ -36,7 +36,7 @@ unified_router.registry.extend(feedback_router.registry)
 urlpatterns = [
     path("", include(unified_router.urls)),
     path("gtfs/", include(gtfs_router.urls)),
-    path("predictor/", include(pred_router.urls)),
+    path("predictor/", pred.PredictorViewSet),
     path("feedback/", include(feedback_router.urls)),
     path("admin/", admin.site.urls),
     path("api-auth/", include("rest_framework.urls", namespace="rest_framework")),
