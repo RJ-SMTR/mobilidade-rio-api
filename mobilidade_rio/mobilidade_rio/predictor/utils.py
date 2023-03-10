@@ -215,11 +215,14 @@ class Predictor:  # pylint: disable=C0301
         # calculate distance from vehicle to stop (diff from above ones)
         positions["d_px_to_stop"] = positions.d_start_to_stop - positions.d_start_to_px
 
+        # set expected minimum speed
+        positions["velocidade"] = positions["velocidade"].fillna(0).apply(
+            lambda x: 30 if float(x) < 30 else float(x)
+        )
+
         # convert to eta
         positions["estimated_time_arrival"] = positions.apply(
-            lambda x: 60 * x.d_px_to_stop / float(x.velocidade)
-            if float(x.velocidade) > 0
-            else x.d_px_to_stop,
+            lambda x: 60 * x.d_px_to_stop / x.velocidade,
             axis=1,
         )
 
