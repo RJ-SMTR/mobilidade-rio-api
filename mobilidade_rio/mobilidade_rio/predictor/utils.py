@@ -51,7 +51,7 @@ class Predictor:  # pylint: disable=C0301
             return trip_short_name
         
         stop = StopTimes.objects.filter(stop_id=self.stop_id)
-        return list(stop.values_list('trip_short_name', flat=True))
+        return list(set(stop.values_list('trip_id__trip_short_name', flat=True)))
 
     def set_direction_id(self, direction_id):
         """
@@ -61,7 +61,7 @@ class Predictor:  # pylint: disable=C0301
             return direction_id
         
         stop = StopTimes.objects.filter(stop_id=self.stop_id)
-        return list(stop.values_list('direction_id', flat=True))
+        return list(set(stop.values_list('trip_id__direction_id', flat=True)))
 
     def set_service_id(self, service_id):
 
@@ -110,6 +110,7 @@ class Predictor:  # pylint: disable=C0301
         and set the inuts for the model.
         """
         inputs = []
+        positions = self._get_realtime()
         for direction_id in self.direction_id:
             for trip_short_name in self.trip_short_name:
                 shape_id = self._get_shape_id(
@@ -117,11 +118,12 @@ class Predictor:  # pylint: disable=C0301
                 )
                 inputs.append(
                     {
-                        "stop_id": self.stop_id,
+                        # "stop_id": self.stop_id,
                         "direction_id": direction_id,
                         "trip_short_name": trip_short_name,
-                        "service_id": self.service_id,
+                        # "service_id": self.service_id,
                         "shape_id": shape_id,
+                        "positions": positions,
                     }
                 )
 
@@ -145,9 +147,10 @@ class Predictor:  # pylint: disable=C0301
         # conver unix to datetime
         data["dataHora"] = (data["dataHora"] / 1000).apply(datetime.fromtimestamp)
 
-        data = data[
-            data["dataHora"] > (datetime.now() - timedelta(seconds=max_delay_secs))
-        ]
+        # FE will old vehicles
+        # data = data[
+        #     data["dataHora"] > (datetime.now() - timedelta(seconds=max_delay_secs))
+        # ]
 
         if data.empty:
             raise Exception("API error: no results")
@@ -160,8 +163,8 @@ class Predictor:  # pylint: disable=C0301
         # shape_id = queryset_to_list(trips, ['shape_id'])
 
         trips = Trips.objects.filter(
-            trip_short_name__in=trip_short_name,
-            direction_id__in=direction_id,
+            trip_short_name=trip_short_name,
+            direction_id=direction_id,
             service_id__in=service_id,
         )
 
@@ -197,20 +200,21 @@ class Predictor:  # pylint: disable=C0301
             return lenght / 1000
         return lenght
 
-    def get_trip_eta(self, direction_id, trip_short_name, shape_id):
+    def get_trip_eta(self, direction_id, trip_short_name, shape_id, positions):
         """
         Gets ETA of all vehicle to a stop, operating on a specific trip.
         """
-
         # get vehicle positions
-        positions = self._get_realtime()
         positions = positions[
             (positions.trip_short_name == trip_short_name)
             & (positions.direction_id == direction_id)
         ].copy()
+        if len(positions) == 0:
+            # print("EMPTY: " ,direction_id, trip_short_name)
+            return list()
 
         # get shape
-        shape = Shapes.objects.filter(shape_id=shape_id)
+        shape = pd.DataFrame(Shapes.objects.filter(shape_id=shape_id).values())
         shape = LineString(list(zip(shape.shape_pt_lat, shape.shape_pt_lon)))  # .wkt
 
         # project vehicle positions into the shape
@@ -270,8 +274,14 @@ class Predictor:  # pylint: disable=C0301
         """
         Runs ETA of all vehicle to a single stop.
         """
-        for params in self._set_inputs():
-            self.get_trip_eta(**params)
+        result = list()
+        params = self.inputs
+        # print("LEN PARAMS",len(params))
+        for params in self.inputs:
+            result += self.get_trip_eta(**params)
+
+        return result
+
 
 
 # TODO: precisa manter esse __repr__? # pylint: disable=W0511
