@@ -7,7 +7,7 @@ from shapely.geometry import LineString, Point
 from shapely.ops import snap, split, transform
 from django.utils import timezone
 import pandas as pd
-from mobilidade_rio.pontos.models import Stops, Trips, Calendar, CalendarDates, Shapes
+from mobilidade_rio.pontos.models import Stops, Trips, Calendar, CalendarDates, Shapes, StopTimes
 
 
 class Predictor:  # pylint: disable=C0301
@@ -32,9 +32,9 @@ class Predictor:  # pylint: disable=C0301
     ):
 
         self.stop_id = stop_id
-        self.trip_short_name = trip_short_name
-        self.direction_id = direction_id
-        self.service_id = self._get_service_id() if service_id is None else service_id
+        self.trip_short_name = self.set_trip_short_name(trip_short_name)
+        self.direction_id = self.set_direction_id(direction_id)
+        self.service_id = self.set_service_id(service_id)
         self.stop_pt = self._get_stop_pt()
 
         # set inputs to run iteration
@@ -42,6 +42,60 @@ class Predictor:  # pylint: disable=C0301
 
         # default CRS transformer
         self.crs = Transformer.from_crs("epsg:4326", "epsg:31983")
+
+    def set_trip_short_name(self, trip_short_name):
+        """
+        Select trips from stop_id.
+        """
+        if trip_short_name is not None:
+            return trip_short_name
+        
+        stop = StopTimes.objects.filter(stop_id=self.stop_id)
+        return list(stop.values_list('trip_short_name', flat=True))
+
+    def set_direction_id(self, direction_id):
+        """
+        Select direction from stop_id.
+        """
+        if direction_id is not None:
+            return direction_id
+        
+        stop = StopTimes.objects.filter(stop_id=self.stop_id)
+        return list(stop.values_list('direction_id', flat=True))
+
+    def set_service_id(self, service_id):
+
+            if service_id is not None:
+                return service_id
+
+            today_date = timezone.now().date()
+
+            # Check for date exceptions
+            services = CalendarDates.objects.filter(date=today_date).filter(
+                exception_type=1
+            )
+
+            if len(services) > 1:
+                raise Exception(
+                    "Multiple services found for today. Please set a specific service_id."
+                )
+            if len(services) == 1:
+                return services.values_list("service_id", flat=True)[0]
+
+            # Check for regular service
+            weekday = today_date.strftime("%A").lower()
+            services = Calendar.objects.filter(
+                start_date__lte=today_date, end_date__gte=today_date
+            ).filter(**{weekday: 1})
+
+            if len(services) > 1:
+                return Exception(
+                    "Multiple services found for today. Please set a specific service_id."
+                )
+            if len(services) == 0:
+                raise Exception("No service found for today.")
+
+            return services.values_list("service_id", flat=True)[0]
 
     def _get_stop_pt(self):
         """
@@ -85,7 +139,7 @@ class Predictor:  # pylint: disable=C0301
         data = pd.DataFrame(pd.json_normalize(response.json()["veiculos"]))
 
         # rename columns
-        data.rename(columns={"linha": "trip_short_name"}, inplace=True)
+        data.rename(columns={"linha": "trip_short_name", "trajeto": "trip_headsign"}, inplace=True)
         data["direction_id"] = data["sentido"].apply(lambda x: 1 if x == "volta" else 0)
 
         # conver unix to datetime
@@ -99,37 +153,6 @@ class Predictor:  # pylint: disable=C0301
             raise Exception("API error: no results")
 
         return data
-
-    def _get_service_id(self):
-
-        today_date = timezone.now().date()
-
-        # Check for date exceptions
-        services = CalendarDates.objects.filter(date=today_date).filter(
-            exception_type=1
-        )
-
-        if len(services) > 1:
-            raise Exception(
-                "Multiple services found for today. Please set a specific service_id."
-            )
-        if len(services) == 1:
-            return services.values_list("service_id", flat=True)[0]
-
-        # Check for regular service
-        weekday = today_date.strftime("%A").lower()
-        services = Calendar.objects.filter(
-            start_date__lte=today_date, end_date__gte=today_date
-        ).filter(**{weekday: 1})
-
-        if len(services) > 1:
-            return Exception(
-                "Multiple services found for today. Please set a specific service_id."
-            )
-        if len(services) == 0:
-            raise Exception("No service found for today.")
-
-        return services.values_list("service_id", flat=True)[0]
 
     def _get_shape_id(self, trip_short_name, direction_id, service_id):
         # get the first trip matched, could be more - TODO: add rule to
