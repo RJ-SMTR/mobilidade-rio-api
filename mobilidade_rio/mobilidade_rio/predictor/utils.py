@@ -130,7 +130,7 @@ class Predictor:  # pylint: disable=C0301
         )
 
         if len(trips) == 0:
-            raise Exception("No trips found for the given inputs.")
+            return None
 
         shapes = trips.distinct("shape_id")
 
@@ -205,10 +205,6 @@ class Predictor:  # pylint: disable=C0301
             axis=1,
         )
 
-        positions = positions[positions.estimated_time_arrival >= 0].sort_values(
-            "estimated_time_arrival"
-        )
-
         cols = [
             "codigo",  # pk
             "dataHora",  # created at
@@ -250,21 +246,19 @@ class Predictor:  # pylint: disable=C0301
                 return []
 
             # get the shape of the trip
-            shape = pd.DataFrame(
-                Shapes.objects.filter(
-                    shape_id=self._get_shape_id(
-                        trip_short_name, direction_id, self.service_id
-                    )
-                ).values()
-            )
+            shape = self._get_shape_id(trip_short_name, direction_id, self.service_id)
+            if not shape:
+                continue
+            shape = pd.DataFrame(Shapes.objects.filter(shape_id=shape).values())
+
 
             # TODO: if takes a lot of time, create shape_w_stops and
             # filter only stop_ids between vehicle positions
 
             # calculate ETA for all stops of the trip
-            stop_ids = StopTimes.objects.filter(
-                trip_short_name=trip_short_name, direction_id=direction_id
-            )
+            stop_ids = list(StopTimes.objects.filter(
+                trip_id__trip_short_name=trip_short_name, trip_id__direction_id=direction_id
+            ).values_list("stop_id", flat=True))
             stops = Stops.objects.filter(
                 stop_id__in=stop_ids,
             )

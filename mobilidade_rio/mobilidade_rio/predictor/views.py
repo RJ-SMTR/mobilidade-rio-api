@@ -19,14 +19,14 @@ class PredictorViewSet(viewsets.ViewSet):
         """
 
         # stop_code
-        stop_id = self.request.query_params.get("stop_id")
-        if not stop_id:
-            return Response({"error": "stop_id is required."})
+        # stop_id = self.request.query_params.get("stop_id")
+        # if not stop_id:
+        #     return Response({"error": "stop_id is required."})
 
         # trip_short_name
-        trip_short_name = self.request.query_params.get("trip_short_name")
-        if trip_short_name:
-            trip_short_name = trip_short_name.split(',')
+        # trip_short_name = self.request.query_params.get("trip_short_name")
+        # if trip_short_name:
+        #     trip_short_name = trip_short_name.split(',')
 
         # direction_id = self.request.query_params.get("direction_id")
         # if direction_id:
@@ -36,11 +36,7 @@ class PredictorViewSet(viewsets.ViewSet):
         # debug_cols = self.request.query_params.get("debug_cols")
 
         # Run predictor
-        pred = Predictor(
-            stop_id=stop_id,
-            # direction_id=direction_id,
-            trip_short_name=trip_short_name,
-        )
+        pred = Predictor()
         ret = pred.run_eta()
 
         if ret:
