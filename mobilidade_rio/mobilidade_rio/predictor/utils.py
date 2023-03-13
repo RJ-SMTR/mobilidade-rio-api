@@ -1,13 +1,20 @@
 """Utils for predictor app"""
 import os
-from datetime import datetime, timedelta
+from datetime import datetime
 from pyproj import Transformer
 import requests
 from shapely.geometry import LineString, Point
 from shapely.ops import snap, split, transform
 from django.utils import timezone
 import pandas as pd
-from mobilidade_rio.pontos.models import Stops, Trips, Calendar, CalendarDates, Shapes, StopTimes
+from mobilidade_rio.pontos.models import (
+    Stops,
+    Trips,
+    Calendar,
+    CalendarDates,
+    Shapes,
+    StopTimes,
+)
 
 
 class Predictor:  # pylint: disable=C0301
@@ -23,113 +30,61 @@ class Predictor:  # pylint: disable=C0301
         Dataframe with realtime API fields + ETA (Estimated Time of Arrival)
     """
 
-    def __init__(
-        self,
-        stop_id: int,
-        direction_id: list = None,
-        trip_short_name: list = None,
-        service_id: str = None,
-    ):
+    def __init__(self, service_id=None, rt_data=None):
 
-        self.stop_id = stop_id
-        self.trip_short_name = self.set_trip_short_name(trip_short_name)
-        self.direction_id = self.set_direction_id(direction_id)
+        # get current real time vehicle positions
+        self.rt_data = self.set_realtime(rt_data)
+
+        # get current service_id
         self.service_id = self.set_service_id(service_id)
-        self.stop_pt = self._get_stop_pt()
-
-        # set inputs to run iteration
-        self.inputs = self._set_inputs()
 
         # default CRS transformer
         self.crs = Transformer.from_crs("epsg:4326", "epsg:31983")
 
-    def set_trip_short_name(self, trip_short_name):
-        """
-        Select trips from stop_id.
-        """
-        if trip_short_name is not None:
-            return trip_short_name
-        
-        stop = StopTimes.objects.filter(stop_id=self.stop_id)
-        return list(set(stop.values_list('trip_id__trip_short_name', flat=True)))
-
-    def set_direction_id(self, direction_id):
-        """
-        Select direction from stop_id.
-        """
-        if direction_id is not None:
-            return direction_id
-        
-        stop = StopTimes.objects.filter(stop_id=self.stop_id)
-        return list(set(stop.values_list('trip_id__direction_id', flat=True)))
-
     def set_service_id(self, service_id):
+        """
+        Set service id.
+        """
 
-            if service_id is not None:
-                return service_id
+        if service_id is not None:
+            return service_id
 
-            today_date = timezone.now().date()
+        today_date = timezone.now().date()
 
-            # Check for date exceptions
-            services = CalendarDates.objects.filter(date=today_date).filter(
-                exception_type=1
+        # Check for date exceptions
+        services = CalendarDates.objects.filter(date=today_date).filter(
+            exception_type=1
+        )
+
+        if len(services) > 1:
+            raise Exception(
+                "Multiple services found for today. Please set a specific service_id."
             )
-
-            if len(services) > 1:
-                raise Exception(
-                    "Multiple services found for today. Please set a specific service_id."
-                )
-            if len(services) == 1:
-                return services.values_list("service_id", flat=True)[0]
-
-            # Check for regular service
-            weekday = today_date.strftime("%A").lower()
-            services = Calendar.objects.filter(
-                start_date__lte=today_date, end_date__gte=today_date
-            ).filter(**{weekday: 1})
-
-            if len(services) > 1:
-                return Exception(
-                    "Multiple services found for today. Please set a specific service_id."
-                )
-            if len(services) == 0:
-                raise Exception("No service found for today.")
-
+        if len(services) == 1:
             return services.values_list("service_id", flat=True)[0]
 
-    def _get_stop_pt(self):
-        """
-        Get stop point from stop_id.
-        """
-        stop = Stops.objects.get(stop_id=self.stop_id)
-        return Point(stop.stop_lon, stop.stop_lat)
+        # Check for regular service
+        weekday = today_date.strftime("%A").lower()
+        services = Calendar.objects.filter(
+            start_date__lte=today_date, end_date__gte=today_date
+        ).filter(**{weekday: 1})
 
-    def _set_inputs(self):
-        """
-        For each direction_id and trip_short_name, get the shape_id
-        and set the inuts for the model.
-        """
-        inputs = []
-        positions = self._get_realtime()
-        for direction_id in self.direction_id:
-            for trip_short_name in self.trip_short_name:
-                shape_id = self._get_shape_id(
-                    trip_short_name, direction_id, self.service_id
-                )
-                inputs.append(
-                    {
-                        # "stop_id": self.stop_id,
-                        "direction_id": direction_id,
-                        "trip_short_name": trip_short_name,
-                        # "service_id": self.service_id,
-                        "shape_id": shape_id,
-                        "positions": positions,
-                    }
-                )
+        if len(services) > 1:
+            return Exception(
+                "Multiple services found for today. Please set a specific service_id."
+            )
+        if len(services) == 0:
+            raise Exception("No service found for today.")
 
-        return inputs
+        return services.values_list("service_id", flat=True)[0]
 
-    def _get_realtime(self, max_delay_secs=120):
+    def set_realtime(self, rt_data):
+        """
+        Set realtime data.
+        """
+
+        if rt_data is not None and isinstance(rt_data) == pd.DataFrame:
+            return rt_data
 
         # TODO: change to internal API, get secrets from Vault # pylint: disable=W0511
         url = os.environ.get("API_REALTIME", "https://dados.mobilidade.rio/gps/brt")
@@ -141,7 +96,10 @@ class Predictor:  # pylint: disable=C0301
         data = pd.DataFrame(pd.json_normalize(response.json()["veiculos"]))
 
         # rename columns
-        data.rename(columns={"linha": "trip_short_name", "trajeto": "trip_headsign"}, inplace=True)
+        data.rename(
+            columns={"linha": "trip_short_name", "trajeto": "trip_headsign"},
+            inplace=True,
+        )
         data["direction_id"] = data["sentido"].apply(lambda x: 1 if x == "volta" else 0)
 
         # conver unix to datetime
@@ -158,6 +116,9 @@ class Predictor:  # pylint: disable=C0301
         return data
 
     def _get_shape_id(self, trip_short_name, direction_id, service_id):
+        """
+        Get shape id.
+        """
         # get the first trip matched, could be more - TODO: add rule to
         # FE get the same trip_id (BACKLOG) # pylint: disable=W0511
         # shape_id = queryset_to_list(trips, ['shape_id'])
@@ -200,22 +161,10 @@ class Predictor:  # pylint: disable=C0301
             return lenght / 1000
         return lenght
 
-    def get_trip_eta(self, direction_id, trip_short_name, shape_id, positions):
+    def get_trip_eta(self, shape, stop, positions):
         """
         Gets ETA of all vehicle to a stop, operating on a specific trip.
         """
-        # get vehicle positions
-        positions = positions[
-            (positions.trip_short_name == trip_short_name)
-            & (positions.direction_id == direction_id)
-        ].copy()
-        if len(positions) == 0:
-            # print("EMPTY: " ,direction_id, trip_short_name)
-            return list()
-
-        # get shape
-        shape = pd.DataFrame(Shapes.objects.filter(shape_id=shape_id).values())
-        shape = LineString(list(zip(shape.shape_pt_lat, shape.shape_pt_lon)))  # .wkt
 
         # project vehicle positions into the shape
         positions["px"] = positions.apply(
@@ -234,7 +183,8 @@ class Predictor:  # pylint: disable=C0301
         )
 
         # calculate distance from shape_start_pt to stop
-        stop_pt_proj = shape.interpolate(shape.project(self.stop_pt))
+        stop_pt = Point(stop.stop_lat, stop.stop_lon)
+        stop_pt_proj = shape.interpolate(shape.project(stop_pt))
         positions["d_start_to_stop"] = self._get_shape_lenght(
             self._split_shape(shape, stop_pt_proj)
         )
@@ -243,8 +193,10 @@ class Predictor:  # pylint: disable=C0301
         positions["d_px_to_stop"] = positions.d_start_to_stop - positions.d_start_to_px
 
         # set expected minimum speed
-        positions["velocidade"] = positions["velocidade"].fillna(0).apply(
-            lambda x: 30 if float(x) < 30 else float(x)
+        positions["velocidade"] = (
+            positions["velocidade"]
+            .fillna(0)
+            .apply(lambda x: 30 if float(x) < 30 else float(x))
         )
 
         # convert to eta
@@ -272,16 +224,61 @@ class Predictor:  # pylint: disable=C0301
 
     def run_eta(self):
         """
-        Runs ETA of all vehicle to a single stop.
+        Runs ETA of all vehicle to all stops on the current given trip and direction.
         """
-        result = list()
-        params = self.inputs
-        # print("LEN PARAMS",len(params))
-        for params in self.inputs:
-            result += self.get_trip_eta(**params)
+
+        # get all current trips
+        inputs = (
+            self.rt_data[["trip_short_name", "direction_id"]]
+            .drop_duplicates()
+            .to_dict(orient="records")
+        )
+
+        result = []
+        for params in inputs:
+
+            trip_short_name = params["trip_short_name"]
+            direction_id = params["direction_id"]
+
+            # filter vehicles for the given trip
+            positions = self.rt_data.loc[
+                (self.rt_data.trip_short_name == trip_short_name)
+                & (self.rt_data.direction_id == direction_id)
+            ].copy()
+
+            if len(positions) == 0:
+                return []
+
+            # get the shape of the trip
+            shape = pd.DataFrame(
+                Shapes.objects.filter(
+                    shape_id=self._get_shape_id(
+                        trip_short_name, direction_id, self.service_id
+                    )
+                ).values()
+            )
+
+            # TODO: if takes a lot of time, create shape_w_stops and
+            # filter only stop_ids between vehicle positions
+
+            # calculate ETA for all stops of the trip
+            stop_ids = StopTimes.objects.filter(
+                trip_short_name=trip_short_name, direction_id=direction_id
+            )
+            stops = Stops.objects.filter(
+                stop_id__in=stop_ids,
+            )
+
+            for stop in stops:
+                result += self.get_trip_eta(
+                    positions=positions,
+                    stop=stop,
+                    shape=LineString(
+                        list(zip(shape.shape_pt_lat, shape.shape_pt_lon))
+                    ),  # .wkt
+                )
 
         return result
-
 
 
 # TODO: precisa manter esse __repr__? # pylint: disable=W0511
