@@ -104,6 +104,7 @@ class Predictor:  # pylint: disable=C0301
 
         # conver unix to datetime
         data["dataHora"] = (data["dataHora"] / 1000).apply(datetime.fromtimestamp)
+        data["dataHora"] = data["dataHora"].astype(str)
 
         # FE will old vehicles
         # data = data[
@@ -271,6 +272,7 @@ class Predictor:  # pylint: disable=C0301
                         list(zip(shape.shape_pt_lat, shape.shape_pt_lon))
                     ),  # .wkt
                 )
+            # break
 
         return result
 

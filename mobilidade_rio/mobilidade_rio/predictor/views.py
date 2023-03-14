@@ -5,7 +5,9 @@ from rest_framework.response import Response
 from mobilidade_rio.predictor.models import *
 from mobilidade_rio.predictor.serializers import *
 from mobilidade_rio.predictor.utils import *
-
+from mobilidade_rio.predictor.models import PredictorResult
+import json
+from django.core import serializers
 
 class PredictorViewSet(viewsets.ViewSet):
     """
@@ -36,17 +38,16 @@ class PredictorViewSet(viewsets.ViewSet):
         # debug_cols = self.request.query_params.get("debug_cols")
 
         # Run predictor
-        pred = Predictor()
-        ret = pred.run_eta()
-
-        if ret:
-            ret = {
-                "count": len(ret),
+        results = PredictorResult.objects.filter(pk=1)
+        if results.exists():
+            results = results[0].result_json['result']
+            results = {
+                "count": len(results),
                 "next": None,
                 "previous": None,
-                "results" : ret
+                "results" : results
             }
         else:
-            ret = {"detail": "Not found."}
+            results = {"detail": "Not found."}
 
-        return Response(ret)
+        return Response(results)
