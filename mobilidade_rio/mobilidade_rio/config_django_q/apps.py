@@ -1,7 +1,19 @@
 import types
 from django.apps import AppConfig
-from django.db import connection
+from django.db import connection, DatabaseError
 from django.utils import timezone
+import logging
+
+logger = logging.getLogger("[config_django_q]")
+
+
+def table_exists(table_name):
+    try:
+        with connection.cursor() as cursor:
+            cursor.execute("SELECT COUNT(*) FROM information_schema.tables WHERE table_name = %s", [table_name])
+            return cursor.fetchone()[0] == 1
+    except DatabaseError as e:
+        return False
 
 
 class ConfigDjangoQConfig(AppConfig):
@@ -42,6 +54,11 @@ class ConfigDjangoQConfig(AppConfig):
         # Dont start until django-q tables are in database
         if not connection.introspection.table_names():
             return
+
+        if not table_exists('django_q_schedule'):
+            logger.error("django_q_schedule table not found, cornjob wont be initialized")
+            return
+
 
         # Config schedules
 

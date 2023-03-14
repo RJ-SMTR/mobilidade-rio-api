@@ -20,3 +20,5 @@ class ShapeWithStops(models.Model):
 
 class PredictorResult(models.Model):
     result_json = models.JSONField(blank=False, null=True)
+    last_modified = models.DateTimeField(auto_now=True)
+

@@ -8,6 +8,11 @@ from mobilidade_rio.predictor.utils import *
 from mobilidade_rio.predictor.models import PredictorResult
 import json
 from django.core import serializers
+import logging
+
+
+logger = logging.getLogger("[test]")
+
 
 class PredictorViewSet(viewsets.ViewSet):
     """
