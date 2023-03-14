@@ -25,34 +25,24 @@ class PredictorViewSet(viewsets.ViewSet):
         Return a JSON representation of the data.
         """
 
-        # stop_code
-        # stop_id = self.request.query_params.get("stop_id")
-        # if not stop_id:
-        #     return Response({"error": "stop_id is required."})
-
-        # trip_short_name
-        # trip_short_name = self.request.query_params.get("trip_short_name")
-        # if trip_short_name:
-        #     trip_short_name = trip_short_name.split(',')
-
-        # direction_id = self.request.query_params.get("direction_id")
-        # if direction_id:
-        #     direction_id = stop_id.split(',')
-
-        # debug_cols
-        # debug_cols = self.request.query_params.get("debug_cols")
-
-        # Run predictor
         results = PredictorResult.objects.filter(pk=1)
-        if results.exists():
-            results = results[0].result_json['result']
-            results = {
-                "count": len(results),
-                "next": None,
-                "previous": None,
-                "results" : results
-            }
-        else:
+        if not results.exists():
             results = {"detail": "Not found."}
+            return Response(results)
+
+        result_list = results[0].result_json['result']
+
+        # stop_id
+        stop_id = self.request.query_params.get("stop_id")
+        if stop_id:
+            result_list = [i for i in result_list if i['stop_id'] == stop_id]
+
+        # return prediction
+        results = {
+            "count": len(result_list),
+            "next": None,
+            "previous": None,
+            "results" : result_list
+        }
 
         return Response(results)

@@ -15,6 +15,10 @@ from mobilidade_rio.pontos.models import (
     Shapes,
     StopTimes,
 )
+import logging
+
+
+logger = logging.getLogger("[predictor]")
 
 
 class Predictor:  # pylint: disable=C0301
@@ -205,6 +209,7 @@ class Predictor:  # pylint: disable=C0301
             lambda x: 60 * x.d_px_to_stop / x.velocidade,
             axis=1,
         )
+        positions["stop_id"] = stop.stop_id
 
         cols = [
             "codigo",  # pk
@@ -215,6 +220,8 @@ class Predictor:  # pylint: disable=C0301
             "trip_short_name",  # linha
             "direction_id",  # 0, 1
             "estimated_time_arrival",  # in minutes
+            "stop_id",  # current stop_id children (platform)
+            "d_px_to_stop",  # for debug - distance from bus to stop destiny
         ]
 
         return positions[cols].to_dict(orient="records")
