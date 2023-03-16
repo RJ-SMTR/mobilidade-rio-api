@@ -16,7 +16,11 @@ def print_hello():
 
 
 def generate_prediction():
-    pred = Predictor()
+    try:
+        pred = Predictor()
+    except Exception as api_exception:
+        logger.error(f"Predictor - {api_exception}")
+        return
     predictor_result = pred.run_eta()
     predictor_result = {"result": predictor_result}
     logger.debug("saving in db")
@@ -42,4 +46,4 @@ def generate_prediction_sleep(wait_secs=30):
 
     logger.info(f"starting job 1.b - generating prediction - last prediction took {diff}s")
     generate_prediction()
-    logger.info(f"finished job")
+    logger.info("finished job")

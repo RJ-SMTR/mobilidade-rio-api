@@ -9,6 +9,8 @@ from mobilidade_rio.predictor.models import PredictorResult
 import json
 from django.core import serializers
 import logging
+from django.conf import settings
+import pytz
 
 
 logger = logging.getLogger("[test]")
@@ -33,15 +35,23 @@ class PredictorViewSet(viewsets.ViewSet):
         result_list = results[0].result_json['result']
 
         # stop_id
+        pred = self.request.query_params.get("pred")
+        if pred:
+            results = {"pred": "done."}
+            return Response(results)
+
         stop_id = self.request.query_params.get("stop_id")
         if stop_id:
             result_list = [i for i in result_list if i['stop_id'] == stop_id]
 
         # return prediction
+        last_modified = results[0].last_modified.astimezone(pytz.timezone(settings.TIME_ZONE))
+
         results = {
             "count": len(result_list),
             "next": None,
             "previous": None,
+            "lastUpdate": last_modified,
             "results" : result_list
         }
 

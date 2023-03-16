@@ -103,7 +103,6 @@ class ConfigDjangoQConfig(AppConfig):
         for name in unique_name:
             for schedule in Schedule.objects.filter(name=name).order_by('-pk')[1:]:
                 schedule.delete()
-        print("TOTAL:", Schedule.objects.all().count())
         # empty other tables
         OrmQ.objects.all().delete()
         Task.objects.all().delete()
