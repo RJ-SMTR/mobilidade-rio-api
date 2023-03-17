@@ -1,6 +1,8 @@
 """Utils for predictor app"""
 import os
 from datetime import datetime
+import warnings
+import logging
 from pyproj import Transformer
 import requests
 from shapely.geometry import LineString, Point
@@ -15,9 +17,8 @@ from mobilidade_rio.pontos.models import (
     Shapes,
     StopTimes,
 )
-import logging
 
-
+warnings.filterwarnings("ignore", category=RuntimeWarning) 
 logger = logging.getLogger("[predictor]")
 
 
