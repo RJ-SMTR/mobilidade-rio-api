@@ -167,6 +167,7 @@ Q_CLUSTER = {
     'retry': 60*12,
     # Number of messages each cluster tries to get from the broker per call
     'bulk': 1,
+    "recycle": 5,
     'workers': 1,
     'queue_limit': 1,
     # Explicittly don't run deleted tasks
