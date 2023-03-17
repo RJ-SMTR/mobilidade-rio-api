@@ -162,12 +162,13 @@ Q_CLUSTER = {
     'name': 'DjangoORM',
     'orm': 'default',
     # Maximum execution time
-    'timeout': 90,
+    'timeout': 60*10,
     # Seconds to wait older task to finish
-    'retry': 120,
-    'bulk': 10,
-    'workers': 4,
-    'queue_limit': 50,
+    'retry': 60*12,
+    # Number of messages each cluster tries to get from the broker per call
+    'bulk': 1,
+    'workers': 1,
+    'queue_limit': 1,
     # Explicittly don't run deleted tasks
     'max_attempts': 1,
     'attempt_count': 1,
