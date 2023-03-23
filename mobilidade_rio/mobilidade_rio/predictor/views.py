@@ -1,19 +1,12 @@
 """Views for predictor app"""
 from rest_framework.response import Response
 from rest_framework import viewsets
-from rest_framework.response import Response
 from mobilidade_rio.predictor.models import *
 from mobilidade_rio.predictor.serializers import *
 from mobilidade_rio.predictor.utils import *
 from mobilidade_rio.predictor.models import PredictorResult
-import json
-from django.core import serializers
-import logging
 from django.conf import settings
 import pytz
-
-
-logger = logging.getLogger("[test]")
 
 
 class PredictorViewSet(viewsets.ViewSet):

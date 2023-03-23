@@ -94,13 +94,15 @@ class Predictor:  # pylint: disable=C0301
         # TODO: change to internal API, get secrets from Vault # pylint: disable=W0511
         start = datetime.now()
         url = os.environ.get("API_REALTIME", "https://dados.mobilidade.rio/gps/brt")
-        logger.info(f"Request to realtime took {round((datetime.now() - start).total_seconds(), 2)}s")
+        elapsed_time = round((datetime.now() - start).total_seconds(), 2)
+        logger.info("Request to realtime took %ss", elapsed_time)
         response = requests.get(url, timeout=5)
 
         if not response.ok:
             raise Exception(f"API error: {response.status_code} - {response.reason}")
 
         data = pd.DataFrame(pd.json_normalize(response.json()["veiculos"]))
+        logger.info("Request result length: %i", len(data))
 
         # rename columns
         data.rename(
