@@ -1,11 +1,11 @@
 """Tasks for django-q"""
 
-from datetime import datetime as dt, timedelta
-import pandas as pd
+import logging
+from datetime import datetime as dt
 import time
 from mobilidade_rio.predictor.utils import Predictor
 from mobilidade_rio.predictor.models import PredictorResult
-import logging
+
 
 logger = logging.getLogger("cronjob")
 
@@ -23,15 +23,20 @@ def generate_prediction():
         return
     predictor_result = pred.run_eta()
     predictor_result = {"result": predictor_result}
-    logger.info("%s saving in db", dt.now().time())
-    # obj, created?
+    logger.info("saving in db...")
+
+    # prevent bug on restoring db while predictor is running
+    duplicated_pk = PredictorResult.objects.filter(pk=1)
+    if len(duplicated_pk) > 1:
+        logger.info("%i PredictorResults found, removing duplicates before save...", len(duplicated_pk))
+        duplicated_pk.delete()
+
     obj, created = PredictorResult.objects.update_or_create(
         pk=1,
         defaults={
             "result_json": predictor_result
         }
     )
-    logger.info("obj new content: %s", obj.result_json['result'][:1])
     created = "created" if created else "updated"
     logger.info("new prediction %s: %s", created, obj.result_json['result'][:1])
 
