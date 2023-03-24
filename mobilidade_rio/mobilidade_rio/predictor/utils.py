@@ -19,7 +19,7 @@ from mobilidade_rio.pontos.models import (
 )
 
 warnings.filterwarnings("ignore", category=RuntimeWarning) 
-logger = logging.getLogger("[predictor]")
+logger = logging.getLogger("predictor")
 
 
 class Predictor:  # pylint: disable=C0301
