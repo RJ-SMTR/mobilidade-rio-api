@@ -92,6 +92,7 @@ jobs:
           cd mobilidade_rio/
           docker build \
             --tag "gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA" \
+            -f Dockerfile \
             .
 
       - name: Publish Docker image

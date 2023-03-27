@@ -1,17 +1,18 @@
-name: Deploy to staging
+name: Workflow
 
 on:
   push:
     branches:
-      - "release/*"
-      - "hotfix/*"
+      - "dev"
+      - "fix/*"
+  pull_request:
 
 env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }}
   GKE_CLUSTER: ${{ secrets.GKE_CLUSTER_NAME }}
   GKE_ZONE: us-central1-c
   IMAGE: mobilidade-rio-api-django-q
-  MY_ENV: staging
+  MY_ENV: production
 
 jobs:
   before:
@@ -64,7 +65,7 @@ jobs:
   build:
     needs: [lint, tests]
     name: Build and update deployments
-    # if: github.ref == 'refs/heads/dev'
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -108,12 +109,8 @@ jobs:
         run: |-
           envsubst < kustomization.yaml.tmpl > kustomization.yaml
 
-      - name: Set up Kustomize
-        run: |-
-          envsubst < kustomization.yaml.tmpl > kustomization.yaml
-
       - name: Deploy
         run: |-
           ./kustomize edit set image gcr.io/PROJECT_ID/IMAGE_API:TAG=gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA
-          ./kustomize build . | kubectl apply -n mobilidade-v2-staging -f -
-          kubectl get services -n mobilidade-v2-staging -o wide
+          ./kustomize build . | kubectl apply -n mobilidade-v2 -f -
+          kubectl get services -n mobilidade-v2 -o wide
