@@ -11,8 +11,9 @@ env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }}
   GKE_CLUSTER: ${{ secrets.GKE_CLUSTER_NAME }}
   GKE_ZONE: us-central1-c
-  IMAGE: mobilidade-rio-api-django-q
-  MY_ENV: production
+  IMAGE: mobilidade-rio-api
+  IMAGE_Q: mobilidade-rio-api-django-q
+  MY_ENV: develop
 
 jobs:
   before:
@@ -112,5 +113,6 @@ jobs:
       - name: Deploy
         run: |-
           ./kustomize edit set image gcr.io/PROJECT_ID/IMAGE_API:TAG=gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA
-          ./kustomize build . | kubectl apply -n mobilidade-v2 -f -
-          kubectl get services -n mobilidade-v2 -o wide
+          ./kustomize edit set image gcr.io/PROJECT_ID/IMAGE_API_DJANGO_Q:TAG=gcr.io/$PROJECT_ID/$IMAGE_Q:$GITHUB_SHA
+          ./kustomize build . | kubectl apply -n mobilidade-v2-develop -f -
+          kubectl get services -n mobilidade-v2-develop -o wide
