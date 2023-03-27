@@ -30,6 +30,14 @@ unified_router.registry.extend(gtfs_router.registry)
 unified_router.registry.extend(pred_router.registry)
 unified_router.registry.extend(feedback_router.registry)
 
+feedback_router = routers.DefaultRouter()
+feedback_router.register(r"brt", fb.FeedbackBRTViewSet,basename="feedback_brt")
+
+unified_router = routers.DefaultRouter()
+unified_router.registry.extend(gtfs_router.registry)
+unified_router.registry.extend(pred_router.registry)
+unified_router.registry.extend(feedback_router.registry)
+
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
