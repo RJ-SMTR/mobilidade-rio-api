@@ -94,12 +94,24 @@ jobs:
           cd mobilidade_rio/
           docker build \
             --tag "gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA" \
-            -f Dockerfile-django-q \
+            -f Dockerfile \
             .
 
       - name: Publish Docker image
         run: |-
           docker push "gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA"
+
+      - name: Build Docker image (DjangoQ)
+        run: |-
+          cd mobilidade_rio/
+          docker build \
+            --tag "gcr.io/$PROJECT_ID/$IMAGE_Q:$GITHUB_SHA" \
+            -f Dockerfile-django-q \
+            .
+
+      - name: Publish Docker image (DjangoQ)
+        run: |-
+          docker push "gcr.io/$PROJECT_ID/$IMAGE_Q:$GITHUB_SHA"
 
       - name: Set up Kustomize
         run: |-
