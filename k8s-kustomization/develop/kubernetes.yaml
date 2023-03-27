@@ -84,21 +84,21 @@ spec:
       maxSurge: 1
       maxUnavailable: 1
   minReadySeconds: 5
-  affinity:
-    nodeAffinity:
-      preferredDuringSchedulingIgnoredDuringExecution:
-        - weight: 50
-          preferrence:
-            matchExpressions:
-              key: app
-              operator: In
-              values:
-                - mobilidade-api-django-q
   template:
     metadata:
       labels:
         app: mobilidade-api-django-q
     spec:
+      affinity:
+        nodeAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 50
+              preferrence:
+                matchExpressions:
+                  key: app
+                  operator: In
+                  values:
+                    - mobilidade-api-django-q
       containers:
         - name: mobilidade-api-django-q
           image: gcr.io/PROJECT_ID/IMAGE_API_DJANGO_Q:TAG
