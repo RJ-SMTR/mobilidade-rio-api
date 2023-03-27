@@ -91,7 +91,7 @@ spec:
     spec:
       containers:
         - name: mobilidade-api-django-q
-          image: gcr.io/PROJECT_ID/IMAGE_DJANGO_Q:TAG
+          image: gcr.io/PROJECT_ID/IMAGE_API_DJANGO_Q:TAG
           ports:
             - containerPort: 80
           env:
