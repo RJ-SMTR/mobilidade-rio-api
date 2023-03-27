@@ -16,6 +16,9 @@ class ShapeWithStops(models.Model):
     shape_pt_sequence = models.CharField(max_length=500, blank=True, null=True)
     shape_pt_lat = models.CharField(max_length=500, blank=True, null=True)
     shape_pt_lon = models.CharField(max_length=500, blank=True, null=True)
-    
 
-    
+
+class PredictorResult(models.Model):
+    result_json = models.JSONField(blank=False, null=True)
+    last_modified = models.DateTimeField(auto_now=True)
+

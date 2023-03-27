@@ -60,13 +60,13 @@ spec:
                 secretKeyRef:
                   name: envs
                   key: DJANGO_SETTINGS_MODULE
-          resources:
-            requests:
-              memory: 64Mi
-              cpu: 30m
-            limits:
-              memory: 800Mi
-              cpu: 800m
+          # resources:
+          #   requests:
+          #     memory: 64Mi
+          #     cpu: 30m
+          #   limits:
+          #     memory: 256Mi
+          #     cpu: 100m
       restartPolicy: Always
 
 ---

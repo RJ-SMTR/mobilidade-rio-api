@@ -16,7 +16,6 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 STATIC_ROOT = BASE_DIR / 'static'
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
@@ -43,10 +42,12 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'djoser',
+    'django_q',
     'mobilidade_rio.pontos',
     'mobilidade_rio.predictor',
     'mobilidade_rio.feedback',
     'mobilidade_rio.utils',
+    'mobilidade_rio.config_django_q.apps.ConfigDjangoQConfig',
 ]
 
 MIDDLEWARE = [
@@ -140,7 +141,7 @@ DJOSER = {
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Sao_Paulo'
 
 USE_I18N = True
 
@@ -153,3 +154,53 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# django-q broker
+# https://django-q.readthedocs.io/en/latest/configure.html#redis-configuration
+# The easiest way is to use default django ORM broker
+Q_CLUSTER = {
+    'name': 'DjangoORM',
+    'orm': 'default',
+    # Maximum execution time
+    'timeout': 60*10,
+    # Seconds to wait older task to finish
+    'retry': 60*12,
+    # Number of messages each cluster tries to get from the broker per call
+    'bulk': 1,
+    # For each N jobs in worker, recycle the worker
+    "recycle": 6,
+    'workers': 3,
+    'queue_limit': 1,
+    # Explicittly don't run deleted tasks
+    'max_attempts': 1,
+    'attempt_count': 1,
+}
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {process:d} {thread:d} {message}',
+            'datefmt': r'%Y-%m-%d %H:%M:%S',
+            'style': '{',
+        },
+        'simple': {
+            'format': '{asctime} [{name}] {levelname}:  {message}',
+            
+
+            'datefmt': '%H:%M:%S',
+            'style': '{',
+        },
+    },
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple'
+        },
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': 'DEBUG',
+    },
+}
