@@ -95,10 +95,10 @@ spec:
             - weight: 50
               preference:
                 matchExpressions:
-                  key: app
-                  operator: In
-                  values:
-                    - mobilidade-api-django-q
+                  - key: app
+                    operator: In
+                    values:
+                      - mobilidade-api-django-q
       containers:
         - name: mobilidade-api-django-q
           image: gcr.io/PROJECT_ID/IMAGE_API_DJANGO_Q:TAG
