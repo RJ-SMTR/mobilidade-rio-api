@@ -61,7 +61,86 @@ spec:
                   name: envs
                   key: DJANGO_SETTINGS_MODULE
       restartPolicy: Always
-
+---
+# Deployment django-q
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mobilidade-rio-api-django-q
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mobilidade-api-django-q
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  minReadySeconds: 5
+  template:
+    metadata:
+      labels:
+        app: mobilidade-api-django-q
+    spec:
+      affinity:
+        nodeAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 50
+              preference:
+                matchExpressions:
+                  - key: app
+                    operator: In
+                    values:
+                      - mobilidade-api-django-q
+      containers:
+        - name: mobilidade-api-django-q
+          image: gcr.io/PROJECT_ID/IMAGE_API_DJANGO_Q:TAG
+          ports:
+            - containerPort: 80
+          env:
+            - name: DB_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: envs
+                  key: DB_NAME
+            - name: DB_USER
+              valueFrom:
+                secretKeyRef:
+                  name: envs
+                  key: DB_USER
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: envs
+                  key: DB_PASSWORD
+            - name: DB_HOST
+              valueFrom:
+                secretKeyRef:
+                  name: envs
+                  key: DB_HOST
+            - name: DB_PORT
+              valueFrom:
+                secretKeyRef:
+                  name: envs
+                  key: DB_PORT
+            - name: SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: envs
+                  key: SECRET_KEY
+            - name: DJANGO_SETTINGS_MODULE
+              valueFrom:
+                secretKeyRef:
+                  name: envs
+                  key: DJANGO_SETTINGS_MODULE
+      #          resources:
+      #            requests:
+      #              memory: 64Mi
+      #              cpu: 30m
+      #            limits:
+      #              memory: 256Mi
+      #              cpu: 100m
+      restartPolicy: Always
 ---
 # API service
 apiVersion: v1
