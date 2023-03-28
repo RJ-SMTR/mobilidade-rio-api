@@ -10,7 +10,7 @@ env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }}
   GKE_CLUSTER: ${{ secrets.GKE_CLUSTER_NAME }}
   GKE_ZONE: us-central1-c
-  IMAGE: mobilidade-rio-api-django-q
+  IMAGE: mobilidade-rio-api
   IMAGE_Q: mobilidade-rio-api-django-q
   MY_ENV: staging
 
