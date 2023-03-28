@@ -202,4 +202,3 @@ spec:
   externalName: citus-master.dagster.svc.cluster.local
   ports:
     - port: 5432
-# trigger cd
