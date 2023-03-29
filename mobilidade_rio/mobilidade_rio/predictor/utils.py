@@ -8,6 +8,7 @@ import requests
 from shapely.geometry import LineString, Point
 from shapely.ops import snap, split, transform
 from django.utils import timezone
+from django.db.models import Q
 import pandas as pd
 from mobilidade_rio.pontos.models import (
     Stops,
@@ -271,7 +272,7 @@ class Predictor:  # pylint: disable=C0301
             # calculate ETA for all stops of the trip
             stop_ids = list(StopTimes.objects.filter(
                 trip_id__trip_short_name=trip_short_name, trip_id__direction_id=direction_id
-            ).values_list("stop_id", flat=True))
+            ).filter(~Q(stop_sequence=0)).values_list("stop_id", flat=True))
             stops = Stops.objects.filter(
                 stop_id__in=stop_ids,
             )
