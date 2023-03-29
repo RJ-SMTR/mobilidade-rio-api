@@ -14,7 +14,7 @@ from rest_framework import permissions
 from mobilidade_rio.pontos.models import *
 import mobilidade_rio.utils.query_utils as qu
 from .serializers import *
-from .paginations import LargePagination
+from .paginations import LargePagination, CustomPagination
 
 # import connector to query directly from database
 from django.db import connection
@@ -176,12 +176,24 @@ class StopTimesViewSet(viewsets.ModelViewSet):
 
     serializer_class = StopTimesSerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
+    pagination_class = CustomPagination
 
     def get_queryset(self):
         # get real col names and stuff
         trip_id_col = StopTimes._meta.get_field("trip_id").column
         stop_id_col = StopTimes._meta.get_field("stop_id").column
         queryset = StopTimes.objects.all().order_by("trip_id")
+
+        # filter by unique combinations
+        unique = self.request.query_params.get("unique")
+        if unique:
+            unique = [
+                "trip_id__trip_short_name",
+                "trip_id__direction_id",
+                "trip_id__service_id",
+                "stop_sequence",
+            ]
+            queryset = queryset.order_by(*unique).distinct(*unique)
 
         # filter trip_id
         trip_id = self.request.query_params.get("trip_id")
