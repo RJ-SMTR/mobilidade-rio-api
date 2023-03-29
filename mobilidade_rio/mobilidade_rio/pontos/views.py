@@ -185,8 +185,8 @@ class StopTimesViewSet(viewsets.ModelViewSet):
         queryset = StopTimes.objects.all().order_by("trip_id")
 
         # filter by unique combinations
-        unique = self.request.query_params.get("unique")
-        if unique:
+        show_all = self.request.query_params.get("show_all")
+        if not show_all:
             unique = [
                 "trip_id__trip_short_name",
                 "trip_id__direction_id",
