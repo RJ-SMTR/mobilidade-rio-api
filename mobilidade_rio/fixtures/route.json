@@ -1,6 +1,17 @@
 [
     {
         "model": "pontos.route",
+        "pk": "r0ll",
+        "fields": {
+            "linha": "r0ll",
+            "agency": "22003",
+            "mode": 3,
+            "short_name": "SV669",
+            "vista": "Pavuna - M\u00e9ier"
+        }
+    },
+    {
+        "model": "pontos.route",
         "pk": "84be",
         "fields": {
             "linha": "84be",
@@ -19,6 +30,28 @@
             "mode": 3,
             "short_name": "LECD52",
             "vista": "Cascadura - Coelho Neto"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "btwr",
+        "fields": {
+            "linha": "btwr",
+            "agency": "22005",
+            "mode": 3,
+            "short_name": "830",
+            "vista": "Pedregoso - Campo Grande"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "O0842AAA0A",
+        "fields": {
+            "linha": "O0842AAA0A",
+            "agency": "22005",
+            "mode": 3,
+            "short_name": "842",
+            "vista": "Paci\u00eancia - Campo Grande"
         }
     },
     {
@@ -67,6 +100,17 @@
     },
     {
         "model": "pontos.route",
+        "pk": "O0825AAA0A",
+        "fields": {
+            "linha": "O0825AAA0A",
+            "agency": "22005",
+            "mode": 3,
+            "short_name": "825",
+            "vista": "Jesu\u00edtas - Campo Grande"
+        }
+    },
+    {
+        "model": "pontos.route",
         "pk": "ukw5",
         "fields": {
             "linha": "ukw5",
@@ -74,6 +118,17 @@
             "mode": 3,
             "short_name": "928",
             "vista": "Marechal Hermes - Bonsucesso"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "O0600AAA0A",
+        "fields": {
+            "linha": "O0600AAA0A",
+            "agency": "22004",
+            "mode": 3,
+            "short_name": "600",
+            "vista": "Taquara - Saens Pe\u00f1a"
         }
     },
     {
@@ -89,13 +144,13 @@
     },
     {
         "model": "pontos.route",
-        "pk": "c2tb",
+        "pk": "h9ji",
         "fields": {
-            "linha": "c2tb",
-            "agency": "22003",
+            "linha": "h9ji",
+            "agency": "22005",
             "mode": 3,
-            "short_name": "335 SR",
-            "vista": "Cordovil - Tiradentes"
+            "short_name": "885",
+            "vista": "Santa Cruz - Mato Alto"
         }
     },
     {
@@ -166,6 +221,83 @@
     },
     {
         "model": "pontos.route",
+        "pk": "O0335AAR0A",
+        "fields": {
+            "linha": "O0335AAR0A",
+            "agency": "22003",
+            "mode": 3,
+            "short_name": "335 SR",
+            "vista": "Cordovil - Tiradentes"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "u8ud",
+        "fields": {
+            "linha": "u8ud",
+            "agency": "22004",
+            "mode": 3,
+            "short_name": "831",
+            "vista": "Col\u00f4nia - Taquara"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "wvv2",
+        "fields": {
+            "linha": "wvv2",
+            "agency": "22004",
+            "mode": 3,
+            "short_name": "SV692",
+            "vista": "M\u00e9ier - Alvorada"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "7ub2",
+        "fields": {
+            "linha": "7ub2",
+            "agency": "22005",
+            "mode": 3,
+            "short_name": "869",
+            "vista": "Campo Grande - Santa Margarida"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "O0384AAV0A",
+        "fields": {
+            "linha": "O0384AAV0A",
+            "agency": "22003",
+            "mode": 3,
+            "short_name": "SV384",
+            "vista": "Pavuna - Passeio"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "O0810AAP0A",
+        "fields": {
+            "linha": "O0810AAP0A",
+            "agency": "22004",
+            "mode": 3,
+            "short_name": "SP810",
+            "vista": "Taquara - Vargem Grande"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "fzws",
+        "fields": {
+            "linha": "fzws",
+            "agency": "22003",
+            "mode": 3,
+            "short_name": "SVB665",
+            "vista": "Pavuna - Saens Pena"
+        }
+    },
+    {
+        "model": "pontos.route",
         "pk": "O0409AAA0A",
         "fields": {
             "linha": "O0409AAA0A",
@@ -173,6 +305,17 @@
             "mode": 3,
             "short_name": "409",
             "vista": "Saens Pe\u00f1a - Horto"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "O0384AAA0A",
+        "fields": {
+            "linha": "O0384AAA0A",
+            "agency": "22003",
+            "mode": 3,
+            "short_name": "384",
+            "vista": "Pavuna - Passeio"
         }
     },
     {
@@ -205,17 +348,6 @@
             "agency": "22003",
             "mode": 3,
             "short_name": "232",
-            "vista": "Lins - Castelo"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0232AAV0A",
-        "fields": {
-            "linha": "O0232AAV0A",
-            "agency": "22003",
-            "mode": 3,
-            "short_name": "SV232",
             "vista": "Lins - Castelo"
         }
     },
@@ -536,17 +668,6 @@
             "mode": 3,
             "short_name": "378",
             "vista": "Marechal Hermes - Castelo"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0384AAA0A",
-        "fields": {
-            "linha": "O0384AAA0A",
-            "agency": "22003",
-            "mode": 3,
-            "short_name": "384",
-            "vista": "Pavuna - Passeio"
         }
     },
     {
@@ -1563,17 +1684,6 @@
     },
     {
         "model": "pontos.route",
-        "pk": "O0600AAA0A",
-        "fields": {
-            "linha": "O0600AAA0A",
-            "agency": "22004",
-            "mode": 3,
-            "short_name": "600",
-            "vista": "Taquara - Saens Pe\u00f1a"
-        }
-    },
-    {
-        "model": "pontos.route",
         "pk": "O0601AAA0A",
         "fields": {
             "linha": "O0601AAA0A",
@@ -1695,17 +1805,6 @@
     },
     {
         "model": "pontos.route",
-        "pk": "O0692AAA0A",
-        "fields": {
-            "linha": "O0692AAA0A",
-            "agency": "22004",
-            "mode": 3,
-            "short_name": "692",
-            "vista": "M\u00e9ier - Alvorada"
-        }
-    },
-    {
-        "model": "pontos.route",
         "pk": "O0693AAA0A",
         "fields": {
             "linha": "O0693AAA0A",
@@ -1823,28 +1922,6 @@
             "mode": 3,
             "short_name": "829",
             "vista": "Gard\u00eania Azul - Freguesia"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0831AAA0A",
-        "fields": {
-            "linha": "O0831AAA0A",
-            "agency": "22004",
-            "mode": 3,
-            "short_name": "831",
-            "vista": "Col\u00f4nia - Taquara"
-        }
-    },
-    {
-        "model": "pontos.route",
-        "pk": "O0844AAA0A",
-        "fields": {
-            "linha": "O0844AAA0A",
-            "agency": "22004",
-            "mode": 3,
-            "short_name": "844",
-            "vista": "Barra Shopping - Barrinha"
         }
     },
     {
@@ -2186,6 +2263,50 @@
             "mode": 3,
             "short_name": "2383",
             "vista": "Sepetiba - Carioca"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "O0831AAV0A",
+        "fields": {
+            "linha": "O0831AAV0A",
+            "agency": "22004",
+            "mode": 3,
+            "short_name": "SV831",
+            "vista": "Col\u00f4nia - Taquara"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "O00057CAA0A",
+        "fields": {
+            "linha": "O00057CAA0A",
+            "agency": "22004",
+            "mode": 3,
+            "short_name": "LECD57",
+            "vista": "Teixeiras - Saens Pe\u00f1a"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "O0844AAA0A",
+        "fields": {
+            "linha": "O0844AAA0A",
+            "agency": "22004",
+            "mode": 3,
+            "short_name": "844",
+            "vista": "Jardim Oce\u00e2nico - Barrinha"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "O0692AAA0A",
+        "fields": {
+            "linha": "O0692AAA0A",
+            "agency": "22004",
+            "mode": 3,
+            "short_name": "692",
+            "vista": "M\u00e9ier - Alvorada"
         }
     },
     {
@@ -2850,17 +2971,6 @@
     },
     {
         "model": "pontos.route",
-        "pk": "O0869AAA0A",
-        "fields": {
-            "linha": "O0869AAA0A",
-            "agency": "22005",
-            "mode": 3,
-            "short_name": "869",
-            "vista": "Santa Margarida - Campo Grande"
-        }
-    },
-    {
-        "model": "pontos.route",
         "pk": "O0870AAA0A",
         "fields": {
             "linha": "O0870AAA0A",
@@ -3444,17 +3554,6 @@
     },
     {
         "model": "pontos.route",
-        "pk": "O0513AAP0A",
-        "fields": {
-            "linha": "O0513AAP0A",
-            "agency": "22002",
-            "mode": 3,
-            "short_name": "SP513",
-            "vista": "Urca - Botafogo"
-        }
-    },
-    {
-        "model": "pontos.route",
         "pk": "O0538AAA0A",
         "fields": {
             "linha": "O0538AAA0A",
@@ -3506,6 +3605,17 @@
             "mode": 3,
             "short_name": "553",
             "vista": "Rio Sul - Recreio"
+        }
+    },
+    {
+        "model": "pontos.route",
+        "pk": "O0513AAA0A",
+        "fields": {
+            "linha": "O0513AAA0A",
+            "agency": "22002",
+            "mode": 3,
+            "short_name": "513",
+            "vista": "Urca - Botafogo"
         }
     },
     {

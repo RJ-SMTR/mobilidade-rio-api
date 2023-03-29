@@ -220,7 +220,6 @@ class Stops(models.Model):
             forbidden if location_type is 1 (station, stop parent)
             optional if location_type is 0, None (platform, stop child)
 
-
     Primary keys: stop_id
     Foreign keys: parent_station,
         zone_id, level_id (TODO)
