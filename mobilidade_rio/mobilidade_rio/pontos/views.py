@@ -179,8 +179,8 @@ class StopTimesViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         # get real col names and stuff
-        trip_id_col = StopTimes._meta.get_field("trip_id").column
-        stop_id_col = StopTimes._meta.get_field("stop_id").column
+        # trip_id_col = StopTimes._meta.get_field("trip_id").column
+        # stop_id_col = StopTimes._meta.get_field("stop_id").column
         queryset = StopTimes.objects.all().order_by("trip_id")
 
         # add parameter to show all combinations (logical OR)
