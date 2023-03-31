@@ -1,3 +1,6 @@
+# Configurations to run dev local
+mobilidade_rio/dev_local/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

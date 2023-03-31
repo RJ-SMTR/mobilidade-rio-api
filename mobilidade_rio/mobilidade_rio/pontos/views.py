@@ -179,84 +179,87 @@ class StopTimesViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         # get real col names and stuff
-        TRIP_ID_COL = StopTimes._meta.get_field("trip_id").column
-        STOP_ID_COL = StopTimes._meta.get_field("stop_id").column
-        PARENT_STATION__STOPS = Stops._meta.get_field("parent_station").column
-
+        # trip_id_col = StopTimes._meta.get_field("trip_id").column
+        # stop_id_col = StopTimes._meta.get_field("stop_id").column
         queryset = StopTimes.objects.all().order_by("trip_id")
-        query = queryset.query
 
-        # increase performance if no need to raw query
-        raw_filter_used = False
+        # add parameter to show all combinations (logical OR)
+        show_all = self.request.query_params.get("show_all")
+        
+        # filter by unique combinations (default - logical AND)
+        if not show_all:
+            unique = [
+                "trip_id__trip_short_name",
+                "trip_id__direction_id",
+                "trip_id__service_id",
+                "stop_sequence",
+            ]
+            queryset = queryset.order_by(*unique).distinct(*unique)
 
-        # get stop_id_all
-        stop_id__all = self.request.query_params.get("stop_id__all")
-        if stop_id__all is not None:
-            stop_id__all = stop_id__all.split(",")
-            # filter all trips that pass in all stops
-            query = qu.q_cols_match_all(
-                table=queryset.query, table_is_query=True,
-                unique_cols=[TRIP_ID_COL, STOP_ID_COL],
-                col_in={STOP_ID_COL: stop_id__all},
-                col_match_all=[TRIP_ID_COL],
-            )
-            raw_filter_used = True
+        # filter trip_id
+        trip_id = self.request.query_params.get("trip_id")
+        if trip_id is not None:
+            trip_id = trip_id.split(',')
+            queryset = queryset.filter(trip_id__in=trip_id)
 
-        # stop_id
+        # filter trip_short_name
+        trip_short_name = self.request.query_params.get("trip_short_name")
+        if trip_short_name is not None:
+            trip_short_name = trip_short_name.split(',')
+            queryset = queryset.filter(trip_id__trip_short_name__in=trip_short_name)
+
+        # filter direction_id
+        direction_id = self.request.query_params.get("direction_id")
+        if direction_id is not None:
+            direction_id = direction_id.split(',')
+            queryset = queryset.filter(trip_id__direction_id__in=direction_id)
+
+        # filter service_id
+        service_id = self.request.query_params.get("service_id")
+        if service_id is not None:
+            service_id = service_id.split(',')
+            queryset = queryset.filter(trip_id__service_id__in=service_id)
+
+        # filter stop_id
         stop_id = self.request.query_params.get("stop_id")
         if stop_id is not None:
             stop_id = stop_id.split(",")
-
-            # filter location_type
             location_type = Stops.objects.filter(
                 stop_id__in=stop_id).values_list("location_type", flat=True)
 
-            # prevent error on searching inexistent stop_id
-            # TODO: filter stop_id or children individually
-            if len(location_type):
+            # TODO: filter stop parent and children individually
+            if location_type is not None:
                 # if stop is parent (station), return its children
                 if location_type[0] == 1:
-                    if raw_filter_used:
-                        query = f"""
-                        SELECT * FROM ({query}) AS {qu.q_random_hash()}
-                        WHERE {STOP_ID_COL} IN (
-                            SELECT stop_id FROM pontos_stops
-                            WHERE {PARENT_STATION__STOPS} IN ({str(list(stop_id))[1:-1]})
-                        )
-                        """
-                    else:
-                        queryset = queryset.filter(
-                            stop_id__in=Stops.objects.filter(
-                                parent_station__in=stop_id).values_list("stop_id", flat=True)
-                        )
+                    queryset = queryset.filter(
+                        stop_id__in=Stops.objects.filter(
+                            parent_station__in=stop_id).values_list("stop_id", flat=True)
+                    )
                 # if stop is child (platform), return searched stops
                 if location_type[0] == 0:
-                    if raw_filter_used:
-                        query = f"""
-                        SELECT * FROM ({query}) AS {qu.q_random_hash()}
-                        WHERE {STOP_ID_COL} IN ({str(list(stop_id))[1:-1]})
-                        """
-                    else:
-                        queryset = queryset.filter(stop_id__in=stop_id)
-
-        # trip_id
-        trip_id = self.request.query_params.get("trip_id")
-        if trip_id is not None:
-            trip_id = trip_id.split(",")
-
-            if raw_filter_used:
-                query = f"""
-                SELECT * FROM ({query}) AS {qu.q_random_hash()}
-                WHERE {TRIP_ID_COL} IN ({str(list(trip_id))[1:-1]})
-                ORDER BY {TRIP_ID_COL}
-                """
+                    queryset = queryset.filter(stop_id__in=stop_id)
             else:
-                queryset = queryset.filter(
-                    trip_id__in=trip_id).order_by("trip_id")
+                queryset = queryset.none() # stop id not found
+
+
+        # filter for trips passing by all given stops
+        # query = queryset.query
+        # raw_filter_used = False
+        # stop_id__all = self.request.query_params.get("stop_id__all")
+        # if stop_id__all is not None:
+        #     stop_id__all = stop_id__all.split(",")
+        #     query = qu.q_cols_match_all(
+        #         table=query, table_is_query=True,
+        #         unique_cols=[trip_id_col, stop_id_col],
+        #         col_in={stop_id_col: stop_id__all},
+        #         col_match_all=[trip_id_col],
+        #     )
+        #     raw_filter_used = True
 
         # execute query
-        if raw_filter_used:
-            queryset = queryset.raw(query)
+        # if raw_filter_used:
+        #     queryset = queryset.raw(query)
+
         return queryset
 
 
