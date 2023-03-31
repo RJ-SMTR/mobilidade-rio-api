@@ -5,7 +5,7 @@ kind: Deployment
 metadata:
   name: mobilidade-api
 spec:
-  replicas: 3
+  replicas: 10
   selector:
     matchLabels:
       app: mobilidade-api
@@ -24,6 +24,23 @@ spec:
           image: gcr.io/PROJECT_ID/IMAGE_API:TAG
           ports:
             - containerPort: 80
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 5
+            timeoutSeconds: 2
+            periodSeconds: 10
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 30
+            timeoutSeconds: 2
+            periodSeconds: 10
+            failureThreshold: 3
+          restartPolicy: Always
           env:
             - name: DB_NAME
               valueFrom:
@@ -60,6 +77,7 @@ spec:
                 secretKeyRef:
                   name: envs
                   key: DJANGO_SETTINGS_MODULE
+      
       restartPolicy: Always
 ---
 # Deployment django-q
