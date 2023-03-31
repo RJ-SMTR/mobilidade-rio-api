@@ -40,7 +40,6 @@ spec:
             timeoutSeconds: 2
             periodSeconds: 10
             failureThreshold: 3
-          restartPolicy: Always
           env:
             - name: DB_NAME
               valueFrom:
