@@ -5,24 +5,15 @@ pontos.views - to serve API endpoints
 # stop_code
 import operator
 from functools import reduce
-import django.db.models
 from rest_framework.exceptions import ValidationError
 
 # etc
 from rest_framework import viewsets
 from rest_framework import permissions
 from mobilidade_rio.pontos.models import *
-import mobilidade_rio.utils.query_utils as qu
 from .serializers import *
 from .paginations import LargePagination
 
-# import connector to query directly from database
-from django.db import connection
-
-cursor = connection.cursor()
-
-# from .utils import get_distance, safe_cast
-# from .constants import constants
 
 class AgencyViewSet(viewsets.ModelViewSet):
 
@@ -84,15 +75,6 @@ class TripsViewSet(viewsets.ModelViewSet):
         if trip_id is not None:
             queryset = queryset.filter(trip_id=trip_id)
         return queryset
-
-        # if code is not None:
-        #     qrcode: QrCode = None
-        #     try:
-        #         qrcode: QrCode = QrCode.objects.get(stop_code=code)
-        #     except QrCode.DoesNotExist:
-        #         return Trip.objects.none()
-        #     sequence: BaseManager = Stop_times.objects.filter(stop_id=qrcode.stop_id)
-        #     queryset = queryset.filter(trip_id__in=sequence.values_list('trip_id'))
 
 
 class ShapesViewSet(viewsets.ModelViewSet):
@@ -271,4 +253,26 @@ class FrequenciesViewSet(viewsets.ModelViewSet):
 
     serializer_class = FrequenciesSerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
-    queryset = Frequencies.objects.all().order_by("trip_id")
+    queryset = Frequencies.objects.all().order_by("id")
+
+    def get_queryset(self):
+        queryset = Frequencies.objects.all().order_by("id")
+        # filter trip_id
+        trip_id = self.request.query_params.get("trip_id")
+        if trip_id is not None:
+            trip_id = trip_id.split(',')
+            queryset = queryset.filter(trip_id__in=trip_id)
+
+        # filter trip_short_name
+        trip_short_name = self.request.query_params.get("trip_short_name")
+        if trip_short_name is not None:
+            trip_short_name = trip_short_name.split(',')
+            queryset = queryset.filter(trip_id__trip_short_name__in=trip_short_name)
+
+        # filter direction_id
+        direction_id = self.request.query_params.get("direction_id")
+        if direction_id is not None:
+            direction_id = direction_id.split(',')
+            queryset = queryset.filter(trip_id__direction_id__in=direction_id)
+
+        return queryset
