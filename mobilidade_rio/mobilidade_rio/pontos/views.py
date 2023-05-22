@@ -74,8 +74,26 @@ class TripsViewSet(viewsets.ModelViewSet):
 
         if trip_id is not None:
             queryset = queryset.filter(trip_id=trip_id)
-        return queryset
 
+        # filter trip_short_name
+        trip_short_name = self.request.query_params.get("trip_short_name")
+        if trip_short_name is not None:
+            trip_short_name = trip_short_name.split(',')
+            queryset = queryset.filter(trip_short_name__in=trip_short_name)
+
+        # filter direction_id
+        direction_id = self.request.query_params.get("direction_id")
+        if direction_id is not None:
+            direction_id = direction_id.split(',')
+            queryset = queryset.filter(direction_id__in=direction_id)
+
+        # filter service_id
+        service_id = self.request.query_params.get("service_id")
+        if service_id is not None:
+            service_id = service_id.split(',')
+            queryset = queryset.filter(service_id__in=service_id)
+
+        return queryset
 
 class ShapesViewSet(viewsets.ModelViewSet):
 
@@ -170,13 +188,21 @@ class StopTimesViewSet(viewsets.ModelViewSet):
         
         # filter by unique combinations (default - logical AND)
         if not show_all:
-            unique = [
+            unique_trips_list = [
+                "trip_short_name",
+                "direction_id",
+                "service_id",
+                "shape_id",
+            ]
+            order = [
+                "trip_id",
                 "trip_id__trip_short_name",
                 "trip_id__direction_id",
                 "trip_id__service_id",
                 "stop_sequence",
             ]
-            queryset = queryset.order_by(*unique).distinct(*unique)
+            unique_trips = Trips.objects.order_by(*unique_trips_list).distinct(*unique_trips_list)
+            queryset = queryset.filter(trip_id__in=unique_trips).order_by(*order)
 
         # filter trip_id
         trip_id = self.request.query_params.get("trip_id")
