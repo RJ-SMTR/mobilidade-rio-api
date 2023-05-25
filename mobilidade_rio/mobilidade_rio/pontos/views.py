@@ -12,7 +12,8 @@ from rest_framework import viewsets
 from rest_framework import permissions
 from mobilidade_rio.pontos.models import *
 from .serializers import *
-from .paginations import LargePagination
+from .paginations import LargePagination, CustomPagination
+from .utils import stop_times_non_redundant_trips
 
 
 class AgencyViewSet(viewsets.ModelViewSet):
@@ -185,24 +186,10 @@ class StopTimesViewSet(viewsets.ModelViewSet):
 
         # add parameter to show all combinations (logical OR)
         show_all = self.request.query_params.get("show_all")
-        
-        # filter by unique combinations (default - logical AND)
+
+        # filter by unique trips combinations (default - logical AND)
         if not show_all:
-            unique_trips_list = [
-                "trip_short_name",
-                "direction_id",
-                "service_id",
-                "shape_id",
-            ]
-            order = [
-                "trip_id",
-                "trip_id__trip_short_name",
-                "trip_id__direction_id",
-                "trip_id__service_id",
-                "stop_sequence",
-            ]
-            unique_trips = Trips.objects.order_by(*unique_trips_list).distinct(*unique_trips_list)
-            queryset = queryset.filter(trip_id__in=unique_trips).order_by(*order)
+            queryset = stop_times_non_redundant_trips(queryset)
 
         # filter trip_id
         trip_id = self.request.query_params.get("trip_id")
@@ -283,6 +270,25 @@ class FrequenciesViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         queryset = Frequencies.objects.all().order_by("id")
+
+        # add parameter to show all combinations (logical OR)
+        show_all = self.request.query_params.get("show_all")
+
+        # filter by existing items in deduplicated stop_times (default - logical AND)
+        if not show_all:
+
+            # initial filter to deduplicate trips in stop_times
+            unique_stop_times_trips = stop_times_non_redundant_trips()
+
+            # filter frequencies by unique deduplicated trips in stop_times
+            unique_st_trips_fields = ["trip_id"]
+            order = ["trip_id"]
+
+            unique_stop_times_trips = unique_stop_times_trips.order_by(
+                *unique_st_trips_fields).distinct(*unique_st_trips_fields).values_list("trip_id")
+
+            queryset = queryset.filter(trip_id__in=unique_stop_times_trips).order_by(*order)
+
         # filter trip_id
         trip_id = self.request.query_params.get("trip_id")
         if trip_id is not None:
