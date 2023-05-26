@@ -38,6 +38,7 @@ def stop_times_non_redundant_trips(
         "trip_id__trip_short_name",
         "trip_id__direction_id",
         "trip_id__service_id",
+        "trip_id__shape_id",
         "stop_sequence",
     ]
     unique_trips = Trips.objects.order_by(*unique_trips_fields).distinct(*unique_trips_fields)

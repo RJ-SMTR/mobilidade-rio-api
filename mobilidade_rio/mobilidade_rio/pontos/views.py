@@ -274,6 +274,7 @@ class FrequenciesViewSet(viewsets.ModelViewSet):
         # add parameter to show all combinations (logical OR)
         show_all = self.request.query_params.get("show_all")
 
+
         # filter by existing items in deduplicated stop_times (default - logical AND)
         if not show_all:
 
@@ -288,6 +289,7 @@ class FrequenciesViewSet(viewsets.ModelViewSet):
                 *unique_st_trips_fields).distinct(*unique_st_trips_fields).values_list("trip_id")
 
             queryset = queryset.filter(trip_id__in=unique_stop_times_trips).order_by(*order)
+
 
         # filter trip_id
         trip_id = self.request.query_params.get("trip_id")
@@ -306,5 +308,11 @@ class FrequenciesViewSet(viewsets.ModelViewSet):
         if direction_id is not None:
             direction_id = direction_id.split(',')
             queryset = queryset.filter(trip_id__direction_id__in=direction_id)
+
+        # filter service_id
+        service_id = self.request.query_params.get("service_id")
+        if service_id is not None:
+            service_id = service_id.split(',')
+            queryset = queryset.filter(trip_id__service_id__in=service_id)
 
         return queryset
