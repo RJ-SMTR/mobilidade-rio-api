@@ -5,6 +5,6 @@ resources:
   - kubernetes.yaml
   - issuer.yaml
 namePrefix: dev-
-namespace: test
+namespace: mobilidade-v2-develop
 # patchesStrategicMerge:
 #   - -
