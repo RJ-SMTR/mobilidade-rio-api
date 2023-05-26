@@ -3,11 +3,11 @@ name: Deploy to develop
 on:
   push:
     branches:
-      - "dev"
-
+      - "devops-workflow"
+      
 env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }}
-  GKE_CLUSTER: ${{ secrets.GKE_CLUSTER_NAME }}
+  GKE_CLUSTER: ${{ secrets.GKE_DEV_CLUSTER_NAME }}
   GKE_ZONE: us-central1-c
   IMAGE: mobilidade-rio-api
   IMAGE_Q: mobilidade-rio-api-django-q
@@ -124,5 +124,5 @@ jobs:
         run: |-
           ./kustomize edit set image gcr.io/PROJECT_ID/IMAGE_API:TAG=gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA
           ./kustomize edit set image gcr.io/PROJECT_ID/IMAGE_API_DJANGO_Q:TAG=gcr.io/$PROJECT_ID/$IMAGE_Q:$GITHUB_SHA
-          ./kustomize build . | kubectl apply -n mobilidade-v2-develop -f -
+          ./kustomize build . | kubectl apply -n mobilidade-v2-develop -f --namespace=test1 -
           kubectl get services -n mobilidade-v2-develop -o wide
