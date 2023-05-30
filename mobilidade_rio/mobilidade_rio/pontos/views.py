@@ -12,7 +12,7 @@ from rest_framework import viewsets
 from rest_framework import permissions
 from mobilidade_rio.pontos.models import *
 from .serializers import *
-from .paginations import LargePagination, CustomPagination
+from .paginations import LargePagination
 from .utils import stop_times_non_redundant_trips
 
 
