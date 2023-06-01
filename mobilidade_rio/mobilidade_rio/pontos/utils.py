@@ -1,8 +1,9 @@
+from typing import List
 import geopy.distance
 from django.db.models import QuerySet
 from mobilidade_rio.pontos.models import (
-    StopTimes,
-    Trips
+    Frequencies,
+    Stops,
 )
 
 def get_distance(p1: tuple, p2: tuple) -> float:
@@ -13,35 +14,39 @@ def safe_cast(val, to_type, default=None):
     try:
         return to_type(val)
     except (ValueError, TypeError):
-        return default
+        return default 
 
 
-def stop_times_non_redundant_trips(
-    queryset:QuerySet = StopTimes.objects.all().order_by("trip_id")
+def stop_times_parent_or_child(
+    stop_id:List[str],
+    queryset:QuerySet = Frequencies.objects.all().order_by("trip_id"),
     ) -> QuerySet:
     """
-    Filter ocourrences by items within trips with unique combinations.
-    
-    These non unique combinations are created to register variations of each trip in frequencies.
-    
-    ``queryset``(optional): StopTimes queryset to filter
-    """
+    Filter by stop_id.
 
-    unique_trips_fields = [
-        "trip_short_name",
-        "direction_id",
-        "service_id",
-        "shape_id",
-    ]
-    order = [
-        "trip_id",
-        "trip_id__trip_short_name",
-        "trip_id__direction_id",
-        "trip_id__service_id",
-        "trip_id__shape_id",
-        "stop_sequence",
-    ]
-    unique_trips = Trips.objects.order_by(*unique_trips_fields).distinct(*unique_trips_fields)
-    queryset = queryset.filter(trip_id__in=unique_trips).order_by(*order)
+    If stop is parent_station, return results from its children;
+
+    if not, return results from itself.
+    """
+    location_type = Stops.objects.filter(
+        stop_id__in=stop_id).values_list("location_type", flat=True)
+
+    # the first stop defines if all stops will be considered parent or child
+    if location_type:
+
+        # if stop is parent (station), return its children
+        if location_type[0] == 1:
+            queryset = queryset.filter(
+                stop_id__in=Stops.objects.filter(
+                    parent_station__in=stop_id).values_list("stop_id", flat=True)
+            )
+
+        # if stop is child (platform), return searched stops
+        if location_type[0] == 0:
+            queryset = queryset.filter(stop_id__in=stop_id)
+
+    # otherwise, stop id not found
+    else:
+        queryset = queryset.none()
 
     return queryset
