@@ -5,24 +5,16 @@ pontos.views - to serve API endpoints
 # stop_code
 import operator
 from functools import reduce
-import django.db.models
 from rest_framework.exceptions import ValidationError
 
 # etc
 from rest_framework import viewsets
 from rest_framework import permissions
 from mobilidade_rio.pontos.models import *
-import mobilidade_rio.utils.query_utils as qu
 from .serializers import *
 from .paginations import LargePagination
+from .utils import stop_times_parent_or_child
 
-# import connector to query directly from database
-from django.db import connection
-
-cursor = connection.cursor()
-
-# from .utils import get_distance, safe_cast
-# from .constants import constants
 
 class AgencyViewSet(viewsets.ModelViewSet):
 
@@ -83,17 +75,26 @@ class TripsViewSet(viewsets.ModelViewSet):
 
         if trip_id is not None:
             queryset = queryset.filter(trip_id=trip_id)
+
+        # filter trip_short_name
+        trip_short_name = self.request.query_params.get("trip_short_name")
+        if trip_short_name is not None:
+            trip_short_name = trip_short_name.split(',')
+            queryset = queryset.filter(trip_short_name__in=trip_short_name)
+
+        # filter direction_id
+        direction_id = self.request.query_params.get("direction_id")
+        if direction_id is not None:
+            direction_id = direction_id.split(',')
+            queryset = queryset.filter(direction_id__in=direction_id)
+
+        # filter service_id
+        service_id = self.request.query_params.get("service_id")
+        if service_id is not None:
+            service_id = service_id.split(',')
+            queryset = queryset.filter(service_id__in=service_id)
+
         return queryset
-
-        # if code is not None:
-        #     qrcode: QrCode = None
-        #     try:
-        #         qrcode: QrCode = QrCode.objects.get(stop_code=code)
-        #     except QrCode.DoesNotExist:
-        #         return Trip.objects.none()
-        #     sequence: BaseManager = Stop_times.objects.filter(stop_id=qrcode.stop_id)
-        #     queryset = queryset.filter(trip_id__in=sequence.values_list('trip_id'))
-
 
 class ShapesViewSet(viewsets.ModelViewSet):
 
@@ -181,20 +182,29 @@ class StopTimesViewSet(viewsets.ModelViewSet):
         # get real col names and stuff
         # trip_id_col = StopTimes._meta.get_field("trip_id").column
         # stop_id_col = StopTimes._meta.get_field("stop_id").column
-        queryset = StopTimes.objects.all().order_by("trip_id")
+        queryset = StopTimes.objects.all().order_by("trip_id", "stop_sequence")
 
         # add parameter to show all combinations (logical OR)
         show_all = self.request.query_params.get("show_all")
-        
-        # filter by unique combinations (default - logical AND)
+
+        # filter by unique trips combinations (default - logical AND)
         if not show_all:
-            unique = [
+            unique_trips_fields = [
+                "trip_short_name",
+                "direction_id",
+                "service_id",
+                "shape_id",
+            ]
+            order = [
+                "trip_id",
                 "trip_id__trip_short_name",
                 "trip_id__direction_id",
                 "trip_id__service_id",
+                "trip_id__shape_id",
                 "stop_sequence",
             ]
-            queryset = queryset.order_by(*unique).distinct(*unique)
+            unique_trips = Trips.objects.order_by(*unique_trips_fields).distinct(*unique_trips_fields)
+            queryset = queryset.filter(trip_id__in=unique_trips).order_by(*order)
 
         # filter trip_id
         trip_id = self.request.query_params.get("trip_id")
@@ -224,22 +234,7 @@ class StopTimesViewSet(viewsets.ModelViewSet):
         stop_id = self.request.query_params.get("stop_id")
         if stop_id is not None:
             stop_id = stop_id.split(",")
-            location_type = Stops.objects.filter(
-                stop_id__in=stop_id).values_list("location_type", flat=True)
-
-            # TODO: filter stop parent and children individually
-            if location_type is not None:
-                # if stop is parent (station), return its children
-                if location_type[0] == 1:
-                    queryset = queryset.filter(
-                        stop_id__in=Stops.objects.filter(
-                            parent_station__in=stop_id).values_list("stop_id", flat=True)
-                    )
-                # if stop is child (platform), return searched stops
-                if location_type[0] == 0:
-                    queryset = queryset.filter(stop_id__in=stop_id)
-            else:
-                queryset = queryset.none() # stop id not found
+            queryset = stop_times_parent_or_child(stop_id, queryset)
 
 
         # filter for trips passing by all given stops
@@ -271,4 +266,46 @@ class FrequenciesViewSet(viewsets.ModelViewSet):
 
     serializer_class = FrequenciesSerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
-    queryset = Frequencies.objects.all().order_by("trip_id")
+    queryset = Frequencies.objects.all().order_by("id")
+
+    def get_queryset(self):
+        queryset = Frequencies.objects.all().order_by("id")
+
+        # filter stop_id
+        stop_id = self.request.query_params.get("stop_id")
+        if stop_id is not None:
+            stop_id = stop_id.split(",")
+
+            # filter by stop_times
+            stop_times = StopTimes.objects.all().order_by("trip_id", "stop_sequence")
+            stop_times = stop_times_parent_or_child(stop_id, stop_times)
+            stop_times_trip_id = list(stop_times.values_list("trip_id", flat=True))
+
+            # filter frequencies by 
+            queryset = queryset.filter(trip_id__in=stop_times_trip_id)
+
+        # filter trip_id
+        trip_id = self.request.query_params.get("trip_id")
+        if trip_id is not None:
+            trip_id = trip_id.split(',')
+            queryset = queryset.filter(trip_id__in=trip_id)
+
+        # filter trip_short_name
+        trip_short_name = self.request.query_params.get("trip_short_name")
+        if trip_short_name is not None:
+            trip_short_name = trip_short_name.split(',')
+            queryset = queryset.filter(trip_id__trip_short_name__in=trip_short_name)
+
+        # filter direction_id
+        direction_id = self.request.query_params.get("direction_id")
+        if direction_id is not None:
+            direction_id = direction_id.split(',')
+            queryset = queryset.filter(trip_id__direction_id__in=direction_id)
+
+        # filter service_id
+        service_id = self.request.query_params.get("service_id")
+        if service_id is not None:
+            service_id = service_id.split(',')
+            queryset = queryset.filter(trip_id__service_id__in=service_id)
+
+        return queryset

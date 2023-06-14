@@ -8,7 +8,7 @@ import requests
 from shapely.geometry import LineString, Point
 from shapely.ops import snap, split, transform
 from django.utils import timezone
-from django.db.models import Q
+from django.db.models import Q, QuerySet
 import pandas as pd
 from mobilidade_rio.pontos.models import (
     Stops,
@@ -57,32 +57,40 @@ class Predictor:  # pylint: disable=C0301
 
         today_date = timezone.now().date()
 
-        # Check for date exceptions
-        services = CalendarDates.objects.filter(date=today_date).filter(
-            exception_type=1
-        )
-
-        if len(services) > 1:
-            raise Exception(
-                "Multiple services found for today. Please set a specific service_id."
-            )
-        if len(services) == 1:
-            return services.values_list("service_id", flat=True)[0]
-
-        # Check for regular service
+        # Get regular services
         weekday = today_date.strftime("%A").lower()
-        services = Calendar.objects.filter(
-            start_date__lte=today_date, end_date__gte=today_date
-        ).filter(**{weekday: 1})
+        regular_services_qs = Calendar.objects.filter(**{weekday: 1})
 
-        if len(services) > 1:
-            return Exception(
-                "Multiple services found for today. Please set a specific service_id."
+        # Get exception services
+        date_exceptions_qs = CalendarDates.objects.filter(
+            date=today_date,
+        )
+        date_exceptions_add = date_exceptions_qs.filter(exception_type=1)
+        date_exceptions_remove = date_exceptions_qs.filter(exception_type=2)
+
+        # Filter for regular services with date exceptions
+        treated_services_qs = regular_services_qs.filter(
+            # include services that exists as regular service between dates
+            Q(
+                start_date__lte=today_date,
+                end_date__gte=today_date
+            ) |
+            # or that exists as exception service at date
+            Q(
+                service_id__in=date_exceptions_add.values_list("service_id", flat=True)
             )
-        if len(services) == 0:
+            # and ignore exception services to remove
+        ).exclude(service_id__in=(date_exceptions_remove.values_list("service_id", flat=True)))
+
+        if treated_services_qs.count() > 1:
+            # note: Predictions for trips with different shapes may be wrong, tests are needed.
+            logger.info("Treated services: multiple services found for today, getting first one.")
+            logger.info("Services: %s",treated_services_qs.values_list("service_id", flat=True))
+
+        if treated_services_qs.count() == 0:
             raise Exception("No service found for today.")
 
-        return services.values_list("service_id", flat=True)[0]
+        return treated_services_qs.values_list("service_id", flat=True)
 
     def set_realtime(self, rt_data):
         """
@@ -126,18 +134,29 @@ class Predictor:  # pylint: disable=C0301
 
         return data
 
-    def _get_shape_id(self, trip_short_name, direction_id, service_id):
+    def _get_shape_id(self, trip_short_name, direction_id, service_ids_for_today):
         """
-        Get shape id.
+        Get unique shape in trips given unique (trip_short_name, direction_id) \
+            + any service_id
+        
+        Parameters
+        ---
+        ``direction_id``(str): Field to filter as unique combination
+        
+        ``trip_short_name``(str): Field to filter as unique combination
+        
+        ``service_ids_for_today``(list): Any treated service_id, it must agree with date exceptions (calendar_dates) \
+            or normal services (calendar)
+            
+        Return
+        ---
+        Unique shape_id for combination of fields in trips
         """
-        # get the first trip matched, could be more - TODO: add rule to
-        # FE get the same trip_id (BACKLOG) # pylint: disable=W0511
-        # shape_id = queryset_to_list(trips, ['shape_id'])
 
         trips = Trips.objects.filter(
             trip_short_name=trip_short_name,
             direction_id=direction_id,
-            service_id__in=service_id,
+            service_id__in=list(service_ids_for_today),
         )
 
         if len(trips) == 0:
@@ -259,7 +278,6 @@ class Predictor:  # pylint: disable=C0301
             if len(positions) == 0:
                 return []
 
-            # get the shape of the trip
             shape = self._get_shape_id(trip_short_name, direction_id, self.service_id)
             if not shape:
                 continue
@@ -270,8 +288,10 @@ class Predictor:  # pylint: disable=C0301
             # filter only stop_ids between vehicle positions
 
             # calculate ETA for all stops of the trip
+
             stop_ids = list(StopTimes.objects.filter(
-                trip_id__trip_short_name=trip_short_name, trip_id__direction_id=direction_id
+                trip_id__trip_short_name=trip_short_name,
+                trip_id__direction_id=direction_id
             ).filter(~Q(stop_sequence=0)).values_list("stop_id", flat=True))
             stops = Stops.objects.filter(
                 stop_id__in=stop_ids,
@@ -288,27 +308,3 @@ class Predictor:  # pylint: disable=C0301
             # break
 
         return result
-
-
-# TODO: precisa manter esse __repr__? # pylint: disable=W0511
-#     def __repr__(self) -> str:
-#         str_map_stops = "Empty"
-#         if not self.map_stops.empty:
-#             str_map_stops = f"""
-#             unique stop_code: {len(self.map_stops["stop_code"].unique())}
-#             unique trip_short_name: ({len(self.map_stops["trip_short_name"].unique())})
-#             unique direction_id: {len(self.map_stops["direction_id"].unique())}
-#             unique shape_id: {len(self.map_stops["shape_id"].unique())}
-#             """
-
-#         return f"""\
-# Predictor values:
-#     input:
-#         stop_code: ({len(self.stop_code)}) {self.stop_code}
-#         trip_short_name: ({len(self.trip_short_name)}) {self.trip_short_name}
-#         direction_id: ({len(self.direction_id)}) {self.direction_id}
-#     processing:
-#         service_id: '{self.service_id}'
-#         shape_id: ({len(shape_id)}) {shape_id}
-#         \
-#         """

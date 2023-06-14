@@ -31,14 +31,19 @@ def generate_prediction():
         logger.info("%i PredictorResults found, removing duplicates before save...", len(duplicated_pk))
         duplicated_pk.delete()
 
-    obj, created = PredictorResult.objects.update_or_create(
+    obj, created_or_updated = PredictorResult.objects.update_or_create(
         pk=1,
         defaults={
             "result_json": predictor_result
         }
     )
-    created = "created" if created else "updated"
-    logger.info("new prediction %s: %s", created, obj.result_json['result'][:1])
+    created_or_updated = "created" if created_or_updated else "updated"
+    logger.info(
+        "new prediction %s! length: %d, preview: %s",
+        created_or_updated,
+        len(obj.result_json['result']),
+        obj.result_json['result'][:1]
+        )
 
 
 # TODO: Decide if this function will recall itself every 20 seconds 3x or if apps.py will do it.
