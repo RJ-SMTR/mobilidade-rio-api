@@ -16,7 +16,8 @@ Commands:
     'help'                  print this help
     'source' [path]         read env path
     'env' [filename]        load env file name from root project folder
-    'm'/'manage.py' [args]  shorthand for 'python mobilidade_rio/manage.py [args]'
+    'm','manage.py' [args]  shorthand for 'python mobilidade_rio/manage.py [args]'
+    'db', 'database','manage_db' [args]  run manage_db utility
     'runserver' [mode]      run server at modes
         mode:               'dev'
 '@
@@ -52,6 +53,11 @@ elseif ($args[0] -eq "env") {
 
 elseif ($($args[0] -eq "m") -or $($args[0] -eq "manage")) {
     python "mobilidade_rio/manage.py" $args[1..($args.Count)];
+}
+
+elseif ($($args[0] -eq "db") -or 
+    $($args[0] -eq "database") -or $($args[0] -eq "manage_db")) {
+    python "dev/scripts/manage_db/manage_db.py" $args[1..($args.Count)];
 }
 
 elseif ($args[0] -eq "runserver") {

@@ -2,7 +2,7 @@
 This setting is made to run in your local machine
 """
 from os import getenv
-from .base import *  # pylint: disable=W0401,W0614
+from mobilidade_rio.settings.base import *  # pylint: disable=W0401,W0614,E0401
 
 ALLOWED_HOSTS = ["*"]
 

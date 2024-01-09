@@ -1,5 +1,5 @@
 """
-populate_db
+manage_db
 
 Copy CSV to Postgres
 
@@ -41,6 +41,7 @@ script_path = os.path.dirname(os.path.abspath(__file__))
 current_path = os.getcwd()
 TAB = " "*4
 
+
 def print_colored(color, *args, **kwargs):
     """Print text in color"""
     colors = {
@@ -64,11 +65,10 @@ def mkdir_if_not_exists(path):
 
 def convert_to_type(
     data,
-    initial_type: type=None,
-    ret_type: type=io.TextIOWrapper,
+    initial_type: type = None,
+    ret_type: type = io.TextIOWrapper,
     save_file_name: str = None,
-    ):
-
+):
     """Return data from type"""
 
     if initial_type is None:
@@ -79,7 +79,6 @@ def convert_to_type(
     if save_file_name is not None:
         mkdir_if_not_exists(script_path + "/logs")
         save_file_path = os.path.join(script_path, "logs", save_file_name)
-
 
     # return DataFrame
     if ret_type == pd.DataFrame or (ret_type is None and initial_type == pd.DataFrame):
@@ -198,29 +197,35 @@ def validate_col_values(
     if settings.get('enforce_type_cols').get(table_name):
         cols_map = settings['enforce_type_cols'][table_name]
         col_names = list(cols_map.keys())
+        col_names = [c for c in col_names if c in data.columns]
         # to int
-        cols_int = [k for k,v in cols_map.items() if 'int' in v]
+        cols_int = [k for k, v in cols_map.items() if 'int' in v]
+        cols_int = [c for c in cols_int if c in data.columns]
         data[cols_int] = data[cols_int].fillna(0)
         data[col_names] = data[col_names].apply(pd.to_numeric, errors='ignore')
         # to other types
-        data = data.astype(settings['enforce_type_cols'][table_name]).copy()
+        enforce_type_cols = settings['enforce_type_cols'][table_name]
+        enforce_type_cols = {
+            k: v for k, v in enforce_type_cols.items() if k in data.columns}
+        data = data.astype(enforce_type_cols).copy()
         # TODO: get types from database
         # cols_1 = validate_col_types(table_name, data.columns)
 
     # drop null
     if 'drop_null_cols' in settings and table_name in settings['drop_null_cols']:
-        data = data.dropna(subset=settings['drop_null_cols'][table_name]).copy()
+        data = data.dropna(
+            subset=settings['drop_null_cols'][table_name]).copy()
 
     # run validate cols
     if (table_name in validate_cols
-        or (settings.get('remove_duplicate_cols') and 
+        or (settings.get('remove_duplicate_cols') and
             table_name in settings.get('remove_duplicate_cols').keys())
-        or table_name in remove_cols_containing):
+            or table_name in remove_cols_containing):
 
         # remove duplicates
         duplicate_cols = settings.get('remove_duplicate_cols').get(table_name)
         if duplicate_cols:
-            duplicate_cols =validate_col_names(table_name, duplicate_cols)
+            duplicate_cols = validate_col_names(table_name, duplicate_cols)
             data = data.drop_duplicates(subset=duplicate_cols).copy()
 
         # per col
@@ -265,13 +270,14 @@ def upload_data(_app: str, _model: str):
         None
     """
 
-    def constraint_err(detail:str):
+    def constraint_err(detail: str):
         if not detail:
             return
         return [i for i in ["Key ", " is not present in table ", "constraint"] if i in detail]
 
     table_name = f"{_app}_{_model.replace('_', '')}"
-    file_path_1 = os.path.join(folder, f"{_model}.{settings['table_extension']}")
+    file_path_1 = os.path.join(
+        folder, f"{_model}.{settings['table_extension']}")
     print(f"{TAB}Table '{table_name}'")
     if os.path.isfile(file_path_1):
         with open(file_path_1, 'r', encoding="utf8") as f_1:
@@ -298,7 +304,7 @@ def upload_data(_app: str, _model: str):
 
             except psycopg2.Error as error:
                 conn.rollback()
-                print_colored("yellow",f"{TAB}Error on copy data:")
+                print_colored("yellow", f"{TAB}Error on copy data:")
                 detail = error.diag.message_detail
                 if not detail:
                     detail = str(error).strip()
@@ -306,7 +312,8 @@ def upload_data(_app: str, _model: str):
                 print_colored("yellow", f"{TAB}{error}", end='')
                 print_colored("yellow", f"{TAB}Retrying manually...")
                 # write error to file
-                log_path = os.path.join(script_path, "logs", f"{table_name}_error.log")
+                log_path = os.path.join(
+                    script_path, "logs", f"{table_name}_error.log")
                 with open(log_path, 'w', encoding="utf8") as f_2:
                     f_2.write("ERROR:" + str(error))
                     f_2.write("\nRetrying manually...\n")
@@ -356,17 +363,17 @@ def upload_data(_app: str, _model: str):
                             # else:
                             #     raise error_2
                 if count_1 == 0:
-                    print_colored("red",f"{TAB}[FAIL - NO INSERT]")
+                    print_colored("red", f"{TAB}[FAIL - NO INSERT]")
                 else:
                     print(f"{TAB}[OK - {count_1}/{len(total)}]")
     else:
-        print_colored("red",f"{TAB}[FAIL - NOT FOUND]")
+        print_colored("red", f"{TAB}[FAIL - NOT FOUND]")
     print()
 
 
 def help_1():
     """Help"""
-    print("Usage: populate_db.py [options]")
+    print("Usage: manage_db.py [options]")
     print(PARAMETERS)
 
 
@@ -387,7 +394,7 @@ def merge_tables(app_folder, table_name, table_extension):
     "Merge tables from tables in subfolder"
     merged_df = pd.DataFrame()
     for subfolder in os.listdir(app_folder):
-        if os.path.isdir(os.path.join(app_folder,subfolder)):
+        if os.path.isdir(os.path.join(app_folder, subfolder)):
             for table_file in os.listdir(f"{app_folder}/{subfolder}"):
                 table_name_file = table_file.split('.')[0]
                 if table_file.endswith(table_extension) and table_name_file == table_name:
@@ -396,7 +403,8 @@ def merge_tables(app_folder, table_name, table_extension):
                     df = pd.read_csv(filepath)
                     # Merge
                     if not merged_df.empty:
-                        merged_df = pd.concat([merged_df,df], ignore_index=True)
+                        merged_df = pd.concat(
+                            [merged_df, df], ignore_index=True)
                     else:
                         merged_df = df.copy()
 
@@ -411,8 +419,8 @@ if __name__ == "__main__":
 
     TABLES_FOLDER = "fixtures"
     tables_path = os.path.join(script_path, TABLES_FOLDER)
-    SETTINGS_FILE = "populate_db.yaml"
-    if not os.path.isfile(os.path.join(script_path,SETTINGS_FILE)):
+    SETTINGS_FILE = "manage_db.yaml"
+    if not os.path.isfile(os.path.join(script_path, SETTINGS_FILE)):
         print_colored("red", f"File not found: {SETTINGS_FILE}")
         exit(1)
     else:
@@ -453,7 +461,7 @@ if __name__ == "__main__":
     db_params = settings["db_params"]
 
     # param port
-    _params = [p for p in ("-p","--port") if p in sys.argv]
+    _params = [p for p in ("-p", "--port") if p in sys.argv]
     if _params:
         db_params["port"] = sys.argv[list(sys.argv).index(_params[0])+1]
 
@@ -477,7 +485,6 @@ if __name__ == "__main__":
         conn.commit()
         exit(0)
 
-
     # Tables found
     tables_found = []
     total_tables = []
@@ -491,24 +498,25 @@ if __name__ == "__main__":
             else:
                 total_tables.append(table)
 
-
     # Merge tables
     if "--merge_tables" in sys.argv or "-m" in sys.argv or \
-        settings.get("merge_tables"):
+            settings.get("merge_tables"):
         print("Merging tables...")
         for app in os.listdir(tables_path):
             if not app in settings["table_order"] or not settings["table_order"][app]:
                 continue
             app_models = settings["table_order"][app]
             for model in app_models:
-                print(f"{TAB}Merging {app}/{model}.{settings['table_extension']}")
-                merge_tables(os.path.join(tables_path,app), model, settings['table_extension'])
-        
+                print(
+                    f"{TAB}Merging {app}/{model}.{settings['table_extension']}")
+                merge_tables(os.path.join(tables_path, app),
+                             model, settings['table_extension'])
+
         if "--merge_tables" in sys.argv or "-m" in sys.argv:
             exit(0)
 
     if settings.get("clear_logs"):
-        empty_folder(os.path.join(script_path,"logs"))
+        empty_folder(os.path.join(script_path, "logs"))
 
     # Update data from files in tables folder
     for app in os.listdir(tables_path):
@@ -535,7 +543,6 @@ if __name__ == "__main__":
             print(f"Dropping related tables in {app}:")
             COUNT = 0
 
-
             if app in settings["table_order"].keys():
                 folder = os.path.join(tables_path, app)
                 app_models = settings["table_order"][app]
@@ -553,7 +560,8 @@ if __name__ == "__main__":
             continue
 
         # Clear all tables
-        EMPTY_TABLE = ("-e" in sys.argv or "--empty_tables" in sys.argv or settings.get("empty_tables"))
+        EMPTY_TABLE = (
+            "-e" in sys.argv or "--empty_tables" in sys.argv or settings.get("empty_tables"))
         if EMPTY_TABLE:
             print(f"Clearing all tables in {app}:")
             if app in settings["table_order"].keys():
@@ -582,28 +590,35 @@ if __name__ == "__main__":
                     upload_data(app, model)
         else:
             if "." in app:
-                print_colored("red", f"The file '{app}' is inside '{TABLES_FOLDER}'.\n"
-                    f"This script only read tables in '{TABLES_FOLDER}'/<django app>' folders\n")
+                print_colored(
+                    "red", f"The file '{app}' is inside '{TABLES_FOLDER}'.\n"
+                    f"This script only read tables in '{TABLES_FOLDER}'/<django app>' folders\n"
+                )
             else:
-                print_colored("red",
-                f"ERROR: The folder '{app}' is inside '{TABLES_FOLDER}' folder, "
-                f"but it's not configured in settings key [table_order]\n"
+                print_colored(
+                    "red", f"ERROR: The folder '{app}' is inside '{TABLES_FOLDER}' folder, "
+                    f"but it's not configured in settings key [table_order]\n"
                 )
 
     # Validate tables
 
-    tables_not_found = [table for table in total_tables if table not in tables_found]
+    tables_not_found = [
+        table for table in total_tables if table not in tables_found]
+    print(f"Found: {tables_found},\nexpected: {total_tables}")
     if tables_not_found:
         print_colored("red", "ERROR: The following tables were not found:")
         for table in tables_not_found:
-            print_colored("red", TAB,table)
+            print_colored("red", TAB, table)
         print()
-        print_colored("red", f"{TAB}Tip: Table name in settings and in '{TABLES_FOLDER}' folder must match the db.")
-        print_colored("red", f"{TAB}Tip: Check file extension and compare with settings, default is txt.")
+        print_colored(
+            "red", f"{TAB}Tip: Table name in settings and in "
+            "'{TABLES_FOLDER}' folder must match the db.")
+        print_colored(
+            "red", f"{TAB}Tip: Check file extension and compare with settings, default is txt.")
         print()
 
     if comment_tables:
         print_colored("yellow", "You have commented out the following tables:")
         for table in comment_tables:
-            print_colored("yellow", TAB,table)
+            print_colored("yellow", TAB, table)
         print()

@@ -5,6 +5,10 @@ on:
     branches:
       - "release/*"
       - "hotfix/*"
+    paths-ignore:
+      - 'README.md'
+      - 'project.ps1'
+      - 'dev/**'
 
 env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }}

@@ -136,7 +136,7 @@ static/
 secrets.y*ml
 notebooks/
 
-scripts/populate_db/fixtures/*
-scripts/populate_db/logs/*
+dev/scripts/manage_db/fixtures/*
+dev/scripts/manage_db/logs/*
 
 local_dev/

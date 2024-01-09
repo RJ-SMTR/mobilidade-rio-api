@@ -3,7 +3,7 @@
 import logging
 from datetime import datetime as dt
 import time
-from mobilidade_rio.predictor.utils import Predictor
+from mobilidade_rio.predictor.predictor import Predictor
 from mobilidade_rio.predictor.models import PredictorResult
 
 
