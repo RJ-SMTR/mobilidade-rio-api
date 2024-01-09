@@ -56,6 +56,12 @@ def print_colored(color, *args, **kwargs):
     print(*args[1:], colors['end'], **kwargs)
 
 
+def mkdir_if_not_exists(path):
+    """Create folder if not exists"""
+    if not os.path.exists(path):
+        os.makedirs(path)
+
+
 def convert_to_type(
     data,
     initial_type: type=None,
@@ -71,9 +77,7 @@ def convert_to_type(
 
     save_file_path = None
     if save_file_name is not None:
-        # crete ./logs folder if not exists
-        if not os.path.exists(script_path + "/logs"):
-            os.makedirs(script_path + "/logs")
+        mkdir_if_not_exists(script_path + "/logs")
         save_file_path = os.path.join(script_path, "logs", save_file_name)
 
 
@@ -452,6 +456,11 @@ if __name__ == "__main__":
     _params = [p for p in ("-p","--port") if p in sys.argv]
     if _params:
         db_params["port"] = sys.argv[list(sys.argv).index(_params[0])+1]
+
+    # Create folders if not exist
+    mkdirs = ["logs", "fixtures"]
+    for folder in mkdirs:
+        mkdir_if_not_exists(f"{script_path}/{folder}")
 
     # Connect to the database
     print("\nConnecting to the PostgreSQL database...")

@@ -138,3 +138,5 @@ notebooks/
 
 scripts/populate_db/fixtures/*
 scripts/populate_db/logs/*
+
+local_dev/

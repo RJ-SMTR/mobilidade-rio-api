@@ -52,6 +52,8 @@ Para configurar e usar algum arquivo para desenvolvimento local, basta criar em 
 ### Criando o ambiente
 
 Criando ambiente virtual
+
+Anaconda:
 ```bash
 conda create -n mobilidade_rio_api python=3.9
 conda activate mobilidade_rio_api
@@ -63,9 +65,10 @@ Criando arquivos de desenvolvimento local:
 📂 mobilidade_rio/  # projeto Django
   ...
   📂 local_dev/
-    🐋 Docker.py
-    🐋 docker-compose.py
-    ⚙️ native.env
+    🐋 Docker.yml
+    🐋 docker-compose.yml
+    ⚙️ api-native.env
+    ⚙️ api.env
       ...
   📂 mobilidade_rio/  # app principal
     📂 settings/
@@ -84,11 +87,13 @@ Deverá ser executado toda vez que abrir uma nova sessão no terminal.
 native:
 * Bash
   ```bash
-  export DJANGO_SETTINGS_MODULE="mobilidade_rio.settings.local_dev.native"
+  source mobilidade_rio/local_dev/api-native.env
   ```
 * Powershell
   ```powershell
-  $env:DJANGO_SETTINGS_MODULE="mobilidade_rio.settings.local_dev.native"
+  project env api-native
+
+  # Para mais informações rode project help
   ```
 
 docker:
@@ -96,24 +101,26 @@ docker:
   ```bash
   source mobilidade_rio/local_dev/api.env
   ```
+
 * Powershell
   ```powershell
-  $(Get-Content ./mobilidade_rio/local_dev/api.env | ForEach-Object { $name, $value = $_.split('=');set-content env:\$name $value });
+  project env api
   ```
-
 
 ### Iniciando a aplicação
 
 native:
 ```bash
-python mobilidade_rio/manage.py makemigrations
 python mobilidade_rio/manage.py migrate
 python mobilidade_rio/manage.py runserver 8001
+
+# ou 
+project runserver native
 ```
 
 docker:
 ```bash
-docker-compose -f "mobilidade_rio/dev_local/docker-compose_local.yml" up --build
+docker-compose -f "mobilidade_rio/local_dev/docker-compose.yml" up --build
 ```
 
 Dev, Stag e Prod:
