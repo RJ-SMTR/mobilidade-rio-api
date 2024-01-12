@@ -27,7 +27,7 @@ class FeedbackBRTViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
     """
     API endpoint that allows feedback to be viewed or submitted.
     """
-    queryset = FeedbackBRT.objects.all()
+    queryset = FeedbackBRT.objects.all()  # pylint: disable=E1101
     serializer_class = FeedbackBRTSerializer
 
     # TODO: if it's ok to use settings.DEBUG

@@ -1,0 +1,112 @@
+[
+    {
+        "model": "pontos.shapes",
+        "pk": "1",
+        "fields": {
+            "shape_id": "01gk",
+            "shape_pt_sequence": 1,
+            "shape_pt_lat": -22.87638,
+            "shape_pt_lon": -43.46371,
+            "shape_dist_traveled": 0.0
+        }
+    },
+    {
+        "model": "pontos.shapes",
+        "pk": "2",
+        "fields": {
+            "shape_id": "01gk",
+            "shape_pt_sequence": 2,
+            "shape_pt_lat": -22.87553,
+            "shape_pt_lon": -43.46372,
+            "shape_dist_traveled": 94.52
+        }
+    },
+    {
+        "model": "pontos.shapes",
+        "pk": "3",
+        "fields": {
+            "shape_id": "01gk",
+            "shape_pt_sequence": 3,
+            "shape_pt_lat": -22.87556,
+            "shape_pt_lon": -43.46543,
+            "shape_dist_traveled": 269.74
+        }
+    },
+    {
+        "model": "pontos.shapes",
+        "pk": "4",
+        "fields": {
+            "shape_id": "01gk",
+            "shape_pt_sequence": 4,
+            "shape_pt_lat": -22.87567,
+            "shape_pt_lon": -43.46973,
+            "shape_dist_traveled": 710.45
+        }
+    },
+    {
+        "model": "pontos.shapes",
+        "pk": "5",
+        "fields": {
+            "shape_id": "01gk",
+            "shape_pt_sequence": 5,
+            "shape_pt_lat": -22.8757,
+            "shape_pt_lon": -43.47027,
+            "shape_dist_traveled": 765.87
+        }
+    },
+    {
+        "model": "pontos.shapes",
+        "pk": "6",
+        "fields": {
+            "shape_id": "01gk",
+            "shape_pt_sequence": 6,
+            "shape_pt_lat": -22.87582,
+            "shape_pt_lon": -43.47096,
+            "shape_dist_traveled": 837.81
+        }
+    },
+    {
+        "model": "pontos.shapes",
+        "pk": "7",
+        "fields": {
+            "shape_id": "01gk",
+            "shape_pt_sequence": 7,
+            "shape_pt_lat": -22.87587,
+            "shape_pt_lon": -43.47362,
+            "shape_dist_traveled": 1110.38
+        }
+    },
+    {
+        "model": "pontos.shapes",
+        "pk": "8",
+        "fields": {
+            "shape_id": "01gk",
+            "shape_pt_sequence": 8,
+            "shape_pt_lat": -22.87539,
+            "shape_pt_lon": -43.47363,
+            "shape_dist_traveled": 1163.76
+        }
+    },
+    {
+        "model": "pontos.shapes",
+        "pk": "9",
+        "fields": {
+            "shape_id": "01gk",
+            "shape_pt_sequence": 9,
+            "shape_pt_lat": -22.87533,
+            "shape_pt_lon": -43.47088,
+            "shape_dist_traveled": 1445.58
+        }
+    },
+    {
+        "model": "pontos.shapes",
+        "pk": "10",
+        "fields": {
+            "shape_id": "01gk",
+            "shape_pt_sequence": 10,
+            "shape_pt_lat": -22.8753,
+            "shape_pt_lon": -43.46908,
+            "shape_dist_traveled": 1630.02
+        }
+    }
+]

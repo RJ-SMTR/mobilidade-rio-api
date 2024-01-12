@@ -1,0 +1,132 @@
+[
+    {
+        "model": "pontos.trips",
+        "pk": "dd7ce37d-b23c-43a5-942d-5a1d4e75c5ff",
+        "fields": {
+            "trip_id": "dd7ce37d-b23c-43a5-942d-5a1d4e75c5ff",
+            "route_id": "O0636AAA0A",
+            "service_id": "U_OBRA_007",
+            "trip_headsign": "Circular",
+            "trip_short_name": "0",
+            "direction_id": 0,
+            "shape_id": "01gk"
+        }
+    },
+    {
+        "model": "pontos.trips",
+        "pk": "657a0ca1-a8e9-40d7-b6ff-24d0bcb68303",
+        "fields": {
+            "trip_id": "657a0ca1-a8e9-40d7-b6ff-24d0bcb68303",
+            "route_id": "O0803AAP0A",
+            "service_id": "S_OBRA_007",
+            "trip_headsign": "Campo Grande",
+            "trip_short_name": "10",
+            "direction_id": 1,
+            "shape_id": "01gk"
+        }
+    },
+    {
+        "model": "pontos.trips",
+        "pk": "d48685c1-da60-47f9-85e8-99fe10600eb5",
+        "fields": {
+            "trip_id": "d48685c1-da60-47f9-85e8-99fe10600eb5",
+            "route_id": "O0955AAA0A",
+            "service_id": "U_REG",
+            "trip_headsign": "Campo Grande",
+            "trip_short_name": "11",
+            "direction_id": 1,
+            "shape_id": "01gk"
+        }
+    },
+    {
+        "model": "pontos.trips",
+        "pk": "c132b645-52d0-487c-aab5-c47b6d673efd",
+        "fields": {
+            "trip_id": "c132b645-52d0-487c-aab5-c47b6d673efd",
+            "route_id": "O0805AAA0A",
+            "service_id": "D_REG",
+            "trip_headsign": "Recreio dos Bandeirantes",
+            "trip_short_name": "12",
+            "direction_id": 1,
+            "shape_id": "01gk"
+        }
+    },
+    {
+        "model": "pontos.trips",
+        "pk": "45a28bcb-6858-4c29-93ef-e2f331caf0f9",
+        "fields": {
+            "trip_id": "45a28bcb-6858-4c29-93ef-e2f331caf0f9",
+            "route_id": "O0497AAA0A",
+            "service_id": "D_OBRA_007",
+            "trip_headsign": "Jesu\u00edtas",
+            "trip_short_name": "13",
+            "direction_id": 0,
+            "shape_id": "01gk"
+        }
+    },
+    {
+        "model": "pontos.trips",
+        "pk": "657d0e98-f2be-4aae-bc89-1c1e89cb2db8",
+        "fields": {
+            "trip_id": "657d0e98-f2be-4aae-bc89-1c1e89cb2db8",
+            "route_id": "O0752AAA0A",
+            "service_id": "D_OBRA_009",
+            "trip_headsign": "Jesu\u00edtas",
+            "trip_short_name": "14",
+            "direction_id": 0,
+            "shape_id": "01gk"
+        }
+    },
+    {
+        "model": "pontos.trips",
+        "pk": "0a8517d9-c27c-41f9-ae1a-707ab5e4b24f",
+        "fields": {
+            "trip_id": "0a8517d9-c27c-41f9-ae1a-707ab5e4b24f",
+            "route_id": "E2343AAA0A",
+            "service_id": "D_OBRA_011",
+            "trip_headsign": "Campo Grande",
+            "trip_short_name": "17",
+            "direction_id": 0,
+            "shape_id": "01gk"
+        }
+    },
+    {
+        "model": "pontos.trips",
+        "pk": "49681e78-260f-456f-b497-09d04249c8ad",
+        "fields": {
+            "trip_id": "49681e78-260f-456f-b497-09d04249c8ad",
+            "route_id": "E2305AAA0A",
+            "service_id": "D_OBRA_014",
+            "trip_headsign": "Del Castilho",
+            "trip_short_name": "18",
+            "direction_id": 1,
+            "shape_id": "01gk"
+        }
+    },
+    {
+        "model": "pontos.trips",
+        "pk": "c24dedc6-1179-409b-a044-99d418e0a697",
+        "fields": {
+            "trip_id": "c24dedc6-1179-409b-a044-99d418e0a697",
+            "route_id": "E2342AAA0A",
+            "service_id": "D_OBRA_015",
+            "trip_headsign": "Del Castilho",
+            "trip_short_name": "19",
+            "direction_id": 1,
+            "shape_id": "01gk"
+        }
+    },
+    {
+        "model": "pontos.trips",
+        "pk": "4dcfb0ca-98c8-475e-bdcc-fbb90c6edcc7",
+        "fields": {
+            "trip_id": "4dcfb0ca-98c8-475e-bdcc-fbb90c6edcc7",
+            "route_id": "E2344AAA0A",
+            "service_id": "D_OBRA_016",
+            "trip_headsign": "Saens Pe\u00f1a",
+            "trip_short_name": "20",
+            "direction_id": 0,
+            "shape_id": "01gk"
+        }
+    }
+]

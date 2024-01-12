@@ -1,11 +1,16 @@
 """Views for predictor app"""
+import logging
 from rest_framework.response import Response
 from rest_framework import viewsets
+from mobilidade_rio.config_django_q.tasks import generate_prediction
 from mobilidade_rio.predictor.models import *
 from mobilidade_rio.predictor.serializers import *
 from mobilidade_rio.predictor.models import PredictorResult
 from django.conf import settings
 import pytz
+
+
+logger = logging.getLogger("predictor view")
 
 
 class PredictorViewSet(viewsets.ViewSet):
@@ -19,7 +24,15 @@ class PredictorViewSet(viewsets.ViewSet):
         Return a JSON representation of the data.
         """
 
-        results = PredictorResult.objects.filter(pk=1)
+        # dev params
+        if settings.SETTINGS_MODULE.rsplit('.',1)[-1] not in ("dev", "stag", "prod"):
+            run = request.query_params.get("run")
+            if run:
+                logger.info('run: Generating prediction manually')
+                generate_prediction()
+        
+        # default execution
+        results = PredictorResult.objects.filter(pk=1)  # pylint: disable=E1101
         if not results.exists():
             results = {"detail": "Not found."}
             return Response(results)
@@ -27,11 +40,6 @@ class PredictorViewSet(viewsets.ViewSet):
         result_list = results[0].result_json['result']
 
         # stop_id
-        pred = self.request.query_params.get("pred")
-        if pred:
-            results = {"pred": "done."}
-            return Response(results)
-
         stop_id = self.request.query_params.get("stop_id")
         if stop_id:
             result_list = [i for i in result_list if i['stop_id'] == stop_id]
@@ -44,7 +52,8 @@ class PredictorViewSet(viewsets.ViewSet):
             "next": None,
             "previous": None,
             "lastUpdate": last_modified,
-            "results" : result_list
+            "error": results[0].result_json["error"],
+            "results" : result_list,
         }
 
         return Response(results)

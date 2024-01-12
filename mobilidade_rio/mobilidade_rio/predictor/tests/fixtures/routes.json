@@ -1,0 +1,142 @@
+[
+    {
+        "model": "pontos.routes",
+        "pk": "O0636AAA0A",
+        "fields": {
+            "route_id": "O0636AAA0A",
+            "agency_id": 22004,
+            "route_short_name": "636",
+            "route_long_name": "Merck - Saens Pe\u00f1a",
+            "route_desc": null,
+            "route_type": 700,
+            "route_color": "0C6FA8",
+            "route_text_color": "ffffff"
+        }
+    },
+    {
+        "model": "pontos.routes",
+        "pk": "O0803AAP0A",
+        "fields": {
+            "route_id": "O0803AAP0A",
+            "agency_id": 22005,
+            "route_short_name": "SP803",
+            "route_long_name": "Senador Camar\u00e1 - Terminal Sulacap",
+            "route_desc": null,
+            "route_type": 700,
+            "route_color": "E31919",
+            "route_text_color": "ffffff"
+        }
+    },
+    {
+        "model": "pontos.routes",
+        "pk": "O0955AAA0A",
+        "fields": {
+            "route_id": "O0955AAA0A",
+            "agency_id": 22004,
+            "route_short_name": "955",
+            "route_long_name": "Mar\u00e9 - Terminal Alvorada",
+            "route_desc": null,
+            "route_type": 700,
+            "route_color": "0C6FA8",
+            "route_text_color": "ffffff"
+        }
+    },
+    {
+        "model": "pontos.routes",
+        "pk": "O0805AAA0A",
+        "fields": {
+            "route_id": "O0805AAA0A",
+            "agency_id": 22004,
+            "route_short_name": "805",
+            "route_long_name": "Terminal Alvorada - Jardim Oce\u00e2nico",
+            "route_desc": null,
+            "route_type": 700,
+            "route_color": "0C6FA8",
+            "route_text_color": "ffffff"
+        }
+    },
+    {
+        "model": "pontos.routes",
+        "pk": "O0497AAA0A",
+        "fields": {
+            "route_id": "O0497AAA0A",
+            "agency_id": 22003,
+            "route_short_name": "497",
+            "route_long_name": "Penha - Largo do Machado",
+            "route_desc": null,
+            "route_type": 700,
+            "route_color": "A2B71A",
+            "route_text_color": "000000"
+        }
+    },
+    {
+        "model": "pontos.routes",
+        "pk": "O0752AAA0A",
+        "fields": {
+            "route_id": "O0752AAA0A",
+            "agency_id": 22005,
+            "route_short_name": "752",
+            "route_long_name": "Conjunto dos Palmares - Coelho Neto",
+            "route_desc": null,
+            "route_type": 700,
+            "route_color": "E31919",
+            "route_text_color": "ffffff"
+        }
+    },
+    {
+        "model": "pontos.routes",
+        "pk": "E2343AAA0A",
+        "fields": {
+            "route_id": "E2343AAA0A",
+            "agency_id": 22003,
+            "route_short_name": "2343",
+            "route_long_name": "Ribeira - Castelo",
+            "route_desc": null,
+            "route_type": 200,
+            "route_color": "030478",
+            "route_text_color": "ffffff"
+        }
+    },
+    {
+        "model": "pontos.routes",
+        "pk": "E2305AAA0A",
+        "fields": {
+            "route_id": "E2305AAA0A",
+            "agency_id": 22003,
+            "route_short_name": "2305",
+            "route_long_name": "Jardim Am\u00e9rica - Castelo",
+            "route_desc": null,
+            "route_type": 200,
+            "route_color": "030478",
+            "route_text_color": "ffffff"
+        }
+    },
+    {
+        "model": "pontos.routes",
+        "pk": "E2342AAA0A",
+        "fields": {
+            "route_id": "E2342AAA0A",
+            "agency_id": 22003,
+            "route_short_name": "2342",
+            "route_long_name": "Bananal - Castelo",
+            "route_desc": null,
+            "route_type": 200,
+            "route_color": "030478",
+            "route_text_color": "ffffff"
+        }
+    },
+    {
+        "model": "pontos.routes",
+        "pk": "E2344AAA0A",
+        "fields": {
+            "route_id": "E2344AAA0A",
+            "agency_id": 22003,
+            "route_short_name": "2344",
+            "route_long_name": "Banc\u00e1rios - Castelo",
+            "route_desc": null,
+            "route_type": 200,
+            "route_color": "030478",
+            "route_text_color": "ffffff"
+        }
+    }
+]

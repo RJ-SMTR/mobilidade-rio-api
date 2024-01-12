@@ -132,11 +132,13 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+# project
 static/
 secrets.y*ml
 notebooks/
 
-dev/scripts/manage_db/fixtures/*
-dev/scripts/manage_db/logs/*
-
+# dev
+.vscode/
 local_dev/
+dev/scripts/manage_db/fixtures/
+dev/scripts/manage_db/logs/

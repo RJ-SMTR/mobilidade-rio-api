@@ -1,0 +1,57 @@
+[
+    {
+        "model": "pontos.agency",
+        "pk": "22002",
+        "fields": {
+            "agency_id": 22002,
+            "agency_name": "Intersul",
+            "agency_url": "http://www.rioonibus.com/",
+            "agency_timezone": "America/Sao_Paulo",
+            "agency_lang": "pt"
+        }
+    },
+    {
+        "model": "pontos.agency",
+        "pk": "22003",
+        "fields": {
+            "agency_id": 22003,
+            "agency_name": "Internorte",
+            "agency_url": "http://www.rioonibus.com/",
+            "agency_timezone": "America/Sao_Paulo",
+            "agency_lang": "pt"
+        }
+    },
+    {
+        "model": "pontos.agency",
+        "pk": "22004",
+        "fields": {
+            "agency_id": 22004,
+            "agency_name": "Transcarioca",
+            "agency_url": "http://www.rioonibus.com/",
+            "agency_timezone": "America/Sao_Paulo",
+            "agency_lang": "pt"
+        }
+    },
+    {
+        "model": "pontos.agency",
+        "pk": "22005",
+        "fields": {
+            "agency_id": 22005,
+            "agency_name": "Santa Cruz",
+            "agency_url": "http://www.rioonibus.com/",
+            "agency_timezone": "America/Sao_Paulo",
+            "agency_lang": "pt"
+        }
+    },
+    {
+        "model": "pontos.agency",
+        "pk": "20001",
+        "fields": {
+            "agency_id": 20001,
+            "agency_name": "MOBI-Rio",
+            "agency_url": "http://www.mobi-rio.rio.br/",
+            "agency_timezone": "America/Sao_Paulo",
+            "agency_lang": "pt"
+        }
+    }
+]

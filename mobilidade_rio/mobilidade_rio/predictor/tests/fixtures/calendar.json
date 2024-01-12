@@ -1,0 +1,162 @@
+[
+    {
+        "model": "pontos.calendar",
+        "pk": "U_OBRA_007",
+        "fields": {
+            "service_id": "U_OBRA_007",
+            "monday": 1,
+            "tuesday": 1,
+            "wednesday": 1,
+            "thursday": 1,
+            "friday": 1,
+            "saturday": 0,
+            "sunday": 0,
+            "start_date": "2023-06-11",
+            "end_date": "2025-05-31"
+        }
+    },
+    {
+        "model": "pontos.calendar",
+        "pk": "S_OBRA_007",
+        "fields": {
+            "service_id": "S_OBRA_007",
+            "monday": 0,
+            "tuesday": 0,
+            "wednesday": 0,
+            "thursday": 0,
+            "friday": 0,
+            "saturday": 1,
+            "sunday": 0,
+            "start_date": "2023-06-15",
+            "end_date": "2025-05-31"
+        }
+    },
+    {
+        "model": "pontos.calendar",
+        "pk": "U_REG",
+        "fields": {
+            "service_id": "U_REG",
+            "monday": 1,
+            "tuesday": 1,
+            "wednesday": 1,
+            "thursday": 1,
+            "friday": 1,
+            "saturday": 0,
+            "sunday": 0,
+            "start_date": "2022-12-31",
+            "end_date": "2024-12-31"
+        }
+    },
+    {
+        "model": "pontos.calendar",
+        "pk": "D_REG",
+        "fields": {
+            "service_id": "D_REG",
+            "monday": 0,
+            "tuesday": 0,
+            "wednesday": 0,
+            "thursday": 0,
+            "friday": 0,
+            "saturday": 0,
+            "sunday": 1,
+            "start_date": "2022-12-31",
+            "end_date": "2024-12-31"
+        }
+    },
+    {
+        "model": "pontos.calendar",
+        "pk": "D_OBRA_007",
+        "fields": {
+            "service_id": "D_OBRA_007",
+            "monday": 0,
+            "tuesday": 0,
+            "wednesday": 0,
+            "thursday": 0,
+            "friday": 0,
+            "saturday": 0,
+            "sunday": 1,
+            "start_date": "2023-06-15",
+            "end_date": "2025-05-31"
+        }
+    },
+    {
+        "model": "pontos.calendar",
+        "pk": "D_OBRA_009",
+        "fields": {
+            "service_id": "D_OBRA_009",
+            "monday": 0,
+            "tuesday": 0,
+            "wednesday": 0,
+            "thursday": 0,
+            "friday": 0,
+            "saturday": 0,
+            "sunday": 1,
+            "start_date": "2023-06-23",
+            "end_date": "2024-01-31"
+        }
+    },
+    {
+        "model": "pontos.calendar",
+        "pk": "D_OBRA_011",
+        "fields": {
+            "service_id": "D_OBRA_011",
+            "monday": 0,
+            "tuesday": 0,
+            "wednesday": 0,
+            "thursday": 0,
+            "friday": 0,
+            "saturday": 0,
+            "sunday": 1,
+            "start_date": "2023-07-28",
+            "end_date": "2024-01-31"
+        }
+    },
+    {
+        "model": "pontos.calendar",
+        "pk": "D_OBRA_014",
+        "fields": {
+            "service_id": "D_OBRA_014",
+            "monday": 0,
+            "tuesday": 0,
+            "wednesday": 0,
+            "thursday": 0,
+            "friday": 0,
+            "saturday": 0,
+            "sunday": 1,
+            "start_date": "2023-07-28",
+            "end_date": "2024-01-31"
+        }
+    },
+    {
+        "model": "pontos.calendar",
+        "pk": "D_OBRA_015",
+        "fields": {
+            "service_id": "D_OBRA_015",
+            "monday": 0,
+            "tuesday": 0,
+            "wednesday": 0,
+            "thursday": 0,
+            "friday": 0,
+            "saturday": 0,
+            "sunday": 1,
+            "start_date": "2023-07-28",
+            "end_date": "2024-01-31"
+        }
+    },
+    {
+        "model": "pontos.calendar",
+        "pk": "D_OBRA_016",
+        "fields": {
+            "service_id": "D_OBRA_016",
+            "monday": 0,
+            "tuesday": 0,
+            "wednesday": 0,
+            "thursday": 0,
+            "friday": 0,
+            "saturday": 0,
+            "sunday": 1,
+            "start_date": "2023-09-08",
+            "end_date": "2024-01-31"
+        }
+    }
+]

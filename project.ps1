@@ -19,7 +19,7 @@ Commands:
     'm','manage.py' [args]  shorthand for 'python mobilidade_rio/manage.py [args]'
     'db', 'database','manage_db' [args]  run manage_db utility
     'runserver' [mode]      run server at modes
-        mode:               'dev'
+        mode:               'native'
 '@
 
 if ($args.Count -eq 0) {
