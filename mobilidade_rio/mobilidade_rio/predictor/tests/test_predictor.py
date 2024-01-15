@@ -19,7 +19,7 @@ from mobilidade_rio.settings.base import BASE_DIR
 
 class TestPredictor(TransactionTestCase):
     """
-    TestPredictor
+    Unit test of Predictor
 
     Requirements - #172: \
     https://github.com/RJ-SMTR/mobilidade-rio-api/issues/172#issuecomment-1887856568

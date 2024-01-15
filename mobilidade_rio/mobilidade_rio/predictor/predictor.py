@@ -74,17 +74,19 @@ class PredictorFailedException(Exception):
         self.info = info
 
 
-class Predictor:  # pylint: disable=C0301
-    # TODO: change to google style: https://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings # pylint: disable=W0511
+class Predictor:  # pylint: disable=R0903
     """
     Input:
-        stop_code           1st option, easy for frontend to implement
-        direction_id        2nd option, frontend will need more steps to find it
-        trip_short_name     3rd option, user in app will need to select platform in UI
-        debug_cols          show extra cols in output, for debugging purposes
+        stop_code:           1st option, easy for frontend to implement
+        direction_id:        2nd option, frontend will need more steps to find it
+        trip_short_name:     3rd option, user in app will need to select platform in UI
+        debug_cols:          show extra cols in output, for debugging purposes
 
     Output:
         Dataframe with realtime API fields + ETA (Estimated Time of Arrival)
+
+    Raises:
+        PredictorFailedException
     """
 
     service_id_info: TPredServiceIdInfo = {

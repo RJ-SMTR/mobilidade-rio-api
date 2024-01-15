@@ -6,8 +6,6 @@ on:
       - "main"
     paths-ignore:
       - 'README.md'
-      - 'project.ps1'
-      - 'dev/**'
   pull_request:
 
 env:
