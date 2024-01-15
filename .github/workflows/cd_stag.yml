@@ -30,21 +30,6 @@ jobs:
       - name: Install dependencies
         run: pip install wheel && pip install --prefer-binary -r mobilidade_rio/requirements.txt
 
-        
-  setup-test-db:
-    needs: before
-    name: Set up PostgreSQL
-    runs-on: ubuntu-latest
-    steps:
-      - name: Set up PostgreSQL
-        uses: docker://postgres:13
-        env:
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
-          POSTGRES_DB: testdb
-        ports:
-          - "5432:5432"
-
   tests:
     needs: before
     name: ${{ matrix.os }}${{ matrix.arch }} - Python ${{ matrix.python-version }} - tests
