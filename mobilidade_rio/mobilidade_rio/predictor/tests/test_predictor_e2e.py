@@ -1,7 +1,7 @@
 import json
 import logging
 from datetime import datetime
-from typing import Dict, Literal, Union
+from typing import Dict, Literal
 
 from django.db.models import Model
 from django.test import Client, TransactionTestCase
