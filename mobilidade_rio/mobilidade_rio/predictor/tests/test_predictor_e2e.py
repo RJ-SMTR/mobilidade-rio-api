@@ -1,14 +1,13 @@
-from datetime import datetime
 import json
 import logging
+from datetime import datetime
 from typing import Dict, Literal, Union
 
 from django.db.models import Model
 from django.test import Client, TransactionTestCase
 from django.utils import timezone
-from mobilidade_rio.config_django_q.tasks import generate_prediction
-from mobilidade_rio.test.constants import API_URL
 
+from mobilidade_rio.config_django_q.tasks import generate_prediction
 from mobilidade_rio.pontos.models import Calendar
 
 
