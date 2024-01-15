@@ -1,5 +1,12 @@
 from os import getenv
-from .base import *  # pylint: disable=W0401
+from .base import *
+
+# Allowed hosts
+ALLOWED_HOSTS = ["*"]
+
+# CORS
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOWED_ORIGINS = []
 
 DATABASES = {
     'default': {

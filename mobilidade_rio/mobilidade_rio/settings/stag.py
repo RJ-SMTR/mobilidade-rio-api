@@ -1,6 +1,5 @@
 from .base import *
 from os import getenv
-from pathlib import Path
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = getenv('SECRET_KEY', 'secret')
