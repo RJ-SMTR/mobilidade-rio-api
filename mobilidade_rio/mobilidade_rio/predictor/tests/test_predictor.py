@@ -209,7 +209,6 @@ class TestPredictor(TransactionTestCase):
             result = predictor.run_eta()
         except PredictorFailedException as exception:
             error_code = exception.info['code']
-            print(exception)
 
         # assert
         self.assertEqual(len(result), 0)
@@ -238,7 +237,6 @@ class TestPredictor(TransactionTestCase):
             result = predictor.run_eta()
         except PredictorFailedException as exception:
             error_code = exception.info['code']
-            print(exception)
 
         # assert
         self.assertEqual(len(result), 0)
@@ -271,7 +269,6 @@ class TestPredictor(TransactionTestCase):
             result = predictor.run_eta()
         except PredictorFailedException as exception:
             error_code = exception.info['code']
-            print(exception)
 
         # assert
         self.assertGreater(len(result), 0)
