@@ -58,6 +58,7 @@ class CalendarDates(models.Model):
         null=False,
         choices=(("1", "Added service"), ("2", "Removed service")),
     )
+    """Indicates if service is available on date"""
 
     class Meta:
         """Constraints for the model"""

@@ -1,0 +1,86 @@
+[
+    {
+        "model": "pontos.stoptimes",
+        "pk": "1",
+        "fields": {
+            "trip_id": "dd7ce37d-b23c-43a5-942d-5a1d4e75c5ff",
+            "stop_sequence": 88,
+            "stop_id": "4128O00227P0",
+            "arrival_time": "01:16:19",
+            "departure_time": "01:16:19",
+            "stop_headsign": null,
+            "shape_dist_traveled": 36470.41,
+            "timepoint": 1
+        }
+    },
+    {
+        "model": "pontos.stoptimes",
+        "pk": "2",
+        "fields": {
+            "trip_id": "657a0ca1-a8e9-40d7-b6ff-24d0bcb68303",
+            "stop_sequence": 88,
+            "stop_id": "4128O00227P0",
+            "arrival_time": "01:14:58",
+            "departure_time": "01:14:58",
+            "stop_headsign": null,
+            "shape_dist_traveled": 36470.41,
+            "timepoint": 1
+        }
+    },
+    {
+        "model": "pontos.stoptimes",
+        "pk": "3",
+        "fields": {
+            "trip_id": "d48685c1-da60-47f9-85e8-99fe10600eb5",
+            "stop_sequence": 1,
+            "stop_id": "4128O00227P0",
+            "arrival_time": "00:00:00",
+            "departure_time": "00:00:00",
+            "stop_headsign": null,
+            "shape_dist_traveled": 1.0,
+            "timepoint": 1
+        }
+    },
+    {
+        "model": "pontos.stoptimes",
+        "pk": "4",
+        "fields": {
+            "trip_id": "c132b645-52d0-487c-aab5-c47b6d673efd",
+            "stop_sequence": 1,
+            "stop_id": "4128O00227P0",
+            "arrival_time": "00:00:00",
+            "departure_time": "00:00:00",
+            "stop_headsign": null,
+            "shape_dist_traveled": 1.0,
+            "timepoint": 1
+        }
+    },
+    {
+        "model": "pontos.stoptimes",
+        "pk": "5",
+        "fields": {
+            "trip_id": "45a28bcb-6858-4c29-93ef-e2f331caf0f9",
+            "stop_sequence": 88,
+            "stop_id": "4128O00227P0",
+            "arrival_time": "01:24:47",
+            "departure_time": "01:24:47",
+            "stop_headsign": null,
+            "shape_dist_traveled": 36470.41,
+            "timepoint": 1
+        }
+    },
+    {
+        "model": "pontos.stoptimes",
+        "pk": "6",
+        "fields": {
+            "trip_id": "657d0e98-f2be-4aae-bc89-1c1e89cb2db8",
+            "stop_sequence": 1,
+            "stop_id": "4128O00227P0",
+            "arrival_time": "00:00:00",
+            "departure_time": "00:00:00",
+            "stop_headsign": null,
+            "shape_dist_traveled": 1.0,
+            "timepoint": 1
+        }
+    }
+]

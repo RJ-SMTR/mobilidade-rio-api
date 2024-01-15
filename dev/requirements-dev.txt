@@ -1,0 +1,10 @@
+# dev
+autopep8
+pylint
+
+# populate_db
+pandas
+pyyaml
+
+# jupyter
+ipykernel

@@ -1,0 +1,40 @@
+[
+    {
+        "model": "pontos.stops",
+        "pk": "4128BO0010T9",
+        "fields": {
+            "stop_id": "4128BO0010T9",
+            "stop_code": "TOTAL",
+            "stop_name": "Terminal Alvorada - Arquiteto Jaime Lerner",
+            "stop_desc": null,
+            "stop_lat": -23.001199,
+            "stop_lon": -43.3657,
+            "zone_id": null,
+            "stop_url": null,
+            "location_type": 1,
+            "parent_station": null,
+            "stop_timezone": null,
+            "wheelchair_boarding": null,
+            "platform_code": null
+        }
+    },
+    {
+        "model": "pontos.stops",
+        "pk": "4128O00227P0",
+        "fields": {
+            "stop_id": "4128O00227P0",
+            "stop_code": null,
+            "stop_name": "Terminal Alvorada :: Plataforma D",
+            "stop_desc": "\u00d4nibus Convencionais: Plataforma D",
+            "stop_lat": -23.001567,
+            "stop_lon": -43.365789,
+            "zone_id": null,
+            "stop_url": null,
+            "location_type": 0,
+            "parent_station": "4128BO0010T9",
+            "stop_timezone": null,
+            "wheelchair_boarding": null,
+            "platform_code": "D"
+        }
+    }
+]

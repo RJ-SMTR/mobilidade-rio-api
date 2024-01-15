@@ -91,18 +91,18 @@ class ConfigDjangoQConfig(AppConfig):
             func_names.append(dic["func"])
 
             # Add schedule
-            Schedule.objects.update_or_create(**dic)
+            Schedule.objects.update_or_create(**dic)  # pylint: disable=E1101
 
 
         # Validate schedules
 
         # Remove all not in use
-        Schedule.objects.exclude(name__in=func_names).delete()
+        Schedule.objects.exclude(name__in=func_names).delete() # pylint: disable=E1101
         # remove duplicates
-        unique_name = Schedule.objects.values_list('name', flat=True).distinct()
+        unique_name = Schedule.objects.values_list('name', flat=True).distinct() # pylint: disable=E1101
         for name in unique_name:
-            for schedule in Schedule.objects.filter(name=name).order_by('-pk')[1:]:
+            for schedule in Schedule.objects.filter(name=name).order_by('-pk')[1:]: # pylint: disable=E1101
                 schedule.delete()
         # empty other tables
-        OrmQ.objects.all().delete()
-        Task.objects.all().delete()
+        OrmQ.objects.all().delete() # pylint: disable=E1101
+        Task.objects.all().delete() # pylint: disable=E1101

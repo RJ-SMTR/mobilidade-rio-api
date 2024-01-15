@@ -1,0 +1,92 @@
+db_params:
+  host: localhost
+  port: '5433'
+  user: postgres
+  password: postgres
+  database: postgres
+  # database: django_test_models
+
+# Comment here to append instead of clearing tables
+empty_tables: true
+
+# Check files in: app1 [folder1[a.csv,b.csv], folder2[a.csv,b.csv]], app2[...]
+# And write merged tables in app1[a.csv,b.csv], app2[c.csv,d.csv]
+merge_tables: false
+
+table_extension: txt
+
+clear_logs: true
+
+
+table_order:
+
+  # ⚠️ put files in fixtures/pontos
+  pontos:
+  - agency
+  - calendar_dates
+  - calendar
+  - routes
+  - shapes
+  - stops
+  - trips
+  - frequencies
+  - stop_times
+
+# Based on gtfs.org
+remove_duplicate_cols:
+    pontos_agency:
+    - agency_id
+    pontos_calendar:
+    - service_id
+    pontos_calendardates:
+    - service_id
+    - date
+    pontos_fareattributes:
+    - fare_id
+    pontos_feedinfo:
+    - feed_id
+    pontos_frequencies:
+    - trip_id
+    - start_time
+    pontos_routes:
+    - route_id
+    pontos_shapes:
+    - shape_id
+    - shape_pt_sequence
+    pontos_stoptimes:
+    - trip_id
+    - stop_sequence
+    pontos_stops:
+    - stop_id
+    pontos_trips:
+    - trip_id
+
+ignore_existing_cols_in_db:
+  app1_person:
+  - name
+
+
+validate_cols:
+  pontos_stoptimes:
+  - trip_id
+  pontos_trips:
+  - trip_id
+  pontos_frequencies:
+  - trip_id
+
+remove_cols_containing:
+  pontos_routes:
+    route_short_name:
+    # Remove night routes
+    - SN
+
+enforce_type_cols:
+  pontos_stops:
+    location_type: int
+  pontos_stoptimes:
+    pickup_type: int
+    drop_off_type: int
+    timepoint: int
+    # TODO: fix pands auto converting int to float; can it be prevented?
+    continuous_pickup: int
+    continuous_drop_off: int

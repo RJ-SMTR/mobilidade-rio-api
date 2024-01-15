@@ -1,0 +1,112 @@
+[
+    {
+        "model": "pontos.frequencies",
+        "pk": "1",
+        "fields": {
+            "trip_id": "dd7ce37d-b23c-43a5-942d-5a1d4e75c5ff",
+            "start_time": "04:15:00",
+            "end_time": "05:25:00",
+            "headway_secs": 2100,
+            "exact_times": 0
+        }
+    },
+    {
+        "model": "pontos.frequencies",
+        "pk": "2",
+        "fields": {
+            "trip_id": "657a0ca1-a8e9-40d7-b6ff-24d0bcb68303",
+            "start_time": "15:55:00",
+            "end_time": "17:25:00",
+            "headway_secs": 1800,
+            "exact_times": 0
+        }
+    },
+    {
+        "model": "pontos.frequencies",
+        "pk": "3",
+        "fields": {
+            "trip_id": "d48685c1-da60-47f9-85e8-99fe10600eb5",
+            "start_time": "20:30:00",
+            "end_time": "21:40:00",
+            "headway_secs": 2100,
+            "exact_times": 0
+        }
+    },
+    {
+        "model": "pontos.frequencies",
+        "pk": "4",
+        "fields": {
+            "trip_id": "c132b645-52d0-487c-aab5-c47b6d673efd",
+            "start_time": "06:31:00",
+            "end_time": "07:21:00",
+            "headway_secs": 1500,
+            "exact_times": 0
+        }
+    },
+    {
+        "model": "pontos.frequencies",
+        "pk": "5",
+        "fields": {
+            "trip_id": "45a28bcb-6858-4c29-93ef-e2f331caf0f9",
+            "start_time": "16:20:00",
+            "end_time": "17:20:00",
+            "headway_secs": 1800,
+            "exact_times": 0
+        }
+    },
+    {
+        "model": "pontos.frequencies",
+        "pk": "6",
+        "fields": {
+            "trip_id": "657d0e98-f2be-4aae-bc89-1c1e89cb2db8",
+            "start_time": "21:35:00",
+            "end_time": "23:15:00",
+            "headway_secs": 3000,
+            "exact_times": 0
+        }
+    },
+    {
+        "model": "pontos.frequencies",
+        "pk": "7",
+        "fields": {
+            "trip_id": "0a8517d9-c27c-41f9-ae1a-707ab5e4b24f",
+            "start_time": "05:30:00",
+            "end_time": "08:10:00",
+            "headway_secs": 1200,
+            "exact_times": 0
+        }
+    },
+    {
+        "model": "pontos.frequencies",
+        "pk": "8",
+        "fields": {
+            "trip_id": "49681e78-260f-456f-b497-09d04249c8ad",
+            "start_time": "07:30:00",
+            "end_time": "14:10:00",
+            "headway_secs": 2400,
+            "exact_times": 0
+        }
+    },
+    {
+        "model": "pontos.frequencies",
+        "pk": "9",
+        "fields": {
+            "trip_id": "c24dedc6-1179-409b-a044-99d418e0a697",
+            "start_time": "14:10:00",
+            "end_time": "22:25:00",
+            "headway_secs": 2700,
+            "exact_times": 0
+        }
+    },
+    {
+        "model": "pontos.frequencies",
+        "pk": "10",
+        "fields": {
+            "trip_id": "4dcfb0ca-98c8-475e-bdcc-fbb90c6edcc7",
+            "start_time": "21:05:00",
+            "end_time": "22:05:00",
+            "headway_secs": 3600,
+            "exact_times": 0
+        }
+    }
+]

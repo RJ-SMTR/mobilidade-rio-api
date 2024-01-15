@@ -1,12 +1,14 @@
 """Views for predictor app"""
-from rest_framework.response import Response
-from rest_framework import viewsets
-from mobilidade_rio.predictor.models import *
-from mobilidade_rio.predictor.serializers import *
-from mobilidade_rio.predictor.utils import *
-from mobilidade_rio.predictor.models import PredictorResult
-from django.conf import settings
+import logging
+
 import pytz
+from django.conf import settings
+from rest_framework import viewsets
+from rest_framework.response import Response
+
+from mobilidade_rio.predictor.models import PredictorResult
+
+logger = logging.getLogger("predictor view")
 
 
 class PredictorViewSet(viewsets.ViewSet):
@@ -15,12 +17,13 @@ class PredictorViewSet(viewsets.ViewSet):
     """
 
     # TODO: add pagination or use a real ModelViewSet
-    def list(self, request):
+    def list(self, _):
         """
         Return a JSON representation of the data.
         """
 
-        results = PredictorResult.objects.filter(pk=1)
+        # default execution
+        results = PredictorResult.objects.filter(pk=1)  # pylint: disable=E1101
         if not results.exists():
             results = {"detail": "Not found."}
             return Response(results)
@@ -28,11 +31,6 @@ class PredictorViewSet(viewsets.ViewSet):
         result_list = results[0].result_json['result']
 
         # stop_id
-        pred = self.request.query_params.get("pred")
-        if pred:
-            results = {"pred": "done."}
-            return Response(results)
-
         stop_id = self.request.query_params.get("stop_id")
         if stop_id:
             result_list = [i for i in result_list if i['stop_id'] == stop_id]
@@ -45,7 +43,8 @@ class PredictorViewSet(viewsets.ViewSet):
             "next": None,
             "previous": None,
             "lastUpdate": last_modified,
-            "results" : result_list
+            "error": results[0].result_json["error"],
+            "results" : result_list,
         }
 
         return Response(results)

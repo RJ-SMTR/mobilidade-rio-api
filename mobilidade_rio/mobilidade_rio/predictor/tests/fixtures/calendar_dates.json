@@ -1,0 +1,92 @@
+[
+    {
+        "model": "pontos.calendardates",
+        "pk": "1",
+        "fields": {
+            "service_id": "D_REG",
+            "date": "2024-04-23",
+            "exception_type": 1
+        }
+    },
+    {
+        "model": "pontos.calendardates",
+        "pk": "2",
+        "fields": {
+            "service_id": "D_REG",
+            "date": "2024-01-20",
+            "exception_type": 1
+        }
+    },
+    {
+        "model": "pontos.calendardates",
+        "pk": "3",
+        "fields": {
+            "service_id": "D_REG",
+            "date": "2024-01-01",
+            "exception_type": 1
+        }
+    },
+    {
+        "model": "pontos.calendardates",
+        "pk": "4",
+        "fields": {
+            "service_id": "U_REG",
+            "date": "2024-04-23",
+            "exception_type": 2
+        }
+    },
+    {
+        "model": "pontos.calendardates",
+        "pk": "5",
+        "fields": {
+            "service_id": "U_REG",
+            "date": "2024-01-20",
+            "exception_type": 2
+        }
+    },
+    {
+        "model": "pontos.calendardates",
+        "pk": "6",
+        "fields": {
+            "service_id": "U_REG",
+            "date": "2024-01-01",
+            "exception_type": 2
+        }
+    },
+    {
+        "model": "pontos.calendardates",
+        "pk": "7",
+        "fields": {
+            "service_id": "D_OBRA_007",
+            "date": "2024-01-01",
+            "exception_type": 1
+        }
+    },
+    {
+        "model": "pontos.calendardates",
+        "pk": "8",
+        "fields": {
+            "service_id": "U_OBRA_007",
+            "date": "2024-01-01",
+            "exception_type": 2
+        }
+    },
+    {
+        "model": "pontos.calendardates",
+        "pk": "9",
+        "fields": {
+            "service_id": "D_DESAT_OBRA_007",
+            "date": "2024-01-01",
+            "exception_type": 2
+        }
+    },
+    {
+        "model": "pontos.calendardates",
+        "pk": "10",
+        "fields": {
+            "service_id": "U_DESAT_OBRA_007",
+            "date": "2024-01-01",
+            "exception_type": 2
+        }
+    }
+]

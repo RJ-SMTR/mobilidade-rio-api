@@ -13,123 +13,121 @@ Acesse a [wiki](https://github.com/RJ-SMTR/mobilidade-rio-api/wiki) para saber m
 - Desenvolvimento local
 - Exemplos e tutoriais
 
-## Requerimentos
+## Requisitos
 
-| Ferramenta              | Modo de Execução  |
-|-------------------------|-------------------|
-| Python >=3.9            | _Todos_           |
-| Docker                  | docker            |
-| Postgres                | native            |
+- Python >= 3.9
+- Docker
+- Powershell - para usar o utilitário `project`
 
 ## Modo de execução
 
-Modos de execução do Django.
+Para definir se o projeto deve rodar como native, dev, staging, prod é preciso configurar um .env, e se achar necessário alterar o settings do Django basta criar um arquivo customizado como no exemplo abaixo:
 
-### Como funciona?
-
-Em `mobilidade_rio/mobilidade_rio/settings` você encontra as configurações do Django.
-
-Para desenvolvimento local você pode criar configurações extras na subpasta `/local_dev`:
 ```bash
-📂 settings/
-  🐍 base.py
-  🐍 dev.py
-  🐍 stag.py
-  🐍 prod.py
-  📂 local_dev/   # configs locais
-    🐍 native.py
-    🐍 docker.py
+mobilidade-rio-api/
+📂 mobilidade_rio/
+  📂 local_dev/
+    ⚙️ api-native.env
+  📂 settings/
+    ...
+    📂 local_dev/
+      🐍 native.py
+      🐍 docker.py
 ```
-
-Dentro de `local_dev` você pode criar sua própria configuração, dois exemplos recomendados são `native` e `docker`.
 
 ## Desenvolvimento local
 
-### Arquivos de desenvolvimento local
+### Configuração inicial
 
-Para configurar e usar algum arquivo para desenvolvimento local, basta criar em qualquer lugar uma pasta chamada `local_dev`.
+1. Criar ambiente virtual Python
 
-### Criando o ambiente
-
-Criando ambiente virtual
+Anaconda:
 ```bash
 conda create -n mobilidade_rio_api python=3.9
 conda activate mobilidade_rio_api
 pip install -r mobilidade_rio/requirements.txt  -r requirements-dev.txt
 ```
 
-Criando arquivos de desenvolvimento local:
+2. Criar arquivos de desenvolvimento local:
+
+Bash ou powershell:
 ```bash
-📂 mobilidade_rio/  # projeto Django
+cp dev/mobilidade_rio/local_dev_example mobilidade_rio/local_dev -r
+cp dev/mobilidade_rio/settings/local_dev_example mobilidade_rio/settings/local_dev -r
+```
+
+Resultado:
+```bash
+mobilidade-rio-api/
+...
+📂 mobilidade_rio/  # "src/"
   ...
   📂 local_dev/
-    🐋 Docker.py
-    🐋 docker-compose.py
-    ⚙️ native.env
+    🐋 Dockerfile
+    🐋 docker-compose.yml
+    ⚙️ api-native.env
+    ⚙️ api.env
       ...
   📂 mobilidade_rio/  # app principal
     📂 settings/
       ...
       📂 local_dev/
-        🐍 native.py  # sem Docker ou k8s
-        🐍 docker.py 
+        🐍 native.py
 ```
 
-> Para exemplos desses arquivos, veja nesta [página da Wiki](https://github.com/RJ-SMTR/mobilidade-rio-api/wiki/Desenvolvimento#Arquivos-de-desenvolvimento-local).
+### Executar no Docker
 
-### Configurando a aplicação
-
-Deverá ser executado toda vez que abrir uma nova sessão no terminal.
-
-native:
-* Bash
-  ```bash
-  export DJANGO_SETTINGS_MODULE="mobilidade_rio.settings.local_dev.native"
-  ```
-* Powershell
-  ```powershell
-  $env:DJANGO_SETTINGS_MODULE="mobilidade_rio.settings.local_dev.native"
-  ```
-
-docker:
-* Bash
-  ```bash
-  source mobilidade_rio/local_dev/api.env
-  ```
-* Powershell
-  ```powershell
-  $(Get-Content ./mobilidade_rio/local_dev/api.env | ForEach-Object { $name, $value = $_.split('=');set-content env:\$name $value });
-  ```
-
-
-### Iniciando a aplicação
-
-native:
 ```bash
-python mobilidade_rio/manage.py makemigrations
-python mobilidade_rio/manage.py migrate
-python mobilidade_rio/manage.py runserver 8001
+docker-compose -f "mobilidade_rio/local_dev/docker-compose.yml" up --build
 ```
 
-docker:
-```bash
-docker-compose -f "mobilidade_rio/dev_local/docker-compose_local.yml" up --build
-```
+### Executar localmente
 
-Dev, Stag e Prod:
-* O deploy e execução das branches de dev, staging e produção são feitos automaticamente via [Github Actions](https://github.com/features/actions).
-* Essas branches usam a configuração Django de acordo com seu nome. Exemplo: a branch `dev` usa a configuração dev.
+1. Iniciar o ambiente virtual (recomendado, toda vez que abrir um terminal)
 
+    ```bash
+    conda activate mobilidade_rio_api
+    ```
+
+2. Carregando o .env na sessão atual do terminal
+
+    - Bash
+      ```bash
+      source mobilidade_rio/local_dev/api-native.env
+      ```
+    - Powershell
+      ```powershell
+      project env api-native
+      ```
+
+      Para mais informações rode `project help`
+
+3. Iniciar servidor:
+   - Bash
+     ```bash
+     python mobilidade_rio/manage.py migrate
+     python mobilidade_rio/manage.py runserver 8001
+     ```
+
+   - Powershell
+     ```powershell
+     project runserver native
+     ```
+
+### Ambientes dev, stag e prod
+
+- O deploy e execução das branches de dev, staging e produção são feitos automaticamente via [Github Actions](https://github.com/features/actions).
+- Essas branches usam a configuração Django de acordo com seu nome. Exemplo: a branch `dev` usa a configuração dev.
 
 ### Acessando a aplicação
 
 URL base para acessar a aplicação:
 
-* native: `localhost:8001` (sugerido)
-* docker: `localhost:8010` (sugerido)
-* dev: `https://api.dev.mobilidade.rio`
-* stag: `https://api.staging.mobilidade.rio`
-* prod: `https://api.mobilidade.rio`
+- native: `localhost:8001` (sugerido)
+- docker: `localhost:8010` (sugerido)
+- dev: `https://api.dev.mobilidade.rio`
+- stag: `https://api.staging.mobilidade.rio`
+- prod: `https://api.mobilidade.rio`
 
 ### Acessando o banco de dados:
 

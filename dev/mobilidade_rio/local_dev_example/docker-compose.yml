@@ -1,0 +1,58 @@
+version: "3.9"
+
+services:
+  web:
+    env_file:
+    - api.env
+    build: 
+      context: ../
+      dockerfile: ./local_dev/Dockerfile
+    image: django
+    container_name: mobilidade-api
+    volumes:
+      - .:/django
+    ports:
+      - 8010:8000
+    depends_on:
+      - db
+    environment:
+      - DJANGO_SETTINGS_MODULE=mobilidade_rio.settings.local_dev.native
+    command: >
+      bash -c "
+        python manage.py makemigrations --noinput 
+        python manage.py migrate
+        python manage.py runserver 0.0.0.0:8000
+      "
+
+  django-q:
+    env_file:
+    - api.env
+    build: 
+      context: ../
+      dockerfile: ./local_dev/Dockerfile
+    image: django-q
+    container_name: mobilidade-cronjob
+    volumes:
+      - .:/django
+    depends_on:
+      - db
+    environment:
+      - DJANGO_SETTINGS_MODULE=mobilidade_rio.settings.local_dev.native
+    command: python manage.py qcluster
+
+  db:
+    image: postgres
+    container_name: mobilidade-postgres
+    ports:
+      - 5433:5432
+    volumes:
+      - dpostgres_data:/var/lib/postgresql/data/
+    environment:
+      - "POSTGRES_HOST_AUTH_METHOD=trust"
+      - "POSTGRES_DB=postgres test"
+      - "POSTGRES_USER=postgres"
+      - "POSTGRES_PASSWORD=postgres"
+      #- <path>\.env
+
+volumes:
+  dpostgres_data:
