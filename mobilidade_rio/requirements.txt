@@ -13,7 +13,5 @@ shapely<=2.0.1
 pandas<=1.5.3
 django-q<=1.3.9
 
-# jupyter
-ipykernel==6.16.0
-ipython==8.5.0
-ipython-genutils==0.2.0
+# tests
+responses==0.24.1
