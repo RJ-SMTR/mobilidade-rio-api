@@ -1,14 +1,12 @@
 """Views for predictor app"""
 import logging
-from rest_framework.response import Response
-from rest_framework import viewsets
-from mobilidade_rio.config_django_q.tasks import generate_prediction
-from mobilidade_rio.predictor.models import *
-from mobilidade_rio.predictor.serializers import *
-from mobilidade_rio.predictor.models import PredictorResult
-from django.conf import settings
-import pytz
 
+import pytz
+from django.conf import settings
+from rest_framework import viewsets
+from rest_framework.response import Response
+
+from mobilidade_rio.predictor.models import PredictorResult
 
 logger = logging.getLogger("predictor view")
 
@@ -19,18 +17,11 @@ class PredictorViewSet(viewsets.ViewSet):
     """
 
     # TODO: add pagination or use a real ModelViewSet
-    def list(self, request):
+    def list(self, _):
         """
         Return a JSON representation of the data.
         """
 
-        # dev params
-        if settings.SETTINGS_MODULE.rsplit('.',1)[-1] not in ("dev", "stag", "prod"):
-            run = request.query_params.get("run")
-            if run:
-                logger.info('run: Generating prediction manually')
-                generate_prediction()
-        
         # default execution
         results = PredictorResult.objects.filter(pk=1)  # pylint: disable=E1101
         if not results.exists():
