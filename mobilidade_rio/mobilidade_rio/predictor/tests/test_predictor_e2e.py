@@ -105,7 +105,6 @@ class TestPredictorE2E(TransactionTestCase):
         data = dict(response.json())
 
         # assert
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 500)
         self.assertNotEqual(data, {'detail': "Not found."})
         self.assertIsNotNone(data['error'])
-        self.assertEqual(data['count'], 0)

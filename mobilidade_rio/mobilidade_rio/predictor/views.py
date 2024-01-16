@@ -1,8 +1,11 @@
 """Views for predictor app"""
 import logging
+import math
+from datetime import timedelta
 
 import pytz
 from django.conf import settings
+from django.utils import timezone
 from rest_framework import viewsets
 from rest_framework.response import Response
 
@@ -22,29 +25,96 @@ class PredictorViewSet(viewsets.ViewSet):
         Return a JSON representation of the data.
         """
 
-        # default execution
+        unchanged_timeout_secs = 60 * 5
+
         results = PredictorResult.objects.filter(pk=1)  # pylint: disable=E1101
+        last_check = PredictorResult.objects.filter(  # pylint: disable=E1101
+            pk=2)
+        # error: no_result
         if not results.exists():
-            results = {"detail": "Not found."}
-            return Response(results)
+            # no result more than 5 minutes
+            last_check_count_seconds = 0 if not last_check.exists() else (
+                timezone.now() - last_check[0].last_modified).total_seconds()
+            if (last_check and last_check_count_seconds >= unchanged_timeout_secs):
+                error_message = {
+                    'code': "no_result-unchanged-timeout",
+                    'message': "Sem alterações no banco do preditor há mais de " +
+                    f"{math.floor(unchanged_timeout_secs/60)} minutos.",
+                    "lastCheck": last_check[0].last_modified,
+                    "lastCheckCount": str(timedelta(seconds=int(last_check_count_seconds))),
+                    "lastCheckCountSeeconds": int(last_check_count_seconds),
+                }
+                return Response(error_message, status=500)
 
-        result_list = results[0].result_json['result']
+            PredictorResult.objects.update_or_create(  # pylint: disable=E1101
+                pk=2,
+                defaults={
+                    'result_json': {'about': "Save last result check"},
+                }
+            )
 
-        # stop_id
+            # no result
+            error_message = {
+                'code': "no_result",
+                'message': "Resultado do preditor não encontrado no banco.",
+                "lastCheck": last_check[0].last_modified if last_check.exists() else None,
+                "lastCheckCount": str(timedelta(seconds=int(last_check_count_seconds))
+                                      ) if last_check.exists() else None,
+                "lastCheckCountSeconds": int(last_check_count_seconds
+                                             ) if last_check.exists() else None,
+            }
+            return Response(error_message, status=404)
+
+        if last_check.exists():
+            last_check.delete()
+
+        last_update = results[0].last_modified.astimezone(
+            pytz.timezone(settings.TIME_ZONE))
+
+        result_data = results[0].result_json['result']
+        result_error = results[0].result_json['error']
+
+        # error: result-unchanged more than 5 minutes
+        last_update_count_seconds = (
+            timezone.now() - results[0].last_modified).total_seconds()
+        if last_update_count_seconds >= unchanged_timeout_secs:
+            error_message = {
+                'code': "result-unchanged-timeout",
+                'message': "Sem alterações no banco do preditor há mais de " +
+                f"{math.floor(unchanged_timeout_secs/60)} minutos.",
+                'data': result_data,
+                'error': result_error,
+                'lastUpdate': last_update,
+                'lastUpdateCount': str(timedelta(seconds=int(last_update_count_seconds))),
+                'lastUpdateCountSeconds': int(last_update_count_seconds),
+            }
+            return Response(error_message, status=500)
+
+        # error: predictor-error
+        if result_error:
+            error_message = {
+                'code': "predictor-error",
+                'message': "O preditor retornou erro.",
+                "error": results[0].result_json["error"],
+            }
+            return Response(error_message, status=500)
+
+        # query filter
         stop_id = self.request.query_params.get("stop_id")
         if stop_id:
-            result_list = [i for i in result_list if i['stop_id'] == stop_id]
+            result_data = [i for i in result_data if i['stop_id'] == stop_id]
 
         # return prediction
-        last_modified = results[0].last_modified.astimezone(pytz.timezone(settings.TIME_ZONE))
 
-        results = {
-            "count": len(result_list),
+        response_data = {
+            "count": len(result_data),
             "next": None,
             "previous": None,
-            "lastUpdate": last_modified,
+            "lastUpdate": last_update,
+            "lastUpdateCount": str(timedelta(seconds=int(last_update_count_seconds))),
+            "lastUpdateCountSeconds": int(last_update_count_seconds),
             "error": results[0].result_json["error"],
-            "results" : result_list,
+            "results": result_data,
         }
 
-        return Response(results)
+        return Response(response_data)
