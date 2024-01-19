@@ -28,6 +28,7 @@ gtfs_router.register(r"frequencies", gtfs.FrequenciesViewSet)
 
 pred_router = routers.DefaultRouter()
 pred_router.register(r"predictor", pred.PredictorViewSet, basename='predictor')
+pred_router.register(r"predictor/test", pred.PredictorTestViewSet, basename='predictortest')
 
 feedback_router = DocumentedRouter(FeedbackApiView)
 feedback_router.register(r"brt", fb.FeedbackBRTViewSet,
