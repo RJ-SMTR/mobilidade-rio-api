@@ -5,6 +5,7 @@ on:
     branches:
       - "release/*"
       - "hotfix/*"
+      - "staging"
     paths-ignore:
       - 'README.md'
 
