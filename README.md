@@ -1,6 +1,8 @@
 
 # mobilidade-rio-api
 
+![github action status](https://github.com/RJ-SMTR/mobilidade-rio-api/actions/workflows/cd_stag.yml/badge.svg)
+
 API estática do aplicativo [mobilidade.rio](http://mobilidade.rio) da Prefeitura do Rio de Janeiro.
 
 ## Documentação
