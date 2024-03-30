@@ -3,7 +3,7 @@ import logging
 import os
 import warnings
 from datetime import datetime
-from typing import List, Literal, TypedDict
+from typing import List, Literal, TypedDict, Union
 
 import pandas as pd
 import requests
@@ -288,7 +288,7 @@ class Predictor:  # pylint: disable=R0903
 
         return data
 
-    def _get_shape_id(self, trip_short_name, direction_id, service_ids_for_today):
+    def _get_shape_id(self, trip_short_name, direction_id, service_ids_for_today) -> Union[str, None]:
         """
         Get unique shape in trips given unique (trip_short_name, direction_id) \
             + any service_id
@@ -313,22 +313,24 @@ class Predictor:  # pylint: disable=R0903
             service_id__in=list(service_ids_for_today),
         )
 
-        shapes = trips.distinct("shape_id")
+        shapes_q = trips.distinct("shape_id")
+        shapes = list(shapes_q.values_list("shape_id", flat=True))
+        shapes_objs = list(shapes_q.values('shape_id', 'trip_id', 'block_id'))
 
-        if len(shapes) > 1:
+        if len(shapes_q) > 1:
             raise PredictorFailedException({
                 "type": "error",
-                "code": "multiple-trips-per-shape",
-                "message": f"Foram encontradas mais de uma trip por shape_id ({shapes.count()}).",
+                "code": "multiple-shapes-per-trip",
+                "message": f"Foram encontradas mais de uma trip por shape_id ({len(shapes)}).",
                 "details": {
-                    'trips': {"count": shapes.count(),
-                              "found": list(shapes.values('shape_id', 'trip_id', 'block_id'))},
+                    'trips': {"count": len(shapes),
+                              "found": shapes_objs},
                 },
             })
-        if len(shapes) == 0:
+        if len(shapes_q) == 0:
             return None
 
-        return shapes.values_list("shape_id", flat=True)[0]
+        return shapes[0]
 
     def _split_shape(self, shape, break_pt, part=0):
         """
@@ -442,12 +444,12 @@ class Predictor:  # pylint: disable=R0903
 
             shape_id = self._get_shape_id(
                 trip_short_name, direction_id, self.service_id)
+            if shape_id is None:
+                continue
+
             shapes_found += [shape_id]
             shape = pd.DataFrame(
                 Shapes.objects.filter(shape_id=shape_id).values())  # pylint: disable=E1101
-
-            if shape_id is None:
-                continue
 
             # calculate ETA for all stops of the trip
 
