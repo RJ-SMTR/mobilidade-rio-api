@@ -1,13 +1,16 @@
-import types
-from django.apps import AppConfig
-from django.db import connection, DatabaseError
-from django.utils import timezone
+# pylint: disable=C0415
+
+
 import logging
+
+from django.apps import AppConfig
+from django.db import DatabaseError, connection
 
 logger = logging.getLogger("[config_django_q]")
 
 
 def table_exists(table_name):
+    """Check if table exists in database"""
     try:
         with connection.cursor() as cursor:
             cursor.execute("SELECT COUNT(*) FROM information_schema.tables WHERE table_name = %s", [table_name])
@@ -62,7 +65,8 @@ class ConfigDjangoQConfig(AppConfig):
 
         # Config schedules
 
-        from django_q.models import Schedule, OrmQ, Task
+        from django_q.models import OrmQ, Schedule, Task
+
         from mobilidade_rio.config_django_q import tasks as dq_tasks
 
         use_schedules = [
