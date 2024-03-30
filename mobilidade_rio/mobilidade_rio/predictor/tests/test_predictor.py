@@ -176,9 +176,10 @@ class TestPredictor(TransactionTestCase):
         # assert
         self.assertEqual(error_code, "external_api-realtime-no_results")
 
+    @mock.patch('mobilidade_rio.predictor.predictor.timezone')
     @responses.activate
-    def test_predictor_multiple_trips_per_shape(self):
-        """Predictor should fail when multiple shapes were found"""
+    def test_predictor_multiple_shapes_per_trip(self, mocked_timezone):
+        """Predictor should fail when multiple shapes per trip were found"""
         # arrange
         responses.add(
             responses.GET,
@@ -186,6 +187,7 @@ class TestPredictor(TransactionTestCase):
             status=200,
             body=json.dumps(self.mocks['api_realtime'])
         )
+        mocked_timezone.now.return_value = datetime(2024, 1, 5)
 
         new_shape = model_to_dict(
             Shapes.objects.first())  # pylint: disable=E1101
@@ -212,7 +214,7 @@ class TestPredictor(TransactionTestCase):
 
         # assert
         self.assertEqual(len(result), 0)
-        self.assertEqual(error_code, "multiple-trips-per-shape")
+        self.assertEqual(error_code, "multiple-shapes-per-trip")
 
     @responses.activate
     def test_predictor_no_result(self):
