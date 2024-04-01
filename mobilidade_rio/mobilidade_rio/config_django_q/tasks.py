@@ -20,7 +20,8 @@ def generate_prediction():
         predictor_eta = pred.run_eta()
     except PredictorFailedException as exception:
         predictor_error = exception.info
-        exception_message = f'Predictor - {exception.info["code"]}: {exception.info["message"]}'
+        exception_message = f'Predictor - {exception.info["code"]}: {exception.info["message"]}\n' + \
+            f'- detalhes do erro: {exception.info["details"]}'
         if exception.info["type"] == "error":
             logger.error(exception_message)
         if exception.info["type"] == "warning":

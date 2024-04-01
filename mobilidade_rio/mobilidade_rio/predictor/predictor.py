@@ -3,7 +3,7 @@ import logging
 import os
 import warnings
 from datetime import datetime
-from typing import List, Literal, TypedDict
+from typing import List, Literal, TypedDict, Union
 
 import pandas as pd
 import requests
@@ -133,39 +133,58 @@ class Predictor:  # pylint: disable=R0903
 
         # regular services
         weekday = today_date.strftime("%A").lower()
-        regular_services_qs = Calendar.objects.filter(  # pylint: disable=E1101
+
+        regular_services_today_q = Calendar.objects.filter(  # pylint: disable=E1101
             **{weekday: 1})
+        regular_services_today = list(
+            regular_services_today_q.values_list("service_id", flat=True))
 
         # exception services
-        date_exceptions_qs = CalendarDates.objects.filter(  # pylint: disable=E1101
+        exception_services_today_q = CalendarDates.objects.filter(  # pylint: disable=E1101
             date=today_date,
         )
-        date_exceptions_add = date_exceptions_qs.filter(exception_type=1)
-        date_exceptions_remove = date_exceptions_qs.filter(exception_type=2)
+        exception_services_today = list(
+            exception_services_today_q.values_list("service_id", flat=True))
+        exception_services_today_add = list(
+            exception_services_today_q.filter(exception_type=1).values_list("service_id", flat=True))
+
+        exception_services_today_remove_q = exception_services_today_q.filter(
+            exception_type=2)
+        exception_services_today_remove = list(
+            exception_services_today_remove_q.values_list("service_id", flat=True))
+
+        exception_services_today_remove_only_q = exception_services_today_remove_q.exclude(
+            service_id__in=exception_services_today_add)
+        exception_services_today_remove_only = list(
+            exception_services_today_remove_only_q.values_list("service_id", flat=True))
 
         # valid services
-        valid_services_qs = regular_services_qs.filter(
-            # include services that exists as regular service between dates
+        valid_services_today_q = Calendar.objects.filter(  # pylint: disable=E1101
+            # include regular services in date range for today
             Q(
                 start_date__lte=today_date,  # today > start_date
                 end_date__gte=today_date,  # and today < end_date
+                **{weekday: 1},  # service is active today
             ) |
-            # or that exists as exception service at date
+            # or exception services for today
             Q(
-                service_id__in=date_exceptions_add.values_list(
-                    "service_id", flat=True)
+                service_id__in=exception_services_today_add
             )
-            # and ignore exception services to remove
-        ).exclude(service_id__in=date_exceptions_remove.values_list("service_id", flat=True))
+            # and ignore exception services to be removed only, for today.
+            # (remove regular and not add exception)
+        ).exclude(service_id__in=exception_services_today_remove_only_q.values_list(
+            "service_id", flat=True))
+        valid_services_today = list(
+            valid_services_today_q.values_list("service_id", flat=True))
 
-        if valid_services_qs.count() > 1:
+        if valid_services_today_q.count() > 1:
             # note: Predictions for trips with different shapes may be wrong, tests are needed.
             logger.info(
                 "Treated services: multiple services found for today, getting first one.")
         logger.info("Services found: %s", list(
-            valid_services_qs.values_list("service_id", flat=True)))
+            valid_services_today_q.values_list("service_id", flat=True)))
 
-        if valid_services_qs.count() == 0:
+        if valid_services_today_q.count() == 0:
             raise PredictorFailedException({
                 "type": "error",
                 "code": "no-service_id-found",
@@ -175,31 +194,39 @@ class Predictor:  # pylint: disable=R0903
                     + f"obsoleto: {self.service_id_info['obsolete_count']}, "
                     + f"no futuro: {self.service_id_info['future_count']}, "
                     + f"disponível hoje: {self.service_id_info['available_today_count']})."),
-                "details": {"service_id": self.service_id_info},
+                "details": {
+                    "service_id": self.service_id_info,
+                    "regular_services_today": regular_services_today,
+                    "exception_services_today": exception_services_today,
+                    "exception_services_today_add": exception_services_today_add,
+                    "exception_services_today_remove": exception_services_today_remove,
+                    "exception_services_today_remove_only": exception_services_today_remove_only,
+                    "valid_services_today": valid_services_today,
+                },
             })
 
         # service_id info
 
-        service_before = list(regular_services_qs.filter(
+        service_before = list(regular_services_today_q.filter(
             end_date__lt=today_date).values("service_id", "end_date"))
         for i in service_before:
             i["end_date"] = i['end_date'].strftime("%Y-%m-%d")
         self.service_id_info["obsolete"] = service_before
         self.service_id_info["obsolete_count"] = len(service_before)
 
-        service_after = list(regular_services_qs.filter(
+        service_after = list(regular_services_today_q.filter(
             start_date__gt=today_date).values("service_id", "start_date"))
         for i in service_after:
             i["start_date"] = i['start_date'].strftime("%Y-%m-%d")
         self.service_id_info["future"] = service_after
         self.service_id_info["future_count"] = len(service_after)
 
-        service_available = list(valid_services_qs.values_list(
+        service_available = list(valid_services_today_q.values_list(
             "service_id", flat=True))
         self.service_id_info["available_today"] = service_available
         self.service_id_info["available_today_count"] = len(service_available)
 
-        return valid_services_qs.values_list("service_id", flat=True)
+        return valid_services_today_q.values_list("service_id", flat=True)
 
     def _set_realtime(self, rt_data):
         """
@@ -261,7 +288,7 @@ class Predictor:  # pylint: disable=R0903
 
         return data
 
-    def _get_shape_id(self, trip_short_name, direction_id, service_ids_for_today):
+    def _get_shape_id(self, trip_short_name, direction_id, service_ids_for_today) -> Union[str, None]:
         """
         Get unique shape in trips given unique (trip_short_name, direction_id) \
             + any service_id
@@ -286,22 +313,24 @@ class Predictor:  # pylint: disable=R0903
             service_id__in=list(service_ids_for_today),
         )
 
-        shapes = trips.distinct("shape_id")
+        shapes_q = trips.distinct("shape_id")
+        shapes = list(shapes_q.values_list("shape_id", flat=True))
+        shapes_objs = list(shapes_q.values('shape_id', 'trip_id', 'block_id'))
 
-        if len(shapes) > 1:
+        if len(shapes_q) > 1:
             raise PredictorFailedException({
                 "type": "error",
-                "code": "multiple-trips-per-shape",
-                "message": f"Foram encontradas mais de uma trip por shape_id ({shapes.count()}).",
+                "code": "multiple-shapes-per-trip",
+                "message": f"Foram encontradas mais de uma trip por shape_id ({len(shapes)}).",
                 "details": {
-                    'trips': {"count": shapes.count(),
-                              "found": list(shapes.values('shape_id', 'trip_id', 'block_id'))},
+                    'trips': {"count": len(shapes),
+                              "found": shapes_objs},
                 },
             })
-        if len(shapes) == 0:
+        if len(shapes_q) == 0:
             return None
 
-        return shapes.values_list("shape_id", flat=True)[0]
+        return shapes[0]
 
     def _split_shape(self, shape, break_pt, part=0):
         """
@@ -415,12 +444,12 @@ class Predictor:  # pylint: disable=R0903
 
             shape_id = self._get_shape_id(
                 trip_short_name, direction_id, self.service_id)
+            if shape_id is None:
+                continue
+
             shapes_found += [shape_id]
             shape = pd.DataFrame(
                 Shapes.objects.filter(shape_id=shape_id).values())  # pylint: disable=E1101
-
-            if shape_id is None:
-                continue
 
             # calculate ETA for all stops of the trip
 
