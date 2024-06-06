@@ -10,7 +10,7 @@ from ctypes import Union
 import pandas as pd
 from django.test import TransactionTestCase
 
-from mobilidade_rio.mobilidade_rio.dados.utils import (
+from mobilidade_rio.dados.utils import (
     DadosGpsSppoUtils,
     DadosUtilsFailedException,
     DadosUtilsInfo,
