@@ -2,6 +2,7 @@
 
 # pylint: disable=E0611
 # pylint: disable=E0401
+# pylint: disable=W0212
 
 import os
 from ctypes import Union

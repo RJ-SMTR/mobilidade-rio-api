@@ -11,8 +11,6 @@ from mobilidade_rio.dados.bigquery_repository import (
     BigqueryRepositoryFailedException,
 )
 
-# from mobilidade_rio.settings.base import BASE_DIR
-
 
 class TestBigqueryRepository(TransactionTestCase):
     """
