@@ -6,7 +6,7 @@ import logging
 from django.apps import AppConfig
 from django.db import DatabaseError, connection
 
-logger = logging.getLogger("[config_django_q]")
+logger = logging.getLogger("config_django_q")
 
 
 def table_exists(table_name):

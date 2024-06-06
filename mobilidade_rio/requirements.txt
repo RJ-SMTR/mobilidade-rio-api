@@ -13,5 +13,8 @@ shapely<=2.0.1
 pandas<=1.5.3
 django-q<=1.3.9
 
+# views
+Markdown==3.6
+
 # tests
 responses==0.24.1

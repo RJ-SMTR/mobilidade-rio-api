@@ -50,3 +50,4 @@ def stoptimes_child_or_parent(queryset, stop_id, raw_filter_used=False):
             else:
                 queryset = queryset.filter(stop_id__in=stop_id)
     return queryset
+
