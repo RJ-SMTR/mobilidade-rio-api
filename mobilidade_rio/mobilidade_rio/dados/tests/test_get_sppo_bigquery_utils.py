@@ -85,7 +85,7 @@ class TestGetSppoBigqueryUtils(TransactionTestCase):
             error_code = exception.info['code']
 
         # assert
-        self.assertEqual(error_code, 'helper_endpoints-error-response-data')
+        self.assertEqual(error_code, 'dados_gps_sppo-error-response-data')
 
     def test_join_sppo_api_bigquery(self):
         """

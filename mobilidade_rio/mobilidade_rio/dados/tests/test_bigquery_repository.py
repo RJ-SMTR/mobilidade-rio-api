@@ -23,18 +23,21 @@ class TestBigqueryRepository(TransactionTestCase):
 
     is_first_run = True
 
+
     def test_sppo_success(self):
         """O teste deve retornar dados com sucesso do SPPO"""
         # act
-        error_code: Union[str, None] = None
+        error: Union[str, None] = None
         try:
             bigquery_repository = BigqueryRepository()
             result = bigquery_repository.query("""
                 SELECT * FROM `rj-smtr.veiculo.sppo_licenciamento` LIMIT 5
             """)
         except BigqueryRepositoryFailedException as exception:
-            error_code = exception.info['code']
+            error = exception.info
+            print("ERRO:")
+            print(error)
 
         # assert
-        self.assertIsNone(error_code)
+        self.assertIsNone(error)
         self.assertTrue(result.size > 0)
