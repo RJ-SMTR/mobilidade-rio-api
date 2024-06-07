@@ -111,7 +111,7 @@ docker-compose -f "mobilidade_rio/local_dev/docker-compose.yml" up --build
 
       Para mais informações rode `project help`
 
-1. Iniciar servidor:
+3. Iniciar servidor:
 
     Bash
 

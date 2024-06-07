@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'mobilidade_rio.predictor',
     'mobilidade_rio.feedback',
     'mobilidade_rio.utils',
+    'mobilidade_rio.dados',
     'mobilidade_rio.config_django_q.apps.ConfigDjangoQConfig',
 ]
 
