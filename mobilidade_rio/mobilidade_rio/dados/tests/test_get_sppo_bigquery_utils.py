@@ -45,6 +45,8 @@ class TestGetSppoBigqueryUtils(TransactionTestCase):
             result = get_sppo_utils._get_sppo_api()
         except DadosUtilsFailedException as exception:
             error = exception.info
+            print("ERRO:")
+            print(error)
 
         # assert
         self.assertIsNone(error)
@@ -110,6 +112,8 @@ class TestGetSppoBigqueryUtils(TransactionTestCase):
                 sppo_api, sppo_bq)
         except DadosUtilsFailedException as exception:
             error = exception.info
+            print("ERRO:")
+            print(error)
 
         # assert
         self.assertIsNone(error)
