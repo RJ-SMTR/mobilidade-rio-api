@@ -60,6 +60,72 @@ spec:
                 secretKeyRef:
                   name: envs
                   key: DJANGO_SETTINGS_MODULE
+            - name: PYTHONUNBUFFERED
+              valueFrom:
+                secretKeyRef:
+                  name: envs
+                  key: PYTHONUNBUFFERED
+            - name: API_REALTIME
+              valueFrom:
+                secretKeyRef:
+                  name: envs
+                  key: API_REALTIME
+
+            - name: GOOGLE_CLIENT_API_TYPE
+              valueFrom:
+                secretKeyRef:
+                  name: envs
+                  key: GOOGLE_CLIENT_API_TYPE
+            - name: GOOGLE_CLIENT_API_PROJECT_ID
+              valueFrom:
+                secretKeyRef:
+                  name: envs
+                  key: GOOGLE_CLIENT_API_PROJECT_ID
+            - name: GOOGLE_CLIENT_API_PRIVATE_KEY_ID
+              valueFrom:
+                secretKeyRef:
+                  name: envs
+                  key: GOOGLE_CLIENT_API_PRIVATE_KEY_ID
+            - name: GOOGLE_CLIENT_API_PRIVATE_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: envs
+                  key: GOOGLE_CLIENT_API_PRIVATE_KEY
+            - name: GOOGLE_CLIENT_API_CLIENT_EMAIL
+              valueFrom:
+                secretKeyRef:
+                  name: envs
+                  key: GOOGLE_CLIENT_API_CLIENT_EMAIL
+            - name: GOOGLE_CLIENT_API_CLIENT_ID
+              valueFrom:
+                secretKeyRef:
+                  name: envs
+                  key: GOOGLE_CLIENT_API_CLIENT_ID
+            - name: GOOGLE_CLIENT_API_AUTH_URI
+              valueFrom:
+                secretKeyRef:
+                  name: envs
+                  key: GOOGLE_CLIENT_API_AUTH_URI
+            - name: GOOGLE_CLIENT_API_TOKEN_URI
+              valueFrom:
+                secretKeyRef:
+                  name: envs
+                  key: GOOGLE_CLIENT_API_TOKEN_URI
+            - name: GOOGLE_CLIENT_API_AUTH_PROVIDER_X509_CERT_URL
+              valueFrom:
+                secretKeyRef:
+                  name: envs
+                  key: GOOGLE_CLIENT_API_AUTH_PROVIDER_X509_CERT_URL
+            - name: GOOGLE_CLIENT_API_CLIENT_X509_CERT_URL
+              valueFrom:
+                secretKeyRef:
+                  name: envs
+                  key: GOOGLE_CLIENT_API_CLIENT_X509_CERT_URL
+            - name: GOOGLE_CLIENT_API_UNIVERSE_DOMAIN
+              valueFrom:
+                secretKeyRef:
+                  name: envs
+                  key: GOOGLE_CLIENT_API_UNIVERSE_DOMAIN
       #          resources:
       #            requests:
       #              memory: 64Mi
@@ -140,6 +206,72 @@ spec:
                 secretKeyRef:
                   name: envs
                   key: DJANGO_SETTINGS_MODULE
+            - name: PYTHONUNBUFFERED
+              valueFrom:
+                secretKeyRef:
+                  name: envs
+                  key: PYTHONUNBUFFERED
+            - name: API_REALTIME
+              valueFrom:
+                secretKeyRef:
+                  name: envs
+                  key: API_REALTIME
+
+            - name: GOOGLE_CLIENT_API_TYPE
+              valueFrom:
+                secretKeyRef:
+                  name: envs
+                  key: GOOGLE_CLIENT_API_TYPE
+            - name: GOOGLE_CLIENT_API_PROJECT_ID
+              valueFrom:
+                secretKeyRef:
+                  name: envs
+                  key: GOOGLE_CLIENT_API_PROJECT_ID
+            - name: GOOGLE_CLIENT_API_PRIVATE_KEY_ID
+              valueFrom:
+                secretKeyRef:
+                  name: envs
+                  key: GOOGLE_CLIENT_API_PRIVATE_KEY_ID
+            - name: GOOGLE_CLIENT_API_PRIVATE_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: envs
+                  key: GOOGLE_CLIENT_API_PRIVATE_KEY
+            - name: GOOGLE_CLIENT_API_CLIENT_EMAIL
+              valueFrom:
+                secretKeyRef:
+                  name: envs
+                  key: GOOGLE_CLIENT_API_CLIENT_EMAIL
+            - name: GOOGLE_CLIENT_API_CLIENT_ID
+              valueFrom:
+                secretKeyRef:
+                  name: envs
+                  key: GOOGLE_CLIENT_API_CLIENT_ID
+            - name: GOOGLE_CLIENT_API_AUTH_URI
+              valueFrom:
+                secretKeyRef:
+                  name: envs
+                  key: GOOGLE_CLIENT_API_AUTH_URI
+            - name: GOOGLE_CLIENT_API_TOKEN_URI
+              valueFrom:
+                secretKeyRef:
+                  name: envs
+                  key: GOOGLE_CLIENT_API_TOKEN_URI
+            - name: GOOGLE_CLIENT_API_AUTH_PROVIDER_X509_CERT_URL
+              valueFrom:
+                secretKeyRef:
+                  name: envs
+                  key: GOOGLE_CLIENT_API_AUTH_PROVIDER_X509_CERT_URL
+            - name: GOOGLE_CLIENT_API_CLIENT_X509_CERT_URL
+              valueFrom:
+                secretKeyRef:
+                  name: envs
+                  key: GOOGLE_CLIENT_API_CLIENT_X509_CERT_URL
+            - name: GOOGLE_CLIENT_API_UNIVERSE_DOMAIN
+              valueFrom:
+                secretKeyRef:
+                  name: envs
+                  key: GOOGLE_CLIENT_API_UNIVERSE_DOMAIN
       #          resources:
       #            requests:
       #              memory: 64Mi
