@@ -34,6 +34,18 @@ class MobilidadeRioApiView(routers.APIRootView):
     """
 
 
+class DadosView(routers.APIRootView):
+    """
+    Endpoints for treated data from [dados.mobilidade.rio](https://dados.mobilidade.rio)
+    """
+
+
+class GpsView(routers.APIRootView):
+    """
+    Endpoints for treated data from [dados.mobilidade.rio/gps](https://dados.mobilidade.rio/gps)
+    """
+
+
 class GTFSView(routers.APIRootView):
     """
     Endpoints for GTFS tables.

@@ -240,7 +240,7 @@ class Predictor:  # pylint: disable=R0903
         url = os.environ.get(
             "API_REALTIME", "https://dados.mobilidade.rio/gps/brt")
         elapsed_time = round((datetime.now() - start).total_seconds(), 2)
-        logger.info("Request to realtime took %ss", elapsed_time)
+        logger.info("Requisição apra o realtime durou %ss", elapsed_time)
 
         try:
             response = requests.get(url, timeout=5)
