@@ -3,6 +3,7 @@ Equivalente a uma camada service
 
 A Camada utils contém uma classe por endpoint
 """
+from ast import List
 import json
 from datetime import date
 from datetime import datetime as dt
@@ -71,8 +72,9 @@ class DadosGpsSppoUtils:
     def run(self, data_inicial='', data_final=''):
         """Executar tarefa completa"""
         self._validate_params(data_inicial, data_final)
-        sppo_bq = self._get_sppo_bigquery(data_final, data_final)
         sppo_api = self._get_sppo_api(data_inicial, data_final)
+        id_veiculos = list(pd.unique(sppo_api["ordem"].values.ravel()))
+        sppo_bq = self._get_sppo_bigquery(id_veiculos)
         sppo_join = self._join_sppo_api_bigquery(sppo_api, sppo_bq)
         return sppo_join
 
@@ -175,7 +177,7 @@ class DadosGpsSppoUtils:
 
         return data
 
-    def _get_sppo_bigquery(self, data_inicial="", data_final=""):
+    def _get_sppo_bigquery(self, id_veiculos: list = None):
         """
         Obter dados SPPO do Bigquery
 
@@ -183,26 +185,22 @@ class DadosGpsSppoUtils:
         por isso pegamos também o dia anterior como `data_inicio`.
         """
         bigquery = BigqueryRepository()
-        where = ""
+        and_where = ""
+        if id_veiculos:
+            id_veiculos_str = ",".join([f"'{i}'" for i in id_veiculos])
+            and_where += f"AND t.id_veiculo IN ({id_veiculos_str})"
 
-        if data_inicial:
-            day = date(
-                int(data_inicial[:4]),   # yyyy
-                int(data_inicial[5:7]),  # mm
-                int(data_inicial[8:10])  # dd
-            )
-            before = day - timedelta(days=1)
-            where += f"data = '{before.strftime(r'%Y-%m-%d')}' "
-
-        if data_final:
-            if where:
-                where += "OR "
-            where += f"data = '{data_final[:10]}' "
-
-        query = "SELECT * FROM `rj-smtr.veiculo.sppo_licenciamento` "
-        if where:
-            query += f"WHERE {where}"
-        query += " LIMIT 10000"
+        query = f"""
+        SELECT t.*
+        FROM `rj-smtr.veiculo.sppo_licenciamento` t
+        WHERE t.data = (
+        SELECT Max(t2.data)
+        FROM `rj-smtr.veiculo.sppo_licenciamento` t2
+        WHERE t2.id_veiculo = t.id_veiculo
+        ORDER BY t.data DESC
+        )
+        {and_where}
+        """
         data = bigquery.query(query)
         return data
 

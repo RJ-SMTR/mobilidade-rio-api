@@ -19,9 +19,9 @@ from mobilidade_rio.dados.utils import (
 # from mobilidade_rio.settings.base import BASE_DIR
 
 
-class TestGetSppoBigqueryUtils(TransactionTestCase):
+class TestDadosGpsSppoUtils(TransactionTestCase):
     """
-    Teste unitário do GetSppoBigqueryUtils
+    Teste unitário do DadosGpsSppoUtils
 
     Requisitos:
     1. Deve obter os dados da API do SPPO com sucesso
@@ -31,7 +31,7 @@ class TestGetSppoBigqueryUtils(TransactionTestCase):
 
     is_first_run = True
 
-    def test_sppo_success(self):
+    def test_get_sppo_api_success(self):
         """
         Deve obter dados da API do SPPO com sucesso
 
@@ -52,9 +52,10 @@ class TestGetSppoBigqueryUtils(TransactionTestCase):
         self.assertIsNone(error)
         self.assertTrue(result.size > 0)
 
-    def test_sppo_error_response_data(self):
+    def test_get_sppo_api_error_response_data(self):
         """
-        Ao obter dados da API do SPPO deve repassar o erro de parâmetro da API externa como uma exceção.
+        Ao obter dados da API do SPPO deve repassar
+        o erro de parâmetro da API externa como uma exceção.
 
         Isso irá testar:
         - O filtro: caso dê erro a diferença de horário foi passada para a API externa
@@ -119,3 +120,23 @@ class TestGetSppoBigqueryUtils(TransactionTestCase):
         self.assertIsNone(error)
         self.assertEqual(set(sppo_join.columns.to_list()), expected_cols)
         self.assertTrue(sppo_join.size > 0)
+
+    def test_run(self):
+        """
+        Espera-se rodar com filtro e retornar dados.
+        """
+        # act
+        error: DadosUtilsInfo = None
+        result: pd.DataFrame = None
+        try:
+            get_sppo_utils = DadosGpsSppoUtils()
+            result = get_sppo_utils.run(
+                '2024-06-07 15:43:42', '2024-06-07 15:48:42')
+        except DadosUtilsFailedException as exception:
+            error = exception.info
+            print("ERRO:")
+            print(error)
+
+        # assert
+        self.assertIsNone(error)
+        self.assertNotEqual(result.size, 0)
