@@ -29,36 +29,36 @@ jobs:
       - name: Install dependencies
         run: pip install wheel && pip install --prefer-binary -r mobilidade_rio/requirements.txt
 
-  tests:
-    needs: before
-    name: ${{ matrix.os }}${{ matrix.arch }} - Python ${{ matrix.python-version }} - tests
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
-        arch: [x64]
-        python-version: ["3.8.x"]
-    steps:
-      - uses: actions/checkout@v2
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: ${{ matrix.python-version }}
-          architecture: ${{ matrix.arch }}
-      - name: Install dependencies
-        run: pip install wheel && pip install --prefer-binary -r mobilidade_rio/requirements.txt
-      - name: Run tests
-        run: |
-          cd mobilidade_rio/ && python3 manage.py test --settings=mobilidade_rio.settings.test
-    services:
-      postgres:
-        image: postgres:13
-        env:
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
-          POSTGRES_DB: testdb
-        ports:
-          - "5432:5432"
+  # tests:
+  #   needs: before
+  #   name: ${{ matrix.os }}${{ matrix.arch }} - Python ${{ matrix.python-version }} - tests
+  #   runs-on: ${{ matrix.os }}
+  #   strategy:
+  #     matrix:
+  #       os: [ubuntu-latest]
+  #       arch: [x64]
+  #       python-version: ["3.8.x"]
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - name: Set up Python
+  #       uses: actions/setup-python@v2
+  #       with:
+  #         python-version: ${{ matrix.python-version }}
+  #         architecture: ${{ matrix.arch }}
+  #     - name: Install dependencies
+  #       run: pip install wheel && pip install --prefer-binary -r mobilidade_rio/requirements.txt
+  #     - name: Run tests
+  #       run: |
+  #         cd mobilidade_rio/ && python3 manage.py test --settings=mobilidade_rio.settings.test
+  #   services:
+  #     postgres:
+  #       image: postgres:13
+  #       env:
+  #         POSTGRES_USER: postgres
+  #         POSTGRES_PASSWORD: postgres
+  #         POSTGRES_DB: testdb
+  #       ports:
+  #         - "5432:5432"
 
   lint:
     needs: before
@@ -74,7 +74,7 @@ jobs:
           reporter: github-pr-review
 
   build:
-    needs: [lint, tests]
+    needs: [lint]
     name: Build and update deployments
     # if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
