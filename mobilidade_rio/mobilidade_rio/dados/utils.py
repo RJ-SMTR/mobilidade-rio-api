@@ -213,7 +213,7 @@ class DadosGpsSppoUtils:
             join_df = sppo_api.merge(
                 sppo_bq[["id_veiculo", "carroceria",
                         "ano_fabricacao", "tipo_veiculo",
-                         "id_chassi", "id_fabricante_chassi", "nome_chassi",
+                         "nome_chassi",
                          ]],
                 left_on="ordem",
                 right_on="id_veiculo",

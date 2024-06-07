@@ -101,7 +101,7 @@ class TestDadosGpsSppoUtils(TransactionTestCase):
         expected_cols = {
             "ordem", "latitude", "longitude", "datahora", "velocidade",
             "linha", "datahoraenvio", "datahoraservidor", "carroceria",
-            "ano_fabricacao", "tipo_veiculo"
+            "ano_fabricacao", "tipo_veiculo", "nome_chassi"
         }
 
         # act
