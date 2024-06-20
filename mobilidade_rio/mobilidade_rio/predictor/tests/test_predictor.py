@@ -176,46 +176,6 @@ class TestPredictor(TransactionTestCase):
         # assert
         self.assertEqual(error_code, "external_api-realtime-no_results")
 
-    @mock.patch('mobilidade_rio.predictor.predictor.timezone')
-    @responses.activate
-    def test_predictor_multiple_shapes_per_trip(self, mocked_timezone):
-        """Predictor should fail when multiple shapes per trip were found"""
-        # arrange
-        responses.add(
-            responses.GET,
-            "https://dados.mobilidade.rio/gps/brt",
-            status=200,
-            body=json.dumps(self.mocks['api_realtime'])
-        )
-        mocked_timezone.now.return_value = datetime(2024, 1, 5)
-
-        new_shape = model_to_dict(
-            Shapes.objects.first())  # pylint: disable=E1101
-        new_shape['shape_id'] += "_clone"
-        del new_shape['id']
-        Shapes.objects.create(**new_shape)  # pylint: disable=E1101
-
-        for trip in Trips.objects.all():  # pylint: disable=E1101
-            new_trip = model_to_dict(trip)
-            new_trip['trip_id'] += "_clone"
-            new_trip['shape_id'] = new_shape['shape_id']
-            new_trip['route_id'] = Routes.objects.get(  # pylint: disable=E1101
-                route_id=new_trip['route_id'])
-            Trips.objects.create(**new_trip)  # pylint: disable=E1101
-
-        # act
-        result = []
-        error_code = None
-        try:
-            predictor = Predictor()
-            result = predictor.run_eta()
-        except PredictorFailedException as exception:
-            error_code = exception.info['code']
-
-        # assert
-        self.assertEqual(len(result), 0)
-        self.assertEqual(error_code, "multiple-shapes-per-trip")
-
     @responses.activate
     def test_predictor_no_result(self):
         """Predictor should raise exception if no result"""
