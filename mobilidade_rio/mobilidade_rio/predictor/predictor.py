@@ -315,18 +315,6 @@ class Predictor:  # pylint: disable=R0903
 
         shapes_q = trips.distinct("shape_id")
         shapes = list(shapes_q.values_list("shape_id", flat=True))
-        shapes_objs = list(shapes_q.values('shape_id', 'trip_id', 'block_id'))
-
-        if len(shapes_q) > 1:
-            raise PredictorFailedException({
-                "type": "error",
-                "code": "multiple-shapes-per-trip",
-                "message": f"Foram encontradas mais de uma trip por shape_id ({len(shapes)}).",
-                "details": {
-                    'trips': {"count": len(shapes),
-                              "found": shapes_objs},
-                },
-            })
         if len(shapes_q) == 0:
             return None
 
