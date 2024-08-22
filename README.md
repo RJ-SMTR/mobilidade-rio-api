@@ -52,6 +52,14 @@ mobilidade-rio-api/
     pip install -r mobilidade_rio/requirements.txt  -r requirements-dev.txt
     ```
 
+    Venv Linux e macOS:
+
+    ```bash
+    python -m venv venv
+    . venv/scripts/activate
+    pip install -r mobilidade_rio/requirements.txt  -r dev/requirements-dev.txt
+    ```
+
 2. Criar arquivos de desenvolvimento local:
 
     Bash ou powershell:
