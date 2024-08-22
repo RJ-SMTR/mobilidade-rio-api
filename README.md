@@ -108,7 +108,7 @@ docker-compose -f "mobilidade_rio/local_dev/docker-compose.yml" up --build
     Bash
 
     ```bash
-    source mobilidade_rio/local_dev/api-native.env
+    set -a && source mobilidade_rio/local_dev/api-native.env && set +a
     ```
 
     Powershell
