@@ -10,11 +10,15 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
+from datetime import timedelta
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 STATIC_ROOT = BASE_DIR / 'static'
+MEDIA_ROOT = BASE_DIR / 'media'
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -41,8 +45,10 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'rest_framework.authtoken',
+    'rest_framework_simplejwt',
     'djoser',
     'django_q',
+    'mobilidade_rio.core',
     'mobilidade_rio.pontos',
     'mobilidade_rio.predictor',
     'mobilidade_rio.feedback',
@@ -121,12 +127,22 @@ CORS_ALLOWED_ORIGINS = []
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
     ),
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticatedOrReadOnly',
     ],
     'PAGE_SIZE': 100,
+}
+SIMPLE_JWT = {
+    # Set the expiration time for the access token
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
+    # Set the expiration time for the refresh token
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+    'ROTATE_REFRESH_TOKENS': True,
+    'BLACKLIST_AFTER_ROTATION': True,
 }
 
 # djoser
@@ -188,7 +204,7 @@ LOGGING = {
         },
         'simple': {
             'format': '{asctime} [{name}] {levelname}:  {message}',
-            
+
 
             'datefmt': '%H:%M:%S',
             'style': '{',
@@ -205,3 +221,8 @@ LOGGING = {
         'level': 'DEBUG',
     },
 }
+
+FILE_UPLOAD_HANDLERS = (
+    "django.core.files.uploadhandler.MemoryFileUploadHandler",
+    "django.core.files.uploadhandler.TemporaryFileUploadHandler",
+)

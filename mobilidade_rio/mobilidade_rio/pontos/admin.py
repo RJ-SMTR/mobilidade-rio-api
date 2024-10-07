@@ -1,4 +1,5 @@
 from django.contrib import admin
+
 from mobilidade_rio.pontos.models import *
 
 admin.site.register(Agency)
@@ -10,6 +11,6 @@ admin.site.register(Shapes)
 admin.site.register(Stops)
 admin.site.register(StopTimes)
 admin.site.register(Frequencies)
-admin.site.site_header = "App QR-Code"
-
-
+admin.site.register(FareAttributes)
+admin.site.register(FareRules)
+admin.site.register(FeedInfo)

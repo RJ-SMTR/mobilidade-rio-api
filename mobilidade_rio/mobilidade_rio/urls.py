@@ -1,7 +1,8 @@
 from django.conf.urls import url
 from django.contrib import admin
 from django.urls import include, path
-from rest_framework import routers
+from rest_framework import routers, authtoken
+from rest_framework.authtoken.views import obtain_auth_token
 
 from mobilidade_rio.feedback import views as fb
 from mobilidade_rio.pontos import views as gtfs
@@ -29,6 +30,8 @@ gtfs_router.register(r"stops", gtfs.StopsViewSet, basename="stops")
 gtfs_router.register(r"stop_times", gtfs.StopTimesViewSet,
                      basename="stop_times")
 gtfs_router.register(r"frequencies", gtfs.FrequenciesViewSet)
+gtfs_router.register(
+    r"upload", gtfs.UploadGtfsViewSet, basename="upload")
 
 dados_gps_router = DocumentedRouter(GpsView)
 dados_gps_router.register(r"sppo", dados.SppoViewSet, basename='sppo')
@@ -66,6 +69,7 @@ urlpatterns = [
     # Default routes
     path("admin/", admin.site.urls),
     path("api-auth/", include("rest_framework.urls", namespace="rest_framework")),
+    path("api-token-auth/", obtain_auth_token),
     url(r"^auth/", include("djoser.urls")),
     url(r"^auth/", include("djoser.urls.authtoken")),
 ]

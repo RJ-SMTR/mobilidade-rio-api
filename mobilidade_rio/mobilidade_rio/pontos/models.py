@@ -1,14 +1,16 @@
 """
 models for GTFS data
 Types are defined in the GTFS specification:
-https://developers.google.com/transit/gtfs/reference
+https://gtfs.org/documentation/schedule/reference
 """
 from django.db import models
-from django.core.validators import MinValueValidator, MaxValueValidator
+from django.core.validators import MinValueValidator
 from django.db.models import Q
 
+from mobilidade_rio.utils.interfaces.base_model import BaseModel
 
-class Agency(models.Model):
+
+class Agency(BaseModel):
     """
     Model for agency.txt
     Mandatory fields: agency_id, agency_name, agency_url, agency_timezone
@@ -20,12 +22,18 @@ class Agency(models.Model):
     agency_timezone = models.CharField(max_length=500, blank=False, null=False)
     agency_lang = models.CharField(max_length=500, blank=True, null=True)
     agency_phone = models.CharField(max_length=500, blank=True, null=True)
-    agency_branding_url = models.CharField(max_length=500, blank=True, null=True)
+    agency_branding_url = models.CharField(
+        max_length=500, blank=True, null=True)
     agency_fare_url = models.CharField(max_length=500, blank=True, null=True)
     agency_email = models.CharField(max_length=500, blank=True, null=True)
 
+    class Meta:
+        """Settings for the model"""
+        verbose_name = "Agency"
+        verbose_name_plural = "Agencies"
 
-class Calendar(models.Model):
+
+class Calendar(BaseModel):
     """
     Model for calendar.txt
     Mandatory fields: all
@@ -42,16 +50,22 @@ class Calendar(models.Model):
     start_date = models.DateField(blank=False, null=False)
     end_date = models.DateField(blank=False, null=False)
 
+    class Meta:
+        """Settings for the model"""
+        verbose_name = "Calendar"
+        verbose_name_plural = "Calendars"
 
-class CalendarDates(models.Model):
+
+class CalendarDates(BaseModel):
     """
     Model for calendar_dates.txt
     Mandatory fields: service_id, date, exception_type
     """
 
     service_id = models.CharField(max_length=500, blank=False, null=False)
+    """Foreign key to calendar.service_id"""
     date = models.DateField(blank=False, null=False)
-    # TODO: change to real ENUM type in database
+    """TODO: change to real ENUM type in database"""
     exception_type = models.CharField(
         max_length=500,
         blank=False,
@@ -62,6 +76,8 @@ class CalendarDates(models.Model):
 
     class Meta:
         """Constraints for the model"""
+        verbose_name = "Calendar date"
+        verbose_name_plural = "Calendar dates"
 
         constraints = [
             models.UniqueConstraint(
@@ -70,7 +86,7 @@ class CalendarDates(models.Model):
         ]
 
 
-class Routes(models.Model):
+class Routes(BaseModel):
     """
     Model for routes.txt
     Mandatory fields:
@@ -84,7 +100,8 @@ class Routes(models.Model):
     agency_id = models.ForeignKey(
         Agency, on_delete=models.CASCADE, blank=False, null=False
     )
-    route_short_name = models.CharField(max_length=500, blank=False, null=False)
+    route_short_name = models.CharField(
+        max_length=500, blank=False, null=False)
     route_long_name = models.CharField(max_length=500, blank=False, null=False)
     route_desc = models.CharField(max_length=500, blank=True, null=True)
     route_type = models.IntegerField(
@@ -130,8 +147,44 @@ class Routes(models.Model):
         ),
     )
 
+    foreign_keys = ["agency_id"]
 
-class Trips(models.Model):
+    class Meta:
+        """Model settings"""
+        verbose_name = "Route"
+        verbose_name_plural = "Routes"
+
+
+class Shapes(BaseModel):
+    """
+    Model for shapes.txt
+    Mandatory fields: shape_id, shape_pt_lat, shape_pt_lon, shape_pt_sequence
+    Primary keys: shape_id + shape_pt_sequence
+    """
+
+    shape_id = models.CharField(max_length=500, blank=False, null=False)
+    shape_pt_lat = models.FloatField(blank=False, null=False)
+    shape_pt_lon = models.FloatField(blank=False, null=False)
+    shape_pt_sequence = models.PositiveIntegerField(blank=False, null=False)
+    shape_dist_traveled = models.FloatField(
+        blank=True, null=True, validators=[MinValueValidator(0)]
+    )
+
+    class Meta:
+        """Constraints for the model"""
+        verbose_name = "Shape"
+        verbose_name_plural = "Shapes"
+
+        constraints = [
+            models.UniqueConstraint(
+                # composite primary key
+                fields=["shape_id", "shape_pt_sequence"],
+                name="shape_sequence_id",
+            )
+        ]
+
+
+class Trips(BaseModel):
     """
     Model for trips.txt
     Mandatory fields:
@@ -152,6 +205,7 @@ class Trips(models.Model):
     )
     block_id = models.CharField(max_length=500, blank=True, null=True)
     shape_id = models.CharField(max_length=500, blank=True, null=True)
+    """It is not a Django foreign key to keep consistency of GTFS' relations and columns"""
     wheelchair_accessible = models.IntegerField(
         blank=True,
         null=True,
@@ -164,11 +218,17 @@ class Trips(models.Model):
     bikes_allowed = models.IntegerField(
         blank=True,
         null=True,
-        choices=((0, "information not available"), (1, "allowed"), (2, "not allowed")),
+        choices=((0, "information not available"),
+                 (1, "allowed"), (2, "not allowed")),
     )
+
+    foreign_keys = ["route_id"]
+    """Note: shape_id is a fk but not in Django/db, to keep consistency"""
 
     class Meta:
         """Constraints for the model"""
+        verbose_name = "Trip"
+        verbose_name_plural = "Trips"
 
         constraints = [
             models.UniqueConstraint(
@@ -179,34 +239,7 @@ class Trips(models.Model):
         ]
 
 
-class Shapes(models.Model):
-    """
-    Model for shapes.txt
-    Mandatory fields: shape_id, shape_pt_lat, shape_pt_lon, shape_pt_sequence
-    Primary keys: shape_id + shape_pt_sequence
-    """
-
-    shape_id = models.CharField(max_length=500, blank=False, null=False)
-    shape_pt_lat = models.FloatField(blank=False, null=False)
-    shape_pt_lon = models.FloatField(blank=False, null=False)
-    shape_pt_sequence = models.PositiveIntegerField(blank=False, null=False)
-    shape_dist_traveled = models.FloatField(
-        blank=True, null=True, validators=[MinValueValidator(0)]
-    )
-
-    class Meta:
-        """Constraints for the model"""
-
-        constraints = [
-            models.UniqueConstraint(
-                # composite primary key
-                fields=["shape_id", "shape_pt_sequence"],
-                name="shape_sequence_id",
-            )
-        ]
-
-
-class Stops(models.Model):
+class Stops(BaseModel):
     """
     Model for stops.txt
 
@@ -261,8 +294,12 @@ class Stops(models.Model):
     level_id = models.CharField(max_length=500, blank=True, null=True)
     platform_code = models.CharField(max_length=500, blank=True, null=True)
 
+    foreign_keys = ["parent_station"]
+
     class Meta:
         """Constraints for the model"""
+        verbose_name = "Stop"
+        verbose_name_plural = "Stops"
 
         constraints = [
             # stop_lat and stop_lon are mandatory when location_type is 0, 1 or 2
@@ -273,7 +310,8 @@ class Stops(models.Model):
             ),
             models.CheckConstraint(
                 # parent_station is mandatory if location_type is 2, 3, 4
-                check=~Q(location_type__in=[2, 3, 4]) | Q(parent_station__isnull=False),
+                check=~Q(location_type__in=[2, 3, 4]) | Q(
+                    parent_station__isnull=False),
                 name="parent_station_mandatory",
             ),
             # parent_station is forbidden if location_type is 1
@@ -288,14 +326,22 @@ class Stops(models.Model):
         ]
 
 
-class StopTimes(models.Model):
+class StopTimes(BaseModel):
     """
     Model for stop_times.txt
-    Mandatory fields: trip_id, stop_id, stop_sequence
+
+    Mandatory fields:
+        trip_id,
+        stop_id,
+        stop_sequence,
         arrival_time: mandatory if stop is the first or last stop of a trip (TODO)
-        stop_id, stop_sequence
+        stop_id,
+        stop_sequence
+
     Optional fields: departure_time: mandatory "if you can insert it", so it's optional
+
     Primary keys: trip_id + stop_sequence + stop_id
+
     Foreign keys: trip_id, stop_id
     """
 
@@ -365,8 +411,12 @@ class StopTimes(models.Model):
         blank=True, null=True, choices=((0, "exact time"), (1, "approximate time"))
     )
 
+    foreign_keys = ["trip_id", "stop_id"]
+
     class Meta:
         """Constraints for the model"""
+        verbose_name = "Stop time"
+        verbose_name_plural = "Stop times"
 
         # composite primary key: trip_id + stop_sequence + stop_id
         constraints = [
@@ -379,11 +429,14 @@ class StopTimes(models.Model):
         ]
 
 
-class Frequencies(models.Model):
+class Frequencies(BaseModel):
     """
     Model for frequencies.txt
+
     Mandatory fields: trip_id, start_time, end_time, headway_secs
+
     Primary keys: trip_id + start_time
+
     Foreign keys: trip_id
     """
 
@@ -400,8 +453,12 @@ class Frequencies(models.Model):
         choices=((0, "frequency-based trips"), (1, "exact times")),
     )
 
+    foreign_keys = ["trip_id"]
+
     class Meta:
         """Constraints for the model"""
+        verbose_name = "Frequency"
+        verbose_name_plural = "Frequencies"
 
         constraints = [
             models.UniqueConstraint(
@@ -417,3 +474,122 @@ class Frequencies(models.Model):
                 name="end_time_format",
             ),
         ]
+
+
+class FareAttributes(BaseModel):
+    """
+    Model for fare_attributes.txt
+
+    Mandatory fields:
+        fare_id,
+        price,
+        currency_type,
+        payment_method,
+        transfers,
+
+        agency_id:
+            Conditionally required
+            Required if multiple agencies are defined in agency.txt.
+            Recommended otherwise
+
+    Primary key: fare_id
+
+    Foreign key: agency_id
+    """
+
+    fare_id = models.CharField(
+        max_length=255, primary_key=True, blank=False, null=False)
+    price = models.DecimalField(
+        max_digits=10, decimal_places=2, blank=False, null=False)
+    currency_type = models.CharField(max_length=3, blank=False, null=False)
+    """ISO 4217 currency codes (e.g. USD)"""
+    payment_method = models.IntegerField(
+        choices=(
+            (0, "on board"),
+            (1, "before boarding")
+        ),
+        blank=False, null=False
+    )
+    transfers = models.IntegerField(
+        choices=(
+            (0, "No transfers"),
+            (1, "One transfer"),
+            (2, "Two transfers"),
+        ),
+        blank=True,
+        null=True,
+    )
+    """In GTFS this field is mandatory, but for simplification we consider `None` = unlimited transfers"""
+    agency_id = models.ForeignKey(
+        Agency, on_delete=models.CASCADE, blank=True, null=True)
+    transfer_duration = models.PositiveIntegerField(blank=True, null=True)
+
+    foreign_keys = ["agency_id"]
+
+    class Meta:
+        """Constraints for the model"""
+        # db_table = "fare_attributes"
+        verbose_name = "Fare Attribute"
+        verbose_name_plural = "Fare Attributes"
+
+
+class FareRules(BaseModel):
+    """
+    Model for fare_rules.txt
+
+    File: optional
+
+    Primary key: id (auto-generated)
+
+    Foreign keys: fare_id, route_id, origin_id, destination_id, contains_id
+    """
+
+    fare_id = models.ForeignKey(
+        FareAttributes, on_delete=models.CASCADE, blank=False, null=False)
+    route_id = models.ForeignKey(
+        'Routes', on_delete=models.CASCADE, blank=True, null=True)
+    origin_id = models.CharField(max_length=255, blank=True, null=True)
+    """stops.zone_id. Zone origin (optional)"""
+    destination_id = models.CharField(max_length=255, blank=True, null=True)
+    """stops.zone_id. Zone destination (optional)"""
+    contains_id = models.CharField(max_length=255, blank=True, null=True)
+    """stops.zone_id. If has id for a zone within the trip (optional)"""
+
+    foreign_keys = ["fare_id", "route_id"]
+
+    class Meta:
+        """Constraints for the model"""
+        # db_table = "fare_rules"
+        verbose_name = "Fare Rule"
+        verbose_name_plural = "Fare Rules"
+
+
+class FeedInfo(BaseModel):
+    """
+    Model for feed_info.txt
+
+    Mandatory fields: feed_publisher_name, feed_publisher_url, feed_lang
+
+    Optional fields: feed_start_date, feed_end_date, feed_version, \
+        feed_contact_email, feed_contact_url
+    """
+
+    feed_publisher_name = models.CharField(
+        max_length=255, blank=False, null=False)
+    feed_publisher_url = models.URLField(blank=False, null=False)
+    feed_lang = models.CharField(max_length=10, blank=False, null=False)
+    """Language code in `BCP 47` format (e.g., en, fr)"""
+    default_lang = models.CharField(max_length=10, blank=True, null=True)
+    """Language code in `BCP 47` format (e.g., en, fr)"""
+    feed_start_date = models.DateField(blank=True, null=True)
+    feed_end_date = models.DateField(blank=True, null=True)
+    feed_version = models.CharField(max_length=255, blank=True, null=True)
+    """Optional, feed version identifier"""
+    feed_contact_email = models.EmailField(blank=True, null=True)
+    feed_contact_url = models.URLField(blank=True, null=True)
+
+    class Meta:
+        """Constraints for the model"""
+        # db_table = "feed_info"
+        verbose_name = "Feed Information"
+        verbose_name_plural = "Feed Information"

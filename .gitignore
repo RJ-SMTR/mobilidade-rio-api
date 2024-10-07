@@ -136,6 +136,7 @@ dmypy.json
 static/
 secrets.y*ml
 notebooks/
+mobilidade_rio/mobilidade_rio/media
 
 # dev
 .vscode/

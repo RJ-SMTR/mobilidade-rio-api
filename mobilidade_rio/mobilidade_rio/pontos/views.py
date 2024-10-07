@@ -3,17 +3,23 @@ pontos.views - to serve API endpoints
 """
 
 # stop_code
+import datetime
+import logging
 import operator
 from functools import reduce
+from rest_framework import permissions, viewsets
 from rest_framework.exceptions import ValidationError
+from rest_framework.response import Response
+from rest_framework.request import Request
 
-# etc
-from rest_framework import viewsets
-from rest_framework import permissions
+from mobilidade_rio.pontos.services import UploadGtfsService
 from mobilidade_rio.pontos.models import *
-from .serializers import *
+
 from .paginations import LargePagination
+from .serializers import *
 from .utils import stop_times_parent_or_child
+
+logger = logging.getLogger("pontos_views")
 
 
 class AgencyViewSet(viewsets.ModelViewSet):
@@ -96,6 +102,7 @@ class TripsViewSet(viewsets.ModelViewSet):
 
         return queryset
 
+
 class ShapesViewSet(viewsets.ModelViewSet):
 
     """
@@ -114,7 +121,8 @@ class ShapesViewSet(viewsets.ModelViewSet):
         shape_id = self.request.query_params.get("shape_id")
         if shape_id is not None:
             shape_id = shape_id.split(",")
-            queryset = queryset.filter(shape_id__in=shape_id).order_by("shape_id")
+            queryset = queryset.filter(
+                shape_id__in=shape_id).order_by("shape_id")
 
         return queryset
 
@@ -141,7 +149,8 @@ class StopsViewSet(viewsets.ModelViewSet):
         if stop_code is not None:
             # split comma
             stop_code = stop_code.split(",")
-            queryset = queryset.filter(stop_code__in=stop_code).order_by("stop_id")
+            queryset = queryset.filter(
+                stop_code__in=stop_code).order_by("stop_id")
 
         # filter by stop_name
         stop_name = self.request.query_params.get("stop_name")
@@ -153,15 +162,15 @@ class StopsViewSet(viewsets.ModelViewSet):
                 if len(name) < 4:
                     raise ValidationError(
                         {"stop_name": "stop_name must be at least 4 characters long"}
-                        )
+                    )
 
             # filter if any stop_name is substring, ignore case
             queryset = queryset.filter(
                 reduce(
                     operator.or_,
                     (Q(stop_name__icontains=name) for name in stop_name)
-                    )
-                ).order_by("stop_id")
+                )
+            ).order_by("stop_id")
 
             # limit final result to 10
             # queryset = queryset[:10]
@@ -203,8 +212,10 @@ class StopTimesViewSet(viewsets.ModelViewSet):
                 "trip_id__shape_id",
                 "stop_sequence",
             ]
-            unique_trips = Trips.objects.order_by(*unique_trips_fields).distinct(*unique_trips_fields)
-            queryset = queryset.filter(trip_id__in=unique_trips).order_by(*order)
+            unique_trips = Trips.objects.order_by(
+                *unique_trips_fields).distinct(*unique_trips_fields)
+            queryset = queryset.filter(
+                trip_id__in=unique_trips).order_by(*order)
 
         # filter trip_id
         trip_id = self.request.query_params.get("trip_id")
@@ -216,7 +227,8 @@ class StopTimesViewSet(viewsets.ModelViewSet):
         trip_short_name = self.request.query_params.get("trip_short_name")
         if trip_short_name is not None:
             trip_short_name = trip_short_name.split(',')
-            queryset = queryset.filter(trip_id__trip_short_name__in=trip_short_name)
+            queryset = queryset.filter(
+                trip_id__trip_short_name__in=trip_short_name)
 
         # filter direction_id
         direction_id = self.request.query_params.get("direction_id")
@@ -235,7 +247,6 @@ class StopTimesViewSet(viewsets.ModelViewSet):
         if stop_id is not None:
             stop_id = stop_id.split(",")
             queryset = stop_times_parent_or_child(stop_id, queryset)
-
 
         # filter for trips passing by all given stops
         # query = queryset.query
@@ -279,9 +290,10 @@ class FrequenciesViewSet(viewsets.ModelViewSet):
             # filter by stop_times
             stop_times = StopTimes.objects.all().order_by("trip_id", "stop_sequence")
             stop_times = stop_times_parent_or_child(stop_id, stop_times)
-            stop_times_trip_id = list(stop_times.values_list("trip_id", flat=True))
+            stop_times_trip_id = list(
+                stop_times.values_list("trip_id", flat=True))
 
-            # filter frequencies by 
+            # filter frequencies by
             queryset = queryset.filter(trip_id__in=stop_times_trip_id)
 
         # filter trip_id
@@ -294,7 +306,8 @@ class FrequenciesViewSet(viewsets.ModelViewSet):
         trip_short_name = self.request.query_params.get("trip_short_name")
         if trip_short_name is not None:
             trip_short_name = trip_short_name.split(',')
-            queryset = queryset.filter(trip_id__trip_short_name__in=trip_short_name)
+            queryset = queryset.filter(
+                trip_id__trip_short_name__in=trip_short_name)
 
         # filter direction_id
         direction_id = self.request.query_params.get("direction_id")
@@ -309,3 +322,33 @@ class FrequenciesViewSet(viewsets.ModelViewSet):
             queryset = queryset.filter(trip_id__service_id__in=service_id)
 
         return queryset
+
+
+class UploadGtfsViewSet(viewsets.ViewSet):
+
+    """
+    Upload GTFS zip
+    """
+
+    serializer_class = UploadGtfsSerializer
+    """"""
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
+
+    def create(self, request: Request):
+        """post"""
+        # validate
+        serializer = UploadGtfsSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+
+        # parse
+        user = request.user
+        gtfs_zip = request.FILES.get("gtfs_zip", None)
+        if gtfs_zip is None or gtfs_zip == '':
+            return Response({
+                "error": "gtfs_zip is mandatory",
+                "timestamp": datetime.datetime.now()
+            }, status=500)
+
+        zip_files = [x for x in request.POST.get("zip_files", "").split(",") if x]
+
+        return UploadGtfsService.upload_gtfs(user, gtfs_zip, zip_files)

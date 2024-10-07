@@ -1,10 +1,21 @@
-from typing import List
+import logging
+from typing import IO, List
+from xml.dom import NotFoundErr
 import geopy.distance
 from django.db.models import QuerySet
 from mobilidade_rio.pontos.models import (
+    Agency,
+    Calendar,
+    CalendarDates,
     Frequencies,
+    Routes,
+    Shapes,
+    StopTimes,
     Stops,
+    Trips,
 )
+
+logger = logging.getLogger("pontos_utils")
 
 
 def get_distance(p1: tuple, p2: tuple) -> float:
