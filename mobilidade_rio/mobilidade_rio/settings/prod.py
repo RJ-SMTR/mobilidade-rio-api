@@ -1,5 +1,6 @@
 from .base import *
 from os import getenv
+from mobilidade_rio.utils.database import check_database_connection
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = getenv('SECRET_KEY', 'secret')
@@ -27,3 +28,5 @@ DATABASES = {
         'PORT': getenv("DB_PORT"),
     }
 }
+
+check_database_connection()

@@ -1,4 +1,6 @@
 from os import getenv
+
+from mobilidade_rio.utils.database import check_database_connection
 from .base import *
 
 # Django settings
@@ -15,3 +17,5 @@ DATABASES = {
         "PORT": getenv("DB_PORT", "5434"),
     }
 }
+
+check_database_connection()
