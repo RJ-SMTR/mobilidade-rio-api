@@ -98,7 +98,8 @@ class UploadGtfsService:
             # pylint: disable=no-member
             TableImport.objects.bulk_create(uploaded)
             return Response({
-                "uploaded": {u.table: str(u) for u in uploaded},
+                "gtfs_zip": zip_file.name,
+                "uploaded": {u.table: u.file_name for u in uploaded},
                 "duration": datetime.datetime.now() - start_date,
                 "timestamp": datetime.datetime.now(),
             }, status=200)

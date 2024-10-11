@@ -343,12 +343,8 @@ class UploadGtfsViewSet(viewsets.ViewSet):
         # parse
         user = request.user
         gtfs_zip = request.FILES.get("gtfs_zip", None)
-        if gtfs_zip is None or gtfs_zip == '':
-            return Response({
-                "error": "gtfs_zip is mandatory",
-                "timestamp": datetime.datetime.now()
-            }, status=500)
 
-        zip_files = [x for x in request.POST.get("zip_files", "").split(",") if x]
+        zip_files = request.POST.get("zip_files", "")
+        zip_files = [x for x in zip_files.split(",") if x]
 
         return UploadGtfsService.upload_gtfs(user, gtfs_zip, zip_files)

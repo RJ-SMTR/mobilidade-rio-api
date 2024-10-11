@@ -39,9 +39,15 @@ class TableImport(models.Model):
         )
 
     def __str__(self):
+        # pylint: disable=no-member
         date_created = self.date_created.strftime(r"%Y-%m-%d %H:%M:%S.%f")[:-4]
-        filename = f"{self.zip_name} / {self.file_name}" if self.zip_name else self.file_name
-        return f"{date_created} - user '{self.user}',  file '{filename}', to '{self.table}'"
+        file_path = self.get_file_path(True)
+        return f"{date_created} - user '{self.user}',  file '{file_path}', to '{self.table}'"
+
+    def get_file_path(self, spacing=False):
+        """Get upload zip name and file name"""
+        slash = " / " if spacing else "/"
+        return f"{self.zip_name}{slash}{self.file_name}" if self.zip_name else self.file_name
 
     class Meta:
         """Settings for the model"""
