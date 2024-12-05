@@ -105,7 +105,7 @@ class PredictorViewSet(viewsets.ViewSet):
             result_data = [i for i in result_data if i['stop_id'] == stop_id]
 
         # return prediction
-
+        # retornar predição
         response_data = {
             "count": len(result_data),
             "next": None,
